@@ -41,7 +41,7 @@
         },
         {
           "ExitName": "Kakariko Village Malo Mart",
-          "Requirements": "true" // entrance is day-only, so need either access to a time-change area or shadow crystal
+          "Requirements": "CanChangeTime"
         },
         {
           "ExitName": "Kakariko Elde Inn Outside Left Door",
@@ -335,7 +335,7 @@
       },
       {
         "ExitName": "Kakariko Elde Inn Inside Left Door",
-        "Requirements": "true" // entrance is day-only, so need either access to a time-change area or shadow crystal
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks": [""],
@@ -351,7 +351,7 @@
       },
       {
         "ExitName": "Kakariko Elde Inn Inside Right Door",
-        "Requirements": "true" // entrance is day-only, so need either access to a time-change area or shadow crystal
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks": [""],
