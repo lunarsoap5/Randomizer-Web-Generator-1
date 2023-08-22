@@ -213,7 +213,7 @@
       },
       {
         "ExitName": "Ordon Ranch",
-        "Requirements": "true" // day-only
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks": [""],
@@ -225,7 +225,7 @@
     [
       {
         "ExitName": "Ordon Ranch Entrance",
-        "Requirements": "true" // day-only
+        "Requirements": "CanChangeTime"
       },
       {
         "ExitName": "Ordon Ranch Grotto",
