@@ -65,6 +65,59 @@ namespace TPRandomizer
             }
             return canUseItem;
         }
+        
+        /// <summary>
+        /// summary text.
+        /// </summary>
+        public static bool CanChangeTime()
+        {
+            return CanUse(Item.Shadow_Crystal)
+                || Room.Sacred_Grove_Before_Block
+                || Room.Sacred_Grove_Upper
+                || Room.Sacred_Grove_Lower
+                || Room.Faron_Field
+                || Room.Faron_Field_Behind_Boulder
+                || Room.Kakariko_Gorge
+                || Room.Kakariko_Gorge_Behind_Gate
+                || Room.Death_Mountain_Trail
+                || Room.Death_Mountain_Volcano
+                || Room.Death_Mountain_Elevator
+                || Room.Eldin_Field
+                || Room.Eldin_Field_Near_Castle_Town
+                || Room.Eldin_Field_Lava_Cave_Ledge
+                || Room.Eldin_Field_Lava_Cave_Outside_Upper_Entrance
+                || Room.Eldin_Field_From_Lava_Cave_Lower
+                || Room.Eldin_Field_Lava_Cave_Outside_Lower_Entrance
+                || Room.Eldin_Field_Grotto_Platform
+                || Room.Eldin_Field_Outside_Hidden_Village
+                || Room.Lanayru_Field
+                || Room.Lanayru_Field_Behind_Boulder
+                || Room.Hyrule_Field_Near_Spinner_Rails
+                || Room.Zoras_Domain
+                || Room.Zoras_Domain_West_Ledge
+                || Room.Zoras_Throne_Room
+                || Room.Upper_Zoras_River
+                || Room.Upper_Zoras_River_Fishing_Hole
+                || Room.Snowpeak_Climb_Lower
+                || Room.Snowpeak_Climb_Upper
+                || Room.Snowpeak_Summit_Upper
+                || Room.Snowpeak_Summit_Lower
+                || Room.Outside_Castle_Town_West
+                || Room.Outside_Castle_Town_West_Grotto_Ledge
+                || Room.Outside_Castle_Town_East
+                || Room.Outside_Castle_Town_South
+                || Room.Outside_Castle_Town_South_Inside_Boulder
+                || Room.Lake_Hylia_Bridge
+                || Room.Lake_Hylia_Bridge_Grotto_Ledge
+                || Room.Lake_Hylia
+                || Room.Gerudo_Desert
+                || Room.Gerudo_Desert_Cave_of_Ordeals_Plateau
+                || Room.Gerudo_Desert_Basin
+                || Room.Gerudo_Desert_North_East_Ledge
+                || Room.Gerudo_Desert_Outside_Bulblin_Camp
+                || Room.Outside_Arbiters_Grounds
+                || Room.Mirror_Chamber
+        }
 
         /// <summary>
         /// summary text.
