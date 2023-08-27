@@ -49,15 +49,15 @@
       },
       {
         "ExitName": "Ordon Sera Shop",
-        "Requirements": "true" // day-only iirc
+        "Requirements": "CanChangeTime"
       },
       {
         "ExitName": "Ordon Shield House",
-        "Requirements": "true" // not sure
+        "Requirements": "CanChangeTime"
       },
       {
         "ExitName": "Ordon Sword House",
-        "Requirements": "true" // not sure
+        "Requirements": "CanChangeTime"
       },
       {
         "ExitName": "Ordon Bos House Outside Left Door",
@@ -130,7 +130,7 @@
       },
       {
         "ExitName": "Ordon Bos House Inside Left Door",
-        "Requirements": "true" // not sure
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks": [""],
@@ -146,7 +146,7 @@
       },
       {
         "ExitName": "Ordon Bos House Inside Right Door",
-        "Requirements": "true" // not sure
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks": [""],
