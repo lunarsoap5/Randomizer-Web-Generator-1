@@ -4,28 +4,59 @@
     "Exits":
     [
       {
+        "ExitName": "Lost Woods Lower Battle Arena",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Lost Woods Upper Battle Arena",
+        "Requirements": "true"
+      },
+      {
         "ExitName": "North Faron Woods Near Lost Woods",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": 
+    [
+        "Lost Woods Lantern Chest",
+        "Lost Woods Waterfall Poe"
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Lost Woods Lower Battle Arena",
+    "Exits":
+    [
+      {
+        "ExitName": "Lost Woods",
         "Requirements": "true"
       },
       {
         "ExitName": "Sacred Grove Lower",
-        "Requirements": "true"
+        "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)"
       },
       {
         "ExitName": "Lost Woods Baba Serpent Grotto",
-        "Requirements": "true"
-      },
-      {
-        "ExitName": "Sacred Grove Before Block", 
-        "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)"
+        "Requirements": "canSmash and Shadow_Crystal"
       }
-    ],"Checks": 
-    [
-        "Lost Woods Lantern Chest",
-        "Lost Woods Boulder Poe",
-        "Lost Woods Waterfall Poe",
-        "Sacred Grove Spinner Chest"
     ],
+    "Checks":
+    [
+        "Sacred Grove Spinner Chest",
+        "Lost Woods Boulder Poe"
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Lost Woods Upper Battle Arena",
+    "Exits":
+    [
+      {
+        "ExitName": "Sacred Grove Before Block",
+        "Requirements": "(CanDefeatSkullKid and (Progressive_Bow, 1)) or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)"
+      }
+    ],
+    "Checks": [""],
     "Region": "Sacred Grove"
   },
   {
@@ -33,7 +64,7 @@
     "Exits":
     [
       {
-        "ExitName": "Lost Woods", // ?
+        "ExitName": "Lost Woods Lower Battle Arena",
         "Requirements": "true"
       }
     ],
@@ -48,7 +79,7 @@
     "Exits":
     [
       {
-        "ExitName": "Lost Woods", // ?
+        "ExitName": "Lost Woods Upper Battle Arena",
         "Requirements": "true"
       },
       {
@@ -80,7 +111,7 @@
     "Exits":
     [
       {
-        "ExitName": "Lost Woods", // ?
+        "ExitName": "Lost Woods Lower Battle Arena",
         "Requirements": "true"
       },
       {
@@ -100,12 +131,12 @@
     "Exits":
     [
       {
-        "ExitName": "Sacred Grove Upper",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "Sacred Grove Temple of Time Behind Window",
         "Requirements": "(Setting.totEntrance equals Open) or (Progressive_Sword, 3)"
+      },
+      {
+        "ExitName": "Sacred Grove Upper",
+        "Requirements": "true"
       }
     ],
     "Checks":
