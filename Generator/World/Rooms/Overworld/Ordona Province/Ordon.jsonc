@@ -208,12 +208,12 @@
     "Exits":
     [
       {
-        "ExitName": "Ordon Village",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "Ordon Ranch",
         "Requirements": "CanChangeTime"
+      },
+      {
+        "ExitName": "Ordon Village",
+        "Requirements": "true"
       }
     ],
     "Checks": [""],
@@ -228,8 +228,8 @@
         "Requirements": "CanChangeTime"
       },
       {
-        "ExitName": "Ordon Ranch Grotto",
-        "Requirements": "Shadow_Crystal"
+        "ExitName": "Ordon Ranch Stable",
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks":
@@ -239,11 +239,27 @@
     "Region": "Ordon"
   },
   {
-    "RoomName": "Ordon Ranch Grotto",
+    "RoomName": "Ordon Ranch Stable",
     "Exits":
     [
       {
         "ExitName": "Ordon Ranch",
+        "Requirements": "CanChangeTime"
+      },
+      {
+        "ExitName": "Ordon Ranch Grotto",
+        "Requirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Ordon"
+  }
+  {
+    "RoomName": "Ordon Ranch Grotto",
+    "Exits":
+    [
+      {
+        "ExitName": "Ordon Ranch Stable",
         "Requirements": "true"
       }
     ],
