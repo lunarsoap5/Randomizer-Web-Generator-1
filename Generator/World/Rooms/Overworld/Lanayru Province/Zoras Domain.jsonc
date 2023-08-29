@@ -21,7 +21,7 @@
       },
       {
         "ExitName": "Upper Zoras River Izas House",
-        "Requirements": "CanDefeatShadowBeast"
+        "Requirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))"
       }
     ],
     "Checks":
