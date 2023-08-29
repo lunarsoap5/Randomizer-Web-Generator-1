@@ -97,11 +97,11 @@
       },
       {
         "ExitName": "Death Mountain Sumo Hall Elevator",
-        "Requirements": "true"
+        "Requirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
       },
       {
         "ExitName": "Death Mountain Sumo Hall Goron Mines Tunnel",
-        "Requirements": "Iron_Boots or (Setting.skipMinesEntrance equals True) or (Setting.skipMinesEntrance equals NoWrestling)"
+        "Requirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
       }
     ],
     "Checks": [""],
@@ -116,9 +116,9 @@
         "Requirements": "Iron_Boots"
       },
       {
-        // Depending on settings, the Gorons can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Gorons before we consider this a valid path.
+        // Depending on settings, the Goron can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Goron before we consider this a valid path.
         "ExitName": "Death Mountain Sumo Hall",
-        "Requirements": "Room.Death_Mountain_Sumo_Hall or (Setting.skipMinesEntrance equals True)"
+        "Requirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
       }
     ],
     "Checks": [""],
@@ -131,7 +131,7 @@
       {
         // Depending on settings, the Gorons can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Gorons before we consider this a valid path.
         "ExitName": "Death Mountain Sumo Hall",
-        "Requirements": "(Setting.skipMinesEntrance equals True) or (Setting.skipMinesEntrance equals NoWrestling)"
+        "Requirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)
       },
       {
         "ExitName": "Goron Mines Entrance",
