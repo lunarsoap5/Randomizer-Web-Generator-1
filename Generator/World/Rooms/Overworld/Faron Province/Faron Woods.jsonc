@@ -169,7 +169,7 @@
     "Exits":
     [
       {
-        "ExitName": "Mist Area Near South Faron Woods Cave",
+        "ExitName": "Mist Area Near Faron Woods Cave",
         "Requirements": "Lantern"
       },
       {
@@ -272,7 +272,7 @@
         "Requirements": "Lantern"
       },
       {
-        "ExitName": "Mist Area Near South Faron Woods Cave",
+        "ExitName": "Mist Area Near Faron Woods Cave",
         "Requirements": "Shadow_Crystal"
       },
       {
@@ -288,7 +288,7 @@
     "Exits":
     [
       {
-        "ExitName": "Mist Area Near South Faron Woods Cave",
+        "ExitName": "Mist Area Near Faron Woods Cave",
         "Requirements": "true"
       },
       {
@@ -304,11 +304,11 @@
     "Exits":
     [
       {
-        "ExitName": "South Faron Woods Cave Outside Northern Entrance",
+        "ExitName": "Faron Woods Cave Outside Northern Entrance",
         "Requirements": "true"
       },
       {
-        "ExitName": "South Faron Woods Cave",
+        "ExitName": "Faron Woods Cave",
         "Requirements": "true"
       }
     ],
