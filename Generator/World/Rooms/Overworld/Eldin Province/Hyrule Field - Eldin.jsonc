@@ -4,16 +4,16 @@
     "Exits":
     [
       {
+        "ExitName": "Kakariko Gorge Behind Gate",
+        "Requirements": "true"
+      },
+      {
         "ExitName": "Faron Field",
         "Requirements": "true"
       },
       {
         "ExitName": "Eldin Field",
         "Requirements": "canSmash"
-      },
-      {
-        "ExitName": "Kakariko Gorge Behind Gate",
-        "Requirements": "true"
       },
       {
         "ExitName": "Eldin Lantern Cave",
@@ -87,20 +87,20 @@
     "Exits":
     [
       {
+        "ExitName": "Eldin Field Near Castle Town",
+        "Requirements": "Room.Kakariko_Malo_Mart"
+      },
+      {
+        "ExitName": "Eldin Field Lava Cave Ledge",
+        "Requirements": "(Progressive_Clawshot, 1)"
+      },
+      {
         "ExitName": "Kakariko Gorge",
         "Requirements": "canSmash"
       },
       {
         "ExitName": "Kakariko Village Behind Gate",
         "Requirements": "true"
-      },
-      {
-        "ExitName": "Eldin Field Near Castle Town",
-        "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village"
-      },
-      {
-        "ExitName": "Eldin Field Lava Cave Ledge",
-        "Requirements": "(Progressive_Clawshot, 1)"
       },
       {
         "ExitName": "Lanayru Field",
@@ -134,7 +134,7 @@
     [
       {
         "ExitName": "Eldin Field",
-        "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village"
+        "Requirements": "Room.Kakariko_Malo_Mart"
       },
       {
         "ExitName": "Outside Castle Town East",
