@@ -1449,7 +1449,7 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Hylian_Shield)
-                || Randomizer.Rooms.RoomDict["Kakariko Village Malo Mart"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                 || (
                     Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
@@ -1583,14 +1583,14 @@ namespace TPRandomizer
             return (
                 (CanUse(Item.Filled_Bomb_Bag))
                 && (
-                    Randomizer.Rooms.RoomDict["Barnes Bomb Shop"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
                     || (
-                        Randomizer.Rooms.RoomDict["Barnes Bomb Shop"].ReachedByPlaythrough
+                        Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
                         && Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                     )
                     || Randomizer.Rooms.RoomDict["City in The Sky Entrance"].ReachedByPlaythrough
@@ -1606,14 +1606,14 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer.Rooms.RoomDict["Barnes Bomb Shop"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
                     || (
-                        Randomizer.Rooms.RoomDict["Barnes Bomb Shop"].ReachedByPlaythrough
+                        Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
                         && Randomizer.Rooms.RoomDict["Castle Town Malo Mart"].ReachedByPlaythrough
                     )
                 )
