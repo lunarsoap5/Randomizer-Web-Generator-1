@@ -8,8 +8,8 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "Death Mountain Trai",
-        "Requirements": "Iron_Boots"
+        "ExitName": "Death Mountain Trail",
+        "Requirements": "Iron_Boots or canCompleteGoronMines"
       }
     ],
     "Checks": [""],
@@ -45,7 +45,7 @@
       },
       {
         "ExitName": "Death Mountain Outside Sumo Hall",
-        "Requirements": "Iron_Boots and CanDefeatGoron"
+        "Requirements": "Iron_Boots and (CanDefeatGoron or canCompleteGoronMines)"
       },
       {
         "ExitName": "Death Mountain Elevator Lower",
