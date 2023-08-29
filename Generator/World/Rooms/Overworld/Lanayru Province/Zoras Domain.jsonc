@@ -88,19 +88,19 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Zoras River",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "Zoras Domain West Ledge",
         "Requirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or canSmash"
       },
       {
-        "ExitName": "Snowpeak Climb Lower",
+        "ExitName": "Upper Zoras River",
         "Requirements": "true"
       },
       {
         "ExitName": "Zoras Throne Room",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Snowpeak Climb Lower",
         "Requirements": "true"
       }
     ],
@@ -119,11 +119,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lanayru Field Behind Boulder",
+        "ExitName": "Zoras Domain",
         "Requirements": "true"
       },
       {
-        "ExitName": "Zoras Domain",
+        "ExitName": "Lanayru Field Behind Boulder",
         "Requirements": "true"
       }
     ],
