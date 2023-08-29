@@ -4,6 +4,10 @@
     "Exits":
     [
       {
+        "ExitName": "Lake Hylia Lakebed Temple Entrance",
+        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))"
+      },
+      {
         "ExitName": "Lake Hylia Bridge",
         "Requirements": "true"
       },
@@ -16,10 +20,6 @@
         "Requirements": "Shadow_Crystal"
       },
       {
-        "ExitName": "Lake Hylia Lakebed Temple Entrance",
-        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))"
-      },
-      {
         "ExitName": "Lake Hylia Lanayru Spring",
         "Requirements": "true"
       },
@@ -28,8 +28,9 @@
         "Requirements": "canSmash"
       },
       {
+        // You can use the cannon and a cucco to reach the grotto ledge without any requirements.
         "ExitName": "Lake Hylia Shell Blade Grotto",
-        "Requirements": "Shadow_Crystal" // can use cannon and cucco to access the grotto ledge entirely without items
+        "Requirements": "Shadow_Crystal"
       },
       {
         "ExitName": "Lake Hylia Water Toadpoli Grotto",
@@ -123,9 +124,9 @@
         "Lake Lantern Cave Thirteenth Chest",
         "Lake Lantern Cave Fourteenth Chest",
         "Lake Lantern Cave End Lantern Chest",
-        "Lake Lantern Cave Final Poe",
         "Lake Lantern Cave First Poe",
-        "Lake Lantern Cave Second Poe"
+        "Lake Lantern Cave Second Poe",
+        "Lake Lantern Cave Final Poe"
     ],
     "Region": "Lake Hylia"
   },
