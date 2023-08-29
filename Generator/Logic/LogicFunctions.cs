@@ -72,6 +72,9 @@ namespace TPRandomizer
         public static bool CanChangeTime()
         {
             return CanUse(Item.Shadow_Crystal)
+                || Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Lost Woods Lower Battle Arena"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Lost Woods Upper Battle Arena"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Sacred Grove Before Block"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Sacred Grove Upper"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Sacred Grove Lower"].ReachedByPlaythrough
@@ -79,8 +82,10 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Faron Field Behind Boulder"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Kakariko Gorge Behind Gate"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Death Mountain Near Kakariko"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Death Mountain Trail"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Death Mountain Outside Sumo Hall"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Death Mountain Elevator"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field Near Castle Town"].ReachedByPlaythrough
