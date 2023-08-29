@@ -1,5 +1,5 @@
 {
-    "requirements": "Shadow_Crystal",
+    "requirements": "Shadow_Crystal and CanChangeTime",
     "stageIDX": [48],
     "flag": "57",
     "category": ["Overworld", "Poe", "Kakariko Graveyard"],
