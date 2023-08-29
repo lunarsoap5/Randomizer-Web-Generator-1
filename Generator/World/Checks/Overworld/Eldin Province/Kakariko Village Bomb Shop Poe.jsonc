@@ -1,5 +1,5 @@
 {
-    "requirements": "Shadow_Crystal",
+    "requirements": "Shadow_Crystal and CanChangeTime",
     "stageIDX": [46],
     "flag": "5E",
     "category": ["Overworld", "Poe", "Kakariko Village"],

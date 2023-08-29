@@ -4,10 +4,6 @@
     "Exits":
     [
       {
-        "ExitName": "Ordon Spring",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "South Faron Woods Behind Gate",
         "Requirements": "true" // coro key or crystal?
       },
@@ -15,7 +11,11 @@
         "ExitName": "South Faron Woods Owl Statue Area",
         "Requirements": "canSmash"
       },
-	  {
+      {
+        "ExitName": "Ordon Spring",
+        "Requirements": "true"
+      },
+      {
         "ExitName": "Faron Field",
         "Requirements": "canClearForest"
       },
@@ -74,7 +74,7 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "Faron Woods Mist Area Near Owl Statue Chest",
+        "ExitName": "Mist Area Near Owl Statue Chest",
         "Requirements": "true"
       }
     ],
@@ -118,7 +118,7 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "South Faron Woods Cave",
+        "ExitName": "Faron Woods Cave",
         "Requirements": "true"
       }
     ],
@@ -126,7 +126,7 @@
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "South Faron Woods Cave",
+    "RoomName": "Faron Woods Cave",
     "Exits":
     [
       {
@@ -145,43 +145,43 @@
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "Faron Woods Mist Area Near South Faron Woods Cave",
+    "RoomName": "Mist Area Near Faron Woods Cave",
     "Exits":
     [
       {
-        "ExitName": "South Faron Woods Cave Outside Northern Entrance",
-        "Requirements": "true"
-      },
-      {
-        "ExitName": "Faron Woods Mist Area Inside Mist",
+        "ExitName": "Mist Area Inside Mist",
         "Requirements": "Lantern"
       },
       {
-        "ExitName": "Faron Woods Mist Area Under Owl Statue Chest",
+        "ExitName": "Mist Area Under Owl Statue Chest",
         "Requirements": "Shadow_Crystal"
+      },
+      {
+        "ExitName": "South Faron Woods Cave Outside Northern Entrance",
+        "Requirements": "true"
       }
     ],
     "Checks": [""],
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "Faron Woods Mist Area Inside Mist",
+    "RoomName": "Mist Area Inside Mist",
     "Exits":
     [
       {
-        "ExitName": "Faron Woods Mist Area Near South Faron Woods Cave",
+        "ExitName": "Mist Area Near South Faron Woods Cave",
         "Requirements": "Lantern"
       },
       {
-        "ExitName": "Faron Woods Mist Area Outside Faron Mist Cave",
+        "ExitName": "Mist Area Under Owl Statue Chest",
         "Requirements": "Lantern"
       },
       {
-        "ExitName": "Faron Woods Mist Area Under Owl Statue Chest",
+        "ExitName": "Mist Area Outside Faron Mist Cave",
         "Requirements": "Lantern"
       },
       {
-        "ExitName": "Faron Woods Mist Area Near North Faron Woods",
+        "ExitName": "Mist Area Near North Faron Woods",
         "Requirements": "true"
       }
     ],
@@ -194,31 +194,15 @@
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "Faron Woods Mist Area Outside Faron Mist Cave",
+    "RoomName": "Mist Area Under Owl Statue Chest",
     "Exits":
     [
       {
-        "ExitName": "Faron Woods Mist Area Inside Mist",
+        "ExitName": "Mist Area Inside Mist",
         "Requirements": "Lantern"
       },
       {
-        "ExitName": "Faron Mist Cave",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Faron Woods"
-  },
-  {
-    "RoomName": "Faron Woods Mist Area Under Owl Statue Chest",
-    "Exits":
-    [
-      {
-        "ExitName": "Faron Woods Mist Area Inside Mist",
-        "Requirements": "Lantern"
-      },
-      {
-        "ExitName": "Faron Woods Mist Area Center Stump",
+        "ExitName": "Mist Area Center Stump",
         "Requirements": "Shadow_Crystal"
       }
     ],
@@ -226,50 +210,11 @@
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "Faron Woods Mist Area Center Stump",
+    "RoomName": "Mist Area Near Owl Statue Chest",
     "Exits":
     [
       {
-        "ExitName": "Faron Woods Mist Area Inside Mist",
-        "Requirements": "Lantern"
-      },
-      {
-        "ExitName": "Faron Woods Mist Area Near North Faron Woods",
-        "Requirements": "Shadow_Crystal"
-      }
-    ],
-    "Checks":
-    [
-        "Faron Mist Poe"
-    ],
-    "Region": "Faron Woods"
-  },
-  {
-    "RoomName": "Faron Woods Mist Area Near North Faron Woods",
-    "Exits":
-    [
-      {
-        "ExitName": "Faron Woods Mist Area Inside Mist",
-        "Requirements": "Lantern"
-      },
-      {
-        "ExitName": "Faron Woods Mist Area Near South Faron Woods Cave",
-        "Requirements": "Shadow_Crystal"
-      },
-      {
-        "ExitName": "North Faron Woods",
-        "Requirements": "true" // not sure about the key gate there
-      }
-    ],
-    "Checks": [""],
-    "Region": "Faron Woods"
-  },
-  {
-    "RoomName": "Faron Woods Mist Area Near Owl Statue Chest",
-    "Exits":
-    [
-      {
-        "ExitName": "Faron Woods Mist Area Under Owl Statue Chest",
+        "ExitName": "Mist Area Under Owl Statue Chest",
         "Requirements": "true"
       },
       {
@@ -284,11 +229,66 @@
     "Region": "Faron Woods"
   },
   {
+    "RoomName": "Mist Area Center Stump",
+    "Exits":
+    [
+      {
+        "ExitName": "Mist Area Inside Mist",
+        "Requirements": "Lantern"
+      },
+      {
+        "ExitName": "Mist Area Near North Faron Woods",
+        "Requirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks":
+    [
+        "Faron Mist Poe"
+    ],
+    "Region": "Faron Woods"
+  },
+  {
+    "RoomName": "Mist Area Outside Faron Mist Cave",
+    "Exits":
+    [
+      {
+        "ExitName": "Mist Area Inside Mist",
+        "Requirements": "Lantern"
+      },
+      {
+        "ExitName": "Faron Mist Cave",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Faron Woods"
+  },
+  {
+    "RoomName": "Mist Area Near North Faron Woods",
+    "Exits":
+    [
+      {
+        "ExitName": "Mist Area Inside Mist",
+        "Requirements": "Lantern"
+      },
+      {
+        "ExitName": "Mist Area Near South Faron Woods Cave",
+        "Requirements": "Shadow_Crystal"
+      },
+      {
+        "ExitName": "North Faron Woods",
+        "Requirements": "true" // not sure about the key gate there
+      }
+    ],
+    "Checks": [""],
+    "Region": "Faron Woods"
+  },
+  {
     "RoomName": "South Faron Woods Cave Outside Northern Entrance",
     "Exits":
     [
       {
-        "ExitName": "Faron Woods Mist Area Near South Faron Woods Cave",
+        "ExitName": "Mist Area Near South Faron Woods Cave",
         "Requirements": "true"
       },
       {
@@ -320,7 +320,7 @@
     "Exits":
     [
       {
-        "ExitName": "Faron Woods Mist Area Outside Faron Mist Cave",
+        "ExitName": "Mist Area Outside Faron Mist Cave",
         "Requirements": "true"
       }
     ],
@@ -336,12 +336,12 @@
     "Exits":
     [
       {
-        "ExitName": "Faron Woods Mist Area Near North Faron Woods",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "North Faron Woods Near Lost Woods",
         "Requirements": "Shadow_Crystal"
+      },
+      {
+        "ExitName": "Mist Area Near North Faron Woods",
+        "Requirements": "true"
       },
       {
         "ExitName": "Forest Temple Entrance",

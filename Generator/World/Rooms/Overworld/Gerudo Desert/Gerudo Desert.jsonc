@@ -5,7 +5,7 @@
     [
       {
         "ExitName": "Gerudo Desert Cave of Ordeals Plateau",
-        "Requirements": "(Progressive_Clawshot, 1)"
+        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatShadowBeast"
       },
       {
         "ExitName": "Gerudo Desert Basin",
@@ -169,12 +169,12 @@
     "Exits":
     [
       {
-        "ExitName": "Gerudo Desert Outside Bulblin Camp",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "Bulblin Camp Back Entrance",
         "Requirements": "(Gerudo_Desert_Bulblin_Camp_Key or (Setting.smallKeySettings equals Keysy)) and CanDefeatKingBulblinDesert"
+      },
+      {
+        "ExitName": "Gerudo Desert Outside Bulblin Camp",
+        "Requirements": "true"
       }
     ],
     "Checks":

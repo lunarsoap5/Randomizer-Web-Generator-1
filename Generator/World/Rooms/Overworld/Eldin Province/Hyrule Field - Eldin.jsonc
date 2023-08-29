@@ -96,7 +96,7 @@
       },
       {
         "ExitName": "Eldin Field Near Castle Town",
-        "Requirements": "Room.Kakariko_Village_Malo_Mart and Room.Lower_Kakariko_Village"
+        "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village"
       },
       {
         "ExitName": "Eldin Field Lava Cave Ledge",

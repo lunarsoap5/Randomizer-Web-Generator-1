@@ -51,15 +51,15 @@
         "Requirements": "true"
       },
       {
+        "ExitName": "Castle Town North",
+        "Requirements": "true"
+      },
+      {
         "ExitName": "Castle Town East",
         "Requirements": "true"
       },
       {
         "ExitName": "Castle Town South",
-        "Requirements": "true"
-      },
-      {
-        "ExitName": "Castle Town North",
         "Requirements": "true"
       },
       {
@@ -174,6 +174,26 @@
     "Region": "Castle Town"
   },
   {
+    "RoomName": "Castle Town North",
+    "Exits":
+    [
+      {
+        "ExitName": "Castle Town Center",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Hyrule Castle Entrance",
+        "Requirements": "((Setting.castleRequirements equals Open) or ((Setting.castleRequirements equals Vanilla) and canCompletePalaceofTwilight) or ((Setting.castleRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.castleRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 3)) or ((Setting.castleRequirements equals All_Dungeons) and canCompleteAllDungeons) and CanCompleteMDH)"
+      }
+      // would probably split it into outside barrier and inside barrier rooms if HC is also going to be shuffled
+    ],
+    "Checks":
+    [
+        "North Castle Town Golden Wolf"
+    ],
+    "Region": "Castle Town"
+  },
+  {
     "RoomName": "Castle Town East",
     "Exits":
     [
@@ -206,11 +226,11 @@
     "Exits":
     [
       {
-        "ExitName": "Castle Town Doctors Office Outside Upper Entrance",
+        "ExitName": "Castle Town East",
         "Requirements": "true"
       },
       {
-        "ExitName": "Castle Town East",
+        "ExitName": "Castle Town Doctors Office Outside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -277,7 +297,7 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "Castle Town Doctors Office Lower",
+        "ExitName": "Castle Town Doctors Office Entrance",
         "Requirements": "true"
       }
     ],
@@ -293,7 +313,7 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "Castle Town Doctors Office Lower",
+        "ExitName": "Castle Town Doctors Office Entrance",
         "Requirements": "true"
       }
     ],
@@ -317,7 +337,7 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Lower",
+    "RoomName": "Castle Town Doctors Office Entrance",
     "Exits":
     [
       {
@@ -329,11 +349,27 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "Castle Town Doctors Office Upper",
+        "ExitName": "Castle Town Doctors Office Lower",
         "Requirements": "Invoice"
       }
     ],
     "Checks": [""],
+    "Region": "Castle Town"
+  },
+  {
+    "RoomName": "Castle Town Doctors Office Lower",
+    "Exits":
+    [
+      {
+        "ExitName": "Castle Town Doctors Office Entrance",
+        "Requirements": "Invoice"
+      },
+      {
+        "ExitName": "Castle Town Doctors Office Upper",
+        "Requirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [""], // scent does belong to this room if it gets a check one day
     "Region": "Castle Town"
   },
   {
@@ -342,14 +378,14 @@
     [
       {
         "ExitName": "Castle Town Doctors Office Lower",
-        "Requirements": "Invoice" // i think??
+        "Requirements": "true"
       },
       {
         "ExitName": "Castle Town Doctors Office Inside Upper Entrance",
         "Requirements": "true"
       }
     ],
-    "Checks": [""], // scent does belong to this room if it gets a check one day
+    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -524,26 +560,6 @@
     "Checks":
     [
         "Telma Invoice"
-    ],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town North",
-    "Exits":
-    [
-      {
-        "ExitName": "Castle Town Center",
-        "Requirements": "true"
-      },
-      {
-        "ExitName": "Hyrule Castle Entrance",
-        "Requirements": "((Setting.castleRequirements equals Open) or ((Setting.castleRequirements equals Vanilla) and canCompletePalaceofTwilight) or ((Setting.castleRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.castleRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 3)) or ((Setting.castleRequirements equals All_Dungeons) and canCompleteAllDungeons) and CanCompleteMDH)"
-      }
-      // would probably split it into outside barrier and inside barrier rooms if HC is also going to be shuffled
-    ],
-    "Checks":
-    [
-        "North Castle Town Golden Wolf"
     ],
     "Region": "Castle Town"
   }

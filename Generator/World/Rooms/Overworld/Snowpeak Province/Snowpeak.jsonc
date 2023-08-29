@@ -4,12 +4,12 @@
     "Exits":
     [
       {
-        "ExitName": "Zoras Domain",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "Snowpeak Climb Upper",
         "Requirements": "((Setting.skipSnowpeakEntrance equals True) or (Room.Zoras_Domain and (Progressive_Fishing_Rod, 2))) and Shadow_Crystal"
+      },
+      {
+        "ExitName": "Zoras Domain",
+        "Requirements": "true"
       }
     ],
     "Checks":
@@ -79,12 +79,12 @@
     "Exits":
     [
       {
-        "ExitName": "Snowpeak Climb Upper",
-        "Requirements": "Shadow_Crystal"
-      },
-      {
         "ExitName": "Snowpeak Summit Lower",
         "Requirements": "true"
+      },
+      {
+        "ExitName": "Snowpeak Climb Upper",
+        "Requirements": "Shadow_Crystal"
       }
     ],
     "Checks":

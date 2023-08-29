@@ -4,12 +4,12 @@
     "Exits":
     [
       {
-        "ExitName": "South Faron Woods",
-        "Requirements": "true"
-      },
-      {
         "ExitName": "Faron Field Behind Boulder",
         "Requirements": "Room.Outside_Castle_Town_South and HasBottle"
+      },
+      {
+        "ExitName": "South Faron Woods",
+        "Requirements": "true"
       },
       {
         "ExitName": "Kakariko Gorge",
