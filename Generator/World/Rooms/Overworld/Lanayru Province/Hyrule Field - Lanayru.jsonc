@@ -4,10 +4,6 @@
     "Exits":
     [
       {
-        "ExitName": "Eldin Field",
-        "Requirements": "canSmash"
-      },
-      {
         "ExitName": "Eldin Field Grotto Platform",
         "Requirements": "Spinner"
       },
@@ -24,6 +20,10 @@
         "Requirements": "canSmash"
       },
       {
+        "ExitName": "Eldin Field",
+        "Requirements": "canSmash"
+      },
+      {
         "ExitName": "Outside Castle Town West",
         "Requirements": "true"
       },
@@ -32,15 +32,15 @@
         "Requirements": "canSmash"
       },
       {
+        "ExitName": "Lanayru Field Chu Grotto",
+        "Requirements": "Shadow_Crystal"
+      },
+      {
         "ExitName": "Lanayru Field Skulltula Grotto",
         "Requirements": "Shadow_Crystal"
       },
       {
         "ExitName": "Lanayru Field Poe Grotto",
-        "Requirements": "Shadow_Crystal"
-      },
-      {
-        "ExitName": "Lanayru Field Chu Grotto",
         "Requirements": "Shadow_Crystal"
       }
     ],
@@ -159,11 +159,11 @@
         "Requirements": "true"
       },
       {
-        "ExitName": "Lake Hylia Bridge",
+        "ExitName": "Castle Town West",
         "Requirements": "true"
       },
       {
-        "ExitName": "Castle Town West",
+        "ExitName": "Lake Hylia Bridge",
         "Requirements": "true"
       }
     ],
@@ -191,7 +191,7 @@
         "Requirements": "Shadow_Crystal"
       }
     ],
-    "Checks": [""], // butterfly?
+    "Checks": [""],
     "Region": "Hyrule Field - Lanayru"
   },
   {
@@ -238,14 +238,14 @@
       },
       {
         "ExitName": "Faron Field Behind Boulder",
-        "Requirements": "HasBottle" // correct syntax for the bottle?
+        "Requirements": "HasBottle"
       },
       {
         "ExitName": "Lake Hylia",
         "Requirements": "true"
       },
       {
-        "ExitName": "Outside South Castle Town Tektite Grotto",
+        "ExitName": "Outside Castle Town South Tektite Grotto",
         "Requirements": "Shadow_Crystal"
       }
     ],
@@ -268,18 +268,18 @@
     [
       {
         "ExitName": "Outside Castle Town South",
-        "Requirements": "Room.Outside_Castle_Town_South and HasBottle" // correct syntax for the bottle?
+        "Requirements": "Room.Outside_Castle_Town_South and HasBottle"
       },
       {
         "ExitName": "Faron Field Behind Boulder",
-        "Requirements": "Room.Outside_Castle_Town_South and HasBottle" // correct syntax for the bottle?
+        "Requirements": "Room.Outside_Castle_Town_South and HasBottle"
       }
     ],
     "Checks": [""],
     "Region": "Hyrule Field - Lanayru"
   },
   {
-    "RoomName": "Outside South Castle Town Tektite Grotto",
+    "RoomName": "Outside Castle Town South Tektite Grotto",
     "Exits":
     [
       {
@@ -298,6 +298,10 @@
     "Exits":
     [
       {
+        "ExitName": "Lake Hylia Bridge Grotto Ledge",
+        "Requirements": "hasBombs and (Boomerang or (Progressive_Bow, 1)) and (Progressive_Clawshot, 1)"
+      },
+      {
         "ExitName": "Hyrule Field Near Spinner Rails",
         "Requirements": "canSmash"
       },
@@ -312,10 +316,6 @@
       {
         "ExitName": "Faron Field",
         "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)"
-      },
-      {
-        "ExitName": "Lake Hylia Bridge Grotto Ledge",
-        "Requirements": "hasBombs and (Boomerang or (Progressive_Bow, 1)) and (Progressive_Clawshot, 1)"
       }
     ],
     "Checks":
