@@ -182,7 +182,7 @@
       },
       {
         "ExitName": "Mist Area Near North Faron Woods",
-        "Requirements": "true"
+        "Requirements": "Lantern"
       }
     ],
     "Checks":
