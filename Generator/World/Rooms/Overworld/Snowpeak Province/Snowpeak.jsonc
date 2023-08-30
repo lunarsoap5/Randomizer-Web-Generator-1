@@ -80,7 +80,7 @@
     [
       {
         "ExitName": "Snowpeak Summit Lower",
-        "Requirements": "true"
+        "Requirements": "CanDefeatShadowBeast"
       },
       {
         "ExitName": "Snowpeak Climb Upper",
