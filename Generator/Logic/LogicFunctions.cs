@@ -121,7 +121,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Gerudo Desert North East Ledge"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Gerudo Desert Outside Bulblin Camp"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Arbiters Grounds"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Mirror Chamber"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Mirror Chamber"].ReachedByPlaythrough;
         }
 
         /// <summary>
