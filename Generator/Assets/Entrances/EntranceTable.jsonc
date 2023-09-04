@@ -189,7 +189,7 @@
         "SourceRoomSpawn":
         {
             "SourceRoom": "Lost Woods Upper Battle Arena",
-            "TargetRoom": "Sacred Grove Upper",
+            "TargetRoom": "Sacred Grove Before Block",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -198,7 +198,7 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Sacred Grove Upper",
+            "SourceRoom": "Sacred Grove Before Block",
             "TargetRoom": "Lost Woods Upper Battle Arena",
             "Stage": 52,
             "Room": 0,
