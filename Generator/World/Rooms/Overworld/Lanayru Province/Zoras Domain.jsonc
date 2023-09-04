@@ -16,7 +16,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Upper Zoras River Fishing Hole",
+        "ConnectedArea": "Fishing Hole",
         "Requirements": "true"
       },
       {
@@ -29,38 +29,6 @@
         "Upper Zoras River Female Dragonfly",
         "Upper Zoras River Poe"
     ],
-    "Region": "Zoras Domain"
-  },
-  {
-    "RoomName": "Upper Zoras River Fishing Hole",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Upper Zoras River",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Upper Zoras River Fishing Hole House",
-        "Requirements": "true"
-      }
-    ],
-    "Checks":
-    [
-        "Fishing Hole Heart Piece",
-        "Fishing Hole Bottle"
-    ],
-    "Region": "Zoras Domain"
-  },
-  {
-    "RoomName": "Upper Zoras River Fishing Hole House",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Upper Zoras River Fishing Hole",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
     "Region": "Zoras Domain"
   },
   {
@@ -81,6 +49,38 @@
         "Iza Helping Hand",
         "Iza Raging Rapids Minigame"
     ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Fishing Hole",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Upper Zoras River",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Fishing Hole House",
+        "Requirements": "true"
+      }
+    ],
+    "Checks":
+    [
+        "Fishing Hole Heart Piece",
+        "Fishing Hole Bottle"
+    ],
+    "Region": "Zoras Domain"
+  },
+  {
+    "RoomName": "Fishing Hole House",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Fishing Hole",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
     "Region": "Zoras Domain"
   },
   {
