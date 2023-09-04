@@ -3,8 +3,8 @@
         "Type": "Dungeon",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Lake Hylia",
-            "TargetRoom": "Lakebed Temple",
+            "SourceRoom": "Lake Hylia Lakebed Temple Entrance",
+            "TargetRoom": "Lakebed Temple Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -13,8 +13,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Lakebed Temple",
-            "TargetRoom": "Lake Hylia",
+            "SourceRoom": "Lakebed Temple Entrance",
+            "TargetRoom": "Lake Hylia Lakebed Temple Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -26,8 +26,8 @@
         "Type": "Dungeon",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Death Mountain Sumo Hall",
-            "TargetRoom": "Goron Mines",
+            "SourceRoom": "Death Mountain Sumo Hall Goron Mines Tunnel",
+            "TargetRoom": "Goron Mines Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -36,8 +36,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Goron Mines",
-            "TargetRoom": "Death Mountain Sumo Hall From Goron Mines",
+            "SourceRoom": "Goron Mines Entrance",
+            "TargetRoom": "Death Mountain Sumo Hall Goron Mines Tunnel",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
