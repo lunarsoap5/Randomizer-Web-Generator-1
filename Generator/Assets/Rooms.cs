@@ -47,7 +47,8 @@ namespace TPRandomizer
 
     public class RoomExit
     {
-        public string ConnectedAreas { get; set; }
+        public string ConnectedArea { get; set; }
+        public string Requirements { get; set; }
     }
 
     /// <summary>
