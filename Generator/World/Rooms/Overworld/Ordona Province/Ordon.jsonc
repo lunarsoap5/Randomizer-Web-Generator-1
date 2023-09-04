@@ -48,7 +48,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Ordon Sera Shop",
+        "ConnectedArea": "Ordon Seras Shop",
         "Requirements": "CanChangeTime"
       },
       {
@@ -75,7 +75,7 @@
     "Region": "Ordon"
   },
   {
-    "RoomName": "Ordon Sera Shop",
+    "RoomName": "Ordon Seras Shop",
     "Exits":
     [
       {
@@ -86,7 +86,7 @@
     "Checks":
     [
         "Ordon Cat Rescue",
-        "Sera Shop Slingshot"
+        "Seras Shop Slingshot"
     ],
     "Region": "Ordon"
   },
