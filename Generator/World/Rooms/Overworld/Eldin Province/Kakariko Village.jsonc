@@ -1,79 +1,79 @@
 [
   {
-      "RoomName": "Lower Kakariko Village",
-      "Exits":
-      [
-        {
-          "ExitName": "Upper Kakariko Village",
-          "Requirements": "canCompleteGoronMines"
-        },
-        {
-          "ExitName": "Upper Kakariko Village With Cucco",
-          "Requirements": "canSmash"
-        },
-        {
-          "ExitName": "Kakariko Village Behind Gate",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Gorge Behind Gate",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Graveyard",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Death Mountain Near Kakariko",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Renados Sanctuary Outside Front Left Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Renados Sanctuary Outside Front Right Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Renados Sanctuary Outside Back Left Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Renados Sanctuary Outside Back Right Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Malo Mart",
-          "Requirements": "CanChangeTime"
-        },
-        {
-          "ExitName": "Kakariko Elde Inn Outside Left Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Elde Inn Outside Right Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Bug House Outside Door",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Bug House Outside Ceiling Hole",
-          "Requirements": "true"
-        },
-        {
-          "ExitName": "Kakariko Barnes Bomb Shop Outside Door",
-          "Requirements": "true"
-        }
-      ],
-      "Checks":
-      [
-          "Eldin Spring Underwater Chest",
-          "Kakariko Village Bomb Rock Spire Heart Piece"
-      ],
-      "Region": "Kakariko Village"
+    "RoomName": "Lower Kakariko Village",
+    "Exits":
+    [
+      {
+        "ExitName": "Upper Kakariko Village",
+        "Requirements": "canCompleteGoronMines"
+      },
+      {
+        "ExitName": "Upper Kakariko Village With Cucco",
+        "Requirements": "canSmash"
+      },
+      {
+        "ExitName": "Kakariko Village Behind Gate",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Gorge Behind Gate",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Graveyard",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Death Mountain Near Kakariko",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Renados Sanctuary Outside Front Left Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Renados Sanctuary Outside Front Right Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Renados Sanctuary Outside Back Left Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Renados Sanctuary Outside Back Right Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Malo Mart",
+        "Requirements": "CanChangeTime"
+      },
+      {
+        "ExitName": "Kakariko Elde Inn Outside Left Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Elde Inn Outside Right Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Bug House Outside Door",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Bug House Outside Ceiling Hole",
+        "Requirements": "true"
+      },
+      {
+        "ExitName": "Kakariko Barnes Bomb Shop Outside Door",
+        "Requirements": "true"
+      }
+    ],
+    "Checks":
+    [
+        "Eldin Spring Underwater Chest",
+        "Kakariko Village Bomb Rock Spire Heart Piece"
+    ],
+    "Region": "Kakariko Village"
   },
   {
     "RoomName": "Upper Kakariko Village",
