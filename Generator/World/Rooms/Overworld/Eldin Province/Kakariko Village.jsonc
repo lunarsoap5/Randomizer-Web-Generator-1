@@ -4,67 +4,67 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "canCompleteGoronMines"
       },
       {
-        "ExitName": "Upper Kakariko Village With Cucco",
+        "ConnectedArea": "Upper Kakariko Village With Cucco",
         "Requirements": "canSmash"
       },
       {
-        "ExitName": "Kakariko Village Behind Gate",
+        "ConnectedArea": "Kakariko Village Behind Gate",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Gorge Behind Gate",
+        "ConnectedArea": "Kakariko Gorge Behind Gate",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Graveyard",
+        "ConnectedArea": "Kakariko Graveyard",
         "Requirements": "true"
       },
       {
-        "ExitName": "Death Mountain Near Kakariko",
+        "ConnectedArea": "Death Mountain Near Kakariko",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Front Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Front Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Front Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Front Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Back Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Back Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Back Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Back Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Malo Mart",
+        "ConnectedArea": "Kakariko Malo Mart",
         "Requirements": "CanChangeTime"
       },
       {
-        "ExitName": "Kakariko Elde Inn Outside Left Door",
+        "ConnectedArea": "Kakariko Elde Inn Outside Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Elde Inn Outside Right Door",
+        "ConnectedArea": "Kakariko Elde Inn Outside Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Bug House Outside Door",
+        "ConnectedArea": "Kakariko Bug House Outside Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Bug House Outside Ceiling Hole",
+        "ConnectedArea": "Kakariko Bug House Outside Ceiling Hole",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Outside Door",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Outside Door",
         "Requirements": "true"
       }
     ],
@@ -80,23 +80,23 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Top of Watchtower",
+        "ConnectedArea": "Kakariko Top of Watchtower",
         "Requirements": "canCompleteGoronMines"
       },
       {
-        "ExitName": "Kakariko Watchtower Outside Lower Door",
+        "ConnectedArea": "Kakariko Watchtower Outside Lower Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Outside Dig Spot",
+        "ConnectedArea": "Kakariko Watchtower Outside Dig Spot",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -112,7 +112,7 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true"
       }
     ],
@@ -127,11 +127,11 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Outside Upper Door",
+        "ConnectedArea": "Kakariko Watchtower Outside Upper Door",
         "Requirements": "true"
       }
     ],
@@ -146,11 +146,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "(Gate_Keys or (Setting.smallKeySettings equals Keysy))" // or access to epona
       },
       {
-        "ExitName": "Eldin Field",
+        "ConnectedArea": "Eldin Field",
         "Requirements": "true"
       }
     ],
@@ -162,11 +162,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Front Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Front Left Door",
         "Requirements": "true"
       }
     ],
@@ -178,11 +178,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Front Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Front Right Door",
         "Requirements": "true"
       }
     ],
@@ -194,11 +194,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Back Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Left Door",
         "Requirements": "true"
       }
     ],
@@ -210,11 +210,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Back Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Right Door",
         "Requirements": "true"
       }
     ],
@@ -226,11 +226,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Front Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Front Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kakariko Renados Sanctuary",
         "Requirements": "true"
       }
     ],
@@ -242,11 +242,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Front Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Front Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kakariko Renados Sanctuary",
         "Requirements": "true"
       }
     ],
@@ -258,11 +258,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Back Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Back Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kakariko Renados Sanctuary",
         "Requirements": "true"
       }
     ],
@@ -274,11 +274,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Renados Sanctuary Outside Back Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Outside Back Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary",
+        "ConnectedArea": "Kakariko Renados Sanctuary",
         "Requirements": "true"
       }
     ],
@@ -290,19 +290,19 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Front Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Front Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Front Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Front Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Back Left Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Renados Sanctuary Inside Back Right Door",
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Right Door",
         "Requirements": "true"
       }
     ],
@@ -318,7 +318,7 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       }
     ],
@@ -334,11 +334,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Elde Inn Inside Left Door",
+        "ConnectedArea": "Kakariko Elde Inn Inside Left Door",
         "Requirements": "CanChangeTime"
       }
     ],
@@ -350,11 +350,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Elde Inn Inside Right Door",
+        "ConnectedArea": "Kakariko Elde Inn Inside Right Door",
         "Requirements": "CanChangeTime"
       }
     ],
@@ -366,11 +366,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Elde Inn Outside Left Door",
+        "ConnectedArea": "Kakariko Elde Inn Outside Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Elde Inn",
+        "ConnectedArea": "Kakariko Elde Inn",
         "Requirements": "true"
       }
     ],
@@ -382,11 +382,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Elde Inn Outside Right Door",
+        "ConnectedArea": "Kakariko Elde Inn Outside Right Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Elde Inn",
+        "ConnectedArea": "Kakariko Elde Inn",
         "Requirements": "true"
       }
     ],
@@ -398,11 +398,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Elde Inn Inside Left Door",
+        "ConnectedArea": "Kakariko Elde Inn Inside Left Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Elde Inn Inside Right Door",
+        "ConnectedArea": "Kakariko Elde Inn Inside Right Door",
         "Requirements": "true"
       }
     ],
@@ -417,11 +417,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Bug House Inside Door",
+        "ConnectedArea": "Kakariko Bug House Inside Door",
         "Requirements": "true"
       }
     ],
@@ -433,11 +433,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Bug House Inside Ceiling Hole",
+        "ConnectedArea": "Kakariko Bug House Inside Ceiling Hole",
         "Requirements": "true"
       }
     ],
@@ -449,11 +449,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Bug House Outside Door",
+        "ConnectedArea": "Kakariko Bug House Outside Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Bug House",
+        "ConnectedArea": "Kakariko Bug House",
         "Requirements": "true"
       }
     ],
@@ -465,11 +465,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Bug House Outside Ceiling Hole",
+        "ConnectedArea": "Kakariko Bug House Outside Ceiling Hole",
         "Requirements": "Shadow_Crystal"
       },
       {
-        "ExitName": "Kakariko Bug House",
+        "ConnectedArea": "Kakariko Bug House",
         "Requirements": "true"
       }
     ],
@@ -481,11 +481,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Bug House Inside Door",
+        "ConnectedArea": "Kakariko Bug House Inside Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Bug House Inside Ceiling Hole",
+        "ConnectedArea": "Kakariko Bug House Inside Ceiling Hole",
         "Requirements": "true"
       }
     ],
@@ -500,11 +500,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Inside Door",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Inside Door",
         "Requirements": "true"
       }
     ],
@@ -516,11 +516,11 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -532,11 +532,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Outside Door",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Outside Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop",
         "Requirements": "true"
       }
     ],
@@ -548,11 +548,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop",
         "Requirements": "true"
       }
     ],
@@ -564,11 +564,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Inside Door",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Inside Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -583,11 +583,11 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Inside Lower Door",
+        "ConnectedArea": "Kakariko Watchtower Inside Lower Door",
         "Requirements": "true"
       }
     ],
@@ -599,11 +599,11 @@
     "Exits":
     [
       {
-        "ExitName": "Upper Kakariko Village",
+        "ConnectedArea": "Upper Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Inside Dig Spot",
+        "ConnectedArea": "Kakariko Watchtower Inside Dig Spot",
         "Requirements": "Shadow_Crystal"
       }
     ],
@@ -615,11 +615,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Top of Watchtower",
+        "ConnectedArea": "Kakariko Top of Watchtower",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Inside Upper Door",
+        "ConnectedArea": "Kakariko Watchtower Inside Upper Door",
         "Requirements": "true"
       }
     ],
@@ -631,11 +631,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Watchtower Outside Lower Door",
+        "ConnectedArea": "Kakariko Watchtower Outside Lower Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower",
+        "ConnectedArea": "Kakariko Watchtower",
         "Requirements": "true"
       }
     ],
@@ -647,11 +647,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Watchtower Outside Dig Spot",
+        "ConnectedArea": "Kakariko Watchtower Outside Dig Spot",
         "Requirements": "Shadow_Crystal"
       },
       {
-        "ExitName": "Kakariko Watchtower",
+        "ConnectedArea": "Kakariko Watchtower",
         "Requirements": "true"
       }
     ],
@@ -663,11 +663,11 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Watchtower Outside Upper Door",
+        "ConnectedArea": "Kakariko Watchtower Outside Upper Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower",
+        "ConnectedArea": "Kakariko Watchtower",
         "Requirements": "true"
       }
     ],
@@ -679,15 +679,15 @@
     "Exits":
     [
       {
-        "ExitName": "Kakariko Watchtower Inside Lower Door",
+        "ConnectedArea": "Kakariko Watchtower Inside Lower Door",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Inside Dig Spot",
+        "ConnectedArea": "Kakariko Watchtower Inside Dig Spot",
         "Requirements": "true"
       },
       {
-        "ExitName": "Kakariko Watchtower Inside Upper Door",
+        "ConnectedArea": "Kakariko Watchtower Inside Upper Door",
         "Requirements": "true"
       },
     ],
@@ -702,11 +702,11 @@
     "Exits":
     [
       {
-        "ExitName": "Lower Kakariko Village",
+        "ConnectedArea": "Lower Kakariko Village",
         "Requirements": "true"
       },
       {
-        "ExitName": "Lake Hylia",
+        "ConnectedArea": "Lake Hylia",
         "Requirements": "(Gate_Keys or (Setting.smallKeySettings equals Keysy)) and Iron_Boots and CanUseWaterBombs"
       }
     ],
