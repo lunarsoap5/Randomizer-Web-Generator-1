@@ -6,7 +6,7 @@
         {
             "SourceRoom": "Outside Links House",
             "TargetRoom": "Ordon Village",
-            "Stage": F_SP103,
+            "Stage": 52,
             "Room": 0,
             "Spawn": "0x01",
             "SpawnType": "0x50",
@@ -16,7 +16,7 @@
         {
             "SourceRoom": "Ordon Village",
             "TargetRoom": "Outside Links House",
-            "Stage": F_SP103,
+            "Stage": 52,
             "Room": 1,
             "Spawn": "0x08",
             "SpawnType": "0x00",
@@ -29,7 +29,7 @@
         {
             "SourceRoom": "Ordon Village",
             "TargetRoom": "Ordon Ranch Entrance",
-            "Stage": F_SP00,
+            "Stage": 52,
             "Room": 0,
             "Spawn": "0x01",
             "SpawnType": "0x50",
@@ -39,7 +39,7 @@
         {
             "SourceRoom": "Ordon Ranch Entrance",
             "TargetRoom": "Ordon Village",
-            "Stage": F_SP103,
+            "Stage": 52,
             "Room": 0,
             "Spawn": "0x02",
             "SpawnType": "0x00",
