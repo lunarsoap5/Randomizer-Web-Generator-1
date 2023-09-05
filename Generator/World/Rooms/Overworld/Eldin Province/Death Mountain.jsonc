@@ -49,7 +49,7 @@
       },
       {
         "ConnectedArea": "Death Mountain Elevator Lower",
-        "Requirements": "Room.Death_Mountain_Elevator or (Setting.goronMinesEntrance equals Open)"
+        "Requirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)"
       }
     ],
     "Checks": [""],
