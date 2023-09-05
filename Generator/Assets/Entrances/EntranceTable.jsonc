@@ -2820,7 +2820,7 @@
             "SpawnType": "D0",
             "Parameters": "F01F"
         }
-    }
+    },
 	// Boss Room Second Exit
     {
         "Type": "Boss Room Second Exit",
