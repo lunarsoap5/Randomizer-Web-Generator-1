@@ -2352,7 +2352,7 @@
         "SourceRoomSpawn":
         {
             "SourceRoom": "Outside Castle Town South",
-            "TargetRoom": "Outside Castle Town Tektite Grotto",
+            "TargetRoom": "Outside Castle Town South Tektite Grotto",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -2361,7 +2361,7 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Outside Castle Town Tektite Grotto",
+            "SourceRoom": "Outside Castle Town South Tektite Grotto",
             "TargetRoom": "Outside Castle Town South",
             "Stage": 52,
             "Room": 0,
@@ -2398,7 +2398,7 @@
         "SourceRoomSpawn":
         {
             "SourceRoom": "Lake Hylia",
-            "TargetRoom": "Lake Hylia Shellblade Grotto",
+            "TargetRoom": "Lake Hylia Shell Blade Grotto",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -2407,7 +2407,7 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Lake Hylia Shellblade Grotto",
+            "SourceRoom": "Lake Hylia Shell Blade Grotto",
             "TargetRoom": "Lake Hylia",
             "Stage": 52,
             "Room": 0,
@@ -2499,8 +2499,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Gerudo Desert North East Ledge",
-            "TargetRoom": "Gerudo Desert Rock Grotto",
+            "SourceRoom": "Gerudo Desert Rock Grotto",
+            "TargetRoom": "Gerudo Desert North East Ledge",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
