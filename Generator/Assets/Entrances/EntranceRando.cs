@@ -266,6 +266,12 @@ namespace TPRandomizer
                 reverseEntrances.Add(
                     Randomizer.EntranceRandomizer.EntranceTable[entrance].ReverseEntrance
                 );
+                // DEBUG
+                Console.WriteLine(
+                    "Entrance: "
+                        + Randomizer.EntranceRandomizer.EntranceTable[entrance].ReverseEntrance
+                        + " is a reverse entrance!"
+                );
             }
 
             return reverseEntrances;
