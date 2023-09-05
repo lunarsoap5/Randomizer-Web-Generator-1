@@ -2005,7 +2005,7 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Gerudo Desert",
+            "SourceRoom": "Gerudo Desert Cave of Ordeals Plateau",
             "TargetRoom": "Gerudo Desert Cave of Ordeals Floors 01-11",
             "Stage": 52,
             "Room": 0,
@@ -2016,7 +2016,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Gerudo Desert Cave of Ordeals Floors 01-11",
-            "TargetRoom": "Gerudo Desert",
+            "TargetRoom": "Gerudo Desert Cave of Ordeals Plateau",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -2339,7 +2339,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Outside Castle Town West Helmasaur Grotto",
-            "TargetRoom": "Outside Castle Town Grotto Ledge",
+            "TargetRoom": "Outside Castle Town West Grotto Ledge",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
