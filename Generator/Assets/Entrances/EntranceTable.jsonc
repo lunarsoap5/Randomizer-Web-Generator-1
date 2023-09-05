@@ -9,7 +9,7 @@
             "Stage": F_SP103,
             "Room": 0,
             "Spawn": "0x01",
-            "Type": "0x50",
+            "SpawnType": "0x50",
             "Parameters": "0xF09F"
         },
         "TargetRoomSpawn":
@@ -19,7 +19,7 @@
             "Stage": F_SP103,
             "Room": 1,
             "Spawn": "0x08",
-            "Type": "0x00",
+            "SpawnType": "0x00",
             "Parameters": "0xF01F"
         }
     },
@@ -32,7 +32,7 @@
             "Stage": F_SP00,
             "Room": 0,
             "Spawn": "0x01",
-            "Type": "0x50",
+            "SpawnType": "0x50",
             "Parameters": "0xF09F"
         },
         "TargetRoomSpawn":
@@ -42,7 +42,7 @@
             "Stage": F_SP103,
             "Room": 0,
             "Spawn": "0x02",
-            "Type": "0x00",
+            "SpawnType": "0x00",
             "Parameters": "0xF01F"
         }
     },
@@ -55,7 +55,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -65,7 +65,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -78,7 +78,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -88,7 +88,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -101,7 +101,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -111,7 +111,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -124,7 +124,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -134,7 +134,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -147,7 +147,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -157,7 +157,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -170,7 +170,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -180,7 +180,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -193,7 +193,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -203,7 +203,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -216,7 +216,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -226,7 +226,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -239,7 +239,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -249,7 +249,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -262,7 +262,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -272,7 +272,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -285,7 +285,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -295,7 +295,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -308,7 +308,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -318,7 +318,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -331,7 +331,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -341,7 +341,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -354,7 +354,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -364,7 +364,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -377,7 +377,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -387,7 +387,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -400,7 +400,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -410,7 +410,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -423,7 +423,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -433,7 +433,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -446,7 +446,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -456,7 +456,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -469,7 +469,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -479,7 +479,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -492,7 +492,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -502,7 +502,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -515,7 +515,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -525,7 +525,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -538,7 +538,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -548,7 +548,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -561,7 +561,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -571,7 +571,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -584,7 +584,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -594,7 +594,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -607,7 +607,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -617,7 +617,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -630,7 +630,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -640,7 +640,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -653,7 +653,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -663,7 +663,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -676,7 +676,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -686,7 +686,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -699,7 +699,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -709,7 +709,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -722,7 +722,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -732,7 +732,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -745,7 +745,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -755,7 +755,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -768,7 +768,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -778,7 +778,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -791,7 +791,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -801,7 +801,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -814,7 +814,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -824,7 +824,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -837,7 +837,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -847,7 +847,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -860,7 +860,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -870,7 +870,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -884,7 +884,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -897,7 +897,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -910,7 +910,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -923,7 +923,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -937,7 +937,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -947,7 +947,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -960,7 +960,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -970,7 +970,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -983,7 +983,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -993,7 +993,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1006,7 +1006,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1016,7 +1016,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1029,7 +1029,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1039,7 +1039,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1052,7 +1052,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1062,7 +1062,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1075,7 +1075,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1085,7 +1085,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1098,7 +1098,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1108,7 +1108,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1121,7 +1121,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1131,7 +1131,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1144,7 +1144,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1154,7 +1154,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1167,7 +1167,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1177,7 +1177,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1190,7 +1190,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1200,7 +1200,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1213,7 +1213,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1223,7 +1223,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1236,7 +1236,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1246,7 +1246,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1259,7 +1259,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1269,7 +1269,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1282,7 +1282,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1292,7 +1292,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1305,7 +1305,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1315,7 +1315,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1328,7 +1328,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1338,7 +1338,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1351,7 +1351,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1361,7 +1361,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1374,7 +1374,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1384,7 +1384,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1397,7 +1397,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1407,7 +1407,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1420,7 +1420,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1430,7 +1430,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1443,7 +1443,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1453,7 +1453,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1466,7 +1466,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1476,7 +1476,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1489,7 +1489,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1499,7 +1499,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1512,7 +1512,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1522,7 +1522,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1535,7 +1535,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1545,7 +1545,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1558,7 +1558,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1568,7 +1568,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1581,7 +1581,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1591,7 +1591,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1604,7 +1604,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1614,7 +1614,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1627,7 +1627,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1637,7 +1637,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1650,7 +1650,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1660,7 +1660,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1673,7 +1673,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1683,7 +1683,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1696,7 +1696,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1706,7 +1706,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
 	},
@@ -1719,7 +1719,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1729,7 +1729,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
 	},
@@ -1742,7 +1742,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1752,7 +1752,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1765,7 +1765,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1775,7 +1775,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1789,7 +1789,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1803,7 +1803,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1813,7 +1813,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1826,7 +1826,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1836,7 +1836,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1849,7 +1849,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1859,7 +1859,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1872,7 +1872,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1882,7 +1882,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1895,7 +1895,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1905,7 +1905,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1918,7 +1918,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1928,7 +1928,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1941,7 +1941,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1951,7 +1951,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -1964,7 +1964,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1974,7 +1974,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
 	},
@@ -1987,7 +1987,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -1997,7 +1997,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2010,7 +2010,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2020,7 +2020,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2034,7 +2034,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2044,7 +2044,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2057,7 +2057,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2067,7 +2067,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2080,7 +2080,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2090,7 +2090,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2103,7 +2103,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2113,7 +2113,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2126,7 +2126,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2136,7 +2136,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2149,7 +2149,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2159,7 +2159,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2172,7 +2172,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2182,7 +2182,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2195,7 +2195,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2205,7 +2205,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2218,7 +2218,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2228,7 +2228,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2241,7 +2241,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2251,7 +2251,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2264,7 +2264,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2274,7 +2274,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2287,7 +2287,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2297,7 +2297,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2310,7 +2310,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2320,7 +2320,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2333,7 +2333,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2343,7 +2343,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2356,7 +2356,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2366,7 +2366,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2379,7 +2379,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2389,7 +2389,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2402,7 +2402,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2412,7 +2412,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2425,7 +2425,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2435,7 +2435,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2448,7 +2448,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2458,7 +2458,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2471,7 +2471,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2481,7 +2481,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2494,7 +2494,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2504,7 +2504,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2518,7 +2518,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2528,7 +2528,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2541,7 +2541,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2551,7 +2551,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"           
         }
     },
@@ -2564,7 +2564,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2574,7 +2574,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2587,7 +2587,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2597,7 +2597,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2610,7 +2610,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2620,7 +2620,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2633,7 +2633,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2643,7 +2643,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2656,7 +2656,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2666,7 +2666,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2679,7 +2679,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2689,7 +2689,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2702,7 +2702,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2712,7 +2712,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2726,7 +2726,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2739,7 +2739,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2752,7 +2752,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2765,7 +2765,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2778,7 +2778,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2791,7 +2791,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2804,7 +2804,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     },
@@ -2817,7 +2817,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     }
@@ -2831,7 +2831,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         },
         "TargetRoomSpawn":
@@ -2841,7 +2841,7 @@
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
-            "Type": "D0",
+            "SpawnType": "D0",
             "Parameters": "F01F"
         }
     }
