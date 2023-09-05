@@ -217,7 +217,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Eldin Field Lava Cave Upper",
+        "ConnectedArea": "Eldin Field Lava Cave Inside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -233,7 +233,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Eldin Field Lava Cave Lower",
+        "ConnectedArea": "Eldin Field Lava Cave Inside Lower Entrance",
         "Requirements": "true"
       }
     ],
