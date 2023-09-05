@@ -88,15 +88,15 @@
         "Requirements": "canCompleteGoronMines"
       },
       {
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
+        "Requirements": "true"
+      },
+      {
         "ConnectedArea": "Kakariko Watchtower Outside Lower Door",
         "Requirements": "true"
       },
       {
         "ConnectedArea": "Kakariko Watchtower Outside Dig Spot",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
         "Requirements": "true"
       }
     ],
