@@ -12,6 +12,10 @@
         "Requirements": "Room.Kakariko_Renados_Sanctuary and Wooden_Statue"
       },
       {
+        "ConnectedArea": "Lanayru Field Cave Entrance",
+        "Requirements": "canSmash"
+      },
+      {
         "ConnectedArea": "Lanayru Field Behind Boulder",
         "Requirements": "canSmash"
       },
@@ -26,10 +30,6 @@
       {
         "ConnectedArea": "Outside Castle Town West",
         "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Lanayru Ice Puzzle Cave",
-        "Requirements": "canSmash"
       },
       {
         "ConnectedArea": "Lanayru Field Chu Grotto",
@@ -52,6 +52,22 @@
         "Lanayru Field Bridge Poe"
     ],
     "Region": "Hyrule Field - Lanayru"
+  },
+  {
+    "RoomName": "Lanayru Field Cave Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lanayru Field",
+        "Requirements": "canSmash"
+      },
+      {
+        "ConnectedArea": "Lanayru Ice Puzzle Cave",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Hyrule Field - Eldin"
   },
   {
     "RoomName": "Lanayru Field Behind Boulder",
@@ -93,7 +109,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Lanayru Field",
+        "ConnectedArea": "Lanayru Field Cave Entrance",
         "Requirements": "true"
       }
     ],
