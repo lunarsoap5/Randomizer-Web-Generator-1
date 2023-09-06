@@ -238,7 +238,7 @@
       },
       {
         "ConnectedArea": "Faron Field Behind Boulder",
-        "Requirements": "HasBottle"
+        "Requirements": "Room.Castle_Town_South and HasBottle"
       },
       {
         "ConnectedArea": "Lake Hylia",
@@ -263,16 +263,17 @@
     "Region": "Hyrule Field - Lanayru"
   },
   {
+     // If you enter Outside Castle Town South from there while the boulder is still there, you get stuck and are forced to save-warp or portal-warp
     "RoomName": "Outside Castle Town South Inside Boulder",
     "Exits":
     [
       {
         "ConnectedArea": "Outside Castle Town South",
-        "Requirements": "Room.Outside_Castle_Town_South and HasBottle"
+        "Requirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
       },
       {
         "ConnectedArea": "Faron Field Behind Boulder",
-        "Requirements": "Room.Outside_Castle_Town_South and HasBottle"
+        "Requirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
       }
     ],
     "Checks": [""],
