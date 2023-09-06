@@ -5,11 +5,11 @@
     [
       {
         "ConnectedArea": "Lost Woods Lower Battle Arena",
-        "Requirements": "true"
+        "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)" // not sure
       },
       {
         "ConnectedArea": "Lost Woods Upper Battle Arena",
-        "Requirements": "true"
+        "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)" // not sure
       },
       {
         "ConnectedArea": "North Faron Woods Near Lost Woods",
@@ -53,7 +53,7 @@
     [
       {
         "ConnectedArea": "Sacred Grove Before Block",
-        "Requirements": "(CanDefeatSkullKid and (Progressive_Bow, 1)) or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)"
+        "Requirements": "CanDefeatSkullKid or (Setting.totEntrance equals Open) or (Setting.totEntrance equals OpenGrove)"
       }
     ],
     "Checks": [""],
