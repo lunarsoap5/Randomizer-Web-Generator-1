@@ -95,6 +95,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Faron Field Behind Boulder"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough
+                //|| Randomizer.Rooms.RoomDict["Kakariko Gorge Cave Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Kakariko Gorge Behind Gate"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Death Mountain Near Kakariko"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Death Mountain Trail"].ReachedByPlaythrough
@@ -110,6 +111,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Eldin Field Grotto Platform"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field Outside Hidden Village"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lanayru Field"].ReachedByPlaythrough
+                //|| Randomizer.Rooms.RoomDict["Lanayru Field Cave Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lanayru Field Behind Boulder"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Hyrule Field Near Spinner Rails"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Upper Zoras River"].ReachedByPlaythrough
@@ -140,6 +142,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lake Hylia Bridge Grotto Ledge"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
+                //|| Randomizer.Rooms.RoomDict["Lake Hylia Cave Entrance"].ReachedByPlaythrough
                 //|| Randomizer.Rooms.RoomDict["Lake Hylia Lakebed Temple Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Gerudo Desert"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"].ReachedByPlaythrough
