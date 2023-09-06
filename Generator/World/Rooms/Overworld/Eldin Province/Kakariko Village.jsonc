@@ -147,7 +147,7 @@
     [
       {
         "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "(Gate_Keys or (Setting.smallKeySettings equals Keysy))" // or access to epona
+        "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)" // or access to epona
       },
       {
         "ConnectedArea": "Eldin Field",
@@ -174,54 +174,6 @@
     "Region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Renados Sanctuary Outside Front Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Renados Sanctuary Inside Front Right Door",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
-    "RoomName": "Kakariko Renados Sanctuary Outside Back Left Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Left Door",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
-    "RoomName": "Kakariko Renados Sanctuary Outside Back Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Right Door",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
     "RoomName": "Kakariko Renados Sanctuary Inside Front Left Door",
     "Exits":
     [
@@ -231,6 +183,22 @@
       },
       {
         "ConnectedArea": "Kakariko Renados Sanctuary",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
+    "RoomName": "Kakariko Renados Sanctuary Outside Front Right Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lower Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Front Right Door",
         "Requirements": "true"
       }
     ],
@@ -254,6 +222,22 @@
     "Region": "Kakariko Village"
   },
   {
+    "RoomName": "Kakariko Renados Sanctuary Outside Back Left Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lower Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Left Door",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
     "RoomName": "Kakariko Renados Sanctuary Inside Back Left Door",
     "Exits":
     [
@@ -263,6 +247,22 @@
       },
       {
         "ConnectedArea": "Kakariko Renados Sanctuary",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
+    "RoomName": "Kakariko Renados Sanctuary Outside Back Right Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lower Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Renados Sanctuary Inside Back Right Door",
         "Requirements": "true"
       }
     ],
@@ -346,22 +346,6 @@
     "Region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Elde Inn Outside Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Elde Inn Inside Right Door",
-        "Requirements": "CanChangeTime"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
     "RoomName": "Kakariko Elde Inn Inside Left Door",
     "Exits":
     [
@@ -372,6 +356,22 @@
       {
         "ConnectedArea": "Kakariko Elde Inn",
         "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
+    "RoomName": "Kakariko Elde Inn Outside Right Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lower Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Elde Inn Inside Right Door",
+        "Requirements": "CanChangeTime"
       }
     ],
     "Checks": [""],
@@ -429,22 +429,6 @@
     "Region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Bug House Outside Ceiling Hole",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Bug House Inside Ceiling Hole",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
     "RoomName": "Kakariko Bug House Inside Door",
     "Exits":
     [
@@ -454,6 +438,22 @@
       },
       {
         "ConnectedArea": "Kakariko Bug House",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
+    "RoomName": "Kakariko Bug House Outside Ceiling Hole",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lower Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Bug House Inside Ceiling Hole",
         "Requirements": "true"
       }
     ],
@@ -512,22 +512,6 @@
     "Region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Upper Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
     "RoomName": "Kakariko Barnes Bomb Shop Inside Door",
     "Exits":
     [
@@ -537,6 +521,22 @@
       },
       {
         "ConnectedArea": "Kakariko Barnes Bomb Shop",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
+    "RoomName": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Upper Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -595,38 +595,6 @@
     "Region": "Kakariko Village"
   },
   {
-    "RoomName": "Kakariko Watchtower Outside Dig Spot",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Upper Kakariko Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Watchtower Inside Dig Spot",
-        "Requirements": "Shadow_Crystal"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
-    "RoomName": "Kakariko Watchtower Outside Upper Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Kakariko Top of Watchtower",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Kakariko Watchtower Inside Upper Door",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Kakariko Village"
-  },
-  {
     "RoomName": "Kakariko Watchtower Inside Lower Door",
     "Exits":
     [
@@ -643,6 +611,22 @@
     "Region": "Kakariko Village"
   },
   {
+    "RoomName": "Kakariko Watchtower Outside Dig Spot",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Upper Kakariko Village",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Watchtower Inside Dig Spot",
+        "Requirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
     "RoomName": "Kakariko Watchtower Inside Dig Spot",
     "Exits":
     [
@@ -652,6 +636,22 @@
       },
       {
         "ConnectedArea": "Kakariko Watchtower",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Kakariko Village"
+  },
+  {
+    "RoomName": "Kakariko Watchtower Outside Upper Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Kakariko Top of Watchtower",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Watchtower Inside Upper Door",
         "Requirements": "true"
       }
     ],
