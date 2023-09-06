@@ -4,12 +4,12 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Kakariko Gorge Behind Gate",
-        "Requirements": "true"
-      },
-      {
         "ConnectedArea": "Kakariko Gorge Cave Entrance",
         "Requirements": "canSmash"
+      },
+      {
+        "ConnectedArea": "Kakariko Gorge Behind Gate",
+        "Requirements": "true"
       },
       {
         "ConnectedArea": "Faron Field",
@@ -241,22 +241,6 @@
     "Region": "Hyrule Field - Eldin"
   },
   {
-    "RoomName": "Eldin Field Lava Cave Outside Lower Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Eldin Field From Lava Cave Lower",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Inside Lower Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Hyrule Field - Eldin"
-  },
-  {
     "RoomName": "Eldin Field Lava Cave Inside Upper Entrance",
     "Exits":
     [
@@ -266,6 +250,22 @@
       },
       {
         "ConnectedArea": "Eldin Field Lava Cave Upper",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Hyrule Field - Eldin"
+  },
+  {
+    "RoomName": "Eldin Field Lava Cave Outside Lower Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Eldin Field From Lava Cave Lower",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Eldin Field Lava Cave Inside Lower Entrance",
         "Requirements": "true"
       }
     ],
