@@ -4,11 +4,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Zoras Domain",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Lake Hylia",
+        "ConnectedArea": "Lake Hylia"
         "Requirements": "Shadow_Crystal"
       },
       {
@@ -17,6 +13,10 @@
       },
       {
         "ConnectedArea": "Fishing Hole",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain",
         "Requirements": "true"
       },
       {
