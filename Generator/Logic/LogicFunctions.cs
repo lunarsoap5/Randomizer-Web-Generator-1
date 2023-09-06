@@ -134,7 +134,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Castle Town Doctors Office Outside Upper Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Castle Town East"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town South"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Jovanis House Dig Spot"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Castle Town Jovanis House Outside Dig Spot"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Castle Town South"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Castle Town South Inside Boulder"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
