@@ -39,7 +39,7 @@
         "Requirements": "true" // coro key or crystal?
       },
       {
-        "ConnectedArea": "South Faron Woods Cave Outside Southern Entrance",
+        "ConnectedArea": "Faron Woods Cave Southern Entrance",
         "Requirements": "true"
       }
     ],
@@ -94,27 +94,11 @@
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "South Faron Woods Cave Outside Southern Entrance",
+    "RoomName": "Faron Woods Cave Southern Entrance",
     "Exits":
     [
       {
         "ConnectedArea": "South Faron Woods Behind Gate",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "South Faron Woods Cave Inside Southern Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Faron Woods"
-  },
-  {
-    "RoomName": "South Faron Woods Cave Inside Southern Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "South Faron Woods Cave Outside Southern Entrance",
         "Requirements": "true"
       },
       {
@@ -130,11 +114,11 @@
     "Exits":
     [
       {
-        "ConnectedArea": "South Faron Woods Cave Inside Southern Entrance",
+        "ConnectedArea": "Faron Woods Cave Southern Entrance",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "South Faron Woods Cave Inside Northern Entrance",
+        "ConnectedArea": "Faron Woods Cave Northern Entrance",
         "Requirements": "true"
       }
     ],
@@ -157,7 +141,7 @@
         "Requirements": "Shadow_Crystal"
       },
       {
-        "ConnectedArea": "South Faron Woods Cave Outside Northern Entrance",
+        "ConnectedArea": "Faron Woods Cave Northern Entrance",
         "Requirements": "true"
       }
     ],
@@ -284,27 +268,11 @@
     "Region": "Faron Woods"
   },
   {
-    "RoomName": "South Faron Woods Cave Outside Northern Entrance",
+    "RoomName": "Faron Woods Cave Northern Entrance",
     "Exits":
     [
       {
         "ConnectedArea": "Mist Area Near Faron Woods Cave",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "South Faron Woods Cave Inside Northern Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Faron Woods"
-  },
-  {
-    "RoomName": "South Faron Woods Cave Inside Northern Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "South Faron Woods Cave Outside Northern Entrance",
         "Requirements": "true"
       },
       {
