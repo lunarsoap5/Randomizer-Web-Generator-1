@@ -76,7 +76,6 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["South Faron Woods Behind Gate"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["South Faron Woods Owl Statue Area"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["South Faron Woods Above Owl Statue"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["South Faron Woods Cave Outside Southern Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Mist Area Near Faron Woods Cave"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Mist Area Inside Mist"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Mist Area Under Owl Statue Chest"].ReachedByPlaythrough
@@ -105,9 +104,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Eldin Field"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field Near Castle Town"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field Lava Cave Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Eldin Field Lava Cave Outside Upper Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field From Lava Cave Lower"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Eldin Field Lava Cave Outside Lower Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field Grotto Platform"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Eldin Field Outside Hidden Village"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lanayru Field"].ReachedByPlaythrough
@@ -127,16 +124,10 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Outside Castle Town West Grotto Ledge"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town West"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town Center"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Goron House Outside Left Door"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Goron House Outside Right Door"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town East"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town Doctors Office Balcony"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Doctors Office Outside Left Door"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Doctors Office Outside Right Door"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Doctors Office Outside Upper Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Castle Town East"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town South"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Castle Town Jovanis House Outside Dig Spot"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Castle Town South"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Outside Castle Town South Inside Boulder"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
@@ -1619,14 +1610,14 @@ namespace TPRandomizer
             return (
                 (CanUse(Item.Filled_Bomb_Bag))
                 && (
-                    Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop Lower"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
                     || (
-                        Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
+                        Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop Lower"].ReachedByPlaythrough
                         && Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                     )
                     || Randomizer.Rooms.RoomDict["City in The Sky Entrance"].ReachedByPlaythrough
@@ -1642,14 +1633,14 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop Lower"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && (getItemCount(Item.Progressive_Fishing_Rod) >= 1)
                     )
                     || (
-                        Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop"].ReachedByPlaythrough
+                        Randomizer.Rooms.RoomDict["Kakariko Barnes Bomb Shop Lower"].ReachedByPlaythrough
                         && Randomizer.Rooms.RoomDict["Castle Town Malo Mart"].ReachedByPlaythrough
                     )
                 )
