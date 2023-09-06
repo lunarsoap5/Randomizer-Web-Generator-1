@@ -204,7 +204,8 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Bulblin Camp Between Fences", // entering camp from AG before camp is conquered makes you stuck between fences forced to save warp or portal warp
+    // Entering Bulblin Camp from Outside Arbiters Grounds before the camp is conquered makes you stuck between 2 wooden fences forced to save-warp or portal-warp.
+    "RoomName": "Bulblin Camp Between Fences",
     "Exits":
     [
       {
