@@ -8,15 +8,15 @@
         "Requirements": "true"
       },
       {
+        "ConnectedArea": "Kakariko Gorge Cave Entrance",
+        "Requirements": "canSmash"
+      },
+      {
         "ConnectedArea": "Faron Field",
         "Requirements": "true"
       },
       {
         "ConnectedArea": "Eldin Field",
-        "Requirements": "canSmash"
-      },
-      {
-        "ConnectedArea": "Eldin Lantern Cave",
         "Requirements": "canSmash"
       },
       {
@@ -34,6 +34,22 @@
         "Kakariko Gorge Female Pill Bug",
         "Kakariko Gorge Poe"
     ],
+    "Region": "Hyrule Field - Eldin"
+  },
+  {
+    "RoomName": "Kakariko Gorge Cave Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Kakariko Gorge",
+        "Requirements": "canSmash"
+      },
+      {
+        "ConnectedArea": "Eldin Lantern Cave",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
     "Region": "Hyrule Field - Eldin"
   },
   {
@@ -57,7 +73,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Kakariko Gorge",
+        "ConnectedArea": "Kakariko Gorge Cave Entrance",
         "Requirements": "true"
       }
     ],
