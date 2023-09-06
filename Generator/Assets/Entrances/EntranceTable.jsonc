@@ -1867,7 +1867,7 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Gorge",
+            "SourceRoom": "Kakariko Gorge Cave Entrance",
             "TargetRoom": "Eldin Lantern Cave",
             "Stage": 52,
             "Room": 0,
@@ -1878,7 +1878,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Eldin Lantern Cave",
-            "TargetRoom": "Kakariko Gorge",
+            "TargetRoom": "Kakariko Gorge Cave Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1936,7 +1936,7 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Lanayru Field",
+            "SourceRoom": "Lanayru Field Cave Entrance",
             "TargetRoom": "Lanayru Ice Puzzle Cave",
             "Stage": 52,
             "Room": 0,
@@ -1947,7 +1947,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Lanayru Ice Puzzle Cave",
-            "TargetRoom": "Lanayru Field",
+            "TargetRoom": "Lanayru Field Cave Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1982,7 +1982,7 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Lake Hylia",
+            "SourceRoom": "Lake Hylia Cave Entrance",
             "TargetRoom": "Lake Hylia Long Cave",
             "Stage": 52,
             "Room": 0,
@@ -1993,7 +1993,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Lake Hylia Long Cave",
-            "TargetRoom": "Lake Hylia",
+            "TargetRoom": "Lake Hylia Cave Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
