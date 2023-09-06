@@ -150,8 +150,8 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Gerudo Desert North East Ledge"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Gerudo Desert Outside Bulblin Camp"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Bulblin Camp"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Bulblin Camp Back Entrance"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Bulblin Camp Between Fences"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Bulblin Camp Back Exit"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Mirror Chamber"].ReachedByPlaythrough;
         }
 
