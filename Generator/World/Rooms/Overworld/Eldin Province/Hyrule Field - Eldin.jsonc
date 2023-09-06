@@ -169,7 +169,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Eldin Field Lava Cave Outside Upper Entrance",
+        "ConnectedArea": "Eldin Field Lava Cave Upper",
         "Requirements": "true"
       }
     ],
@@ -185,7 +185,7 @@
         "Requirements": "(Progressive_Clawshot, 1)"
       },
       {
-        "ConnectedArea": "Eldin Field Lava Cave Outside Lower Entrance",
+        "ConnectedArea": "Eldin Field Lava Cave Lower",
         "Requirements": "true"
       }
     ],
@@ -225,75 +225,11 @@
     "Region": "Hyrule Field - Eldin"
   },
   {
-    "RoomName": "Eldin Field Lava Cave Outside Upper Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Ledge",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Inside Upper Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Hyrule Field - Eldin"
-  },
-  {
-    "RoomName": "Eldin Field Lava Cave Inside Upper Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Outside Upper Entrance",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Upper",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Hyrule Field - Eldin"
-  },
-  {
-    "RoomName": "Eldin Field Lava Cave Outside Lower Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Eldin Field From Lava Cave Lower",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Inside Lower Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Hyrule Field - Eldin"
-  },
-  {
-    "RoomName": "Eldin Field Lava Cave Inside Lower Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Outside Lower Entrance",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Eldin Field Lava Cave Lower",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Hyrule Field - Eldin"
-  },
-  {
     "RoomName": "Eldin Field Lava Cave Upper",
     "Exits":
     [
       {
-        "ConnectedArea": "Eldin Field Lava Cave Inside Upper Entrance",
+        "ConnectedArea": "Eldin Field Lava Cave Ledge",
         "Requirements": "true"
       },
       {
@@ -324,7 +260,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Eldin Field Lava Cave Inside Lower Entrance",
+        "ConnectedArea": "Eldin Field From Lava Cave",
         "Requirements": "true"
       }
     ],
