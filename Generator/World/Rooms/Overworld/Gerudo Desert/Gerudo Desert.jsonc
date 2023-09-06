@@ -169,7 +169,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Bulblin Camp Back Entrance",
+        "ConnectedArea": "Bulblin Camp Back Exit",
         "Requirements": "(Gerudo_Desert_Bulblin_Camp_Key or (Setting.smallKeySettings equals Keysy)) and CanDefeatKingBulblinDesert"
       },
       {
@@ -188,7 +188,7 @@
     "Region": "Gerudo Desert"
   },
   {
-    "RoomName": "Bulblin Camp Back Entrance",
+    "RoomName": "Bulblin Camp Back Exit",
     "Exits":
     [
       {
@@ -213,7 +213,7 @@
         "Requirements": "Room.Bulblin_Camp and (Bulblin_Camp_Small_Key or (Setting.smallKeySettings equals Keysy)) and canDefeatKingBulblinDesert"
       },
       {
-        "ConnectedArea": "Bulblin Camp Back Entrance",
+        "ConnectedArea": "Bulblin Camp Back Exit",
         "Requirements": "Room.Bulblin_Camp and (Bulblin_Camp_Small_Key or (Setting.smallKeySettings equals Keysy)) and canDefeatKingBulblinDesert"
       }
     ],
