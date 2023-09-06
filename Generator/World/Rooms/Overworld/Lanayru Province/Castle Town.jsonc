@@ -95,22 +95,6 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House Outside Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Center",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Goron House Inside Right Door",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
     "RoomName": "Castle Town Goron House Inside Left Door",
     "Exits":
     [
@@ -120,6 +104,22 @@
       },
       {
         "ConnectedArea": "Castle Town Goron House",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Castle Town"
+  },
+  {
+    "RoomName": "Castle Town Goron House Outside Right Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Castle Town Center",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Castle Town Goron House Inside Right Door",
         "Requirements": "true"
       }
     ],
@@ -185,7 +185,7 @@
         "ConnectedArea": "Hyrule Castle Entrance",
         "Requirements": "((Setting.castleRequirements equals Open) or ((Setting.castleRequirements equals Vanilla) and canCompletePalaceofTwilight) or ((Setting.castleRequirements equals Fused_Shadows) and (Progressive_Fused_Shadow, 3)) or ((Setting.castleRequirements equals Mirror_Shards) and (Progressive_Mirror_Shard, 3)) or ((Setting.castleRequirements equals All_Dungeons) and canCompleteAllDungeons) and CanCompleteMDH)"
       }
-      // would probably split it into outside barrier and inside barrier rooms if HC is also going to be shuffled
+      // would probably split it into outside first door, between door and barrier, and inside barrier rooms if HC is also going to be shuffled
     ],
     "Checks":
     [
@@ -257,38 +257,6 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Outside Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town East",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Doctors Office Inside Right Door",
-        "Requirements": "true" // not sure
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Doctors Office Outside Upper Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Doctors Office Inside Upper Entrance",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Doctors Office Balcony",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
     "RoomName": "Castle Town Doctors Office Inside Left Door",
     "Exits":
     [
@@ -305,6 +273,22 @@
     "Region": "Castle Town"
   },
   {
+    "RoomName": "Castle Town Doctors Office Outside Right Door",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Castle Town East",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Castle Town Doctors Office Inside Right Door",
+        "Requirements": "true" // not sure
+      }
+    ],
+    "Checks": [""],
+    "Region": "Castle Town"
+  },
+  {
     "RoomName": "Castle Town Doctors Office Inside Right Door",
     "Exits":
     [
@@ -314,6 +298,22 @@
       },
       {
         "ConnectedArea": "Castle Town Doctors Office Entrance",
+        "Requirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Castle Town"
+  },
+  {
+    "RoomName": "Castle Town Doctors Office Outside Upper Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Castle Town Doctors Office Inside Upper Entrance",
+        "Requirements": "true"
+      },
+      {
+        "ConnectedArea": "Castle Town Doctors Office Balcony",
         "Requirements": "true"
       }
     ],
