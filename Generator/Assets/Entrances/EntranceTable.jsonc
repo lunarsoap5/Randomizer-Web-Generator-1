@@ -855,7 +855,7 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Bulblin Camp Back Entrance",
+            "SourceRoom": "Bulblin Camp Back Exit",
             "TargetRoom": "Outside Arbiters Grounds",
             "Stage": 52,
             "Room": 0,
