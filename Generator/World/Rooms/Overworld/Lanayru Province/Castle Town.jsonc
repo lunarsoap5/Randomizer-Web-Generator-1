@@ -63,11 +63,11 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Outside Left Door",
+        "ConnectedArea": "Castle Town Goron House Left Door",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Outside Right Door",
+        "ConnectedArea": "Castle Town Goron House Right Door",
         "Requirements": "true"
       },
       {
@@ -79,59 +79,27 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House Outside Left Door",
+    "RoomName": "Castle Town Goron House Left Door",
     "Exits":
     [
       {
         "ConnectedArea": "Castle Town Center",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Goron House Inside Left Door",
-        "Requirements": "true"
-      },
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Goron House Inside Left Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Goron House Outside Left Door",
         "Requirements": "true"
       },
       {
         "ConnectedArea": "Castle Town Goron House",
         "Requirements": "true"
-      }
+      },
     ],
     "Checks": [""],
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Goron House Outside Right Door",
+    "RoomName": "Castle Town Goron House Right Door",
     "Exits":
     [
       {
         "ConnectedArea": "Castle Town Center",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Goron House Inside Right Door",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Goron House Inside Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Goron House Outside Right Door",
         "Requirements": "true"
       },
       {
@@ -147,11 +115,11 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Castle Town Goron House Inside Left Door",
+        "ConnectedArea": "Castle Town Goron House Left Door",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Goron House Inside Right Door",
+        "ConnectedArea": "Castle Town Goron House Right Door",
         "Requirements": "true"
       }
     ],
@@ -210,12 +178,12 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Outside Left Door",
-        "Requirements": "true"
+        "ConnectedArea": "Castle Town Doctors Office Left Door",
+        "Requirements": "true" // not sure
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Outside Right Door",
-        "Requirements": "true"
+        "ConnectedArea": "Castle Town Doctors Office Right Door",
+        "Requirements": "true" // not sure
       }
     ],
     "Checks": [""],
@@ -230,7 +198,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Outside Upper Entrance",
+        "ConnectedArea": "Castle Town Doctors Office Upper",
         "Requirements": "true"
       }
     ],
@@ -241,27 +209,11 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Outside Left Door",
+    "RoomName": "Castle Town Doctors Office Left Door",
     "Exits":
     [
       {
         "ConnectedArea": "Castle Town East",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Doctors Office Inside Left Door",
-        "Requirements": "true" // not sure
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Doctors Office Inside Left Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Doctors Office Outside Left Door",
         "Requirements": "true"
       },
       {
@@ -273,7 +225,7 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Doctors Office Outside Right Door",
+    "RoomName": "Castle Town Doctors Office Right Door",
     "Exits":
     [
       {
@@ -281,55 +233,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Inside Right Door",
-        "Requirements": "true" // not sure
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Doctors Office Inside Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Doctors Office Outside Right Door",
-        "Requirements": "true"
-      },
-      {
         "ConnectedArea": "Castle Town Doctors Office Entrance",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Doctors Office Outside Upper Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Doctors Office Inside Upper Entrance",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Doctors Office Balcony",
-        "Requirements": "true"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Doctors Office Inside Upper Entrance",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Doctors Office Upper",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Doctors Office Outside Upper Entrance",
         "Requirements": "true"
       }
     ],
@@ -341,11 +245,11 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Castle Town Doctors Office Inside Left Door",
+        "ConnectedArea": "Castle Town Doctors Office Left Door",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Inside Right Door",
+        "ConnectedArea": "Castle Town Doctors Office Right Door",
         "Requirements": "true"
       },
       {
@@ -381,7 +285,7 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Doctors Office Inside Upper Entrance",
+        "ConnectedArea": "Castle Town Doctors Office Balcony",
         "Requirements": "true"
       }
     ],
@@ -417,10 +321,9 @@
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Jovanis House Outside Dig Spot",
-        "Requirements": "true"
+        "ConnectedArea": "Castle Town Jovanis House Dig Spot",
+        "Requirements": "Shadow_Crystal"
       },
-      // jovani outside door required?
       {
         "ConnectedArea": "Castle Town Telmas Bar",
         "Requirements": "true"
@@ -480,27 +383,11 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Jovanis House Outside Dig Spot",
+    "RoomName": "Castle Town Jovanis House Dig Spot",
     "Exits":
     [
       {
         "ConnectedArea": "Castle Town South",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Castle Town Jovanis House Inside Dig Spot",
-        "Requirements": "Shadow_Crystal"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Castle Town"
-  },
-  {
-    "RoomName": "Castle Town Jovanis House Inside Dig Spot",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Castle Town Jovanis House Outside Dig Spot",
         "Requirements": "Shadow_Crystal"
       },
       {
@@ -512,12 +399,12 @@
     "Region": "Castle Town"
   },
   {
-    "RoomName": "Castle Town Jovanis House Inside Door",
+    "RoomName": "Castle Town Jovanis House Door",
     "Exits":
     [
       {
         "ConnectedArea": "Castle Town South",
-        "Requirements": "true"
+        "Requirements": "(Setting.transformAnywhere equals True)"
       },
       {
         "ConnectedArea": "Castle Town Jovanis House",
@@ -532,11 +419,11 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Castle Town Jovanis House Inside Dig Spot",
+        "ConnectedArea": "Castle Town Jovanis House Dig Spot",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Castle Town Jovanis House Inside Door",
+        "ConnectedArea": "Castle Town Jovanis House Door",
         "Requirements": "true"
       }
     ],
