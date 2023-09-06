@@ -60,11 +60,11 @@
         "Requirements": "CanChangeTime"
       },
       {
-        "ConnectedArea": "Ordon Bos House Outside Left Door",
+        "ConnectedArea": "Ordon Bos House Left Door",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Ordon Bos House Outside Right Door",
+        "ConnectedArea": "Ordon Bos House Right Door",
         "Requirements": "true"
       }
     ],
@@ -121,43 +121,11 @@
     "Region": "Ordon Village"
   },
   {
-    "RoomName": "Ordon Bos House Outside Left Door",
+    "RoomName": "Ordon Bos House Left Door",
     "Exits":
     [
       {
         "ConnectedArea": "Ordon Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Ordon Bos House Inside Left Door",
-        "Requirements": "CanChangeTime"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Ordon"
-  },
-  {
-    "RoomName": "Ordon Bos House Outside Right Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Ordon Village",
-        "Requirements": "true"
-      },
-      {
-        "ConnectedArea": "Ordon Bos House Inside Right Door",
-        "Requirements": "CanChangeTime"
-      }
-    ],
-    "Checks": [""],
-    "Region": "Ordon"
-  },
-  {
-    "RoomName": "Ordon Bos House Inside Left Door",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Ordon Bos House Outside Left Door",
         "Requirements": "true"
       },
       {
@@ -169,11 +137,11 @@
     "Region": "Ordon"
   },
   {
-    "RoomName": "Ordon Bos House Inside Right Door",
+    "RoomName": "Ordon Bos House Right Door",
     "Exits":
     [
       {
-        "ConnectedArea": "Ordon Bos House Outside Right Door",
+        "ConnectedArea": "Ordon Village",
         "Requirements": "true"
       },
       {
@@ -182,23 +150,22 @@
       }
     ],
     "Checks": [""],
-    "Region": "Ord,on"
+    "Region": "Ordon"
   },
   {
     "RoomName": "Ordon Bos House",
     "Exits":
     [
       {
-        "ConnectedArea": "Ordon Bos House Inside Left Door",
+        "ConnectedArea": "Ordon Bos House Left Door",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Ordon Bos House Inside Right Door",
+        "ConnectedArea": "Ordon Bos House Right Door",
         "Requirements": "true"
       }
     ],
-    "Checks":
-    [
+    "Checks": [
         "Wrestling With Bo"
     ],
     "Region": "Ordon"
