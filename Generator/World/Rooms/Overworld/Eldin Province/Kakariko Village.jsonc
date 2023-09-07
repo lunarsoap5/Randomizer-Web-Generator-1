@@ -353,11 +353,11 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Kakariko Bug House Inside Door",
+        "ConnectedArea": "Kakariko Bug House Door",
         "Requirements": "true"
       },
       {
-        "ConnectedArea": "Kakariko Bug House Inside Ceiling Hole",
+        "ConnectedArea": "Kakariko Bug House Ceiling Hole",
         "Requirements": "true"
       }
     ],
