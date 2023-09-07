@@ -1913,7 +1913,7 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Eldin Field From Lava Cave",
+            "SourceRoom": "Eldin Field From Lava Cave Lower",
             "TargetRoom": "Eldin Field Lava Cave Lower",
             "Stage": 52,
             "Room": 0,
@@ -1924,7 +1924,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Eldin Field Lava Cave Lower",
-            "TargetRoom": "Eldin Field From Lava Cave",
+            "TargetRoom": "Eldin Field From Lava Cave Lower",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
