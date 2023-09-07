@@ -1024,8 +1024,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Ordon Bos House Outside Left Door",
-            "TargetRoom": "Ordon Bos House Inside Left Door",
+            "SourceRoom": "Ordon Village",
+            "TargetRoom": "Ordon Bos House Left Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1034,8 +1034,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Ordon Bos House Inside Left Door",
-            "TargetRoom": "Ordon Bos House Outside Left Door",
+            "SourceRoom": "Ordon Bos House Left Door",
+            "TargetRoom": "Ordon Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1047,8 +1047,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Ordon Bos House Outside Right Door",
-            "TargetRoom": "Ordon Bos House Inside Right Door",
+            "SourceRoom": "Ordon Village",
+            "TargetRoom": "Ordon Bos House Right Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1057,8 +1057,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Ordon Bos House Inside Right Door",
-            "TargetRoom": "Ordon Bos House Outside Right Door",
+            "SourceRoom": "Ordon Bos House Right Door",
+            "TargetRoom": "Ordon Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1093,8 +1093,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Outside Front Left Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Inside Front Left Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Renados Sanctuary Front Left Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1103,8 +1103,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Inside Front Left Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Outside Front Left Door",
+            "SourceRoom": "Kakariko Renados Sanctuary Front Left Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1116,8 +1116,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Outside Front Right Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Inside Front Right Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Renados Sanctuary Front Right Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1126,8 +1126,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Inside Front Right Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Outside Front Right Door",
+            "SourceRoom": "Kakariko Renados Sanctuary Front Right Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1139,8 +1139,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Outside Back Left Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Inside Back Left Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Renados Sanctuary Back Left Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1149,8 +1149,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Inside Back Left Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Outside Back Left Door",
+            "SourceRoom": "Kakariko Renados Sanctuary Back Left Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1162,8 +1162,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Outside Back Right Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Inside Back Right Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Renados Sanctuary Back Right Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1172,8 +1172,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Renados Sanctuary Inside Back Right Door",
-            "TargetRoom": "Kakariko Renados Sanctuary Outside Back Right Door",
+            "SourceRoom": "Kakariko Renados Sanctuary Back Right Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1208,8 +1208,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Elde Inn Outside Left Door",
-            "TargetRoom": "Kakariko Elde Inn Inside Left Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Elde Inn Left Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1218,8 +1218,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Elde Inn Inside Left Door",
-            "TargetRoom": "Kakariko Elde Inn Outside Left Door",
+            "SourceRoom": "Kakariko Elde Inn Left Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1231,8 +1231,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Elde Inn Outside Right Door",
-            "TargetRoom": "Kakariko Elde Inn Inside Right Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Elde Inn Right Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1241,8 +1241,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Elde Inn Inside Right Door",
-            "TargetRoom": "Kakariko Elde Inn Outside Right Door",
+            "SourceRoom": "Kakariko Elde Inn Right Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1254,8 +1254,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Bug House Outside Door",
-            "TargetRoom": "Kakariko Bug House Inside Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Bug House Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1264,8 +1264,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Bug House Inside Door",
-            "TargetRoom": "Kakariko Bug House Outside Door",
+            "SourceRoom": "Kakariko Bug House Door",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1277,8 +1277,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Bug House Outside Ceiling Hole",
-            "TargetRoom": "Kakariko Bug House Inside Ceiling Hole",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Bug House Ceiling Hole",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1287,8 +1287,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Bug House Inside Ceiling Hole",
-            "TargetRoom": "Kakariko Bug House Outside Ceiling Hole",
+            "SourceRoom": "Kakariko Bug House Ceiling Hole",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1300,8 +1300,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Barnes Bomb Shop Outside Door",
-            "TargetRoom": "Kakariko Barnes Bomb Shop Inside Door",
+            "SourceRoom": "Lower Kakariko Village",
+            "TargetRoom": "Kakariko Barnes Bomb Shop Lower",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1310,8 +1310,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Barnes Bomb Shop Inside Door",
-            "TargetRoom": "Kakariko Barnes Bomb Shop Outside Door",
+            "SourceRoom": "Kakariko Barnes Bomb Shop Lower",
+            "TargetRoom": "Lower Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1323,8 +1323,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
-            "TargetRoom": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
+            "SourceRoom": "Upper Kakariko Village",
+            "TargetRoom": "Kakariko Barnes Bomb Shop Upper",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1333,8 +1333,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Barnes Bomb Shop Inside Upper Entrance",
-            "TargetRoom": "Kakariko Barnes Bomb Shop Outside Upper Entrance",
+            "SourceRoom": "Kakariko Barnes Bomb Shop Upper",
+            "TargetRoom": "Upper Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1346,8 +1346,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Watchtower Outside Lower Door",
-            "TargetRoom": "Kakariko Watchtower Inside Lower Door",
+            "SourceRoom": "Upper Kakariko Village",
+            "TargetRoom": "Kakariko Watchtower Lower Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1356,8 +1356,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Watchtower Inside Lower Door",
-            "TargetRoom": "Kakariko Watchtower Outside Lower Door",
+            "SourceRoom": "Kakariko Watchtower Lower Door",
+            "TargetRoom": "Upper Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1369,8 +1369,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Watchtower Outside Dig Spot",
-            "TargetRoom": "Kakariko Watchtower Inside Dig Spot",
+            "SourceRoom": "Upper Kakariko Village",
+            "TargetRoom": "Kakariko Watchtower Dig Spot",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1379,8 +1379,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Watchtower Inside Dig Spot",
-            "TargetRoom": "Kakariko Watchtower Outside Dig Spot",
+            "SourceRoom": "Kakariko Watchtower Dig Spot",
+            "TargetRoom": "Upper Kakariko Village",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1392,8 +1392,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Kakariko Watchtower Outside Upper Door",
-            "TargetRoom": "Kakariko Watchtower Inside Upper Door",
+            "SourceRoom": "Kakariko Top of Watchtower",
+            "TargetRoom": "Kakariko Watchtower Upper Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1402,8 +1402,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Kakariko Watchtower Inside Upper Door",
-            "TargetRoom": "Kakariko Watchtower Outside Upper Door",
+            "SourceRoom": "Kakariko Watchtower Upper Door",
+            "TargetRoom": "Kakariko Top of Watchtower",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1553,8 +1553,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Goron House Outside Left Door",
-            "TargetRoom": "Castle Town Goron House Inside Left Door",
+            "SourceRoom": "Castle Town Center",
+            "TargetRoom": "Castle Town Goron House Left Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1563,8 +1563,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Castle Town Goron House Inside Left Door",
-            "TargetRoom": "Castle Town Goron House Outside Left Door",
+            "SourceRoom": "Castle Town Goron House Left Door",
+            "TargetRoom": "Castle Town Center",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1576,8 +1576,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Goron House Outside Right Door",
-            "TargetRoom": "Castle Town Goron House Inside Right Door",
+            "SourceRoom": "Castle Town Center",
+            "TargetRoom": "Castle Town Goron House Right Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1586,8 +1586,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Castle Town Goron House Inside Right Door",
-            "TargetRoom": "Castle Town Goron House Outside Right Door",
+            "SourceRoom": "Castle Town Goron House Right Door",
+            "TargetRoom": "Castle Town Center",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1622,8 +1622,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Doctors Office Outside Left Door",
-            "TargetRoom": "Castle Town Doctors Office Inside Left Door",
+            "SourceRoom": "Castle Town East",
+            "TargetRoom": "Castle Town Doctors Office Left Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1632,8 +1632,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Castle Town Doctors Office Inside Left Door",
-            "TargetRoom": "Castle Town Doctors Office Outside Left Door",
+            "SourceRoom": "Castle Town Doctors Office Left Door",
+            "TargetRoom": "Castle Town East",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1645,8 +1645,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Doctors Office Outside Right Door",
-            "TargetRoom": "Castle Town Doctors Office Inside Right Door",
+            "SourceRoom": "Castle Town East",
+            "TargetRoom": "Castle Town Doctors Office Right Door",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1655,8 +1655,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Castle Town Doctors Office Inside Right Door",
-            "TargetRoom": "Castle Town Doctors Office Outside Right Door",
+            "SourceRoom": "Castle Town Doctors Office Right Door",
+            "TargetRoom": "Castle Town East",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1668,8 +1668,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Doctors Office Outside Upper Entrance",
-            "TargetRoom": "Castle Town Doctors Office Inside Upper Entrance",
+            "SourceRoom": "Castle Town Doctors Office Balcony",
+            "TargetRoom": "Castle Town Doctors Office Upper",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1678,8 +1678,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Castle Town Doctors Office Inside Upper Entrance",
-            "TargetRoom": "Castle Town Doctors Office Outside Upper Entrance",
+            "SourceRoom": "Castle Town Doctors Office Upper",
+            "TargetRoom": "Castle Town Doctors Office Balcony",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1737,8 +1737,8 @@
         "Type": "Interior",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Jovanis House Outside Dig Spot",
-            "TargetRoom": "Castle Town Jovanis House Inside Dig Spot",
+            "SourceRoom": "Castle Town South",
+            "TargetRoom": "Castle Town Jovanis House Dig Spot",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1747,8 +1747,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Castle Town Jovanis House Inside Dig Spot",
-            "TargetRoom": "Castle Town Jovanis House Outside Dig Spot",
+            "SourceRoom": "Castle Town Jovanis House Dig Spot",
+            "TargetRoom": "Castle Town South",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1784,7 +1784,7 @@
         "Type": "Interior One-Way",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Castle Town Jovanis House Inside Door",
+            "SourceRoom": "Castle Town Jovanis House Door",
             "TargetRoom": "Castle Town South",
             "Stage": 52,
             "Room": 0,
@@ -1798,8 +1798,8 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "South Faron Woods Cave Outside Southern Entrance",
-            "TargetRoom": "South Faron Woods Cave Inside Southern Entrance",
+            "SourceRoom": "South Faron Woods Behind Gate",
+            "TargetRoom": "Faron Woods Cave Southern Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1808,8 +1808,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "South Faron Woods Cave Inside Southern Entrance",
-            "TargetRoom": "South Faron Woods Cave Outside Southern Entrance",
+            "SourceRoom": "Faron Woods Cave Southern Entrance",
+            "TargetRoom": "South Faron Woods Behind Gate",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1821,8 +1821,8 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "South Faron Woods Cave Outside Northern Entrance",
-            "TargetRoom": "South Faron Woods Cave Inside Northern Entrance",
+            "SourceRoom": "Mist Area Near Faron Woods Cave",
+            "TargetRoom": "Faron Woods Cave Northern Entrance",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1831,8 +1831,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "South Faron Woods Cave Inside Northern Entrance",
-            "TargetRoom": "South Faron Woods Cave Outside Northern Entrance",
+            "SourceRoom": "Faron Woods Cave Northern Entrance",
+            "TargetRoom": "Mist Area Near Faron Woods Cave",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1890,8 +1890,8 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Eldin Field Lava Cave Outside Upper Entrance",
-            "TargetRoom": "Eldin Field Lava Cave Inside Upper Entrance",
+            "SourceRoom": "Eldin Field Lava Cave Ledge",
+            "TargetRoom": "Eldin Field Lava Cave Upper",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1900,8 +1900,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Eldin Field Lava Cave Inside Upper Entrance",
-            "TargetRoom": "Eldin Field Lava Cave Outside Upper Entrance",
+            "SourceRoom": "Eldin Field Lava Cave Upper",
+            "TargetRoom": "Eldin Field Lava Cave Ledge",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1913,8 +1913,8 @@
         "Type": "Cave",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Eldin Field Lava Cave Outside Lower Entrance",
-            "TargetRoom": "Eldin Field Lava Cave Inside Lower Entrance",
+            "SourceRoom": "Eldin Field From Lava Cave",
+            "TargetRoom": "Eldin Field Lava Cave Lower",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
@@ -1923,8 +1923,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Eldin Field Lava Cave Inside Lower Entrance",
-            "TargetRoom": "Eldin Field Lava Cave Outside Lower Entrance",
+            "SourceRoom": "Eldin Field Lava Cave Lower",
+            "TargetRoom": "Eldin Field From Lava Cave",
             "Stage": 52,
             "Room": 0,
             "Spawn": "32",
