@@ -105,7 +105,7 @@
     [
       {
         "ConnectedArea": "Gerudo Desert Basin",
-        "Requirements": "Room.Gerudo_Desert_Basin and canDefeatBulblin"
+        "Requirements": "Room.Gerudo_Desert_Basin and CanDefeatBulblin"
       },
       {
         "ConnectedArea": "Bulblin Camp",
