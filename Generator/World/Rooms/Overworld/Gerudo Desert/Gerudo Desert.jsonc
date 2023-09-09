@@ -210,11 +210,11 @@
     [
       {
         "ConnectedArea": "Bulblin Camp",
-        "Requirements": "Room.Bulblin_Camp and (Bulblin_Camp_Small_Key or (Setting.smallKeySettings equals Keysy)) and canDefeatKingBulblinDesert"
+        "Requirements": "Room.Bulblin_Camp and (Gerudo_Desert_Bulblin_Camp_Key or (Setting.smallKeySettings equals Keysy)) and CanDefeatKingBulblinDesert"
       },
       {
         "ConnectedArea": "Bulblin Camp Back Exit",
-        "Requirements": "Room.Bulblin_Camp and (Bulblin_Camp_Small_Key or (Setting.smallKeySettings equals Keysy)) and canDefeatKingBulblinDesert"
+        "Requirements": "Room.Bulblin_Camp and (Gerudo_Desert_Bulblin_Camp_Key or (Setting.smallKeySettings equals Keysy)) and CanDefeatKingBulblinDesert"
       }
     ],
     "Checks": [""],
