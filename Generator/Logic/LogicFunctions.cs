@@ -179,9 +179,10 @@ namespace TPRandomizer
         {
             return (
                     Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
-                    || Randomizer.Rooms.RoomDict[
-                        "Death Mountain Elevator Lower"
-                    ].ReachedByPlaythrough
+                    || (
+                        Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
+                        && CanDefeatGoron()
+                    )
                 ) && HasBottle();
         }
 
