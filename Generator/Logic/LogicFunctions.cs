@@ -1527,10 +1527,7 @@ namespace TPRandomizer
                 CanUse(Item.Hylian_Shield)
                 || Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
-                || (
-                    Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
-                    && CanDefeatGoron()
-                )
+                || Randomizer.Rooms.RoomDict("Death Mountain Elevator Lower"].ReachedByPlaythrough
             );
         }
 
