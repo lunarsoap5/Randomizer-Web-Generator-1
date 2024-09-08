@@ -37,17 +37,41 @@ namespace TPRandomizer.Assets.CLR0
             // Link
             // Hero's Tunic
             cmprFileModifications.Add(
-                new(fcSettings.hTunicSkirtColor, "al.bmd", "al_lowbody", (byte)ArchiveIndex.Link)
+                new(
+                    fcSettings.hTunicSkirtColor,
+                    "al.bmd",
+                    "al_lowbody",
+                    (byte)ArchiveIndex.Link,
+                    BMDDirectory.BMWR
+                )
             );
             cmprFileModifications.Add(
-                new(fcSettings.hTunicBodyColor, "al.bmd", "al_upbody", (byte)ArchiveIndex.Link)
+                new(
+                    fcSettings.hTunicBodyColor,
+                    "al.bmd",
+                    "al_upbody",
+                    (byte)ArchiveIndex.Link,
+                    BMDDirectory.BMWR
+                )
             );
             cmprFileModifications.Add(
-                new(fcSettings.hTunicHatColor, "al_head.bmd", "al_cap", (byte)ArchiveIndex.Link)
+                new(
+                    fcSettings.hTunicHatColor,
+                    "al_head.bmd",
+                    "al_cap",
+                    (byte)ArchiveIndex.Link,
+                    BMDDirectory.BMWR
+                )
             );
 
             cmprFileModifications.Add(
-                new(fcSettings.linkHairColor, "al_head.bmd", "al_hair", (byte)ArchiveIndex.Link)
+                new(
+                    fcSettings.linkHairColor,
+                    "al_head.bmd",
+                    "al_hair",
+                    (byte)ArchiveIndex.Link,
+                    BMDDirectory.BMWR
+                )
             );
 
             // Zora Armor
@@ -56,7 +80,8 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.zTunicHatColor,
                     "zl_head.bmd",
                     "zl_cap",
-                    (byte)ArchiveIndex.ZoraArmor
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
                 )
             );
 
@@ -65,20 +90,45 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.zTunicHelmetColor,
                     "zl_head.bmd",
                     "zl_helmet",
-                    (byte)ArchiveIndex.ZoraArmor
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
                 )
             );
             cmprFileModifications.Add(
-                new(fcSettings.zTunicBodyColor, "zl.bmd", "zl_armor", (byte)ArchiveIndex.ZoraArmor)
+                new(
+                    fcSettings.zTunicBodyColor,
+                    "zl.bmd",
+                    "zl_armor",
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
+                )
             );
             cmprFileModifications.Add(
-                new(fcSettings.zTunicScalesColor, "zl.bmd", "zl_body", (byte)ArchiveIndex.ZoraArmor)
+                new(
+                    fcSettings.zTunicScalesColor,
+                    "zl.bmd",
+                    "zl_body",
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
+                )
             );
             cmprFileModifications.Add(
-                new(fcSettings.zTunicBootsColor, "zl.bmd", "zl_boots", (byte)ArchiveIndex.ZoraArmor)
+                new(
+                    fcSettings.zTunicBootsColor,
+                    "zl.bmd",
+                    "zl_boots",
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
+                )
             );
             cmprFileModifications.Add(
-                new(fcSettings.zTunicBodyColor, "zl.bmd", "zl_armL", (byte)ArchiveIndex.ZoraArmor)
+                new(
+                    fcSettings.zTunicBodyColor,
+                    "zl.bmd",
+                    "zl_armL",
+                    (byte)ArchiveIndex.ZoraArmor,
+                    BMDDirectory.BMWR
+                )
             );
 
             cmprFileModifications.Add(
@@ -86,7 +136,8 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.zTunicBodyColor,
                     "o_gd_al_zora.bmd",
                     "zl_armor",
-                    (byte)ArchiveIndex.ZoraArmorField
+                    (byte)ArchiveIndex.ZoraArmorField,
+                    BMDDirectory.BMDR
                 )
             );
 
@@ -95,7 +146,8 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.zTunicScalesColor,
                     "o_gd_al_zora.bmd",
                     "zl_body",
-                    (byte)ArchiveIndex.ZoraArmorField
+                    (byte)ArchiveIndex.ZoraArmorField,
+                    BMDDirectory.BMDR
                 )
             );
 
@@ -104,7 +156,8 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.zTunicHelmetColor,
                     "o_gd_al_zora.bmd",
                     "zl_helmet",
-                    (byte)ArchiveIndex.ZoraArmorField
+                    (byte)ArchiveIndex.ZoraArmorField,
+                    BMDDirectory.BMDR
                 )
             );
 
@@ -113,12 +166,19 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.zTunicHatColor,
                     "o_gd_al_zora.bmd",
                     "zl_cap",
-                    (byte)ArchiveIndex.ZoraArmorField
+                    (byte)ArchiveIndex.ZoraArmorField,
+                    BMDDirectory.BMDR
                 )
             );
 
             cmprFileModifications.Add(
-                new(fcSettings.msBladeColor, "al_swm.bmd", "al_SWM", (byte)ArchiveIndex.LinkMS)
+                new(
+                    fcSettings.msBladeColor,
+                    "al_swm.bmd",
+                    "al_SWM",
+                    (byte)ArchiveIndex.ALink,
+                    BMDDirectory.BMWE
+                )
             );
 
             cmprFileModifications.Add(
@@ -126,7 +186,8 @@ namespace TPRandomizer.Assets.CLR0
                     fcSettings.boomerangColor,
                     "al_boom.bmd",
                     "L_al_boom00",
-                    (byte)ArchiveIndex.ALink
+                    (byte)ArchiveIndex.ALink,
+                    BMDDirectory.BMDR
                 )
             );
 
@@ -191,7 +252,8 @@ namespace TPRandomizer.Assets.CLR0
                                                         (byte)RecolorId.CMPR,
                                                         modification.bmdFile,
                                                         new List<string>(),
-                                                        modification.archiveIndex
+                                                        modification.archiveIndex,
+                                                        modification.directory
                                                     );
                                                 newAssociation.textures.Add(modification.texture);
                                                 textureAssociations.Add(newAssociation);
@@ -204,7 +266,8 @@ namespace TPRandomizer.Assets.CLR0
                                                     (byte)RecolorId.CMPR,
                                                     modification.bmdFile,
                                                     new List<string>(),
-                                                    modification.archiveIndex
+                                                    modification.archiveIndex,
+                                                    modification.directory
                                                 );
                                             newAssociation.textures.Add(modification.texture);
                                             textureAssociations.Add(newAssociation);
@@ -232,7 +295,8 @@ namespace TPRandomizer.Assets.CLR0
             {
                 bmdListRaw.Add(Converter.GcByte(association.recolorType));
                 bmdListRaw.Add(Converter.GcByte(association.archiveIndex));
-                bmdListRaw.AddRange(Converter.GcBytes((UInt16)association.textures.Count));
+                bmdListRaw.Add(Converter.GcByte((byte)association.directory));
+                bmdListRaw.Add(Converter.GcByte(association.textures.Count));
                 bmdListRaw.AddRange(
                     Converter.GcBytes(
                         (UInt16)(

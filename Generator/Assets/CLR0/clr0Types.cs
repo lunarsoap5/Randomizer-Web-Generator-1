@@ -93,18 +93,21 @@ namespace TPRandomizer.Assets.CLR0
         public string bmdFile;
         public string texture;
         public byte archiveIndex;
+        public BMDDirectory directory;
 
         public CMPRTextureFileSettings(
             Clr0Entry colorEntry,
             string bmdFile,
             string texture,
-            byte archiveIndex
+            byte archiveIndex,
+            BMDDirectory directory
         )
         {
             this.colorEntry = colorEntry;
             this.bmdFile = bmdFile;
             this.texture = texture;
             this.archiveIndex = archiveIndex;
+            this.directory = directory;
         }
     };
 
@@ -114,19 +117,29 @@ namespace TPRandomizer.Assets.CLR0
         public string bmdFile;
         public List<string> textures;
         public byte archiveIndex;
+        public BMDDirectory directory;
 
         public BmdTextureAssociation(
             byte recolorType,
             string bmdFile,
             List<string> textures,
-            byte archiveIndex
+            byte archiveIndex,
+            BMDDirectory directory
         )
         {
             this.recolorType = recolorType;
             this.bmdFile = bmdFile;
             this.textures = textures;
             this.archiveIndex = archiveIndex;
+            this.directory = directory;
         }
+    };
+
+    public enum BMDDirectory : byte
+    {
+        BMWE = 0,
+        BMDR = 1,
+        BMWR = 2,
     };
 
     public enum ArchiveIndex : byte
@@ -134,8 +147,7 @@ namespace TPRandomizer.Assets.CLR0
         Link = 0,
         ZoraArmor = 1,
         ZoraArmorField = 2,
-        LinkMS = 3,
-        ALink = 4,
+        ALink = 3,
     }
 
     public class ColorArrays
