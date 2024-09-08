@@ -589,8 +589,8 @@
       'xButtonColorFieldset',
       'yButtonColorFieldset',
       'zButtonColorFieldset',
-      { id: 'midnaHairBaseColorFieldset', preventCustomColor: true },
-      { id: 'midnaHairTipColorFieldset', preventCustomColor: true },
+      'midnaHairBaseColorFieldsetColorPicker',
+      'midnaHairTipColorFieldsetColorPicker',
       'midnaDomeRingColorFieldset',
     ];
 
