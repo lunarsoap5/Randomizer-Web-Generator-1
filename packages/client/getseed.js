@@ -455,7 +455,7 @@
   // Return value is an array of 16 colors like [ "69567a", "6d5980", ...]. If
   // don't provide a baseHue or the provided value is invalid, picks a random
   // baseHue.
-  function get16ColorsPalette(baseHue) {
+  function get16ColorsPalette(baseHue, useSoftColors) {
     if (typeof baseHue !== 'number' || baseHue < 0) {
       baseHue = Math.random() * 360;
     } else if (baseHue >= 360) {
@@ -463,16 +463,33 @@
     }
     baseHue = Math.floor(baseHue);
 
-    return (
-      new window.ColorScheme()
-        .from_hue(baseHue) // Start the scheme
-        .scheme('triade') // Use the 'tetrade' scheme, that is, colors
-        // selected from 3 points equidistant around
-        // the color wheel.
-        .variation('soft') // Use the 'soft' color variation
-        .distance(0.5)
-        .colors()
-    );
+    if (useSoftColors)
+    {
+      return (
+        new window.ColorScheme()
+          .from_hue(baseHue) // Start the scheme
+          .scheme('triade') // Use the 'tetrade' scheme, that is, colors
+          // selected from 3 points equidistant around
+          // the color wheel.
+          .variation('soft') // Use the 'soft' color variation
+          .distance(0.5)
+          .colors()
+      );
+    }
+    else
+    {
+      return (
+        new window.ColorScheme()
+          .from_hue(baseHue) // Start the scheme
+          .scheme('triade') // Use the 'tetrade' scheme, that is, colors
+          // selected from 3 points equidistant around
+          // the color wheel.
+          .distance(0.5)
+          .colors()
+      );
+    }
+
+    
   }
 
   // `colorHex` does not have the '#' at the front.
@@ -563,9 +580,9 @@
         'zTunicScalesColorFieldsetColorPicker',
         'zTunicBootsColorFieldsetColorPicker',
       ],
-      'msBladeColorFieldsetColorPicker',
+      { id: 'msBladeColorFieldsetColorPicker', useSoftColors: false },
       'boomerangColorFieldsetColorPicker',
-      'lanternColorFieldsetColorPicker',
+      { id: 'lanternColorFieldsetColorPicker', useSoftColors: false },
       'heartColorFieldset',
       'aButtonColorFieldset',
       'bButtonColorFieldset',
@@ -580,7 +597,7 @@
     for (let i = 0; i < arrayOfCosmeticSettings.length; i++) {
       const entry = arrayOfCosmeticSettings[i];
       if (Array.isArray(entry)) {
-        const colors = get16ColorsPalette();
+        const colors = get16ColorsPalette(null, true);
 
         for (let j = 0; j < entry.length; j++) {
           const elId = entry[j];
@@ -589,11 +606,16 @@
         }
       } else if (typeof entry === 'object') {
         if (entry) {
-          randomizeCosmeticSetting(entry.id, null, entry.preventCustomColor);
+          randomizeCosmeticSetting(entry.id, get16ColorsPalette(null, entry.useSoftColors)[0]);
+          
+          if (entry.preventCustomColor == true)
+          {
+            randomizeCosmeticSetting(entry.id, null, entry.preventCustomColor);
+          }
         }
       } else {
         const elId = arrayOfCosmeticSettings[i];
-        randomizeCosmeticSetting(elId, get16ColorsPalette()[0]);
+        randomizeCosmeticSetting(elId, get16ColorsPalette(null, true)[0]);
       }
     }
   }
