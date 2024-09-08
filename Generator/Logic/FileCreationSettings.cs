@@ -13,6 +13,7 @@ namespace TPRandomizer
         public RandomizeBgm randomizeBgm { get; }
         public bool randomizeFanfares { get; }
         public bool disableEnemyBgm { get; }
+        public bool invertCameraAxis { get; }
 
         public Clr0Entry hTunicHatColor { get; }
         public Clr0Entry hTunicBodyColor { get; }
@@ -26,6 +27,7 @@ namespace TPRandomizer
 
         public Clr0Entry lanternGlowColor { get; }
         public Clr0Entry msBladeColor { get; }
+        public Clr0Entry boomerangColor { get; }
 
         // public int midnaHairColor { get; }
         public Clr0Entry heartColor { get; }
@@ -64,6 +66,7 @@ namespace TPRandomizer
             randomizeBgm = (RandomizeBgm)processor.NextInt(2);
             randomizeFanfares = processor.NextBool();
             disableEnemyBgm = processor.NextBool();
+            invertCameraAxis = processor.NextBool();
 
             hTunicHatColor = processor.NextClr0Entry(RecolorId.CMPR);
             hTunicBodyColor = processor.NextClr0Entry(RecolorId.CMPR);
@@ -74,6 +77,7 @@ namespace TPRandomizer
             zTunicScalesColor = processor.NextClr0Entry(RecolorId.CMPR);
             zTunicBootsColor = processor.NextClr0Entry(RecolorId.CMPR);
             msBladeColor = processor.NextClr0Entry(RecolorId.CMPR);
+            boomerangColor = processor.NextClr0Entry(RecolorId.CMPR);
             lanternGlowColor = processor.NextClr0Entry(RecolorId.None);
             // midnaHairColor = processor.NextInt(1);
             heartColor = processor.NextClr0Entry(RecolorId.None);

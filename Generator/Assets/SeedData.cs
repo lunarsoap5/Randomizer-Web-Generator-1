@@ -322,6 +322,7 @@ namespace TPRandomizer.Assets
                 fcSettings.disableEnemyBgm,
                 randomizerSettings.instantText,
                 randomizerSettings.skipMajorCutscenes,
+                fcSettings.invertCameraAxis,
             };
             bool[] flagsBitfieldArray =
             {
