@@ -1517,12 +1517,12 @@ namespace TPRandomizer.Assets
 
                     // Update modified time
 
-                    int totalSeconds = BitConverter.ToInt32(Converter.GcBytes((UInt32)(DateTime.Now - new DateTime(2000, 1, 1)).TotalSeconds));
+                    byte[] totalSeconds = Converter.GcBytes((UInt32)(DateTime.UtcNow - new DateTime(2000, 1, 1)).TotalSeconds);
 
-                    gciBytes[0x28] = (byte)((totalSeconds & 0xFF000000) >> 24);
-                    gciBytes[0x29] = (byte)((totalSeconds & 0xFF0000) >> 16);
-                    gciBytes[0x2A] = (byte)((totalSeconds & 0xFF00) >> 8);
-                    gciBytes[0x2B] = (byte)(totalSeconds & 0xFF);
+                    gciBytes[0x28] = totalSeconds[0];
+                    gciBytes[0x29] = totalSeconds[1];
+                    gciBytes[0x2A] = totalSeconds[2];
+                    gciBytes[0x2B] = totalSeconds[3];
 
                     outputFile.AddRange(gciBytes);
 
