@@ -35,7 +35,6 @@ namespace TPRandomizer.Assets
         public static readonly int ImageDataSize = 0x1400;
         private static readonly short SeedHeaderSize = 0x160;
         private static short MessageHeaderSize = 0xC;
-
         private SeedGenResults seedGenResults;
         public FileCreationSettings fcSettings { get; }
 

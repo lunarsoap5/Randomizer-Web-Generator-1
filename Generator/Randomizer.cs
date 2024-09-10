@@ -52,6 +52,7 @@ namespace TPRandomizer
         public static SharedSettings SSettings = new();
 
         public static int RequiredDungeons = 0;
+        public static int spawnIndex = 0;
 
         public static bool CreateInputJson(
             string idParam,
@@ -156,7 +157,6 @@ namespace TPRandomizer
                 PlaceVanillaChecks();
 
                 // Once we have placed all vanilla checks, we want to give the player all of the items they should be searching for and then generate the world based on the room class values and their neighbour values.
-                SetupGraph();
                 try
                 {
                     Randomizer.EntranceRandomizer.RandomizeEntrances(rnd);
@@ -1737,26 +1737,6 @@ namespace TPRandomizer
                     );
                 }
             }
-        }
-
-        private static void SetupGraph()
-        {
-            // We want to be safe and make sure that the room classes are prepped and ready to be linked together. Then we define our starting room.
-            foreach (KeyValuePair<string, Room> roomList in Randomizer.Rooms.RoomDict.ToList())
-            {
-                Room currentRoom = roomList.Value;
-                currentRoom.Visited = false;
-                Randomizer.Rooms.RoomDict[currentRoom.RoomName] = currentRoom;
-            }
-
-            // This line is just filler until we have a random starting room
-            Room startingRoom = Randomizer.Rooms.RoomDict["Outside Links House"];
-
-            Entrance rootExit = new();
-            rootExit.ConnectedArea = startingRoom.RoomName;
-            rootExit.Requirements = "(true)";
-
-            Randomizer.Rooms.RoomDict["Root"].Exits.Add(rootExit);
         }
 
         private static void DeserializeChecks(SharedSettings SSettings)

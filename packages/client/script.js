@@ -389,6 +389,9 @@ document
   .getElementById('shuffleRewardsCheckbox')
   .addEventListener('click', setSettingsString);
 document
+  .getElementById('randomizeStartingPointCheckbox')
+  .addEventListener('click', setSettingsString);
+document
   .getElementById('importSettingsStringButton')
   .addEventListener('click', importSettingsString);
 
@@ -1235,6 +1238,7 @@ function populateSSettings(s) {
   $('#noSmallKeysOnBossesCheckbox').prop('checked', s.noSmallKeysOnBosses);
   $('#todFieldset').val(s.startingToD);
   $('#hintDistributionFieldset').val(s.hintDistribution);
+  $('#randomizeStartingPointCheckbox').prop('checked', s.randomizeStartingPoint);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

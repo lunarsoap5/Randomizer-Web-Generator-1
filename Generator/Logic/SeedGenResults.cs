@@ -79,7 +79,21 @@ namespace TPRandomizer
 
         public static string EncodeEntrances()
         {
+            string spawnRoom = Randomizer.Rooms.RoomDict["Root"].Exits[0].ConnectedArea;
+            Entrance randomSpawn = Randomizer.EntranceRandomizer.spawnList[Randomizer.spawnIndex];
+            EntranceInfo vanillaSpawn = Randomizer.EntranceRandomizer.vanillaSpawn;
             string encodedString = "";
+            Console.WriteLine("Spawn point is " + spawnRoom);
+
+            encodedString = encodedString + vanillaSpawn.Stage.ToString("X") + ",";
+            encodedString = encodedString + vanillaSpawn.Room.ToString("X") + ",";
+            encodedString = encodedString + vanillaSpawn.Spawn + ",";
+            encodedString = encodedString + vanillaSpawn.State + ",";
+            encodedString = encodedString + randomSpawn.Stage.ToString("X") + ",";
+            encodedString = encodedString + randomSpawn.Room.ToString("X") + ",";
+            encodedString = encodedString + randomSpawn.Spawn + ",";
+            encodedString = encodedString + randomSpawn.State + ",";
+
             foreach (KeyValuePair<string, Room> roomEntry in Randomizer.Rooms.RoomDict)
             {
                 //Console.WriteLine("checking room: " + roomEntry.Value.RoomName);
@@ -93,14 +107,10 @@ namespace TPRandomizer
                                 + entrance.GetReplacedEntrance().GetOriginalName()
                         );
                         // Get the original entrance that the entrance leads to in vanilla
-                        encodedString = encodedString + entrance.GetStage().ToString("X");
-                        encodedString = encodedString + ",";
-                        encodedString = encodedString + entrance.GetRoom().ToString("X");
-                        encodedString = encodedString + ",";
-                        encodedString = encodedString + entrance.GetSpawn();
-                        encodedString = encodedString + ",";
-                        encodedString = encodedString + entrance.GetState();
-                        encodedString = encodedString + ",";
+                        encodedString = encodedString + entrance.GetStage().ToString("X") + ",";
+                        encodedString = encodedString + entrance.GetRoom().ToString("X") + ",";
+                        encodedString = encodedString + entrance.GetSpawn() + ",";
+                        encodedString = encodedString + entrance.GetState() + ",";
 
                         // Add new connection info
 
@@ -375,6 +385,26 @@ namespace TPRandomizer
                 }
             }
             string[] entranceBytes = entrances.Split(",");
+
+            // Spawn location is always the first entry in the entrance table
+            foreach (EntranceInfo entry in entranceInfo)
+            {
+                if (entry.Stage.ToString("X") == entranceBytes[4])
+                {
+                    if (entry.Room.ToString("X") == entranceBytes[5])
+                    {
+                        if (entry.Spawn == entranceBytes[6])
+                        {
+                            if (entry.State == entranceBytes[7])
+                            {
+                                shuffledEntrances.Add("Spawn Location -> " + entry.TargetRoom);
+                            }
+                        }
+                    }
+                }
+            }
+            entranceBytes = entranceBytes.Skip(8).ToArray();
+
             //Console.WriteLine(entrances);
             for (int i = 0; i < entranceBytes.Length - 1; i++)
             {
@@ -393,44 +423,14 @@ namespace TPRandomizer
                 );*/
                 foreach (EntranceInfo entry in entranceInfo)
                 {
-                    /*Console.WriteLine(
-                        "testing: "
-                            + entry.SourceRoom
-                            + " testing stage: "
-                            + entry.Stage.ToString("X")
-                    );*/
                     if (entry.Stage.ToString("X") == entranceBytes[i])
                     {
-                        /*Console.WriteLine(
-                            "stage match for: " + entry.SourceRoom + " testing room: " + entry.Room
-                        );*/
                         if (entry.Room.ToString("X") == entranceBytes[i + 1])
                         {
-                            /* Console.WriteLine(
-                                 "room match for: "
-                                     + entry.SourceRoom
-                                     + " testing spawn: "
-                                     + entry.Spawn
-                                     + " against: "
-                                     + entranceBytes[i + 2]
-                             );*/
                             if (entry.Spawn == entranceBytes[i + 2])
                             {
-                                /*Console.WriteLine(
-                                    "spawn match for: "
-                                        + entry.SourceRoom
-                                        + " testing spawn type: "
-                                        + entry.SpawnType
-                                );*/
                                 if (entry.State == entranceBytes[i + 3])
                                 {
-                                    /*Console.WriteLine(
-                                        "spawn type match for: "
-                                            + entry.SourceRoom
-                                            + " testing params: "
-                                            + entry.Parameters
-                                    );*/
-                                    //Console.WriteLine("param match for: " + entry.SourceRoom);
                                     foreach (EntranceInfo entry2 in entranceInfo)
                                     {
                                         if (entry2.Stage.ToString("X") == entranceBytes[i + 4])
@@ -546,6 +546,7 @@ namespace TPRandomizer
             result.Add("noSmallKeysOnBosses", sSettings.noSmallKeysOnBosses);
             result.Add("startingToD", sSettings.startingToD.ToString());
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
+            result.Add("randomizeStartingPoint", sSettings.randomizeStartingPoint);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

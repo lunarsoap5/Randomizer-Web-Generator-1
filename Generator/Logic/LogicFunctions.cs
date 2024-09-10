@@ -176,9 +176,8 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
-                        "Death Mountain Elevator Lower"
-                        ].ReachedByPlaythrough
-                        && CanDefeatGoron()
+                            "Death Mountain Elevator Lower"
+                        ].ReachedByPlaythrough && CanDefeatGoron()
                     )
                 ) && HasBottle();
         }
@@ -1739,12 +1738,8 @@ namespace TPRandomizer
         {
             return (
                 (
-                    HasSword()
-                    && CanUse(Item.Slingshot)
-                    && (
-                        CanUse(Item.North_Faron_Woods_Gate_Key)
-                        || (Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy)
-                    )
+                    Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
+                    && CanDefeatBokoblin()
                 ) || (Randomizer.SSettings.skipPrologue == true)
             );
         }

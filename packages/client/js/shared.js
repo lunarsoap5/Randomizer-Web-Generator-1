@@ -369,7 +369,7 @@
   function genSSettingsFromUi() {
     // Increment the version when you make changes to the format. Need to make
     // sure you don't break backwards compatibility!!
-    const sSettingsVersion = 5;
+    const sSettingsVersion = 6;
 
     const values = [
       { id: 'logicRulesFieldset', bitLength: 2 },
@@ -416,6 +416,7 @@
       { id: 'noSmallKeysOnBossesCheckbox' },
       { id: 'todFieldset', bitLength: 3 },
       { id: 'hintDistributionFieldset', bitLength: 5 },
+      { id: 'randomizeStartingPointCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -861,6 +862,14 @@
       res.noSmallKeysOnBosses = false;
       res.startingToD = 1; // Noon, which the previous rando versions used.
       res.hintDistribution = 0; // None
+    }
+    if (version >= 6)
+    {
+      processBasic({id: 'randomizeStartingPoint'});
+    }
+    else
+    {
+      res.randomizeStartingPoint = false; // Vanilla
     }
 
     res.startingItems = processor.nextEolList(9);
