@@ -726,6 +726,16 @@ namespace TPRandomizer
                 Item.Purple_Rupee
             };
 
+        public static List<Item> ToTSwordRequirements =
+            new()
+            {
+                Item.Gives_Vanilla,
+                Item.Progressive_Sword,
+                Item.Ordon_Sword,
+                Item.Master_Sword,
+                Item.Master_Sword_Light
+            };
+
         // Mutates inputList
         private void updateItemToCount(List<Item> inputList, Item item, int desiredCount)
         {

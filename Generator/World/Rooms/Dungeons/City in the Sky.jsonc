@@ -68,8 +68,9 @@
         [
           {
             "ConnectedArea": "Lake Hylia",
-            "Requirements": "(Progressive_Clawshot, 1)",
-            "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+            // A custom spawn is added where jumping off the left side puts the player in Lake Hylia
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
           },
           {
             "ConnectedArea": "City in The Sky Lobby",

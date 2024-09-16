@@ -474,7 +474,9 @@ namespace TPRandomizer
                 part2Settings.Add("skipArbitersEntrance", SSettings.skipArbitersEntrance);
             if (SSettings.skipSnowpeakEntrance)
                 part2Settings.Add("skipSnowpeakEntrance", SSettings.skipSnowpeakEntrance);
-            if (SSettings.totEntrance != TotEntrance.Closed)
+            if (SSettings.skipGroveEntrance)
+                part2Settings.Add("skipGroveEntrance", SSettings.skipGroveEntrance);
+            if (SSettings.totEntrance != TotEntrance.None)
                 part2Settings.Add("totEntrance", SSettings.totEntrance);
             if (SSettings.skipCityEntrance)
                 part2Settings.Add("skipCityEntrance", SSettings.skipCityEntrance);
@@ -972,7 +974,7 @@ namespace TPRandomizer
                     }
                 }
 
-                if (Randomizer.SSettings.totEntrance != TotEntrance.Closed)
+                if (Randomizer.SSettings.skipGroveEntrance)
                 {
                     if (LogicFunctions.CanUse(Item.Shadow_Crystal))
                     {

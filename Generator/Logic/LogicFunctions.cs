@@ -1759,6 +1759,11 @@ namespace TPRandomizer
             //return (canCompleteLakebedTemple() || (Randomizer.SSettings.skipMdh == true));
         }
 
+        public static bool CanStrikePedestal()
+        {
+            return getItemCount(Item.Progressive_Sword) >= (int)Randomizer.SSettings.totEntrance;
+        }
+
         /// <summary>
         /// summary text.
         /// </summary>

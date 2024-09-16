@@ -72,9 +72,11 @@ namespace TPRandomizer.SSettings.Enums
 
     public enum TotEntrance
     {
-        Closed = 0,
-        OpenGrove = 1,
-        Open = 2,
+        None = 0,
+        Wooden_Sword = 1,
+        Ordon_Sword = 2,
+        Master_Sword = 3,
+        Light_Sword = 4
     }
 
     public enum GoronMinesEntrance

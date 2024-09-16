@@ -356,7 +356,9 @@ document
 document
   .getElementById('snowpeakEntranceCheckbox')
   .addEventListener('click', setSettingsString);
-document;
+document
+  .getElementById('groveEntranceCheckbox')
+  .addEventListener('click', setSettingsString);
 document.getElementById('totEntranceFieldset').onchange = setSettingsString;
 document
   .getElementById('cityEntranceCheckbox')
@@ -1225,6 +1227,7 @@ function populateSSettings(s) {
   $('#lakebedEntranceCheckbox').prop('checked', s.skipLakebedEntrance);
   $('#arbitersEntranceCheckbox').prop('checked', s.skipArbitersEntrance);
   $('#snowpeakEntranceCheckbox').prop('checked', s.skipSnowpeakEntrance);
+  $('#groveEntranceCheckbox').prop('checked', s.skipGroveEntrance);
   $('#totEntranceFieldset').val(s.totEntrance);
   $('#cityEntranceCheckbox').prop('checked', s.skipCityEntrance);
   $('#instantTextCheckbox').prop('checked', s.instantText);

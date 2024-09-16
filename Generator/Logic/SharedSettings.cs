@@ -45,6 +45,7 @@ namespace TPRandomizer
         public bool skipLakebedEntrance { get; set; }
         public bool skipArbitersEntrance { get; set; }
         public bool skipSnowpeakEntrance { get; set; }
+        public bool skipGroveEntrance { get; set; }
         public TotEntrance totEntrance { get; set; }
         public bool skipCityEntrance { get; set; }
         public bool instantText { get; set; }
@@ -100,7 +101,8 @@ namespace TPRandomizer
             skipLakebedEntrance = processor.NextBool();
             skipArbitersEntrance = processor.NextBool();
             skipSnowpeakEntrance = processor.NextBool();
-            totEntrance = (TotEntrance)processor.NextInt(2);
+            skipGroveEntrance = processor.NextBool();
+            totEntrance = (TotEntrance)processor.NextInt(3);
             skipCityEntrance = processor.NextBool();
             instantText = processor.NextBool();
             openMap = processor.NextBool();

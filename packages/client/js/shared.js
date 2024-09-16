@@ -402,7 +402,8 @@
       { id: 'lakebedEntranceCheckbox' },
       { id: 'arbitersEntranceCheckbox' },
       { id: 'snowpeakEntranceCheckbox' },
-      { id: 'totEntranceFieldset', bitLength: 2 },
+      { id: 'groveEntranceCheckbox' },
+      { id: 'totEntranceFieldset', bitLength: 3 },
       { id: 'cityEntranceCheckbox' },
       { id: 'instantTextCheckbox' },
       { id: 'openMapCheckbox' },
@@ -818,9 +819,28 @@
     processBasic({ id: 'skipLakebedEntrance' });
     processBasic({ id: 'skipArbitersEntrance' });
     processBasic({ id: 'skipSnowpeakEntrance' });
-    if (version >= 1) {
+    if ((version >= 1) && version < 6) {
+      const totEntrance = {
+        closed: 0,
+        openGrove: 1,
+        open: 2,
+      };
       // `totEntrance` changed from a checkbox to a select
       processBasic({ id: 'totEntrance', bitLength: 2 });
+      if (res.totEntrance != totEntrance.closed)
+      {
+        res.skipGroveEntrance = true;
+      }
+      else
+      {
+        res.skipGroveEntrance = false;
+      }
+      res.totEntrance = 3; // Master Sword
+    }
+    else if (version >= 6) {
+      // `totEntrance` changed uses and meaning and was split into two different settings
+      processBasic({ id: 'skipGroveEntrance' });
+      processBasic({ id: 'totEntrance', bitLength: 3 });
     } else {
       const totEntrance = {
         closed: 0,

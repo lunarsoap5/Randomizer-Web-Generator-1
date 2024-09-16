@@ -374,12 +374,7 @@ namespace TPRandomizer.Assets
             { 0x7, 0x49 }, // Stairs to Temple of time created.
             { 0x7, 0x4A }, // Struck master sword pedestal with sword.
             { 0x7, 0x4B }, // Stairs and window appear and work properly (Past).
-            { 0x7, 0xB6 }, // Skull Kid - Human defeated.
-            { 0x7, 0xB7 }, // Lost Woods Turns to day after defeating Skull Kid - Human
-            { 0x7, 0xBB }, // Sacred Grove Portal
-            { 0x7, 0x5B }, // Block pushed down
-            { 0x7, 0x42 }, // Midna text after block pushed down
-            { 0x7, 0x43 }, // cs after pushing block human
+            { 0x7, 0xBC }, // Statue in present is gone.
         };
         public static readonly byte[,] OpenGroveRegionFlags = new byte[,]
         {
@@ -640,9 +635,9 @@ namespace TPRandomizer.Assets
             /* 13 */RandomizerSettings.skipLakebedEntrance,
             /* 14 */RandomizerSettings.skipArbitersEntrance,
             /* 15 */RandomizerSettings.skipSnowpeakEntrance,
-            /* 16 */RandomizerSettings.totEntrance == TotEntrance.Open,
+            /* 16 */RandomizerSettings.totEntrance == TotEntrance.None,
             /* 17 */RandomizerSettings.skipCityEntrance,
-            /* 18 */RandomizerSettings.totEntrance == TotEntrance.OpenGrove,
+            /* 18 */RandomizerSettings.skipGroveEntrance,
             /* 19 */RandomizerSettings.goronMinesEntrance == GoronMinesEntrance.Open,
             /* 20 */RandomizerSettings.openDot,
         };

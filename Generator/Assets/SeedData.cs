@@ -9,6 +9,7 @@ namespace TPRandomizer.Assets
     using Newtonsoft.Json;
     using TPRandomizer.Assets.CLR0;
     using System.ComponentModel.DataAnnotations.Schema;
+    using TPRandomizer.SSettings.Enums;
 
     /// <summary>
     /// summary text.
@@ -292,6 +293,7 @@ namespace TPRandomizer.Assets
                 }
             }
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.startingToD));
+            seedHeader.Add(Converter.GcByte((int)ItemFunctions.ToTSwordRequirements[(int)randomizerSettings.totEntrance]));
 
             while (seedHeader.Count < SeedHeaderSize)
             {
@@ -1210,6 +1212,24 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Replace kak left side red potion with a copy of the hawkeye sign.
+
+                new ARCReplacement(
+                    "11FC",
+                    "3000EE63",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the statue to the past to use a custom flag so it's no longer tied to the portal
+
+                new ARCReplacement(
+                    "1574",
+                    "80FF0000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Sacred_Grove,
+                    1
+                ), // Change the ms pedestal to use a custom flag so it's no longer tied to the portal
 
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
