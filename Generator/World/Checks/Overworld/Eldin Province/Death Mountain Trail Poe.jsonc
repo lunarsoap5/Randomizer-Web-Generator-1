@@ -1,6 +1,6 @@
 {
-    "requirements": "Shadow_Crystal and canCompleteGoronMines",
-    "glitchedRequirements": "Shadow_Crystal and canCompleteGoronMines",
+    "requirements": "Shadow_Crystal and canCompleteGoronMines and CanCompleteEldinTwilight",
+    "glitchedRequirements": "Shadow_Crystal and canCompleteGoronMines and CanCompleteEldinTwilight",
     "checkCategory": ["Overworld", "Poe", "Death Mountain"],
     "itemId": "Poe_Soul"
 }

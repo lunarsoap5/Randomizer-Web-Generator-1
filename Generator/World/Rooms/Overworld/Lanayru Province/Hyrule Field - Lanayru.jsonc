@@ -268,7 +268,8 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Castle Town South",
+        // The people blocking the way in the twilight are a one-way entrance.
+        "ConnectedArea": "South Castle Town Doors",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

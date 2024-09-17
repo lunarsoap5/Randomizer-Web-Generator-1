@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "Upper Kakariko Village",
-        "Requirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwiight",
-        "GlitchedRequirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwiight"
+        "Requirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwilight"
       },
       {
         "ConnectedArea": "Kakariko Village Behind Gate",

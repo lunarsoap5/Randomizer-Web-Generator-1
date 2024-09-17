@@ -47,16 +47,7 @@
     "Checks":
     [
         "Lake Hylia Underwater Chest",
-        "Outside Lanayru Spring Left Statue Chest",
-        "Outside Lanayru Spring Right Statue Chest",
-        "Flight By Fowl Top Platform Reward",
-        "Flight By Fowl Second Platform Chest",
-        "Flight By Fowl Third Platform Chest",
-        "Flight By Fowl Fourth Platform Chest",
-        "Flight By Fowl Fifth Platform Chest",
         "Auru Gift To Fyer",
-        "Flight By Fowl Ledge Poe",
-        "Isle of Riches Poe",
         "Lake Hylia Alcove Poe",
         "Lake Hylia Dock Poe",
         "Lake Hylia Tower Poe",
@@ -85,7 +76,17 @@
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       },
     ],
-    "Checks":[""],
+    "Checks":[
+      "Outside Lanayru Spring Left Statue Chest",
+        "Outside Lanayru Spring Right Statue Chest",
+        "Flight By Fowl Top Platform Reward",
+        "Flight By Fowl Second Platform Chest",
+        "Flight By Fowl Third Platform Chest",
+        "Flight By Fowl Fourth Platform Chest",
+        "Flight By Fowl Fifth Platform Chest",
+        "Flight By Fowl Ledge Poe",
+        "Isle of Riches Poe"
+    ],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
