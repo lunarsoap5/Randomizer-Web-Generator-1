@@ -16,12 +16,12 @@
       {
         "ConnectedArea": "Hyrule Field Near Spinner Rails",
         "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash or CanDoMapGlitch"
+        "GlitchedRequirements": "canSmash or (CanDoMapGlitch and CanCompleteLanayruTwilight)"
       },
       {
         "ConnectedArea": "North Eldin Field",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Outside Castle Town West",
@@ -30,18 +30,18 @@
       },
       {
         "ConnectedArea": "Lanayru Field Chu Grotto",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Lanayru Field Skulltula Grotto",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Lanayru Field Poe Grotto",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
@@ -284,8 +284,8 @@
       },
       {
         "ConnectedArea": "Outside Castle Town South Tektite Grotto",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
@@ -351,7 +351,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Lake Hylia",
+        "ConnectedArea": "Lake Hylia Flight By Fowl",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },

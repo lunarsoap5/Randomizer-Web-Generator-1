@@ -958,7 +958,7 @@ namespace TPRandomizer
                         playthroughGraph.Add(availableRoom);
                         availableRoom.Visited = true;
 
-                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Throne Room"];
+                        availableRoom = Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"];
                         playthroughGraph.Add(availableRoom);
                         availableRoom.Visited = true;
                     }

@@ -84,6 +84,7 @@ namespace TPRandomizer.Assets
             { 0x3, 0x99 }, // Remove wooden shield from Kak Malo Mart counter.
             { 0x0, 0x63 }, // Spawn the Chest in Link's House
             { 0x9, 0xBC }, // Spawn Gengle by default as his actor interferes with the poe soul
+            { 0x7, 0x58 }, // Sacred Grove MS Pedestal Map
         };
 
         /// <summary>

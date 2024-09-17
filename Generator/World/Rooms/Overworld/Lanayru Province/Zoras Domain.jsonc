@@ -10,8 +10,8 @@
       },
       {
         "ConnectedArea": "Fishing Hole",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
 	  {
 		  "ConnectedArea": "Zoras Domain",
@@ -20,8 +20,8 @@
 	  },
       {
         "ConnectedArea": "Upper Zoras River Izas House",
-        "Requirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))",
-        "GlitchedRequirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True))"
+        "Requirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "HasSword or (CanDefeatShadowBeast and (Setting.transformAnywhere equals True)) and CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
@@ -103,14 +103,14 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Zoras Throne Room",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "ConnectedArea": "Zoras Domain Throne Room",
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
       {
         "ConnectedArea": "Snowpeak Climb Lower",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight and Ball_and_Chain) or CanCompleteLanayruTwilight)"
       }
     ],
     "Checks":
@@ -142,7 +142,7 @@
     "Region": "Zoras Domain"
   },
   {
-    "RoomName": "Zoras Throne Room",
+    "RoomName": "Zoras Domain Throne Room",
     "Exits":
     [
       {

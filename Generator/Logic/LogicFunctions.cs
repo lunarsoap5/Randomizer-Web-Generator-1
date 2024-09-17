@@ -1744,6 +1744,14 @@ namespace TPRandomizer
             );
         }
 
+        public static bool CanCompleteGoats1()
+        {
+            return (
+                Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
+                || canCompletePrologue()
+            );
+        }
+
         /// <summary>
         /// summary text.
         /// </summary>
