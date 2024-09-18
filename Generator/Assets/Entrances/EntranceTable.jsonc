@@ -529,8 +529,8 @@
         "Type": "Overworld",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Zoras Domain",
-            "TargetRoom": "Zoras Throne Room",
+            "SourceRoom": "Zoras Domain Top of Waterfall",
+            "TargetRoom": "Zoras Domain Throne Room",
             "Stage": 50,
             "Room": 0,
             "Spawn": "01",
@@ -540,8 +540,8 @@
         },
         "TargetRoomSpawn":
         {
-            "SourceRoom": "Zoras Throne Room",
-            "TargetRoom": "Zoras Domain",
+            "SourceRoom": "Zoras Domain Throne Room",
+            "TargetRoom": "Zoras Domain Top of Waterfall",
             "Stage": 50,
             "Room": 1,
             "Spawn": "00",
@@ -2663,7 +2663,7 @@
         "Type": "Grotto",
         "SourceRoomSpawn":
         {
-            "SourceRoom": "Lake Hylia",
+            "SourceRoom": "Lake Hylia Flight By Fowl",
             "TargetRoom": "Lake Hylia Shell Blade Grotto",
             "Stage": 39,
             "Room": 4,
@@ -2675,7 +2675,7 @@
         "TargetRoomSpawn":
         {
             "SourceRoom": "Lake Hylia Shell Blade Grotto",
-            "TargetRoom": "Lake Hylia",
+            "TargetRoom": "Lake Hylia Flight By Fowl",
             "Stage": 52,
             "Room": 0,
             "Spawn": "03",

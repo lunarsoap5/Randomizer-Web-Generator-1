@@ -103,7 +103,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Zoras Domain Throne Room",
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
         "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
         "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
@@ -133,6 +133,11 @@
         "GlitchedRequirements": "true"
       },
       {
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
+        "Requirements": "canSmash",
+        "GlitchedRequirements": "canSmash"
+      },
+      {
         "ConnectedArea": "Lanayru Field Behind Boulder",
         "Requirements": "true",
         "GlitchedRequirements": "true"
@@ -146,7 +151,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Zoras Domain",
+        "ConnectedArea": "Zoras Domain Top of Waterfall",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -158,5 +163,23 @@
         "Zoras Domain Underwater Goron"
     ],
     "Region": "Zoras Domain"
-  }
+  },
+  {
+    "RoomName": "Zoras Domain Top of Waterfall",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Zoras Domain",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Zoras Domain Throne Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Zoras Domain"
+  },
 ]

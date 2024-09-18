@@ -80,7 +80,6 @@ namespace TPRandomizer
         public static string EncodeEntrances()
         {
             string spawnRoom = Randomizer.Rooms.RoomDict["Root"].Exits[0].ConnectedArea;
-            Entrance randomSpawn = Randomizer.EntranceRandomizer.spawnList[Randomizer.spawnIndex];
             EntranceInfo vanillaSpawn = Randomizer.EntranceRandomizer.vanillaSpawn;
             string encodedString = "";
             Console.WriteLine("Spawn point is " + spawnRoom);
@@ -89,10 +88,24 @@ namespace TPRandomizer
             encodedString = encodedString + vanillaSpawn.Room.ToString("X") + ",";
             encodedString = encodedString + vanillaSpawn.Spawn + ",";
             encodedString = encodedString + vanillaSpawn.State + ",";
-            encodedString = encodedString + randomSpawn.Stage.ToString("X") + ",";
-            encodedString = encodedString + randomSpawn.Room.ToString("X") + ",";
-            encodedString = encodedString + randomSpawn.Spawn + ",";
-            encodedString = encodedString + randomSpawn.State + ",";
+            if (Randomizer.SSettings.randomizeStartingPoint)
+            {
+                Entrance randomSpawn = Randomizer.EntranceRandomizer.spawnList[
+                    Randomizer.spawnIndex
+                ];
+
+                encodedString = encodedString + randomSpawn.Stage.ToString("X") + ",";
+                encodedString = encodedString + randomSpawn.Room.ToString("X") + ",";
+                encodedString = encodedString + randomSpawn.Spawn + ",";
+                encodedString = encodedString + randomSpawn.State + ",";
+            }
+            else
+            {
+                encodedString = encodedString + vanillaSpawn.Stage.ToString("X") + ",";
+                encodedString = encodedString + vanillaSpawn.Room.ToString("X") + ",";
+                encodedString = encodedString + vanillaSpawn.Spawn + ",";
+                encodedString = encodedString + vanillaSpawn.State + ",";
+            }
 
             foreach (KeyValuePair<string, Room> roomEntry in Randomizer.Rooms.RoomDict)
             {

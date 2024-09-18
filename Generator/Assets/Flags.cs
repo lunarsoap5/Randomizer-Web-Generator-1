@@ -17,9 +17,6 @@ namespace TPRandomizer.Assets
             { 0x2, 0x47 }, // Midna jump 1 mist area.
             { 0x2, 0x5D }, // North Faron Portal.
             { 0x2, 0x98 }, // South Faron Portal.
-            { 0x0, 0x6B }, // Ordon Spring Portal.
-            { 0x0, 0x44 }, // Midna Text after Ordon Shield (Spawns sword)
-            { 0x0, 0x46 }, // Midna Text after Ordon Sword
         };
 
         /// <summary>
@@ -85,6 +82,9 @@ namespace TPRandomizer.Assets
             { 0x0, 0x63 }, // Spawn the Chest in Link's House
             { 0x9, 0xBC }, // Spawn Gengle by default as his actor interferes with the poe soul
             { 0x7, 0x58 }, // Sacred Grove MS Pedestal Map
+            { 0x0, 0x6B }, // Ordon Spring Portal.
+            { 0x0, 0x44 }, // Midna Text after Ordon Shield (Spawns sword)
+            { 0x0, 0x46 }, // Midna Text after Ordon Sword
         };
 
         /// <summary>
@@ -439,7 +439,9 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] BaseRandomizerEventFlags = new byte[,]
         {
             { 0x3, 0x2 }, // Gave wooden sword to Talo.
-            { 0x6, 0x9 }, // Tame Epona, KB1 trigger activated
+            { 0x5, 0x7E }, // Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
+            { 0x6, 0x29 }, // Tame Epona, KB1 trigger activated, Warped Kakariko Bridge Back.
+            { 0xC, 0x10 }, // Midna accompanies Wolf
             { 0x12, 0x8 }, // Can use Sera's Shop.
             { 0x14, 0x10 }, // Put Bo outside, ready to wrestle
             { 0xA, 0x2F }, // Bridge of Eldin Stolen, KB1 defeated, KB1 started
@@ -452,7 +454,6 @@ namespace TPRandomizer.Assets
             { 0x2C, 0x10 }, // Raised the mirror in the Mirror Chamber
             { 0x1B, 0x38 }, // Skip Monkey Escort
             { 0x1C, 0x20 }, // Talked to Bo after opening boots chest.
-            { 0x6, 0x20 }, // Warped Kakariko Bridge Back.
             { 0x5F, 0x20 }, // Shad leaves sanctuary.
             { 0xF7, 0x1 }, // Add 256 Rupees to Charlo.
             { 0xF8, 0xF4 }, // Add 244 Rupees to Charlo.
@@ -474,9 +475,9 @@ namespace TPRandomizer.Assets
         /// </summary>
         public static readonly byte[,] FaronTwilightEventFlags = new byte[,]
         {
-            { 0x5, 0x7F }, // Midna Charge Unlocked, Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
+            { 0x5, 0x1 }, // Midna Charge Unlocked
             { 0x6, 0x10 }, // Cleared Faron Twilight
-            { 0xC, 0x18 }, // Midna accompanies Wolf, sword and shield removed from wolf's back.
+            { 0xC, 0x8 }, // Sword and shield removed from wolf's back.
             { 0x43, 0x8 }, // Senses unlocked
         };
 
