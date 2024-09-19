@@ -205,9 +205,9 @@
     [
       {
         "ConnectedArea": "Castle Town North Behind First Door",
-        // Barrier is one-way. If coming from HC to Castle Town, you just have to be able to go through the doors. 
-        "Requirements": "CanCompleteMDH", 
-        "GlitchedRequirements": "CanCompleteMDH"
+        // Barrier is one-way.
+        "Requirements": "true", 
+        "GlitchedRequirements": "true"
       },
       {
         "ConnectedArea": "Hyrule Castle Entrance",
