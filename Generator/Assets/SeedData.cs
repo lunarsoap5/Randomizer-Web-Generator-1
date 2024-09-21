@@ -104,6 +104,7 @@ namespace TPRandomizer.Assets
             {
                 case GameRegion.GC_USA:
                 case GameRegion.WII_10_USA:
+                case GameRegion.WII_12_USA:
                     region = 'E';
                     break;
                 case GameRegion.GC_EUR:

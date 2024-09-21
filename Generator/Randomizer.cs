@@ -676,6 +676,9 @@ namespace TPRandomizer
                 case GameRegion.WII_10_JP:
                     region = "wjp";
                     break;
+                case GameRegion.WII_12_USA:
+                    region = "wus2";
+                    break;
                 default:
                     throw new Exception("Did not specify output region");
             }
@@ -716,6 +719,7 @@ namespace TPRandomizer
                             case GameRegion.WII_10_USA:
                             case GameRegion.WII_10_EU:
                             case GameRegion.WII_10_JP:
+                            case GameRegion.WII_12_USA:
                                 bootloaderAddr = "0x80005BF4:";
                                 jumpAddr = "0x80008644:";
                                 jumpInsr = "u32 0x4Bffd5b0";
@@ -1843,6 +1847,7 @@ namespace TPRandomizer
                 case GameRegion.WII_10_USA:
                 case GameRegion.WII_10_EU:
                 case GameRegion.WII_10_JP:
+                case GameRegion.WII_12_USA:
                 {
                     files = System.IO.Directory.GetFiles(
                         Global.CombineRootPath("./Assets/CheckMetadata/Wii1.0/"),

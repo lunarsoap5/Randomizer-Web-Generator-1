@@ -149,6 +149,7 @@ namespace TPRandomizer
                 case GameRegion.All:
                 case GameRegion.GC_USA:
                 case GameRegion.WII_10_USA:
+                case GameRegion.WII_12_USA:
                     return "en";
                 case GameRegion.GC_JAP:
                 case GameRegion.WII_10_JP:
