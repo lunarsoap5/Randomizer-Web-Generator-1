@@ -85,6 +85,13 @@ namespace TPRandomizer.Assets
             { 0x0, 0x6B }, // Ordon Spring Portal.
             { 0x0, 0x44 }, // Midna Text after Ordon Shield (Spawns sword)
             { 0x0, 0x46 }, // Midna Text after Ordon Sword
+            { 0x0, 0x70 }, // Midna Text after sewers
+            { 0x0, 0x68 }, // Approach faron wall with Midna
+            { 0x0, 0xA0 }, // Midna allows player to approach Faron Twilight Wall
+            { 0x0, 0xBA }, // Explored area outside Link's house as wolf
+            { 0x0, 0x61 }, // Defeated first bulblin outside link's house
+            { 0x0, 0x62 }, // Defeated second bulblin outside link's house
+            { 0x0, 0x60 }, // Defeated Hugo
         };
 
         /// <summary>
@@ -438,7 +445,7 @@ namespace TPRandomizer.Assets
         /// </summary>
         public static readonly byte[,] BaseRandomizerEventFlags = new byte[,]
         {
-            { 0x3, 0x2 }, // Gave wooden sword to Talo.
+            { 0x3, 0x82 }, // Gave wooden sword to Talo. Talked to squirrel outside link's house
             { 0x5, 0x7E }, // Finished Sewers, Midna text after entering Faron Twilight, Met Zelda in sewers, Midna cut prison chain, Watched Sewers intro CS, Escaped cell in sewers.
             { 0x6, 0x29 }, // Tame Epona, KB1 trigger activated, Warped Kakariko Bridge Back.
             { 0xC, 0x10 }, // Midna accompanies Wolf
@@ -468,6 +475,9 @@ namespace TPRandomizer.Assets
             { 0x39, 0x2 }, // Released first caught fish in Ordon Day 2
             { 0x10, 0x2 }, // Talked to Jaggle after climbing vines.
             { 0xB, 0x20 }, // Talked to Yeta in Snowpeak for the first time
+            { 0x43, 0x8 }, // Senses unlocked
+            { 0x46, 0x10 }, // Rode Epona back to Link's House
+            { 0x15, 0x80 }, // watched CS after goats 2
         };
 
         /// <summary>
@@ -478,7 +488,6 @@ namespace TPRandomizer.Assets
             { 0x5, 0x1 }, // Midna Charge Unlocked
             { 0x6, 0x10 }, // Cleared Faron Twilight
             { 0xC, 0x8 }, // Sword and shield removed from wolf's back.
-            { 0x43, 0x8 }, // Senses unlocked
         };
 
         /// <summary>
@@ -510,7 +519,6 @@ namespace TPRandomizer.Assets
             { 0x4A, 0x60 }, // Completed Ordon Day 1 and Finished Sword Training.
             { 0x16, 0x1 }, // Completed Ordon Day 2.
             { 0x15, 0x80 }, // Watched CS for Goats 2 Done.
-            { 0x46, 0x10 }, // Rode Epona back to Link's House
         };
 
         public static readonly byte[,] CutsceneEventFlags = new byte[,]

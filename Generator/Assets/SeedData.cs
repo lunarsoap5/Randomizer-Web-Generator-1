@@ -1231,6 +1231,24 @@ namespace TPRandomizer.Assets
                     1
                 ), // Change the ms pedestal to use a custom flag so it's no longer tied to the portal
 
+                new ARCReplacement(
+                    "1BE0",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    1
+                ), // Remove Beth double actor from outside link's house. It just looks weird
+
+                 new ARCReplacement(
+                    "1C00",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    1
+                ), // Remove Malo double actor from outside link's house. It just looks weird
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
