@@ -5,13 +5,13 @@
     [
       {
         "ConnectedArea": "Upper Kakariko Village",
-        "Requirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwiight",
-        "GlitchedRequirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwiight"
+        "Requirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((canCompleteGoronMines and CanChangeTime) or canSmash) and CanCompleteEldinTwilight"
       },
       {
         "ConnectedArea": "Kakariko Village Behind Gate",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
       },
       {
         "ConnectedArea": "Kakariko Gorge Behind Gate",
@@ -151,8 +151,8 @@
     [
       {
         "ConnectedArea": "Lower Kakariko Village",
-        "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)", // or access to epona
-        "GlitchedRequirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)" // or access to epona
+        "Requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy) or CanCompleteEldinTwilight", // or access to epona
+        "GlitchedRequirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy) or CanCompleteEldinTwilight" // or access to epona
       },
       {
         "ConnectedArea": "Eldin Field",

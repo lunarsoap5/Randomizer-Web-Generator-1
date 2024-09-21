@@ -126,7 +126,7 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Zoras Domain West Ledge"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Zoras Throne Room"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Snowpeak Climb Lower"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Snowpeak Climb Upper"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"].ReachedByPlaythrough
@@ -1744,6 +1744,14 @@ namespace TPRandomizer
             );
         }
 
+        public static bool CanCompleteGoats1()
+        {
+            return (
+                Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
+                || canCompletePrologue()
+            );
+        }
+
         /// <summary>
         /// summary text.
         /// </summary>
@@ -1795,8 +1803,7 @@ namespace TPRandomizer
                         "Mist Area Near Faron Woods Cave"
                     ].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Sword House"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Shield House"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
                     && (
                         !Randomizer.SSettings.bonksDoDamage
                         || (
@@ -1858,7 +1865,7 @@ namespace TPRandomizer
                         || CanUse(Item.Shadow_Crystal)
                     )
                     && Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Zoras Throne Room"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Upper Zoras River"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Lake Hylia Lanayru Spring"].ReachedByPlaythrough

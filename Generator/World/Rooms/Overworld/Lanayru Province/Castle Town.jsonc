@@ -20,8 +20,8 @@
       },
       {
         "ConnectedArea": "Castle Town STAR Game",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
@@ -83,8 +83,8 @@
       },
       {
         "ConnectedArea": "Castle Town Malo Mart",
-        "Requirements": "true" ,
-        "GlitchedRequirements": "true"
+        "Requirements": "CanCompleteLanayruTwilight" ,
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
     ],
     "Checks": [""],
@@ -387,9 +387,10 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Outside Castle Town South",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        // There are people blocking the way if you try to go to the south during twilight.
+        "ConnectedArea": "South Castle Town Doors",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Castle Town Agithas House",
@@ -408,6 +409,24 @@
       },
       {
         "ConnectedArea": "Castle Town Telmas Bar",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Castle Town"
+  },
+  {
+    "RoomName": "South Castle Town Doors",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Castle Town South",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Outside Castle Town South",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

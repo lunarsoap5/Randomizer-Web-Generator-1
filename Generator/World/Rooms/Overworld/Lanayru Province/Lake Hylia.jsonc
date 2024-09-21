@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "Lake Hylia Cave Entrance",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash"
+        "Requirements": "canSmash and ((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "canSmash and ((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
       {
         "ConnectedArea": "Lake Hylia Lakebed Temple Entrance",
@@ -14,14 +14,14 @@
         "GlitchedRequirements": "Zora_Armor or CanDoAirRefill"
       },
       {
-        "ConnectedArea": "Lake Hylia Bridge",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "ConnectedArea": "Lake Hylia Flight By Fowl",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Gerudo Desert",
-        "Requirements": "Aurus_Memo",
-        "GlitchedRequirements": "Aurus_Memo"
+        "Requirements": "Aurus_Memo and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Aurus_Memo and CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Upper Zoras River",
@@ -30,45 +30,64 @@
       },
       {
         "ConnectedArea": "Lake Hylia Lanayru Spring",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
-      },
-      {
-        // You can use the cannon and a cucco to reach the grotto ledge without any requirements.
-        "ConnectedArea": "Lake Hylia Shell Blade Grotto",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
+        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
       },
       {
         "ConnectedArea": "Lake Hylia Water Toadpoli Grotto",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal"
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "City in The Sky Entrance",
-        "Requirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1)",
-        "GlitchedRequirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1)"
+        "Requirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight"
       }
     ],
     "Checks":
     [
         "Lake Hylia Underwater Chest",
-        "Outside Lanayru Spring Left Statue Chest",
-        "Outside Lanayru Spring Right Statue Chest",
-        "Flight By Fowl Top Platform Reward",
-        "Flight By Fowl Second Platform Chest",
-        "Flight By Fowl Third Platform Chest",
-        "Flight By Fowl Fourth Platform Chest",
-        "Flight By Fowl Fifth Platform Chest",
         "Auru Gift To Fyer",
-        "Flight By Fowl Ledge Poe",
-        "Isle of Riches Poe",
         "Lake Hylia Alcove Poe",
         "Lake Hylia Dock Poe",
         "Lake Hylia Tower Poe",
         "Plumm Fruit Balloon Minigame"
     ],
     "Region": "Lake Hylia"
+  },
+  {
+    "RoomName": "Lake Hylia Flight By Fowl",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Bridge",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        // You can use the cannon and a cucco to reach the grotto ledge without any requirements.
+        "ConnectedArea": "Lake Hylia Shell Blade Grotto",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+    ],
+    "Checks":[
+      "Outside Lanayru Spring Left Statue Chest",
+        "Outside Lanayru Spring Right Statue Chest",
+        "Flight By Fowl Top Platform Reward",
+        "Flight By Fowl Second Platform Chest",
+        "Flight By Fowl Third Platform Chest",
+        "Flight By Fowl Fourth Platform Chest",
+        "Flight By Fowl Fifth Platform Chest",
+        "Flight By Fowl Ledge Poe",
+        "Isle of Riches Poe"
+    ],
+    "Region": "Hyrule Field - Lanayru Province"
   },
   {
     "RoomName": "Lake Hylia Cave Entrance",
@@ -166,7 +185,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Lake Hylia",
+        "ConnectedArea": "Lake Hylia Flight By Fowl",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }

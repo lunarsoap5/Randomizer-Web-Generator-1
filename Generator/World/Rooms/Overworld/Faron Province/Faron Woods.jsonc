@@ -14,14 +14,16 @@
         "GlitchedRequirements": "canSmash"
       },
       {
+        // Worst case scenerio, if you complete prologue then you also need to complete Faron Twilight
         "ConnectedArea": "Ordon Bridge",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "canCompletePrologue and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "canCompletePrologue and CanCompleteFaronTwilight"
       },
       {
         "ConnectedArea": "Faron Field",
-        "Requirements": "canClearForest",
-        "GlitchedRequirements": "canClearForestGlitched"
+        "Requirements": "canClearForest and CanCompleteFaronTwilight and canCompletePrologue",
+        // There's no prologue requirement because worse case scenerio, you just gate clip
+        "GlitchedRequirements": "canClearForestGlitched and CanCompleteFaronTwilight"
       },
       {
         "ConnectedArea": "Faron Woods Coros House Lower",
@@ -82,8 +84,8 @@
       },
       {
         "ConnectedArea": "South Faron Woods Above Owl Statue",
-        "Requirements": "canClearForest and (Progressive_Dominion_Rod, 2) and Shadow_Crystal",
-        "GlitchedRequirements": "canClearForest and (Progressive_Dominion_Rod, 2) and Shadow_Crystal"
+        "Requirements": "canClearForest and (Progressive_Dominion_Rod, 2) and Shadow_Crystal and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "canClearForestGlitched and (Progressive_Dominion_Rod, 2) and Shadow_Crystal and CanCompleteFaronTwilight"
       }
     ],
     "Checks":
@@ -388,8 +390,8 @@
       },
       {
         "ConnectedArea": "Lost Woods",
-        "Requirements": "Shadow_Crystal",
-        "GlitchedRequirements": "Shadow_Crystal or (hasBombs and CanDoLJA)"
+        "Requirements": "Shadow_Crystal and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "(Shadow_Crystal and CanCompleteFaronTwilight) or (hasBombs and CanDoLJA)"
       },
       {
         "ConnectedArea": "Forest Temple Entrance",
