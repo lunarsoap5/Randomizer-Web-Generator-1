@@ -30,8 +30,12 @@
     USA: 1,
     EUR: 2,
     JAP: 3,
+    WUS: 4,
+    WEU: 5,
+    WJP: 6,
+    WU2: 7,
   };
-  const regionBitLength = 2;
+  const regionBitLength = 3;
 
   const EurLanguageTag = {
     English: 0,
@@ -1216,7 +1220,7 @@
     return result;
   }
 
-  function genFcSettingsString(patchOnly) {
+  function genFcSettingsString(patchOnly, version) {
     function getVal(id) {
       const $el = $('#' + id);
       if ($el.length < 1) {
@@ -1231,11 +1235,12 @@
 
     let values = [];
 
-    if (Region.hasOwnProperty(window.tpr.shared.selectedRegion)) {
+    let selectedRegion = (typeof version === 'string') ? version : window.tpr.shared.selectedRegion;
+    if (Region.hasOwnProperty(selectedRegion)) {
       values.push({
         type: RawSettingType.xBitNum,
         bitLength: regionBitLength,
-        value: parseInt(Region[window.tpr.shared.selectedRegion], 10),
+        value: parseInt(Region[selectedRegion], 10),
       });
     } else {
       values.push({

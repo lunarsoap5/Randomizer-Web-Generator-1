@@ -3,11 +3,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let worker = new Worker("/js/patcher/app_worker.js");
 
-    function base64ToBytes(base64) {
-        const binString = atob(base64);
-        return Uint8Array.from(binString, (m) => m.codePointAt(0));
-    }
-      
+    let version_map = new Map();
+    version_map.set("GZ2E01\0\0", "USA");
+    version_map.set("GZ2P01\0\0", "EUR");
+    version_map.set("GZ2J01\0\0", "JPN");
+    version_map.set("RZDE01\0\0", "WUS");
+    version_map.set("RZDP01\0\0", "WEU");
+    version_map.set("RZDJ01\0\0", "WJP");
+    version_map.set("RZDE01\0\x02", "WU2");
 
     let patching_status = (() => {
         let is_patching = false;
@@ -19,10 +22,12 @@ window.addEventListener("DOMContentLoaded", () => {
                     $("#patch_status").show();
                     $("#patch_error").hide();
                     $("#patch_progress").removeAttr("value");
+                    $("#iso_in").attr("disabled", "disabled");
                 } else {
                     $("#patch_status").hide();
                     $("#patch_error").hide();
                     $("#patch_progress").removeAttr("value");
+                    $("#iso_in").removeAttr("disabled");
                     if ($("#iso_in")[0].files.length === 0) {
                         $("#patch_btn").attr("disabled", "disabled");
                     } else {
@@ -35,6 +40,11 @@ window.addEventListener("DOMContentLoaded", () => {
     })();
 
     patching_status.is_patching = false;
+
+    function base64ToBytes(base64) {
+        const binString = atob(base64);
+        return Uint8Array.from(binString, (m) => m.codePointAt(0));
+    }
 
     $("#iso_in").on("change", (evt) => {
         let file = evt.target.files[0];
@@ -51,30 +61,63 @@ window.addEventListener("DOMContentLoaded", () => {
 
     $("#patch_btn").on("click", (evt) => {
         if ($("#iso_in")[0].files.length === 0) {
+            $("#patch_error").text("Please select an ISO file.").show();
             return;
         }
+        $("#patch_error").hide();
 
         patching_status.is_patching = true;
 
-        // TODO: Check the region of the iso before fetching the patch
-        window.tpr.shared.callCreateGci(window.tpr.shared.genFcSettingsString(true), (error, data) => {
-            if (error) {
-                console.log('error in response');
-                console.log(error);
-                $('#patch_error').text('Failed to get patch.').show();
+        // Read first 8 bytes of the iso to get the version
+        let versionPromise = new Promise((resolve, reject) => {
+            let reader = new FileReader();
+            reader.addEventListener("load", (evt) => {
+                let bytes = new Uint8Array(evt.target.result);
+                let version = version_map.get(String.fromCharCode(...bytes.slice(0, 8)));
+                if (!version) {
+                    patching_status.is_patching = false;
+                    console.error("Unknown version", bytes.slice(0, 8));
+                    $("#patch_error").text("Unknown version.").show();
+                    reject("Unknown version.");
+                    return;
+                }
+                console.debug("Version", version);
+                resolve(version);
+            });
+            reader.readAsArrayBuffer($("#iso_in")[0].files[0]);
+            reader.addEventListener("error", (evt) => {
                 patching_status.is_patching = false;
-            } else if (data) {
-                console.log('success in response');
-                console.log(data);
-                $('#patch_error').hide();
-                let {name, bytes} = data[0];
-                console.log(name);
-                let patchBytes = base64ToBytes(bytes);
-                console.log(patchBytes);
-                let patch = new Blob([patchBytes], { type: 'application/octet-stream' });
-                let file = $("#iso_in")[0].files[0];
-                worker.postMessage({ type: "run", file, patch });
-            }
+                console.error("Error reading version", evt);
+                $("#patch_error").text("Failed to read version.").show();
+                reject("Failed to read version.");
+            });
+        });
+
+        versionPromise.then((version) => {
+            window.tpr.shared.callCreateGci(window.tpr.shared.genFcSettingsString(true, version), (error, data) => {
+                if (error) {
+                    patching_status.is_patching = false;
+                    console.log('error in response');
+                    console.log(error);
+                    $('#patch_error').text('Failed to get patch.').show();
+                } else if (data) {
+                    console.info('success in response');
+                    console.info(data);
+                    $('#patch_error').hide();
+                    let {name, bytes} = data[0];
+                    console.info(name);
+                    let patchBytes = base64ToBytes(bytes);
+                    console.info(patchBytes);
+                    let patch = new Blob([patchBytes], { type: 'application/octet-stream' });
+                    let file = $("#iso_in")[0].files[0];
+                    worker.postMessage({ type: "run", file, patch });
+                }
+            });
+        }).catch((err) => {
+            patching_status.is_patching = false;
+            console.log('error in response');
+            console.log(err);
+            $('#patch_error').text('Failed to launch patching process: ' + err).show();
         });
     });
 
@@ -100,7 +143,6 @@ window.addEventListener("DOMContentLoaded", () => {
     worker.addEventListener("message", (event) => {
         switch (event.data.type) {
             case "progress": {
-                console.debug("Progress", event.data.title, event.data.progress);
                 if (typeof event.data.progress !== "undefined") {
                     $("#patch_status_text").text(event.data.title);
                 } else {

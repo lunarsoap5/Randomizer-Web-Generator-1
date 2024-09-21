@@ -60,7 +60,7 @@ namespace TPRandomizer
         {
             BitsProcessor processor = new BitsProcessor(bits);
 
-            gameRegion = (GameRegion)processor.NextInt(2);
+            gameRegion = (GameRegion)processor.NextInt(3);
             eurLangTag = (EurLanguageTag)processor.NextInt(3);
             patchFileOnly = processor.NextBool();
             includeSpoilerLog = processor.NextBool();
