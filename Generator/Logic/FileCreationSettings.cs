@@ -9,6 +9,7 @@ namespace TPRandomizer
     {
         public GameRegion gameRegion { get; }
         public EurLanguageTag eurLangTag { get; }
+        public bool patchFileOnly { get; }
         public bool includeSpoilerLog { get; }
         public RandomizeBgm randomizeBgm { get; }
         public bool randomizeFanfares { get; }
@@ -61,6 +62,7 @@ namespace TPRandomizer
 
             gameRegion = (GameRegion)processor.NextInt(2);
             eurLangTag = (EurLanguageTag)processor.NextInt(3);
+            patchFileOnly = processor.NextBool();
             includeSpoilerLog = processor.NextBool();
 
             randomizeBgm = (RandomizeBgm)processor.NextInt(2);

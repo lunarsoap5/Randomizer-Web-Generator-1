@@ -36,7 +36,7 @@ function callGeneratorBuf(args: string[], cb: callGeneratorBufCb) {
     { encoding: 'buffer' },
     (error, stdout, stderr) => {
       if (error) {
-        cb(error.message);
+        cb(error.message, stderr);
       } else {
         cb(null, stdout);
       }

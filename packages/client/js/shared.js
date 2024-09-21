@@ -5,6 +5,9 @@
     nineBitWithEndOfListPadding: 'nineBitWithEndOfListPadding',
     bitString: 'bitString',
     xBitNum: 'xBitNum',
+    rgb: 'rgb',
+    midnaHairBase: 'midnaHairBase',
+    midnaHairTips: 'midnaHairTips',
   };
 
   const RecolorId = {
@@ -22,8 +25,27 @@
     randomWithinPalette: 0b100,
   };
 
+  const Region = {
+    All: 0,
+    USA: 1,
+    EUR: 2,
+    JAP: 3,
+  };
+  const regionBitLength = 2;
+
+  const EurLanguageTag = {
+    English: 0,
+    Deutsch: 2,
+    Español: 4,
+    Français: 1,
+    Italiano: 3,
+  };
+  const eurLangTagBitLength = 3;
+
   const encodingChars =
     '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
+
+  let selectedLanguage = null;
 
   function encodeBits(bitString) {
     const missingChars = (6 - (bitString.length % 6)) % 6;
@@ -1103,13 +1125,307 @@
     });
   }
 
+  function encodeBitStringTo6BitsString(bitString) {
+    const remainder = bitString.length % 6;
+    if (remainder > 0) {
+      const missingChars = 6 - remainder;
+      bitString += '0'.repeat(missingChars);
+    }
+
+    let charString = '';
+
+    const chars =
+      '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
+
+    let index = 0;
+    while (index < bitString.length) {
+      const bits = bitString.substring(index, index + 6);
+      const charIndex = parseInt(bits, 2);
+      charString += chars[charIndex];
+
+      index += 6;
+    }
+
+    return charString;
+  }
+
+  function encodeMidnaHairBase({ valueNum, rgbVal, isCustomColor }) {
+    if (!isCustomColor) {
+      return '0' + numToPaddedBits(valueNum, 4);
+    }
+
+    let ret = '1';
+
+    let sixCharHex = rgbVal;
+    if (sixCharHex.length > 6) {
+      sixCharHex = sixCharHex.substring(sixCharHex.length - 6);
+    }
+
+    const colors = window.MidnaHairColors.calcBaseAndGlow(sixCharHex);
+
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairBaseLightWorldInactive);
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairBaseDarkWorldInactive);
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairBaseAnyWorldActive);
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairGlowAnyWorldInactive);
+    ret += window.tpr.shared.hexStrToBits(sixCharHex); // midnaHairGlowLightWorldActive
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairGlowDarkWorldActive);
+
+    return ret;
+  }
+
+  function encodeMidnaHairTips({ valueNum, rgbVal, isCustomColor }) {
+    if (!isCustomColor) {
+      return '0' + numToPaddedBits(valueNum, 4);
+    }
+
+    let ret = '1';
+
+    let sixCharHex = rgbVal;
+    if (sixCharHex.length > 6) {
+      sixCharHex = sixCharHex.substring(sixCharHex.length - 6);
+    }
+
+    const colors = window.MidnaHairColors.calcTips(sixCharHex);
+
+    ret += window.tpr.shared.hexStrToBits(sixCharHex); // midnaHairTipsLightWorldInactive
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairTipsDarkWorldAnyActive);
+    ret += window.tpr.shared.hexStrToBits(colors.midnaHairTipsLightWorldActive);
+
+    return ret;
+  }
+
+  /**
+   * Converts a hex string like "fc8a" to a bit string like "10110...".
+   *
+   * @param {string} hexStr hex string to convert to a bit string
+   * @return {string} Bit string
+   */
+  function hexStrToBits(hexStr) {
+    if (!hexStr) {
+      return '';
+    }
+
+    let result = '';
+
+    for (let i = 0; i < hexStr.length; i++) {
+      const character = hexStr.substring(i, i + 1);
+      const num = parseInt(character, 16);
+      result += numToPaddedBits(num, 4);
+    }
+
+    return result;
+  }
+
+  function genFcSettingsString(patchOnly) {
+    function getVal(id) {
+      const $el = $('#' + id);
+      if ($el.length < 1) {
+        return false;
+      }
+      if ($el.prop('nodeName') === 'INPUT' && $el.attr('type') === 'checkbox') {
+        return $el.prop('checked');
+      }
+
+      return $el.val();
+    }
+
+    let values = [];
+
+    if (Region.hasOwnProperty(window.tpr.shared.selectedRegion)) {
+      values.push({
+        type: RawSettingType.xBitNum,
+        bitLength: regionBitLength,
+        value: parseInt(Region[window.tpr.shared.selectedRegion], 10),
+      });
+    } else {
+      values.push({
+        type: RawSettingType.xBitNum,
+        bitLength: regionBitLength,
+        value: 0,
+      });
+    }
+
+    if (EurLanguageTag.hasOwnProperty(selectedLanguage)) {
+      values.push({
+        type: RawSettingType.xBitNum,
+        bitLength: eurLangTagBitLength,
+        value: parseInt(EurLanguageTag[selectedLanguage], 10),
+      });
+    } else {
+      values.push({
+        type: RawSettingType.xBitNum,
+        bitLength: eurLangTagBitLength,
+        value: 0,
+      });
+    }
+
+    values.push(!!patchOnly);
+
+    values = values.concat(
+      [
+        // { id: 'gameRegion', bitLength: 3 },
+        { id: 'includeSpoilerCheckbox' },
+
+        { id: 'bgmFieldset', bitLength: 2 },
+        { id: 'randomizeFanfaresCheckbox' },
+        { id: 'disableEnemyBGMCheckbox' },
+        { id: 'invertCameraCheckbox' },
+        { id: 'hTunicHatColorFieldset', rgb: true },
+        { id: 'hTunicBodyColorFieldset', rgb: true },
+        { id: 'hTunicSkirtColorFieldset', rgb: true },
+        { id: 'zTunicHatColorFieldset', rgb: true },
+        { id: 'zTunicHelmetColorFieldset', rgb: true },
+        { id: 'zTunicBodyColorFieldset', rgb: true },
+        { id: 'zTunicScalesColorFieldset', rgb: true },
+        { id: 'zTunicBootsColorFieldset', rgb: true },
+        { id: 'msBladeColorFieldset', rgb: true },
+        { id: 'boomerangColorFieldset', rgb: true },
+        { id: 'lanternColorFieldset', rgb: true },
+        // { id: 'midnaHairColorFieldset', bitLength: 1 },
+        { id: 'heartColorFieldset', rgb: true },
+        { id: 'aButtonColorFieldset', rgb: true },
+        { id: 'bButtonColorFieldset', rgb: true },
+        { id: 'xButtonColorFieldset', rgb: true },
+        { id: 'yButtonColorFieldset', rgb: true },
+        { id: 'zButtonColorFieldset', rgb: true },
+        { id: 'midnaHairBaseColorFieldset', midnaHairBase: true },
+        { id: 'midnaHairTipColorFieldset', midnaHairTips: true },
+        { id: 'midnaDomeRingColorFieldset', rgb: true },
+        { id: 'linkHairColorFieldset', rgb: true },
+      ].map(({ id, bitLength, rgb, midnaHairBase, midnaHairTips }) => {
+        if (bitLength) {
+          // select
+          return {
+            type: RawSettingType.xBitNum,
+            bitLength,
+            value: parseInt(getVal(id), 10),
+          };
+        } else if (rgb) {
+          const selVal = getVal(id);
+          const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
+          const value = $option[0].getAttribute('data-rgb');
+
+          return {
+            type: RawSettingType.rgb,
+            value,
+          };
+        } else if (midnaHairBase || midnaHairTips) {
+          const selVal = getVal(id);
+          const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
+          const rgbVal = $option[0].getAttribute('data-rgb');
+          const isCustomColor =
+            $option[0].getAttribute('data-custom-color') === 'true';
+
+          return {
+            type: midnaHairTips
+              ? RawSettingType.midnaHairTips
+              : RawSettingType.midnaHairBase,
+            valueNum: parseInt(selVal, 10),
+            rgbVal,
+            isCustomColor,
+          };
+        }
+        // checkbox
+        return getVal(id);
+      })
+    );
+
+    let bitString = '';
+
+    // valuesArr.forEach((value) => {
+    //   if (typeof value === 'boolean') {
+    //     bitString += value ? '1' : '0';
+    //   } else if (typeof value === 'string') {
+    //     let asNum = parseInt(value, 10);
+    //     if (Number.isNaN(asNum)) {
+    //       asNum = 0;
+    //     }
+    //     bitString += toPaddedBits(asNum, 4);
+    //   } else if (value && typeof value === 'object') {
+    //     if (value.type === RawSettingType.bitString) {
+    //       bitString += value.bitString;
+    //     }
+    //   }
+    // });
+
+    values.forEach((value) => {
+      if (typeof value === 'boolean') {
+        bitString += value ? '1' : '0';
+      } else if (typeof value === 'string') {
+        let asNum = parseInt(value, 10);
+        if (Number.isNaN(asNum)) {
+          asNum = 0;
+        }
+        bitString += numToPaddedBits(asNum, 4);
+      } else if (typeof value === 'object') {
+        if (value === null) {
+          // triple-equals here is intentional for now
+          bitString += '0';
+        } else {
+          switch (value.type) {
+            case RawSettingType.bitString:
+              bitString += value.bitString;
+              break;
+            case RawSettingType.xBitNum:
+              bitString += numToPaddedBits(value.value, value.bitLength);
+              break;
+            case RawSettingType.rgb: {
+              if (value.value == null) {
+                bitString += '0';
+              } else {
+                bitString += '1';
+                bitString += hexStrToBits(value.value);
+              }
+              break;
+            }
+            case RawSettingType.midnaHairBase:
+              bitString += encodeMidnaHairBase(value);
+              break;
+            case RawSettingType.midnaHairTips:
+              bitString += encodeMidnaHairTips(value);
+              break;
+          }
+        }
+      }
+    });
+
+    return encodeBitStringTo6BitsString(bitString);
+  }
+
+  function callCreateGci(fileCreationSettings, cb) {
+    window.tpr.shared
+      .fetch('/api/final', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fileCreationSettings,
+        }),
+      })
+      .then((response) => response.json())
+      .then(({ error, data }) => {
+        cb(error, data);
+      })
+      .catch((err) => {
+        cb(err);
+      });
+  }
+
   window.tpr = window.tpr || {};
   window.tpr.shared = {
+    Region,
+    EurLanguageTag,
+    selectedRegion: null,
     genSSettingsFromUi,
     genPSettingsFromUi,
     decodeSettingsString,
     populateUiFromPSettings,
     fetch: fetchWrapper,
     uncheckCheckboxes,
+    hexStrToBits,
+    genFcSettingsString,
+    callCreateGci,
   };
 })();

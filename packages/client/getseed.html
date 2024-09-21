@@ -30,6 +30,7 @@
     <script src="/js/shared.js"></script>
     <script src="/js/game.js"></script>
     <script src="/js/checkData.js"></script>
+    <script src="/js/patcher/patcher_app.js"></script>
   </head>
   <body>
     <header>
@@ -1276,6 +1277,17 @@
             ></div>
           </div>
           <!-- style="padding: 40px 24px 0px; display: none" -->
+          <div id="isopatch">
+            <label for="iso_in">Select your game dump (ISO): </label>
+            <input type="file" id="iso_in" accept=".iso"/>
+            <button disabled="disabled" id="patch_btn">Patch ISO</button>
+            <div id="patch_status" style="display: none">
+              <span id="patch_status_text"></span>
+              <progress id="patch_progress" max="100"></progress>
+              <span id="patch_progress_text"></span>
+            </div>
+            <span id="patch_error" style="display: none"></span>
+          </div>
         </div>
       </div>
 
