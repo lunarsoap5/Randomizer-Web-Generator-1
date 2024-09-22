@@ -415,6 +415,11 @@ ul {
   font-weight: bold;
 }
 
+.primaryButton:disabled {
+  background-color: #9e9e9e;
+  color: #000;
+}
+
 .primaryButton.primaryButtonNoShadow {
   box-shadow: none;
 }
