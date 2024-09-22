@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let version_map = new Map();
     version_map.set("GZ2E01\0\0", "USA");
     version_map.set("GZ2P01\0\0", "EUR");
-    version_map.set("GZ2J01\0\0", "JPN");
+    version_map.set("GZ2J01\0\0", "JAP");
     version_map.set("RZDE01\0\0", "WUS");
     version_map.set("RZDP01\0\0", "WEU");
     version_map.set("RZDJ01\0\0", "WJP");
@@ -65,6 +65,8 @@ window.addEventListener("DOMContentLoaded", () => {
             return;
         }
         $("#patch_error").hide();
+        $("#patch_status_text").text("Loading...");
+        $("#patch_progress").removeAttr("value");
 
         patching_status.is_patching = true;
 
@@ -94,7 +96,8 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         versionPromise.then((version) => {
-            window.tpr.shared.callCreateGci(window.tpr.shared.genFcSettingsString(true, version), (error, data) => {
+            let fcSettings = window.tpr.shared.genFcSettingsString(true, version);
+            window.tpr.shared.callCreateGci(fcSettings, (error, data) => {
                 if (error) {
                     patching_status.is_patching = false;
                     console.log('error in response');

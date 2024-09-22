@@ -1276,16 +1276,21 @@
             ></div>
           </div>
           <!-- style="padding: 40px 24px 0px; display: none" -->
-          <div id="isopatch">
+          <div style="font-size: 18px; margin-bottom: 12px; margin-top: 12px">
+            Patching Options
+          </div>
+          <div id="isopatch" style="padding: 8px">
             <label for="iso_in">Select your game dump (ISO): </label>
             <input type="file" id="iso_in" accept=".iso"/>
-            <button disabled="disabled" id="patch_btn">Patch ISO</button>
+            <br/>
+            <button disabled="disabled" id="patch_btn" class="primaryButton" style="margin-top: 16px">Patch ISO</button>
+            <br/>
             <div id="patch_status" style="display: none">
               <span id="patch_status_text"></span>
               <progress id="patch_progress" max="100"></progress>
               <span id="patch_progress_text"></span>
             </div>
-            <span id="patch_error" style="display: none"></span>
+            <div id="patch_error" class="downloadLinkError" style="margin-top: 12px; display: none"></div>
           </div>
         </div>
       </div>
