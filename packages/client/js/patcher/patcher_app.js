@@ -59,6 +59,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    let patch_name = null;
+
     $("#patch_btn").on("click", (evt) => {
         if ($("#iso_in")[0].files.length === 0) {
             $("#patch_error").text("Please select an ISO file.").show();
@@ -97,24 +99,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
         versionPromise.then((version) => {
             let fcSettings = window.tpr.shared.genFcSettingsString(true, version);
-            window.tpr.shared.callCreateGci(fcSettings, (error, data) => {
-                if (error) {
-                    patching_status.is_patching = false;
-                    console.log('error in response');
-                    console.log(error);
-                    $('#patch_error').text('Failed to get patch.').show();
-                } else if (data) {
-                    console.info('success in response');
-                    console.info(data);
-                    $('#patch_error').hide();
-                    let {name, bytes} = data[0];
-                    console.info(name);
-                    let patchBytes = base64ToBytes(bytes);
-                    console.info(patchBytes);
-                    let patch = new Blob([patchBytes], { type: 'application/octet-stream' });
-                    let file = $("#iso_in")[0].files[0];
-                    worker.postMessage({ type: "run", file, patch });
-                }
+            return window.tpr.shared.callCreateGci(fcSettings).then((data) => {
+                console.info('success in response');
+                console.info(data);
+                $('#patch_error').hide();
+                let {name, bytes} = data[0];
+                patch_name = name.replace(/\.patch\s*$/g, '.iso');
+                console.info(name, patch_name);
+                let patchBytes = base64ToBytes(bytes);
+                console.info(patchBytes);
+                let patch = new Blob([patchBytes], { type: 'application/octet-stream' });
+                let file = $("#iso_in")[0].files[0];
+                worker.postMessage({ type: "run", file, patch });
+            }).catch((error) => {
+                patching_status.is_patching = false;
+                console.log('error in response');
+                console.log(error);
+                $('#patch_error').text('Failed to get patch.').show();
             });
         }).catch((err) => {
             patching_status.is_patching = false;
@@ -167,10 +168,17 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             case "done": {
                 patching_status.is_patching = false;
-                console.debug("Done", event.data.filename);
+                if (patch_name === null) {
+                    console.warn("No patch name set. Using", event.data.filename);
+                    patch_name = event.data.filename;
+                    console.debug("Done", event.data.filename);
+                } else {
+                    console.debug("Done", event.data.filename, "=>", patch_name);
+                }
                 $("#patch_status_text").text("Done");
-                downloadIso(event.data.filename);
+                downloadIso(patch_name);
                 $("#patch_status").hide();
+                patch_name = null;
                 break;
             }
             case "cancelled": {

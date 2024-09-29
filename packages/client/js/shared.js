@@ -1398,7 +1398,7 @@
   }
 
   function callCreateGci(fileCreationSettings, cb) {
-    window.tpr.shared
+    let promise = window.tpr.shared
       .fetch('/api/final', {
         method: 'POST',
         headers: {
@@ -1409,13 +1409,23 @@
           fileCreationSettings,
         }),
       })
-      .then((response) => response.json())
-      .then(({ error, data }) => {
+      .then((response) => response.json());
+    if (cb) {
+      promise.then(({ error, data }) => {
         cb(error, data);
       })
       .catch((err) => {
         cb(err);
       });
+    } else {
+      return promise.then(({ error, data }) => {
+        if (error) {
+          throw error;
+        }
+
+        return data;
+      });
+    }
   }
 
   window.tpr = window.tpr || {};
