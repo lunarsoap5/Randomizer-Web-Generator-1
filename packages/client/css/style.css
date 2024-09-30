@@ -415,6 +415,15 @@ ul {
   font-weight: bold;
 }
 
+.primaryButton:hover {
+  background-color: #4a1a9b;
+}
+
+.primaryButton:disabled {
+  background-color: #9e9e9e;
+  color: #000;
+}
+
 .primaryButton.primaryButtonNoShadow {
   box-shadow: none;
 }
@@ -1467,8 +1476,16 @@ ul.picrossExplanation ul > li {
   user-select: none;
 }
 
+.filterGroupFilter:hover:not(.filterSelected) {
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
 .filterGroupFilter.filterSelected {
   background-color: rgb(8, 92, 161);
+}
+
+.filterGroupFilter.filterSelected:hover {
+  background-color: rgb(7, 61, 105);
 }
 
 .filterGroupTitle {
@@ -1749,4 +1766,29 @@ tr td select {
 
 .select2-results__options {
   color: #444;
+}
+
+input[type=file] {
+  width: 350px;
+  max-width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+  background: #5d1ec4;
+  border-color: #5d1ec4;
+  color: white;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #4a1a9b;
+  border-color: #4a1a9b;
+}
+
+input[type=file]:disabled::file-selector-button {
+  background: #9e9e9e;
+  border-color: #9e9e9e;
+  color: #000;
 }

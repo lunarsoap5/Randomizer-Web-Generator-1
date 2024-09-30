@@ -9,6 +9,7 @@ namespace TPRandomizer
     {
         public GameRegion gameRegion { get; }
         public EurLanguageTag eurLangTag { get; }
+        public bool patchFileOnly { get; }
         public bool includeSpoilerLog { get; }
         public RandomizeBgm randomizeBgm { get; }
         public bool randomizeFanfares { get; }
@@ -59,8 +60,9 @@ namespace TPRandomizer
         {
             BitsProcessor processor = new BitsProcessor(bits);
 
-            gameRegion = (GameRegion)processor.NextInt(2);
+            gameRegion = (GameRegion)processor.NextInt(3);
             eurLangTag = (EurLanguageTag)processor.NextInt(3);
+            patchFileOnly = processor.NextBool();
             includeSpoilerLog = processor.NextBool();
 
             randomizeBgm = (RandomizeBgm)processor.NextInt(2);
@@ -147,6 +149,7 @@ namespace TPRandomizer
                 case GameRegion.All:
                 case GameRegion.GC_USA:
                 case GameRegion.WII_10_USA:
+                case GameRegion.WII_12_USA:
                     return "en";
                 case GameRegion.GC_JAP:
                 case GameRegion.WII_10_JP:

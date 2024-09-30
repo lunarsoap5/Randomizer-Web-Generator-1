@@ -4,10 +4,10 @@
     <link rel="icon" target="_blank" href="/favicon.png" />
     <title>TP Randomizer</title>
     <meta property="og:title" content="Twilight Princess Randomizer" />
-    <meta property="og:url" content="https://rando.zeldatp.net/" />
+    <meta property="og:url" content="https://tprandomizer.com/" />
     <meta
       property="og:image"
-      content="https://rando.zeldatp.net/img/logo.png"
+      content="https://tprandomizer.com/img/logo.png"
     />
     <meta
       property="og:description"
@@ -67,6 +67,9 @@
               </li>
               <li>
                 <a href="https://www.zeldaspeedruns.com/tp">ZSR TP Pages</a>
+              </li>
+              <li>
+                <a href="https://geckopatcher.com">Online ISO Patcher</a>
               </li>
             </ul>
           </li>
@@ -1276,6 +1279,23 @@
             ></div>
           </div>
           <!-- style="padding: 40px 24px 0px; display: none" -->
+          <hr/>
+          <div style="font-size: 18px; margin-bottom: 12px; margin-top: 12px">
+            Patching Options
+          </div>
+          <div id="isopatch" style="padding: 8px">
+            <label for="iso_in">Select your game dump (ISO): </label>
+            <input type="file" id="iso_in" accept=".iso"/>
+            <br/>
+            <button disabled="disabled" id="patch_btn" class="primaryButton" style="margin-top: 16px" data-tooltip-text="ISO patching is done locally on your machine.">Patch ISO</button>
+            <br/>
+            <div id="patch_status" style="margin-top: 12px; display: none">
+              <span id="patch_status_text"></span>
+              <progress id="patch_progress" max="100"></progress>
+              <span id="patch_progress_text"></span>
+            </div>
+            <div id="patch_error" class="downloadLinkError" style="margin-top: 12px; display: none"></div>
+          </div>
         </div>
       </div>
 
@@ -1385,6 +1405,13 @@
             target="_blank"
             style="color: #d62013"
             >MelonSpeedruns</a
+          >. Patcher integration by
+          <a
+            target="_blank"
+            href="https://github.com/kipcode66"
+            target="_blank"
+            style="color: #d62013"
+            >Kip</a
           >
         </div>
       </div>
@@ -1545,5 +1572,6 @@
 
     <script src="/getseed.js"></script>
     <script src="/js/tooltip.js"></script>
+    <script src="/js/patcher/patcher_app.js"></script>
   </body>
 </html>

@@ -544,70 +544,72 @@ namespace TPRandomizer
 
             List<Tuple<Dictionary<string, object>, byte[]>> fileDefs = new();
 
-            if (fcSettings.gameRegion == GameRegion.All)
-            {
-                // For now, 'All' only generates for GameCube until we do more
-                // work related to Wii code.
-                List<GameRegion> gameRegionsForAll =
-                    new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP, };
-
-                // Create files for all regions
-                // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
-                foreach (GameRegion gameRegion in gameRegionsForAll)
+            if (!fcSettings.patchFileOnly) {
+                if (fcSettings.gameRegion == GameRegion.All)
                 {
-                    if (gameRegion != GameRegion.All)
-                    {
-                        // Update language to be used with resource system.
-                        string langTag = fcSettings.GetLanguageTagString(gameRegion);
-                        Res.UpdateCultureInfo(langTag);
+                    // For now, 'All' only generates for GameCube until we do more
+                    // work related to Wii code.
+                    List<GameRegion> gameRegionsForAll =
+                        new() { GameRegion.GC_USA, GameRegion.GC_EUR, GameRegion.GC_JAP, };
 
-                        fileDefs.Add(
-                            GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
-                        );
+                    // Create files for all regions
+                    // foreach (GameRegion gameRegion in GameRegion.GetValues(typeof(GameRegion)))
+                    foreach (GameRegion gameRegion in gameRegionsForAll)
+                    {
+                        if (gameRegion != GameRegion.All)
+                        {
+                            // Update language to be used with resource system.
+                            string langTag = fcSettings.GetLanguageTagString(gameRegion);
+                            Res.UpdateCultureInfo(langTag);
+
+                            fileDefs.Add(
+                                GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
+                            );
+                        }
                     }
                 }
-            }
-            else
-            {
-                // Update language to be used with resource system.
-                string langTag = fcSettings.GetLanguageTagString();
-                Res.UpdateCultureInfo(langTag);
-
-                // Create file for one region
-                fileDefs.Add(
-                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
-                );
-            }
-
-            // Generate seed .bin file
-            fileDefs.Add(
-                GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
-            );
-
-            // Generate patch file
-            fileDefs.Add(GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
-
-            if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
-            {
-                // Set back to default language ('en') before creating spoiler
-                // log when gameRegion is 'All'.
-                if (fcSettings.gameRegion == GameRegion.All)
+                else
                 {
                     // Update language to be used with resource system.
                     string langTag = fcSettings.GetLanguageTagString();
                     Res.UpdateCultureInfo(langTag);
+
+                    // Create file for one region
+                    fileDefs.Add(
+                        GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
+                    );
                 }
 
-                // Add fileDef for spoilerLog
-                string spoilerLogText = GetSeedGenResultsJson(id);
-                byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
+                // Generate seed .bin file
+                fileDefs.Add(
+                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
+                );
 
-                Dictionary<string, object> dict = new();
-                dict.Add("name", $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json");
-                dict.Add("length", spoilerBytes.Length);
+                if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
+                {
+                    // Set back to default language ('en') before creating spoiler
+                    // log when gameRegion is 'All'.
+                    if (fcSettings.gameRegion == GameRegion.All)
+                    {
+                        // Update language to be used with resource system.
+                        string langTag = fcSettings.GetLanguageTagString();
+                        Res.UpdateCultureInfo(langTag);
+                    }
 
-                fileDefs.Add(new(dict, spoilerBytes));
+                    // Add fileDef for spoilerLog
+                    string spoilerLogText = GetSeedGenResultsJson(id);
+                    byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
+
+                    Dictionary<string, object> dict = new();
+                    dict.Add("name", $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json");
+                    dict.Add("length", spoilerBytes.Length);
+
+                    fileDefs.Add(new(dict, spoilerBytes));
+                }
             }
+
+            // Generate patch file
+            fileDefs.Add(GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
 
             PrintFileDefs(id, seedGenResults, fcSettings, fileDefs);
 
@@ -674,6 +676,9 @@ namespace TPRandomizer
                 case GameRegion.WII_10_JP:
                     region = "wjp";
                     break;
+                case GameRegion.WII_12_USA:
+                    region = "wus2";
+                    break;
                 default:
                     throw new Exception("Did not specify output region");
             }
@@ -684,15 +689,15 @@ namespace TPRandomizer
                 using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
                 {
                     archive.CreateEntryFromFile(
-                        "/app/generator/Assets/patch/RomHack.toml",
+                        Global.CombineRootPath("./Assets/patch/RomHack.toml"),
                         "RomHack.toml"
                     );
                     archive.CreateEntryFromFile(
-                        "/app/generator/Assets/rels/Randomizer." + region + ".rel",
+                        Global.CombineRootPath("./Assets/rels/Randomizer." + region + ".rel"),
                         "mod.rel"
                     );
                     archive.CreateEntryFromFile(
-                        "/app/generator/Assets/rels/boot." + region + ".rel",
+                        Global.CombineRootPath("./Assets/rels/boot." + region + ".rel"),
                         "boot.rel"
                     );
 
@@ -714,6 +719,7 @@ namespace TPRandomizer
                             case GameRegion.WII_10_USA:
                             case GameRegion.WII_10_EU:
                             case GameRegion.WII_10_JP:
+                            case GameRegion.WII_12_USA:
                                 bootloaderAddr = "0x80005BF4:";
                                 jumpAddr = "0x80008644:";
                                 jumpInsr = "u32 0x4Bffd5b0";
@@ -726,7 +732,7 @@ namespace TPRandomizer
                         sw.WriteLine(jumpInsr);
                         sw.WriteLine(bootloaderAddr);
                         var bootloaderBytes = File.ReadAllBytes(
-                            "/app/generator/Assets/bootloader/" + region + ".bin"
+                            Global.CombineRootPath("./Assets/bootloader/" + region + ".bin")
                         );
                         var bootloaderHex = string.Join(
                             "",
@@ -1841,6 +1847,7 @@ namespace TPRandomizer
                 case GameRegion.WII_10_USA:
                 case GameRegion.WII_10_EU:
                 case GameRegion.WII_10_JP:
+                case GameRegion.WII_12_USA:
                 {
                     files = System.IO.Directory.GetFiles(
                         Global.CombineRootPath("./Assets/CheckMetadata/Wii1.0/"),

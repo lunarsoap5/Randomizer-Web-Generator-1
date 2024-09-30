@@ -215,6 +215,7 @@ app.post('/api/final', function (req: express.Request, res: express.Response) {
     ['generate_final_output2', id, fileCreationSettings],
     (error, buffer) => {
       if (error) {
+        console.error(buffer?.toString("utf-8"));
         res.status(500).send({ error });
         return;
       }

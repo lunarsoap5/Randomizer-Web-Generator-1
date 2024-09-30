@@ -104,6 +104,7 @@ namespace TPRandomizer.Assets
             {
                 case GameRegion.GC_USA:
                 case GameRegion.WII_10_USA:
+                case GameRegion.WII_12_USA:
                     region = 'E';
                     break;
                 case GameRegion.GC_EUR:
@@ -1490,7 +1491,7 @@ namespace TPRandomizer.Assets
                     break;
                 }
             }
-            List<byte> gciBytes = File.ReadAllBytes("/app/generator/Assets/gci/Randomizer." + gciRegion + ".gci").ToList(); // read in the file as an array of bytes
+            List<byte> gciBytes = File.ReadAllBytes(Global.CombineRootPath("./Assets/gci/Randomizer." + gciRegion + ".gci")).ToList(); // read in the file as an array of bytes
 
             for (int i = 0; i < maxRelEntries; i++)
             {
