@@ -1522,7 +1522,10 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Hylian_Shield)
-                || (Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough && (!(Randomizer.SSettings.shuffleShopItems)))
+                || (
+                    Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
+                    && !Randomizer.SSettings.shuffleShopItems
+                )
                 || Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                 || (
                     Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
@@ -1614,7 +1617,11 @@ namespace TPRandomizer
                 || hasBombs()
                 || ((getItemCount(Item.Progressive_Bow) >= 1) && CanGetArrows())
                 || (getItemCount(Item.Progressive_Clawshot) >= 1)
-                || (CanDoNicheStuff() && hasShield() && getItemCount(Item.Progressive_Hidden_Skill) >= 2)
+                || (
+                    CanDoNicheStuff()
+                    && hasShield()
+                    && getItemCount(Item.Progressive_Hidden_Skill) >= 2
+                )
             );
         }
 
@@ -1727,7 +1734,11 @@ namespace TPRandomizer
         public static bool CanGetArrows()
         {
             return (
-                canClearForest() || Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
+                Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
+                || (
+                    canCompleteGoronMines()
+                    && Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
+                )
             );
         }
 

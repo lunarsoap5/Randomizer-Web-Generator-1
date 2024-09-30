@@ -43,11 +43,6 @@ namespace TPRandomizer.Assets
         public static readonly byte[,] BaseRandomizerRegionFlags = new byte[,]
         {
             { 0x0, 0x57 }, // Spider on Link's Ladder killed.
-            { 0x16, 0x47 }, // West Bridge in CiTS Broken.
-            { 0x16, 0x4D }, // West Bridge in CiTS Extended.
-            { 0x16, 0x5D }, // West Bridge in CiTS Spinner Slot Closed.
-            { 0x16, 0x6D }, // West Bridge in CiTS Extended.
-            { 0x16, 0x6B }, // West Bridge in CiTS Destroyed CS Trigger.
             { 0x2, 0x63 }, // Trill lets you shop at his store.
             { 0x3, 0xB9 }, // Barnes sells water bombs.
             { 0x3, 0xB3 }, // Colin Rescued CS (Malo Mart is Open).
