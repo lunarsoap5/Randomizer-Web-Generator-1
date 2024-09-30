@@ -488,7 +488,7 @@ namespace TPRandomizer
                 || (getItemCount(Item.Progressive_Bow) >= 1)
                 || (CanDoNicheStuff() && CanUse(Item.Iron_Boots))
                 || CanUse(Item.Spinner)
-                || (getItemCount(Item.Progressive_Hidden_Skill) >= 2)
+                || (hasShield() && getItemCount(Item.Progressive_Hidden_Skill) >= 2)
                 || CanUse(Item.Slingshot)
                 || (getItemCount(Item.Progressive_Clawshot) >= 1)
                 || hasBombs()
@@ -903,7 +903,7 @@ namespace TPRandomizer
                 || (getItemCount(Item.Progressive_Bow) >= 1)
                 || (CanDoNicheStuff() && CanUse(Item.Iron_Boots))
                 || CanUse(Item.Spinner)
-                || (getItemCount(Item.Progressive_Hidden_Skill) >= 2)
+                || (hasShield() && getItemCount(Item.Progressive_Hidden_Skill) >= 2)
                 || CanUse(Item.Slingshot)
                 || (getItemCount(Item.Progressive_Clawshot) >= 1)
                 || hasBombs()
@@ -1522,7 +1522,7 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Hylian_Shield)
-                || Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
+                || (Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough && (!(Randomizer.SSettings.shuffleShopItems)))
                 || Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                 || (
                     Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
@@ -1614,7 +1614,7 @@ namespace TPRandomizer
                 || hasBombs()
                 || ((getItemCount(Item.Progressive_Bow) >= 1) && CanGetArrows())
                 || (getItemCount(Item.Progressive_Clawshot) >= 1)
-                || (CanDoNicheStuff() && getItemCount(Item.Progressive_Hidden_Skill) >= 2)
+                || (CanDoNicheStuff() && hasShield() && getItemCount(Item.Progressive_Hidden_Skill) >= 2)
             );
         }
 
