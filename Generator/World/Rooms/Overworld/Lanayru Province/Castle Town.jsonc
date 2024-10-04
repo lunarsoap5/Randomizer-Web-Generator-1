@@ -141,7 +141,10 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
+    "Checks": 
+    [
+      "Castle Town Goron Shop Hylian Shield"
+    ],
     "Region": "Castle Town"
   },
   {

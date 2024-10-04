@@ -2270,7 +2270,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2295,7 +2295,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2320,7 +2320,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2345,7 +2345,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2370,7 +2370,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2395,7 +2395,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2420,7 +2420,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2445,7 +2445,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2470,7 +2470,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2495,7 +2495,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2520,7 +2520,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "3"
         },
         "TargetRoomSpawn":
         {
@@ -2545,7 +2545,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2570,7 +2570,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2595,7 +2595,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2620,7 +2620,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2645,7 +2645,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
@@ -2670,7 +2670,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "4"
         },
         "TargetRoomSpawn":
         {
@@ -2695,7 +2695,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F010",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -2720,7 +2720,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2745,7 +2745,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "1"
         },
         "TargetRoomSpawn":
         {
@@ -2770,7 +2770,7 @@
             "Spawn": "00",
             "SpawnType": "C0",
             "Parameters": "F013",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {

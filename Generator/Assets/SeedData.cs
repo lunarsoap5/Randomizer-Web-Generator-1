@@ -1259,6 +1259,41 @@ namespace TPRandomizer.Assets
                     6
                 ), // Remove Argorok actor in west city, which breaks the bridge
 
+                 new ARCReplacement(
+                    "50C2",
+                    "0001032F",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check for custom flag before allowing player to buy hylian shield 
+
+                 new ARCReplacement(
+                    "50FA",
+                    "0001032F",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Check to see if the flag for buying the shield has been set before continuing the conversation after buying the shield 
+
+                 new ARCReplacement(
+                    "50F0",
+                    "0300089D",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set the new flag for buying the shield
+                 new ARCReplacement(
+                    "50F4",
+                    "032F0000",
+                    (byte)FileDirectory.Message,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Castle_Town_Shops,
+                    4
+                ), // Set the new flag for buying the shield
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(

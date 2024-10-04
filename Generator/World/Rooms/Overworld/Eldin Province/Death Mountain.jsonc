@@ -58,7 +58,30 @@
         "Requirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)",
         // Either having visited the area before or doing Early Elevator
         "GlitchedRequirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open) or (HasSword and (CanDoLJA or Shadow_Crystal))"
-      }
+      },
+      {
+        "ConnectedArea": "Death Mountain Hot Spring",
+        "Requirements": "CanDefeatGoron",
+        "GlitchedRequirements": "CanDefeatGoron"
+      },
+    ],
+    "Checks": [""],
+    "Region": "Death Mountain"
+  },
+  {
+    "RoomName": "Death Mountain Hot Spring",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Death Mountain Volcano",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Death Mountain Elevator Lower",
+        "Requirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)",
+        "GlitchedRequirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)"
+      },
     ],
     "Checks": [""],
     "Region": "Death Mountain"

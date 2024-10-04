@@ -1526,11 +1526,11 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
                 )
-                || Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
                 || (
-                    Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
-                    && CanDefeatGoron()
+                    Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
+                    && !Randomizer.SSettings.shuffleShopItems
                 )
+                || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
             );
         }
 

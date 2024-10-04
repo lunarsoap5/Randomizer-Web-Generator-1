@@ -393,7 +393,8 @@ namespace TPRandomizer.Hints
                         "North Castle Town Golden Wolf",
                         "STAR Prize 1",
                         "STAR Prize 2",
-                        "Telma Invoice"
+                        "Telma Invoice",
+                        "Castle Town Goron Shop Hylian Shield"
                     }
                 },
                 {

@@ -503,7 +503,8 @@ namespace TPRandomizer
                 "Kakariko Village Malo Mart Wooden Shield",
                 "Arbiters Grounds Dungeon Reward",
                 "Sacred Grove Pedestal Master Sword",
-                "Sacred Grove Pedestal Shadow Crystal"
+                "Sacred Grove Pedestal Shadow Crystal",
+                "Castle Town Goron Shop Hylian Shield"
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.
