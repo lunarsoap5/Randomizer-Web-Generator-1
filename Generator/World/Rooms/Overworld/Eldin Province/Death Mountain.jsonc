@@ -114,6 +114,11 @@
         "GlitchedRequirements": "true"
       },
       {
+        "ConnectedArea": "Death Mountain Hot Spring",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
         "ConnectedArea": "Death Mountain Sumo Hall Elevator",
         "Requirements": "Iron_Boots",
         "GlitchedRequirements": "Iron_Boots"
