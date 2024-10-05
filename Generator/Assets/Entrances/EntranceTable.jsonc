@@ -1,4 +1,4 @@
-[   // unsure at ToT boss room
+[
     // Overworld Exits
     {
         "Type": "Overworld",
@@ -990,6 +990,20 @@
             "Spawn": "11",
             "SpawnType": "C0",
             "Parameters": "F01F",
+            "State": "FF"
+        }
+    },
+    {
+        "Type": "Overworld One-Way",
+        "SourceRoomSpawn":
+        {
+            "SourceRoom": "Lake Hylia",
+            "TargetRoom": "Lake Hylia Flight By Fowl",
+            "Stage": 52,
+            "Room": 0,
+            "Spawn": "03",
+            "SpawnType": "00",
+            "Parameters": "F018",
             "State": "FF"
         }
     },
@@ -2290,7 +2304,7 @@
         {
             "SourceRoom": "Lost Woods Lower Battle Arena",
             "TargetRoom": "Lost Woods Baba Serpent Grotto",
-            "Stage": 37,
+            "Stage": 36,
             "Room": 1,
             "Spawn": "00",
             "SpawnType": "C0",
@@ -2390,7 +2404,7 @@
         {
             "SourceRoom": "Eldin Field",
             "TargetRoom": "Eldin Field Bomskit Grotto",
-            "Stage": 36,
+            "Stage": 35,
             "Room": 0,
             "Spawn": "00",
             "SpawnType": "C0",
@@ -2539,31 +2553,6 @@
         "SourceRoomSpawn":
         {
             "SourceRoom": "Snowpeak Climb Upper",
-            "TargetRoom": "Snowpeak Ice Keese Grotto",
-            "Stage": 37,
-            "Room": 2,
-            "Spawn": "00",
-            "SpawnType": "C0",
-            "Parameters": "F013",
-            "State": "2"
-        },
-        "TargetRoomSpawn":
-        {
-            "SourceRoom": "Snowpeak Ice Keese Grotto",
-            "TargetRoom": "Snowpeak Climb Upper",
-            "Stage": 51,
-            "Room": 0,
-            "Spawn": "02",
-            "SpawnType": "90",
-            "Parameters": "F01F",
-            "State": "FF"
-        }
-    },
-    {
-        "Type": "Grotto",
-        "SourceRoomSpawn":
-        {
-            "SourceRoom": "Snowpeak Climb Upper",
             "TargetRoom": "Snowpeak Freezard Grotto",
             "Stage": 38,
             "Room": 3,
@@ -2579,6 +2568,31 @@
             "Stage": 51,
             "Room": 0,
             "Spawn": "01",
+            "SpawnType": "90",
+            "Parameters": "F01F",
+            "State": "FF"
+        }
+    },
+    {
+        "Type": "Grotto",
+        "SourceRoomSpawn":
+        {
+            "SourceRoom": "Snowpeak Climb Upper",
+            "TargetRoom": "Snowpeak Ice Keese Grotto",
+            "Stage": 37,
+            "Room": 2,
+            "Spawn": "00",
+            "SpawnType": "C0",
+            "Parameters": "F013",
+            "State": "2"
+        },
+        "TargetRoomSpawn":
+        {
+            "SourceRoom": "Snowpeak Ice Keese Grotto",
+            "TargetRoom": "Snowpeak Climb Upper",
+            "Stage": 51,
+            "Room": 0,
+            "Spawn": "02",
             "SpawnType": "90",
             "Parameters": "F01F",
             "State": "FF"
@@ -2678,7 +2692,7 @@
             "TargetRoom": "Lake Hylia Flight By Fowl",
             "Stage": 52,
             "Room": 0,
-            "Spawn": "03",
+            "Spawn": "63",
             "SpawnType": "90",
             "Parameters": "F01F",
             "State": "FF"
@@ -2731,7 +2745,7 @@
             "Spawn": "08",
             "SpawnType": "90",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         }
     },
     {
@@ -2756,7 +2770,7 @@
             "Spawn": "0A",
             "SpawnType": "90",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         }
     },
     {
@@ -2781,7 +2795,7 @@
             "Spawn": "09",
             "SpawnType": "90",
             "Parameters": "F01F",
-            "State": "FF"
+            "State": "0"
         }
     },
 	// Dungeon Exits
