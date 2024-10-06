@@ -236,7 +236,7 @@
             "Spawn": "00",
             "SpawnType": "00",
             "Parameters": "F012",
-            "State": "FF"
+            "State": "2"
         },
         "TargetRoomSpawn":
         {
@@ -247,7 +247,7 @@
             "Spawn": "05",
             "SpawnType": "10",
             "Parameters": "F032",
-            "State": "FF"
+            "State": "2"
         }
     },
     {
@@ -1466,7 +1466,7 @@
         {
             "SourceRoom": "Kakariko Bug House Ceiling Hole",
             "TargetRoom": "Lower Kakariko Village",
-            "Stage": 68,
+            "Stage": 46,
             "Room": 0,
             "Spawn": "04",
             "SpawnType": "50",
@@ -1735,7 +1735,7 @@
             "Spawn": "03",
             "SpawnType": "10",
             "Parameters": "F090",
-            "State": "FF"
+            "State": "0"
         },
         "TargetRoomSpawn":
         {
