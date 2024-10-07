@@ -544,7 +544,8 @@ namespace TPRandomizer
 
             List<Tuple<Dictionary<string, object>, byte[]>> fileDefs = new();
 
-            if (!fcSettings.patchFileOnly) {
+            if (!fcSettings.patchFileOnly)
+            {
                 if (fcSettings.gameRegion == GameRegion.All)
                 {
                     // For now, 'All' only generates for GameCube until we do more
@@ -601,7 +602,10 @@ namespace TPRandomizer
                     byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
 
                     Dictionary<string, object> dict = new();
-                    dict.Add("name", $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json");
+                    dict.Add(
+                        "name",
+                        $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json"
+                    );
                     dict.Add("length", spoilerBytes.Length);
 
                     fileDefs.Add(new(dict, spoilerBytes));
@@ -921,7 +925,7 @@ namespace TPRandomizer
             availableBaseRooms.Add(startingRoom);
 
             // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
-            if (LogicFunctions.CanUse(Item.Shadow_Crystal))
+            if (LogicFunctions.CanUse(Item.Shadow_Crystal) && LogicFunctions.CanUnlockOrdonMap())
             {
                 availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
                 availableBaseRooms.Add(availableRoom);

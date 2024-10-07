@@ -2025,6 +2025,16 @@ namespace TPRandomizer
             return false;
         }
 
+        public static bool CanUnlockOrdonMap()
+        {
+            return (
+                    Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Outside Links House"].ReachedByPlaythrough
+                ) || Randomizer.SSettings.openMap;
+        }
+
         /// <summary>
         /// Checks the setting for difficult combat. Difficult combat includes: difficult, annoying, or time consuming combat
         /// </summary>
