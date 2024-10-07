@@ -2025,15 +2025,143 @@ namespace TPRandomizer
             return false;
         }
 
-        public static bool CanUnlockOrdonMap()
-        {
-            return (
-                    Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Outside Links House"].ReachedByPlaythrough
-                ) || Randomizer.SSettings.openMap;
-        }
+        public static bool CanUnlockOrdonaMap()
+		{
+			return (
+					Randomizer.Rooms.RoomDict["Outside Links House"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Ordon Ranch Entrance"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Ordon Ranch"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Ordon Ranch Stable"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Ordon Spring"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Ordon Bridge"].ReachedByPlaythrough
+					|| Randomizer.SSettings.openMap
+			);
+		}
+
+		public static bool CanUnlockFaronMap()
+		{
+			return (
+					Randomizer.Rooms.RoomDict["South Faron Woods"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["South Faron Woods Behind Gate"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["South Faron Woods Coros Ledge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["South Faron Woods Owl Statue Area"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["South Faron Woods Above Owl Statue"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Near Faron Woods Cave"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Inside Mist"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Under Owl Statue Chest"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Near Owl Statue Chest"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Center Stump"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Outside Faron Mist Cave"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Near North Faron Woods"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lost Woods Lower Battle Arena"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lost Woods Upper Battle Arena"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Sacred Grove Before Block"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Sacred Grove Upper"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Sacred Grove Lower"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Sacred Grove Past"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Sacred Grove Past Behind Window"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Faron Field Behind Boulder"].ReachedByPlaythrough
+					|| Randomizer.SSettings.openMap
+			);
+		}
+
+		public static bool CanUnlockEldinMap()
+		{
+			return (
+					Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Kakariko Gorge Cave Entrance"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Kakariko Gorge Behind Gate"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Upper Kakariko Village"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Kakariko Top of Watchtower"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Kakariko Village Behind Gate"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Death Mountain Near Kakariko"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Death Mountain Trail"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Death Mountain Outside Sumo Hall"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Death Mountain Elevator Lower"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Eldin Field"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Eldin Field Near Castle Town"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Eldin Field Lava Cave Ledge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Eldin Field From Lava Cave Lower"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["North Eldin Field"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Eldin Field Outside Hidden Village"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Eldin Field Grotto Platform"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Hidden Village"].ReachedByPlaythrough
+					|| Randomizer.SSettings.openMap
+			);
+		}
+
+		public static bool CanUnlockLanayruMap()
+		{
+			return (
+					Randomizer.Rooms.RoomDict["Lanayru Field"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lanayru Field Cave Entrance"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lanayru Field Behind Boulder"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Hyrule Field Near Spinner Rails"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Upper Zoras River"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Zoras Domain West Ledge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Zoras Domain Top of Waterfall"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Outside Castle Town West"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Outside Castle Town West Grotto Ledge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town West"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town Center"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town North"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town North Behind First Door"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town North Inside Barrier"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town East"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town Doctors Office Balcony"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Outside Castle Town East"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Castle Town South"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["South Castle Town Doors"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Outside Castle Town South"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Outside Castle Town South Inside Boulder"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia Bridge Grotto Ledge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia Flight By Fowl"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia Cave Entrance"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia Lakebed Temple Entrance"].ReachedByPlaythrough
+					|| Randomizer.SSettings.openMap
+			);
+		}
+
+		public static bool CanUnlockSnowpeakMap()
+		{
+			return (
+					Randomizer.Rooms.RoomDict["Snowpeak Climb Lower"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Snowpeak Climb Upper"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Snowpeak Summit Upper"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Snowpeak Summit Lower"].ReachedByPlaythrough
+					|| Randomizer.SSettings.openMap
+			);
+		}
+
+		public static bool CanUnlockGerudoMap()
+		{
+			return (
+					Randomizer.Rooms.RoomDict["Gerudo Desert"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Gerudo Desert Cave of Ordeals Plateau"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Gerudo Desert Basin"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Gerudo Desert North East Ledge"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Gerudo Desert Outside Bulblin Camp"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Bulblin Camp"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Outside Arbiters Grounds"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mirror Chamber Upper"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mirror Chamber Portal"].ReachedByPlaythrough
+					|| Randomizer.SSettings.openMap
+			);
+		}
 
         /// <summary>
         /// Checks the setting for difficult combat. Difficult combat includes: difficult, annoying, or time consuming combat
