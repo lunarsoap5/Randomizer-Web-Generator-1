@@ -2054,6 +2054,7 @@ namespace TPRandomizer
 					|| Randomizer.Rooms.RoomDict["Mist Area Center Stump"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["Mist Area Outside Faron Mist Cave"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["Mist Area Near North Faron Woods"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Mist Area Faron Mist Cave"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["Lost Woods Lower Battle Arena"].ReachedByPlaythrough
@@ -2131,6 +2132,7 @@ namespace TPRandomizer
 					|| Randomizer.Rooms.RoomDict["Lake Hylia Flight By Fowl"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["Lake Hylia Cave Entrance"].ReachedByPlaythrough
 					|| Randomizer.Rooms.RoomDict["Lake Hylia Lakebed Temple Entrance"].ReachedByPlaythrough
+					|| Randomizer.Rooms.RoomDict["Lake Hylia Lanayru Spring"].ReachedByPlaythrough
 					|| Randomizer.SSettings.openMap
 			);
 		}
