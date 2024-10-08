@@ -1294,6 +1294,15 @@ namespace TPRandomizer.Assets
                     4
                 ), // Set the new flag for buying the shield
 
+                 new ARCReplacement(
+                    "5418",
+                    "C493D583",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Bulblin_Camp,
+                    1
+                ), // Move the spawn point from Outside AG -> camp to not be between gates.
+
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
                 new ARCReplacement(
