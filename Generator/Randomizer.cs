@@ -925,7 +925,7 @@ namespace TPRandomizer
             availableBaseRooms.Add(startingRoom);
 
             // With sewers no longer a thing, the player starts with Ordon Portal (until we find a way to randomize it)
-            if (LogicFunctions.CanUse(Item.Shadow_Crystal) && LogicFunctions.CanUnlockOrdonMap())
+            if (LogicFunctions.CanUse(Item.Shadow_Crystal) && LogicFunctions.CanUnlockOrdonaMap())
             {
                 availableRoom = Randomizer.Rooms.RoomDict["Ordon Spring"];
                 availableBaseRooms.Add(availableRoom);
