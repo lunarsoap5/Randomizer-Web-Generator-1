@@ -10,8 +10,8 @@
       },
       {
         "ConnectedArea": "Gerudo Desert Cave of Ordeals Floors 12-21",
-        "Requirements": "Spinner and CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos",
-        "GlitchedRequirements": "(Spinner or CanDoLJA) and CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos"
+        "Requirements": "Spinner and CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos",
+        "GlitchedRequirements": "(Spinner or CanDoLJA) and CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos"
       }
     ],
     "Checks": [""],
