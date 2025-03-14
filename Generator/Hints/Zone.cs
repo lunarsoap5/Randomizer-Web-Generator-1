@@ -280,7 +280,8 @@ namespace TPRandomizer.Hints
                         "Kakariko Watchtower Chest",
                         "Renados Letter",
                         "Talo Sharpshooting",
-                        "Kakariko Village Bell Rupee"
+                        "Kakariko Village Bell Rupee",
+                        "Shad Dominion Rod"
                     }
                 },
                 {
@@ -293,8 +294,7 @@ namespace TPRandomizer.Hints
                         "Kakariko Graveyard Lantern Chest",
                         "Kakariko Graveyard Male Ant",
                         "Kakariko Graveyard Open Poe",
-                        "Rutelas Blessing",
-                        "Shad Dominion Rod"
+                        "Rutelas Blessing"
                     }
                 },
                 {
