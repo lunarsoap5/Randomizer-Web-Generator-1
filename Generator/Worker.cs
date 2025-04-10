@@ -36,7 +36,7 @@ namespace TPRandomizer
             {
                 case "generate_final_output2":
                     // seedId, fileCreationSettingsString, itemString, SettingsString
-                    Randomizer.GenerateFinalOutput2(args[1], args[2], args[3], args[4]);
+                    Randomizer.GenerateFinalOutput2(args[1], args[2], args[3]);
                     break;
                 case "print_check_ids":
                     Console.WriteLine(

@@ -94,8 +94,7 @@ namespace TPRandomizer.Assets
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
             TPRandomizer.Assets.CustomMessages customMessage = new();
 
-            List<CustomMessages.MessageEntry> seedMessages =
-                seedGenResults.customMsgData.GenMessageEntries();
+            List<CustomMessages.MessageEntry> seedMessages = null;
 
             seedDictionary.Add((byte)hintLanguage, seedMessages);
 
@@ -1077,7 +1076,7 @@ namespace TPRandomizer.Assets
         {
             Console.WriteLine(seedGenResults.entrances);
             List<byte> entranceTable = new();
-            string[] entranceBytes = seedGenResults.entrances.Split(",");
+            /*string[] entranceBytes = seedGenResults.entrances.Split(",");
             for (int i = 0; i < entranceBytes.Count() - 1; i++)
             {
                 Console.WriteLine("Start: " + entranceBytes[i]);
@@ -1130,6 +1129,7 @@ namespace TPRandomizer.Assets
                 );
                 SeedHeaderRaw.shuffledEntranceInfoNumEntries++;
             }
+            */
             return entranceTable;
         }
 
@@ -1360,7 +1360,7 @@ namespace TPRandomizer.Assets
         {
             List<byte> listOfMsgOffsets = new();
             List<byte> listOfCustomMessages = new();
-
+            /*
             foreach (
                 CustomMessages.MessageEntry messageEntry in seedDictionary
                     .ElementAt(currentLanguage)
@@ -1383,8 +1383,9 @@ namespace TPRandomizer.Assets
                 ParseMessageIDTables(currentLanguage, currentMessageData, seedDictionary)
             );
 
-            List<byte> customMessageData = new();
             customMessageData.AddRange(customMsgIDTables);
+            */
+            List<byte> customMessageData = new();
             customMessageData.AddRange(listOfMsgOffsets);
             customMessageData.AddRange(listOfCustomMessages);
             return customMessageData;

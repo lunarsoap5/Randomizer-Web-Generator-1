@@ -293,23 +293,19 @@ namespace TPRandomizer
         }
 
         public static bool GenerateFinalOutput2(
-            string id,
             string fcSettingsString,
             string itemPlacementString,
             string settingsString
         )
         {
+            string id = "aptest";
             FileCreationSettings fcSettings = FileCreationSettings.FromString(fcSettingsString);
 
             // Generate the dictionary values that are needed and initialize the data for the selected logic type.
             DeserializeCheckData(SSettings, fcSettings);
             DeserializeRooms(SSettings);
 
-            SeedGenResults seedGenResults = new SeedGenResults(
-                id,
-                settingsString,
-                itemPlacementString
-            );
+            SeedGenResults seedGenResults = new SeedGenResults(settingsString, itemPlacementString);
 
             SSettings = SharedSettings.FromString(settingsString);
             PropertyInfo[] randoSettingProperties = SSettings.GetType().GetProperties();

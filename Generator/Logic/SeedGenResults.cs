@@ -36,14 +36,12 @@ namespace TPRandomizer
         // other
         public SharedSettings decodedSSettings;
 
-        public SeedGenResults(string seedId, string settingsString, string itemPlacementString)
+        public SeedGenResults(string settingsString, string itemPlacementString)
         {
             if (Randomizer.Checks.CheckDict.Count < 1)
                 throw new Exception(
                     "Tried to decode SeedGenResults, but CheckDict was not initialized."
                 );
-
-            this.seedId = seedId;
 
             // Can read `version` as well if format ever changes and we need to
             // support multiple formats.
