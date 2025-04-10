@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using TPRandomizer.Util;
-using TPRandomizer.SSettings.Enums;
 using System.Linq;
+using System.Text.RegularExpressions;
+using TPRandomizer.SSettings.Enums;
+using TPRandomizer.Util;
 
 namespace TPRandomizer
 {
@@ -19,12 +19,6 @@ namespace TPRandomizer
         public CastleRequirements castleRequirements { get; set; }
         public PalaceRequirements palaceRequirements { get; set; }
         public FaronWoodsLogic faronWoodsLogic { get; set; }
-        public bool shuffleGoldenBugs { get; set; }
-        public bool shuffleSkyCharacters { get; set; }
-        public bool shuffleNpcItems { get; set; }
-        public PoeSettings shufflePoes { get; set; }
-        public bool shuffleShopItems { get; set; }
-        public bool shuffleHiddenSkills { get; set; }
         public SmallKeySettings smallKeySettings { get; set; }
         public BigKeySettings bigKeySettings { get; set; }
         public MapAndCompassSettings mapAndCompassSettings { get; set; }
@@ -39,8 +33,6 @@ namespace TPRandomizer
         public bool transformAnywhere { get; set; }
         public bool increaseWallet { get; set; }
         public bool modifyShopModels { get; set; }
-        public TrapFrequency trapFrequency { get; set; }
-        public bool barrenDungeons { get; set; }
         public GoronMinesEntrance goronMinesEntrance { get; set; }
         public bool skipLakebedEntrance { get; set; }
         public bool skipArbitersEntrance { get; set; }
@@ -49,19 +41,13 @@ namespace TPRandomizer
         public bool skipCityEntrance { get; set; }
         public bool instantText { get; set; }
         public bool openMap { get; set; }
-        public ItemScarcity itemScarcity { get; set; }
         public DamageMagnification damageMagnification { get; set; }
         public bool bonksDoDamage { get; set; }
-        public bool shuffleRewards { get; set; }
         public bool skipMajorCutscenes { get; set; }
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
-        public bool noSmallKeysOnBosses { get; set; }
         public StartingToD startingToD { get; set; }
-        public HintDistribution hintDistribution { get; set; }
         public List<Item> startingItems { get; set; }
-        public List<string> excludedChecks { get; set; }
-        public List<(string, Item)> plandoChecks { get; set; }
 
         public SharedSettings() { }
 
@@ -69,16 +55,9 @@ namespace TPRandomizer
         {
             BitsProcessor processor = new BitsProcessor(bits);
 
-            logicRules = (LogicRules)processor.NextInt(2);
             castleRequirements = (CastleRequirements)processor.NextInt(3);
             palaceRequirements = (PalaceRequirements)processor.NextInt(2);
             faronWoodsLogic = (FaronWoodsLogic)processor.NextInt(1);
-            shuffleGoldenBugs = processor.NextBool();
-            shuffleSkyCharacters = processor.NextBool();
-            shuffleNpcItems = processor.NextBool();
-            shufflePoes = (PoeSettings)processor.NextInt(2);
-            shuffleShopItems = processor.NextBool();
-            shuffleHiddenSkills = processor.NextBool();
             smallKeySettings = (SmallKeySettings)processor.NextInt(3);
             bigKeySettings = (BigKeySettings)processor.NextInt(3);
             mapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
@@ -93,8 +72,6 @@ namespace TPRandomizer
             transformAnywhere = processor.NextBool();
             increaseWallet = processor.NextBool();
             modifyShopModels = processor.NextBool();
-            trapFrequency = (TrapFrequency)processor.NextInt(3);
-            barrenDungeons = processor.NextBool();
             goronMinesEntrance = (GoronMinesEntrance)processor.NextInt(2);
             skipLakebedEntrance = processor.NextBool();
             skipArbitersEntrance = processor.NextBool();
@@ -105,32 +82,14 @@ namespace TPRandomizer
             openMap = processor.NextBool();
             increaseSpinnerSpeed = processor.NextBool();
             openDot = processor.NextBool();
-            itemScarcity = (ItemScarcity)processor.NextInt(2);
             damageMagnification = (DamageMagnification)processor.NextInt(3);
             bonksDoDamage = processor.NextBool();
-            shuffleRewards = processor.NextBool();
             skipMajorCutscenes = processor.NextBool();
-            noSmallKeysOnBosses = processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);
-            hintDistribution = (HintDistribution)processor.NextInt(5);
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();
             startingItems.Sort();
-            excludedChecks = processor.NextExcludedChecksList();
-            // StringComparer is needed because the default sort order is
-            // different on Linux and Windows
-            excludedChecks.Sort(StringComparer.Ordinal);
-
-            bool hasPlandoList = processor.NextBool();
-            if (hasPlandoList)
-            {
-                plandoChecks = processor.NextPlandoChecksList();
-                // Sort by check name, using the same StringComparer as excludedChecks
-                plandoChecks = plandoChecks.OrderBy(i => i.Item1, StringComparer.Ordinal).ToList();
-            }
-            else
-                plandoChecks = new();
         }
 
         // Note: this function MUST be able to parse old versions of sSettings

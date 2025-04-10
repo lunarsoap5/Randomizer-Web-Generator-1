@@ -5,8 +5,8 @@ namespace TPRandomizer.Assets
     using System.IO;
     using System.Linq;
     using System.Reflection;
-    using TPRandomizer.FcSettings.Enums;
     using TPRandomizer.Assets.CLR0;
+    using TPRandomizer.FcSettings.Enums;
 
     /// <summary>
     /// summary text.
@@ -58,7 +58,10 @@ namespace TPRandomizer.Assets
 
         public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride)
         {
-            Assets.CustomMessages.MessageLanguage hintLanguage = Assets.CustomMessages.MessageLanguage.English;
+            Assets.CustomMessages.MessageLanguage hintLanguage = Assets
+                .CustomMessages
+                .MessageLanguage
+                .English;
             /*
             * General Note: offset sizes are handled as two bytes. Because of this,
             * any seed bigger than 7 blocks will not work with this method. The seed structure is as follows:
@@ -91,8 +94,8 @@ namespace TPRandomizer.Assets
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
             TPRandomizer.Assets.CustomMessages customMessage = new();
 
-            
-            List<CustomMessages.MessageEntry> seedMessages = seedGenResults.customMsgData.GenMessageEntries();
+            List<CustomMessages.MessageEntry> seedMessages =
+                seedGenResults.customMsgData.GenMessageEntries();
 
             seedDictionary.Add((byte)hintLanguage, seedMessages);
 
@@ -168,17 +171,16 @@ namespace TPRandomizer.Assets
             BGMDataRaw.AddRange(SoundAssets.GenerateFanfareData(this));
 
             // Custom Message Info
-            
-                
-                currentMessageData.AddRange(
-                    ParseCustomMessageData((int)hintLanguage, currentMessageData, seedDictionary)
-                );
-                while (currentMessageData.Count % 0x4 != 0)
-                {
-                    currentMessageData.Add(Converter.GcByte(0x0));
-                }
-                currentMessageEntryInfo.AddRange(GenerateMessageTableInfo((int)hintLanguage));
-            
+
+
+            currentMessageData.AddRange(
+                ParseCustomMessageData((int)hintLanguage, currentMessageData, seedDictionary)
+            );
+            while (currentMessageData.Count % 0x4 != 0)
+            {
+                currentMessageData.Add(Converter.GcByte(0x0));
+            }
+            currentMessageEntryInfo.AddRange(GenerateMessageTableInfo((int)hintLanguage));
 
             currentMessageHeader.AddRange(GenerateMessageHeader(currentMessageEntryInfo));
 
@@ -223,7 +225,13 @@ namespace TPRandomizer.Assets
             // Generate GCI Files
             currentGCIData.AddRange(BannerDataRaw);
             currentGCIData.AddRange(currentSeedData);
-            var gci = new Gci(region, currentGCIData, seedGenResults.playthroughName, fcSettings, regionOverride);
+            var gci = new Gci(
+                region,
+                currentGCIData,
+                seedGenResults.playthroughName,
+                fcSettings,
+                regionOverride
+            );
             return gci.gciFile.ToArray();
             // File.WriteAllBytes(playthroughName, gci.gciFile.ToArray());
         }
@@ -237,7 +245,9 @@ namespace TPRandomizer.Assets
             SeedHeaderRaw.versionMajor = VersionMajor;
             SeedHeaderRaw.versionMinor = VersionMinor;
             SeedHeaderRaw.customTextHeaderSize = (ushort)MessageHeaderSize;
-            SeedHeaderRaw.customTextHeaderOffset = (ushort)(CheckDataRaw.Count + MessageHeaderSize + BGMDataRaw.Count);
+            SeedHeaderRaw.customTextHeaderOffset = (ushort)(
+                CheckDataRaw.Count + MessageHeaderSize + BGMDataRaw.Count
+            );
             SeedHeaderRaw.requiredDungeons = (uint)seedGenResults.requiredDungeons;
             PropertyInfo[] seedHeaderProperties = SeedHeaderRaw.GetType().GetProperties();
             foreach (PropertyInfo headerObject in seedHeaderProperties)
@@ -362,7 +372,7 @@ namespace TPRandomizer.Assets
                 randomizerSettings.lanayruTwilightCleared,
                 randomizerSettings.skipMinorCutscenes,
                 randomizerSettings.skipMdh,
-                randomizerSettings.openMap //map bits
+                randomizerSettings.openMap, //map bits
             };
             bool[] oneTimePatchSettingsArray =
             {
@@ -604,7 +614,6 @@ namespace TPRandomizer.Assets
                                     Console.WriteLine("doing the not thing for " + currentCheck.checkName);
                                 }
                             }*/
-                        
                         }
                         else if (currentCheck.dzxTag[i] == "ACTR")
                         {
@@ -762,7 +771,7 @@ namespace TPRandomizer.Assets
                 new(0xA430, glowDarkWorldActive[1]),
                 new(0xA43C, fcSettings.midnaHairTipsLightWorldInactive << 8),
                 new(0xA428, fcSettings.midnaHairTipsDarkWorldAnyActive << 8),
-                new(0xA448, fcSettings.midnaHairTipsLightWorldActive << 8)
+                new(0xA448, fcSettings.midnaHairTipsLightWorldActive << 8),
             };
         }
 
@@ -800,29 +809,23 @@ namespace TPRandomizer.Assets
             List<byte> listOfBugRewards = new();
             ushort count = 0;
             SharedSettings randomizerSettings = Randomizer.SSettings;
-            if (randomizerSettings.shuffleNpcItems)
+
+            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
             {
-                foreach (
-                    KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList()
-                )
+                Check currentCheck = checkList.Value;
+                if (currentCheck.dataCategory.Contains("Bug Reward"))
                 {
-                    Check currentCheck = checkList.Value;
-                    if (currentCheck.dataCategory.Contains("Bug Reward"))
-                    {
-                        listOfBugRewards.AddRange(
-                            Converter.GcBytes(
-                                (UInt16)
-                                    byte.Parse(
-                                        currentCheck.flag,
-                                        System.Globalization.NumberStyles.HexNumber
-                                    )
-                            )
-                        );
-                        listOfBugRewards.AddRange(
-                            Converter.GcBytes((UInt16)(byte)currentCheck.itemId)
-                        );
-                        count++;
-                    }
+                    listOfBugRewards.AddRange(
+                        Converter.GcBytes(
+                            (UInt16)
+                                byte.Parse(
+                                    currentCheck.flag,
+                                    System.Globalization.NumberStyles.HexNumber
+                                )
+                        )
+                    );
+                    listOfBugRewards.AddRange(Converter.GcBytes((UInt16)(byte)currentCheck.itemId));
+                    count++;
                 }
             }
 
@@ -915,11 +918,10 @@ namespace TPRandomizer.Assets
                 Check currentCheck = checkList.Value;
                 if (currentCheck.dataCategory.Contains("Event"))
                 {
-                    
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.itemId));
-                    
+
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));
-                    
+
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.roomIDX));
                     listOfEventItems.Add(
                         Converter.GcByte(
@@ -1143,7 +1145,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to check Link's wallet for 100 rupees.
-
                 new ARCReplacement(
                     "1A84",
                     "00000064",
@@ -1152,7 +1153,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to increase donated amount by 100 rupees.
-
                 new ARCReplacement(
                     "1ACC",
                     "00000064",
@@ -1161,7 +1161,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to remove 100 rupees from Link's wallet.
-
                 new ARCReplacement(
                     "1ACC",
                     "00000064",
@@ -1170,7 +1169,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Set Charlo Donation to remove 100 rupees from Link's wallet.
-
                 new ARCReplacement(
                     "1324",
                     "00000181",
@@ -1179,7 +1177,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Palace_of_Twilight,
                     0
                 ), // Remove the invisible wall from Palace
-
                 new ARCReplacement(
                     "608",
                     "FF05FFFF",
@@ -1206,7 +1203,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the flag of the Hawkeye item
-
                 new ARCReplacement(
                     "708",
                     "3904FFFF",
@@ -1215,7 +1211,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Add a flag to the kak red potion shop item.
-
                 new ARCReplacement(
                     "648",
                     "04FFFFFF",
@@ -1224,7 +1219,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the flag of the Kak Hylian Shield sold out sign.
-
                 new ARCReplacement(
                     "624",
                     "01478000",
@@ -1233,7 +1227,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the kak Hawkeye sold out to a Hylian Shield sold out.
-
                 new ARCReplacement(
                     "628",
                     "33FFFFFF",
@@ -1242,7 +1235,6 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Change the flag of the new Hylian shield sold out.
-
                 new ARCReplacement(
                     "694",
                     "01FFFFFF",
@@ -1267,9 +1259,8 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Village_Interiors,
                     3
                 ), // Replace kak left side red potion with a copy of the hawkeye sign.
-
                 /*
-                // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here. 
+                // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
                 new ARCReplacement(
                     "3014",
                     "FF05FFFF",
@@ -1344,8 +1335,7 @@ namespace TPRandomizer.Assets
             List<byte> listOfCustomMsgIDs = new();
             ushort count = 0;
             CustomMessageHeaderRaw.msgIdTableOffset = (ushort)(
-                MessageHeaderSize
-                + currentMessageData.Count
+                MessageHeaderSize + currentMessageData.Count
             );
             foreach (
                 CustomMessages.MessageEntry messageEntry in seedDictionary
@@ -1381,9 +1371,7 @@ namespace TPRandomizer.Assets
                 listOfCustomMessages.AddRange(Converter.MessageStringBytes(messageEntry.message));
                 listOfCustomMessages.Add(Converter.GcByte(0x0));
             }
-            CustomMessageHeaderRaw.msgTableSize = (ushort)(
-                listOfCustomMessages.Count
-            );
+            CustomMessageHeaderRaw.msgTableSize = (ushort)(listOfCustomMessages.Count);
 
             for (int i = 0; i < listOfCustomMessages.Count; i++)
             {
@@ -1405,7 +1393,7 @@ namespace TPRandomizer.Assets
         private static List<byte> GenerateMessageHeader(List<byte> messageTableInfo)
         {
             List<byte> messageHeader = new();
-            messageHeader.AddRange(Converter.GcBytes((UInt16)(messageTableInfo.Count))); 
+            messageHeader.AddRange(Converter.GcBytes((UInt16)(messageTableInfo.Count)));
             messageHeader.AddRange(messageTableInfo);
 
             return messageHeader;
@@ -1415,19 +1403,13 @@ namespace TPRandomizer.Assets
         {
             List<byte> messageTableInfo = new();
             messageTableInfo.AddRange(
-                Converter.GcBytes(
-                    (UInt16)CustomMessageHeaderRaw.totalEntries
-                )
+                Converter.GcBytes((UInt16)CustomMessageHeaderRaw.totalEntries)
             );
             messageTableInfo.AddRange(
-                Converter.GcBytes(
-                    (UInt32)CustomMessageHeaderRaw.msgTableSize
-                )
+                Converter.GcBytes((UInt32)CustomMessageHeaderRaw.msgTableSize)
             );
             messageTableInfo.AddRange(
-                Converter.GcBytes(
-                    (UInt32)CustomMessageHeaderRaw.msgIdTableOffset
-                )
+                Converter.GcBytes((UInt32)CustomMessageHeaderRaw.msgIdTableOffset)
             );
 
             return messageTableInfo;

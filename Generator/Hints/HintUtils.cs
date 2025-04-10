@@ -2,8 +2,8 @@ namespace TPRandomizer.Hints
 {
     using System;
     using System.Collections.Generic;
-    using TPRandomizer.Util;
     using SSettings.Enums;
+    using TPRandomizer.Util;
 
     public enum GoalEnum
     {
@@ -123,18 +123,17 @@ namespace TPRandomizer.Hints
             "Ganondorf Castle"
         );
 
-        public static readonly Dictionary<string, Goal> requiredDungeonHintZoneToGoal =
-            new()
-            {
-                { "Forest Temple", Diababa },
-                { "Goron Mines", Fyrus },
-                { "Lakebed Temple", Morpheel },
-                { "Arbiter's Grounds", Stallord },
-                { "Snowpeak Ruins", Blizzeta },
-                { "Temple of Time", Armogohma },
-                { "City in the Sky", Argorok },
-                { "Palace of Twilight", Zant },
-            };
+        public static readonly Dictionary<string, Goal> requiredDungeonHintZoneToGoal = new()
+        {
+            { "Forest Temple", Diababa },
+            { "Goron Mines", Fyrus },
+            { "Lakebed Temple", Morpheel },
+            { "Arbiter's Grounds", Stallord },
+            { "Snowpeak Ruins", Blizzeta },
+            { "Temple of Time", Armogohma },
+            { "City in the Sky", Argorok },
+            { "Palace of Twilight", Zant },
+        };
 
         public static bool IsDungeonGoal(Goal goal)
         {
@@ -147,49 +146,47 @@ namespace TPRandomizer.Hints
 
     public class HintUtils
     {
-        private static readonly HashSet<string> dungeonZones =
-            new()
-            {
-                "Forest Temple",
-                "Goron Mines",
-                "Lakebed Temple",
-                "Arbiter's Grounds",
-                "Snowpeak Ruins",
-                "Temple of Time",
-                "City in the Sky",
-                "Palace of Twilight",
-                "Hyrule Castle",
-            };
+        private static readonly HashSet<string> dungeonZones = new()
+        {
+            "Forest Temple",
+            "Goron Mines",
+            "Lakebed Temple",
+            "Arbiter's Grounds",
+            "Snowpeak Ruins",
+            "Temple of Time",
+            "City in the Sky",
+            "Palace of Twilight",
+            "Hyrule Castle",
+        };
 
-        public static readonly Dictionary<Item, string> tradeItemToRewardCheck =
-            new()
-            {
-                { Item.Female_Ant, "Agitha Female Ant Reward" },
-                { Item.Female_Beetle, "Agitha Female Beetle Reward" },
-                { Item.Female_Butterfly, "Agitha Female Butterfly Reward" },
-                { Item.Female_Dayfly, "Agitha Female Dayfly Reward" },
-                { Item.Female_Dragonfly, "Agitha Female Dragonfly Reward" },
-                { Item.Female_Grasshopper, "Agitha Female Grasshopper Reward" },
-                { Item.Female_Ladybug, "Agitha Female Ladybug Reward" },
-                { Item.Female_Mantis, "Agitha Female Mantis Reward" },
-                { Item.Female_Phasmid, "Agitha Female Phasmid Reward" },
-                { Item.Female_Pill_Bug, "Agitha Female Pill Bug Reward" },
-                { Item.Female_Snail, "Agitha Female Snail Reward" },
-                { Item.Female_Stag_Beetle, "Agitha Female Stag Beetle Reward" },
-                { Item.Male_Ant, "Agitha Male Ant Reward" },
-                { Item.Male_Beetle, "Agitha Male Beetle Reward" },
-                { Item.Male_Butterfly, "Agitha Male Butterfly Reward" },
-                { Item.Male_Dayfly, "Agitha Male Dayfly Reward" },
-                { Item.Male_Dragonfly, "Agitha Male Dragonfly Reward" },
-                { Item.Male_Grasshopper, "Agitha Male Grasshopper Reward" },
-                { Item.Male_Ladybug, "Agitha Male Ladybug Reward" },
-                { Item.Male_Mantis, "Agitha Male Mantis Reward" },
-                { Item.Male_Phasmid, "Agitha Male Phasmid Reward" },
-                { Item.Male_Pill_Bug, "Agitha Male Pill Bug Reward" },
-                { Item.Male_Snail, "Agitha Male Snail Reward" },
-                { Item.Male_Stag_Beetle, "Agitha Male Stag Beetle Reward" },
-                { Item.Asheis_Sketch, "Gift From Ralis" },
-            };
+        public static readonly Dictionary<Item, string> tradeItemToRewardCheck = new()
+        {
+            { Item.Female_Ant, "Agitha Female Ant Reward" },
+            { Item.Female_Beetle, "Agitha Female Beetle Reward" },
+            { Item.Female_Butterfly, "Agitha Female Butterfly Reward" },
+            { Item.Female_Dayfly, "Agitha Female Dayfly Reward" },
+            { Item.Female_Dragonfly, "Agitha Female Dragonfly Reward" },
+            { Item.Female_Grasshopper, "Agitha Female Grasshopper Reward" },
+            { Item.Female_Ladybug, "Agitha Female Ladybug Reward" },
+            { Item.Female_Mantis, "Agitha Female Mantis Reward" },
+            { Item.Female_Phasmid, "Agitha Female Phasmid Reward" },
+            { Item.Female_Pill_Bug, "Agitha Female Pill Bug Reward" },
+            { Item.Female_Snail, "Agitha Female Snail Reward" },
+            { Item.Female_Stag_Beetle, "Agitha Female Stag Beetle Reward" },
+            { Item.Male_Ant, "Agitha Male Ant Reward" },
+            { Item.Male_Beetle, "Agitha Male Beetle Reward" },
+            { Item.Male_Butterfly, "Agitha Male Butterfly Reward" },
+            { Item.Male_Dayfly, "Agitha Male Dayfly Reward" },
+            { Item.Male_Dragonfly, "Agitha Male Dragonfly Reward" },
+            { Item.Male_Grasshopper, "Agitha Male Grasshopper Reward" },
+            { Item.Male_Ladybug, "Agitha Male Ladybug Reward" },
+            { Item.Male_Mantis, "Agitha Male Mantis Reward" },
+            { Item.Male_Phasmid, "Agitha Male Phasmid Reward" },
+            { Item.Male_Pill_Bug, "Agitha Male Pill Bug Reward" },
+            { Item.Male_Snail, "Agitha Male Snail Reward" },
+            { Item.Male_Stag_Beetle, "Agitha Male Stag Beetle Reward" },
+            { Item.Asheis_Sketch, "Gift From Ralis" },
+        };
 
         public static readonly Dictionary<string, Item> tradeRewardCheckToSourceItem;
 
@@ -458,77 +455,57 @@ namespace TPRandomizer.Hints
             // Goals to bosses are only valid if it is common knowledge based on
             // the settings that the bosses themselves are required.
 
-            if (!sSettings.shuffleRewards)
+
+            // If dungeonRewards are shuffled then only hint toward bosses
+            // that we 100% know must be defeated purely based on settings.
+
+            if (sSettings.castleRequirements == CastleRequirements.Vanilla)
             {
-                // If not shuffling rewards, can simply add a goal for the boss
-                // of each required dungeon.
-                HashSet<string> requiredDungeons = getRequiredDungeonZones();
-                foreach (string dungeonZone in requiredDungeons)
-                {
-                    if (GoalConstants.requiredDungeonHintZoneToGoal.ContainsKey(dungeonZone))
-                    {
-                        Goal goal = GoalConstants.requiredDungeonHintZoneToGoal[dungeonZone];
-                        result.Add(goal);
-                    }
-                }
+                result.Add(GoalConstants.Stallord);
+                result.Add(GoalConstants.Zant);
             }
-            else
+            else if (sSettings.castleRequirements == CastleRequirements.All_Dungeons)
             {
-                // If dungeonRewards are shuffled then only hint toward bosses
-                // that we 100% know must be defeated purely based on settings.
+                result.Add(GoalConstants.Diababa);
+                result.Add(GoalConstants.Fyrus);
+                result.Add(GoalConstants.Morpheel);
+                result.Add(GoalConstants.Stallord);
+                result.Add(GoalConstants.Blizzeta);
+                result.Add(GoalConstants.Armogohma);
+                result.Add(GoalConstants.Argorok);
+                result.Add(GoalConstants.Zant);
+            }
 
-                if (sSettings.castleRequirements == CastleRequirements.Vanilla)
+            if (
+                result.Contains(GoalConstants.Zant)
+                && sSettings.palaceRequirements == PalaceRequirements.Vanilla
+            )
+            {
+                result.Add(GoalConstants.Argorok);
+            }
+
+            if (!sSettings.skipMdh)
+                result.Add(GoalConstants.Morpheel);
+
+            if (sSettings.logicRules == LogicRules.Glitchless)
+            {
+                // If we are playing glitchless and Skybooks are vanilla and
+                // are needed for City, we conclude that ToT is required as
+                // Impaz will have a book in village. This will change with
+                // ER.
+
+                // This seems like it fails to take starting items into
+                // consideration. Can worry about it later since as already
+                // noted, we will need to revisit for ER -isaac
+                if (result.Contains(GoalConstants.Argorok) && !sSettings.skipCityEntrance)
                 {
-                    result.Add(GoalConstants.Stallord);
-                    result.Add(GoalConstants.Zant);
-                }
-                else if (sSettings.castleRequirements == CastleRequirements.All_Dungeons)
-                {
-                    result.Add(GoalConstants.Diababa);
-                    result.Add(GoalConstants.Fyrus);
-                    result.Add(GoalConstants.Morpheel);
-                    result.Add(GoalConstants.Stallord);
-                    result.Add(GoalConstants.Blizzeta);
                     result.Add(GoalConstants.Armogohma);
-                    result.Add(GoalConstants.Argorok);
-                    result.Add(GoalConstants.Zant);
                 }
 
-                if (
-                    result.Contains(GoalConstants.Zant)
-                    && sSettings.palaceRequirements == PalaceRequirements.Vanilla
-                )
-                {
-                    result.Add(GoalConstants.Argorok);
-                }
-
-                if (!sSettings.skipMdh)
-                    result.Add(GoalConstants.Morpheel);
-
-                if (sSettings.logicRules == LogicRules.Glitchless)
-                {
-                    // If we are playing glitchless and Skybooks are vanilla and
-                    // are needed for City, we conclude that ToT is required as
-                    // Impaz will have a book in village. This will change with
-                    // ER.
-
-                    // This seems like it fails to take starting items into
-                    // consideration. Can worry about it later since as already
-                    // noted, we will need to revisit for ER -isaac
-                    if (
-                        result.Contains(GoalConstants.Argorok)
-                        && !sSettings.shuffleNpcItems
-                        && !sSettings.skipCityEntrance
-                    )
-                    {
-                        result.Add(GoalConstants.Armogohma);
-                    }
-
-                    // If Faron Woods is closed then we need to beat Forest
-                    // Temple to leave.
-                    if (sSettings.faronWoodsLogic == FaronWoodsLogic.Closed)
-                        result.Add(GoalConstants.Diababa);
-                }
+                // If Faron Woods is closed then we need to beat Forest
+                // Temple to leave.
+                if (sSettings.faronWoodsLogic == FaronWoodsLogic.Closed)
+                    result.Add(GoalConstants.Diababa);
             }
 
             result.Add(GoalConstants.Hyrule_Castle);

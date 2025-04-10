@@ -1,11 +1,11 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using TPRandomizer.Util;
 using TPRandomizer.Assets;
-using System.Runtime.Serialization;
+using TPRandomizer.Util;
 
 namespace TPRandomizer
 {
@@ -36,7 +36,7 @@ namespace TPRandomizer
         // other
         public SharedSettings decodedSSettings;
 
-        public SeedGenResults(string seedId, JObject inputJsonContents)
+        public SeedGenResults(string seedId, string settingsString, string itemPlacementString)
         {
             if (Randomizer.Checks.CheckDict.Count < 1)
                 throw new Exception(
@@ -48,33 +48,12 @@ namespace TPRandomizer
             // Can read `version` as well if format ever changes and we need to
             // support multiple formats.
 
-            JObject meta = (JObject)inputJsonContents["meta"];
-            // timestamp is automatically converted to DateTime then to a string
-            // if we cast to a string, so we have to manually make sure it
-            // maintains the same format
-            DateTime timestampAsDateTime = (DateTime)meta["ts"];
-            timestamp = timestampAsDateTime.ToString(TimestampFormat);
-            imageVersion = (string)meta["imgVer"];
-            gitCommit = (string)meta["gitCmt"];
-
-            JObject input = (JObject)inputJsonContents["input"];
-            settingsString = (string)input["settings"];
             decodedSSettings = SharedSettings.FromString(settingsString);
-            seed = (string)input["seed"];
-            isRaceSeed = (int)input["race"] == 1;
 
-            JObject output = (JObject)inputJsonContents["output"];
-            this.playthroughName = (string)output["name"];
-            this.wiiPlaythroughName = (string)output["wiiName"];
-            this.itemPlacements = DecodeItemPlacements((string)output["itemPlacement"]);
-            this.requiredDungeons = (byte)output["reqDungeons"];
-            this.spheres = DecodeSpheres((string)output["spheres"]);
-            this.entrances = DecodeEntrances((string)output["entrances"]);
-            this.customMsgData = CustomMsgData.Decode(
-                decodedSSettings,
-                itemPlacements,
-                (string)output["customMsg"]
-            );
+            this.playthroughName = "APTest_APT";
+            this.wiiPlaythroughName = "AT_APT_uEo";
+            this.itemPlacements = DecodeItemPlacements(itemPlacementString);
+            this.requiredDungeons = 0;
         }
 
         public static string EncodeEntrances()
@@ -506,16 +485,8 @@ namespace TPRandomizer
             result.Add("castleRequirements", sSettings.castleRequirements.ToString());
             result.Add("palaceRequirements", sSettings.palaceRequirements.ToString());
             result.Add("faronWoodsLogic", sSettings.faronWoodsLogic.ToString());
-            result.Add("shuffleGoldenBugs", sSettings.shuffleGoldenBugs);
-            result.Add("shuffleSkyCharacters", sSettings.shuffleSkyCharacters);
-            result.Add("shuffleNpcItems", sSettings.shuffleNpcItems);
-            result.Add("shufflePoes", sSettings.shufflePoes.ToString());
-            result.Add("shuffleShopItems", sSettings.shuffleShopItems);
-            result.Add("shuffleHiddenSkills", sSettings.shuffleHiddenSkills);
-            result.Add("itemScarcity", sSettings.itemScarcity.ToString());
             result.Add("damageMagnification", sSettings.damageMagnification.ToString());
             result.Add("bonksDoDamage", sSettings.bonksDoDamage);
-            result.Add("shuffleRewards", sSettings.shuffleRewards);
             result.Add("smallKeySettings", sSettings.smallKeySettings.ToString());
             result.Add("bigKeySettings", sSettings.bigKeySettings.ToString());
             result.Add("mapAndCompassSettings", sSettings.mapAndCompassSettings.ToString());
@@ -531,8 +502,6 @@ namespace TPRandomizer
             result.Add("transformAnywhere", sSettings.transformAnywhere);
             result.Add("increaseWallet", sSettings.increaseWallet);
             result.Add("modifyShopModels", sSettings.modifyShopModels);
-            result.Add("trapFrequency", sSettings.trapFrequency.ToString());
-            result.Add("barrenDungeons", sSettings.barrenDungeons);
             result.Add("goronMinesEntrance", sSettings.goronMinesEntrance.ToString());
             result.Add("skipLakebedEntrance", sSettings.skipLakebedEntrance);
             result.Add("skipArbitersEntrance", sSettings.skipArbitersEntrance);
@@ -543,12 +512,9 @@ namespace TPRandomizer
             result.Add("openMap", sSettings.openMap);
             result.Add("increaseSpinnerSpeed", sSettings.increaseSpinnerSpeed);
             result.Add("openDot", sSettings.openDot);
-            result.Add("noSmallKeysOnBosses", sSettings.noSmallKeysOnBosses);
             result.Add("startingToD", sSettings.startingToD.ToString());
-            result.Add("hintDistribution", sSettings.hintDistribution.ToString());
 
             result.Add("startingItems", sSettings.startingItems);
-            result.Add("excludedChecks", sSettings.excludedChecks);
 
             return result;
         }
@@ -594,7 +560,7 @@ namespace TPRandomizer
                 this.customMsgData = customMsgData.Encode();
             }
 
-            override public string ToString()
+            public override string ToString()
             {
                 Dictionary<string, object> inputJsonRoot = new();
                 // Need to update format for any changes.

@@ -11,38 +11,40 @@ namespace TPRandomizer.Hints.HintCreator
     {
         public override HintCreatorType type { get; } = HintCreatorType.Barren;
 
-        private static readonly HashSet<HintCategory> defaultHintCategories =
-            new()
-            {
-                HintCategory.Grotto,
-                // Maybe cannot expect anyone other than racers to know what
-                // exactly post-dungeon refers to?
-                // HintCategoryEnum.Post_dungeon,
-                HintCategory.Mist,
-                HintCategory.Owl_Statue,
-                HintCategory.Llc_Lantern_Chests,
-                HintCategory.Underwater,
-                HintCategory.Southern_Desert,
-                HintCategory.Northern_Desert,
-                HintCategory.Golden_Wolf,
-            };
+        private static readonly HashSet<HintCategory> defaultHintCategories = new()
+        {
+            HintCategory.Grotto,
+            // Maybe cannot expect anyone other than racers to know what
+            // exactly post-dungeon refers to?
+            // HintCategoryEnum.Post_dungeon,
+            HintCategory.Mist,
+            HintCategory.Owl_Statue,
+            HintCategory.Llc_Lantern_Chests,
+            HintCategory.Underwater,
+            HintCategory.Southern_Desert,
+            HintCategory.Northern_Desert,
+            HintCategory.Golden_Wolf,
+        };
 
         // Includes post-dungeon checks, etc.
-        private static readonly Dictionary<Zone, List<string>> dungeonZoneToReqChecks =
-            new()
-            {
-                { Zone.Forest_Temple, CheckFunctions.forestRequirementChecks },
-                { Zone.Goron_Mines, CheckFunctions.minesRequirementChecks },
-                { Zone.Lakebed_Temple, CheckFunctions.lakebedRequirementChecks },
-                { Zone.Arbiters_Grounds, CheckFunctions.arbitersRequirementChecks },
-                { Zone.Snowpeak_Ruins, CheckFunctions.snowpeakRequirementChecks },
-                { Zone.Temple_of_Time, CheckFunctions.totRequirementChecks },
-                { Zone.City_in_the_Sky, CheckFunctions.cityRequirementChecks },
-                { Zone.Palace_of_Twilight, CheckFunctions.palaceRequirementChecks },
-            };
+        private static readonly Dictionary<Zone, List<string>> dungeonZoneToReqChecks = new()
+        {
+            { Zone.Forest_Temple, CheckFunctions.forestRequirementChecks },
+            { Zone.Goron_Mines, CheckFunctions.minesRequirementChecks },
+            { Zone.Lakebed_Temple, CheckFunctions.lakebedRequirementChecks },
+            { Zone.Arbiters_Grounds, CheckFunctions.arbitersRequirementChecks },
+            { Zone.Snowpeak_Ruins, CheckFunctions.snowpeakRequirementChecks },
+            { Zone.Temple_of_Time, CheckFunctions.totRequirementChecks },
+            { Zone.City_in_the_Sky, CheckFunctions.cityRequirementChecks },
+            { Zone.Palace_of_Twilight, CheckFunctions.palaceRequirementChecks },
+        };
 
-        private static readonly HashSet<AreaId.AreaType> validAreaTypes =
-            new() { AreaId.AreaType.Zone, AreaId.AreaType.Province, AreaId.AreaType.Category, };
+        private static readonly HashSet<AreaId.AreaType> validAreaTypes = new()
+        {
+            AreaId.AreaType.Zone,
+            AreaId.AreaType.Province,
+            AreaId.AreaType.Category,
+        };
 
         // Needs to know areaType (defaults to zone)
         // Needs to know validAreas (defaults to all)
@@ -52,7 +54,7 @@ namespace TPRandomizer.Hints.HintCreator
 
         private BarrenHintCreator() { }
 
-        new public static BarrenHintCreator fromJObject(JObject obj)
+        public static new BarrenHintCreator fromJObject(JObject obj)
         {
             BarrenHintCreator inst = new BarrenHintCreator();
 
@@ -344,19 +346,6 @@ namespace TPRandomizer.Hints.HintCreator
                 // Remove CoO if CoO hints are on.
                 if (hintSettings.caveOfOrdeals)
                     result.Remove(AreaId.Zone(Zone.Cave_of_Ordeals));
-
-                // Remove any unrequiredBarren dungeons
-                if (genData.sSettings.barrenDungeons)
-                {
-                    foreach (
-                        KeyValuePair<string, byte> kv in HintConstants.dungeonZonesToRequiredMaskMap
-                    )
-                    {
-                        string zoneName = kv.Key;
-                        if (!HintUtils.DungeonIsRequired(zoneName))
-                            result.Remove(AreaId.ZoneStr(zoneName));
-                    }
-                }
             }
 
             // Validate all of the areaIds line up with the areaType.

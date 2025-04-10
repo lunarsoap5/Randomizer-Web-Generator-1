@@ -286,7 +286,7 @@ namespace TPRandomizer
         /*Key?	=	0xFC,*/
         Goron_Mines_Big_Key = 0xFD,
         Coro_Key = 0xFE,
-        Gives_Vanilla = 0xFF
+        Gives_Vanilla = 0xFF,
     };
 
     public class ItemFunctions
@@ -298,433 +298,422 @@ namespace TPRandomizer
         public List<Item> BaseItemPool = new(); // The list of Items that have yet to be randomized..
         public List<Item> heldItems = new(); // The list of items that the player currently has. This is to be used when emulating the playthrough..
 
-        public List<Item> ItemWheelItems =
-            new()
-            {
-                Item.Progressive_Clawshot,
-                Item.Progressive_Dominion_Rod,
-                Item.Ball_and_Chain,
-                Item.Spinner,
-                Item.Progressive_Bow,
-                Item.Iron_Boots,
-                Item.Boomerang,
-                Item.Lantern,
-                Item.Slingshot,
-                Item.Progressive_Fishing_Rod,
-                Item.Hawkeye,
-                Item.Filled_Bomb_Bag,
-                Item.Filled_Bomb_Bag,
-                Item.Filled_Bomb_Bag,
-                Item.Empty_Bottle,
-                Item.Jovani_Bottle,
-                Item.Sera_Bottle,
-                Item.Coro_Bottle,
-                Item.Aurus_Memo,
-                Item.Renados_Letter, // Covers letter, invoice, statue, charm. It doesn't matter which item you
-                // have in the chain, as long as you have the slot available.
-                Item.Horse_Call,
-            };
+        public List<Item> ItemWheelItems = new()
+        {
+            Item.Progressive_Clawshot,
+            Item.Progressive_Dominion_Rod,
+            Item.Ball_and_Chain,
+            Item.Spinner,
+            Item.Progressive_Bow,
+            Item.Iron_Boots,
+            Item.Boomerang,
+            Item.Lantern,
+            Item.Slingshot,
+            Item.Progressive_Fishing_Rod,
+            Item.Hawkeye,
+            Item.Filled_Bomb_Bag,
+            Item.Filled_Bomb_Bag,
+            Item.Filled_Bomb_Bag,
+            Item.Empty_Bottle,
+            Item.Jovani_Bottle,
+            Item.Sera_Bottle,
+            Item.Coro_Bottle,
+            Item.Aurus_Memo,
+            Item.Renados_Letter, // Covers letter, invoice, statue, charm. It doesn't matter which item you
+            // have in the chain, as long as you have the slot available.
+            Item.Horse_Call,
+        };
 
         public List<Item> ShuffledDungeonRewards = new();
-        internal List<Item> VanillaDungeonRewards =
-            new()
-            {
-                Item.Progressive_Fused_Shadow,
-                Item.Progressive_Fused_Shadow,
-                Item.Progressive_Fused_Shadow,
-                Item.Progressive_Mirror_Shard,
-                Item.Progressive_Mirror_Shard,
-                Item.Progressive_Mirror_Shard,
-                Item.Progressive_Mirror_Shard
-            };
+        internal List<Item> VanillaDungeonRewards = new()
+        {
+            Item.Progressive_Fused_Shadow,
+            Item.Progressive_Fused_Shadow,
+            Item.Progressive_Fused_Shadow,
+            Item.Progressive_Mirror_Shard,
+            Item.Progressive_Mirror_Shard,
+            Item.Progressive_Mirror_Shard,
+            Item.Progressive_Mirror_Shard,
+        };
 
-        internal List<Item> RegionSmallKeys =
-            new()
-            {
-                Item.Gerudo_Desert_Bulblin_Camp_Key,
-                Item.North_Faron_Woods_Gate_Key,
-                Item.Forest_Temple_Small_Key,
-                Item.Forest_Temple_Small_Key,
-                Item.Forest_Temple_Small_Key,
-                Item.Forest_Temple_Small_Key,
-                Item.Goron_Mines_Small_Key,
-                Item.Goron_Mines_Small_Key,
-                Item.Goron_Mines_Small_Key,
-                Item.Lakebed_Temple_Small_Key,
-                Item.Lakebed_Temple_Small_Key,
-                Item.Lakebed_Temple_Small_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Snowpeak_Ruins_Small_Key,
-                Item.Snowpeak_Ruins_Small_Key,
-                Item.Snowpeak_Ruins_Small_Key,
-                Item.Snowpeak_Ruins_Small_Key,
-                Item.Temple_of_Time_Small_Key,
-                Item.Temple_of_Time_Small_Key,
-                Item.Temple_of_Time_Small_Key,
-                Item.City_in_The_Sky_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Hyrule_Castle_Small_Key,
-                Item.Hyrule_Castle_Small_Key,
-                Item.Hyrule_Castle_Small_Key,
-                Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-            };
-        private readonly List<Item> PlentifulRegionSmallKeys =
-            new()
-            {
-                Item.Forest_Temple_Small_Key,
-                Item.Goron_Mines_Small_Key,
-                Item.Lakebed_Temple_Small_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Snowpeak_Ruins_Small_Key,
-                Item.Temple_of_Time_Small_Key,
-                Item.City_in_The_Sky_Small_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Hyrule_Castle_Small_Key,
-                Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-            };
+        internal List<Item> RegionSmallKeys = new()
+        {
+            Item.Gerudo_Desert_Bulblin_Camp_Key,
+            Item.North_Faron_Woods_Gate_Key,
+            Item.Forest_Temple_Small_Key,
+            Item.Forest_Temple_Small_Key,
+            Item.Forest_Temple_Small_Key,
+            Item.Forest_Temple_Small_Key,
+            Item.Goron_Mines_Small_Key,
+            Item.Goron_Mines_Small_Key,
+            Item.Goron_Mines_Small_Key,
+            Item.Lakebed_Temple_Small_Key,
+            Item.Lakebed_Temple_Small_Key,
+            Item.Lakebed_Temple_Small_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Snowpeak_Ruins_Small_Key,
+            Item.Snowpeak_Ruins_Small_Key,
+            Item.Snowpeak_Ruins_Small_Key,
+            Item.Snowpeak_Ruins_Small_Key,
+            Item.Temple_of_Time_Small_Key,
+            Item.Temple_of_Time_Small_Key,
+            Item.Temple_of_Time_Small_Key,
+            Item.City_in_The_Sky_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Hyrule_Castle_Small_Key,
+            Item.Hyrule_Castle_Small_Key,
+            Item.Hyrule_Castle_Small_Key,
+            Item.Snowpeak_Ruins_Ordon_Pumpkin,
+            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+        };
+        private readonly List<Item> PlentifulRegionSmallKeys = new()
+        {
+            Item.Forest_Temple_Small_Key,
+            Item.Goron_Mines_Small_Key,
+            Item.Lakebed_Temple_Small_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Snowpeak_Ruins_Small_Key,
+            Item.Temple_of_Time_Small_Key,
+            Item.City_in_The_Sky_Small_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Hyrule_Castle_Small_Key,
+            Item.Snowpeak_Ruins_Ordon_Pumpkin,
+            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+        };
 
-        internal List<Item> DungeonBigKeys =
-            new()
-            {
-                Item.Forest_Temple_Big_Key,
-                Item.Goron_Mines_Key_Shard,
-                Item.Goron_Mines_Key_Shard,
-                Item.Goron_Mines_Key_Shard,
-                Item.Lakebed_Temple_Big_Key,
-                Item.Arbiters_Grounds_Big_Key,
-                Item.Temple_of_Time_Big_Key,
-                Item.Snowpeak_Ruins_Bedroom_Key,
-                Item.City_in_The_Sky_Big_Key,
-                Item.Palace_of_Twilight_Big_Key,
-                Item.Hyrule_Castle_Big_Key,
-            };
-        private readonly List<Item> PlentifulDungeonBigKeys =
-            new()
-            {
-                Item.Forest_Temple_Big_Key,
-                Item.Goron_Mines_Key_Shard,
-                Item.Lakebed_Temple_Big_Key,
-                Item.Arbiters_Grounds_Big_Key,
-                Item.Temple_of_Time_Big_Key,
-                Item.Snowpeak_Ruins_Bedroom_Key,
-                Item.City_in_The_Sky_Big_Key,
-                Item.Palace_of_Twilight_Big_Key,
-                Item.Hyrule_Castle_Big_Key,
-            };
+        internal List<Item> DungeonBigKeys = new()
+        {
+            Item.Forest_Temple_Big_Key,
+            Item.Goron_Mines_Key_Shard,
+            Item.Goron_Mines_Key_Shard,
+            Item.Goron_Mines_Key_Shard,
+            Item.Lakebed_Temple_Big_Key,
+            Item.Arbiters_Grounds_Big_Key,
+            Item.Temple_of_Time_Big_Key,
+            Item.Snowpeak_Ruins_Bedroom_Key,
+            Item.City_in_The_Sky_Big_Key,
+            Item.Palace_of_Twilight_Big_Key,
+            Item.Hyrule_Castle_Big_Key,
+        };
+        private readonly List<Item> PlentifulDungeonBigKeys = new()
+        {
+            Item.Forest_Temple_Big_Key,
+            Item.Goron_Mines_Key_Shard,
+            Item.Lakebed_Temple_Big_Key,
+            Item.Arbiters_Grounds_Big_Key,
+            Item.Temple_of_Time_Big_Key,
+            Item.Snowpeak_Ruins_Bedroom_Key,
+            Item.City_in_The_Sky_Big_Key,
+            Item.Palace_of_Twilight_Big_Key,
+            Item.Hyrule_Castle_Big_Key,
+        };
 
-        internal List<Item> DungeonMapsAndCompasses =
-            new()
-            {
-                Item.Forest_Temple_Dungeon_Map,
-                Item.Forest_Temple_Compass,
-                Item.Goron_Mines_Dungeon_Map,
-                Item.Goron_Mines_Compass,
-                Item.Lakebed_Temple_Dungeon_Map,
-                Item.Lakebed_Temple_Compass,
-                Item.Arbiters_Grounds_Dungeon_Map,
-                Item.Arbiters_Grounds_Compass,
-                Item.Snowpeak_Ruins_Dungeon_Map,
-                Item.Snowpeak_Ruins_Compass,
-                Item.Temple_of_Time_Dungeon_Map,
-                Item.Temple_of_Time_Compass,
-                Item.City_in_The_Sky_Dungeon_Map,
-                Item.City_in_The_Sky_Compass,
-                Item.Palace_of_Twilight_Dungeon_Map,
-                Item.Palace_of_Twilight_Compass,
-                Item.Hyrule_Castle_Dungeon_Map,
-                Item.Hyrule_Castle_Compass,
-            };
+        internal List<Item> DungeonMapsAndCompasses = new()
+        {
+            Item.Forest_Temple_Dungeon_Map,
+            Item.Forest_Temple_Compass,
+            Item.Goron_Mines_Dungeon_Map,
+            Item.Goron_Mines_Compass,
+            Item.Lakebed_Temple_Dungeon_Map,
+            Item.Lakebed_Temple_Compass,
+            Item.Arbiters_Grounds_Dungeon_Map,
+            Item.Arbiters_Grounds_Compass,
+            Item.Snowpeak_Ruins_Dungeon_Map,
+            Item.Snowpeak_Ruins_Compass,
+            Item.Temple_of_Time_Dungeon_Map,
+            Item.Temple_of_Time_Compass,
+            Item.City_in_The_Sky_Dungeon_Map,
+            Item.City_in_The_Sky_Compass,
+            Item.Palace_of_Twilight_Dungeon_Map,
+            Item.Palace_of_Twilight_Compass,
+            Item.Hyrule_Castle_Dungeon_Map,
+            Item.Hyrule_Castle_Compass,
+        };
 
-        internal List<Item> ImportantItems =
-            new()
-            {
-                Item.Progressive_Sword,
-                Item.Progressive_Sword,
-                Item.Progressive_Sword,
-                Item.Progressive_Sword,
-                Item.Progressive_Wallet,
-                Item.Progressive_Wallet,
-                Item.Boomerang,
-                Item.Lantern,
-                Item.Slingshot,
-                Item.Progressive_Fishing_Rod,
-                Item.Progressive_Fishing_Rod,
-                Item.Iron_Boots,
-                Item.Progressive_Bow,
-                Item.Progressive_Bow,
-                Item.Progressive_Bow,
-                Item.Filled_Bomb_Bag,
-                Item.Filled_Bomb_Bag,
-                Item.Filled_Bomb_Bag,
-                Item.Zora_Armor,
-                Item.Progressive_Clawshot,
-                Item.Progressive_Clawshot,
-                Item.Shadow_Crystal,
-                Item.Aurus_Memo,
-                Item.Asheis_Sketch,
-                Item.Spinner,
-                Item.Ball_and_Chain,
-                Item.Progressive_Dominion_Rod,
-                Item.Progressive_Dominion_Rod,
-                Item.Progressive_Sky_Book,
-                Item.Progressive_Sky_Book,
-                Item.Progressive_Sky_Book,
-                Item.Progressive_Sky_Book,
-                Item.Progressive_Sky_Book,
-                Item.Progressive_Sky_Book,
-                Item.Progressive_Sky_Book,
-                Item.Renados_Letter,
-                Item.Invoice,
-                Item.Wooden_Statue,
-                Item.Ilias_Charm,
-                Item.Horse_Call,
-                Item.Gate_Keys,
-                Item.Empty_Bottle,
-                Item.Sera_Bottle,
-                Item.Coro_Bottle,
-                Item.Jovani_Bottle,
-                Item.Progressive_Hidden_Skill,
-                Item.Progressive_Hidden_Skill,
-                Item.Progressive_Hidden_Skill,
-                Item.Progressive_Hidden_Skill,
-                Item.Progressive_Hidden_Skill,
-                Item.Progressive_Hidden_Skill,
-                Item.Progressive_Hidden_Skill,
-                Item.Magic_Armor,
-                Item.Ordon_Shield,
-                Item.Hylian_Shield,
-            };
+        internal List<Item> ImportantItems = new()
+        {
+            Item.Progressive_Sword,
+            Item.Progressive_Sword,
+            Item.Progressive_Sword,
+            Item.Progressive_Sword,
+            Item.Progressive_Wallet,
+            Item.Progressive_Wallet,
+            Item.Boomerang,
+            Item.Lantern,
+            Item.Slingshot,
+            Item.Progressive_Fishing_Rod,
+            Item.Progressive_Fishing_Rod,
+            Item.Iron_Boots,
+            Item.Progressive_Bow,
+            Item.Progressive_Bow,
+            Item.Progressive_Bow,
+            Item.Filled_Bomb_Bag,
+            Item.Filled_Bomb_Bag,
+            Item.Filled_Bomb_Bag,
+            Item.Zora_Armor,
+            Item.Progressive_Clawshot,
+            Item.Progressive_Clawshot,
+            Item.Shadow_Crystal,
+            Item.Aurus_Memo,
+            Item.Asheis_Sketch,
+            Item.Spinner,
+            Item.Ball_and_Chain,
+            Item.Progressive_Dominion_Rod,
+            Item.Progressive_Dominion_Rod,
+            Item.Progressive_Sky_Book,
+            Item.Progressive_Sky_Book,
+            Item.Progressive_Sky_Book,
+            Item.Progressive_Sky_Book,
+            Item.Progressive_Sky_Book,
+            Item.Progressive_Sky_Book,
+            Item.Progressive_Sky_Book,
+            Item.Renados_Letter,
+            Item.Invoice,
+            Item.Wooden_Statue,
+            Item.Ilias_Charm,
+            Item.Horse_Call,
+            Item.Gate_Keys,
+            Item.Empty_Bottle,
+            Item.Sera_Bottle,
+            Item.Coro_Bottle,
+            Item.Jovani_Bottle,
+            Item.Progressive_Hidden_Skill,
+            Item.Progressive_Hidden_Skill,
+            Item.Progressive_Hidden_Skill,
+            Item.Progressive_Hidden_Skill,
+            Item.Progressive_Hidden_Skill,
+            Item.Progressive_Hidden_Skill,
+            Item.Progressive_Hidden_Skill,
+            Item.Magic_Armor,
+            Item.Ordon_Shield,
+            Item.Hylian_Shield,
+        };
 
-        public readonly List<Item> goldenBugs =
-            new()
-            {
-                Item.Male_Ant,
-                Item.Female_Ant,
-                Item.Male_Beetle,
-                Item.Female_Beetle,
-                Item.Male_Pill_Bug,
-                Item.Female_Pill_Bug,
-                Item.Male_Phasmid,
-                Item.Female_Phasmid,
-                Item.Male_Grasshopper,
-                Item.Female_Grasshopper,
-                Item.Male_Stag_Beetle,
-                Item.Female_Stag_Beetle,
-                Item.Male_Butterfly,
-                Item.Female_Butterfly,
-                Item.Male_Ladybug,
-                Item.Female_Ladybug,
-                Item.Male_Mantis,
-                Item.Female_Mantis,
-                Item.Male_Dragonfly,
-                Item.Female_Dragonfly,
-                Item.Male_Dayfly,
-                Item.Female_Dayfly,
-                Item.Male_Snail,
-                Item.Female_Snail,
-            };
+        public readonly List<Item> goldenBugs = new()
+        {
+            Item.Male_Ant,
+            Item.Female_Ant,
+            Item.Male_Beetle,
+            Item.Female_Beetle,
+            Item.Male_Pill_Bug,
+            Item.Female_Pill_Bug,
+            Item.Male_Phasmid,
+            Item.Female_Phasmid,
+            Item.Male_Grasshopper,
+            Item.Female_Grasshopper,
+            Item.Male_Stag_Beetle,
+            Item.Female_Stag_Beetle,
+            Item.Male_Butterfly,
+            Item.Female_Butterfly,
+            Item.Male_Ladybug,
+            Item.Female_Ladybug,
+            Item.Male_Mantis,
+            Item.Female_Mantis,
+            Item.Male_Dragonfly,
+            Item.Female_Dragonfly,
+            Item.Male_Dayfly,
+            Item.Female_Dayfly,
+            Item.Male_Snail,
+            Item.Female_Snail,
+        };
 
         /// <summary>
         /// summary text.
         /// </summary>
-        public List<Item> alwaysItems =
-            new() // Items from the vanilla pool that are guaranteed to be in every seed
-            {
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Piece_of_Heart,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Heart_Container,
-                Item.Purple_Rupee_Links_House,
-                Item.Green_Rupee,
-                Item.Green_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Orange_Rupee,
-                Item.Silver_Rupee,
-                Item.Silver_Rupee,
-                Item.Giant_Bomb_Bag,
-                Item.Hawkeye,
-            };
+        public List<Item> alwaysItems = new() // Items from the vanilla pool that are guaranteed to be in every seed
+        {
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Piece_of_Heart,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Heart_Container,
+            Item.Purple_Rupee_Links_House,
+            Item.Green_Rupee,
+            Item.Green_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Orange_Rupee,
+            Item.Silver_Rupee,
+            Item.Silver_Rupee,
+            Item.Giant_Bomb_Bag,
+            Item.Hawkeye,
+        };
 
-        public readonly List<Item> vanillaJunkItems =
-            new() // Junk items from the vanilla pool
-            {
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_5,
-                Item.Bombs_10,
-                Item.Bombs_10,
-                Item.Bombs_20,
-                Item.Bombs_30,
-                Item.Arrows_10,
-                Item.Arrows_10,
-                Item.Arrows_10,
-                Item.Arrows_10,
-                Item.Arrows_10,
-                Item.Arrows_20,
-                Item.Arrows_20,
-                Item.Arrows_20,
-                Item.Arrows_20,
-                Item.Arrows_20,
-                Item.Arrows_20,
-                Item.Arrows_30,
-                Item.Arrows_30,
-                Item.Seeds_50,
-                Item.Seeds_50,
-                Item.Water_Bombs_5,
-                Item.Water_Bombs_5,
-                Item.Water_Bombs_5,
-                Item.Water_Bombs_10,
-                Item.Water_Bombs_10,
-                Item.Water_Bombs_10,
-                Item.Water_Bombs_10,
-                Item.Water_Bombs_10,
-                Item.Water_Bombs_15,
-                Item.Water_Bombs_15,
-                Item.Water_Bombs_15,
-                Item.Bomblings_5,
-                Item.Bomblings_5,
-                Item.Bomblings_10,
-                Item.Bomblings_10,
-                Item.Blue_Rupee,
-                Item.Yellow_Rupee,
-                Item.Yellow_Rupee,
-                Item.Yellow_Rupee,
-                Item.Yellow_Rupee,
-                Item.Yellow_Rupee,
-                Item.Yellow_Rupee,
-                Item.Red_Rupee,
-                Item.Red_Rupee,
-                Item.Red_Rupee,
-                Item.Red_Rupee,
-                Item.Red_Rupee,
-                Item.Red_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee,
-                Item.Purple_Rupee
-            };
+        public readonly List<Item> vanillaJunkItems = new() // Junk items from the vanilla pool
+        {
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_5,
+            Item.Bombs_10,
+            Item.Bombs_10,
+            Item.Bombs_20,
+            Item.Bombs_30,
+            Item.Arrows_10,
+            Item.Arrows_10,
+            Item.Arrows_10,
+            Item.Arrows_10,
+            Item.Arrows_10,
+            Item.Arrows_20,
+            Item.Arrows_20,
+            Item.Arrows_20,
+            Item.Arrows_20,
+            Item.Arrows_20,
+            Item.Arrows_20,
+            Item.Arrows_30,
+            Item.Arrows_30,
+            Item.Seeds_50,
+            Item.Seeds_50,
+            Item.Water_Bombs_5,
+            Item.Water_Bombs_5,
+            Item.Water_Bombs_5,
+            Item.Water_Bombs_10,
+            Item.Water_Bombs_10,
+            Item.Water_Bombs_10,
+            Item.Water_Bombs_10,
+            Item.Water_Bombs_10,
+            Item.Water_Bombs_15,
+            Item.Water_Bombs_15,
+            Item.Water_Bombs_15,
+            Item.Bomblings_5,
+            Item.Bomblings_5,
+            Item.Bomblings_10,
+            Item.Bomblings_10,
+            Item.Blue_Rupee,
+            Item.Yellow_Rupee,
+            Item.Yellow_Rupee,
+            Item.Yellow_Rupee,
+            Item.Yellow_Rupee,
+            Item.Yellow_Rupee,
+            Item.Yellow_Rupee,
+            Item.Red_Rupee,
+            Item.Red_Rupee,
+            Item.Red_Rupee,
+            Item.Red_Rupee,
+            Item.Red_Rupee,
+            Item.Red_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+            Item.Purple_Rupee,
+        };
 
         // Mutates inputList
         private void updateItemToCount(List<Item> inputList, Item item, int desiredCount)
@@ -781,11 +770,6 @@ namespace TPRandomizer
             // Handle poes
             int numPoesForBaseItemPool = SetupItemPoolPoes(parseSetting);
 
-            if (parseSetting.shuffleGoldenBugs)
-            {
-                this.AddGoldenBugs(parseSetting);
-            }
-
             // Check Small Key settings before adding them to the rando pool
             if (
                 (parseSetting.smallKeySettings == SmallKeySettings.Own_Dungeon)
@@ -831,211 +815,7 @@ namespace TPRandomizer
 
             // Modifying Item Pool based on ice trap settings
             // If we have Ice Trap Mayhem or Nightmare, all extra junk items are replaced with Foolish Items
-            switch (parseSetting.trapFrequency)
-            {
-                case TrapFrequency.Few: // There is a small chance that a Foolish Item could appear
-                {
-                    this.JunkItems.AddRange(this.vanillaJunkItems);
-                    this.JunkItems.AddRange(Enumerable.Repeat(Item.Foolish_Item, 6));
-                    break;
-                }
 
-                case TrapFrequency.Many: // There is an increased chance that a Foolish Item could appear
-                {
-                    this.JunkItems.AddRange(this.vanillaJunkItems);
-                    this.JunkItems.AddRange(Enumerable.Repeat(Item.Foolish_Item, 27));
-                    break;
-                }
-
-                case TrapFrequency.Mayhem: // All junk items outside of the item pool are Foolish Items
-                {
-                    this.JunkItems.AddRange(this.vanillaJunkItems);
-                    this.JunkItems.AddRange(Enumerable.Repeat(Item.Foolish_Item, 64));
-                    break;
-                }
-
-                case TrapFrequency.Nightmare: // All junk items are Foolish Items
-                {
-                    this.JunkItems.Add(Item.Foolish_Item);
-                    break;
-                }
-
-                default:
-                {
-                    this.JunkItems.AddRange(this.vanillaJunkItems);
-                    break;
-                }
-            }
-
-            // Adjust item pool based on itemScarcity setting.
-            switch (parseSetting.itemScarcity)
-            {
-                // Include as few items as possible.
-                case ItemScarcity.Minimal:
-                {
-                    // Note we leave in the empty bottle since it shows up in
-                    // the `Faron Field.jsonc` file. It might be required in
-                    // Entrance Rando at some point, so leaving it in for now.
-
-                    // Update alwaysItems
-                    HashSet<Item> alwaysItemsToRemove =
-                        new()
-                        {
-                            Item.Heart_Container,
-                            Item.Piece_of_Heart,
-                            Item.Sera_Bottle,
-                            Item.Coro_Bottle,
-                            Item.Jovani_Bottle,
-                            Item.Hawkeye,
-                            Item.Giant_Bomb_Bag,
-                        };
-
-                    // Filter out certain items
-                    this.alwaysItems = this.alwaysItems
-                        .Where(item => !alwaysItemsToRemove.Contains(item))
-                        .ToList();
-
-                    // Update RandomizedImportantItems
-                    Dictionary<Item, int> importantItemToCount =
-                        new() { { Item.Progressive_Bow, 1 }, { Item.Filled_Bomb_Bag, 1 }, };
-
-                    foreach (KeyValuePair<Item, int> kv in importantItemToCount)
-                    {
-                        updateItemToCount(RandomizedImportantItems, kv.Key, kv.Value);
-                    }
-
-                    // TODO: RequiredDungeons not filled out at this point.
-                    // Disabling this as the low effort fix. To support removing
-                    // a sword when PoT is required, we would need to make sure
-                    // Randomizer.RequiredDungeons is available at this point.
-                    // Right now finding the required dungeons depends on
-                    // running a procedure which is dependent on the output of
-                    // this function (kind of a circular dependency), so a
-                    // different fix would be much higher effort.
-
-                    // // Reduce swords to 3 if barrenDungeons is on and Palace of
-                    // // Twilight is not required.
-                    // if (
-                    //     Randomizer.SSettings.barrenDungeons
-                    //     && (Randomizer.RequiredDungeons & 0x80) == 0
-                    // )
-                    // {
-                    //     updateItemToCount(RandomizedImportantItems, Item.Progressive_Sword, 3);
-                    // }
-
-                    // Remove Magic Armor if Glitchless Logic and update the hidden skill count to 1
-                    if (Randomizer.SSettings.logicRules == LogicRules.Glitchless)
-                    {
-                        updateItemToCount(RandomizedImportantItems, Item.Magic_Armor, 0);
-                        updateItemToCount(
-                            RandomizedImportantItems,
-                            Item.Progressive_Hidden_Skill,
-                            1
-                        );
-                    }
-
-                    // If wallet size is not increased, we need to be able to
-                    // find 1 wallet so we can afford the magic armor check.
-                    updateItemToCount(
-                        RandomizedImportantItems,
-                        Item.Progressive_Wallet,
-                        Randomizer.SSettings.increaseWallet ? 0 : 1
-                    );
-
-                    break;
-                }
-
-                // Some items get extra copies; no Pieces of Heart
-                case ItemScarcity.Plentiful:
-                {
-                    // Remove all Pieces of Heart
-                    this.alwaysItems = this.alwaysItems
-                        .Where(item => item != Item.Piece_of_Heart)
-                        .ToList();
-
-                    // Add Heart Containers
-                    updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
-                    this.alwaysItems.Add(Item.Giant_Bomb_Bag);
-                    this.alwaysItems.Add(Item.Hawkeye);
-
-                    // Add extra copy of some items
-                    List<Item> plentifulImportantItems =
-                        new()
-                        {
-                            Item.Progressive_Sword,
-                            Item.Progressive_Wallet,
-                            Item.Boomerang,
-                            Item.Lantern,
-                            Item.Slingshot,
-                            Item.Progressive_Fishing_Rod,
-                            Item.Iron_Boots,
-                            Item.Progressive_Bow,
-                            Item.Filled_Bomb_Bag,
-                            Item.Zora_Armor,
-                            Item.Progressive_Clawshot,
-                            Item.Shadow_Crystal,
-                            Item.Aurus_Memo,
-                            Item.Asheis_Sketch,
-                            Item.Spinner,
-                            Item.Ball_and_Chain,
-                            Item.Progressive_Dominion_Rod,
-                            Item.Progressive_Sky_Book,
-                            Item.Gate_Keys,
-                            Item.Empty_Bottle,
-                            Item.Progressive_Hidden_Skill,
-                            Item.Magic_Armor,
-                            Item.Ordon_Shield,
-                            Item.Hylian_Shield,
-                        };
-                    RandomizedImportantItems.AddRange(plentifulImportantItems);
-
-                    // Add big keys
-                    if (parseSetting.bigKeySettings == BigKeySettings.Anywhere)
-                        this.RandomizedImportantItems.AddRange(this.PlentifulDungeonBigKeys);
-                    else if (parseSetting.bigKeySettings == BigKeySettings.Any_Dungeon)
-                        this.RandomizedDungeonRegionItems.AddRange(this.PlentifulDungeonBigKeys);
-
-                    // Add small keys
-                    if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
-                        this.RandomizedImportantItems.AddRange(this.PlentifulRegionSmallKeys);
-                    else if (parseSetting.smallKeySettings == SmallKeySettings.Any_Dungeon)
-                        this.RandomizedDungeonRegionItems.AddRange(this.PlentifulRegionSmallKeys);
-
-                    break;
-                }
-
-                default:
-                    break;
-            }
-
-            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
-            {
-                switch (item)
-                {
-                    case Item.Heart_Container:
-                    {
-                        if (getItemCount(this.alwaysItems, item) == 0)
-                        {
-                            for (int i = 0; i < 5; i++)
-                            {
-                                RemoveItem(Item.Piece_of_Heart);
-                            }
-                        }
-                        else
-                        {
-                            RemoveItem(item);
-                        }
-                        break;
-                    }
-
-                    default:
-                    {
-                        Console.WriteLine("remove " + item.ToString());
-                        RemoveItem(item);
-                        break;
-                    }
-                }
-            }
 
             if (parseSetting.skipPrologue)
             {
@@ -1072,14 +852,13 @@ namespace TPRandomizer
 
         private void RemoveItem(Item item)
         {
-            List<List<Item>> lists =
-                new()
-                {
-                    RandomizedImportantItems,
-                    alwaysItems,
-                    RandomizedDungeonRegionItems,
-                    ShuffledDungeonRewards
-                };
+            List<List<Item>> lists = new()
+            {
+                RandomizedImportantItems,
+                alwaysItems,
+                RandomizedDungeonRegionItems,
+                ShuffledDungeonRewards,
+            };
 
             for (int i = 0; i < lists.Count; i++)
             {
@@ -1092,40 +871,33 @@ namespace TPRandomizer
         {
             // Only add bugs to pool if their corresponding Agitha check is not
             // excluded.
-            Dictionary<string, Item> agithaCheckToItem =
-                new()
-                {
-                    { "Agitha Female Ant Reward", Item.Female_Ant },
-                    { "Agitha Female Beetle Reward", Item.Female_Beetle },
-                    { "Agitha Female Butterfly Reward", Item.Female_Butterfly },
-                    { "Agitha Female Dayfly Reward", Item.Female_Dayfly },
-                    { "Agitha Female Dragonfly Reward", Item.Female_Dragonfly },
-                    { "Agitha Female Grasshopper Reward", Item.Female_Grasshopper },
-                    { "Agitha Female Ladybug Reward", Item.Female_Ladybug },
-                    { "Agitha Female Mantis Reward", Item.Female_Mantis },
-                    { "Agitha Female Phasmid Reward", Item.Female_Phasmid },
-                    { "Agitha Female Pill Bug Reward", Item.Female_Pill_Bug },
-                    { "Agitha Female Snail Reward", Item.Female_Snail },
-                    { "Agitha Female Stag Beetle Reward", Item.Female_Stag_Beetle },
-                    { "Agitha Male Ant Reward", Item.Male_Ant },
-                    { "Agitha Male Beetle Reward", Item.Male_Beetle },
-                    { "Agitha Male Butterfly Reward", Item.Male_Butterfly },
-                    { "Agitha Male Dayfly Reward", Item.Male_Dayfly },
-                    { "Agitha Male Dragonfly Reward", Item.Male_Dragonfly },
-                    { "Agitha Male Grasshopper Reward", Item.Male_Grasshopper },
-                    { "Agitha Male Ladybug Reward", Item.Male_Ladybug },
-                    { "Agitha Male Mantis Reward", Item.Male_Mantis },
-                    { "Agitha Male Phasmid Reward", Item.Male_Phasmid },
-                    { "Agitha Male Pill Bug Reward", Item.Male_Pill_Bug },
-                    { "Agitha Male Snail Reward", Item.Male_Snail },
-                    { "Agitha Male Stag Beetle Reward", Item.Male_Stag_Beetle }
-                };
-
-            foreach (string excludedCheckName in sSettings.excludedChecks)
+            Dictionary<string, Item> agithaCheckToItem = new()
             {
-                if (agithaCheckToItem.ContainsKey(excludedCheckName))
-                    agithaCheckToItem.Remove(excludedCheckName);
-            }
+                { "Agitha Female Ant Reward", Item.Female_Ant },
+                { "Agitha Female Beetle Reward", Item.Female_Beetle },
+                { "Agitha Female Butterfly Reward", Item.Female_Butterfly },
+                { "Agitha Female Dayfly Reward", Item.Female_Dayfly },
+                { "Agitha Female Dragonfly Reward", Item.Female_Dragonfly },
+                { "Agitha Female Grasshopper Reward", Item.Female_Grasshopper },
+                { "Agitha Female Ladybug Reward", Item.Female_Ladybug },
+                { "Agitha Female Mantis Reward", Item.Female_Mantis },
+                { "Agitha Female Phasmid Reward", Item.Female_Phasmid },
+                { "Agitha Female Pill Bug Reward", Item.Female_Pill_Bug },
+                { "Agitha Female Snail Reward", Item.Female_Snail },
+                { "Agitha Female Stag Beetle Reward", Item.Female_Stag_Beetle },
+                { "Agitha Male Ant Reward", Item.Male_Ant },
+                { "Agitha Male Beetle Reward", Item.Male_Beetle },
+                { "Agitha Male Butterfly Reward", Item.Male_Butterfly },
+                { "Agitha Male Dayfly Reward", Item.Male_Dayfly },
+                { "Agitha Male Dragonfly Reward", Item.Male_Dragonfly },
+                { "Agitha Male Grasshopper Reward", Item.Male_Grasshopper },
+                { "Agitha Male Ladybug Reward", Item.Male_Ladybug },
+                { "Agitha Male Mantis Reward", Item.Male_Mantis },
+                { "Agitha Male Phasmid Reward", Item.Male_Phasmid },
+                { "Agitha Male Pill Bug Reward", Item.Male_Pill_Bug },
+                { "Agitha Male Snail Reward", Item.Male_Snail },
+                { "Agitha Male Stag Beetle Reward", Item.Male_Stag_Beetle },
+            };
 
             foreach (KeyValuePair<string, Item> pair in agithaCheckToItem)
             {
@@ -1137,18 +909,6 @@ namespace TPRandomizer
         private int SetupItemPoolPoes(SharedSettings parseSetting)
         {
             int vanillaPoes = 60;
-            switch (parseSetting.shufflePoes)
-            {
-                case PoeSettings.Overworld:
-                    vanillaPoes -= 49;
-                    break;
-                case PoeSettings.Dungeons:
-                    vanillaPoes -= 11;
-                    break;
-                case PoeSettings.All:
-                    vanillaPoes = 0;
-                    break;
-            }
 
             int startingPoes = 0;
             foreach (Item item in parseSetting.startingItems)
@@ -1158,13 +918,6 @@ namespace TPRandomizer
             }
 
             int plandoPoes = 0;
-            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
-            {
-                if (item == Item.Poe_Soul)
-                {
-                    plandoPoes++;
-                }
-            }
 
             int poesToShuffle = 60 - vanillaPoes - startingPoes;
             if (poesToShuffle > 0)

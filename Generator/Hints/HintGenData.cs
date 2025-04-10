@@ -87,59 +87,44 @@ namespace TPRandomizer.Hints
 
             // Intentionally not including shields. Note that hard-required
             // checks will always preventBarren.
-            HashSet<Item> itemSet =
-                new()
-                {
-                    // Item Wheel
-                    Item.Progressive_Clawshot,
-                    Item.Progressive_Dominion_Rod,
-                    Item.Ball_and_Chain,
-                    Item.Spinner,
-                    Item.Progressive_Bow,
-                    Item.Iron_Boots,
-                    Item.Boomerang,
-                    Item.Lantern,
-                    Item.Progressive_Fishing_Rod,
-                    Item.Filled_Bomb_Bag,
-                    Item.Aurus_Memo,
-                    // Other
-                    Item.Progressive_Sword,
-                    Item.Zora_Armor,
-                    Item.Shadow_Crystal,
-                };
-
-            // Handle dungeonRewards
-            bool noReasonToEnterPot =
-                sSettings.barrenDungeons && !HintUtils.DungeonIsRequired("Palace of Twilight");
+            HashSet<Item> itemSet = new()
+            {
+                // Item Wheel
+                Item.Progressive_Clawshot,
+                Item.Progressive_Dominion_Rod,
+                Item.Ball_and_Chain,
+                Item.Spinner,
+                Item.Progressive_Bow,
+                Item.Iron_Boots,
+                Item.Boomerang,
+                Item.Lantern,
+                Item.Progressive_Fishing_Rod,
+                Item.Filled_Bomb_Bag,
+                Item.Aurus_Memo,
+                // Other
+                Item.Progressive_Sword,
+                Item.Zora_Armor,
+                Item.Shadow_Crystal,
+            };
 
             if (
-                (
-                    !noReasonToEnterPot
-                    && sSettings.palaceRequirements == PalaceRequirements.Fused_Shadows
-                )
+                (sSettings.palaceRequirements == PalaceRequirements.Fused_Shadows)
                 || sSettings.castleRequirements == CastleRequirements.Fused_Shadows
             )
             {
                 // This item is logical even if it does not prevent barren, but
                 // only when it matter according to settings.
                 logicalItems.Add(Item.Progressive_Fused_Shadow);
-                if (sSettings.shuffleRewards)
-                    itemSet.Add(Item.Progressive_Fused_Shadow);
             }
 
             if (
-                (
-                    !noReasonToEnterPot
-                    && sSettings.palaceRequirements == PalaceRequirements.Mirror_Shards
-                )
+                (sSettings.palaceRequirements == PalaceRequirements.Mirror_Shards)
                 || sSettings.castleRequirements == CastleRequirements.Mirror_Shards
             )
             {
                 // This item is logical even if it does not prevent barren, but
                 // only when it matter according to settings.
                 logicalItems.Add(Item.Progressive_Fused_Shadow);
-                if (sSettings.shuffleRewards)
-                    itemSet.Add(Item.Progressive_Mirror_Shard);
             }
 
             if (sSettings.logicRules != LogicRules.Glitchless)
@@ -182,7 +167,7 @@ namespace TPRandomizer.Hints
 
             // Dungeon keys are logical even if they do not prevent barren for
             // dungeons that are not unrequiredBarren.
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Forest Temple"))
+            if (HintUtils.DungeonIsRequired("Forest Temple"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Forest_Temple_Big_Key);
@@ -194,7 +179,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Forest_Temple_Small_Key);
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Goron Mines"))
+            if (HintUtils.DungeonIsRequired("Goron Mines"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Goron_Mines_Key_Shard);
@@ -206,7 +191,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Goron_Mines_Small_Key);
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Lakebed Temple"))
+            if (HintUtils.DungeonIsRequired("Lakebed Temple"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Lakebed_Temple_Big_Key);
@@ -218,7 +203,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Lakebed_Temple_Small_Key);
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Arbiter's Grounds"))
+            if (HintUtils.DungeonIsRequired("Arbiter's Grounds"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Arbiters_Grounds_Big_Key);
@@ -230,7 +215,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Arbiters_Grounds_Small_Key);
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Snowpeak Ruins"))
+            if (HintUtils.DungeonIsRequired("Snowpeak Ruins"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Snowpeak_Ruins_Bedroom_Key);
@@ -250,7 +235,7 @@ namespace TPRandomizer.Hints
                     logicalItems.Add(Item.Snowpeak_Ruins_Ordon_Pumpkin);
                 }
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Temple of Time"))
+            if (HintUtils.DungeonIsRequired("Temple of Time"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Temple_of_Time_Big_Key);
@@ -262,7 +247,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Temple_of_Time_Small_Key);
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("City in the Sky"))
+            if (HintUtils.DungeonIsRequired("City in the Sky"))
             {
                 if (!sSettings.skipCityEntrance)
                     itemSet.Add(Item.Progressive_Sky_Book);
@@ -277,7 +262,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.City_in_The_Sky_Small_Key);
             }
-            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Palace of Twilight"))
+            if (HintUtils.DungeonIsRequired("Palace of Twilight"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Palace_of_Twilight_Big_Key);
@@ -403,88 +388,87 @@ namespace TPRandomizer.Hints
         {
             HashSet<string> allowBarrenCheckSet = new();
 
-            Dictionary<Item, int> itemToProgCount =
-                new()
-                {
-                    // __Item Wheel__
-                    { Item.Progressive_Clawshot, 2 },
-                    { Item.Progressive_Dominion_Rod, 2 },
-                    { Item.Ball_and_Chain, 1 },
-                    { Item.Spinner, 1 },
-                    { Item.Progressive_Bow, 1 },
-                    { Item.Iron_Boots, 1 },
-                    { Item.Boomerang, 1 },
-                    { Item.Lantern, 1 },
-                    { Item.Slingshot, 1 },
-                    { Item.Progressive_Fishing_Rod, 2 },
-                    { Item.Filled_Bomb_Bag, 1 },
-                    // - handle bottles in the future if needed. Will be easier
-                    //   to handle after Coro bottle can always be dumped, so
-                    //   waiting on that rather than adding a temporary complex
-                    //   implementation. Not expecting it to be noticeable
-                    //   either way at the moment.
-                    { Item.Asheis_Sketch, 1 },
-                    { Item.Progressive_Sky_Book, 7 },
-                    { Item.Aurus_Memo, 1 },
-                    // __Collection Screen__
-                    { Item.Progressive_Sword, 4 },
-                    // - shields handled separately
-                    { Item.Zora_Armor, 1 },
-                    { Item.Magic_Armor, 1 },
-                    // __Bugs__
-                    { Item.Female_Ant, 1 },
-                    { Item.Female_Beetle, 1 },
-                    { Item.Female_Butterfly, 1 },
-                    { Item.Female_Dayfly, 1 },
-                    { Item.Female_Dragonfly, 1 },
-                    { Item.Female_Grasshopper, 1 },
-                    { Item.Female_Ladybug, 1 },
-                    { Item.Female_Mantis, 1 },
-                    { Item.Female_Phasmid, 1 },
-                    { Item.Female_Pill_Bug, 1 },
-                    { Item.Female_Snail, 1 },
-                    { Item.Female_Stag_Beetle, 1 },
-                    { Item.Male_Ant, 1 },
-                    { Item.Male_Beetle, 1 },
-                    { Item.Male_Butterfly, 1 },
-                    { Item.Male_Dayfly, 1 },
-                    { Item.Male_Dragonfly, 1 },
-                    { Item.Male_Grasshopper, 1 },
-                    { Item.Male_Ladybug, 1 },
-                    { Item.Male_Mantis, 1 },
-                    { Item.Male_Phasmid, 1 },
-                    { Item.Male_Pill_Bug, 1 },
-                    { Item.Male_Snail, 1 },
-                    { Item.Male_Stag_Beetle, 1 },
-                    // __Dungeon Keys__
-                    { Item.Forest_Temple_Big_Key, 1 },
-                    { Item.Forest_Temple_Small_Key, 4 },
-                    { Item.Goron_Mines_Key_Shard, 3 },
-                    { Item.Goron_Mines_Small_Key, 3 },
-                    { Item.Lakebed_Temple_Big_Key, 1 },
-                    { Item.Lakebed_Temple_Small_Key, 3 },
-                    { Item.Arbiters_Grounds_Big_Key, 1 },
-                    { Item.Arbiters_Grounds_Small_Key, 5 },
-                    { Item.Snowpeak_Ruins_Bedroom_Key, 1 },
-                    { Item.Snowpeak_Ruins_Small_Key, 3 },
-                    { Item.Snowpeak_Ruins_Ordon_Goat_Cheese, 1 },
-                    { Item.Snowpeak_Ruins_Ordon_Pumpkin, 1 },
-                    { Item.Temple_of_Time_Big_Key, 1 },
-                    { Item.Temple_of_Time_Small_Key, 3 },
-                    { Item.City_in_The_Sky_Big_Key, 1 },
-                    { Item.City_in_The_Sky_Small_Key, 1 },
-                    { Item.Palace_of_Twilight_Big_Key, 1 },
-                    { Item.Palace_of_Twilight_Small_Key, 7 },
-                    { Item.Hyrule_Castle_Big_Key, 1 },
-                    { Item.Hyrule_Castle_Small_Key, 3 },
-                    // __Other__
-                    { Item.Shadow_Crystal, 1 },
-                    { Item.Gate_Keys, 1 },
-                    { Item.North_Faron_Woods_Gate_Key, 1 },
-                    { Item.Gerudo_Desert_Bulblin_Camp_Key, 1 },
-                    { Item.Progressive_Fused_Shadow, 3 },
-                    { Item.Progressive_Mirror_Shard, 4 },
-                };
+            Dictionary<Item, int> itemToProgCount = new()
+            {
+                // __Item Wheel__
+                { Item.Progressive_Clawshot, 2 },
+                { Item.Progressive_Dominion_Rod, 2 },
+                { Item.Ball_and_Chain, 1 },
+                { Item.Spinner, 1 },
+                { Item.Progressive_Bow, 1 },
+                { Item.Iron_Boots, 1 },
+                { Item.Boomerang, 1 },
+                { Item.Lantern, 1 },
+                { Item.Slingshot, 1 },
+                { Item.Progressive_Fishing_Rod, 2 },
+                { Item.Filled_Bomb_Bag, 1 },
+                // - handle bottles in the future if needed. Will be easier
+                //   to handle after Coro bottle can always be dumped, so
+                //   waiting on that rather than adding a temporary complex
+                //   implementation. Not expecting it to be noticeable
+                //   either way at the moment.
+                { Item.Asheis_Sketch, 1 },
+                { Item.Progressive_Sky_Book, 7 },
+                { Item.Aurus_Memo, 1 },
+                // __Collection Screen__
+                { Item.Progressive_Sword, 4 },
+                // - shields handled separately
+                { Item.Zora_Armor, 1 },
+                { Item.Magic_Armor, 1 },
+                // __Bugs__
+                { Item.Female_Ant, 1 },
+                { Item.Female_Beetle, 1 },
+                { Item.Female_Butterfly, 1 },
+                { Item.Female_Dayfly, 1 },
+                { Item.Female_Dragonfly, 1 },
+                { Item.Female_Grasshopper, 1 },
+                { Item.Female_Ladybug, 1 },
+                { Item.Female_Mantis, 1 },
+                { Item.Female_Phasmid, 1 },
+                { Item.Female_Pill_Bug, 1 },
+                { Item.Female_Snail, 1 },
+                { Item.Female_Stag_Beetle, 1 },
+                { Item.Male_Ant, 1 },
+                { Item.Male_Beetle, 1 },
+                { Item.Male_Butterfly, 1 },
+                { Item.Male_Dayfly, 1 },
+                { Item.Male_Dragonfly, 1 },
+                { Item.Male_Grasshopper, 1 },
+                { Item.Male_Ladybug, 1 },
+                { Item.Male_Mantis, 1 },
+                { Item.Male_Phasmid, 1 },
+                { Item.Male_Pill_Bug, 1 },
+                { Item.Male_Snail, 1 },
+                { Item.Male_Stag_Beetle, 1 },
+                // __Dungeon Keys__
+                { Item.Forest_Temple_Big_Key, 1 },
+                { Item.Forest_Temple_Small_Key, 4 },
+                { Item.Goron_Mines_Key_Shard, 3 },
+                { Item.Goron_Mines_Small_Key, 3 },
+                { Item.Lakebed_Temple_Big_Key, 1 },
+                { Item.Lakebed_Temple_Small_Key, 3 },
+                { Item.Arbiters_Grounds_Big_Key, 1 },
+                { Item.Arbiters_Grounds_Small_Key, 5 },
+                { Item.Snowpeak_Ruins_Bedroom_Key, 1 },
+                { Item.Snowpeak_Ruins_Small_Key, 3 },
+                { Item.Snowpeak_Ruins_Ordon_Goat_Cheese, 1 },
+                { Item.Snowpeak_Ruins_Ordon_Pumpkin, 1 },
+                { Item.Temple_of_Time_Big_Key, 1 },
+                { Item.Temple_of_Time_Small_Key, 3 },
+                { Item.City_in_The_Sky_Big_Key, 1 },
+                { Item.City_in_The_Sky_Small_Key, 1 },
+                { Item.Palace_of_Twilight_Big_Key, 1 },
+                { Item.Palace_of_Twilight_Small_Key, 7 },
+                { Item.Hyrule_Castle_Big_Key, 1 },
+                { Item.Hyrule_Castle_Small_Key, 3 },
+                // __Other__
+                { Item.Shadow_Crystal, 1 },
+                { Item.Gate_Keys, 1 },
+                { Item.North_Faron_Woods_Gate_Key, 1 },
+                { Item.Gerudo_Desert_Bulblin_Camp_Key, 1 },
+                { Item.Progressive_Fused_Shadow, 3 },
+                { Item.Progressive_Mirror_Shard, 4 },
+            };
 
             // Currently, wallets can only matter for the Magic Armor check, and
             // getting the largest wallet never matters.
@@ -646,12 +630,6 @@ namespace TPRandomizer.Hints
 
             HashSet<Item> baseAllowedForDungeons = new() { };
 
-            if (!sSettings.shuffleRewards)
-            {
-                baseAllowedForDungeons.Add(Item.Progressive_Fused_Shadow);
-                baseAllowedForDungeons.Add(Item.Progressive_Mirror_Shard);
-            }
-
             ret[AreaId.Zone(Zone.Forest_Temple)] = new(baseAllowedForDungeons);
             ret[AreaId.Zone(Zone.Goron_Mines)] = new(baseAllowedForDungeons);
             ret[AreaId.Zone(Zone.Lakebed_Temple)] = new(baseAllowedForDungeons);
@@ -669,35 +647,37 @@ namespace TPRandomizer.Hints
                 ret[AreaId.Zone(Zone.Goron_Mines)].Add(Item.Goron_Mines_Small_Key);
                 ret[AreaId.Zone(Zone.Lakebed_Temple)].Add(Item.Lakebed_Temple_Small_Key);
                 ret[AreaId.Zone(Zone.Arbiters_Grounds)].Add(Item.Arbiters_Grounds_Small_Key);
-                ret[AreaId.Zone(Zone.Snowpeak_Ruins)].UnionWith(
-                    new HashSet<Item>()
-                    {
-                        Item.Snowpeak_Ruins_Small_Key,
-                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                    }
-                );
+                ret[AreaId.Zone(Zone.Snowpeak_Ruins)]
+                    .UnionWith(
+                        new HashSet<Item>()
+                        {
+                            Item.Snowpeak_Ruins_Small_Key,
+                            Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                        }
+                    );
                 ret[AreaId.Zone(Zone.Temple_of_Time)].Add(Item.Temple_of_Time_Small_Key);
                 ret[AreaId.Zone(Zone.City_in_the_Sky)].Add(Item.City_in_The_Sky_Small_Key);
                 ret[AreaId.Zone(Zone.Palace_of_Twilight)].Add(Item.Palace_of_Twilight_Small_Key);
                 ret[AreaId.Zone(Zone.Hyrule_Castle)].Add(Item.Hyrule_Castle_Small_Key);
 
-                ret[AreaId.Province(Province.Dungeon)].UnionWith(
-                    new HashSet<Item>()
-                    {
-                        Item.Forest_Temple_Small_Key,
-                        Item.Goron_Mines_Small_Key,
-                        Item.Lakebed_Temple_Small_Key,
-                        Item.Arbiters_Grounds_Small_Key,
-                        Item.Snowpeak_Ruins_Small_Key,
-                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                        Item.Temple_of_Time_Small_Key,
-                        Item.City_in_The_Sky_Small_Key,
-                        Item.Palace_of_Twilight_Small_Key,
-                        Item.Hyrule_Castle_Small_Key,
-                    }
-                );
+                ret[AreaId.Province(Province.Dungeon)]
+                    .UnionWith(
+                        new HashSet<Item>()
+                        {
+                            Item.Forest_Temple_Small_Key,
+                            Item.Goron_Mines_Small_Key,
+                            Item.Lakebed_Temple_Small_Key,
+                            Item.Arbiters_Grounds_Small_Key,
+                            Item.Snowpeak_Ruins_Small_Key,
+                            Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                            Item.Temple_of_Time_Small_Key,
+                            Item.City_in_The_Sky_Small_Key,
+                            Item.Palace_of_Twilight_Small_Key,
+                            Item.Hyrule_Castle_Small_Key,
+                        }
+                    );
             }
 
             if (sSettings.bigKeySettings == BigKeySettings.Own_Dungeon)
@@ -712,20 +692,21 @@ namespace TPRandomizer.Hints
                 ret[AreaId.Zone(Zone.Palace_of_Twilight)].Add(Item.Palace_of_Twilight_Big_Key);
                 ret[AreaId.Zone(Zone.Hyrule_Castle)].Add(Item.Hyrule_Castle_Big_Key);
 
-                ret[AreaId.Province(Province.Dungeon)].UnionWith(
-                    new HashSet<Item>()
-                    {
-                        Item.Forest_Temple_Big_Key,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Lakebed_Temple_Big_Key,
-                        Item.Arbiters_Grounds_Big_Key,
-                        Item.Snowpeak_Ruins_Bedroom_Key,
-                        Item.Temple_of_Time_Big_Key,
-                        Item.City_in_The_Sky_Big_Key,
-                        Item.Palace_of_Twilight_Big_Key,
-                        Item.Hyrule_Castle_Big_Key,
-                    }
-                );
+                ret[AreaId.Province(Province.Dungeon)]
+                    .UnionWith(
+                        new HashSet<Item>()
+                        {
+                            Item.Forest_Temple_Big_Key,
+                            Item.Goron_Mines_Key_Shard,
+                            Item.Lakebed_Temple_Big_Key,
+                            Item.Arbiters_Grounds_Big_Key,
+                            Item.Snowpeak_Ruins_Bedroom_Key,
+                            Item.Temple_of_Time_Big_Key,
+                            Item.City_in_The_Sky_Big_Key,
+                            Item.Palace_of_Twilight_Big_Key,
+                            Item.Hyrule_Castle_Big_Key,
+                        }
+                    );
             }
 
             return ret;
