@@ -321,20 +321,29 @@ namespace TPRandomizer
                 );
             }
 
+            seedGenResults.itemPlacements.Remove(-1);
+
             foreach (KeyValuePair<int, byte> kvp in seedGenResults.itemPlacements.ToList())
             {
                 // key is checkId, value is itemId
                 string checkName = CheckIdClass.GetCheckName(kvp.Key);
-                Console.WriteLine(checkName);
                 if (Randomizer.Checks.CheckDict.ContainsKey(checkName))
                 {
                     Randomizer.Checks.CheckDict[checkName].itemId = (Item)kvp.Value;
+                    Console.WriteLine(
+                        Randomizer.Checks.CheckDict[checkName].checkName
+                            + " : "
+                            + (int)Randomizer.Checks.CheckDict[checkName].itemId
+                    );
                 }
             }
 
+            Console.WriteLine("Validating item placements.");
+            int i = 0;
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
             {
-                Console.WriteLine(checkList.Key + " : " + checkList.Value.itemId);
+                //Console.WriteLine(checkList.Key + " : " + (int)checkList.Value.itemId + " " + i);
+                i++;
             }
 
             Console.WriteLine("\nGenerating Seed Data.");
