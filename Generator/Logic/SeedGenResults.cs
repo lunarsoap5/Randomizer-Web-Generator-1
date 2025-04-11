@@ -48,6 +48,12 @@ namespace TPRandomizer
 
             decodedSSettings = SharedSettings.FromString(settingsString);
 
+            this.customMsgData = CustomMsgData.Decode(
+                decodedSSettings,
+                itemPlacements,
+                "0SAWagc7Q5313j0S0"
+            );
+
             this.playthroughName = "APTest_APT";
             this.wiiPlaythroughName = "AT_APT_uEo";
             this.itemPlacements = DecodeItemPlacements(itemPlacementString);

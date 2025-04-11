@@ -94,7 +94,8 @@ namespace TPRandomizer.Assets
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
             TPRandomizer.Assets.CustomMessages customMessage = new();
 
-            List<CustomMessages.MessageEntry> seedMessages = new(); //seedGenResults.customMsgData.GenMessageEntries();
+            List<CustomMessages.MessageEntry> seedMessages =
+                seedGenResults.customMsgData.GenMessageEntries();
 
             seedDictionary.Add((byte)hintLanguage, seedMessages);
 
