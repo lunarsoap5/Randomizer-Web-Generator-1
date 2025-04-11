@@ -107,24 +107,38 @@ namespace TPRandomizer.Hints
                 Item.Shadow_Crystal,
             };
 
+            // Handle dungeonRewards
+            bool noReasonToEnterPot =
+                sSettings.barrenDungeons && !HintUtils.DungeonIsRequired("Palace of Twilight");
+
             if (
-                (sSettings.palaceRequirements == PalaceRequirements.Fused_Shadows)
+                (
+                    !noReasonToEnterPot
+                    && sSettings.palaceRequirements == PalaceRequirements.Fused_Shadows
+                )
                 || sSettings.castleRequirements == CastleRequirements.Fused_Shadows
             )
             {
                 // This item is logical even if it does not prevent barren, but
                 // only when it matter according to settings.
                 logicalItems.Add(Item.Progressive_Fused_Shadow);
+                if (sSettings.shuffleRewards)
+                    itemSet.Add(Item.Progressive_Fused_Shadow);
             }
 
             if (
-                (sSettings.palaceRequirements == PalaceRequirements.Mirror_Shards)
+                (
+                    !noReasonToEnterPot
+                    && sSettings.palaceRequirements == PalaceRequirements.Mirror_Shards
+                )
                 || sSettings.castleRequirements == CastleRequirements.Mirror_Shards
             )
             {
                 // This item is logical even if it does not prevent barren, but
                 // only when it matter according to settings.
                 logicalItems.Add(Item.Progressive_Fused_Shadow);
+                if (sSettings.shuffleRewards)
+                    itemSet.Add(Item.Progressive_Mirror_Shard);
             }
 
             if (sSettings.logicRules != LogicRules.Glitchless)
@@ -167,7 +181,7 @@ namespace TPRandomizer.Hints
 
             // Dungeon keys are logical even if they do not prevent barren for
             // dungeons that are not unrequiredBarren.
-            if (HintUtils.DungeonIsRequired("Forest Temple"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Forest Temple"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Forest_Temple_Big_Key);
@@ -179,7 +193,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Forest_Temple_Small_Key);
             }
-            if (HintUtils.DungeonIsRequired("Goron Mines"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Goron Mines"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Goron_Mines_Key_Shard);
@@ -191,7 +205,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Goron_Mines_Small_Key);
             }
-            if (HintUtils.DungeonIsRequired("Lakebed Temple"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Lakebed Temple"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Lakebed_Temple_Big_Key);
@@ -203,7 +217,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Lakebed_Temple_Small_Key);
             }
-            if (HintUtils.DungeonIsRequired("Arbiter's Grounds"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Arbiter's Grounds"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Arbiters_Grounds_Big_Key);
@@ -215,7 +229,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Arbiters_Grounds_Small_Key);
             }
-            if (HintUtils.DungeonIsRequired("Snowpeak Ruins"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Snowpeak Ruins"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Snowpeak_Ruins_Bedroom_Key);
@@ -235,7 +249,7 @@ namespace TPRandomizer.Hints
                     logicalItems.Add(Item.Snowpeak_Ruins_Ordon_Pumpkin);
                 }
             }
-            if (HintUtils.DungeonIsRequired("Temple of Time"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Temple of Time"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Temple_of_Time_Big_Key);
@@ -247,7 +261,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.Temple_of_Time_Small_Key);
             }
-            if (HintUtils.DungeonIsRequired("City in the Sky"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("City in the Sky"))
             {
                 if (!sSettings.skipCityEntrance)
                     itemSet.Add(Item.Progressive_Sky_Book);
@@ -262,7 +276,7 @@ namespace TPRandomizer.Hints
                 if (!isSmallKeysy)
                     logicalItems.Add(Item.City_in_The_Sky_Small_Key);
             }
-            if (HintUtils.DungeonIsRequired("Palace of Twilight"))
+            if (!sSettings.barrenDungeons || HintUtils.DungeonIsRequired("Palace of Twilight"))
             {
                 if (bigKeysPreventBarren)
                     itemSet.Add(Item.Palace_of_Twilight_Big_Key);
@@ -629,6 +643,12 @@ namespace TPRandomizer.Hints
             Dictionary<AreaId, HashSet<Item>> ret = new();
 
             HashSet<Item> baseAllowedForDungeons = new() { };
+
+            if (!sSettings.shuffleRewards)
+            {
+                baseAllowedForDungeons.Add(Item.Progressive_Fused_Shadow);
+                baseAllowedForDungeons.Add(Item.Progressive_Mirror_Shard);
+            }
 
             ret[AreaId.Zone(Zone.Forest_Temple)] = new(baseAllowedForDungeons);
             ret[AreaId.Zone(Zone.Goron_Mines)] = new(baseAllowedForDungeons);

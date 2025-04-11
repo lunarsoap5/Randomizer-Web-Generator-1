@@ -332,6 +332,136 @@ namespace TPRandomizer
                 {
                     currentCheck.checkStatus = "Vanilla";
                 }
+
+                if (!parseSetting.shuffleNpcItems)
+                {
+                    if (currentCheck.checkCategory.Contains("Npc"))
+                    {
+                        if (
+                            (
+                                (parseSetting.smallKeySettings == SmallKeySettings.Keysy)
+                                && currentCheck.checkCategory.Contains("Small Key")
+                            )
+                            || (
+                                (parseSetting.bigKeySettings == BigKeySettings.Keysy)
+                                && currentCheck.checkCategory.Contains("Big Key")
+                            )
+                            || (
+                                (
+                                    parseSetting.mapAndCompassSettings
+                                    == MapAndCompassSettings.Start_With
+                                )
+                                && (
+                                    currentCheck.checkCategory.Contains("Dungeon Map")
+                                    || currentCheck.checkCategory.Contains("Compass")
+                                )
+                            )
+                        )
+                        {
+                            currentCheck.checkStatus = "Excluded";
+                        }
+                        else
+                        {
+                            currentCheck.checkStatus = "Vanilla";
+                            Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
+                            Randomizer.Items.RandomizedDungeonRegionItems.Remove(
+                                currentCheck.itemId
+                            );
+                            Randomizer.Items.alwaysItems.Remove(currentCheck.itemId);
+                        }
+                    }
+                }
+
+                switch (parseSetting.shufflePoes)
+                {
+                    case PoeSettings.Vanilla:
+                    {
+                        if (currentCheck.checkCategory.Contains("Poe"))
+                        {
+                            currentCheck.checkStatus = "Vanilla";
+                        }
+                        break;
+                    }
+
+                    case PoeSettings.Overworld:
+                    {
+                        if (
+                            currentCheck.checkCategory.Contains("Poe")
+                            && !currentCheck.checkCategory.Contains("Overworld")
+                        )
+                        {
+                            currentCheck.checkStatus = "Vanilla";
+                        }
+                        break;
+                    }
+
+                    case PoeSettings.Dungeons:
+                    {
+                        if (
+                            currentCheck.checkCategory.Contains("Poe")
+                            && !currentCheck.checkCategory.Contains("Dungeon")
+                        )
+                        {
+                            currentCheck.checkStatus = "Vanilla";
+                        }
+                        break;
+                    }
+                }
+
+                if (!parseSetting.shuffleGoldenBugs)
+                {
+                    if (currentCheck.checkCategory.Contains("Golden Bug"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
+                if (!parseSetting.shuffleHiddenSkills)
+                {
+                    if (currentCheck.checkCategory.Contains("Hidden Skill"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
+                    }
+                }
+
+                if (!parseSetting.shuffleSkyCharacters)
+                {
+                    if (currentCheck.checkCategory.Contains("Sky Book"))
+                    {
+                        if (parseSetting.skipCityEntrance)
+                        {
+                            currentCheck.checkStatus = "Excluded";
+                        }
+                        else
+                        {
+                            currentCheck.checkStatus = "Vanilla";
+                        }
+
+                        Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
+                    }
+                }
+
+                if (!parseSetting.shuffleShopItems)
+                {
+                    if (
+                        currentCheck.checkCategory.Contains("Shop")
+                        || currentCheck.checkCategory.Contains("Npc - Shop")
+                    )
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
+                        Randomizer.Items.alwaysItems.Remove(currentCheck.itemId);
+                        foreach (Item startingItem in parseSetting.startingItems)
+                        {
+                            if (currentCheck.itemId == startingItem)
+                            {
+                                // If we are starting with the shop item and it is not randomized, replace it with a junk item.
+                                currentCheck.checkStatus = "Excluded";
+                            }
+                        }
+                    }
+                }
             }
 
             // Vanilla until all of the flag issues are figured out.
@@ -355,6 +485,12 @@ namespace TPRandomizer
             Randomizer.Items.RandomizedImportantItems.Remove(
                 Randomizer.Checks.CheckDict["Ilia Memory Reward"].itemId
             );
+
+            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
+            {
+                Randomizer.Checks.CheckDict[checkName].checkStatus = "Plando";
+                Randomizer.Checks.CheckDict[checkName].itemId = item;
+            }
         }
     }
 }

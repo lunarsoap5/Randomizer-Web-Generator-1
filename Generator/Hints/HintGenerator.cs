@@ -40,6 +40,8 @@ namespace TPRandomizer.Hints
 
             // If user specified that there are no hintSettings, then we should
             // return the default customMsgData settings.
+            if (genData.sSettings.hintDistribution == HintDistribution.None)
+                return customMsgDataBuilder.Build(genData.sSettings);
 
             hintSettings = HintSettings.fromPath(genData);
 
@@ -1066,7 +1068,11 @@ namespace TPRandomizer.Hints
                 string zoneName = pair.Value;
                 Zone zone = ZoneUtils.StringToId(zoneName);
 
-                if (zone != Zone.Hyrule_Castle && !HintUtils.DungeonIsRequired(zoneName))
+                if (
+                    zone != Zone.Hyrule_Castle
+                    && genData.sSettings.barrenDungeons
+                    && !HintUtils.DungeonIsRequired(zoneName)
+                )
                     continue;
 
                 int totalNeeded = ZoneUtils.StringToId(zoneName) == Zone.Goron_Mines ? 3 : 1;
@@ -1573,6 +1579,28 @@ namespace TPRandomizer.Hints
 
             // Remove all signs in unrequiredBarren dungeons from potential
             // spots to fill.
+            if (genData.sSettings.barrenDungeons)
+            {
+                if (!HintUtils.DungeonIsRequired("Forest Temple"))
+                    possibleSpotsToFill.Remove(SpotId.Forest_Temple_Sign);
+                if (!HintUtils.DungeonIsRequired("Goron Mines"))
+                    possibleSpotsToFill.Remove(SpotId.Goron_Mines_Sign);
+                if (!HintUtils.DungeonIsRequired("Lakebed Temple"))
+                    possibleSpotsToFill.Remove(SpotId.Lakebed_Temple_Sign);
+                if (!HintUtils.DungeonIsRequired("Arbiter's Grounds"))
+                    possibleSpotsToFill.Remove(SpotId.Arbiters_Grounds_Sign);
+                if (!HintUtils.DungeonIsRequired("Snowpeak Ruins"))
+                    possibleSpotsToFill.Remove(SpotId.Snowpeak_Ruins_Sign);
+                if (!HintUtils.DungeonIsRequired("Temple of Time"))
+                {
+                    possibleSpotsToFill.Remove(SpotId.Temple_of_Time_Sign);
+                    possibleSpotsToFill.Remove(SpotId.Temple_of_Time_Beyond_Point_Sign);
+                }
+                if (!HintUtils.DungeonIsRequired("City in the Sky"))
+                    possibleSpotsToFill.Remove(SpotId.City_in_the_Sky_Sign);
+                if (!HintUtils.DungeonIsRequired("Palace of Twilight"))
+                    possibleSpotsToFill.Remove(SpotId.Palace_of_Twilight_Sign);
+            }
 
             Dictionary<SpotId, HintSpot> spotIdToHintSpot = new();
             foreach (HintSpot hintSpot in hintSpots)

@@ -770,6 +770,11 @@ namespace TPRandomizer
             // Handle poes
             int numPoesForBaseItemPool = SetupItemPoolPoes(parseSetting);
 
+            if (parseSetting.shuffleGoldenBugs)
+            {
+                this.AddGoldenBugs(parseSetting);
+            }
+
             // Check Small Key settings before adding them to the rando pool
             if (
                 (parseSetting.smallKeySettings == SmallKeySettings.Own_Dungeon)
@@ -815,7 +820,212 @@ namespace TPRandomizer
 
             // Modifying Item Pool based on ice trap settings
             // If we have Ice Trap Mayhem or Nightmare, all extra junk items are replaced with Foolish Items
+            switch (parseSetting.trapFrequency)
+            {
+                case TrapFrequency.Few: // There is a small chance that a Foolish Item could appear
+                {
+                    this.JunkItems.AddRange(this.vanillaJunkItems);
+                    this.JunkItems.AddRange(Enumerable.Repeat(Item.Foolish_Item, 6));
+                    break;
+                }
 
+                case TrapFrequency.Many: // There is an increased chance that a Foolish Item could appear
+                {
+                    this.JunkItems.AddRange(this.vanillaJunkItems);
+                    this.JunkItems.AddRange(Enumerable.Repeat(Item.Foolish_Item, 27));
+                    break;
+                }
+
+                case TrapFrequency.Mayhem: // All junk items outside of the item pool are Foolish Items
+                {
+                    this.JunkItems.AddRange(this.vanillaJunkItems);
+                    this.JunkItems.AddRange(Enumerable.Repeat(Item.Foolish_Item, 64));
+                    break;
+                }
+
+                case TrapFrequency.Nightmare: // All junk items are Foolish Items
+                {
+                    this.JunkItems.Add(Item.Foolish_Item);
+                    break;
+                }
+
+                default:
+                {
+                    this.JunkItems.AddRange(this.vanillaJunkItems);
+                    break;
+                }
+            }
+
+            // Adjust item pool based on itemScarcity setting.
+            switch (parseSetting.itemScarcity)
+            {
+                // Include as few items as possible.
+                case ItemScarcity.Minimal:
+                {
+                    // Note we leave in the empty bottle since it shows up in
+                    // the `Faron Field.jsonc` file. It might be required in
+                    // Entrance Rando at some point, so leaving it in for now.
+
+                    // Update alwaysItems
+                    HashSet<Item> alwaysItemsToRemove = new()
+                    {
+                        Item.Heart_Container,
+                        Item.Piece_of_Heart,
+                        Item.Sera_Bottle,
+                        Item.Coro_Bottle,
+                        Item.Jovani_Bottle,
+                        Item.Hawkeye,
+                        Item.Giant_Bomb_Bag,
+                    };
+
+                    // Filter out certain items
+                    this.alwaysItems = this
+                        .alwaysItems.Where(item => !alwaysItemsToRemove.Contains(item))
+                        .ToList();
+
+                    // Update RandomizedImportantItems
+                    Dictionary<Item, int> importantItemToCount = new()
+                    {
+                        { Item.Progressive_Bow, 1 },
+                        { Item.Filled_Bomb_Bag, 1 },
+                    };
+
+                    foreach (KeyValuePair<Item, int> kv in importantItemToCount)
+                    {
+                        updateItemToCount(RandomizedImportantItems, kv.Key, kv.Value);
+                    }
+
+                    // TODO: RequiredDungeons not filled out at this point.
+                    // Disabling this as the low effort fix. To support removing
+                    // a sword when PoT is required, we would need to make sure
+                    // Randomizer.RequiredDungeons is available at this point.
+                    // Right now finding the required dungeons depends on
+                    // running a procedure which is dependent on the output of
+                    // this function (kind of a circular dependency), so a
+                    // different fix would be much higher effort.
+
+                    // // Reduce swords to 3 if barrenDungeons is on and Palace of
+                    // // Twilight is not required.
+                    // if (
+                    //     Randomizer.SSettings.barrenDungeons
+                    //     && (Randomizer.RequiredDungeons & 0x80) == 0
+                    // )
+                    // {
+                    //     updateItemToCount(RandomizedImportantItems, Item.Progressive_Sword, 3);
+                    // }
+
+                    // Remove Magic Armor if Glitchless Logic and update the hidden skill count to 1
+                    if (Randomizer.SSettings.logicRules == LogicRules.Glitchless)
+                    {
+                        updateItemToCount(RandomizedImportantItems, Item.Magic_Armor, 0);
+                        updateItemToCount(
+                            RandomizedImportantItems,
+                            Item.Progressive_Hidden_Skill,
+                            1
+                        );
+                    }
+
+                    // If wallet size is not increased, we need to be able to
+                    // find 1 wallet so we can afford the magic armor check.
+                    updateItemToCount(
+                        RandomizedImportantItems,
+                        Item.Progressive_Wallet,
+                        Randomizer.SSettings.increaseWallet ? 0 : 1
+                    );
+
+                    break;
+                }
+
+                // Some items get extra copies; no Pieces of Heart
+                case ItemScarcity.Plentiful:
+                {
+                    // Remove all Pieces of Heart
+                    this.alwaysItems = this
+                        .alwaysItems.Where(item => item != Item.Piece_of_Heart)
+                        .ToList();
+
+                    // Add Heart Containers
+                    updateItemToCount(this.alwaysItems, Item.Heart_Container, 17);
+                    this.alwaysItems.Add(Item.Giant_Bomb_Bag);
+                    this.alwaysItems.Add(Item.Hawkeye);
+
+                    // Add extra copy of some items
+                    List<Item> plentifulImportantItems = new()
+                    {
+                        Item.Progressive_Sword,
+                        Item.Progressive_Wallet,
+                        Item.Boomerang,
+                        Item.Lantern,
+                        Item.Slingshot,
+                        Item.Progressive_Fishing_Rod,
+                        Item.Iron_Boots,
+                        Item.Progressive_Bow,
+                        Item.Filled_Bomb_Bag,
+                        Item.Zora_Armor,
+                        Item.Progressive_Clawshot,
+                        Item.Shadow_Crystal,
+                        Item.Aurus_Memo,
+                        Item.Asheis_Sketch,
+                        Item.Spinner,
+                        Item.Ball_and_Chain,
+                        Item.Progressive_Dominion_Rod,
+                        Item.Progressive_Sky_Book,
+                        Item.Gate_Keys,
+                        Item.Empty_Bottle,
+                        Item.Progressive_Hidden_Skill,
+                        Item.Magic_Armor,
+                        Item.Ordon_Shield,
+                        Item.Hylian_Shield,
+                    };
+                    RandomizedImportantItems.AddRange(plentifulImportantItems);
+
+                    // Add big keys
+                    if (parseSetting.bigKeySettings == BigKeySettings.Anywhere)
+                        this.RandomizedImportantItems.AddRange(this.PlentifulDungeonBigKeys);
+                    else if (parseSetting.bigKeySettings == BigKeySettings.Any_Dungeon)
+                        this.RandomizedDungeonRegionItems.AddRange(this.PlentifulDungeonBigKeys);
+
+                    // Add small keys
+                    if (parseSetting.smallKeySettings == SmallKeySettings.Anywhere)
+                        this.RandomizedImportantItems.AddRange(this.PlentifulRegionSmallKeys);
+                    else if (parseSetting.smallKeySettings == SmallKeySettings.Any_Dungeon)
+                        this.RandomizedDungeonRegionItems.AddRange(this.PlentifulRegionSmallKeys);
+
+                    break;
+                }
+
+                default:
+                    break;
+            }
+
+            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
+            {
+                switch (item)
+                {
+                    case Item.Heart_Container:
+                    {
+                        if (getItemCount(this.alwaysItems, item) == 0)
+                        {
+                            for (int i = 0; i < 5; i++)
+                            {
+                                RemoveItem(Item.Piece_of_Heart);
+                            }
+                        }
+                        else
+                        {
+                            RemoveItem(item);
+                        }
+                        break;
+                    }
+
+                    default:
+                    {
+                        Console.WriteLine("remove " + item.ToString());
+                        RemoveItem(item);
+                        break;
+                    }
+                }
+            }
 
             if (parseSetting.skipPrologue)
             {
@@ -899,6 +1109,12 @@ namespace TPRandomizer
                 { "Agitha Male Stag Beetle Reward", Item.Male_Stag_Beetle },
             };
 
+            foreach (string excludedCheckName in sSettings.excludedChecks)
+            {
+                if (agithaCheckToItem.ContainsKey(excludedCheckName))
+                    agithaCheckToItem.Remove(excludedCheckName);
+            }
+
             foreach (KeyValuePair<string, Item> pair in agithaCheckToItem)
             {
                 Item bug = pair.Value;
@@ -909,6 +1125,18 @@ namespace TPRandomizer
         private int SetupItemPoolPoes(SharedSettings parseSetting)
         {
             int vanillaPoes = 60;
+            switch (parseSetting.shufflePoes)
+            {
+                case PoeSettings.Overworld:
+                    vanillaPoes -= 49;
+                    break;
+                case PoeSettings.Dungeons:
+                    vanillaPoes -= 11;
+                    break;
+                case PoeSettings.All:
+                    vanillaPoes = 0;
+                    break;
+            }
 
             int startingPoes = 0;
             foreach (Item item in parseSetting.startingItems)
@@ -918,6 +1146,13 @@ namespace TPRandomizer
             }
 
             int plandoPoes = 0;
+            foreach ((string checkName, Item item) in parseSetting.plandoChecks)
+            {
+                if (item == Item.Poe_Soul)
+                {
+                    plandoPoes++;
+                }
+            }
 
             int poesToShuffle = 60 - vanillaPoes - startingPoes;
             if (poesToShuffle > 0)

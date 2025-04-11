@@ -49,15 +49,43 @@ namespace TPRandomizer
         public StartingToD startingToD { get; set; }
         public List<Item> startingItems { get; set; }
 
+        public bool shuffleGoldenBugs { get; set; }
+        public bool shuffleSkyCharacters { get; set; }
+        public bool shuffleNpcItems { get; set; }
+        public PoeSettings shufflePoes { get; set; }
+        public bool shuffleShopItems { get; set; }
+        public bool shuffleHiddenSkills { get; set; }
+
+        public TrapFrequency trapFrequency { get; set; }
+        public bool barrenDungeons { get; set; }
+
+        public ItemScarcity itemScarcity { get; set; }
+
+        public bool shuffleRewards { get; set; }
+
+        public bool noSmallKeysOnBosses { get; set; }
+
+        public HintDistribution hintDistribution { get; set; }
+
+        public List<string> excludedChecks { get; set; }
+        public List<(string, Item)> plandoChecks { get; set; }
+
         public SharedSettings() { }
 
         private SharedSettings(UInt32 version, string bits)
         {
             BitsProcessor processor = new BitsProcessor(bits);
 
+            logicRules = LogicRules.Glitchless; // logicRules = (LogicRules)processor.NextInt(2);
             castleRequirements = (CastleRequirements)processor.NextInt(3);
             palaceRequirements = (PalaceRequirements)processor.NextInt(2);
             faronWoodsLogic = (FaronWoodsLogic)processor.NextInt(1);
+            shuffleGoldenBugs = true; //processor.NextBool();
+            shuffleSkyCharacters = true; //processor.NextBool();
+            shuffleNpcItems = true; //processor.NextBool();
+            shufflePoes = PoeSettings.All; //(PoeSettings)processor.NextInt(2);
+            shuffleShopItems = true; //processor.NextBool();
+            shuffleHiddenSkills = true; //processor.NextBool();
             smallKeySettings = (SmallKeySettings)processor.NextInt(3);
             bigKeySettings = (BigKeySettings)processor.NextInt(3);
             mapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
@@ -72,6 +100,8 @@ namespace TPRandomizer
             transformAnywhere = processor.NextBool();
             increaseWallet = processor.NextBool();
             modifyShopModels = processor.NextBool();
+            trapFrequency = TrapFrequency.None; //(TrapFrequency)processor.NextInt(3);
+            barrenDungeons = false; //processor.NextBool();
             goronMinesEntrance = (GoronMinesEntrance)processor.NextInt(2);
             skipLakebedEntrance = processor.NextBool();
             skipArbitersEntrance = processor.NextBool();
@@ -82,14 +112,33 @@ namespace TPRandomizer
             openMap = processor.NextBool();
             increaseSpinnerSpeed = processor.NextBool();
             openDot = processor.NextBool();
+            itemScarcity = ItemScarcity.Vanilla; //(ItemScarcity)processor.NextInt(2);
             damageMagnification = (DamageMagnification)processor.NextInt(3);
             bonksDoDamage = processor.NextBool();
+            shuffleRewards = false; //processor.NextBool();
             skipMajorCutscenes = processor.NextBool();
+            noSmallKeysOnBosses = false; //processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);
+            hintDistribution = HintDistribution.None; //(HintDistribution)processor.NextInt(5);
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();
             startingItems.Sort();
+
+            excludedChecks = new(); //processor.NextExcludedChecksList();
+            // StringComparer is needed because the default sort order is
+            // different on Linux and Windows
+            //excludedChecks.Sort(StringComparer.Ordinal);
+
+            /*bool hasPlandoList = processor.NextBool();
+            if (hasPlandoList)
+            {
+                plandoChecks = processor.NextPlandoChecksList();
+                // Sort by check name, using the same StringComparer as excludedChecks
+                plandoChecks = plandoChecks.OrderBy(i => i.Item1, StringComparer.Ordinal).ToList();
+            }
+            else*/
+            plandoChecks = new();
         }
 
         // Note: this function MUST be able to parse old versions of sSettings

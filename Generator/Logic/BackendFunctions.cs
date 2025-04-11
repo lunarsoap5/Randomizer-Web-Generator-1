@@ -165,6 +165,48 @@ namespace TPRandomizer
             // Reachable Locations" feature.
             HashSet<string> allowedUnreachableChecks = new();
 
+            if (sSettings.shuffleGoldenBugs)
+            {
+                // Any Agitha check which is excluded is unreachable since the
+                // corresponding bug is not in the pool. This allows us to
+                // include any number of Agitha checks (not just 0 or 24)
+                // without having to memorize which bugs are valid or invalid.
+
+                HashSet<string> agithaChecks = new()
+                {
+                    "Agitha Female Ant Reward",
+                    "Agitha Female Beetle Reward",
+                    "Agitha Female Butterfly Reward",
+                    "Agitha Female Dayfly Reward",
+                    "Agitha Female Dragonfly Reward",
+                    "Agitha Female Grasshopper Reward",
+                    "Agitha Female Ladybug Reward",
+                    "Agitha Female Mantis Reward",
+                    "Agitha Female Phasmid Reward",
+                    "Agitha Female Pill Bug Reward",
+                    "Agitha Female Snail Reward",
+                    "Agitha Female Stag Beetle Reward",
+                    "Agitha Male Ant Reward",
+                    "Agitha Male Beetle Reward",
+                    "Agitha Male Butterfly Reward",
+                    "Agitha Male Dayfly Reward",
+                    "Agitha Male Dragonfly Reward",
+                    "Agitha Male Grasshopper Reward",
+                    "Agitha Male Ladybug Reward",
+                    "Agitha Male Mantis Reward",
+                    "Agitha Male Phasmid Reward",
+                    "Agitha Male Pill Bug Reward",
+                    "Agitha Male Snail Reward",
+                    "Agitha Male Stag Beetle Reward",
+                };
+
+                foreach (string excludedCheckName in sSettings.excludedChecks)
+                {
+                    if (agithaChecks.Contains(excludedCheckName))
+                        allowedUnreachableChecks.Add(excludedCheckName);
+                }
+            }
+
             return allowedUnreachableChecks;
         }
 

@@ -147,6 +147,14 @@ namespace TPRandomizer
             if (Randomizer.Items.RegionSmallKeys.Contains(itemToPlace))
             {
                 if (
+                    Randomizer.SSettings.noSmallKeysOnBosses
+                    && ItemFunctions.IsSmallKeyOnBossCheck(itemToPlace, currentCheck)
+                )
+                {
+                    return false;
+                }
+
+                if (
                     (parseSetting.smallKeySettings == SmallKeySettings.Own_Dungeon)
                     && itemName.Contains(currentRoom.Region)
                 )
@@ -209,7 +217,17 @@ namespace TPRandomizer
         )
         {
             SharedSettings parseSetting = Randomizer.SSettings;
-
+            if (parseSetting.barrenDungeons)
+            {
+                if (
+                    !itemName.Contains(currentRoom.Region)
+                    && currentCheck.checkStatus.Contains("Excluded")
+                )
+                {
+                    return false;
+                }
+                //Console.WriteLine("Can place " + itemName + " in " + currentCheck.checkName);
+            }
             return true;
         }
     }

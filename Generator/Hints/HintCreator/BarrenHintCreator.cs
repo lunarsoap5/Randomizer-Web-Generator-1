@@ -346,6 +346,19 @@ namespace TPRandomizer.Hints.HintCreator
                 // Remove CoO if CoO hints are on.
                 if (hintSettings.caveOfOrdeals)
                     result.Remove(AreaId.Zone(Zone.Cave_of_Ordeals));
+
+                // Remove any unrequiredBarren dungeons
+                if (genData.sSettings.barrenDungeons)
+                {
+                    foreach (
+                        KeyValuePair<string, byte> kv in HintConstants.dungeonZonesToRequiredMaskMap
+                    )
+                    {
+                        string zoneName = kv.Key;
+                        if (!HintUtils.DungeonIsRequired(zoneName))
+                            result.Remove(AreaId.ZoneStr(zoneName));
+                    }
+                }
             }
 
             // Validate all of the areaIds line up with the areaType.

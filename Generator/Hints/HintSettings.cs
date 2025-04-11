@@ -46,6 +46,7 @@ namespace TPRandomizer.Hints.Settings
                     // unrequired).
                     (genData) =>
                         !HintUtils.checkIsPlayerKnownStatus("Snowpeak Icy Summit Poe")
+                        && genData.sSettings.barrenDungeons
                         && !HintUtils.getRequiredDungeonZones().Contains("Snowpeak Ruins")
                 },
             };
@@ -1313,6 +1314,9 @@ namespace TPRandomizer.Hints.Settings
 
         public static HintSettings fromPath(HintGenData genData)
         {
+            if (genData.sSettings.hintDistribution == HintDistribution.None)
+                return null;
+
             string jsonPath = ResolveJsonPath(genData);
             string contents = File.ReadAllText(jsonPath);
 
@@ -1350,7 +1354,24 @@ namespace TPRandomizer.Hints.Settings
         private static string ResolveJsonPath(HintGenData genData)
         {
             string basePath = Global.CombineRootPath("./Assets/HintDistributions");
-            return null;
+
+            switch (genData.sSettings.hintDistribution)
+            {
+                case HintDistribution.Balanced:
+                    return Path.Combine(basePath, "balanced.jsonc");
+                case HintDistribution.Season_1:
+                    return Path.Combine(basePath, "season-1.jsonc");
+                case HintDistribution.Strong:
+                    return Path.Combine(basePath, "strong.jsonc");
+                case HintDistribution.Very_Strong:
+                    return Path.Combine(basePath, "very-strong.jsonc");
+                case HintDistribution.Weak:
+                    return Path.Combine(basePath, "weak.jsonc");
+                default:
+                    throw new Exception(
+                        $"Unrecognized HintDistribution '{genData.sSettings.hintDistribution}'."
+                    );
+            }
         }
 
         private static Dictionary<string, HashSet<T>> loadKeyToTypeList<T>(

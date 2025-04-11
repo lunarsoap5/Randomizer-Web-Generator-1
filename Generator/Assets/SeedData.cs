@@ -94,7 +94,7 @@ namespace TPRandomizer.Assets
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
             TPRandomizer.Assets.CustomMessages customMessage = new();
 
-            List<CustomMessages.MessageEntry> seedMessages = null;
+            List<CustomMessages.MessageEntry> seedMessages = new(); //seedGenResults.customMsgData.GenMessageEntries();
 
             seedDictionary.Add((byte)hintLanguage, seedMessages);
 
@@ -808,23 +808,29 @@ namespace TPRandomizer.Assets
             List<byte> listOfBugRewards = new();
             ushort count = 0;
             SharedSettings randomizerSettings = Randomizer.SSettings;
-
-            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
+            if (randomizerSettings.shuffleNpcItems)
             {
-                Check currentCheck = checkList.Value;
-                if (currentCheck.dataCategory.Contains("Bug Reward"))
+                foreach (
+                    KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList()
+                )
                 {
-                    listOfBugRewards.AddRange(
-                        Converter.GcBytes(
-                            (UInt16)
-                                byte.Parse(
-                                    currentCheck.flag,
-                                    System.Globalization.NumberStyles.HexNumber
-                                )
-                        )
-                    );
-                    listOfBugRewards.AddRange(Converter.GcBytes((UInt16)(byte)currentCheck.itemId));
-                    count++;
+                    Check currentCheck = checkList.Value;
+                    if (currentCheck.dataCategory.Contains("Bug Reward"))
+                    {
+                        listOfBugRewards.AddRange(
+                            Converter.GcBytes(
+                                (UInt16)
+                                    byte.Parse(
+                                        currentCheck.flag,
+                                        System.Globalization.NumberStyles.HexNumber
+                                    )
+                            )
+                        );
+                        listOfBugRewards.AddRange(
+                            Converter.GcBytes((UInt16)(byte)currentCheck.itemId)
+                        );
+                        count++;
+                    }
                 }
             }
 
@@ -1128,8 +1134,7 @@ namespace TPRandomizer.Assets
                     )
                 );
                 SeedHeaderRaw.shuffledEntranceInfoNumEntries++;
-            }
-            */
+            }*/
             return entranceTable;
         }
 
@@ -1360,7 +1365,7 @@ namespace TPRandomizer.Assets
         {
             List<byte> listOfMsgOffsets = new();
             List<byte> listOfCustomMessages = new();
-            /*
+
             foreach (
                 CustomMessages.MessageEntry messageEntry in seedDictionary
                     .ElementAt(currentLanguage)
@@ -1383,9 +1388,8 @@ namespace TPRandomizer.Assets
                 ParseMessageIDTables(currentLanguage, currentMessageData, seedDictionary)
             );
 
-            customMessageData.AddRange(customMsgIDTables);
-            */
             List<byte> customMessageData = new();
+            customMessageData.AddRange(customMsgIDTables);
             customMessageData.AddRange(listOfMsgOffsets);
             customMessageData.AddRange(listOfCustomMessages);
             return customMessageData;
