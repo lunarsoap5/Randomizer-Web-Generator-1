@@ -35,8 +35,9 @@ namespace TPRandomizer
             switch (command)
             {
                 case "generate_final_output2":
-                    // seedId, fileCreationSettingsString, itemString, SettingsString
-                    Randomizer.GenerateFinalOutput2(args[1], args[2], args[3]);
+                    // seedId, fileCreationSettingsString, aptp contents
+                    string[] fileParams = args[2].Split(',');
+                    Randomizer.GenerateFinalOutput2(fileParams[0], fileParams[2], fileParams[1]);
                     break;
                 case "print_check_ids":
                     Console.WriteLine(

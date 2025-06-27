@@ -206,43 +206,16 @@
   window.addEventListener('DOMContentLoaded', onDomContentLoaded);
 
   function onDomContentLoaded() {
-    const inputJsonDataEl = document.getElementById('inputJsonData');
-    if (inputJsonDataEl) {
-      handleGenerationCompletedPage(inputJsonDataEl);
-    } else {
-      let shouldCheckProgress = false;
-
-      const requesterHashEl = document.getElementById('requesterHash');
-      if (requesterHashEl) {
-        try {
-          const requesterHash = localStorage.getItem('requesterHash');
-          if (requesterHash === requesterHashEl.value) {
-            shouldCheckProgress = true;
-          }
-        } catch (e) {
-          shouldCheckProgress = true;
-        }
-      }
-
-      if (shouldCheckProgress) {
-        handleCheckProgressPage();
-      } else {
-        handleInvalidSeedPage();
-      }
-    }
+    handleGenerationCompletedPage();
   }
 
-  function handleGenerationCompletedPage(inputJsonDataEl) {
+  function handleGenerationCompletedPage() {
     $('#sectionProgress').hide();
     $('#sectionFileCreation').show();
 
     restoreDefaultFcSettings();
 
-    pageData = JSON.parse(inputJsonDataEl.value);
-
-    const decodedSettings = window.tpr.shared.decodeSettingsString(
-      pageData.input.settings
-    );
+    
 
     initTabButtons([
       {
@@ -256,16 +229,11 @@
 
       // ['mainTab', 'cosmeticsTab', 'audioTab'].forEach((id) => {
     ]);
-    fillInInfo();
 
-    window.tpr.shared.populateUiFromPSettings(decodedSettings.p);
 
-    initSettingsModal();
-    initShareModal();
 
     $('#create').on('click', handleCreateClick);
 
-    handleSpoilerData();
 
     initCustomColorPickers();
 
@@ -395,15 +363,6 @@
       },
     ]);
 
-    fillInSettingsTable(spoilerData);
-
-    if (!spoilerData.isRaceSeed) {
-      $('#spoilerSectionTitle').text('Settings & Spoilers');
-      $('#tabBtnPlaythroughSpoilers').show();
-
-      initPlaythroughSpoilers(spoilerData);
-      createSpoilerLogDownload(spoilerData, rawSpoilerData);
-    }
 
     initDownloadOptions(spoilerData.isRaceSeed);
   }
@@ -1157,54 +1116,6 @@
       .replace(/'/g, '&#039;');
   }
 
-  function fillInInfo() {
-    const date = new Date(pageData.meta.ts);
-
-    let locales = navigator.languages;
-    if (locales == null) {
-      locales = navigator.language;
-    }
-
-    $('#timestamp').text(
-      date.toLocaleDateString(locales, {
-        // date.toLocaleDateString('en-US', {
-        weekday: 'short',
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        timeZoneName: 'short',
-      })
-    );
-    $('#seed').text(pageData.input.seed);
-    $('#settingsString').text(pageData.input.settings);
-
-    const arr = [
-      { label: 'Created', value: pageData.meta.ts },
-      { label: 'Seed', value: pageData.input.seed },
-      {
-        label: 'Settings String',
-        value: pageData.input.settings,
-      },
-    ];
-
-    byId('info').innerHTML = arr
-      .map((obj) => {
-        return '<strong>' + obj.label + '</strong> ' + escapeHtml(obj.value);
-      })
-      .join(' -- ');
-
-    byId('filename').textContent = pageData.output.name;
-    const wiiFilenameEl = byId('wiiFilename');
-    if (pageData.output.wiiName) {
-      wiiFilenameEl.textContent = `Wii: ${pageData.output.wiiName}`;
-    } else {
-      wiiFilenameEl.style.display = 'none';
-    }
-  }
-
   // Parse SSetting to object.
   // Parse PSettings to object.
 
@@ -1428,8 +1339,10 @@
         }
       }
     });
-
-    return encodeBitStringTo6BitsString(bitString);
+    let fcString = encodeBitStringTo6BitsString(bitString);
+    
+    fcString += ',' + document.getElementById('fnameTest').value;
+    return fcString;
   }
 
   function encodeMidnaHairBase({ valueNum, rgbVal, isCustomColor }) {
@@ -1733,58 +1646,6 @@
     return null;
   }
 
-  function initShareModal() {
-    const $bg = $('#modal2Bg');
-    const $modal = $('#generatingModal');
-    const $successEl = $('#linkCopiedMsg');
-    const $errorEl = $('#linkCopiedError');
-
-    function showModal() {
-      $successEl.hide();
-      $errorEl.hide();
-      $bg.show();
-      $modal.addClass('isOpen').show();
-    }
-
-    function hideModal() {
-      $bg.hide();
-      $modal.hide().removeClass('isOpen');
-    }
-
-    document
-      .getElementById('shareDoneBtn')
-      .addEventListener('click', hideModal);
-
-    document.getElementById('copyLinkBtn').addEventListener('click', () => {
-      $successEl.hide();
-      $errorEl.hide();
-
-      navigator.clipboard.writeText(window.location.href).then(
-        () => {
-          $successEl.show();
-        },
-        (err) => {
-          $errorEl.show();
-        }
-      );
-    });
-
-    $('#shareUrl').text(window.location.href);
-
-    document.getElementById('shareBtn').addEventListener('click', showModal);
-
-    let canHide = true;
-
-    $('.boqDrivesharedialogDialogsShareContainer')
-      .on('mousedown', function (e) {
-        canHide = e.target === this;
-      })
-      .on('mouseup', function (e) {
-        if (canHide && e.target === this) {
-          hideModal();
-        }
-      });
-  }
 
   function startCheckProgressRoutine() {
     const match = window.location.pathname.match(/[^\/]+$/);
