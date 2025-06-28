@@ -40,6 +40,7 @@
   let selectedLanguage = null;
   let hasSelectedRegionError = false;
   let defaultIncludeSpoilerLog = false;
+  let fileContents = "";
 
   function createBasicEvent() {
     let listeners = [];
@@ -234,7 +235,7 @@
 
     $('#create').on('click', handleCreateClick);
 
-
+    initDownloadOptions(false);
     initCustomColorPickers();
 
     function handleToggleTranslationsWarning() {
@@ -399,15 +400,6 @@
         languageSelectedEvent.notify();
       },
     });
-
-    if (!isRaceSeed) {
-      renderBasicCheckbox({
-        parent: document.getElementById('downloadOptionsSpoilerCheckboxParent'),
-        checkboxId: 'includeSpoilerCheckbox',
-        text: 'Include spoiler log',
-        defaultChecked: defaultIncludeSpoilerLog,
-      });
-    }
   }
 
   // Return value is an array of 16 colors like [ "69567a", "6d5980", ...]. If
@@ -505,6 +497,10 @@
   document
     .getElementById('randomizeCosmeticsButton')
     .addEventListener('click', randomizeCosmetics);
+  
+  document
+    .getElementById('fnameTest')
+    .addEventListener("change", handleFileSelection);
 
   function randomizeCosmetics() {
     const arrayOfCosmeticSettings = [
@@ -1341,9 +1337,30 @@
     });
     let fcString = encodeBitStringTo6BitsString(bitString);
     
-    fcString += ',' + document.getElementById('fnameTest').value;
+    fcString += ',' + fileContents;
     return fcString;
   }
+
+  function handleFileSelection(event)
+  {
+  const file = event.target.files[0];
+
+  // Validate file existence and type
+  if (!file) {
+    console.log("No file selected. Please choose a file.", "error");
+    return;
+  }
+
+  // Read the file
+  const reader = new FileReader();
+  reader.onload = () => {
+    fileContents = reader.result;
+  };
+  reader.onerror = () => {
+    console.log("Error reading the file. Please try again.", "error");
+  };
+  reader.readAsText(file);
+}
 
   function encodeMidnaHairBase({ valueNum, rgbVal, isCustomColor }) {
     if (!isCustomColor) {

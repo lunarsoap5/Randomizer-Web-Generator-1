@@ -190,29 +190,20 @@ app.post('/api/final', function (req: express.Request, res: express.Response) {
   // const { query } = url.parse(referer, true);
   // const { id } = query;
 
-  if (!id) {
-    res.status(400).send({ error: 'Bad referer.' });
-    return;
-  }
-
-  if (typeof id !== 'string' || !/^[0-9a-z-_]+$/i.test(id)) {
-    res.status(400).send({ error: 'Invalid id format.' });
-    return;
-  }
 
   const { fileCreationSettings } = req.body;
 
   if (
     !fileCreationSettings ||
     typeof fileCreationSettings !== 'string' ||
-    !/^[0-9a-z-_]+$/i.test(fileCreationSettings)
+    !/^[0-9a-z-_,]+$/i.test(fileCreationSettings)
   ) {
     res.status(400).send({ error: 'Invalid fileCreationSettings format.' });
     return;
   }
 
   callGeneratorBuf(
-    ['generate_final_output2', id, fileCreationSettings],
+    ['generate_final_output2', "", fileCreationSettings],
     (error, buffer) => {
       if (error) {
         res.status(500).send({ error });
