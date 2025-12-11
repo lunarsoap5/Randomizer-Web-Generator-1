@@ -14,7 +14,6 @@ namespace TPRandomizer.Hints
     {
         public Random rnd { get; private set; }
         public SharedSettings sSettings { get; private set; }
-        public PlaythroughSpheres playthroughSpheres { get; private set; }
         public Room startingRoom { get; private set; }
         public HintedThings3 hinted { get; }
         public HintVars vars { get; }
@@ -30,16 +29,10 @@ namespace TPRandomizer.Hints
         public Dictionary<Item, string> tradeItemToChainEndCheck = new();
         public Dictionary<AreaId, HashSet<Item>> areaIdToAllowBarrenItems { get; private set; }
 
-        public HintGenData(
-            Random rnd,
-            SharedSettings sSettings,
-            PlaythroughSpheres playthroughSpheres,
-            Room startingRoom
-        )
+        public HintGenData(Random rnd, SharedSettings sSettings, Room startingRoom)
         {
             this.rnd = rnd;
             this.sSettings = sSettings;
-            this.playthroughSpheres = playthroughSpheres;
             this.startingRoom = startingRoom;
             hinted = new HintedThings3();
             vars = new HintVars();
@@ -48,30 +41,8 @@ namespace TPRandomizer.Hints
             itemToChecksList = calcItemToChecksList();
             prepareTradeItemData();
 
-            if (sSettings.logicRules != LogicRules.No_Logic)
-            {
-                goalToRequiredChecks = HintUtils.calculateGoalsRequiredChecks(
-                    startingRoom,
-                    playthroughSpheres.spheres,
-                    sSettings
-                );
-
-                // We need to calculate `requiredChecks` separately from
-                // `goalToRequiredChecks` because the goal ones might be
-                // calculated assuming you start with big keys so that the path
-                // hints are not all super big key-based.
-                requiredChecks = HintUtils.calculateRequiredChecks(
-                    startingRoom,
-                    playthroughSpheres.spheres
-                );
-
-                agithaRequired = HintUtils.CalcAgithaRequired(startingRoom, sSettings);
-            }
-            else
-            {
-                goalToRequiredChecks = new();
-                requiredChecks = new();
-            }
+            goalToRequiredChecks = new();
+            requiredChecks = new();
 
             allowBarrenChecks = prepareAllowBarrenChecks();
         }
@@ -87,25 +58,26 @@ namespace TPRandomizer.Hints
 
             // Intentionally not including shields. Note that hard-required
             // checks will always preventBarren.
-            HashSet<Item> itemSet = new()
-            {
-                // Item Wheel
-                Item.Progressive_Clawshot,
-                Item.Progressive_Dominion_Rod,
-                Item.Ball_and_Chain,
-                Item.Spinner,
-                Item.Progressive_Bow,
-                Item.Iron_Boots,
-                Item.Boomerang,
-                Item.Lantern,
-                Item.Progressive_Fishing_Rod,
-                Item.Filled_Bomb_Bag,
-                Item.Aurus_Memo,
-                // Other
-                Item.Progressive_Sword,
-                Item.Zora_Armor,
-                Item.Shadow_Crystal,
-            };
+            HashSet<Item> itemSet =
+                new()
+                {
+                    // Item Wheel
+                    Item.Progressive_Clawshot,
+                    Item.Progressive_Dominion_Rod,
+                    Item.Ball_and_Chain,
+                    Item.Spinner,
+                    Item.Progressive_Bow,
+                    Item.Iron_Boots,
+                    Item.Boomerang,
+                    Item.Lantern,
+                    Item.Progressive_Fishing_Rod,
+                    Item.Filled_Bomb_Bag,
+                    Item.Aurus_Memo,
+                    // Other
+                    Item.Progressive_Sword,
+                    Item.Zora_Armor,
+                    Item.Shadow_Crystal,
+                };
 
             // Handle dungeonRewards
             bool noReasonToEnterPot =
@@ -402,87 +374,88 @@ namespace TPRandomizer.Hints
         {
             HashSet<string> allowBarrenCheckSet = new();
 
-            Dictionary<Item, int> itemToProgCount = new()
-            {
-                // __Item Wheel__
-                { Item.Progressive_Clawshot, 2 },
-                { Item.Progressive_Dominion_Rod, 2 },
-                { Item.Ball_and_Chain, 1 },
-                { Item.Spinner, 1 },
-                { Item.Progressive_Bow, 1 },
-                { Item.Iron_Boots, 1 },
-                { Item.Boomerang, 1 },
-                { Item.Lantern, 1 },
-                { Item.Slingshot, 1 },
-                { Item.Progressive_Fishing_Rod, 2 },
-                { Item.Filled_Bomb_Bag, 1 },
-                // - handle bottles in the future if needed. Will be easier
-                //   to handle after Coro bottle can always be dumped, so
-                //   waiting on that rather than adding a temporary complex
-                //   implementation. Not expecting it to be noticeable
-                //   either way at the moment.
-                { Item.Asheis_Sketch, 1 },
-                { Item.Progressive_Sky_Book, 7 },
-                { Item.Aurus_Memo, 1 },
-                // __Collection Screen__
-                { Item.Progressive_Sword, 4 },
-                // - shields handled separately
-                { Item.Zora_Armor, 1 },
-                { Item.Magic_Armor, 1 },
-                // __Bugs__
-                { Item.Female_Ant, 1 },
-                { Item.Female_Beetle, 1 },
-                { Item.Female_Butterfly, 1 },
-                { Item.Female_Dayfly, 1 },
-                { Item.Female_Dragonfly, 1 },
-                { Item.Female_Grasshopper, 1 },
-                { Item.Female_Ladybug, 1 },
-                { Item.Female_Mantis, 1 },
-                { Item.Female_Phasmid, 1 },
-                { Item.Female_Pill_Bug, 1 },
-                { Item.Female_Snail, 1 },
-                { Item.Female_Stag_Beetle, 1 },
-                { Item.Male_Ant, 1 },
-                { Item.Male_Beetle, 1 },
-                { Item.Male_Butterfly, 1 },
-                { Item.Male_Dayfly, 1 },
-                { Item.Male_Dragonfly, 1 },
-                { Item.Male_Grasshopper, 1 },
-                { Item.Male_Ladybug, 1 },
-                { Item.Male_Mantis, 1 },
-                { Item.Male_Phasmid, 1 },
-                { Item.Male_Pill_Bug, 1 },
-                { Item.Male_Snail, 1 },
-                { Item.Male_Stag_Beetle, 1 },
-                // __Dungeon Keys__
-                { Item.Forest_Temple_Big_Key, 1 },
-                { Item.Forest_Temple_Small_Key, 4 },
-                { Item.Goron_Mines_Key_Shard, 3 },
-                { Item.Goron_Mines_Small_Key, 3 },
-                { Item.Lakebed_Temple_Big_Key, 1 },
-                { Item.Lakebed_Temple_Small_Key, 3 },
-                { Item.Arbiters_Grounds_Big_Key, 1 },
-                { Item.Arbiters_Grounds_Small_Key, 5 },
-                { Item.Snowpeak_Ruins_Bedroom_Key, 1 },
-                { Item.Snowpeak_Ruins_Small_Key, 3 },
-                { Item.Snowpeak_Ruins_Ordon_Goat_Cheese, 1 },
-                { Item.Snowpeak_Ruins_Ordon_Pumpkin, 1 },
-                { Item.Temple_of_Time_Big_Key, 1 },
-                { Item.Temple_of_Time_Small_Key, 3 },
-                { Item.City_in_The_Sky_Big_Key, 1 },
-                { Item.City_in_The_Sky_Small_Key, 1 },
-                { Item.Palace_of_Twilight_Big_Key, 1 },
-                { Item.Palace_of_Twilight_Small_Key, 7 },
-                { Item.Hyrule_Castle_Big_Key, 1 },
-                { Item.Hyrule_Castle_Small_Key, 3 },
-                // __Other__
-                { Item.Shadow_Crystal, 1 },
-                { Item.Gate_Keys, 1 },
-                { Item.North_Faron_Woods_Gate_Key, 1 },
-                { Item.Gerudo_Desert_Bulblin_Camp_Key, 1 },
-                { Item.Progressive_Fused_Shadow, 3 },
-                { Item.Progressive_Mirror_Shard, 4 },
-            };
+            Dictionary<Item, int> itemToProgCount =
+                new()
+                {
+                    // __Item Wheel__
+                    { Item.Progressive_Clawshot, 2 },
+                    { Item.Progressive_Dominion_Rod, 2 },
+                    { Item.Ball_and_Chain, 1 },
+                    { Item.Spinner, 1 },
+                    { Item.Progressive_Bow, 1 },
+                    { Item.Iron_Boots, 1 },
+                    { Item.Boomerang, 1 },
+                    { Item.Lantern, 1 },
+                    { Item.Slingshot, 1 },
+                    { Item.Progressive_Fishing_Rod, 2 },
+                    { Item.Filled_Bomb_Bag, 1 },
+                    // - handle bottles in the future if needed. Will be easier
+                    //   to handle after Coro bottle can always be dumped, so
+                    //   waiting on that rather than adding a temporary complex
+                    //   implementation. Not expecting it to be noticeable
+                    //   either way at the moment.
+                    { Item.Asheis_Sketch, 1 },
+                    { Item.Progressive_Sky_Book, 7 },
+                    { Item.Aurus_Memo, 1 },
+                    // __Collection Screen__
+                    { Item.Progressive_Sword, 4 },
+                    // - shields handled separately
+                    { Item.Zora_Armor, 1 },
+                    { Item.Magic_Armor, 1 },
+                    // __Bugs__
+                    { Item.Female_Ant, 1 },
+                    { Item.Female_Beetle, 1 },
+                    { Item.Female_Butterfly, 1 },
+                    { Item.Female_Dayfly, 1 },
+                    { Item.Female_Dragonfly, 1 },
+                    { Item.Female_Grasshopper, 1 },
+                    { Item.Female_Ladybug, 1 },
+                    { Item.Female_Mantis, 1 },
+                    { Item.Female_Phasmid, 1 },
+                    { Item.Female_Pill_Bug, 1 },
+                    { Item.Female_Snail, 1 },
+                    { Item.Female_Stag_Beetle, 1 },
+                    { Item.Male_Ant, 1 },
+                    { Item.Male_Beetle, 1 },
+                    { Item.Male_Butterfly, 1 },
+                    { Item.Male_Dayfly, 1 },
+                    { Item.Male_Dragonfly, 1 },
+                    { Item.Male_Grasshopper, 1 },
+                    { Item.Male_Ladybug, 1 },
+                    { Item.Male_Mantis, 1 },
+                    { Item.Male_Phasmid, 1 },
+                    { Item.Male_Pill_Bug, 1 },
+                    { Item.Male_Snail, 1 },
+                    { Item.Male_Stag_Beetle, 1 },
+                    // __Dungeon Keys__
+                    { Item.Forest_Temple_Big_Key, 1 },
+                    { Item.Forest_Temple_Small_Key, 4 },
+                    { Item.Goron_Mines_Key_Shard, 3 },
+                    { Item.Goron_Mines_Small_Key, 3 },
+                    { Item.Lakebed_Temple_Big_Key, 1 },
+                    { Item.Lakebed_Temple_Small_Key, 3 },
+                    { Item.Arbiters_Grounds_Big_Key, 1 },
+                    { Item.Arbiters_Grounds_Small_Key, 5 },
+                    { Item.Snowpeak_Ruins_Bedroom_Key, 1 },
+                    { Item.Snowpeak_Ruins_Small_Key, 3 },
+                    { Item.Snowpeak_Ruins_Ordon_Goat_Cheese, 1 },
+                    { Item.Snowpeak_Ruins_Ordon_Pumpkin, 1 },
+                    { Item.Temple_of_Time_Big_Key, 1 },
+                    { Item.Temple_of_Time_Small_Key, 3 },
+                    { Item.City_in_The_Sky_Big_Key, 1 },
+                    { Item.City_in_The_Sky_Small_Key, 1 },
+                    { Item.Palace_of_Twilight_Big_Key, 1 },
+                    { Item.Palace_of_Twilight_Small_Key, 7 },
+                    { Item.Hyrule_Castle_Big_Key, 1 },
+                    { Item.Hyrule_Castle_Small_Key, 3 },
+                    // __Other__
+                    { Item.Shadow_Crystal, 1 },
+                    { Item.Gate_Keys, 1 },
+                    { Item.North_Faron_Woods_Gate_Key, 1 },
+                    { Item.Gerudo_Desert_Bulblin_Camp_Key, 1 },
+                    { Item.Progressive_Fused_Shadow, 3 },
+                    { Item.Progressive_Mirror_Shard, 4 },
+                };
 
             // Currently, wallets can only matter for the Magic Armor check, and
             // getting the largest wallet never matters.
@@ -667,37 +640,35 @@ namespace TPRandomizer.Hints
                 ret[AreaId.Zone(Zone.Goron_Mines)].Add(Item.Goron_Mines_Small_Key);
                 ret[AreaId.Zone(Zone.Lakebed_Temple)].Add(Item.Lakebed_Temple_Small_Key);
                 ret[AreaId.Zone(Zone.Arbiters_Grounds)].Add(Item.Arbiters_Grounds_Small_Key);
-                ret[AreaId.Zone(Zone.Snowpeak_Ruins)]
-                    .UnionWith(
-                        new HashSet<Item>()
-                        {
-                            Item.Snowpeak_Ruins_Small_Key,
-                            Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                        }
-                    );
+                ret[AreaId.Zone(Zone.Snowpeak_Ruins)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Snowpeak_Ruins_Small_Key,
+                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                    }
+                );
                 ret[AreaId.Zone(Zone.Temple_of_Time)].Add(Item.Temple_of_Time_Small_Key);
                 ret[AreaId.Zone(Zone.City_in_the_Sky)].Add(Item.City_in_The_Sky_Small_Key);
                 ret[AreaId.Zone(Zone.Palace_of_Twilight)].Add(Item.Palace_of_Twilight_Small_Key);
                 ret[AreaId.Zone(Zone.Hyrule_Castle)].Add(Item.Hyrule_Castle_Small_Key);
 
-                ret[AreaId.Province(Province.Dungeon)]
-                    .UnionWith(
-                        new HashSet<Item>()
-                        {
-                            Item.Forest_Temple_Small_Key,
-                            Item.Goron_Mines_Small_Key,
-                            Item.Lakebed_Temple_Small_Key,
-                            Item.Arbiters_Grounds_Small_Key,
-                            Item.Snowpeak_Ruins_Small_Key,
-                            Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                            Item.Temple_of_Time_Small_Key,
-                            Item.City_in_The_Sky_Small_Key,
-                            Item.Palace_of_Twilight_Small_Key,
-                            Item.Hyrule_Castle_Small_Key,
-                        }
-                    );
+                ret[AreaId.Province(Province.Dungeon)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Forest_Temple_Small_Key,
+                        Item.Goron_Mines_Small_Key,
+                        Item.Lakebed_Temple_Small_Key,
+                        Item.Arbiters_Grounds_Small_Key,
+                        Item.Snowpeak_Ruins_Small_Key,
+                        Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                        Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                        Item.Temple_of_Time_Small_Key,
+                        Item.City_in_The_Sky_Small_Key,
+                        Item.Palace_of_Twilight_Small_Key,
+                        Item.Hyrule_Castle_Small_Key,
+                    }
+                );
             }
 
             if (sSettings.bigKeySettings == BigKeySettings.Own_Dungeon)
@@ -712,21 +683,20 @@ namespace TPRandomizer.Hints
                 ret[AreaId.Zone(Zone.Palace_of_Twilight)].Add(Item.Palace_of_Twilight_Big_Key);
                 ret[AreaId.Zone(Zone.Hyrule_Castle)].Add(Item.Hyrule_Castle_Big_Key);
 
-                ret[AreaId.Province(Province.Dungeon)]
-                    .UnionWith(
-                        new HashSet<Item>()
-                        {
-                            Item.Forest_Temple_Big_Key,
-                            Item.Goron_Mines_Key_Shard,
-                            Item.Lakebed_Temple_Big_Key,
-                            Item.Arbiters_Grounds_Big_Key,
-                            Item.Snowpeak_Ruins_Bedroom_Key,
-                            Item.Temple_of_Time_Big_Key,
-                            Item.City_in_The_Sky_Big_Key,
-                            Item.Palace_of_Twilight_Big_Key,
-                            Item.Hyrule_Castle_Big_Key,
-                        }
-                    );
+                ret[AreaId.Province(Province.Dungeon)].UnionWith(
+                    new HashSet<Item>()
+                    {
+                        Item.Forest_Temple_Big_Key,
+                        Item.Goron_Mines_Key_Shard,
+                        Item.Lakebed_Temple_Big_Key,
+                        Item.Arbiters_Grounds_Big_Key,
+                        Item.Snowpeak_Ruins_Bedroom_Key,
+                        Item.Temple_of_Time_Big_Key,
+                        Item.City_in_The_Sky_Big_Key,
+                        Item.Palace_of_Twilight_Big_Key,
+                        Item.Hyrule_Castle_Big_Key,
+                    }
+                );
             }
 
             return ret;
@@ -755,11 +725,6 @@ namespace TPRandomizer.Hints
             }
 
             return itemToChecks;
-        }
-
-        public bool isCheckSphere0(string checkName)
-        {
-            return playthroughSpheres.sphere0Checks.Contains(checkName);
         }
 
         // For almost all cases, you should not bypassIgnoredChecks. Currently the only reason to bypassIgnoredChecks is when
@@ -984,8 +949,6 @@ namespace TPRandomizer.Hints
             // to produce more interesting hints on average.
 
             int numChecks = 0;
-            int numSphere0Checks = 0;
-            bool hasSphereLater = false;
 
             HashSet<string> checkNames = areaId.ResolveToChecks();
             foreach (string checkName in checkNames)
@@ -999,25 +962,16 @@ namespace TPRandomizer.Hints
                     continue;
 
                 numChecks += 1;
-                if (isCheckSphere0(checkName))
-                    numSphere0Checks += 1;
-                else if (checkCanBeHintedSpol(checkName))
-                    hasSphereLater = true;
             }
-
-            double percentSphere0 = (double)numSphere0Checks / numChecks;
 
             if (numChecks < 1)
                 return 0;
             else if (numChecks >= 12)
                 return 1;
-            else if (numChecks <= 2 && percentSphere0 <= 0)
+            else if (numChecks <= 2)
                 return 1.5;
 
-            double weight = 2 + Math.Pow(1 - percentSphere0, 2);
-
-            if (numSphere0Checks > 0 && hasSphereLater)
-                weight += 2 * Math.Pow((double)1 / (numChecks - 2), 0.25);
+            double weight = 2 + Math.Pow(1 - 1.5, 2);
 
             return weight;
         }

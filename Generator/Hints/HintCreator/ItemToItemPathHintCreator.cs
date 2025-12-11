@@ -231,9 +231,6 @@ namespace TPRandomizer.Hints.HintCreator
             // directed at bosses which are always locked behind big Keys.
             foreach (string checkName in genData.requiredChecks)
             {
-                if (genData.isCheckSphere0(checkName))
-                    continue;
-
                 Item contents = HintUtils.getCheckContents(checkName);
                 if (genData.itemToChecksList.ContainsKey(contents))
                 {

@@ -31,25 +31,26 @@ namespace TPRandomizer.Hints.Settings
                 "Palace of Twilight Collect Both Sols",
             };
 
-            Dictionary<string, Func<HintGenData, bool>> conditionalAlways = new()
-            {
-                // {
-                //     "Lake Hylia Shell Blade Grotto Chest",
-                //     // Only hint when the poe next to the grotto is excluded
-                //     // or vanilla
-                //     (genData) => HintUtils.checkIsPlayerKnownStatus("Flight By Fowl Ledge Poe")
-                // },
+            Dictionary<string, Func<HintGenData, bool>> conditionalAlways =
+                new()
                 {
-                    "Snowpeak Icy Summit Poe",
-                    // Only hint when the poe is shuffled and there is no
-                    // reason to go to SPR (unrequired is barren and SPR is
-                    // unrequired).
-                    (genData) =>
-                        !HintUtils.checkIsPlayerKnownStatus("Snowpeak Icy Summit Poe")
-                        && genData.sSettings.barrenDungeons
-                        && !HintUtils.getRequiredDungeonZones().Contains("Snowpeak Ruins")
-                },
-            };
+                    // {
+                    //     "Lake Hylia Shell Blade Grotto Chest",
+                    //     // Only hint when the poe next to the grotto is excluded
+                    //     // or vanilla
+                    //     (genData) => HintUtils.checkIsPlayerKnownStatus("Flight By Fowl Ledge Poe")
+                    // },
+                    {
+                        "Snowpeak Icy Summit Poe",
+                        // Only hint when the poe is shuffled and there is no
+                        // reason to go to SPR (unrequired is barren and SPR is
+                        // unrequired).
+                        (genData) =>
+                            !HintUtils.checkIsPlayerKnownStatus("Snowpeak Icy Summit Poe")
+                            && genData.sSettings.barrenDungeons
+                            && !HintUtils.getRequiredDungeonZones().Contains("Snowpeak Ruins")
+                    },
+                };
             foreach (KeyValuePair<string, Func<HintGenData, bool>> pair in conditionalAlways)
             {
                 defaultAlwaysChecks.Add(pair.Key);
@@ -150,22 +151,18 @@ namespace TPRandomizer.Hints.Settings
             // (probably stick to ones which require only a single item?).
             // Need to adjust params to pass this info in.
 
-            Dictionary<string, Func<HintGenData, bool>> conditionalSometimes = new()
-            {
-                { "Ordon Cat Rescue", genNotSphere0Lambda("Ordon Cat Rescue") },
-                // Fishing Hole Bottle is hinted by checking the sign next to it now
-                // { "Fishing Hole Bottle", genNotSphere0Lambda("Fishing Hole Bottle") },
-            };
+            Dictionary<string, Func<HintGenData, bool>> conditionalSometimes =
+                new()
+                {
+
+                    // Fishing Hole Bottle is hinted by checking the sign next to it now
+                    // { "Fishing Hole Bottle", genNotSphere0Lambda("Fishing Hole Bottle") },
+                };
             foreach (KeyValuePair<string, Func<HintGenData, bool>> pair in conditionalSometimes)
             {
                 defaultSometimesChecks.Add(pair.Key);
                 checkToConditions.Add(pair.Key, pair.Value);
             }
-        }
-
-        private static Func<HintGenData, bool> genNotSphere0Lambda(string checkName)
-        {
-            return (genData) => !genData.isCheckSphere0(checkName);
         }
 
         public static T fromJObject<T>(JObject obj)
@@ -719,43 +716,44 @@ namespace TPRandomizer.Hints.Settings
             if (!success)
                 throw new Exception($"Failed to parse starting.spot '{spotStr}' to SpotId enum.");
 
-            HashSet<SpotId> validStartingSpots = new()
-            {
-                SpotId.Ordon_Sign,
-                SpotId.Sacred_Grove_Sign,
-                SpotId.Faron_Field_Sign,
-                SpotId.Faron_Woods_Sign,
-                SpotId.Kakariko_Gorge_Sign,
-                SpotId.Kakariko_Village_Sign,
-                SpotId.Kakariko_Graveyard_Sign,
-                SpotId.Eldin_Field_Sign,
-                SpotId.North_Eldin_Sign,
-                SpotId.Death_Mountain_Sign,
-                SpotId.Hidden_Village_Sign,
-                SpotId.Lanayru_Field_Sign,
-                SpotId.Beside_Castle_Town_Sign,
-                SpotId.South_of_Castle_Town_Sign,
-                SpotId.Castle_Town_Sign,
-                SpotId.Great_Bridge_of_Hylia_Sign,
-                SpotId.Lake_Hylia_Sign,
-                SpotId.Lake_Lantern_Cave_Sign,
-                SpotId.Lanayru_Spring_Sign,
-                SpotId.Zoras_Domain_Sign,
-                SpotId.Upper_Zoras_River_Sign,
-                SpotId.Gerudo_Desert_Sign,
-                SpotId.Bulblin_Camp_Sign,
-                SpotId.Snowpeak_Mountain_Sign,
-                SpotId.Cave_of_Ordeals_Sign,
-                SpotId.Forest_Temple_Sign,
-                SpotId.Goron_Mines_Sign,
-                SpotId.Lakebed_Temple_Sign,
-                SpotId.Arbiters_Grounds_Sign,
-                SpotId.Snowpeak_Ruins_Sign,
-                SpotId.Temple_of_Time_Sign,
-                SpotId.City_in_the_Sky_Sign,
-                SpotId.Palace_of_Twilight_Sign,
-                SpotId.Hyrule_Castle_Sign,
-            };
+            HashSet<SpotId> validStartingSpots =
+                new()
+                {
+                    SpotId.Ordon_Sign,
+                    SpotId.Sacred_Grove_Sign,
+                    SpotId.Faron_Field_Sign,
+                    SpotId.Faron_Woods_Sign,
+                    SpotId.Kakariko_Gorge_Sign,
+                    SpotId.Kakariko_Village_Sign,
+                    SpotId.Kakariko_Graveyard_Sign,
+                    SpotId.Eldin_Field_Sign,
+                    SpotId.North_Eldin_Sign,
+                    SpotId.Death_Mountain_Sign,
+                    SpotId.Hidden_Village_Sign,
+                    SpotId.Lanayru_Field_Sign,
+                    SpotId.Beside_Castle_Town_Sign,
+                    SpotId.South_of_Castle_Town_Sign,
+                    SpotId.Castle_Town_Sign,
+                    SpotId.Great_Bridge_of_Hylia_Sign,
+                    SpotId.Lake_Hylia_Sign,
+                    SpotId.Lake_Lantern_Cave_Sign,
+                    SpotId.Lanayru_Spring_Sign,
+                    SpotId.Zoras_Domain_Sign,
+                    SpotId.Upper_Zoras_River_Sign,
+                    SpotId.Gerudo_Desert_Sign,
+                    SpotId.Bulblin_Camp_Sign,
+                    SpotId.Snowpeak_Mountain_Sign,
+                    SpotId.Cave_of_Ordeals_Sign,
+                    SpotId.Forest_Temple_Sign,
+                    SpotId.Goron_Mines_Sign,
+                    SpotId.Lakebed_Temple_Sign,
+                    SpotId.Arbiters_Grounds_Sign,
+                    SpotId.Snowpeak_Ruins_Sign,
+                    SpotId.Temple_of_Time_Sign,
+                    SpotId.City_in_the_Sky_Sign,
+                    SpotId.Palace_of_Twilight_Sign,
+                    SpotId.Hyrule_Castle_Sign,
+                };
 
             if (!validStartingSpots.Contains(spotId))
                 throw new Exception($"Spot '{spotStr}' is not a valid starting.spot.");
@@ -994,47 +992,49 @@ namespace TPRandomizer.Hints.Settings
         public string id { get; private set; }
         public HashSet<SpotId> spots = new();
 
-        private static Dictionary<string, SpotId> overworldZoneToSpot = new()
-        {
-            { "Ordon", SpotId.Ordon_Sign },
-            { "Sacred Grove", SpotId.Sacred_Grove_Sign },
-            { "Faron Field", SpotId.Faron_Field_Sign },
-            { "Faron Woods", SpotId.Faron_Woods_Sign },
-            { "Kakariko Gorge", SpotId.Kakariko_Gorge_Sign },
-            { "Kakariko Village", SpotId.Kakariko_Village_Sign },
-            { "Kakariko Graveyard", SpotId.Kakariko_Graveyard_Sign },
-            { "Eldin Field", SpotId.Eldin_Field_Sign },
-            { "North Eldin", SpotId.North_Eldin_Sign },
-            { "Death Mountain", SpotId.Death_Mountain_Sign },
-            { "Hidden Village", SpotId.Hidden_Village_Sign },
-            { "Lanayru Field", SpotId.Lanayru_Field_Sign },
-            { "Beside Castle Town", SpotId.Beside_Castle_Town_Sign },
-            { "South of Castle Town", SpotId.South_of_Castle_Town_Sign },
-            { "Castle Town", SpotId.Castle_Town_Sign },
-            { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
-            { "Lake Hylia", SpotId.Lake_Hylia_Sign },
-            { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
-            { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
-            { "Zora's Domain", SpotId.Zoras_Domain_Sign },
-            { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
-            { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
-            { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
-            { "Snowpeak Mountain", SpotId.Snowpeak_Mountain_Sign },
-            { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
-        };
+        private static Dictionary<string, SpotId> overworldZoneToSpot =
+            new()
+            {
+                { "Ordon", SpotId.Ordon_Sign },
+                { "Sacred Grove", SpotId.Sacred_Grove_Sign },
+                { "Faron Field", SpotId.Faron_Field_Sign },
+                { "Faron Woods", SpotId.Faron_Woods_Sign },
+                { "Kakariko Gorge", SpotId.Kakariko_Gorge_Sign },
+                { "Kakariko Village", SpotId.Kakariko_Village_Sign },
+                { "Kakariko Graveyard", SpotId.Kakariko_Graveyard_Sign },
+                { "Eldin Field", SpotId.Eldin_Field_Sign },
+                { "North Eldin", SpotId.North_Eldin_Sign },
+                { "Death Mountain", SpotId.Death_Mountain_Sign },
+                { "Hidden Village", SpotId.Hidden_Village_Sign },
+                { "Lanayru Field", SpotId.Lanayru_Field_Sign },
+                { "Beside Castle Town", SpotId.Beside_Castle_Town_Sign },
+                { "South of Castle Town", SpotId.South_of_Castle_Town_Sign },
+                { "Castle Town", SpotId.Castle_Town_Sign },
+                { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
+                { "Lake Hylia", SpotId.Lake_Hylia_Sign },
+                { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
+                { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
+                { "Zora's Domain", SpotId.Zoras_Domain_Sign },
+                { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
+                { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
+                { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
+                { "Snowpeak Mountain", SpotId.Snowpeak_Mountain_Sign },
+                { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
+            };
 
-        private static Dictionary<string, SpotId> dungeonZoneToSpot = new()
-        {
-            { "Forest Temple", SpotId.Forest_Temple_Sign },
-            { "Goron Mines", SpotId.Goron_Mines_Sign },
-            { "Lakebed Temple", SpotId.Lakebed_Temple_Sign },
-            { "Arbiter's Grounds", SpotId.Arbiters_Grounds_Sign },
-            { "Snowpeak Ruins", SpotId.Snowpeak_Ruins_Sign },
-            { "Temple of Time", SpotId.Temple_of_Time_Sign },
-            { "City in the Sky", SpotId.City_in_the_Sky_Sign },
-            { "Palace of Twilight", SpotId.Palace_of_Twilight_Sign },
-            { "Hyrule Castle", SpotId.Hyrule_Castle_Sign },
-        };
+        private static Dictionary<string, SpotId> dungeonZoneToSpot =
+            new()
+            {
+                { "Forest Temple", SpotId.Forest_Temple_Sign },
+                { "Goron Mines", SpotId.Goron_Mines_Sign },
+                { "Lakebed Temple", SpotId.Lakebed_Temple_Sign },
+                { "Arbiter's Grounds", SpotId.Arbiters_Grounds_Sign },
+                { "Snowpeak Ruins", SpotId.Snowpeak_Ruins_Sign },
+                { "Temple of Time", SpotId.Temple_of_Time_Sign },
+                { "City in the Sky", SpotId.City_in_the_Sky_Sign },
+                { "Palace of Twilight", SpotId.Palace_of_Twilight_Sign },
+                { "Hyrule Castle", SpotId.Hyrule_Castle_Sign },
+            };
 
         private static Dictionary<string, SpotId> zoneToSpot;
         private static Dictionary<SpotId, string> spotToZone;
@@ -1042,43 +1042,44 @@ namespace TPRandomizer.Hints.Settings
         // Note: important that we only include zones that users are actually
         // allowed to define. For example, they are not allowed to put hints on
         // the Agitha sign or ToT middle sign.
-        private static Dictionary<string, string> entryNameToZone = new()
-        {
-            { "ordon", "Ordon" },
-            { "sacredgrove", "SacredGrove" },
-            { "faronfield", "Faron Field" },
-            { "faronwoods", "Faron Woods" },
-            { "kakarikogorge", "Kakariko Gorge" },
-            { "kakarikovillage", "Kakariko Village" },
-            { "kakarikograveyard", "Kakariko Graveyard" },
-            { "eldinfield", "Eldin Field" },
-            { "northeldin", "North Eldin" },
-            { "deathmountain", "Death Mountain" },
-            { "hiddenvillage", "Hidden Village" },
-            { "lanayrufield", "Lanayru Field" },
-            { "besidecastletown", "Beside Castle Town" },
-            { "southofcastletown", "South of Castle Town" },
-            { "castletown", "Castle Town" },
-            { "greatbridgeofhylia", "Great Bridge of Hylia" },
-            { "lakehylia", "Lake Hylia" },
-            { "lakelanterncave", "Lake Lantern Cave" },
-            { "lanayruspring", "Lanayru Spring" },
-            { "zorasdomain", "Zora's Domain" },
-            { "upperzorasriver", "Upper Zora's River" },
-            { "gerudodesert", "Gerudo Desert" },
-            { "bulblincamp", "Bulblin Camp" },
-            { "snowpeakmountain", "Snowpeak Mountain" },
-            { "caveofordeals", "Cave of Ordeals" },
-            { "foresttemple", "Forest Temple" },
-            { "goronmines", "Goron Mines" },
-            { "lakebedtemple", "Lakebed Temple" },
-            { "arbitersgrounds", "Arbiter's Grounds" },
-            { "snowpeakruins", "Snowpeak Ruins" },
-            { "templeoftime", "Temple of Time" },
-            { "cityinthesky", "City in the Sky" },
-            { "palaceoftwilight", "Palace of Twilight" },
-            { "hyrulecastle", "Hyrule Castle" },
-        };
+        private static Dictionary<string, string> entryNameToZone =
+            new()
+            {
+                { "ordon", "Ordon" },
+                { "sacredgrove", "SacredGrove" },
+                { "faronfield", "Faron Field" },
+                { "faronwoods", "Faron Woods" },
+                { "kakarikogorge", "Kakariko Gorge" },
+                { "kakarikovillage", "Kakariko Village" },
+                { "kakarikograveyard", "Kakariko Graveyard" },
+                { "eldinfield", "Eldin Field" },
+                { "northeldin", "North Eldin" },
+                { "deathmountain", "Death Mountain" },
+                { "hiddenvillage", "Hidden Village" },
+                { "lanayrufield", "Lanayru Field" },
+                { "besidecastletown", "Beside Castle Town" },
+                { "southofcastletown", "South of Castle Town" },
+                { "castletown", "Castle Town" },
+                { "greatbridgeofhylia", "Great Bridge of Hylia" },
+                { "lakehylia", "Lake Hylia" },
+                { "lakelanterncave", "Lake Lantern Cave" },
+                { "lanayruspring", "Lanayru Spring" },
+                { "zorasdomain", "Zora's Domain" },
+                { "upperzorasriver", "Upper Zora's River" },
+                { "gerudodesert", "Gerudo Desert" },
+                { "bulblincamp", "Bulblin Camp" },
+                { "snowpeakmountain", "Snowpeak Mountain" },
+                { "caveofordeals", "Cave of Ordeals" },
+                { "foresttemple", "Forest Temple" },
+                { "goronmines", "Goron Mines" },
+                { "lakebedtemple", "Lakebed Temple" },
+                { "arbitersgrounds", "Arbiter's Grounds" },
+                { "snowpeakruins", "Snowpeak Ruins" },
+                { "templeoftime", "Temple of Time" },
+                { "cityinthesky", "City in the Sky" },
+                { "palaceoftwilight", "Palace of Twilight" },
+                { "hyrulecastle", "Hyrule Castle" },
+            };
 
         static HintGroup()
         {

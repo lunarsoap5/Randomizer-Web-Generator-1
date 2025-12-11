@@ -31,7 +31,7 @@ namespace TPRandomizer
         public byte requiredDungeons { get; set; }
         public List<List<KeyValuePair<int, Item>>> spheres { get; }
         public string entrances { get; }
-        public CustomMsgData customMsgData { get; }
+        public CustomMsgData customMsgData { get; set; }
 
         // other
         public SharedSettings decodedSSettings;

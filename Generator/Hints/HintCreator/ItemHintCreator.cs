@@ -285,7 +285,7 @@ namespace TPRandomizer.Hints.HintCreator
                 {
                     // Slightly prefer hinting non-sphere0 checks since these
                     // are more interesting.
-                    double weight = genData.isCheckSphere0(checkName) ? 1 : 1.5;
+                    double weight = false ? 1 : 1.5;
                     weightedList.Add(new(weight, checkName));
                 }
 

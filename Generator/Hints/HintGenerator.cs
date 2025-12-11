@@ -21,22 +21,15 @@ namespace TPRandomizer.Hints
         private HintSettings hintSettings;
         private Dictionary<string, HintGroup> mutableGroups;
 
-        public HintGenerator(
-            Random rnd,
-            SharedSettings sSettings,
-            PlaythroughSpheres playthroughSpheres,
-            Room startingRoom
-        )
+        public HintGenerator(Random rnd, SharedSettings sSettings, Room startingRoom)
         {
-            this.genData = new HintGenData(rnd, sSettings, playthroughSpheres, startingRoom);
+            this.genData = new HintGenData(rnd, sSettings, startingRoom);
         }
 
         public CustomMsgData Generate()
         {
-            CustomMsgData.Builder customMsgDataBuilder = new(
-                genData,
-                (byte)Randomizer.RequiredDungeons
-            );
+            CustomMsgData.Builder customMsgDataBuilder =
+                new(genData, (byte)Randomizer.RequiredDungeons);
 
             // If user specified that there are no hintSettings, then we should
             // return the default customMsgData settings.
@@ -822,11 +815,8 @@ namespace TPRandomizer.Hints
 
         private void PrepareJovaniHints(SpotToHints spotToHints)
         {
-            List<(int, string)> valToCheck = new()
-            {
-                (20, "Jovani 20 Poe Soul Reward"),
-                (60, "Jovani 60 Poe Soul Reward"),
-            };
+            List<(int, string)> valToCheck =
+                new() { (20, "Jovani 20 Poe Soul Reward"), (60, "Jovani 60 Poe Soul Reward"), };
 
             Jovani jovani = hintSettings.jovani;
 
@@ -861,14 +851,15 @@ namespace TPRandomizer.Hints
                 // Use this CheckStatusDisplay for everything for now.
                 CheckStatusDisplay checkStatusDisplay = CheckStatusDisplay.Required_Info;
 
-                JovaniRewardsHint.JovaniCheckInfo checkInfo = new(
-                    genData,
-                    checkName,
-                    (byte)soulsForCheck,
-                    unhinted,
-                    checkStatus,
-                    checkStatusDisplay
-                );
+                JovaniRewardsHint.JovaniCheckInfo checkInfo =
+                    new(
+                        genData,
+                        checkName,
+                        (byte)soulsForCheck,
+                        unhinted,
+                        checkStatus,
+                        checkStatusDisplay
+                    );
                 checkInfoList.Add(checkInfo);
 
                 // Mark check as hinted
@@ -887,13 +878,14 @@ namespace TPRandomizer.Hints
             if (!hintSettings.caveOfOrdeals)
                 return;
 
-            List<string> checkNames = new()
-            {
-                "Cave of Ordeals Floor 17 Poe",
-                "Cave of Ordeals Floor 33 Poe",
-                "Cave of Ordeals Floor 44 Poe",
-                "Cave of Ordeals Great Fairy Reward",
-            };
+            List<string> checkNames =
+                new()
+                {
+                    "Cave of Ordeals Floor 17 Poe",
+                    "Cave of Ordeals Floor 33 Poe",
+                    "Cave of Ordeals Floor 44 Poe",
+                    "Cave of Ordeals Great Fairy Reward",
+                };
 
             foreach (string checkName in checkNames)
             {
@@ -1009,14 +1001,15 @@ namespace TPRandomizer.Hints
             // Init 'out'
             checksWithBigKey = new();
 
-            Dictionary<Zone, Item> zoneToBigKey = new()
-            {
-                { Zone.Goron_Mines, Item.Goron_Mines_Key_Shard },
-                { Zone.Lakebed_Temple, Item.Lakebed_Temple_Big_Key },
-                { Zone.Arbiters_Grounds, Item.Arbiters_Grounds_Big_Key },
-                { Zone.Temple_of_Time, Item.Temple_of_Time_Big_Key },
-                { Zone.City_in_the_Sky, Item.City_in_The_Sky_Big_Key },
-            };
+            Dictionary<Zone, Item> zoneToBigKey =
+                new()
+                {
+                    { Zone.Goron_Mines, Item.Goron_Mines_Key_Shard },
+                    { Zone.Lakebed_Temple, Item.Lakebed_Temple_Big_Key },
+                    { Zone.Arbiters_Grounds, Item.Arbiters_Grounds_Big_Key },
+                    { Zone.Temple_of_Time, Item.Temple_of_Time_Big_Key },
+                    { Zone.City_in_the_Sky, Item.City_in_The_Sky_Big_Key },
+                };
 
             if (!zoneToBigKey.TryGetValue(zone, out Item bigKeyItem))
             {
@@ -1538,44 +1531,45 @@ namespace TPRandomizer.Hints
 
         private void FillUnfilledCustomSigns(List<HintSpot> hintSpots)
         {
-            HashSet<SpotId> possibleSpotsToFill = new()
-            {
-                SpotId.Ordon_Sign,
-                SpotId.Sacred_Grove_Sign,
-                SpotId.Faron_Field_Sign,
-                SpotId.Faron_Woods_Sign,
-                SpotId.Kakariko_Gorge_Sign,
-                SpotId.Kakariko_Village_Sign,
-                SpotId.Kakariko_Graveyard_Sign,
-                SpotId.Eldin_Field_Sign,
-                SpotId.North_Eldin_Sign,
-                SpotId.Death_Mountain_Sign,
-                SpotId.Hidden_Village_Sign,
-                SpotId.Lanayru_Field_Sign,
-                SpotId.Beside_Castle_Town_Sign,
-                SpotId.South_of_Castle_Town_Sign,
-                SpotId.Castle_Town_Sign,
-                SpotId.Great_Bridge_of_Hylia_Sign,
-                SpotId.Lake_Hylia_Sign,
-                SpotId.Lake_Lantern_Cave_Sign,
-                SpotId.Lanayru_Spring_Sign,
-                SpotId.Zoras_Domain_Sign,
-                SpotId.Upper_Zoras_River_Sign,
-                SpotId.Gerudo_Desert_Sign,
-                SpotId.Bulblin_Camp_Sign,
-                SpotId.Snowpeak_Mountain_Sign,
-                SpotId.Cave_of_Ordeals_Sign,
-                SpotId.Forest_Temple_Sign,
-                SpotId.Goron_Mines_Sign,
-                SpotId.Lakebed_Temple_Sign,
-                SpotId.Arbiters_Grounds_Sign,
-                SpotId.Snowpeak_Ruins_Sign,
-                SpotId.Temple_of_Time_Sign,
-                SpotId.Temple_of_Time_Beyond_Point_Sign,
-                SpotId.City_in_the_Sky_Sign,
-                SpotId.Palace_of_Twilight_Sign,
-                SpotId.Hyrule_Castle_Sign,
-            };
+            HashSet<SpotId> possibleSpotsToFill =
+                new()
+                {
+                    SpotId.Ordon_Sign,
+                    SpotId.Sacred_Grove_Sign,
+                    SpotId.Faron_Field_Sign,
+                    SpotId.Faron_Woods_Sign,
+                    SpotId.Kakariko_Gorge_Sign,
+                    SpotId.Kakariko_Village_Sign,
+                    SpotId.Kakariko_Graveyard_Sign,
+                    SpotId.Eldin_Field_Sign,
+                    SpotId.North_Eldin_Sign,
+                    SpotId.Death_Mountain_Sign,
+                    SpotId.Hidden_Village_Sign,
+                    SpotId.Lanayru_Field_Sign,
+                    SpotId.Beside_Castle_Town_Sign,
+                    SpotId.South_of_Castle_Town_Sign,
+                    SpotId.Castle_Town_Sign,
+                    SpotId.Great_Bridge_of_Hylia_Sign,
+                    SpotId.Lake_Hylia_Sign,
+                    SpotId.Lake_Lantern_Cave_Sign,
+                    SpotId.Lanayru_Spring_Sign,
+                    SpotId.Zoras_Domain_Sign,
+                    SpotId.Upper_Zoras_River_Sign,
+                    SpotId.Gerudo_Desert_Sign,
+                    SpotId.Bulblin_Camp_Sign,
+                    SpotId.Snowpeak_Mountain_Sign,
+                    SpotId.Cave_of_Ordeals_Sign,
+                    SpotId.Forest_Temple_Sign,
+                    SpotId.Goron_Mines_Sign,
+                    SpotId.Lakebed_Temple_Sign,
+                    SpotId.Arbiters_Grounds_Sign,
+                    SpotId.Snowpeak_Ruins_Sign,
+                    SpotId.Temple_of_Time_Sign,
+                    SpotId.Temple_of_Time_Beyond_Point_Sign,
+                    SpotId.City_in_the_Sky_Sign,
+                    SpotId.Palace_of_Twilight_Sign,
+                    SpotId.Hyrule_Castle_Sign,
+                };
 
             // Remove all signs in unrequiredBarren dungeons from potential
             // spots to fill.
@@ -1789,8 +1783,7 @@ namespace TPRandomizer.Hints
                 HintDef hintDef,
                 string nodeId,
                 HashSet<string> deadNodeIds
-            )
-                : base(currDefProps, hintDef, nodeId, deadNodeIds)
+            ) : base(currDefProps, hintDef, nodeId, deadNodeIds)
             {
                 // At the end of an iteration, rebuild the list.
                 BuildIdxList();
@@ -1858,8 +1851,7 @@ namespace TPRandomizer.Hints
                 string nodeId,
                 HashSet<string> deadNodeIds,
                 Random rnd
-            )
-                : base(currDefProps, hintDef, nodeId, deadNodeIds)
+            ) : base(currDefProps, hintDef, nodeId, deadNodeIds)
             {
                 this.rnd = rnd;
                 // At the end of an iteration, rebuild the list.
@@ -1959,8 +1951,7 @@ namespace TPRandomizer.Hints
                 string nodeId,
                 HashSet<string> deadNodeIds,
                 Random rnd
-            )
-                : base(currDefProps, hintDef, nodeId, deadNodeIds)
+            ) : base(currDefProps, hintDef, nodeId, deadNodeIds)
             {
                 this.rnd = rnd;
             }
@@ -2542,8 +2533,7 @@ namespace TPRandomizer.Hints
             latestNodeCache.Clear();
         }
 
-        public T GetFromLatestNodeCache<T>()
-            where T : class
+        public T GetFromLatestNodeCache<T>() where T : class
         {
             if (
                 nodeIdStack.Count > 0

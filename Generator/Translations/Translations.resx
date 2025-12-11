@@ -881,6 +881,10 @@
     <value>Bulblin camp key</value>
     <comment></comment>
   </data>
+  <data name="item.8f-archipelago_item@ac(t,an,b,s)" xml:space="preserve">
+    <value>Archipelago Item</value>
+    <comment></comment>
+  </data>
   <data name="item.90-aurus_memo@ac(,an,b,s)" xml:space="preserve">
     <value>Auru&apos;s memo</value>
     <comment></comment>
