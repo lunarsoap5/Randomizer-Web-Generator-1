@@ -8,7 +8,6 @@
   "dungeons": {
     "bigKeyHints": true
   },
-  "beyondPointZones": ["alias:all"],
   "barren": {
     "ownZoneBehavior": "monopolize"
   },
