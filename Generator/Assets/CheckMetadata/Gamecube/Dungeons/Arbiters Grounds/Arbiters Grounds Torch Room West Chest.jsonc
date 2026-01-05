@@ -4,5 +4,7 @@
     "roomIDX": 2,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "Arbiters Grounds", "Dungeon Items", "Dungeon Map"],
+    "itemId": "Arbiters_Grounds_Dungeon_Map",
     "dataCategory": ["Chest", "ARC"]
 }

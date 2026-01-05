@@ -16,7 +16,13 @@
         ],
         "Checks": 
         [
-            "Arbiters Grounds Entrance Chest"
+          {
+            "CheckName": "Arbiters Grounds Entrance Chest",
+            "Requirements": "(Arbiters_Grounds_Small_Key, 5) and (Progressive_Clawshot, 1) and Spinner and CanSmash",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal)) and (Progressive_Clawshot, 1) and Spinner and CanSmash)"
+          }
+            
         ],
         "Region": "Arbiters Grounds"
     },
@@ -47,9 +53,21 @@
           ],
           "Checks": 
           [
-              "Arbiters Grounds Torch Room East Chest",
-              "Arbiters Grounds Torch Room West Chest",
-              "Arbiters Grounds Torch Room Poe"
+            {
+              "CheckName": "Arbiters Grounds Torch Room East Chest",
+              "Requirements": "true",
+              "GlitchedRequirements": "true"
+            },
+            {
+              "CheckName": "Arbiters Grounds Torch Room West Chest",
+              "Requirements": "true",
+              "GlitchedRequirements": "true"
+            },
+            {
+              "CheckName": "Arbiters Grounds Torch Room Poe",
+              "Requirements": "Shadow_Crystal",
+              "GlitchedRequirements": "Shadow_Crystal"
+            }
           ],
           "Region": "Arbiters Grounds"
       },
@@ -65,10 +83,28 @@
         ],
         "Checks": 
         [
-            "Arbiters Grounds East Lower Turnable Redead Chest",
-            "Arbiters Grounds East Upper Turnable Chest",
-            "Arbiters Grounds East Upper Turnable Redead Chest",
-            "Arbiters Grounds Ghoul Rat Room Chest",
+          {
+            "CheckName": "Arbiters Grounds East Lower Turnable Redead Chest",
+            "Requirements": "Shadow_Crystal",
+            "GlitchedRequirements": "Shadow_Crystal"
+          },
+          {
+            "CheckName": "Arbiters Grounds East Upper Turnable Chest",
+            "Requirements": "(Arbiters_Grounds_Small_Key, 2)",
+            "GlitchedRequirements": "(Arbiters_Grounds_Small_Key, 2)"
+          },
+          {
+            "CheckName": "Arbiters Grounds East Upper Turnable Redead Chest",
+            "Requirements": "HasDamagingItem and (Arbiters_Grounds_Small_Key, 2)",
+            "GlitchedRequirements": "HasDamagingItem and (Arbiters_Grounds_Small_Key, 2)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Ghoul Rat Room Chest",
+            "Requirements": "CanDefeatBubble and CanDefeatStalchild and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)",
+            "GlitchedRequirements": "CanDefeatBubble and CanDefeatStalchild and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3) "
+          },
+            
+           
             "Arbiters Grounds East Turning Room Poe",
             "Arbiters Grounds Hidden Wall Poe"
          ],

@@ -1,6 +1,0 @@
-{
-  "requirements": "(Arbiters_Grounds_Small_Key, 2)",
-  "glitchedRequirements": "(Arbiters_Grounds_Small_Key, 2)",
-  "checkCategory": [ "Chest", "Dungeon", "Arbiters Grounds", "Dungeon Items", "Compass"],
-  "itemId": "Arbiters_Grounds_Compass"
-}

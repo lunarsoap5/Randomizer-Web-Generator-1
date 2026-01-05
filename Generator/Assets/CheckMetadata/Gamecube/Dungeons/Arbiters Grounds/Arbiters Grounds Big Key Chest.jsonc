@@ -4,5 +4,7 @@
   "roomIDX": 9,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "checkCategory": [ "Chest", "Dungeon", "Arbiters Grounds", "Big Key"],
+  "itemId": "Arbiters_Grounds_Big_Key",
   "dataCategory": [ "Chest", "ARC" ]
 }
