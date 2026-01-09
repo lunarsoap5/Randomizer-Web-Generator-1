@@ -18,9 +18,8 @@
         [
           {
             "CheckName": "Arbiters Grounds Entrance Chest",
-            "Requirements": "(Arbiters_Grounds_Small_Key, 5) and (Progressive_Clawshot, 1) and Spinner and CanSmash",
-            // Either going around or just doing Wolf clip.
-            "GlitchedRequirements": "(((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal)) and (Progressive_Clawshot, 1) and Spinner and CanSmash)"
+            "Requirements": "CanBreakWoodenDoor",
+            "GlitchedRequirements": "CanBreakWoodenDoor"
           }
             
         ],
@@ -103,10 +102,16 @@
             "Requirements": "CanDefeatBubble and CanDefeatStalchild and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)",
             "GlitchedRequirements": "CanDefeatBubble and CanDefeatStalchild and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3) "
           },
-            
-           
-            "Arbiters Grounds East Turning Room Poe",
-            "Arbiters Grounds Hidden Wall Poe"
+          {
+            "CheckName": "Arbiters Grounds East Turning Room Poe",
+            "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 1)",
+            "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Hidden Wall Poe",
+            "Requirements": "Shadow_Crystal and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)",
+            "GlitchedRequirements": "Shadow_Crystal and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)"
+          }
          ],
         "Region": "Arbiters Grounds"
     },
@@ -122,12 +127,34 @@
         ],
         "Checks": 
         [
-            "Arbiters Grounds West Small Chest Behind Block",
-            "Arbiters Grounds West Chandelier Chest",
-                "Arbiters Grounds West Stalfos West Chest",
-            "Arbiters Grounds West Stalfos Northeast Chest",
-            "Arbiters Grounds West Poe"
-            
+          {
+            "CheckName": "Arbiters Grounds West Small Chest Behind Block",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          },
+          {
+            "CheckName": "Arbiters Grounds West Chandelier Chest",
+            "Requirements": "(Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal",
+            // Either coming from East Wing or doing Poe 1 Skip LJA
+            "GlitchedRequirements": "((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal) or CanDoLJA"
+          },
+          {
+            "CheckName": "Arbiters Grounds West Stalfos West Chest",
+            "Requirements": "CanBreakWoodenDoor and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
+            "GlitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
+          },
+          {
+            "CheckName": "Arbiters Grounds West Stalfos Northeast Chest",
+            "Requirements": "CanBreakWoodenDoor and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
+            // Either coming from East Wing or doing Poe 1 Skip LJA
+            "GlitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
+          },
+          {
+            "CheckName": "Arbiters Grounds West Poe",
+            "Requirements": "Shadow_Crystal and CanSmash and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
+            // Either coming from East Wing or doing Poe 1 Skip LJA
+            "GlitchedRequirements": "Shadow_Crystal and CanSmash and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
+          }
          ],
         "Region": "Arbiters Grounds"
     },
@@ -148,14 +175,53 @@
         ],
         "Checks": 
         [
-            "Arbiters Grounds Big Key Chest",
-            "Arbiters Grounds North Turning Room Chest",
-            "Arbiters Grounds Death Sword Chest",
-            "Arbiters Grounds Spinner Room First Small Chest",
-            "Arbiters Grounds Spinner Room Second Small Chest",
-            "Arbiters Grounds Spinner Room Lower Central Small Chest",
-            "Arbiters Grounds Spinner Room Stalfos Alcove Chest",
-            "Arbiters Grounds Spinner Room Lower North Chest"
+          {
+            "CheckName": "Arbiters Grounds Big Key Chest",
+            "Requirements": "(Arbiters_Grounds_Small_Key, 5) and (Progressive_Clawshot, 1) and Spinner and CanSmash",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal)) and (Progressive_Clawshot, 1) and Spinner and CanSmash)"
+          },
+          {
+            "CheckName": "Arbiters Grounds North Turning Room Chest",
+            "Requirements": "(Progressive_Clawshot, 1)",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Death Sword Chest",
+            "Requirements": "CanDefeatDeathSword and (Progressive_Clawshot, 1) and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "CanDefeatDeathSword and (Progressive_Clawshot, 1) and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal))"
+          },
+          {
+            "CheckName": "Arbiters Grounds Spinner Room First Small Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Spinner Room Second Small Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Spinner Room Lower Central Small Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Spinner Room Stalfos Alcove Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+          },
+          {
+            "CheckName": "Arbiters Grounds Spinner Room Lower North Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+            // Either going around or just doing Wolf clip.
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+          }
         ], 
         "Region": "Arbiters Grounds"
     },
@@ -171,9 +237,21 @@
         ],
         "Checks": 
         [
-              "Arbiters Grounds Stallord Heart Container",
-              "Arbiters Grounds Stallord",
-              "Arbiters Grounds Dungeon Reward"
+          {
+            "CheckName": "Arbiters Grounds Stallord Heart Container",
+            "Requirements": "CanDefeatStallord",
+            "GlitchedRequirements": "CanDefeatStallord"
+          },
+          {
+            "CheckName": "Arbiters Grounds Stallord",
+            "Requirements": "CanDefeatStallord",
+            "GlitchedRequirements": "CanDefeatStallord"
+          },
+          {
+            "CheckName": "Arbiters Grounds Dungeon Reward",
+            "Requirements": "CanDefeatStallord",
+            "GlitchedRequirements": "CanDefeatStallord"
+          }  
         ], 
         "Region": "Arbiters Grounds"
     }

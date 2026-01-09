@@ -1,6 +1,0 @@
-{
-  "requirements": "CanBreakWoodenDoor and (Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat",
-  "glitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)",
-  "checkCategory": [ "Chest", "Dungeon", "Arbiters Grounds" ],
-  "itemId": "Bombs_5"
-}

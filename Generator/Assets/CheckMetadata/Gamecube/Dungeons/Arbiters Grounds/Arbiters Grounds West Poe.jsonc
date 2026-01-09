@@ -1,5 +1,7 @@
 {
   "stageIDX": [ 24 ],
   "flag": "21",
+  "checkCategory": [ "Dungeon", "Poe", "Arbiters Grounds" ],
+  "itemId": "Poe_Soul",
   "dataCategory": ["Poe"]
 }
