@@ -1,4 +1,6 @@
 {
     "stageIDX": [8],
+    "checkCategory": ["Forest Temple", "Dungeon", "Boss"],
+    "itemId": "Boomerang",
     "dataCategory": ["Boss"]
 }

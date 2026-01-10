@@ -11,9 +11,21 @@
         ],
         "Checks": 
         [
-            "Forest Temple Diababa Heart Container",
-            "Forest Temple Diababa",
-            "Forest Temple Dungeon Reward"
+          {
+            "CheckName": "Forest Temple Diababa Heart Container",
+            "Requirements": "CanDefeatDiababa",
+            "GlitchedRequirements": "CanDefeatDiababa"
+          },
+          {
+            "CheckName": "Forest Temple Diababa",
+            "Requirements": "CanDefeatDiababa",
+            "GlitchedRequirements": "CanDefeatDiababa"
+          },
+          {
+            "CheckName": "Forest Temple Dungeon Reward",
+            "Requirements": "CanDefeatDiababa",
+            "GlitchedRequirements": "CanDefeatDiababa"
+          }
         ], 
         "Region": "Forest Temple"
     },
@@ -34,9 +46,21 @@
         ],
         "Checks": 
         [
-            "Forest Temple Second Monkey Under Bridge Chest",
-            "Forest Temple Big Key Chest",
-            "Forest Temple East Water Cave Chest"
+          {
+            "CheckName": "Forest Temple Second Monkey Under Bridge Chest",
+            "Requirements": "(Forest_Temple_Small_Key, 4)",
+            "GlitchedRequirements": "(Forest_Temple_Small_Key, 4)"
+          },
+          {
+            "CheckName": "Forest Temple Big Key Chest",
+            "Requirements": "Boomerang",
+            "GlitchedRequirements": "Boomerang"
+          },
+          {
+            "CheckName":  "Forest Temple East Water Cave Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          }
         ],
         "Region": "Forest Temple"
     },
@@ -57,7 +81,11 @@
         ],
         "Checks": 
         [
-            "Forest Temple Entrance Vines Chest"
+          {
+            "CheckName": "Forest Temple Entrance Vines Chest",
+            "Requirements": "CanDefeatWalltula",
+            "GlitchedRequirements": "CanDefeatWalltula"
+          }
         ],
         "Region": "Forest Temple"
     },
@@ -88,9 +116,21 @@
         ], 
         "Checks": 
         [
-            "Forest Temple Central Chest Behind Stairs",
-            "Forest Temple Central North Chest",
-            "Forest Temple Central Chest Hanging From Web"
+          {
+            "CheckName": "Forest Temple Central Chest Behind Stairs",
+            "Requirements": "Boomerang",
+            "GlitchedRequirements": "Boomerang"
+          },
+          {
+            "CheckName": "Forest Temple Central North Chest",
+            "Requirements": "Lantern",
+            "GlitchedRequirements": "Lantern or (CanDoLJA and Room.Forest_Temple_West_Wing)"
+          },
+          {
+            "CheckName": "Forest Temple Central Chest Hanging From Web",
+            "Requirements": "CanCutHangingWeb",
+            "GlitchedRequirements": "CanCutHangingWeb or CanDoJSMoonBoots"
+          }
         ],
         "Region": "Forest Temple"
     },
@@ -111,9 +151,21 @@
         ],
         "Checks": 
         [
-            "Forest Temple Windless Bridge Chest",
-            "Forest Temple North Deku Like Chest",
-            "Forest Temple East Tile Worm Chest"
+          {
+            "CheckName": "Forest Temple Windless Bridge Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          },
+          {
+            "CheckName": "Forest Temple North Deku Like Chest",
+            "Requirements": "Boomerang",
+            "GlitchedRequirements": "Boomerang or (HasBombs and HasSword and (Progressive_Clawshot, 1))"
+          },
+          {
+            "CheckName": "Forest Temple East Tile Worm Chest",
+            "Requirements": "CanDefeatTileWorm and CanDefeatSkulltula and CanDefeatWalltula and Boomerang and (Forest_Temple_Small_Key, 4)",
+            "GlitchedRequirements": "(HasBombs or CanDoBSMoonBoots or CanDoJSMoonBoots or Boomerang) and (Forest_Temple_Small_Key, 4)"
+          }
         ], 
         "Region": "Forest Temple"
     },
@@ -134,11 +186,32 @@
         ],
         "Checks": 
         [
-            "Forest Temple West Deku Like Chest",
-            "Forest Temple Totem Pole Chest",
-            "Forest Temple West Tile Worm Room Vines Chest",
-            "Forest Temple West Tile Worm Chest Behind Stairs",
-            "Forest Temple Big Baba Key"
+          {
+            "CheckName": "Forest Temple West Deku Like Chest",
+            "Requirements": "CanDefeatWalltula",
+            "GlitchedRequirements": "true"
+          },
+          {
+            "CheckName": "Forest Temple Totem Pole Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "CanDefeatBombling or CanSmash"
+          },
+          {
+            "CheckName": "Forest Temple West Tile Worm Room Vines Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "CanDefeatBombling or CanSmash"
+          },
+          {
+            "CheckName": "Forest Temple West Tile Worm Chest Behind Stairs",
+            "Requirements": "Boomerang",
+            // Blow out the torches or clawshot bomb clip into the stairs
+            "GlitchedRequirements": "Boomerang or (HasBombs and Progressive_Clawshot)"
+          },
+          {
+            "CheckName": "Forest Temple Big Baba Key",
+            "Requirements": "CanDefeatBigBaba and CanDefeatWalltula",
+            "GlitchedRequirements": "CanDefeatBigBaba"
+          }
         ],
         "Region": "Forest Temple"
     },
@@ -152,7 +225,14 @@
             "GlitchedRequirements": "CanDefeatOok and Boomerang"
           }
         ],
-        "Checks": ["Forest Temple Gale Boomerang"], 
+        "Checks": 
+        [
+          {
+            "CheckName": "Forest Temple Gale Boomerang",
+            "Requirements": "CanDefeatOok",
+            "GlitchedRequirements": "CanDefeatOok or HasBombs"
+          }
+        ], 
         "Region": "Forest Temple"
     }
 ]

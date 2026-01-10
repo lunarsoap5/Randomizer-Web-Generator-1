@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatDiababa",
-    "GlitchedRequirements": "CanDefeatDiababa",
-    "checkCategory": ["Heart Container", "Dungeon", "Forest Temple", "Boss"],
-    "itemId": "Heart_Container"
-}
