@@ -1,6 +1,6 @@
 {
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Overworld", "Golden Bug", "Hyrule Field - Faron Province"],
     "itemId": "Male_Beetle"
 }

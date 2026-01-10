@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatWalltula",
-    "glitchedRequirements": "true",
+    "Requirements": "CanDefeatWalltula",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Chest", "Dungeon", "Forest Temple"],
     "itemId": "Piece_of_Heart"
 }

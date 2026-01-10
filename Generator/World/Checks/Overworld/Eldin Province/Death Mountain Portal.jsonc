@@ -1,6 +1,6 @@
 {
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Overworld", "Death Mountain"],
     "itemId": "Death_Mountain_Portal"
 }

@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatBulblin",
-    "glitchedRequirements": "CanDefeatBulblin",
+    "Requirements": "CanDefeatBulblin",
+    "GlitchedRequirements": "CanDefeatBulblin",
     "checkCategory": ["Overworld", "Chest", "Gerudo Desert"],
     "itemId": "Arrows_10"
 }

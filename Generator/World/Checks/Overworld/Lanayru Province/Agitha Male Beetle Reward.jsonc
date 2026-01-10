@@ -1,6 +1,6 @@
 {
-    "requirements": "Male_Beetle",
-    "glitchedRequirements": "Male_Beetle",
+    "Requirements": "Male_Beetle",
+    "GlitchedRequirements": "Male_Beetle",
     "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
     "itemId": "Orange_Rupee"
 }

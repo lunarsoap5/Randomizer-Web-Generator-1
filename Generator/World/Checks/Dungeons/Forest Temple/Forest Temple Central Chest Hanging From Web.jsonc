@@ -1,6 +1,6 @@
 {
-    "requirements": "CanCutHangingWeb",
-    "glitchedRequirements": "CanCutHangingWeb or CanDoJSMoonBoots",
+    "Requirements": "CanCutHangingWeb",
+    "GlitchedRequirements": "CanCutHangingWeb or CanDoJSMoonBoots",
     "checkCategory": ["Chest", "Dungeon", "Forest Temple", "Dungeon Items", "Compass"],
     "itemId": "Forest_Temple_Compass"
 }

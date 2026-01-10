@@ -1,6 +1,6 @@
 {
-    "requirements": "CanCompleteEldinTwilight",
-    "glitchedRequirements": "CanCompleteEldinTwilight",
+    "Requirements": "CanCompleteEldinTwilight",
+    "GlitchedRequirements": "CanCompleteEldinTwilight",
     "checkCategory": ["Overworld", "Golden Bug", "Kakariko Graveyard"],
     "itemId": "Male_Ant"
 }

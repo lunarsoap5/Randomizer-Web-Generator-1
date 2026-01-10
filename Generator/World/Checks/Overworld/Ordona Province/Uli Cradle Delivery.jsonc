@@ -1,6 +1,6 @@
 {
-    "requirements": "CanCompleteGoats1",
-    "glitchedRequirements": "CanCompleteGoats1",
+    "Requirements": "CanCompleteGoats1",
+    "GlitchedRequirements": "CanCompleteGoats1",
     "checkCategory": ["Overworld", "Ordona Province", "Npc"],
     "itemId": "Progressive_Fishing_Rod"
 }

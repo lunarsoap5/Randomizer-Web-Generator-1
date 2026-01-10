@@ -1,6 +1,6 @@
 {
-    "requirements": "Male_Dragonfly",
-    "glitchedRequirements": "Male_Dragonfly",
+    "Requirements": "Male_Dragonfly",
+    "GlitchedRequirements": "Male_Dragonfly",
     "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
     "itemId": "Purple_Rupee"
 }

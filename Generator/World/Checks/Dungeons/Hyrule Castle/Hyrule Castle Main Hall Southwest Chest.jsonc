@@ -4,8 +4,8 @@
     // available until you lower the shortcut chandelier, so there is no logical
     // way even in glitched to get this chest without going through the Double
     // Darknuts, at which point you just walk up and get it for free.
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
     "itemId": "Purple_Rupee"
 }

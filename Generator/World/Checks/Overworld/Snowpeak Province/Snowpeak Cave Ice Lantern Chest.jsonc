@@ -1,6 +1,6 @@
 {
-    "requirements": "Lantern and Ball_and_Chain",
-    "glitchedRequirements": "Lantern and Ball_and_Chain",
+    "Requirements": "Lantern and Ball_and_Chain",
+    "GlitchedRequirements": "Lantern and Ball_and_Chain",
     "checkCategory": ["Overworld", "Chest", "Snowpeak Province"],
     "itemId": "Orange_Rupee"
 }

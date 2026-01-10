@@ -1,6 +1,6 @@
 {
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Overworld", "Chest", "Gerudo Desert"],
     "itemId": "Red_Rupee"
 }

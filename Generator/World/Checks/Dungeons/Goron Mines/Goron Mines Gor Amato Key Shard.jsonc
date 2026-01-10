@@ -1,6 +1,6 @@
 {
-    "requirements": "Iron_Boots",
-    "glitchedRequirements": "Iron_Boots",
+    "Requirements": "Iron_Boots",
+    "GlitchedRequirements": "Iron_Boots",
     "checkCategory": ["Npc", "Dungeon", "Goron Mines", "Dungeon Items", "Big Key"],
     "itemId": "Goron_Mines_Key_Shard"
 }

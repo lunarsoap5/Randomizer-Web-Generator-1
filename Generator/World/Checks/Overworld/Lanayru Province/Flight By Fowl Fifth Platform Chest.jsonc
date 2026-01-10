@@ -1,6 +1,6 @@
 {
-    "requirements": "CanCompleteLanayruTwilight",
-    "glitchedRequirements": "CanCompleteLanayruTwilight",
+    "Requirements": "CanCompleteLanayruTwilight",
+    "GlitchedRequirements": "CanCompleteLanayruTwilight",
     "checkCategory": ["Overworld", "Chest", "Lake Hylia"],
     "itemId": "Yellow_Rupee"
 }

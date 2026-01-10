@@ -1,6 +1,6 @@
 {
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Overworld", "Faron Woods"],
     "itemId": "South_Faron_Portal"
 }

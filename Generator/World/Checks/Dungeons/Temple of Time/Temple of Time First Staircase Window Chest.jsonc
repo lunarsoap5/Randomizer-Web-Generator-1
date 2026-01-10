@@ -1,6 +1,6 @@
 {
-    "requirements": "HasRangedItem",
-    "glitchedRequirements": "HasRangedItem",
+    "Requirements": "HasRangedItem",
+    "GlitchedRequirements": "HasRangedItem",
     "checkCategory": ["Chest", "Dungeon", "Temple of Time"],
     "itemId": "Red_Rupee"
 }

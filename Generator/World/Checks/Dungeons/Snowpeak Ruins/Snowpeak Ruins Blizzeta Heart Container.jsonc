@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatBlizzeta",
-    "glitchedRequirements": "CanDefeatBlizzeta",
+    "Requirements": "CanDefeatBlizzeta",
+    "GlitchedRequirements": "CanDefeatBlizzeta",
     "checkCategory": ["Heart Container", "Dungeon", "Snowpeak Ruins", "Boss"],
     "itemId": "Heart_Container"
 }

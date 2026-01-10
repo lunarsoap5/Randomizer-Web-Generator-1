@@ -1,6 +1,6 @@
 {
-    "requirements": "Iron_Boots and CanDefeatDangoro",
-    "glitchedRequirements": "Iron_Boots and CanDefeatDangoro",
+    "Requirements": "Iron_Boots and CanDefeatDangoro",
+    "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro",
     "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
     "itemId": "Progressive_Bow"
 }

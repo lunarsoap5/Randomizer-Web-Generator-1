@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatShadowBeast",
-    "glitchedRequirements": "CanDefeatShadowBeast",
+    "Requirements": "CanDefeatShadowBeast",
+    "GlitchedRequirements": "CanDefeatShadowBeast",
     "checkCategory": ["Overworld", "Mirror Chamber"],
     "itemId": "Mirror_Chamber_Portal"
 }

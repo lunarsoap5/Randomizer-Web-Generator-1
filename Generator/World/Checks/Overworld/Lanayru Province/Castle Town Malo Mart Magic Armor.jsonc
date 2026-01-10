@@ -1,6 +1,6 @@
 {
-    "requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
-    "glitchedRequirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
+    "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
+    "GlitchedRequirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
     "checkCategory": ["Overworld", "Castle Town", "Shop"],
     "itemId": "Magic_Armor"
 }

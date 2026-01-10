@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Progressive_Clawshot, 1)",
-    "glitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot",
+    "Requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Progressive_Clawshot, 1)",
+    "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot",
     "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "Dungeon Items", "Compass"],
     "itemId": "Hyrule_Castle_Compass"
 }

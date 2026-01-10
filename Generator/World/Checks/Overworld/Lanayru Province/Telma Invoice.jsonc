@@ -1,6 +1,6 @@
 {
-    "requirements": "Renados_Letter and CanCompleteLanayruTwilight",
-    "glitchedRequirements": "Renados_Letter and CanCompleteLanayruTwilight",
+    "Requirements": "Renados_Letter and CanCompleteLanayruTwilight",
+    "GlitchedRequirements": "Renados_Letter and CanCompleteLanayruTwilight",
     "checkCategory": ["Overworld", "Quest", "Castle Town"],
     "itemId": "Invoice"
 }

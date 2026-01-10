@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatShadowBeast",
-    "glitchedRequirements": "CanDefeatShadowBeast",
+    "Requirements": "CanDefeatShadowBeast",
+    "GlitchedRequirements": "CanDefeatShadowBeast",
     "checkCategory": ["Overworld", "Sacred Grove"],
     "itemId": "Sacred_Grove_Portal"
 }

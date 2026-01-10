@@ -1,6 +1,6 @@
 {
-    "requirements": "Male_Grasshopper",
-    "glitchedRequirements": "Male_Grasshopper",
+    "Requirements": "Male_Grasshopper",
+    "GlitchedRequirements": "Male_Grasshopper",
     "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
     "itemId": "Progressive_Wallet"
 }

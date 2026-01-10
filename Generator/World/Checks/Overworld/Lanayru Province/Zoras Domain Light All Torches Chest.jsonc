@@ -1,6 +1,6 @@
 {
-    "requirements": "Lantern and Iron_Boots",
-    "glitchedRequirements": "Lantern and HasHeavyMod",
+    "Requirements": "Lantern and Iron_Boots",
+    "GlitchedRequirements": "Lantern and HasHeavyMod",
     "checkCategory": ["Overworld", "Chest", "Zoras Domain"],
     "itemId": "Purple_Rupee"
 }

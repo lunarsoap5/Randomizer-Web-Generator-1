@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
+    "itemId": "Water_Bombs_15",
     "dataCategory": ["Chest", "ARC"]
 }

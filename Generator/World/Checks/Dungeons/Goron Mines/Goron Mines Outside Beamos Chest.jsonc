@@ -1,6 +1,6 @@
 {
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Chest", "Dungeon", "Goron Mines", "Small Key"],
     "itemId": "Goron_Mines_Small_Key"
 }

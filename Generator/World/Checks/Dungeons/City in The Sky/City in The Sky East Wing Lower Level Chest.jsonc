@@ -1,6 +1,0 @@
-{
-    "requirements": "(Progressive_Clawshot, 2) and CanDefeatDinalfos and CanDefeatTileWorm",
-    "glitchedRequirements": "(Progressive_Clawshot, 2)",
-    "checkCategory": ["Chest", "Dungeon", "City in The Sky", "Dungeon Items", "Compass"],
-    "itemId": "City_in_The_Sky_Compass"
-}

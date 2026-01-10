@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatDarknut",
-    "glitchedRequirements": "CanDefeatDarknut",
+    "Requirements": "CanDefeatDarknut",
+    "GlitchedRequirements": "CanDefeatDarknut",
     "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
     "itemId": "Purple_Rupee"
 }

@@ -5,8 +5,8 @@
   // require that they already have access to the Lanayru side of the bridge to
   // avoid a confusing scenario where the player is expected to build the bridge
   // to do this check but then crossing the bridge would be going out of logic.
-  "requirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
-  "glitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
+  "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
+  "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
   "checkCategory": ["Overworld", "Npc", "Hyrule Field - Eldin Province", "Boss"],
   "itemId": "Piece_of_Heart"
 }

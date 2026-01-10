@@ -4,5 +4,7 @@
     "roomIDX": 2,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "City in The Sky", "Big Key", "ARC"],
+    "itemId": "City_in_The_Sky_Big_Key",
     "dataCategory": ["Chest", "ARC"]
 }

@@ -1,6 +1,6 @@
 {
-    "requirements": "Shadow_Crystal and CanSmash",
-    "glitchedRequirements": "Shadow_Crystal and CanSmash",
+    "Requirements": "Shadow_Crystal and CanSmash",
+    "GlitchedRequirements": "Shadow_Crystal and CanSmash",
     "checkCategory": ["Overworld", "Poe", "Gerudo Desert"],
     "itemId": "Poe_Soul"
 }

@@ -1,6 +1,6 @@
 {
-    "requirements": "CanSmash and CanCompleteEldinTwilight",
-    "glitchedRequirements": "(CanSmash and CanCompleteEldinTwilight) or Shadow_Crystal",
+    "Requirements": "CanSmash and CanCompleteEldinTwilight",
+    "GlitchedRequirements": "(CanSmash and CanCompleteEldinTwilight) or Shadow_Crystal",
     "checkCategory": ["Overworld", "Chest", "Kakariko Village"],
     "itemId": "Orange_Rupee"
 }

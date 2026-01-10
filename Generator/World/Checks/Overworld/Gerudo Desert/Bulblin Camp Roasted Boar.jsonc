@@ -1,6 +1,6 @@
 {
-    "requirements": "HasDamagingItem",
-    "glitchedRequirements": "HasDamagingItem",
+    "Requirements": "HasDamagingItem",
+    "GlitchedRequirements": "HasDamagingItem",
     "checkCategory": ["Overworld", "Bulblin Camp"],
     "itemId": "Piece_of_Heart"
 }

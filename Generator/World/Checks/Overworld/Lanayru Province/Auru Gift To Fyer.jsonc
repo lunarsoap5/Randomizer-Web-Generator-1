@@ -1,6 +1,6 @@
 {
-    "requirements": "CanCompleteLanayruTwilight",
-    "glitchedRequirements": "CanCompleteLanayruTwilight",
+    "Requirements": "CanCompleteLanayruTwilight",
+    "GlitchedRequirements": "CanCompleteLanayruTwilight",
     "checkCategory": ["Overworld", "Npc", "Lake Hylia"],
     "itemId": "Aurus_Memo"
 }

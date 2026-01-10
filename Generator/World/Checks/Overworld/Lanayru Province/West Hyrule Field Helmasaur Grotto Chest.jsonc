@@ -1,6 +1,6 @@
 {
-    "requirements": "CanDefeatHelmasaur",
-    "glitchedRequirements": "CanDefeatHelmasaur",
+    "Requirements": "CanDefeatHelmasaur",
+    "GlitchedRequirements": "CanDefeatHelmasaur",
     "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
     "itemId": "Orange_Rupee"
 }

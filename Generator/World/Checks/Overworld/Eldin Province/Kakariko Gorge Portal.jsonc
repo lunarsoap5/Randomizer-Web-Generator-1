@@ -1,6 +1,6 @@
 {
-    "requirements": "true",
-    "glitchedRequirements": "true",
+    "Requirements": "true",
+    "GlitchedRequirements": "true",
     "checkCategory": ["Overworld", "Hyrule Field - Eldin"],
     "itemId": "Kakariko_Gorge_Portal"
 }

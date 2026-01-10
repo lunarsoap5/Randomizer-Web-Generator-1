@@ -1,6 +1,6 @@
 {
-    "requirements": "Lantern",
-    "glitchedRequirements": "Lantern",
+    "Requirements": "Lantern",
+    "GlitchedRequirements": "Lantern",
     "checkCategory": ["Overworld", "Chest", "Bulblin Camp"],
     "itemId": "Purple_Rupee"
 }

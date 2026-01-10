@@ -1,6 +1,6 @@
 {
-    "requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-    "glitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+    "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+    "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
     "checkCategory": ["Overworld", "Npc - Shop", "Kakariko Village"],
     "itemId": "Filled_Bomb_Bag"
 }

@@ -1,6 +1,6 @@
 {
-    "requirements": "Female_Dayfly",
-    "glitchedRequirements": "Female_Dayfly",
+    "Requirements": "Female_Dayfly",
+    "GlitchedRequirements": "Female_Dayfly",
     "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
     "itemId": "Orange_Rupee"
 }
