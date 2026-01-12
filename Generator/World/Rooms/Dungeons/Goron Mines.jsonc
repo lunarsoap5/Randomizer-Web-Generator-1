@@ -11,9 +11,21 @@
         ],
         "Checks": 
         [
-            "Goron Mines Fyrus Heart Container",
-            "Goron Mines Fyrus",
-            "Goron Mines Dungeon Reward"
+            {
+                "CheckName": "Goron Mines Fyrus Heart Container",
+                "Requirements": "CanDefeatFyrus",
+                "GlitchedRequirements": "CanDefeatFyrus"
+            },
+            {
+                "CheckName": "Goron Mines Fyrus",
+                "Requirements": "CanDefeatFyrus",
+                "GlitchedRequirements": "CanDefeatFyrus"
+            },
+            {
+                "CheckName": "Goron Mines Dungeon Reward",
+                "Requirements": "CanDefeatFyrus",
+                "GlitchedRequirements": "CanDefeatFyrus"
+            }
         ], 
         "Region": "Goron Mines"
     },
@@ -34,9 +46,21 @@
         ],
         "Checks": 
         [
-            "Goron Mines Crystal Switch Room Underwater Chest",
-            "Goron Mines Crystal Switch Room Small Chest",
-            "Goron Mines After Crystal Switch Room Magnet Wall Chest"
+            {
+                "CheckName": "Goron Mines Crystal Switch Room Underwater Chest",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "HasHeavyMod"
+            },
+            {
+                "CheckName": "Goron Mines Crystal Switch Room Small Chest",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots"
+            },
+            {
+                "CheckName": "Goron Mines After Crystal Switch Room Magnet Wall Chest",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots"
+            }
         ],
         "Region": "Goron Mines"
     },
@@ -57,7 +81,11 @@
         ],
         "Checks":
         [
-            "Goron Mines Entrance Chest"
+            {
+                "CheckName": "Goron Mines Entrance Chest",
+                "Requirements": "CanPressMinesSwitch and CanBreakWoodenDoor",
+                "GlitchedRequirements": "CanDoBSMoonBoots or CanBreakWoodenDoor"
+            }
         ],
         "Region": "Goron Mines"
     },
@@ -73,10 +101,26 @@
         ],
         "Checks": 
         [
-            "Goron Mines Magnet Maze Chest",
-            "Goron Mines Gor Amato Chest",
-            "Goron Mines Gor Amato Small Chest",
-            "Goron Mines Gor Amato Key Shard"
+            {
+                "CheckName": "Goron Mines Magnet Maze Chest",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots"
+            },
+            {
+                "CheckName": "Goron Mines Gor Amato Chest",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots"
+            },
+            {
+                "CheckName": "Goron Mines Gor Amato Small Chest",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots"
+            },
+            {
+                "CheckName": "Goron Mines Gor Amato Key Shard",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots"
+            }
         ],
         "Region": "Goron Mines"
     },
@@ -106,8 +150,16 @@
         ],
         "Checks": 
         [
-            "Goron Mines Main Magnet Room Bottom Chest",
-            "Goron Mines Main Magnet Room Top Chest"
+            {
+                "CheckName": "Goron Mines Main Magnet Room Bottom Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Goron Mines Main Magnet Room Top Chest",
+                "Requirements": "(Progressive_Bow, 1) and Iron_Boots and CanDefeatDangoro and (Goron_Mines_Small_Key, 3)",
+                "GlitchedRequirements": "Room.Goron_Mines_Upper_East_Wing and CanDefeatDangoro and CanDefeatBeamos"
+            }
         ],
         "Region": "Goron Mines"
     },
@@ -133,9 +185,21 @@
         ],
         "Checks": 
         [
-            "Goron Mines Outside Beamos Chest",
-            "Goron Mines Outside Underwater Chest",
-            "Goron Mines Outside Clawshot Chest"
+            {
+                "CheckName": "Goron Mines Outside Beamos Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Goron Mines Outside Underwater Chest",
+                "Requirements": "(HasSword or CanUseWaterBombs) and Iron_Boots",
+                "GlitchedRequirements": "HasHeavyMod"
+            },
+            {
+                "CheckName": "Goron Mines Outside Clawshot Chest",
+                "Requirements": "(Progressive_Clawshot, 1) and ((Progressive_Bow, 1) or Slingshot)",
+                "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+            } 
         ],
         "Region": "Goron Mines"
     },
@@ -156,13 +220,41 @@
         ],
         "Checks": 
         [
-            "Goron Mines Gor Ebizo Chest",
-            "Goron Mines Chest Before Dangoro",
-            "Goron Mines Gor Ebizo Key Shard",
-            "Goron Mines Dangoro Chest",
-            "Goron Mines Beamos Room Chest",
-            "Goron Mines Gor Liggs Chest",
-            "Goron Mines Gor Liggs Key Shard"
+            {
+                "CheckName": "Goron Mines Gor Ebizo Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Goron Mines Chest Before Dangoro",
+                "Requirements": "Iron_Boots",
+                "GlitchedRequirements": "Iron_Boots or CanDoLJA"
+            },
+            {
+                "CheckName": "Goron Mines Gor Ebizo Key Shard",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Goron Mines Dangoro Chest",
+                "Requirements": "Iron_Boots and CanDefeatDangoro",
+                "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro"
+            },
+            {
+                "CheckName": "Goron Mines Beamos Room Chest",
+                "Requirements": " Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+                "GlitchedRequirements": " Iron_Boots and CanDefeatDangoro and CanDefeatBeamos"
+            },
+            {
+                "CheckName": "Goron Mines Gor Liggs Chest",
+                "Requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+                "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro and CanDefeatBeamos"
+            },
+            {
+                "CheckName": "Goron Mines Gor Liggs Key Shard",
+                "Requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+                "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro and CanDefeatBeamos"
+            } 
         ],
         "Region": "Goron Mines"
     }  

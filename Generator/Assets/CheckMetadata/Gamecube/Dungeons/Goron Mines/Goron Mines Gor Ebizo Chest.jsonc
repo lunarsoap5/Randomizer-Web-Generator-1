@@ -4,5 +4,7 @@
     "roomIDX": 17,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
+    "itemId": "Yellow_Rupee",
     "dataCategory": ["Chest", "ARC"]
 }

@@ -1,6 +1,0 @@
-{
-    "Requirements": "true",
-    "GlitchedRequirements": "true",
-    "checkCategory": ["Npc", "Dungeon", "Goron Mines", "Dungeon Items", "Big Key"],
-    "itemId": "Goron_Mines_Key_Shard"
-}

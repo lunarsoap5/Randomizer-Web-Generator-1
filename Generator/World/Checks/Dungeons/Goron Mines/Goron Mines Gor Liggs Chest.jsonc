@@ -1,6 +1,0 @@
-{
-    "Requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
-    "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro and CanDefeatBeamos",
-    "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
-    "itemId": "Purple_Rupee"
-}

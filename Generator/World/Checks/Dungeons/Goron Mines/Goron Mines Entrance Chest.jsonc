@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanPressMinesSwitch and CanBreakWoodenDoor",
-    "GlitchedRequirements": "CanDoBSMoonBoots or CanBreakWoodenDoor",
-    "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
-    "itemId": "Red_Rupee"
-}

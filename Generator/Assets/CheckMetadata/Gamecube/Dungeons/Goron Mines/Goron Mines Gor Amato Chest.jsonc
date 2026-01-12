@@ -4,5 +4,7 @@
     "roomIDX": 14,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines", "Dungeon Items", "Dungeon Map"],
+    "itemId": "Goron_Mines_Dungeon_Map",
     "dataCategory": ["Chest", "ARC"]
 }

@@ -4,5 +4,7 @@
     "roomIDX": 7,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines", "Small Key"],
+    "itemId": "Goron_Mines_Small_Key",
     "dataCategory": ["Chest", "ARC"]
 }

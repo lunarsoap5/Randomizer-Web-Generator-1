@@ -1,6 +1,0 @@
-{
-    "Requirements": "(HasSword or CanUseWaterBombs) and Iron_Boots",
-    "GlitchedRequirements": "HasHeavyMod",
-    "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
-    "itemId": "Purple_Rupee"
-}
