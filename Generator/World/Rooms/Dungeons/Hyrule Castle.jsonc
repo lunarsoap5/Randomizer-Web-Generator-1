@@ -8,7 +8,14 @@
                 "GlitchedRequirements": "true"
             }
         ],
-        "Checks": ["Hyrule Castle Ganondorf"],
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Ganondorf",
+                "Requirements": "CanDefeatGanondorf",
+                "GlitchedRequirements": "CanDefeatGanondorf"
+            }
+        ],
         "Region": "Ganondorf"
     },
     {
@@ -47,11 +54,28 @@
                 "GlitchedRequirements": "Shadow_Crystal"
             }
         ],
-        "Checks": [
-            "Hyrule Castle Graveyard Grave Switch Room Right Chest",
-            "Hyrule Castle Graveyard Grave Switch Room Front Left Chest",
-            "Hyrule Castle Graveyard Grave Switch Room Back Left Chest",
-            "Hyrule Castle Graveyard Owl Statue Chest"
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Graveyard Grave Switch Room Right Chest",
+                "Requirements": "CanSmash",
+                "GlitchedRequirements": "CanSmash"
+            },
+            {
+                "CheckName": "Hyrule Castle Graveyard Grave Switch Room Front Left Chest",
+                "Requirements": "CanSmash",
+                "GlitchedRequirements": "CanSmash"
+            },
+            {
+                "CheckName": "Hyrule Castle Graveyard Grave Switch Room Back Left Chest",
+                "Requirements": "CanSmash",
+                "GlitchedRequirements": "CanSmash"
+            },
+            {
+                "CheckName": "Hyrule Castle Graveyard Owl Statue Chest",
+                "Requirements": "CanSmash and Lantern and (Progressive_Dominion_Rod, 2)",
+                "GlitchedRequirements": "CanSmash and Lantern and (Progressive_Dominion_Rod, 2)"
+            } 
         ],
         "Region": "Hyrule Castle"
     },
@@ -74,7 +98,14 @@
                 "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)"
             }
         ],
-        "Checks": ["Hyrule Castle Main Hall Northeast Chest"],
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Main Hall Northeast Chest",
+                "Requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Progressive_Clawshot, 1)",
+                "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatLizalfos and Progressive_Clawshot"
+            }
+        ],
         "Region": "Hyrule Castle"
     },
     {
@@ -91,9 +122,18 @@
                 "GlitchedRequirements": "Shadow_Crystal"
             }
         ],
-        "Checks": [
-            "Hyrule Castle East Wing Boomerang Puzzle Chest",
-            "Hyrule Castle East Wing Balcony Chest"
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle East Wing Boomerang Puzzle Chest",
+                "Requirements": "Boomerang",
+                "GlitchedRequirements": "Boomerang"
+            },
+            {
+                "CheckName": "Hyrule Castle East Wing Balcony Chest",
+                "Requirements": "Boomerang",
+                "GlitchedRequirements": "Boomerang"
+            }  
         ],
         "Region": "Hyrule Castle"
     },
@@ -106,10 +146,23 @@
                 "GlitchedRequirements": "true"
             }
         ],
-        "Checks": [
-            "Hyrule Castle West Courtyard North Small Chest",
-            "Hyrule Castle West Courtyard Central Small Chest",
-            "Hyrule Castle King Bulblin Key"
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle West Courtyard North Small Chest",
+                "Requirements": "CanDefeatBokoblin",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle West Courtyard Central Small Chest",
+                "Requirements": "CanDefeatBokoblin",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle King Bulblin Key",
+                "Requirements": "CanDefeatKingBulblinCastle",
+                "GlitchedRequirements": "CanDefeatKingBulblinCastle"
+            }
         ],
         "Region": "Hyrule Castle"
     },
@@ -132,7 +185,14 @@
                 "GlitchedRequirements": "CanKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut"
             }
         ],
-        "Checks": ["Hyrule Castle Lantern Staircase Chest"],
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Lantern Staircase Chest",
+                "Requirements": "CanDefeatDarknut",
+                "GlitchedRequirements": "CanDefeatDarknut"
+            }
+        ],
         "Region": "Hyrule Castle"
     },
     {
@@ -176,9 +236,31 @@
                 "GlitchedRequirements": "true"
             }
         ],
-        "Checks": [
-            "Hyrule Castle Main Hall Southwest Chest",
-            "Hyrule Castle Main Hall Northwest Chest"
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Main Hall Southwest Chest",
+                // Access is from the "Hyrule Castle After Double Darknuts" room. Note that
+                // the Double-Darknut Skip is not infinitely reproducible since it is only
+                // available until you lower the shortcut chandelier, so there is no logical
+                // way even in glitched to get this chest without going through the Double
+                // Darknuts, at which point you just walk up and get it for free.
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Main Hall Northwest Chest",
+                // Access is from the "Hyrule Castle After Double Darknuts" room since you
+                // must press the switch there to make the chest appear and Double-Darknut
+                // Skip is not infinitely reproducible. Note that the barrier fight is not
+                // relevant to this for multiple reasons, the simplest one being that the
+                // trigger for the fight is nowhere near anywhere you would walk to do this
+                // (but the fight is logically completed in order to get here regardless).
+                "Requirements": "(Progressive_Clawshot, 2)",
+                // For glitched, you can easily clawshot to this chest from next to the
+                // center north door of the main hall, or you can LJA to it from the switch.
+                "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoLJA"
+            }
         ],
         "Region": "Hyrule Castle"
     },
@@ -201,9 +283,18 @@
                 "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 2)"
             }
         ],
-        "Checks": [
-            "Hyrule Castle Southeast Balcony Tower Chest",
-            "Hyrule Castle Big Key Chest"
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Southeast Balcony Tower Chest",
+                "Requirements": "CanDefeatAeralfos",
+                "GlitchedRequirements": "CanDefeatAeralfos"
+            },
+            {
+                "CheckName": "Hyrule Castle Big Key Chest",
+                "Requirements": "CanOpenHCBKGate",
+                "GlitchedRequirements": "CanOpenHCBKGate"
+            }
         ],
         "Region": "Hyrule Castle"
     },
@@ -238,20 +329,73 @@
                 "GlitchedRequirements": "true"
             }
         ],
-        "Checks": [
-            "Hyrule Castle Treasure Room Eighth Small Chest",
-            "Hyrule Castle Treasure Room Seventh Small Chest",
-            "Hyrule Castle Treasure Room Sixth Small Chest",
-            "Hyrule Castle Treasure Room Fifth Small Chest",
-            "Hyrule Castle Treasure Room Fourth Small Chest",
-            "Hyrule Castle Treasure Room Third Small Chest",
-            "Hyrule Castle Treasure Room Second Small Chest",
-            "Hyrule Castle Treasure Room First Small Chest",
-            "Hyrule Castle Treasure Room Fifth Chest",
-            "Hyrule Castle Treasure Room Fourth Chest",
-            "Hyrule Castle Treasure Room Third Chest",
-            "Hyrule Castle Treasure Room Second Chest",
-            "Hyrule Castle Treasure Room First Chest"
+        "Checks": 
+        [
+            {
+                "CheckName": "Hyrule Castle Treasure Room Eighth Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Seventh Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Sixth Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Fifth Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Fourth Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Third Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Second Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room First Small Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Fifth Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Fourth Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Third Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room Second Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            },
+            {
+                "CheckName": "Hyrule Castle Treasure Room First Chest",
+                "Requirements": "true",
+                "GlitchedRequirements": "true"
+            }
         ],
         "Region": "Hyrule Castle"
     }

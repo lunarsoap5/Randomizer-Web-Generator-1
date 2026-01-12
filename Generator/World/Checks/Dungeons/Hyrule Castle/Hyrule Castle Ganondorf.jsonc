@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatGanondorf",
-    "GlitchedRequirements": "CanDefeatGanondorf",
-    "checkCategory": ["Dungeon", "Hyrule Castle"],
-    "itemId": "Ganondorf_Defeated"
-}

@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanSmash",
-    "GlitchedRequirements": "CanSmash",
-    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
-    "itemId": "Orange_Rupee"
-}

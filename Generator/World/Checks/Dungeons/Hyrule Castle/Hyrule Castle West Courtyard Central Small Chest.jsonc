@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatBokoblin",
-    "GlitchedRequirements": "true",
-    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
-    "itemId": "Red_Rupee"
-}

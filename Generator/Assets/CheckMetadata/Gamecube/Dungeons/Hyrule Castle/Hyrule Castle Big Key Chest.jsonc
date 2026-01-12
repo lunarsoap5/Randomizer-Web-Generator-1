@@ -4,5 +4,7 @@
     "roomIDX": 15,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "Big Key"],
+    "itemId": "Hyrule_Castle_Big_Key",
     "dataCategory": ["Chest", "ARC"]
 }

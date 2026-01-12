@@ -1,6 +1,0 @@
-{
-    "Requirements": "true",
-    "GlitchedRequirements": "true",
-    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
-    "itemId": "Silver_Rupee"
-}
