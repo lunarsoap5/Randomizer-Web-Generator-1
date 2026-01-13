@@ -11,9 +11,21 @@
         ],
         "Checks": 
         [
-            "Temple of Time Armos Antechamber East Chest",
-            "Temple of Time Armos Antechamber North Chest",
-            "Temple of Time Armos Antechamber Statue Chest"
+          {
+            "CheckName": "Temple of Time Armos Antechamber East Chest",
+            "Requirements": "CanDefeatArmos",
+            "GlitchedRequirements": "CanDefeatArmos"
+          },
+          {
+            "CheckName": "Temple of Time Armos Antechamber North Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          },
+          {
+            "CheckName": "Temple of Time Armos Antechamber Statue Chest",
+            "Requirements": "(Progressive_Dominion_Rod, 1)",
+            "GlitchedRequirements": "true"
+          }
          ],
         "Region": "Temple of Time"
     },
@@ -29,9 +41,21 @@
         ],
         "Checks": 
         [
-            "Temple of Time Armogohma Heart Container",
-            "Temple of Time Armogohma",
-            "Temple of Time Dungeon Reward"
+          {
+            "CheckName": "Temple of Time Armogohma Heart Container",
+            "Requirements": "CanDefeatArmogohma",
+            "GlitchedRequirements": "CanDefeatArmogohma"
+          },
+          {
+            "CheckName": "Temple of Time Armogohma",
+            "Requirements": "CanDefeatArmogohma",
+            "GlitchedRequirements": "CanDefeatArmogohma"
+          },
+          {
+            "CheckName": "Temple of Time Dungeon Reward",
+            "Requirements": "CanDefeatArmogohma",
+            "GlitchedRequirements": "CanDefeatArmogohma"
+          }
         ], 
         "Region": "Temple of Time"
     },
@@ -57,7 +81,11 @@
           ],
           "Checks": 
           [
-              "Temple of Time Poe Behind Gate"
+            {
+              "CheckName": "Temple of Time Poe Behind Gate",
+              "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 1)",
+              "GlitchedRequirements": "Shadow_Crystal and ((Progressive_Dominion_Rod, 1) or Ball_and_Chain or CanDoHSMoonBoots)"
+            }
           ], 
           "Region": "Temple of Time"
     },
@@ -78,9 +106,21 @@
         ],
         "Checks": 
         [
-            "Temple of Time First Staircase Gohma Gate Chest",
-            "Temple of Time First Staircase Window Chest",
-            "Temple of Time First Staircase Armos Chest"
+          {
+            "CheckName": "Temple of Time First Staircase Gohma Gate Chest",
+            "Requirements": "CanDefeatYoungGohma",
+            "GlitchedRequirements": "CanDefeatYoungGohma"
+          },
+          {
+            "CheckName": "Temple of Time First Staircase Window Chest",
+            "Requirements": "HasRangedItem",
+            "GlitchedRequirements": "HasRangedItem"
+          },
+          {
+            "CheckName": "Temple of Time First Staircase Armos Chest",
+            "Requirements": "CanDefeatArmos and HasRangedItem",
+            "GlitchedRequirements": "CanDefeatArmos and HasRangedItem"
+          }
          ],
         "Region": "Temple of Time"
     },
@@ -114,7 +154,11 @@
         ],
         "Checks": 
         [
-            "Temple of Time Darknut Chest"    
+          {
+            "CheckName": "Temple of Time Darknut Chest",
+            "Requirements": "CanDefeatDarknut",
+            "GlitchedRequirements": "CanDefeatDarknut"
+          }  
         ],
         "Region": "Temple of Time"
     },
@@ -141,7 +185,11 @@
           ],
           "Checks": 
           [
-              "Temple of Time Lobby Lantern Chest"
+            {
+              "CheckName":  "Temple of Time Lobby Lantern Chest",
+              "Requirements": "Lantern",
+              "GlitchedRequirements": "Lantern"
+            }
           ],
           "Region": "Temple of Time"
     },
@@ -157,8 +205,16 @@
         ],
         "Checks": 
         [
-            "Temple of Time Big Key Chest",
-            "Temple of Time Floor Switch Puzzle Room Upper Chest"
+          {
+            "CheckName": "Temple of Time Big Key Chest",
+            "Requirements": "CanDefeatHelmasaur and (Progressive_Clawshot, 1)",
+            "GlitchedRequirements": "CanDefeatHelmasaur and (Progressive_Clawshot, 1)"
+          },
+          {
+            "CheckName": "Temple of Time Floor Switch Puzzle Room Upper Chest",
+            "Requirements": "(Progressive_Clawshot, 1)",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+          } 
          ],
         "Region": "Temple of Time"
     },
@@ -179,8 +235,16 @@
         ],
         "Checks": 
         [
-            "Temple of Time Moving Wall Beamos Room Chest",
-            "Temple of Time Moving Wall Dinalfos Room Chest"
+          {
+            "CheckName": "Temple of Time Moving Wall Beamos Room Chest",
+            "Requirements": "(Progressive_Bow, 1)",
+            "GlitchedRequirements": "(Progressive_Bow, 1)"
+          },
+          {
+            "CheckName": "Temple of Time Moving Wall Dinalfos Room Chest",
+            "Requirements": "CanDefeatDinalfos and (Progressive_Dominion_Rod, 1) and (Progressive_Bow, 1)",
+            "GlitchedRequirements": "CanDefeatDinalfos and ((Progressive_Dominion_Rod, 1) or (Spinner and HasBombs)) and (Progressive_Bow, 1)"
+          }
          ],
         "Region": "Temple of Time"
     },
@@ -206,9 +270,21 @@
         ],
         "Checks": 
         [
-            "Temple of Time Scales Gohma Chest",
-            "Temple of Time Scales Upper Chest",
-            "Temple of Time Poe Above Scales"
+          {
+            "CheckName": "Temple of Time Scales Gohma Chest",
+            "Requirements": "CanDefeatYoungGohma and CanDefeatBabyGohma",
+            "GlitchedRequirements": "CanDefeatYoungGohma and CanDefeatBabyGohma"
+          },
+          {
+            "CheckName": "Temple of Time Scales Upper Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Spinner",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner"
+          },
+          {
+            "CheckName": "Temple of Time Poe Above Scales",
+            "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 1) and Spinner",
+            "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1) and Spinner"
+          }
          ],
         "Region": "Temple of Time"
     },
@@ -229,8 +305,16 @@
           ],
           "Checks": 
           [
-              "Temple of Time Guillotine Chest",
-              "Temple of Time Chest Before Darknut"
+            {
+              "CheckName": "Temple of Time Guillotine Chest",
+              "Requirements": "true",
+              "GlitchedRequirements": "true"
+            },
+            {
+              "CheckName": "Temple of Time Chest Before Darknut",
+              "Requirements": "CanDefeatArmos and CanDefeatBabyGohma and CanDefeatYoungGohma",
+              "GlitchedRequirements": "CanDefeatArmos and CanDefeatBabyGohma and CanDefeatYoungGohma"
+            }
           ],
           "Region": "Temple of Time"
     }

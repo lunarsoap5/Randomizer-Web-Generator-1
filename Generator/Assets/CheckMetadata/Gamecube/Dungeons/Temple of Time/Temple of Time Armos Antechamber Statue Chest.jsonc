@@ -4,5 +4,7 @@
     "roomIDX": 3,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Chest", "Dungeon", "Temple of Time"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["Chest", "ARC"]
 }

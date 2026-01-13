@@ -6,6 +6,7 @@
     "arcOffsets": ["383E"],
     "fileDirectoryType": [3],
     "replacementType": [2],
-    "relReplacementType": [0],
+    "relReplacementType": [0],"checkCategory": ["Dungeon", "Temple of Time", "Dungeon Reward"],
+    "itemId": "Progressive_Mirror_Shard",
     "dataCategory": ["REL", "ARC"]
 }

@@ -1,5 +1,7 @@
 {
     "stageIDX": [9],
     "flag": "19",
+    "checkCategory": ["Dungeon", "Poe", "Temple of Time"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

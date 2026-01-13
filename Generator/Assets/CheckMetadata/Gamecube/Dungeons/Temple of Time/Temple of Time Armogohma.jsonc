@@ -1,3 +1,5 @@
 {
+    "checkCategory": ["Dungeon", "Temple of Time"],
+    "itemId": "Armogohma_Defeated",
     "dataCategory": [""]
 }
