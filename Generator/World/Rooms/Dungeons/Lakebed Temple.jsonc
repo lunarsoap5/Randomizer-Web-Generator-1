@@ -11,9 +11,21 @@
         ],
         "Checks": 
         [
-            "Lakebed Temple Morpheel Heart Container",
-            "Lakebed Temple Morpheel",
-            "Lakebed Temple Dungeon Reward"
+          {
+            "CheckName": "Lakebed Temple Morpheel Heart Container",
+            "Requirements": "CanDefeatMorpheel",
+            "GlitchedRequirements": "CanDefeatMorpheel"
+          },
+          {
+            "CheckName": "Lakebed Temple Morpheel",
+            "Requirements": "CanDefeatMorpheel",
+            "GlitchedRequirements": "CanDefeatMorpheel"
+          },
+          {
+            "CheckName": "Lakebed Temple Dungeon Reward",
+            "Requirements": "CanDefeatMorpheel",
+            "GlitchedRequirements": "CanDefeatMorpheel"
+          }
         ], 
         "Region": "Lakebed Temple"
     },
@@ -49,10 +61,26 @@
           ],
           "Checks": 
           [
-              "Lakebed Temple Central Room Small Chest",
-              "Lakebed Temple Central Room Chest",
-              "Lakebed Temple Chandelier Chest",
-              "Lakebed Temple Central Room Spire Chest"
+            {
+              "CheckName": "Lakebed Temple Central Room Small Chest",
+              "Requirements": "true",
+              "GlitchedRequirements": "true"
+            },
+            {
+              "CheckName": "Lakebed Temple Central Room Chest",
+              "Requirements": "true",
+              "GlitchedRequirements": "true"
+            },
+            {
+              "CheckName": "Lakebed Temple Chandelier Chest",
+              "Requirements": "(Progressive_Clawshot, 1)",
+              "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+            },
+            {
+              "CheckName": "Lakebed Temple Central Room Spire Chest",
+              "Requirements": "(Lakebed_Temple_Small_Key, 3) and Iron_Boots and CanLaunchBombs",
+              "GlitchedRequirements": "(((Lakebed_Temple_Small_Key, 3) and CanLaunchBombs) or (Progressive_Clawshot and HasSword)) and Iron_Boots"
+            }
           ],
           "Region": "Lakebed Temple"
     },
@@ -68,12 +96,49 @@
         ],
         "Checks": 
         [
-            "Lakebed Temple East Lower Waterwheel Stalactite Chest",
-            "Lakebed Temple East Lower Waterwheel Bridge Chest",
-            "Lakebed Temple Before Deku Toad Alcove Chest",
-            "Lakebed Temple Before Deku Toad Underwater Left Chest",
-            "Lakebed Temple Before Deku Toad Underwater Right Chest",
-            "Lakebed Temple Deku Toad Chest"
+          {
+            "CheckName": "Lakebed Temple East Lower Waterwheel Stalactite Chest",
+            "Requirements": "CanLaunchBombs",
+            "GlitchedRequirements": "CanLaunchBombs or CanDoLJA"
+          },
+          {
+            "CheckName": "Lakebed Temple East Lower Waterwheel Bridge Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and (Lakebed_Temple_Small_Key, 3) and CanLaunchBombs",
+            "GlitchedRequirements": "CanDoLJA or ((Progressive_Clawshot, 1) and HasBombs) or (Room.Lakebed_Temple_East_Wing_Second_Floor and ((Progressive_Clawshot, 1) or CanLaunchBombs) and ((Shadow_Crystal or (HasBombs and HasSword)))) or (Room.Lakebed_Temple_West_Wing and CanLaunchBombs)"
+          },
+          {
+            "CheckName": "Lakebed Temple Before Deku Toad Alcove Chest",
+            // For Vanilla small keys we need to be able to place a small key in this
+            // chest. In this case, the logic requires that you have the ability to access
+            // the chest by beating Deku Toad since you could glitchlessly go spend your
+            // 2nd key on the door to the miniboss and not on making the platforms rotate
+            // (this is to prevent softlocks).
+
+            // If small keys are not Vanilla, then we do not want to place the
+            // 3rd small key in this chest. The reason is that the underwater chests
+            // before the Deku Toad logically require 3 keys, and if we put the 3rd small
+            // key here, then the player is logically expected to go through Deku Toad and
+            // pass the underwater chests in order to get the key from this chest in order
+            // to access the underwater chests which they just walked past. This can lead
+            // to nonsensical Path hints.
+            "Requirements": "((Setting.smallKeySettings equals Vanilla) and CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 2) and Zora_Armor and Iron_Boots and CanUseWaterBombs and (Progressive_Clawshot, 1)) or ((Lakebed_Temple_Small_Key,3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)))",
+            "GlitchedRequirements": "CanDoLJA or ((Lakebed_Temple_Small_Key, 2) and (CanLaunchBombs or (Progressive_Clawshot, 1)))"
+          },
+          {
+            "CheckName": "Lakebed Temple Before Deku Toad Underwater Left Chest",
+            "Requirements": "Zora_Armor and Iron_Boots and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
+            "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs)) and HasHeavyMod"
+          },
+          {
+            "CheckName": "Lakebed Temple Before Deku Toad Underwater Right Chest",
+            "Requirements": "Zora_Armor and Iron_Boots and (Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
+            "GlitchedRequirements": "((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs) and HasHeavyMod"
+          },
+          {
+            "CheckName": "Lakebed Temple Deku Toad Chest",
+            "Requirements": "CanDefeatDekuToad and (Lakebed_Temple_Small_Key, 3) and Zora_Armor and Iron_Boots and CanUseWaterBombs and (CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash))",
+            "GlitchedRequirements": "CanDefeatDekuToad and (((CanDoLJA and (CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 1)))) or ((CanSkipKeyToDekuToad or (Lakebed_Temple_Small_Key, 3)) and (Progressive_Clawshot, 1) and CanLaunchBombs)) and HasHeavyMod and (CanUseWaterBombs or Zora_Armor)"
+          }
         ], 
         "Region": "Lakebed Temple"
     },
@@ -94,10 +159,26 @@
         ],
         "Checks": 
         [
-            "Lakebed Temple East Second Floor Southwest Chest",
-            "Lakebed Temple East Second Floor Southeast Chest",
-            "Lakebed Temple East Water Supply Small Chest",
-            "Lakebed Temple East Water Supply Clawshot Chest"
+          {
+            "CheckName": "Lakebed Temple East Second Floor Southwest Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          },
+          {
+            "CheckName": "Lakebed Temple East Second Floor Southeast Chest",
+            "Requirements": "CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)",
+            "GlitchedRequirements": "CanLaunchBombs or ((Progressive_Clawshot, 1) and CanSmash)"
+          },
+          {
+            "CheckName": "Lakebed Temple East Water Supply Small Chest",
+            "Requirements": "(Lakebed_Temple_Small_Key, 3) and ((Progressive_Clawshot, 1) or CanLaunchBombs) and CanSmash and Iron_Boots",
+            "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (CanLaunchBombs or (Progressive_Clawshot and CanSmash))"
+          },
+          {
+            "CheckName": "Lakebed Temple East Water Supply Clawshot Chest",
+            "Requirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash and Iron_Boots",
+            "GlitchedRequirements": "(Lakebed_Temple_Small_Key, 3) and (Progressive_Clawshot, 1) and CanSmash"
+          } 
         ],
         "Region": "Lakebed Temple"
     },
@@ -118,9 +199,21 @@
         ],
         "Checks": 
         [
-            "Lakebed Temple Lobby Left Chest", 
-            "Lakebed Temple Lobby Rear Chest", 
-            "Lakebed Temple Stalactite Room Chest"
+          {
+            "CheckName": "Lakebed Temple Lobby Left Chest", 
+            "Requirements": "Zora_Armor",
+            "GlitchedRequirements": "Zora_Armor or CanDoAirRefill"
+          },
+          {
+            "CheckName": "Lakebed Temple Lobby Rear Chest", 
+            "Requirements": "Zora_Armor",
+            "GlitchedRequirements": "Zora_Armor or CanDoAirRefill"
+          },
+          {
+            "CheckName": "Lakebed Temple Stalactite Room Chest",
+            "Requirements": "CanLaunchBombs and Zora_Armor",
+            "GlitchedRequirements": "(CanLaunchBombs or CanDoLJA) and (Zora_Armor or CanDoAirRefill)"
+          }  
         ],
         "Region": "Lakebed Temple"
     },
@@ -136,15 +229,51 @@
         ],
         "Checks": 
         [
-            "Lakebed Temple West Lower Small Chest",
-            "Lakebed Temple West Second Floor Central Small Chest",
-            "Lakebed Temple Underwater Maze Small Chest",
-            "Lakebed Temple Big Key Chest",
-            "Lakebed Temple West Second Floor Southwest Underwater Chest",
-            "Lakebed Temple West Second Floor Northeast Chest",
-            "Lakebed Temple West Second Floor Southeast Chest",
-            "Lakebed Temple West Water Supply Small Chest",
-            "Lakebed Temple West Water Supply Chest"
+          {
+            "CheckName": "Lakebed Temple West Lower Small Chest",
+            "Requirements": "(Progressive_Clawshot, 1)",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoLJA"
+          },
+          {
+            "CheckName": "Lakebed Temple West Second Floor Central Small Chest",
+            "Requirements": "(Progressive_Clawshot, 1)",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+          },
+          {
+            "CheckName": "Lakebed Temple Underwater Maze Small Chest",
+            "Requirements": "Zora_Armor and (Progressive_Clawshot,1) and CanLaunchBombs",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and CanLaunchBombs"
+          },
+          {
+            "CheckName": "Lakebed Temple Big Key Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and CanUseWaterBombs and Zora_Armor and CanLaunchBombs and Iron_Boots",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and (Zora_Armor or CanDoLJA) and CanLaunchBombs"
+          },
+          {
+            "CheckName": "Lakebed Temple West Second Floor Southwest Underwater Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and Iron_Boots and CanLaunchBombs",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and Iron_Boots and CanLaunchBombs"
+          },
+          {
+            "CheckName": "Lakebed Temple West Second Floor Northeast Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+          },
+          {
+            "CheckName": "Lakebed Temple West Second Floor Southeast Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+          },
+          {
+            "CheckName": "Lakebed Temple West Water Supply Small Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and Iron_Boots",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+          },
+          {
+            "CheckName": "Lakebed Temple West Water Supply Chest",
+            "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and Iron_Boots",
+            "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
+          } 
         ],
         "Region": "Lakebed Temple"
     }

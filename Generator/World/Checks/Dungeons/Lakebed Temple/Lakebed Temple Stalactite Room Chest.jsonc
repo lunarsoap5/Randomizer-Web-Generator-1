@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanLaunchBombs and Zora_Armor",
-    "GlitchedRequirements": "(CanLaunchBombs or CanDoLJA) and (Zora_Armor or CanDoAirRefill)",
-    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
-    "itemId": "Water_Bombs_10"
-}

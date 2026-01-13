@@ -7,5 +7,7 @@
     "fileDirectoryType": [3],
     "replacementType": [2],
     "relReplacementType": [0],
+    "checkCategory": ["Dungeon", "Lakebed Temple", "Dungeon Reward"],
+    "itemId": "Progressive_Fused_Shadow",
     "dataCategory": ["REL", "ARC"]
 }

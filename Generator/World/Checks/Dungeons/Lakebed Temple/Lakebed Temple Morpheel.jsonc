@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatMorpheel",
-    "GlitchedRequirements": "CanDefeatMorpheel",
-    "checkCategory": ["Dungeon", "Lakebed Temple"],
-    "itemId": "Morpheel_Defeated"
-}

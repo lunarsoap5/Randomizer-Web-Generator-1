@@ -1,3 +1,5 @@
 {
+    "checkCategory": ["Dungeon", "Lakebed Temple"],
+    "itemId": "Morpheel_Defeated",
     "dataCategory": [""]
 }
