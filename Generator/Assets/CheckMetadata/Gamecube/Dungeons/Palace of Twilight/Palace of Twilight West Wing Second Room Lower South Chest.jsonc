@@ -4,5 +4,7 @@
     "roomIDX": 2,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "checkCategory": [ "Chest", "Dungeon", "Palace of Twilight", "Dungeon Items", "Compass" ],
+  "itemId": "Palace_of_Twilight_Compass",
   "dataCategory": [ "Chest", "ARC" ]
 }
