@@ -1,5 +1,7 @@
 {
     "stageIDX": [27],
     "flag": "72",
+    "checkCategory": ["Dungeon", "Poe", "Snowpeak Ruins"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

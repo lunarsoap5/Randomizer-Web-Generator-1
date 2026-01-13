@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatBlizzeta",
-    "GlitchedRequirements": "CanDefeatBlizzeta",
-    "checkCategory": ["Dungeon", "Snowpeak Ruins"],
-    "itemId": "Blizzeta_Defeated"
-}

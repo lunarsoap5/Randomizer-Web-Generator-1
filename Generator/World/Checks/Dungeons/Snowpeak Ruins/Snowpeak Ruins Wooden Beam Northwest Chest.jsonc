@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatIceKeese",
-    "GlitchedRequirements": "CanDefeatIceKeese",
-    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "Dungeon Items", "Compass"],
-    "itemId": "Snowpeak_Ruins_Compass"
-}

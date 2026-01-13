@@ -47,9 +47,21 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Blizzeta Heart Container",
-            "Snowpeak Ruins Blizzeta",
-            "Snowpeak Ruins Dungeon Reward"
+          {
+            "CheckName": "Snowpeak Ruins Blizzeta Heart Container",
+            "Requirements": "CanDefeatBlizzeta",
+            "GlitchedRequirements": "CanDefeatBlizzeta"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Blizzeta",
+            "Requirements": "CanDefeatBlizzeta",
+            "GlitchedRequirements": "CanDefeatBlizzeta"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Dungeon Reward",
+            "Requirements": "CanDefeatBlizzeta",
+            "GlitchedRequirements": "CanDefeatBlizzeta"
+          }
         ], 
         "Region": "Snowpeak Ruins"
     },
@@ -94,7 +106,11 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Broken Floor Chest"
+          {
+            "CheckName": "Snowpeak Ruins Broken Floor Chest",
+            "Requirements": "Ball_and_Chain",
+            "GlitchedRequirements": "Ball_and_Chain"
+          }
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -116,7 +132,11 @@
       ],
       "Checks": 
       [
-          "Snowpeak Ruins Broken Floor Chest"
+        {
+          "CheckName": "Snowpeak Ruins Broken Floor Chest",
+          "Requirements": "Ball_and_Chain",
+          "GlitchedRequirements": "Ball_and_Chain"
+        }
       ],
       "Region": "Snowpeak Ruins"
   },
@@ -137,7 +157,11 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Chapel Chest"
+          {
+            "CheckName": "Snowpeak Ruins Chapel Chest",
+            "Requirements": "CanDefeatChilfos",
+            "GlitchedRequirements": "CanDefeatChilfos"
+          }
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -153,8 +177,16 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Ball and Chain",
-            "Snowpeak Ruins Chest After Darkhammer"
+          {
+            "CheckName": "Snowpeak Ruins Ball and Chain",
+            "Requirements": "CanDefeatDarkhammer",
+            "GlitchedRequirements": "CanDefeatDarkhammer"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Chest After Darkhammer",
+            "Requirements": "CanDefeatDarkhammer and Ball_and_Chain",
+            "GlitchedRequirements": "CanDefeatDarkhammer and Ball_and_Chain"
+          } 
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -182,8 +214,16 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins East Courtyard Buried Chest",
-            "Snowpeak Ruins East Courtyard Chest"
+          {
+            "CheckName": "Snowpeak Ruins East Courtyard Buried Chest",
+            "Requirements": "Shadow_Crystal",
+            "GlitchedRequirements": "Shadow_Crystal"
+          },
+          {
+            "CheckName": "Snowpeak Ruins East Courtyard Chest",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          }
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -214,11 +254,32 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Lobby Chandelier Chest",
-            "Snowpeak Ruins Lobby West Armor Chest",
-            "Snowpeak Ruins Lobby East Armor Chest",
-            "Snowpeak Ruins Lobby Armor Poe",
-            "Snowpeak Ruins Lobby Poe"
+          {
+            "CheckName": "Snowpeak Ruins Lobby Chandelier Chest",
+            "Requirements": "(((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese)) and Ball_and_Chain and Shadow_Crystal",
+            // Vanilla, Break the ice from the lower level, or keese LJA
+            "GlitchedRequirements": "((((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese) or Progressive_Clawshot) and Ball_and_Chain) or (Shadow_Crystal and CanDoLJA)"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Lobby West Armor Chest",
+            "Requirements": "Ball_and_Chain",
+            "GlitchedRequirements": "Ball_and_Chain"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Lobby East Armor Chest",
+            "Requirements": "Ball_and_Chain",
+            "GlitchedRequirements": "Ball_and_Chain"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Lobby Armor Poe",
+            "Requirements": "Shadow_Crystal and Ball_and_Chain",
+            "GlitchedRequirements": "Shadow_Crystal and Ball_and_Chain"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Lobby Poe",
+            "Requirements": "Shadow_Crystal",
+            "GlitchedRequirements": "Shadow_Crystal"
+          }
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -245,7 +306,11 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Ordon Pumpkin Chest"
+          {
+            "CheckName": "Snowpeak Ruins Ordon Pumpkin Chest",
+            "Requirements": "CanDefeatChilfos",
+            "GlitchedRequirements": "CanDefeatChilfos"
+          }
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -266,7 +331,11 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Northeast Chandelier Chest"
+          {
+            "CheckName": "Snowpeak Ruins Northeast Chandelier Chest",
+            "Requirements": "CanDefeatChilfos and Ball_and_Chain",
+            "GlitchedRequirements": "CanDefeatChilfos and Ball_and_Chain"
+          }  
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -298,7 +367,11 @@
           ],
           "Checks": 
           [
-              "Snowpeak Ruins Ice Room Poe"
+            {
+              "CheckName": "Snowpeak Ruins Ice Room Poe",
+              "Requirements": "Shadow_Crystal",
+              "GlitchedRequirements": "Shadow_Crystal"
+            }
           ], 
           "Region": "Snowpeak Ruins"
     },
@@ -319,8 +392,16 @@
         ], 
         "Checks": 
         [
-            "Snowpeak Ruins West Cannon Room Central Chest",
-            "Snowpeak Ruins West Cannon Room Corner Chest"
+          {
+            "CheckName": "Snowpeak Ruins West Cannon Room Central Chest",
+            "Requirements": "Ball_and_Chain",
+            "GlitchedRequirements": "Ball_and_Chain"
+          },
+          {
+            "CheckName": "Snowpeak Ruins West Cannon Room Corner Chest",
+            "Requirements": "CanSmash",
+            "GlitchedRequirements": "CanSmash"
+          } 
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -360,8 +441,17 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins West Courtyard Buried Chest",
-            "Snowpeak Ruins Courtyard Central Chest"
+          {
+            "CheckName": "Snowpeak Ruins West Courtyard Buried Chest",
+            "Requirements": "Shadow_Crystal",
+            "GlitchedRequirements": "Shadow_Crystal"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Courtyard Central Chest",
+            //Don't require gate to be unlocked for cannonballs if we have Cheese since we can get to the otherside by going through Yeta's room.
+            "Requirements": "Ball_and_Chain or (HasBombs and (((Snowpeak_Ruins_Small_Key, 2) or Snowpeak_Ruins_Ordon_Goat_Cheese)))",
+            "GlitchedRequirements": "Ball_and_Chain or (HasBombs and ((Snowpeak_Ruins_Small_Key, 2)))"
+          } 
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -378,9 +468,21 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Wooden Beam Central Chest",
-            "Snowpeak Ruins Wooden Beam Northwest Chest",
-            "Snowpeak Ruins Wooden Beam Chandelier Chest"
+          {
+            "CheckName": "Snowpeak Ruins Wooden Beam Central Chest",
+            "Requirements": "CanDefeatIceKeese",
+            "GlitchedRequirements": "CanDefeatIceKeese"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Wooden Beam Northwest Chest",
+            "Requirements": "CanDefeatIceKeese",
+            "GlitchedRequirements": "CanDefeatIceKeese"
+          },
+          {
+            "CheckName": "Snowpeak Ruins Wooden Beam Chandelier Chest",
+            "Requirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and Ball_and_Chain",
+            "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and (Ball_and_Chain or CanDoLJA)"
+          }
         ],
         "Region": "Snowpeak Ruins"
     },
@@ -411,7 +513,11 @@
         ],
         "Checks": 
         [
-            "Snowpeak Ruins Mansion Map"
+          {
+            "CheckName": "Snowpeak Ruins Mansion Map",
+            "Requirements": "true",
+            "GlitchedRequirements": "true"
+          }
         ],
         "Region": "Snowpeak Ruins"
     } 

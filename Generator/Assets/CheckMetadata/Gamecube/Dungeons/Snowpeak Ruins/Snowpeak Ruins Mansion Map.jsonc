@@ -4,5 +4,7 @@
     "fileDirectoryType": [1, 1],
     "replacementType": [0, 3],
     "overrideInstruction": ["0", "00780046"],
+    "checkCategory": ["Npc", "Dungeon", "Snowpeak Ruins", "Dungeon Items", "Dungeon Map"],
+    "itemId": "Snowpeak_Ruins_Dungeon_Map",
     "dataCategory": ["ARC"]
 }
