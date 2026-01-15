@@ -33,14 +33,30 @@
     ],
     "Checks":
     [
-        "Coro Bottle",
-        "Coro Lantern",
-        "Coro Gate Key",
-        "South Faron Portal",
-        "Faron Woods Coro Boulder Rupee 1",
-        "Faron Woods Coro Boulder Rupee 2",
-        "Faron Woods Coro Boulder Rupee 3",
-        "Faron Woods Coro Boulder Rupee 4"
+      {
+        "CheckName": "Coro Bottle",
+      },
+      {
+        "CheckName": "Coro Lantern",
+      },
+      {
+        "CheckName": "Coro Gate Key",
+      },
+      {
+        "CheckName": "South Faron Portal",
+      },
+      {
+        "CheckName": "Faron Woods Coro Boulder Rupee 1",
+      },
+      {
+        "CheckName": "Faron Woods Coro Boulder Rupee 2",
+      },
+      {
+        "CheckName": "Faron Woods Coro Boulder Rupee 3",
+      },
+      {
+        "CheckName": "Faron Woods Coro Boulder Rupee 4",
+      } 
     ],
     "Region": "Faron Woods"
   },
@@ -97,7 +113,9 @@
     ],
     "Checks":
     [
-        "Faron Woods Owl Statue Sky Character"
+      {
+        "CheckName": "Faron Woods Owl Statue Sky Character",
+      }  
     ],
     "Region": "Faron Woods"
   },
@@ -190,7 +208,9 @@
     ],
     "Checks":
     [
-        "South Faron Cave Chest"
+      {
+        "CheckName": "South Faron Cave Chest",
+      }
     ],
     "Region": "Faron Woods"
   },
@@ -244,9 +264,15 @@
     ],
     "Checks":
     [
-        "Faron Mist Stump Chest",
-        "Faron Mist North Chest",
-        "Faron Mist South Chest"
+      {
+        "CheckName": "Faron Mist Stump Chest",
+      },
+      {
+        "CheckName": "Faron Mist North Chest",
+      },
+      {
+        "CheckName": "Faron Mist South Chest",
+      } 
     ],
     "Region": "Faron Woods"
   },
@@ -285,7 +311,9 @@
     ],
     "Checks":
     [
-        "Faron Woods Owl Statue Chest"
+      {
+        "CheckName": "Faron Woods Owl Statue Chest",
+      }
     ],
     "Region": "Faron Woods"
   },
@@ -306,7 +334,9 @@
     ],
     "Checks":
     [
-        "Faron Mist Poe"
+      {
+        "CheckName": "Faron Mist Poe",
+      }
     ],
     "Region": "Faron Woods"
   },
@@ -399,8 +429,12 @@
     ],
     "Checks":
     [
-        "Faron Mist Cave Open Chest",
-        "Faron Mist Cave Lantern Chest"
+      {
+        "CheckName": "Faron Mist Cave Open Chest",
+      },
+      {
+        "CheckName": "Faron Mist Cave Lantern Chest",
+      }
     ],
     "Region": "Faron Woods"
   },
@@ -424,10 +458,17 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [
-        "North Faron Woods Deku Baba Chest",
-        "Faron Woods Golden Wolf", 
-        "North Faron Portal"
+    "Checks": 
+    [
+      {
+        "CheckName": "North Faron Woods Deku Baba Chest",
+      },
+      {
+        "CheckName": "Faron Woods Golden Wolf", 
+      },
+      {
+        "CheckName": "North Faron Portal",
+      }
     ],
     "Region": "Faron Woods"
   },
