@@ -1,6 +1,0 @@
-{
-    "Requirements": "Iron_Boots",
-    "GlitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Chest", "Eldin Stockcave"],
-    "itemId": "Red_Rupee"
-}

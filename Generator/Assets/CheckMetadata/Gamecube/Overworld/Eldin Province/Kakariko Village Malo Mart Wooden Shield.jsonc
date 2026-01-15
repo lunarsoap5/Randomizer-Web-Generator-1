@@ -4,5 +4,7 @@
     "fileDirectoryType": [1],
     "replacementType": [0],
     "flag": "6",
+    "checkCategory": ["Overworld", "Kakariko Village", "Shop"],
+    "itemId": "Wooden_Shield",
     "dataCategory": ["ARC", "Shop"]
 }

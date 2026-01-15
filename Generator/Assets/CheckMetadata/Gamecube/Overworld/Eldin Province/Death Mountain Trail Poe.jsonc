@@ -1,5 +1,7 @@
 {
     "stageIDX": [47],
     "flag": "59",
+    "checkCategory": ["Overworld", "Poe", "Death Mountain"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

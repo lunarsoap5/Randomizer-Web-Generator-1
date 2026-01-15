@@ -1,4 +1,6 @@
 {
   "stageIDX": [ 56 ],
+  "checkCategory": ["Overworld", "Npc", "Hyrule Field - Eldin Province", "Boss"],
+  "itemId": "Piece_of_Heart",
   "dataCategory": [ "Boss" ]
 }

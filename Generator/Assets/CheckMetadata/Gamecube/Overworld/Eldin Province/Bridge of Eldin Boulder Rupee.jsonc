@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": [ "Overworld", "Hyrule Field - Eldin", "Rupee - Hidden" ],
+    "itemId": "Red_Rupee",
     "dataCategory": ["ARC"]
 }

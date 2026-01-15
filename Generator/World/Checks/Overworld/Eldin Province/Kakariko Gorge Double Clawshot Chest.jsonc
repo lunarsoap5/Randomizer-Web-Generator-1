@@ -1,6 +1,0 @@
-{
-    "Requirements": "(Progressive_Clawshot, 2)",
-    "GlitchedRequirements": "(Progressive_Clawshot, 2) or CanDoLJA or Shadow_Crystal",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province"],
-    "itemId": "Piece_of_Heart"
-}

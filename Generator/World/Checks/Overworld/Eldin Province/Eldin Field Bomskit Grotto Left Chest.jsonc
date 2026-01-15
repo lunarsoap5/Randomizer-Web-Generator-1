@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatBomskit",
-    "GlitchedRequirements": "CanDefeatBomskit",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province", "DZX"],
-    "itemId": "Purple_Rupee"
-}

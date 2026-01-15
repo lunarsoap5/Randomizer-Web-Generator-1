@@ -81,15 +81,52 @@
     ],
     "Checks":
     [
-        "Eldin Spring Underwater Chest",
-        "Kakariko Village Bomb Rock Spire Heart Piece",
-        "Kakariko Village Portal",
-        "Kakariko Village Bell Rupee",
-        "Eldin Spring Underwater Boulder Rupee",
-        "Kakariko Village Spring Shortcut Box Rupee 1",
-        "Kakariko Village Spring Shortcut Box Rupee 2",
-        "Kakariko Village Ant House Ledge Box Rupee",
-        "Kakariko Village Hot Spring Ledge Box Rupee"
+      {
+        "CheckName": "Eldin Spring Underwater Chest",
+        "Requirements": "CanSmash and Iron_Boots",
+        "GlitchedRequirements": "HasHeavyMod and (CanSmash or CanDoMapGlitch)"
+      },
+      {
+        "CheckName": "Kakariko Village Bomb Rock Spire Heart Piece",
+        "Requirements": "HasBombs and Boomerang and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(CanDoMapGlitch or (CanLaunchBombs and (Boomerang or (Progressive_Clawshot, 1)))) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Village Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Kakariko Village Bell Rupee",
+        "Requirements": "Shadow_Crystal and CanLaunchBombs and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanLaunchBombs and (Shadow_Crystal or Boomerang) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Eldin Spring Underwater Boulder Rupee",
+        "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Village Spring Shortcut Box Rupee 1",
+        "Requirements": "CanSmash and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(CanSmash or Shadow_Crystal) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Village Spring Shortcut Box Rupee 2",
+        "Requirements": "CanSmash and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(CanSmash or Shadow_Crystal) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Village Ant House Ledge Box Rupee",
+        "Requirements": "Boomerang and CanCompleteEldinTwilight",
+        // Either use Boomerang or use Epona OoB
+        "GlitchedRequirements": "(Boomerang or Shadow_Crystal) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Village Hot Spring Ledge Box Rupee",
+        "Requirements": "(Shadow_Crystal or Boomerang) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Boomerang or Shadow_Crystal) and CanCompleteEldinTwilight"
+      }
     ],
     "Region": "Kakariko Village"
   },
@@ -125,9 +162,21 @@
     ],
     "Checks":
     [
-        "Kakariko Village Bomb Shop Poe",
-        "Kakariko Village Watchtower Poe",
-        "Kakariko Watchtower Alcove Chest"
+      {
+        "CheckName": "Kakariko Village Bomb Shop Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Village Watchtower Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Watchtower Alcove Chest",
+        "Requirements": "CanSmash and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(CanSmash and CanCompleteEldinTwilight) or Shadow_Crystal"
+      }  
     ],
     "Region": "Kakariko Village"
   },
@@ -148,7 +197,11 @@
     ],
     "Checks":
     [
-        "Talo Sharpshooting"
+      {
+        "CheckName": "Talo Sharpshooting",
+        "Requirements": "CanCompleteGoronMines and (Progressive_Bow, 1) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteGoronMines and (Progressive_Bow, 1) and CanCompleteEldinTwilight"
+      }  
     ],
     "Region": "Kakariko Village"
   },
@@ -274,8 +327,16 @@
     ],
     "Checks":
     [
-        "Renados Letter",
-        "Ilia Memory Reward"
+      {
+        "CheckName": "Renados Letter",
+        "Requirements": "(CanCompleteTempleofTime or (Setting.iliaQuest not_equal Vanilla)) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(CanCompleteTempleofTime or (Setting.iliaQuest not_equal Vanilla)) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Ilia Memory Reward",
+        "Requirements": "Ilias_Charm",
+        "GlitchedRequirements": "Ilias_Charm"
+      }
     ],
     "Region": "Kakariko Village"
   },
@@ -291,7 +352,11 @@
     ],
     "Checks":
     [
-        "Shad Dominion Rod"
+      {
+        "CheckName": "Shad Dominion Rod",
+        "Requirements": "Progressive_Sky_Book and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Progressive_Sky_Book and CanCompleteEldinTwilight"
+      }  
     ],
     "Region": "Kakariko Village"
 },
@@ -307,10 +372,26 @@
     ],
     "Checks":
     [
-        "Kakariko Village Malo Mart Hylian Shield",
-        "Kakariko Village Malo Mart Hawkeye",
-        "Kakariko Village Malo Mart Red Potion",
-        "Kakariko Village Malo Mart Wooden Shield"
+      {
+        "CheckName": "Kakariko Village Malo Mart Hylian Shield",
+        "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+      },
+      {
+        "CheckName": "Kakariko Village Malo Mart Hawkeye",
+        "Requirements": "CanCompleteGoronMines and Room.Kakariko_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteGoronMines and Room.Kakariko_Top_of_Watchtower and (Progressive_Bow, 1) and CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+      },
+      {
+        "CheckName": "Kakariko Village Malo Mart Red Potion",
+        "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+      },
+      {
+        "CheckName": "Kakariko Village Malo Mart Wooden Shield",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      } 
     ],
     "Region": "Kakariko Village"
   },
@@ -367,7 +448,11 @@
     ],
     "Checks":
     [
-        "Kakariko Inn Chest"
+      {
+        "CheckName": "Kakariko Inn Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      } 
     ],
     "Region": "Kakariko Village"
   },
@@ -424,7 +509,11 @@
     ],
     "Checks":
     [
-        "Kakariko Village Female Ant"
+      {
+        "CheckName": "Kakariko Village Female Ant",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      } 
     ],
     "Region": "Kakariko Village"
   },
@@ -444,8 +533,12 @@
       }
     ],
     "Checks":
-	[
-        "Barnes Bomb Bag"
+	  [
+      {
+        "CheckName": "Barnes Bomb Bag",
+        "Requirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+      }
     ],
     "Region": "Kakariko Village"
   },
@@ -543,7 +636,11 @@
     ],
     "Checks":
     [    
-        "Kakariko Watchtower Chest"
+      {
+        "CheckName": "Kakariko Watchtower Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
     "Region": "Kakariko Village"
   },
@@ -564,14 +661,46 @@
     ],
     "Checks":
     [ 
-        "Kakariko Graveyard Lantern Chest",
-        "Gift From Ralis",
-        "Rutelas Blessing",
-        "Kakariko Graveyard Male Ant",
-        "Kakariko Graveyard Grave Poe",
-        "Kakariko Graveyard Open Poe",
-        "Kakariko Graveyard Golden Wolf",
-        "Kakariko Graveyard Underwater Boulder Rupee"
+      {
+        "CheckName": "Kakariko Graveyard Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      },
+      {
+        "CheckName": "Gift From Ralis",
+        "Requirements": "Asheis_Sketch and Gate_Keys and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Asheis_Sketch and Gate_Keys and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Rutelas Blessing",
+        "Requirements": "Gate_Keys and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Gate_Keys and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Graveyard Male Ant",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Graveyard Grave Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Graveyard Open Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Graveyard Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.Snowpeak_Climb_Upper",
+        "GlitchedRequirements": "Shadow_Crystal and Room.Snowpeak_Climb_Upper"
+      },
+      {
+        "CheckName": "Kakariko Graveyard Underwater Boulder Rupee",
+        "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs",
+        "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs"
+      } 
     ],
     "Region": "Kakariko Village"
   }

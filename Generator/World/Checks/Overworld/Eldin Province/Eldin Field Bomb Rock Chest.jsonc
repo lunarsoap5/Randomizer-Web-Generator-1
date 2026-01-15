@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanSmash",
-    "GlitchedRequirements": "CanSmash or (CanDoMapGlitch and CanCompleteEldinTwilight) or (CanDoEBMoonBoots and CanDoLJA and CanCompleteEldinTwilight)",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province"],
-    "itemId": "Piece_of_Heart"
-}

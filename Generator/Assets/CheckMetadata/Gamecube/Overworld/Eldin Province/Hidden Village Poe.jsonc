@@ -1,5 +1,7 @@
 {
     "stageIDX": [63],
     "flag": "40",
+    "checkCategory": ["Overworld", "Poe", "Hidden Village"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

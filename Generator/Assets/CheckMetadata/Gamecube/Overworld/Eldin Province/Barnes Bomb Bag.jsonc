@@ -3,5 +3,7 @@
     "stageIDX": [68],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Npc - Shop", "Kakariko Village"],
+    "itemId": "Filled_Bomb_Bag",
     "dataCategory": ["ARC"]
 }

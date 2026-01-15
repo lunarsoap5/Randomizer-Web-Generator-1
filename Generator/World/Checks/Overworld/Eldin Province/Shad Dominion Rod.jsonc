@@ -1,6 +1,0 @@
-{
-    "Requirements": "Progressive_Sky_Book and CanCompleteEldinTwilight",
-    "GlitchedRequirements": "Progressive_Sky_Book and CanCompleteEldinTwilight",
-    "checkCategory": [ "Overworld", "Npc", "Kakariko Village"],
-    "itemId": "Progressive_Dominion_Rod"
-  }

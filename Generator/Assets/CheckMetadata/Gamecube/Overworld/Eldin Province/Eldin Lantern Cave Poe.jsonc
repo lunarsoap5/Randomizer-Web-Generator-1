@@ -1,5 +1,7 @@
 {
     "stageIDX": [32],
     "flag": "60",
+    "checkCategory": ["Overworld", "Poe", "Eldin Lantern Cave"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

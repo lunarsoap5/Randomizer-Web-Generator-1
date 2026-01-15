@@ -5,5 +5,7 @@
     "stageIDX": [44],
     "roomIDX": 1,
     "flag": "84",
+    "checkCategory": ["Overworld", "Quest", "Kakariko Village"],
+    "itemId": "Horse_Call",
     "dataCategory": ["Event", "ARC"]
 }

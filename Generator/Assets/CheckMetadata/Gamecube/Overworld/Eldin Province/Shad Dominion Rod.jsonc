@@ -4,5 +4,7 @@
     "replacementType": [0, 5],
     "stageIDX": [75, 75],
     "roomIDX": 7,
+    "checkCategory": [ "Overworld", "Npc", "Kakariko Village"],
+    "itemId": "Progressive_Dominion_Rod",
     "dataCategory": ["ARC"]
 }

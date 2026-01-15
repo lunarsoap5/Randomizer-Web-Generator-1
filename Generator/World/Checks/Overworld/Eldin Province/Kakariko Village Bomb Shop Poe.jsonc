@@ -1,6 +1,0 @@
-{
-    "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
-    "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight",
-    "checkCategory": ["Overworld", "Poe", "Kakariko Village"],
-    "itemId": "Poe_Soul"
-}

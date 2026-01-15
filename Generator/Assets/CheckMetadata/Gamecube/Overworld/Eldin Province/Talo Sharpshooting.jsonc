@@ -3,5 +3,7 @@
     "stageIDX": [46,46],
     "fileDirectoryType": [1,1],
     "replacementType": [0,0],
+    "checkCategory": ["Overworld", "Npc", "Kakariko Village", "ARC"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["ARC"]
 }

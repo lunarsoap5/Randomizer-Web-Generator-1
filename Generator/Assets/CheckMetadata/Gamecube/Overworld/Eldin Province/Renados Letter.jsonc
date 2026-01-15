@@ -3,5 +3,7 @@
     "stageIDX": [68],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Quest", "Kakariko Village"],
+    "itemId": "Renados_Letter",
     "dataCategory": ["ARC"]
 }

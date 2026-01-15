@@ -4,5 +4,7 @@
     "fileDirectoryType": [1],
     "replacementType": [0],
     "flag": "12",
+    "checkCategory": ["Overworld", "Kakariko Village", "ARC", "Shop"],
+    "itemId": "Hawkeye",
     "dataCategory": ["ARC", "Shop"]
 }

@@ -3,5 +3,7 @@
     "stageIDX": [63],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Quest", "Hidden Village"],
+    "itemId": "Ilias_Charm",
     "dataCategory": ["ARC"]
 }

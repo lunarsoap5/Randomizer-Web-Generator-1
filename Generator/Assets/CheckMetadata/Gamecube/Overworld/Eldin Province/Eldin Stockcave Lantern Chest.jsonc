@@ -4,5 +4,7 @@
     "roomIDX": 10,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Chest", "Eldin Stockcave"],
+    "itemId": "Orange_Rupee",
     "dataCategory": ["Chest", "ARC"]
 }

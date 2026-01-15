@@ -1,6 +1,0 @@
-{
-    "Requirements": "(Iron_Boots or Zora_Armor) and CanUseWaterBombs",
-    "GlitchedRequirements": "(Iron_Boots or Magic_Armor or Zora_Armor) and CanUseWaterBombs",
-    "checkCategory": [ "Overworld", "Kakariko Graveyard", "Rupee - Hidden" ],
-    "itemId": "Red_Rupee"
-  }

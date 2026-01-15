@@ -4,5 +4,7 @@
     "roomIDX": 3,
     "fileDirectoryType": [0,0],
     "replacementType": [0,0],
+    "checkCategory": [ "Overworld", "Death Mountain", "Rupee - Freestanding" ],
+    "itemId": "Yellow_Rupee",
     "dataCategory": ["ARC"]
 }

@@ -1,6 +1,0 @@
-{
-    "Requirements": "Ilias_Charm",
-    "GlitchedRequirements": "Ilias_Charm",
-    "checkCategory": ["Overworld", "Quest", "Kakariko Village"],
-    "itemId": "Horse_Call"
-}

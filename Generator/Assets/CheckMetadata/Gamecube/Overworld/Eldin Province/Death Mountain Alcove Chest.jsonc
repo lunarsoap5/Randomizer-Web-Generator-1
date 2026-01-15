@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Chest", "Death Mountain"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["Chest", "ARC"]
 }

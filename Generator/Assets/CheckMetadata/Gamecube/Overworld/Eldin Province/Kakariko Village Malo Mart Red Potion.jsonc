@@ -4,5 +4,7 @@
     "fileDirectoryType": [1],
     "replacementType": [0],
     "flag": "2",
+    "checkCategory": ["Overworld", "Kakariko Village", "Shop"],
+    "itemId": "Red_Potion_Shop",
     "dataCategory": ["ARC", "Shop"]
 }

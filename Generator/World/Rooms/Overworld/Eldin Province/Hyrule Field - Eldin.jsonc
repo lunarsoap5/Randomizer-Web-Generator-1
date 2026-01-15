@@ -29,16 +29,56 @@
       }
     ],
     "Checks": [
-      "Kakariko Gorge Owl Statue Chest",
-      "Kakariko Gorge Double Clawshot Chest",
-      "Kakariko Gorge Spire Heart Piece",
-      "Kakariko Gorge Owl Statue Sky Character",
-      "Kakariko Gorge Male Pill Bug",
-      "Kakariko Gorge Female Pill Bug",
-      "Kakariko Gorge Poe",
-      "Kakariko Gorge Portal",
-      "Kakariko Gorge Owl Statue Boulder Rupee",
-      "Kakariko Gorge Spire Boulder Rupee"
+      {
+        "CheckName": "Kakariko Gorge Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA or CanDoStorage or CanDoEBMoonBoots"
+      },
+      {
+        "CheckName": "Kakariko Gorge Double Clawshot Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2) or CanDoLJA or Shadow_Crystal"
+      },
+      {
+        "CheckName": "Kakariko Gorge Spire Heart Piece",
+        "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
+      },
+      {
+        "CheckName": "Kakariko Gorge Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
+      },
+      {
+        "CheckName": "Kakariko Gorge Male Pill Bug",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Gorge Female Pill Bug",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kakariko Gorge Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      },
+      {
+        "CheckName": "Kakariko Gorge Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Kakariko Gorge Owl Statue Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Kakariko Gorge Spire Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
     ],
     "Region": "Hyrule Field - Eldin Province"
   },
@@ -86,10 +126,26 @@
       }
     ],
     "Checks": [
-      "Eldin Lantern Cave First Chest",
-      "Eldin Lantern Cave Lantern Chest",
-      "Eldin Lantern Cave Second Chest",
-      "Eldin Lantern Cave Poe"
+      {
+        "CheckName": "Eldin Lantern Cave First Chest",
+        "Requirements": "CanBurnWebs",
+        "GlitchedRequirements": "CanBurnWebs"
+      },
+      {
+        "CheckName": "Eldin Lantern Cave Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      },
+      {
+        "CheckName": "Eldin Lantern Cave Second Chest",
+        "Requirements": "CanBurnWebs",
+        "GlitchedRequirements": "CanBurnWebs"
+      },
+      {
+        "CheckName": "Eldin Lantern Cave Poe",
+        "Requirements": "Shadow_Crystal and CanBurnWebs",
+        "GlitchedRequirements": "Shadow_Crystal and CanBurnWebs"
+      } 
     ],
     "Region": "Hyrule Field - Eldin Province"
   },
@@ -152,15 +208,51 @@
       }
     ],
     "Checks": [
-      "Eldin Field Bomb Rock Chest",
-      "Bridge of Eldin Owl Statue Chest",
-      "Bridge of Eldin Owl Statue Sky Character",
-      "Eldin Field Male Grasshopper",
-      "Eldin Field Female Grasshopper",
-      "Bridge of Eldin Male Phasmid",
-      "Bridge of Eldin Female Phasmid",
-      "Bridge of Eldin Portal",
-      "Bridge of Eldin Boulder Rupee"
+      {
+        "CheckName": "Eldin Field Bomb Rock Chest",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash or (CanDoMapGlitch and CanCompleteEldinTwilight) or (CanDoEBMoonBoots and CanDoLJA and CanCompleteEldinTwilight)"
+      },
+      {
+        "CheckName": "Bridge of Eldin Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA or Shadow_Crystal"
+      },
+      {
+        "CheckName": "Bridge of Eldin Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
+      },
+      {
+        "CheckName": "Eldin Field Male Grasshopper",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Eldin Field Female Grasshopper",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Bridge of Eldin Male Phasmid",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Bridge of Eldin Female Phasmid",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Bridge of Eldin Portal",
+        "Requirements": "CanDefeatShadowBeast",
+        "GlitchedRequirements": "CanDefeatShadowBeast"
+      },
+      {
+        "CheckName": "Bridge of Eldin Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
     ],
     "Region": "Hyrule Field - Eldin Province"
   },
@@ -178,7 +270,20 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Goron Springwater Rush"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Goron Springwater Rush",
+        // Note: this check is in the "Eldin Field Near Castle Town" room which takes
+        // care of a lot of the logic. The important thing is that paying the initial
+        // donation is not a way to logically gain access to Lanayru. Therefore we
+        // require that they already have access to the Lanayru side of the bridge to
+        // avoid a confusing scenario where the player is expected to build the bridge
+        // to do this check but then crossing the bridge would be going out of logic.
+        "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kakariko_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kakariko_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))"
+      }
+    ],
     "Region": "Hyrule Field - Eldin Province"
   },
   {
@@ -292,7 +397,14 @@
         "GlitchedRequirements": "Iron_Boots or Shadow_Crystal"
       }
     ],
-    "Checks": ["Eldin Stockcave Upper Chest"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Eldin Stockcave Upper Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "true"
+      }
+    ],
     "Region": "Hyrule Field - Eldin Province"
   },
   {
@@ -304,7 +416,19 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Eldin Stockcave Lantern Chest", "Eldin Stockcave Lowest Chest"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Eldin Stockcave Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      },
+      {
+        "CheckName": "Eldin Stockcave Lowest Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
     "Region": "Hyrule Field - Eldin Province"
   },
   {
@@ -317,8 +441,16 @@
       }
     ],
     "Checks": [
-      "Eldin Field Bomskit Grotto Left Chest",
-      "Eldin Field Bomskit Grotto Lantern Chest"
+      {
+        "CheckName": "Eldin Field Bomskit Grotto Left Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Eldin Field Bomskit Grotto Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
     ],
     "Region": "Hyrule Field - Eldin Province"
   },
@@ -331,7 +463,13 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Eldin Field Water Bomb Fish Grotto Chest"],
+    "Checks": [
+      {
+        "CheckName": "Eldin Field Water Bomb Fish Grotto Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
     "Region": "Hyrule Field - Eldin Province"
   },
   {
@@ -344,9 +482,21 @@
       }
     ],
     "Checks": [
-      "Eldin Field Stalfos Grotto Right Small Chest",
-      "Eldin Field Stalfos Grotto Left Small Chest",
-      "Eldin Field Stalfos Grotto Stalfos Chest"
+      {
+        "CheckName": "Eldin Field Stalfos Grotto Right Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Eldin Field Stalfos Grotto Left Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Eldin Field Stalfos Grotto Stalfos Chest",
+        "Requirements": "CanDefeatStalfos",
+        "GlitchedRequirements": "CanDefeatStalfos"
+      }
     ],
     "Region": "Hyrule Field - Eldin Province"
   }
