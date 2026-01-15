@@ -1,6 +1,0 @@
-{
-  "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
-  "GlitchedRequirements": "((Lantern and (CanCompleteFaronTwilight or Shadow_Crystal)) or CanDoMapGlitch) and CanCompletePrologue",
-  "checkCategory": [ "Overworld", "Chest", "Faron Woods", "DZX" ],
-  "itemId": "Yellow_Rupee"
-}

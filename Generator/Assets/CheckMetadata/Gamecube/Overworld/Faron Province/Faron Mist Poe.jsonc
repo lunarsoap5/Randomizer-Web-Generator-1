@@ -1,5 +1,7 @@
 {
   "stageIDX": [ 45 ],
   "flag": "5D",
+  "checkCategory": [ "Overworld", "Poe", "Faron Woods" ],
+  "itemId": "Poe_Soul",
   "dataCategory": [ "Poe" ]
 }

@@ -1,6 +1,0 @@
-{
-  "Requirements": "((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-  "GlitchedRequirements": "((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
-  "checkCategory": [ "Overworld", "Shop", "Faron Woods" ],
-  "itemId": "Coro_Bottle"
-}

@@ -4,5 +4,7 @@
     "roomIDX": 2,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Chest", "Sacred Grove"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["Chest", "ARC"]
 }

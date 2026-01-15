@@ -3,5 +3,7 @@
     "stageIDX": [45],
     "fileDirectoryType": [ 1 ],
     "replacementType": [ 0 ],
+    "checkCategory": [ "Overworld", "Npc", "Faron Woods" ],
+    "itemId": "Faron_Woods_Coro_Key",
     "dataCategory": [ "ARC" ]
   }

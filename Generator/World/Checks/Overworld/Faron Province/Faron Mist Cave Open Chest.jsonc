@@ -1,6 +1,0 @@
-{
-    "Requirements": "true",
-    "GlitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Chest", "Faron Woods", "Small Key"],
-    "itemId": "North_Faron_Woods_Gate_Key"
-}

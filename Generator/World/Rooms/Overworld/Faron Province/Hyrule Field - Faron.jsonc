@@ -36,11 +36,31 @@
     ],
     "Checks":
     [
-        "Faron Field Bridge Chest",
-        "Faron Field Tree Heart Piece",
-        "Faron Field Male Beetle",
-        "Faron Field Female Beetle",
-        "Faron Field Poe"
+      {
+        "CheckName": "Faron Field Bridge Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoStorage"
+      },
+      {
+        "CheckName": "Faron Field Tree Heart Piece",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or Ball_and_Chain"
+      },
+      {
+        "CheckName": "Faron Field Male Beetle",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Female Beetle",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or CanDoStorage"
+      },
+      {
+        "CheckName": "Faron Field Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      }
     ],
     "Region": "Hyrule Field - Faron Province"
   },
@@ -75,9 +95,21 @@
     ],
     "Checks":
     [
-        "Faron Field Corner Grotto Right Chest",
-        "Faron Field Corner Grotto Left Chest",
-        "Faron Field Corner Grotto Rear Chest"
+      {
+        "CheckName": "Faron Field Corner Grotto Right Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Corner Grotto Left Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Corner Grotto Rear Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
     "Region": "Hyrule Field - Faron Province"
   },

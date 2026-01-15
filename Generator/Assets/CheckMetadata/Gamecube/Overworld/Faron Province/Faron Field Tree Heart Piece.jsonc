@@ -4,5 +4,7 @@
     "roomIDX": 6,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Faron Province"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["ARC"]
 }

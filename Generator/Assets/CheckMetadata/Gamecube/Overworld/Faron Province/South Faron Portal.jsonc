@@ -1,3 +1,5 @@
 {
+    "checkCategory": ["Overworld", "Faron Woods"],
+    "itemId": "South_Faron_Portal",
     "dataCategory": [""]
 }

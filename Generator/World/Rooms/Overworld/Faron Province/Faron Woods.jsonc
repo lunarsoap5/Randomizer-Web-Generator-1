@@ -35,27 +35,43 @@
     [
       {
         "CheckName": "Coro Bottle",
+        "Requirements": "((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
       },
       {
         "CheckName": "Coro Lantern",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "Coro Gate Key",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "South Faron Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "Faron Woods Coro Boulder Rupee 1",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Faron Woods Coro Boulder Rupee 2",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Faron Woods Coro Boulder Rupee 3",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "CheckName": "Faron Woods Coro Boulder Rupee 4",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       } 
     ],
     "Region": "Faron Woods"
@@ -115,6 +131,8 @@
     [
       {
         "CheckName": "Faron Woods Owl Statue Sky Character",
+        "Requirements": "CanClearForest and (Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) and (CanDoMapGlitch or (CanSmash and CanClearForest))"
       }  
     ],
     "Region": "Faron Woods"
@@ -210,6 +228,8 @@
     [
       {
         "CheckName": "South Faron Cave Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Faron Woods"
@@ -266,12 +286,18 @@
     [
       {
         "CheckName": "Faron Mist Stump Chest",
+        "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
+        "GlitchedRequirements": "((Lantern and CanCompleteFaronTwilight) or Shadow_Crystal) and CanCompletePrologue"
       },
       {
         "CheckName": "Faron Mist North Chest",
+        "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
+        "GlitchedRequirements": "((Lantern and (CanCompleteFaronTwilight or Shadow_Crystal)) or CanDoMapGlitch) and CanCompletePrologue"
       },
       {
         "CheckName": "Faron Mist South Chest",
+        "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
+        "GlitchedRequirements": "((Lantern and (CanCompleteFaronTwilight or Shadow_Crystal)) or CanDoMapGlitch) and CanCompletePrologue"
       } 
     ],
     "Region": "Faron Woods"
@@ -313,6 +339,8 @@
     [
       {
         "CheckName": "Faron Woods Owl Statue Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Faron Woods"
@@ -336,6 +364,8 @@
     [
       {
         "CheckName": "Faron Mist Poe",
+        "Requirements": "Shadow_Crystal and CanCompletePrologue and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteFaronTwilight"
       }
     ],
     "Region": "Faron Woods"
@@ -431,9 +461,13 @@
     [
       {
         "CheckName": "Faron Mist Cave Open Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "Faron Mist Cave Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
       }
     ],
     "Region": "Faron Woods"
@@ -462,12 +496,18 @@
     [
       {
         "CheckName": "North Faron Woods Deku Baba Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "Faron Woods Golden Wolf", 
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       },
       {
         "CheckName": "North Faron Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Faron Woods"

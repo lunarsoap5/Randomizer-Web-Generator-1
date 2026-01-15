@@ -1,3 +1,5 @@
 {
+    "checkCategory": ["Overworld", "Sacred Grove"],
+    "itemId": "Sacred_Grove_Portal",
     "dataCategory": [""]
 }

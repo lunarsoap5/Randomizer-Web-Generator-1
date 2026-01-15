@@ -2,5 +2,7 @@
     "stageIDX": [54],
     "roomIDX": 1,
     "flag": "29",
+    "checkCategory": ["Overworld", "Sacred Grove"],
+    "itemId": "Master_Sword",
     "dataCategory": ["Event"]
 }

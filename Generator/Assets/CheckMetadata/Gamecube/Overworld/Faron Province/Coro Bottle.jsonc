@@ -3,5 +3,7 @@
   "stageIDX": [45, 45],
   "fileDirectoryType": [ 1, 1 ],
   "replacementType": [ 0, 0 ],
+  "checkCategory": [ "Overworld", "Shop", "Faron Woods" ],
+  "itemId": "Coro_Bottle",
   "dataCategory": [ "ARC" ]
 }
