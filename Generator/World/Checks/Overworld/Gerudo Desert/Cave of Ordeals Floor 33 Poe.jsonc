@@ -1,6 +1,0 @@
-{
-    "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 2) and CanDefeatBeamos and CanDefeatKeese and CanDefeatDodongo and CanDefeatBubble and CanDefeatRedeadKnight",
-    "GlitchedRequirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 2) and CanDefeatBeamos and CanDefeatKeese and CanDefeatDodongo and CanDefeatBubble and CanDefeatRedeadKnight",
-    "checkCategory": ["Overworld", "Poe", "Cave of Ordeals"],
-    "itemId": "Poe_Soul"
-}

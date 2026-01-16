@@ -1,5 +1,7 @@
 {
     "stageIDX": [59],
     "flag": "5C",
+    "checkCategory": ["Overworld", "Poe", "Gerudo Desert"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

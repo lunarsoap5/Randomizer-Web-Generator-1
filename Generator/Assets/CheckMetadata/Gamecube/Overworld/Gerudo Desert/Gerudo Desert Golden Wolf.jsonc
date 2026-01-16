@@ -2,5 +2,7 @@
     "stageIDX": [59],
     "roomIDX": 0,
     "flag": "9E",
+    "checkCategory": ["Overworld", "Hidden Skill", "Gerudo Desert"],
+    "itemId": "Progressive_Hidden_Skill",
     "dataCategory": ["Hidden Skill"]
 }

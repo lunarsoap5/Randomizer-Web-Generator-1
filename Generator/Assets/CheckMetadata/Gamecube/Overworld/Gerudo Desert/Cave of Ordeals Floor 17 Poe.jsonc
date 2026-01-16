@@ -1,5 +1,7 @@
 {
     "stageIDX": [31],
     "flag": "45",
+    "checkCategory": ["Overworld", "Poe", "Cave of Ordeals"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

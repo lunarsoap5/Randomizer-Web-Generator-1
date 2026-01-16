@@ -63,8 +63,8 @@
       },
       {
         "CheckName": "Lost Woods Boulder Poe",
-        "Requirements": "Shadow_Crystal and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)) and CanSmash",
-        "GlitchedRequirements": "Shadow_Crystal and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)) and CanSmash"
+        "Requirements": "Shadow_Crystal and CanSmash",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
       } 
     ],
     "Region": "Sacred Grove"

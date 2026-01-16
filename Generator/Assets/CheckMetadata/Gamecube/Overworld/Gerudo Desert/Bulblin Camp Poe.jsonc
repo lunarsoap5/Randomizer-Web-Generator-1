@@ -1,5 +1,7 @@
 {
     "stageIDX": [55],
     "flag": "78",
+    "checkCategory": ["Overworld", "Poe", "Bulblin Camp"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

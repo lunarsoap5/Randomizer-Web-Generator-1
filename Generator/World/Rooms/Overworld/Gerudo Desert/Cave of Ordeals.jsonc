@@ -39,7 +39,11 @@
     ],
     "Checks":
     [
-        "Cave of Ordeals Floor 17 Poe"
+      {
+        "CheckName": "Cave of Ordeals Floor 17 Poe",
+        "Requirements": "Spinner and Shadow_Crystal and CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatKeese and CanDefeatStalhound",
+        "GlitchedRequirements": "(Spinner or (((Progressive_Clawshot, 1)) and CanDoLJA)) and Shadow_Crystal and CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatKeese and CanDefeatStalhound"
+      } 
     ],
     "Region": "Gerudo Desert"
   },
@@ -78,7 +82,11 @@
     ],
     "Checks":
     [
-        "Cave of Ordeals Floor 33 Poe"
+      {
+        "CheckName": "Cave of Ordeals Floor 33 Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 2) and CanDefeatBeamos and CanDefeatKeese and CanDefeatDodongo and CanDefeatBubble and CanDefeatRedeadKnight",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 2) and CanDefeatBeamos and CanDefeatKeese and CanDefeatDodongo and CanDefeatBubble and CanDefeatRedeadKnight"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -94,8 +102,16 @@
     ],
     "Checks":
     [
-        "Cave of Ordeals Floor 44 Poe",
-        "Cave of Ordeals Great Fairy Reward"
+      {
+        "CheckName": "Cave of Ordeals Floor 44 Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 2) and CanDefeatArmos and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatDinalfos and ((Progressive_Bow, 1) or Ball_and_Chain)",
+        "GlitchedRequirements": "Shadow_Crystal and ((Progressive_Clawshot, 2) or ((Progressive_Clawshot, 1) and CanDoLJA)) and CanDefeatArmos and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatDinalfos and ((Progressive_Bow, 1) or Ball_and_Chain)"
+      },
+      {
+        "CheckName": "Cave of Ordeals Great Fairy Reward",
+        "Requirements": "CanDefeatArmos and CanDefeatBokoblin and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatBulblin and CanDefeatDinalfos and CanDefeatPoe and CanDefeatRedeadKnight and CanDefeatChu and CanDefeatFreezard and CanDefeatChilfos and CanDefeatGhoulRat and CanDefeatRat and CanDefeatStalchild and CanDefeatAeralfos and CanDefeatDarknut",
+        "GlitchedRequirements": "CanDefeatArmos and CanDefeatBokoblin and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatBulblin and CanDefeatDinalfos and CanDefeatPoe and CanDefeatRedeadKnight and CanDefeatChu and CanDefeatFreezard and CanDefeatChilfos and CanDefeatGhoulRat and CanDefeatRat and CanDefeatStalchild and CanDefeatAeralfos and CanDefeatDarknut"
+      }
     ],
     "Region": "Gerudo Desert"
   }

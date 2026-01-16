@@ -1,6 +1,0 @@
-{
-    "Requirements": "Shadow_Crystal and (Gerudo_Desert_Bulblin_Camp_Key or (Setting.skipArbitersEntrance equals True))",
-    "GlitchedRequirements": "Shadow_Crystal and ((Gerudo_Desert_Bulblin_Camp_Key or (CanDoMapGlitch and HasSword)) or (Setting.skipArbitersEntrance equals True))",
-    "checkCategory": ["Overworld", "Poe", "Bulblin Camp"],
-    "itemId": "Poe_Soul"
-}

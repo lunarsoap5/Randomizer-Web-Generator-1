@@ -82,18 +82,18 @@
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 1",
-        "Requirements": "(CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "Requirements": "Iron Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 2",
-        "Requirements": "(CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "Requirements": "Iron Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 3",
-        "Requirements": "(CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "Requirements": "Iron Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Pipe Ledge Rock Rupee",

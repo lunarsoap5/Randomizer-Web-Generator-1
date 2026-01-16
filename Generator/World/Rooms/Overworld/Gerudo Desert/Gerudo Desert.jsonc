@@ -22,16 +22,56 @@
     ],
     "Checks":
     [
-        "Gerudo Desert Peahat Ledge Chest",
-        "Gerudo Desert East Canyon Chest",
-        "Gerudo Desert Lone Small Chest",
-        "Gerudo Desert West Canyon Chest",
-        "Gerudo Desert South Chest Behind Wooden Gates",
-        "Gerudo Desert Owl Statue Chest",
-        "Gerudo Desert Owl Statue Sky Character",
-        "Gerudo Desert Male Dayfly",
-        "Gerudo Desert Female Dayfly",
-        "Gerudo Desert East Poe"
+      {
+        "CheckName": "Gerudo Desert Peahat Ledge Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "CheckName": "Gerudo Desert East Canyon Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Gerudo Desert Lone Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Gerudo Desert West Canyon Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoLJA or (Shadow_Crystal and HasBombs)"
+      },
+      {
+        "CheckName": "Gerudo Desert South Chest Behind Wooden Gates",
+        "Requirements": "CanDefeatBulblin",
+        "GlitchedRequirements": "CanDefeatBulblin"
+      },
+      {
+        "CheckName": "Gerudo Desert Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA"
+      },
+      {
+        "CheckName": "Gerudo Desert Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
+      },
+      {
+        "CheckName": "Gerudo Desert Male Dayfly",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Gerudo Desert Female Dayfly",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Gerudo Desert East Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
      ],
     "Region": "Gerudo Desert"
   },
@@ -52,8 +92,16 @@
     ],
     "Checks":
     [
-        "Gerudo Desert Poe Above Cave of Ordeals",
-        "Gerudo Desert Portal"
+      {
+        "CheckName": "Gerudo Desert Poe Above Cave of Ordeals",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1) and CanDefeatShadowBeast"
+      },
+      {
+        "CheckName": "Gerudo Desert Portal",
+        "Requirements": "CanDefeatShadowBeast",
+        "GlitchedRequirements": "CanDefeatShadowBeast"
+      } 
     ],
     "Region": "Gerudo Desert"
   },
@@ -83,11 +131,31 @@
       }
     ],
     "Checks": [
-        "Gerudo Desert Northeast Chest Behind Gates",
-        "Gerudo Desert Campfire North Chest",
-        "Gerudo Desert Campfire East Chest",
-        "Gerudo Desert Campfire West Chest",
-        "Gerudo Desert Northwest Chest Behind Gates"
+      {
+        "CheckName": "Gerudo Desert Northeast Chest Behind Gates",
+        "Requirements": "CanDefeatBulblin",
+        "GlitchedRequirements": "CanDefeatBulblin"
+      },
+      {
+        "CheckName": "Gerudo Desert Campfire North Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Gerudo Desert Campfire East Chest",
+        "Requirements": "CanDefeatBulblin",
+        "GlitchedRequirements": "CanDefeatBulblin"
+      },
+      {
+        "CheckName": "Gerudo Desert Campfire West Chest",
+        "Requirements": "CanDefeatBulblin",
+        "GlitchedRequirements": "CanDefeatBulblin"
+      },
+      {
+        "CheckName": "Gerudo Desert Northwest Chest Behind Gates",
+        "Requirements": "CanDefeatBulblin",
+        "GlitchedRequirements": "CanDefeatBulblin"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -108,7 +176,11 @@
     ],
     "Checks":
     [
-        "Gerudo Desert North Peahat Poe"
+      {
+        "CheckName": "Gerudo Desert North Peahat Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1)"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -119,7 +191,7 @@
       {
         "ConnectedArea": "Gerudo Desert Basin",
         "Requirements": "Room.Gerudo_Desert_Basin and CanDefeatBulblin",
-        "GlitchedRequirements": "Room.Gerudo_Desert_Basin and CanDefeatBulblin"
+        "GlitchedRequirements": "(Room.Gerudo_Desert_Basin and CanDefeatBulblin) or Shadow_Crystal"
       },
       {
         "ConnectedArea": "Bulblin Camp",
@@ -129,9 +201,21 @@
     ],
     "Checks":
     [
-        "Gerudo Desert North Small Chest Before Bulblin Camp",
-        "Outside Bulblin Camp Poe",
-        "Gerudo Desert Golden Wolf"
+      {
+        "CheckName": "Gerudo Desert North Small Chest Before Bulblin Camp",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Outside Bulblin Camp Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Gerudo Desert Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.Lake_Hylia",
+        "GlitchedRequirements": "Shadow_Crystal and Room.Lake_Hylia"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -147,7 +231,11 @@
     ],
     "Checks":
     [
-        "Gerudo Desert Skulltula Grotto Chest"
+      {
+        "CheckName": "Gerudo Desert Skulltula Grotto Chest",
+        "Requirements": "CanDefeatSkulltula",
+        "GlitchedRequirements": "CanDefeatSkulltula"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -176,9 +264,21 @@
     ],
     "Checks":
     [
-        "Gerudo Desert Rock Grotto Lantern Chest",
-        "Gerudo Desert Rock Grotto First Poe",
-        "Gerudo Desert Rock Grotto Second Poe"
+      {
+        "CheckName": "Gerudo Desert Rock Grotto Lantern Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash and Lantern"
+      },
+      {
+        "CheckName": "Gerudo Desert Rock Grotto First Poe",
+        "Requirements": "Shadow_Crystal and CanSmash",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
+      },
+      {
+        "CheckName": "Gerudo Desert Rock Grotto Second Poe",
+        "Requirements": "Shadow_Crystal and CanSmash",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
+      } 
     ],
     "Region": "Gerudo Desert"
   },
@@ -199,11 +299,31 @@
     ],
     "Checks":
     [
-        "Bulblin Camp First Chest Under Tower At Entrance",
-        "Bulblin Camp Small Chest in Back of Camp",
-        "Bulblin Camp Roasted Boar",
-        "Bulblin Camp Poe",
-        "Bulblin Guard Key"
+      {
+        "CheckName": "Bulblin Camp First Chest Under Tower At Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Bulblin Camp Small Chest in Back of Camp",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Bulblin Camp Roasted Boar",
+        "Requirements": "HasDamagingItem",
+        "GlitchedRequirements": "HasDamagingItem"
+      },
+      {
+        "CheckName": "Bulblin Camp Poe",
+        "Requirements": "Shadow_Crystal and (Gerudo_Desert_Bulblin_Camp_Key or (Setting.skipArbitersEntrance equals True))",
+        "GlitchedRequirements": "Shadow_Crystal and ((Gerudo_Desert_Bulblin_Camp_Key or (CanDoMapGlitch and HasSword)) or (Setting.skipArbitersEntrance equals True))"
+      },
+      {
+        "CheckName": "Bulblin Guard Key",
+        "Requirements": "CanDefeatBulblin",
+        "GlitchedRequirements": "CanDefeatBulblin"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -224,8 +344,16 @@
     ],
     "Checks":
     [
-        "Outside Arbiters Grounds Lantern Chest",
-        "Outside Arbiters Grounds Poe"
+      {
+        "CheckName": "Outside Arbiters Grounds Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      },
+      {
+        "CheckName": "Outside Arbiters Grounds Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
     ],
     "Region": "Gerudo Desert"
   },
@@ -267,7 +395,11 @@
     ],
     "Checks": 
     [
-      "Mirror Chamber Portal"
+      {
+        "CheckName": "Mirror Chamber Portal",
+        "Requirements": "CanDefeatShadowBeast",
+        "GlitchedRequirements": "CanDefeatShadowBeast"
+      }
     ],
     "Region": "Gerudo Desert"
   },

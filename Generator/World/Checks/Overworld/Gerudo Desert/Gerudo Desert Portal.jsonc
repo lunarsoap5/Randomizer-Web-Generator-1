@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatShadowBeast",
-    "GlitchedRequirements": "CanDefeatShadowBeast",
-    "checkCategory": ["Overworld", "Gerudo Desert"],
-    "itemId": "Gerudo_Desert_Portal"
-}
