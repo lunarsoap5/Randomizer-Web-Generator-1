@@ -59,7 +59,7 @@
       {
         "ConnectedArea": "Death Mountain Outside Sumo Hall",
         "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "ConnectedArea": "Death Mountain Elevator Lower",
@@ -82,18 +82,18 @@
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 1",
-        "Requirements": "Iron Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(Iron Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 2",
-        "Requirements": "Iron Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(Iron Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Ledge Rupee 3",
-        "Requirements": "Iron Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
-        "GlitchedRequirements": "(Iron Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
+        "Requirements": "Iron_Boots and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "(Iron_Boots or HasShield) and (CanDefeatGoron or CanCompleteGoronMines) and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Death Mountain Volcano Pipe Ledge Rock Rupee",
