@@ -1,5 +1,7 @@
 {
     "stageIDX": [52],
     "flag": "46",
+    "checkCategory": ["Overworld", "Poe", "Lake Hylia"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

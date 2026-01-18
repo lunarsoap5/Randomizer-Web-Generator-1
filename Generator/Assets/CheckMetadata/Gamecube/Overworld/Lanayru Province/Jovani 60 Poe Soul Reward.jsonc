@@ -3,5 +3,7 @@
     "stageIDX": [73],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Npc", "Castle Town"],
+    "itemId": "Silver_Rupee",
     "dataCategory": ["ARC"]
 }

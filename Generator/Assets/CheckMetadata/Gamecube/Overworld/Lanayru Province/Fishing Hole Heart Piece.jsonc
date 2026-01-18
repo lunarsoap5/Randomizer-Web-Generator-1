@@ -8,5 +8,7 @@
     "overrideInstruction": ["38600000"], 
     "relReplacementType": [0],
     "relOffsets": ["7D40"],
+    "checkCategory": ["Overworld", "Fishing Hole"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["ARC", "REL"]
 }

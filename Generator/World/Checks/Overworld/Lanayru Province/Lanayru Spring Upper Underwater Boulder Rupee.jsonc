@@ -1,6 +1,0 @@
-{
-    "Requirements": "Iron_Boots and CanUseWaterBombs",
-    "GlitchedRequirements": "(Iron_Boots or Magic_Armor) and CanUseWaterBombs",
-    "checkCategory": [ "Overworld", "Lake Hylia", "Rupee - Hidden" ],
-    "itemId": "Yellow_Rupee"
-  }

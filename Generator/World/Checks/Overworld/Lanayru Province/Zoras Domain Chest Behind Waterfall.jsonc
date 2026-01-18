@@ -1,6 +1,0 @@
-{
-    "Requirements": "Shadow_Crystal",
-    "GlitchedRequirements": "Shadow_Crystal or CanDoBSMoonBoots or Spinner or (HasBombs and HasSword) or CanDoLJA",
-    "checkCategory": ["Overworld", "Chest", "Zoras Domain"],
-    "itemId": "Red_Rupee"
-}

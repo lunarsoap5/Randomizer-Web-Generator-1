@@ -1,6 +1,0 @@
-{
-    "Requirements": "Male_Phasmid",
-    "GlitchedRequirements": "Male_Phasmid",
-    "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
-    "itemId": "Progressive_Wallet"
-}

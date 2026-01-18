@@ -1,6 +1,0 @@
-{
-    "Requirements": "Room.Castle_Town_Doctors_Office_Lower and Shadow_Crystal and Room.Castle_Town_South and CanCompleteLanayruTwilight",
-    "GlitchedRequirements": "Room.Castle_Town_Doctors_Office_Lower and Shadow_Crystal and Room.Castle_Town_South and CanCompleteLanayruTwilight",
-    "checkCategory": ["Overworld", "Quest", "Hyrule Field - Lanayru Province"],
-    "itemId": "Wooden_Statue"
-}

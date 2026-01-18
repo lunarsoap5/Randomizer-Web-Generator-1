@@ -1,5 +1,7 @@
 {
     "stageIDX": [61],
     "flag": "48",
+    "checkCategory": ["Overworld", "Poe", "Upper Zoras River"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

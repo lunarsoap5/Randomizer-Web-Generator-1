@@ -3,5 +3,7 @@
     "stageIDX": [74],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Npc", "Castle Town"],
+    "itemId": "Progressive_Bow",
     "dataCategory": ["ARC"]
 }

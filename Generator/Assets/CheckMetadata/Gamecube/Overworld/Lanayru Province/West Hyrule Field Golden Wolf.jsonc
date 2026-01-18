@@ -2,5 +2,7 @@
     "stageIDX": [57],
     "roomIDX": 8,
     "flag": "86",
+    "checkCategory": ["Overworld", "Hidden Skill", "Hyrule Field - Lanayru Province"],
+    "itemId": "Progressive_Hidden_Skill",
     "dataCategory": ["Hidden Skill"]
 }

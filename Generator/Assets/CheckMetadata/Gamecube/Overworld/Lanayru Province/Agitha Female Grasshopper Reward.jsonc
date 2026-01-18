@@ -1,4 +1,6 @@
 {
     "flag": "C7",
+    "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
+    "itemId": "Orange_Rupee",
     "dataCategory": ["Bug Reward"]
 }

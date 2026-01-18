@@ -1,6 +1,0 @@
-{
-    "Requirements": "CanDefeatBubble and CanDefeatFireBubble and CanDefeatIceBubble",
-    "GlitchedRequirements": "CanDefeatBubble and CanDefeatFireBubble and CanDefeatIceBubble",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
-    "itemId": "Orange_Rupee"
-}

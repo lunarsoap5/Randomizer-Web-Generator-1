@@ -3,5 +3,7 @@
     "stageIDX": [52],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Npc", "Lake Hylia"],
+    "itemId": "Aurus_Memo",
     "dataCategory": ["ARC"]
 }

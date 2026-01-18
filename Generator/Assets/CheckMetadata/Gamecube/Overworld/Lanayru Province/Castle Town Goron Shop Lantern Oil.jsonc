@@ -3,5 +3,7 @@
     "stageIDX": [73],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Castle Town", "Shop"],
+    "itemId": "Lantern_Oil_Shop",
     "dataCategory": ["ARC"]
 }

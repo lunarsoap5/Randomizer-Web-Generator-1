@@ -3,5 +3,7 @@
     "stageIDX": [73],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Castle Town", "Shop"],
+    "itemId": "Red_Potion_Shop",
     "dataCategory": ["ARC"]
 }

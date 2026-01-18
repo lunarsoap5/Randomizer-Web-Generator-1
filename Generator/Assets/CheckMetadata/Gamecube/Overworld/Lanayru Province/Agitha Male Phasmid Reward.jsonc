@@ -1,4 +1,6 @@
 {
     "flag": "C8",
+    "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
+    "itemId": "Progressive_Wallet",
     "dataCategory": ["Bug Reward"]
 }

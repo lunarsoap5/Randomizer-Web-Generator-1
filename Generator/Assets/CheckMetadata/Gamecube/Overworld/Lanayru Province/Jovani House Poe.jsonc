@@ -1,5 +1,7 @@
 {
     "stageIDX": [73],
     "flag": "1E",
+    "checkCategory": ["Overworld", "Castle Town", "Poe"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

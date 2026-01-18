@@ -1,6 +1,0 @@
-{
-    "Requirements": "Boomerang and Iron_Boots",
-    "GlitchedRequirements": "Boomerang and HasHeavyMod",
-    "checkCategory": ["Overworld", "Chest", "Zoras Domain"],
-    "itemId": "Purple_Rupee"
-}

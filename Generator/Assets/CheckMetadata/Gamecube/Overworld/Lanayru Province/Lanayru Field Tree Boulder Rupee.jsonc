@@ -4,5 +4,7 @@
     "roomIDX": 10,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": [ "Overworld", "Hyrule Field - Lanayru", "Rupee - Hidden" ],
+    "itemId": "Purple_Rupee",
     "dataCategory": ["ARC"]
 }

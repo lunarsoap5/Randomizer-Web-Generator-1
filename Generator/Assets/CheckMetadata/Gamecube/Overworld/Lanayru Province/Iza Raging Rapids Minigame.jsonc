@@ -3,5 +3,7 @@
     "stageIDX": [52],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Npc", "Upper Zoras River"],
+    "itemId": "Giant_Bomb_Bag",
     "dataCategory": ["ARC"]
 }

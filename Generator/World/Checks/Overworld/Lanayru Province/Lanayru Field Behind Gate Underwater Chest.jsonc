@@ -1,6 +1,0 @@
-{
-    "Requirements": "Iron_Boots",
-    "GlitchedRequirements": "HasHeavyMod",
-    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
-    "itemId": "Orange_Rupee"
-}

@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Chest", "Lake Lantern Cave"],
+    "itemId": "Arrows_10",
     "dataCategory": ["Chest", "ARC"]
 }

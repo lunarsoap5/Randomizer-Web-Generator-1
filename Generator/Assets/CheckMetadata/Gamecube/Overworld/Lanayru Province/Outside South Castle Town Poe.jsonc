@@ -1,5 +1,7 @@
 {
     "stageIDX": [57],
     "flag": "30",
+    "checkCategory": ["Overworld", "Poe", "Hyrule Field - Lanayru Province"],
+    "itemId": "Poe_Soul",
     "dataCategory": ["Poe"]
 }

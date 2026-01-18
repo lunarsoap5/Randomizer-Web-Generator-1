@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": [ "Overworld", "Zoras Domain", "Rupee - Freestanding" ],
+    "itemId": "Yellow_Rupee",
     "dataCategory": ["ARC"]
 }

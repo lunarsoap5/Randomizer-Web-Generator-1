@@ -26,7 +26,11 @@
     ],
     "Checks":
     [
-        "Charlo Donation Blessing"
+      {
+        "CheckName": "Charlo Donation Blessing",
+        "Requirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)"
+      }
     ],
     "Region": "Castle Town"
   },
@@ -42,8 +46,16 @@
     ],
     "Checks":
     [
-        "STAR Prize 1",
-        "STAR Prize 2"
+      {
+        "CheckName": "STAR Prize 1",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "CheckName": "STAR Prize 2",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      } 
     ],
     "Region": "Castle Town"
   },
@@ -148,9 +160,21 @@
     ],
     "Checks": 
     [
-      "Castle Town Goron Shop Hylian Shield",
-      "Castle Town Goron Shop Red Potion",
-      "Castle Town Goron Shop Lantern Oil"
+      {
+        "CheckName": "Castle Town Goron Shop Hylian Shield",
+        "Requirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet",
+        "GlitchedRequirements": "(Setting.walletSize not_equal Reduced) or Progressive_Wallet"
+      },
+      {
+        "CheckName": "Castle Town Goron Shop Red Potion",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Castle Town Goron Shop Lantern Oil",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
     "Region": "Castle Town"
   },
@@ -166,7 +190,11 @@
     ],
     "Checks": 
     [
-      "Castle Town Goron Shop Arrow Refill"
+      {
+        "CheckName": "Castle Town Goron Shop Arrow Refill",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      }
     ],
     "Region": "Castle Town"
   },
@@ -182,7 +210,11 @@
     ],
     "Checks":
     [
-        "Castle Town Malo Mart Magic Armor"
+      {
+        "CheckName": "Castle Town Malo Mart Magic Armor",
+        "Requirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor",
+        "GlitchedRequirements": "Room.Kakariko_Malo_Mart and Room.Lower_Kakariko_Village and CanBuyMagicArmor"
+      } 
     ],
     "Region": "Castle Town"
   },
@@ -221,7 +253,11 @@
     ],
     "Checks":
     [
-        "North Castle Town Golden Wolf"
+      {
+        "CheckName": "North Castle Town Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.Hidden_Village and CanCompleteMDH and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and Room.Hidden_Village and CanCompleteMDH and CanCompleteLanayruTwilight"
+      } 
     ],
     "Region": "Castle Town"
   },
@@ -294,7 +330,11 @@
     ],
     "Checks":
     [
-        "Doctors Office Balcony Chest"
+      {
+        "CheckName": "Doctors Office Balcony Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
     "Region": "Castle Town"
   },
@@ -472,30 +512,126 @@
     ],
     "Checks":
     [
-        "Agitha Female Ant Reward",
-        "Agitha Female Beetle Reward",
-        "Agitha Female Butterfly Reward",
-        "Agitha Female Dayfly Reward",
-        "Agitha Female Dragonfly Reward",
-        "Agitha Female Grasshopper Reward",
-        "Agitha Female Ladybug Reward",
-        "Agitha Female Mantis Reward",
-        "Agitha Female Phasmid Reward",
-        "Agitha Female Pill Bug Reward",
-        "Agitha Female Snail Reward",
-        "Agitha Female Stag Beetle Reward",
-        "Agitha Male Ant Reward",
-        "Agitha Male Beetle Reward",
-        "Agitha Male Butterfly Reward",
-        "Agitha Male Dayfly Reward",
-        "Agitha Male Dragonfly Reward",
-        "Agitha Male Grasshopper Reward",
-        "Agitha Male Ladybug Reward",
-        "Agitha Male Mantis Reward",
-        "Agitha Male Phasmid Reward",
-        "Agitha Male Pill Bug Reward",
-        "Agitha Male Snail Reward",
-        "Agitha Male Stag Beetle Reward"
+      {
+        "CheckName": "Agitha Female Ant Reward",
+        "Requirements": "Female_Ant",
+        "GlitchedRequirements": "Female_Ant"
+      },
+      {
+        "CheckName": "Agitha Female Beetle Reward",
+        "Requirements": "Female_Beetle",
+        "GlitchedRequirements": "Female_Beetle"
+      },
+      {
+        "CheckName": "Agitha Female Butterfly Reward",
+        "Requirements": "Female_Butterfly",
+        "GlitchedRequirements": "Female_Butterfly"
+      },
+      {
+        "CheckName": "Agitha Female Dayfly Reward",
+        "Requirements": "Female_Dayfly",
+        "GlitchedRequirements": "Female_Dayfly"
+      },
+      {
+        "CheckName": "Agitha Female Dragonfly Reward",
+        "Requirements": "Female_Dragonfly",
+        "GlitchedRequirements": "Female_Dragonfly"
+      },
+      {
+        "CheckName": "Agitha Female Grasshopper Reward",
+        "Requirements": "Female_Grasshopper",
+        "GlitchedRequirements": "Female_Grasshopper"
+      },
+      {
+        "CheckName": "Agitha Female Ladybug Reward",
+        "Requirements": "Female_Ladybug",
+        "GlitchedRequirements": "Female_Ladybug"
+      },
+      {
+        "CheckName": "Agitha Female Mantis Reward",
+        "Requirements": "Female_Mantis",
+        "GlitchedRequirements": "Female_Mantis"
+      },
+      {
+        "CheckName": "Agitha Female Phasmid Reward",
+        "Requirements": "Female_Phasmid",
+        "GlitchedRequirements": "Female_Phasmid"
+      },
+      {
+        "CheckName": "Agitha Female Pill Bug Reward",
+        "Requirements": "Female_Pill_Bug",
+        "GlitchedRequirements": "Female_Pill_Bug"
+      },
+      {
+        "CheckName": "Agitha Female Snail Reward",
+        "Requirements": "Female_Snail",
+        "GlitchedRequirements": "Female_Snail"
+      },
+      {
+        "CheckName": "Agitha Female Stag Beetle Reward",
+        "Requirements": "Female_Stag_Beetle",
+        "GlitchedRequirements": "Female_Stag_Beetle"
+      },
+      {
+        "CheckName": "Agitha Male Ant Reward",
+        "Requirements": "Male_Ant",
+        "GlitchedRequirements": "Male_Ant"
+      },
+      {
+        "CheckName":  "Agitha Male Beetle Reward",
+        "Requirements": "Male_Beetle",
+        "GlitchedRequirements": "Male_Beetle"
+      },
+      {
+        "CheckName": "Agitha Male Butterfly Reward",
+        "Requirements": "Male_Butterfly",
+        "GlitchedRequirements": "Male_Butterfly"
+      },
+      {
+        "CheckName": "Agitha Male Dayfly Reward",
+        "Requirements": "Male_Dayfly",
+        "GlitchedRequirements": "Male_Dayfly"
+      },
+      {
+        "CheckName": "Agitha Male Dragonfly Reward",
+        "Requirements": "Male_Dragonfly",
+        "GlitchedRequirements": "Male_Dragonfly"
+      },
+      {
+        "CheckName": "Agitha Male Grasshopper Reward",
+        "Requirements": "Male_Grasshopper",
+        "GlitchedRequirements": "Male_Grasshopper"
+      },
+      {
+        "CheckName": "Agitha Male Ladybug Reward",
+        "Requirements": "Male_Ladybug",
+        "GlitchedRequirements": "Male_Ladybug"
+      },
+      {
+        "CheckName": "Agitha Male Mantis Reward",
+        "Requirements": "Male_Mantis",
+        "GlitchedRequirements": "Male_Mantis"
+      },
+      {
+        "CheckName": "Agitha Male Phasmid Reward",
+        "Requirements": "Male_Phasmid",
+        "GlitchedRequirements": "Male_Phasmid"
+      },
+      {
+        "CheckName": "Agitha Male Pill Bug Reward",
+        "Requirements": "Male_Pill_Bug",
+        "GlitchedRequirements": "Male_Pill_Bug"
+      },
+      {
+        "CheckName": "Agitha Male Snail Reward",
+        "Requirements": "Male_Snail",
+        "GlitchedRequirements": "Male_Snail"
+      },
+      {
+        "CheckName": "Agitha Male Stag Beetle Reward",
+        "Requirements": "Male_Stag_Beetle",
+        "GlitchedRequirements": "Male_Stag_Beetle"
+      }
     ],
     "Region": "Castle Town"
   },
@@ -525,9 +661,21 @@
     ],
     "Checks":
     [
-        "Jovani House Poe",
-        "Jovani 20 Poe Soul Reward",
-        "Jovani 60 Poe Soul Reward"
+      {
+        "CheckName": "Jovani House Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Jovani 20 Poe Soul Reward",
+        "Requirements": "(Poe_Soul, 20)",
+        "GlitchedRequirements": "(Poe_Soul, 20)"
+      },
+      {
+        "CheckName": "Jovani 60 Poe Soul Reward",
+        "Requirements": "(Poe_Soul, 60)",
+        "GlitchedRequirements": "(Poe_Soul, 60)"
+      } 
     ],
     "Region": "Castle Town"
   },
@@ -543,7 +691,11 @@
     ],
     "Checks":
     [
-        "Telma Invoice"
+      {
+        "CheckName": "Telma Invoice",
+        "Requirements": "Renados_Letter and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Renados_Letter and CanCompleteLanayruTwilight"
+      }
     ],
     "Region": "Castle Town"
   }

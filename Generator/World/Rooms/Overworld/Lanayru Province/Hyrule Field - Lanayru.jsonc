@@ -46,14 +46,46 @@
     ],
     "Checks":
     [
-        "Lanayru Field Behind Gate Underwater Chest",
-        "Lanayru Field Male Stag Beetle",
-        "Lanayru Field Female Stag Beetle",
-        "Lanayru Field Bridge Poe",
-        "Lanayru Field North Spinner Track Boulder Rupee",
-        "Lanayru Field North Underwater Boulder Rupee",
-        "Lanayru Field South Underwater Boulder Rupee",
-        "Lanayru Field Tree Boulder Rupee"
+      {
+        "CheckName": "Lanayru Field Behind Gate Underwater Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "HasHeavyMod"
+      },
+      {
+        "CheckName": "Lanayru Field Male Stag Beetle",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lanayru Field Female Stag Beetle",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lanayru Field Bridge Poe",
+        "Requirements": "Shadow_Crystal  and CanCompleteMDH and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      },
+      {
+        "CheckName": "Lanayru Field North Spinner Track Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lanayru Field North Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Lanayru Field South Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "Iron_Boots and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Lanayru Field Tree Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -110,7 +142,11 @@
     ],
     "Checks":
     [
-        "Lanayru Field Spinner Track Chest"
+      {
+        "CheckName": "Lanayru Field Spinner Track Chest",
+        "Requirements": "Spinner",
+        "GlitchedRequirements": "CanDoMapGlitch or (CanSmash and Spinner)"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -126,7 +162,11 @@
     ],
     "Checks":
     [
-        "Lanayru Ice Block Puzzle Cave Chest"
+      {
+        "CheckName": "Lanayru Ice Block Puzzle Cave Chest",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -155,7 +195,11 @@
     ],
     "Checks":
     [
-        "Lanayru Field Skulltula Grotto Chest"
+      {
+        "CheckName": "Lanayru Field Skulltula Grotto Chest",
+        "Requirements": "CanDefeatSkulltula and Lantern and CanBreakWoodenDoor",
+        "GlitchedRequirements": "Lantern and CanBreakWoodenDoor"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -171,8 +215,16 @@
     ],
     "Checks":
     [
-        "Lanayru Field Poe Grotto Left Poe",
-        "Lanayru Field Poe Grotto Right Poe"
+      {
+        "CheckName": "Lanayru Field Poe Grotto Left Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Lanayru Field Poe Grotto Right Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      } 
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -203,15 +255,51 @@
     ],
     "Checks":
     [
-        "Hyrule Field Amphitheater Owl Statue Chest",
-        "Hyrule Field Amphitheater Owl Statue Sky Character",
-        "West Hyrule Field Male Butterfly",
-        "West Hyrule Field Female Butterfly",
-        "Hyrule Field Amphitheater Poe",
-        "West Hyrule Field Golden Wolf",
-        "Castle Town Portal",
-        "West Hyrule Field Northern Boulder Rupee",
-        "West Hyrule Field Southern Boulder Rupee"
+      {
+        "CheckName": "Hyrule Field Amphitheater Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA or CanDoMapGlitch or CanDoEBMoonBoots"
+      },
+      {
+        "CheckName": "Hyrule Field Amphitheater Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
+      },
+      {
+        "CheckName": "West Hyrule Field Male Butterfly",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "West Hyrule Field Female Butterfly",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang or Room.Outside_Castle_Town_West_Grotto_Ledge) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang or CanDoMapGlitch) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Hyrule Field Amphitheater Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "West Hyrule Field Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.Upper_Zoras_River",
+        "GlitchedRequirements": "Shadow_Crystal and Room.Zoras_Domain"
+      },
+      {
+        "CheckName": "Castle Town Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "West Hyrule Field Northern Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "West Hyrule Field Southern Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -245,7 +333,11 @@
     ],
     "Checks":
     [
-        "West Hyrule Field Helmasaur Grotto Chest"
+      {
+        "CheckName": "West Hyrule Field Helmasaur Grotto Chest",
+        "Requirements": "CanDefeatHelmasaur",
+        "GlitchedRequirements": "CanDefeatHelmasaur"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -266,7 +358,11 @@
     ],
     "Checks":
     [
-        "East Castle Town Bridge Poe"
+      {
+        "CheckName": "East Castle Town Bridge Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -298,15 +394,51 @@
     ],
     "Checks":
     [
-        "Outside South Castle Town Tightrope Chest",
-        "Outside South Castle Town Fountain Chest",
-        "Outside South Castle Town Double Clawshot Chasm Chest",
-        "Wooden Statue",
-        "Outside South Castle Town Male Ladybug",
-        "Outside South Castle Town Female Ladybug",
-        "Outside South Castle Town Poe",
-        "Outside South Castle Town Golden Wolf",
-        "Outside South Castle Town Boulder Rupee"
+      {
+        "CheckName": "Outside South Castle Town Tightrope Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Shadow_Crystal",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Shadow_Crystal"
+      },
+      {
+        "CheckName": "Outside South Castle Town Fountain Chest",
+        "Requirements": "Spinner and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Spinner and (Progressive_Clawshot, 1)) or (CanDoMapGlitch and HasBottle) or CanDoMoonBoots or CanDoBSMoonBoots or CanDoLJA or (HasSword and ((Progressive_Hidden_Skill, 3) or HasBombs))"
+      },
+      {
+        "CheckName": "Outside South Castle Town Double Clawshot Chasm Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2) or (HasSword and (((Setting.damageMagnification equals Vanilla) or (Setting.damageMagnification equals Double)) or CanUseBottledFairy)) or (HasBombs and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairy)) or Spinner or Shadow_Crystal"
+      },
+      {
+        "CheckName": "Wooden Statue",
+        "Requirements": "Room.Castle_Town_Doctors_Office_Lower and Shadow_Crystal and Room.Castle_Town_South and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Room.Castle_Town_Doctors_Office_Lower and Shadow_Crystal and Room.Castle_Town_South and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Outside South Castle Town Male Ladybug",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Outside South Castle Town Female Ladybug",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Outside South Castle Town Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Outside South Castle Town Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.North_Faron_Lost_Woods_Entrance",
+        "GlitchedRequirements": "Shadow_Crystal and Room.North_Faron_Lost_Woods_Entrance"
+      },
+      {
+        "CheckName": "Outside South Castle Town Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      } 
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -336,7 +468,11 @@
     ],
     "Checks":
     [
-        "Outside South Castle Town Tektite Grotto Chest"
+      {
+        "CheckName": "Outside South Castle Town Tektite Grotto Chest",
+        "Requirements": "CanDefeatTektite",
+        "GlitchedRequirements": "CanDefeatTektite"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -372,14 +508,46 @@
     ],
     "Checks":
     [
-        "Lake Hylia Bridge Vines Chest",
-        "Lake Hylia Bridge Owl Statue Chest",
-        "Lake Hylia Bridge Owl Statue Sky Character",
-        "Lake Hylia Bridge Male Mantis",
-        "Lake Hylia Bridge Female Mantis",
-        "Lake Hylia Bridge Faron Boulder Rupee",
-        "Lake Hylia Bridge Owl Statue Boulder Rupee",
-        "Lanayru Field South Spinner Track Boulder Rupee"
+      {
+        "CheckName": "Lake Hylia Bridge Vines Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2) and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(CanDoMapGlitch and CanCompleteLanayruTwilight) or ((Progressive_Clawshot, 1) and (Progressive_Dominion_Rod, 2))"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2) and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) and ((Progressive_Clawshot, 1) or (CanDoMapGlitch and CanCompleteLanayruTwilight))"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Male Mantis",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Female Mantis",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang or CanDoStorage) and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Faron Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Owl Statue Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lanayru Field South Spinner Track Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -400,8 +568,16 @@
     ],
     "Checks":
     [
-        "Lake Hylia Bridge Cliff Chest",
-        "Lake Hylia Bridge Cliff Poe"
+      {
+        "CheckName": "Lake Hylia Bridge Cliff Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Lake Hylia Bridge Cliff Poe",
+        "Requirements": "CanCompleteMDH and Shadow_Crystal and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },
@@ -417,7 +593,11 @@
     ],
     "Checks":
     [
-        "Lake Hylia Bridge Bubble Grotto Chest"
+      {
+        "CheckName": "Lake Hylia Bridge Bubble Grotto Chest",
+        "Requirements": "CanDefeatBubble and CanDefeatFireBubble and CanDefeatIceBubble",
+        "GlitchedRequirements": "CanDefeatBubble and CanDefeatFireBubble and CanDefeatIceBubble"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   }

@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0, 0],
     "replacementType": [0, 0],
+    "checkCategory": [ "Overworld", "Lake Hylia", "Rupee - Freestanding" ],
+    "itemId": "Yellow_Rupee",
     "dataCategory": ["ARC"]
 }

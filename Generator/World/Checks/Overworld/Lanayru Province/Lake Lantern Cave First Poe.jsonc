@@ -1,6 +1,0 @@
-{
-    "Requirements": "Shadow_Crystal and CanSmash and Lantern",
-    "GlitchedRequirements": "Shadow_Crystal and CanSmash",
-    "checkCategory": ["Overworld", "Poe", "Lake Lantern Cave"],
-    "itemId": "Poe_Soul"
-}

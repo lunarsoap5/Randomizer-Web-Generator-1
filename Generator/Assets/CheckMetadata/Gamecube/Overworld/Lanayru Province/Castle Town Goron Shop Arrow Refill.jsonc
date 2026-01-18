@@ -3,5 +3,7 @@
     "stageIDX": [53],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Castle Town", "Shop"],
+    "itemId": "Arrows_30",
     "dataCategory": ["ARC"]
 }
