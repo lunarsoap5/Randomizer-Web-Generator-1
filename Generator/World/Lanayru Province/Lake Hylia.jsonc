@@ -1,0 +1,418 @@
+[
+  {
+    "RoomName": "Lake Hylia",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia Cave Entrance",
+        "Requirements": "CanSmash and CanWarpMeteor",
+        "GlitchedRequirements": "CanSmash and CanWarpMeteor"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Lakebed Temple Entrance",
+        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))",
+        "GlitchedRequirements": "Zora_Armor or CanDoAirRefill"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Flight By Fowl",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Gerudo Desert",
+        "Requirements": "Aurus_Memo and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Aurus_Memo and CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Upper Zoras River",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Lanayru Spring",
+        "Requirements": "CanWarpMeteor",
+        "GlitchedRequirements": "CanWarpMeteor"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Water Toadpoli Grotto",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "City in The Sky Entrance",
+        "Requirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "((Progressive_Sky_Book, 7) or (Setting.skipCityEntrance equals True)) and (Progressive_Clawshot, 1) and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Lake Hylia Underwater Chest",
+        "Requirements": "Iron_Boots and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "HasHeavyMod and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Auru Gift To Fyer",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lake Hylia Alcove Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lake Hylia Dock Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lake Hylia Tower Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Plumm Fruit Balloon Minigame",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Lake Hylia Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Lake Hylia Left Underwater Pillar Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and Zora_Armor or CanDoAirRefill"
+      },
+      {
+        "CheckName": "Lake Hylia Right Underwater Pillar Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and Zora_Armor or CanDoAirRefill"
+      },
+      {
+        "CheckName": "Lake Hylia Right Underwater Boulder Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and CanDoAirRefill"
+      },
+      {
+        "CheckName": "Lake Hylia Left Underwater Boulder Rupee",
+        "Requirements": "CanCompleteLanayruTwilight and Zora_Armor and Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight and CanDoAirRefill"
+      }
+    ],
+    "Region": "Lake Hylia"
+  },
+  {
+    "RoomName": "Lake Hylia Flight By Fowl",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Bridge",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        // You can use the cannon and a cucco to reach the grotto ledge without any requirements.
+        "ConnectedArea": "Lake Hylia Shell Blade Grotto",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Checks":[
+      {
+        "CheckName": "Outside Lanayru Spring Left Statue Chest",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Outside Lanayru Spring Right Statue Chest",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Flight By Fowl Top Platform Reward",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Flight By Fowl Second Platform Chest",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Flight By Fowl Third Platform Chest",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Flight By Fowl Fourth Platform Chest",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Flight By Fowl Fifth Platform Chest",
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Flight By Fowl Ledge Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Isle of Riches Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+      }
+    ],
+    "Region": "Hyrule Field - Lanayru Province"
+  },
+  {
+    "RoomName": "Lake Hylia Cave Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Long Cave",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Hyrule Field - Eldin"
+  },
+  {
+    "RoomName": "Lake Hylia Lakebed Temple Entrance",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))",
+        "GlitchedRequirements": "Zora_Armor and ((Setting.skipLakebedEntrance equals True) or (Iron_Boots and CanUseWaterBombs))"
+      },
+      {
+        "ConnectedArea": "Lakebed Temple Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Lake Hylia"
+  },
+  {
+    "RoomName": "Lake Hylia Lanayru Spring",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Lanayru Spring Underwater Left Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "HasHeavyMod"
+      },
+      {
+        "CheckName": "Lanayru Spring Underwater Right Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "HasHeavyMod"
+      },
+      {
+        "CheckName": "Lanayru Spring Back Room Left Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoBSMoonBoots"
+      },
+      {
+        "CheckName": "Lanayru Spring Back Room Right Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoBSMoonBoots"
+      },
+      {
+        "CheckName": "Lanayru Spring Back Room Lantern Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Lantern",
+        "GlitchedRequirements": "Lantern and ((Progressive_Clawshot, 1) or CanDoBSMoonBoots)"
+      },
+      {
+        "CheckName": "Lanayru Spring East Double Clawshot Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "Lanayru Spring West Double Clawshot Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "Lanayru Spring Upper Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "(Iron_Boots or Magic_Armor) and CanUseWaterBombs"
+      },
+      {
+        "CheckName": "Lanayru Spring Lower Underwater Boulder Rupee",
+        "Requirements": "Iron_Boots and CanUseWaterBombs",
+        "GlitchedRequirements": "(Iron_Boots or Magic_Armor) and CanUseWaterBombs"
+      } 
+    ],
+    "Region": "Lake Hylia"
+  },
+  {
+    "RoomName": "Lake Hylia Long Cave",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia Cave Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Lake Lantern Cave First Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Second Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Third Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Fourth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Fifth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Sixth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash and Lantern"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Seventh Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Eighth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Ninth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Tenth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Eleventh Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Twelfth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Thirteenth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Fourteenth Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave End Lantern Chest",
+        "Requirements": "CanSmash and Lantern",
+        "GlitchedRequirements": "CanSmash and Lantern"
+      },
+      {
+        "CheckName": "Lake Lantern Cave First Poe",
+        "Requirements": "Shadow_Crystal and CanSmash and Lantern",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Second Poe",
+        "Requirements": "Shadow_Crystal and CanSmash and Lantern",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
+      },
+      {
+        "CheckName": "Lake Lantern Cave Final Poe",
+        "Requirements": "Shadow_Crystal and CanSmash and Lantern",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
+      } 
+    ],
+    "Region": "Lake Hylia"
+  },
+  {
+    "RoomName": "Lake Hylia Shell Blade Grotto",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia Flight By Fowl",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Lake Hylia Shell Blade Grotto Chest",
+        "Requirements": "CanDefeatShellBlade",
+        "GlitchedRequirements": "CanDefeatShellBlade"
+      } 
+    ],
+    "Region": "Lake Hylia"
+  },
+  {
+    "RoomName": "Lake Hylia Water Toadpoli Grotto",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lake Hylia",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Lake Hylia Water Toadpoli Grotto Chest",
+        "Requirements": "CanDefeatWaterToadpoli",
+        "GlitchedRequirements": "CanDefeatWaterToadpoli"
+      }
+    ],
+    "Region": "Lake Hylia"
+  }
+]

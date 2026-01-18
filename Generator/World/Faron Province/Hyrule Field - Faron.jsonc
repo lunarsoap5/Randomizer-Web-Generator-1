@@ -1,0 +1,129 @@
+[
+  {
+    "RoomName": "Faron Field",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Faron Field Behind Boulder",
+        "Requirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South",
+        "GlitchedRequirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
+      },
+      {
+        "ConnectedArea": "South Faron Woods",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Kakariko Gorge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Bridge",
+        "Requirements": "Gate_Keys",
+        "GlitchedRequirements": "Gate_Keys or Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Faron Field Corner Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Faron Field Fishing Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Faron Field Bridge Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoStorage"
+      },
+      {
+        "CheckName": "Faron Field Tree Heart Piece",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or Ball_and_Chain"
+      },
+      {
+        "CheckName": "Faron Field Male Beetle",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Female Beetle",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or CanDoStorage"
+      },
+      {
+        "CheckName": "Faron Field Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      }
+    ],
+    "Region": "Hyrule Field - Faron Province"
+  },
+  {
+    "RoomName": "Faron Field Behind Boulder",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Faron Field",
+        "Requirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South",
+        "GlitchedRequirements": "CanGetHotSpringWater and HasBottle and Room.Outside_Castle_Town_South"
+      },
+      {
+         // If you enter Outside Castle Town from there while the boulder is still there, you get stuck and are forced to save-warp or portal-warp.
+        "ConnectedArea": "Outside Castle Town South Inside Boulder",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Hyrule Field - Faron Province"
+  },
+  {
+    "RoomName": "Faron Field Corner Grotto",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Faron Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Faron Field Corner Grotto Right Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Corner Grotto Left Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Corner Grotto Rear Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Faron Province"
+  },
+  {
+    "RoomName": "Faron Field Fishing Grotto",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Faron Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Hyrule Field - Faron Province"
+  }
+]

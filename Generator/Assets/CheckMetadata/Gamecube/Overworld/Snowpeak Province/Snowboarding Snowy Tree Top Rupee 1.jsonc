@@ -4,5 +4,7 @@
     "roomIDX": 1,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": [ "Overworld", "Snowpeak", "Rupee - Freestanding" ],
+    "itemId": "Blue_Rupee",
     "dataCategory": ["ARC"]
 }

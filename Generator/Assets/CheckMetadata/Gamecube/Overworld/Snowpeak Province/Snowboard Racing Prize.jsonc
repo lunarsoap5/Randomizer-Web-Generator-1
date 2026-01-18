@@ -3,5 +3,7 @@
     "stageIDX": [51],
     "fileDirectoryType": [1],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Npc", "Snowpeak Province"],
+    "itemId": "Piece_of_Heart",
     "dataCategory": ["ARC"]
 }

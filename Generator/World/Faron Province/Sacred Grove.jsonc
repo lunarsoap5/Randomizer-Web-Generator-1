@@ -1,0 +1,239 @@
+[
+  {
+    "RoomName": "Lost Woods",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lost Woods Lower Battle Arena",
+        "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.skipGroveEntrance equals True)",
+        "GlitchedRequirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.skipGroveEntrance equals True) or CanDoJSMoonBoots"
+      },
+      {
+        "ConnectedArea": "Lost Woods Upper Battle Arena",
+        "Requirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.skipGroveEntrance equals True)",
+        "GlitchedRequirements": "(CanDefeatSkullKid and Shadow_Crystal) or (Setting.skipGroveEntrance equals True)"
+      },
+      {
+        "ConnectedArea": "North Faron Lost Woods Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": 
+    [
+      {
+        "CheckName": "Lost Woods Lantern Chest",
+        "Requirements": "Lantern and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
+        "GlitchedRequirements": "Lantern and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))"
+      },
+      {
+        "CheckName": "Lost Woods Waterfall Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Lost Woods Lower Battle Arena",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lost Woods",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Sacred Grove Lower",
+        "Requirements": "CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)",
+        "GlitchedRequirements": "CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)"
+      },
+      {
+        "ConnectedArea": "Lost Woods Baba Serpent Grotto",
+        "Requirements": "CanSmash and Shadow_Crystal",
+        "GlitchedRequirements": "CanSmash and Shadow_Crystal"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Sacred Grove Spinner Chest",
+        "Requirements": "Spinner",
+        "GlitchedRequirements": "Spinner or CanDoLJA"
+      },
+      {
+        "CheckName": "Lost Woods Boulder Poe",
+        "Requirements": "Shadow_Crystal and CanSmash",
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash"
+      } 
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Lost Woods Upper Battle Arena",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Sacred Grove Before Block",
+        "Requirements": "CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)",
+        "GlitchedRequirements": "CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Lost Woods Baba Serpent Grotto",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lost Woods Lower Battle Arena",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Sacred Grove Baba Serpent Grotto Chest",
+        "Requirements": "CanDefeatBabaSerpent and CanKnockDownHangingBaba",
+        "GlitchedRequirements": "CanDefeatBabaSerpent and (CanKnockDownHangingBaba or HasSword or Shadow_Crystal or Slingshot or Ball_and_Chain or HasBombs)"
+      }
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Sacred Grove Before Block",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lost Woods Upper Battle Arena",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Sacred Grove Upper",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Sacred Grove Upper",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Sacred Grove Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Sacred Grove Past",
+        "Requirements": "CanStrikePedestal",
+        "GlitchedRequirements": "CanStrikePedestal"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Sacred Grove Lower",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Lost Woods Lower Battle Arena",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Sacred Grove Upper",
+        "Requirements": "Room.Sacred_Grove_Before_Block or (Setting.skipGroveEntrance equals True)",
+        "GlitchedRequirements": "Room.Sacred_Grove_Before_Block or (Setting.skipGroveEntrance equals True) or CanDoJSMoonBoots"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Sacred Grove Male Snail",
+        "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
+      },
+      {
+        "CheckName": "Sacred Grove Master Sword Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Sacred Grove Pedestal Master Sword",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Sacred Grove Pedestal Shadow Crystal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Sacred Grove Portal",
+        "Requirements": "CanDefeatShadowBeast",
+        "GlitchedRequirements": "CanDefeatShadowBeast"
+      }
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Sacred Grove Past",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Sacred Grove Past Behind Window",
+        "Requirements": "CanStrikePedestal",
+        "GlitchedRequirements": "CanStrikePedestal"
+      },
+      {
+        "ConnectedArea": "Sacred Grove Upper",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks":
+    [
+      {
+        "CheckName": "Sacred Grove Past Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 1)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 1) or Shadow_Crystal"
+      },
+      {
+        "CheckName": "Sacred Grove Female Snail",
+        "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
+      },
+      {
+        "CheckName": "Sacred Grove Temple of Time Owl Statue Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 1)",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 1)"
+      }
+    ],
+    "Region": "Sacred Grove"
+  },
+  {
+    "RoomName": "Sacred Grove Past Behind Window",
+    "Exits":
+    [
+      {
+        "ConnectedArea": "Sacred Grove Past",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Temple of Time Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [""],
+    "Region": "Sacred Grove"
+  }
+]

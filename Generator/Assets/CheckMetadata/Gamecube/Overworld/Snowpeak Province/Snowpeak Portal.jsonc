@@ -1,3 +1,5 @@
 {
+    "checkCategory": ["Overworld", "Snowpeak"],
+    "itemId": "Snowpeak_Portal",
     "dataCategory": [""]
 }
