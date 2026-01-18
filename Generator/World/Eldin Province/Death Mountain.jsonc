@@ -14,7 +14,6 @@
         "GlitchedRequirements": "Iron_Boots or CanCompleteGoronMines"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   },
   {
@@ -118,7 +117,6 @@
         "GlitchedRequirements": "Room.Death_Mountain_Elevator_Lower or (Setting.goronMinesEntrance equals Open)"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   },
   {
@@ -136,7 +134,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   },
   {
@@ -159,7 +156,6 @@
         "GlitchedRequirements": "Iron_Boots"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   },
   {
@@ -182,7 +178,6 @@
         "GlitchedRequirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   },
   {
@@ -202,7 +197,6 @@
         "GlitchedRequirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True) or Spinner or Shadow_Crystal"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   },
   {
@@ -222,7 +216,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Death Mountain"
   }
 ]

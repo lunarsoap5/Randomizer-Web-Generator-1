@@ -19,7 +19,6 @@
         "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos"
       }
     ],
-    "Checks": [""],
     "Region": "Gerudo Desert"
   },
   {
@@ -62,7 +61,6 @@
         "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble"
       }
     ],
-    "Checks": [""],
     "Region": "Gerudo Desert"
   },
   {

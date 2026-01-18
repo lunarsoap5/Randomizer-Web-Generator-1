@@ -80,7 +80,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Faron Province"
   },
   {
@@ -123,7 +122,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Faron Province"
   }
 ]

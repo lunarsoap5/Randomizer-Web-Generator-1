@@ -328,7 +328,7 @@ namespace TPRandomizer.Hints.HintCreator
                     // checks based on the boss (ex: post-Fyrus checks block
                     // barren for FT if Fyrus is randomized to be the boss at
                     // the end of FT).
-                    List<string> result = new(bRoom.Checks);
+                    List<string> result = new(bRoom.getCheckNames());
                     switch (bossRoom)
                     {
                         case "Goron Mines Boss Room":

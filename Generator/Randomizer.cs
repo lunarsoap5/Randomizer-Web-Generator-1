@@ -522,7 +522,7 @@ namespace TPRandomizer
             FileCreationSettings fcSettings = FileCreationSettings.FromString(fcSettingsString);
 
             // Generate the dictionary values that are needed and initialize the data for the selected logic type.
-            DeserializeCheckData(SSettings, fcSettings);
+            DeserializeChecks(SSettings);
             DeserializeRooms(SSettings);
 
             SeedGenResults seedGenResults = new SeedGenResults(id, json);
@@ -1227,76 +1227,53 @@ namespace TPRandomizer
                         foreach (Room graphRoom in currentPlaythroughGraph)
                         {
                             graphRoom.Visited = true;
-                            for (int i = 0; i < graphRoom.Checks.Count; i++)
+                            if (graphRoom.Checks != null)
                             {
-                                // Create reference to the dictionary entry of the check whose logic we are evaluating
-                                if (
-                                    !Checks.CheckDict.TryGetValue(
-                                        graphRoom.Checks[i],
-                                        out Check currentCheck
-                                    )
-                                )
+                                for (int i = 0; i < graphRoom.Checks.Count; i++)
                                 {
-                                    if (graphRoom.Checks[i].ToString() == string.Empty)
-                                    {
-                                        // Console.WriteLine("Room has no checks, continuing on....");
-                                        break;
-                                    }
-                                }
-                                if (!currentCheck.hasBeenReached)
-                                {
+                                    // Create reference to the dictionary entry of the check whose logic we are evaluating
                                     if (
-                                        SSettings.logicRules == LogicRules.No_Logic
-                                        || currentCheck.CachedRequirements().Evaluate()
+                                        !Checks.CheckDict.TryGetValue(
+                                            graphRoom.Checks[i].CheckName,
+                                            out Check currentCheck
+                                        )
                                     )
                                     {
-                                        if (currentCheck.itemWasPlaced)
+                                        if (
+                                            graphRoom.Checks[i].CheckName.ToString() == string.Empty
+                                        )
                                         {
-                                            playthroughItems.Add(currentCheck.itemId);
-
-                                            /*Console.WriteLine(
-                                                "Added " + currentCheck.itemId + " to item list."
-                                            );*/
+                                            // Console.WriteLine("Room has no checks, continuing on....");
+                                            break;
                                         }
-                                        else
+                                    }
+                                    if (!currentCheck.hasBeenReached)
+                                    {
+                                        if (
+                                            SSettings.logicRules == LogicRules.No_Logic
+                                            || graphRoom.Checks[i].CachedRequirements().Evaluate()
+                                        )
                                         {
-                                            if (
-                                                (restriction == "Region")
-                                                && (currentCheck.checkStatus != "Plando")
-                                            )
+                                            if (currentCheck.itemWasPlaced)
+                                            {
+                                                playthroughItems.Add(currentCheck.itemId);
+
+                                                /*Console.WriteLine(
+                                                    "Added " + currentCheck.itemId + " to item list."
+                                                );*/
+                                            }
+                                            else
                                             {
                                                 if (
-                                                    RoomFunctions.IsRegionCheck(
-                                                        itemToPlace,
-                                                        currentCheck,
-                                                        graphRoom
-                                                    )
+                                                    (restriction == "Region")
+                                                    && (currentCheck.checkStatus != "Plando")
                                                 )
                                                 {
-                                                    // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                    availableChecks.Add(currentCheck.checkName);
-                                                }
-                                            }
-                                            else if (currentCheck.checkStatus == "Ready")
-                                            {
-                                                if (restriction == "Dungeon Rewards")
-                                                {
                                                     if (
-                                                        currentCheck.checkCategory.Contains(
-                                                            "Dungeon Reward"
-                                                        )
-                                                    )
-                                                    {
-                                                        // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                        availableChecks.Add(currentCheck.checkName);
-                                                    }
-                                                }
-                                                else if (Randomizer.SSettings.noSmallKeysOnBosses)
-                                                {
-                                                    if (
-                                                        !ItemFunctions.IsSmallKeyOnBossCheck(
+                                                        RoomFunctions.IsRegionCheck(
                                                             itemToPlace,
-                                                            currentCheck
+                                                            currentCheck,
+                                                            graphRoom
                                                         )
                                                     )
                                                     {
@@ -1304,15 +1281,49 @@ namespace TPRandomizer
                                                         availableChecks.Add(currentCheck.checkName);
                                                     }
                                                 }
-                                                else
+                                                else if (currentCheck.checkStatus == "Ready")
                                                 {
-                                                    // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                    availableChecks.Add(currentCheck.checkName);
+                                                    if (restriction == "Dungeon Rewards")
+                                                    {
+                                                        if (
+                                                            currentCheck.checkCategory.Contains(
+                                                                "Dungeon Reward"
+                                                            )
+                                                        )
+                                                        {
+                                                            // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
+                                                            availableChecks.Add(
+                                                                currentCheck.checkName
+                                                            );
+                                                        }
+                                                    }
+                                                    else if (
+                                                        Randomizer.SSettings.noSmallKeysOnBosses
+                                                    )
+                                                    {
+                                                        if (
+                                                            !ItemFunctions.IsSmallKeyOnBossCheck(
+                                                                itemToPlace,
+                                                                currentCheck
+                                                            )
+                                                        )
+                                                        {
+                                                            // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
+                                                            availableChecks.Add(
+                                                                currentCheck.checkName
+                                                            );
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
+                                                        availableChecks.Add(currentCheck.checkName);
+                                                    }
                                                 }
                                             }
-                                        }
 
-                                        currentCheck.hasBeenReached = true;
+                                            currentCheck.hasBeenReached = true;
+                                        }
                                     }
                                 }
                             }
@@ -1506,7 +1517,7 @@ namespace TPRandomizer
                     //Console.WriteLine("region: " + bRoom.Region + " for room: " + bRoom.RoomName);
                     if (bRoom.Region == DungeonNames[i])
                     {
-                        listOfAffectedChecks[i].AddRange(bRoom.Checks);
+                        listOfAffectedChecks[i].AddRange(bRoom.getCheckNames());
                         switch (bossRoom)
                         {
                             case "Goron Mines Boss Room":
@@ -1650,66 +1661,30 @@ namespace TPRandomizer
         {
             string[] files;
 
-            // We keep the logic files seperate based on their logic. GC and Wii should use the same logic.
+            // We keep the logic files seperate based on their logic.
 
             files = System.IO.Directory.GetFiles(
-                Global.CombineRootPath("./World/Checks/"),
+                Global.CombineRootPath("./Assets/CheckMetadata/Gamecube/"),
                 "*",
                 SearchOption.AllDirectories
             );
 
             // Sort so that the item placement algorithm produces the exact same
             // result in production and development.
-            // If we have already generated a dictionary from DeserializeCheckMetadata, then we only need to apply the logic data from the files.
             Array.Sort(files, new FilenameComparer());
-            if (Checks.CheckDict.Count == 0)
+
+            foreach (string file in files)
             {
-                foreach (string file in files)
-                {
-                    string contents = File.ReadAllText(file);
-                    string fileName = Path.GetFileNameWithoutExtension(file);
-                    Checks.CheckDict.Add(fileName, new Check());
-                    Checks.CheckDict[fileName] = JsonConvert.DeserializeObject<Check>(contents);
-                    Check currentCheck = Checks.CheckDict[fileName];
-                    currentCheck.checkName = fileName;
-                    if (SSettings.logicRules == LogicRules.Glitchless)
-                    {
-                        currentCheck.requirements = "(" + currentCheck.requirements + ")";
-                    }
-                    else
-                    {
-                        currentCheck.requirements = "(" + currentCheck.glitchedRequirements + ")";
-                    }
-                    currentCheck.checkStatus = "Ready";
-                    currentCheck.itemWasPlaced = false;
-                    currentCheck.isRequired = false;
-                    Checks.CheckDict[fileName] = currentCheck;
-                }
-            }
-            else
-            {
-                foreach (string file in files)
-                {
-                    string contents = File.ReadAllText(file);
-                    string fileName = Path.GetFileNameWithoutExtension(file);
-                    Check currentCheck = JsonConvert.DeserializeObject<Check>(contents);
-                    if (SSettings.logicRules == LogicRules.Glitchless)
-                    {
-                        Checks.CheckDict[fileName].requirements =
-                            "(" + currentCheck.requirements + ")";
-                    }
-                    else
-                    {
-                        Checks.CheckDict[fileName].requirements =
-                            "(" + currentCheck.glitchedRequirements + ")";
-                    }
-                    Checks.CheckDict[fileName].checkCategory = currentCheck.checkCategory;
-                    Checks.CheckDict[fileName].checkName = fileName;
-                    Checks.CheckDict[fileName].checkStatus = "Ready";
-                    Checks.CheckDict[fileName].itemWasPlaced = false;
-                    Checks.CheckDict[fileName].isRequired = false;
-                    Checks.CheckDict[fileName].itemId = currentCheck.itemId;
-                }
+                string contents = File.ReadAllText(file);
+                string fileName = Path.GetFileNameWithoutExtension(file);
+                Checks.CheckDict.Add(fileName, new Check());
+                Checks.CheckDict[fileName] = JsonConvert.DeserializeObject<Check>(contents);
+                Check currentCheck = Checks.CheckDict[fileName];
+                currentCheck.checkName = fileName;
+                currentCheck.checkStatus = "Ready";
+                currentCheck.itemWasPlaced = false;
+                currentCheck.isRequired = false;
+                Checks.CheckDict[fileName] = currentCheck;
             }
 
             // Validate that all non-hidden checks belong to a hint zone
@@ -1726,61 +1701,6 @@ namespace TPRandomizer
             }
         }
 
-        private static void DeserializeCheckData(
-            SharedSettings SSettings,
-            FileCreationSettings FcSettings
-        )
-        {
-            string[] files = null;
-
-            // The GC/Wii files have different offsets for the data that is needed to replace certain checks.
-            switch (FcSettings.gameRegion)
-            {
-                // For now, 'All' only generates for GameCube until we do more
-                // work related to Wii code.
-                case GameRegion.GC_USA:
-                case GameRegion.GC_EUR:
-                case GameRegion.GC_JAP:
-                case GameRegion.All:
-                {
-                    files = System.IO.Directory.GetFiles(
-                        Global.CombineRootPath("./Assets/CheckMetadata/Gamecube/"),
-                        "*",
-                        SearchOption.AllDirectories
-                    );
-                    break;
-                }
-
-                case GameRegion.WII_10_USA:
-                case GameRegion.WII_10_EU:
-                case GameRegion.WII_10_JP:
-                case GameRegion.WII_12_USA:
-                {
-                    files = System.IO.Directory.GetFiles(
-                        Global.CombineRootPath("./Assets/CheckMetadata/Wii1.0/"),
-                        "*",
-                        SearchOption.AllDirectories
-                    );
-                    break;
-                }
-            }
-
-            // Sort so that the item placement algorithm produces the exact same
-            // result in production and development.
-            Array.Sort(files, new FilenameComparer());
-
-            foreach (string file in files)
-            {
-                string contents = File.ReadAllText(file);
-                string fileName = Path.GetFileNameWithoutExtension(file);
-                Checks.CheckDict.Add(fileName, new Check());
-                Checks.CheckDict[fileName] = JsonConvert.DeserializeObject<Check>(contents);
-                Checks.CheckDict[fileName].checkName = fileName;
-            }
-
-            DeserializeChecks(SSettings);
-        }
-
         public static void DeserializeRooms(SharedSettings SSettings)
         {
             //Before anything, create an entry for the root of the world
@@ -1792,7 +1712,7 @@ namespace TPRandomizer
 
             string[] files;
             files = System.IO.Directory.GetFiles(
-                Global.CombineRootPath("./World/Rooms/"),
+                Global.CombineRootPath("./World/"),
                 "*",
                 SearchOption.AllDirectories
             );
@@ -1815,6 +1735,8 @@ namespace TPRandomizer
                     Randomizer.Rooms.RoomDict[room.RoomName] = room;
                     Room currentRoom = Randomizer.Rooms.RoomDict[room.RoomName];
                     currentRoom.Visited = false;
+
+                    // Update entrance logic to meet our needs
                     for (int i = 0; i < currentRoom.Exits.Count; i++)
                     {
                         if (SSettings.logicRules == LogicRules.Glitchless)
@@ -1832,6 +1754,26 @@ namespace TPRandomizer
                         currentRoom.Exits[i].OriginalConnectedArea = currentRoom.Exits[
                             i
                         ].ConnectedArea;
+                    }
+                    // Update the Check logic to meet our format needs
+                    if (currentRoom.Checks != null)
+                    {
+                        if (SSettings.logicRules == LogicRules.Glitchless)
+                        {
+                            Console.WriteLine(currentRoom.RoomName);
+                            foreach (CheckData roomCheckData in currentRoom.Checks)
+                            {
+                                roomCheckData.Requirements = "(" + roomCheckData.Requirements + ")";
+                            }
+                        }
+                        else
+                        {
+                            foreach (CheckData roomCheckData in currentRoom.Checks)
+                            {
+                                roomCheckData.Requirements =
+                                    "(" + roomCheckData.GlitchedRequirements + ")";
+                            }
+                        }
                     }
 
                     Randomizer.Rooms.RoomDict[room.RoomName] = currentRoom;

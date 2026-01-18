@@ -249,7 +249,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Gerudo Desert"
   },
   {
@@ -373,7 +372,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Gerudo Desert"
   },
   {
@@ -419,7 +417,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Gerudo Desert"
   }
 ]

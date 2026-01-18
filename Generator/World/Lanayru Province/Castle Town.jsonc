@@ -99,7 +99,6 @@
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -117,7 +116,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -135,7 +133,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -233,7 +230,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -277,7 +273,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -310,7 +305,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -353,7 +347,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -371,7 +364,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -394,7 +386,6 @@
         "GlitchedRequirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -412,7 +403,6 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks": [""], // scent does belong to this room if it gets a check one day
     "Region": "Castle Town"
   },
   {
@@ -430,7 +420,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -479,7 +468,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -497,7 +485,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {
@@ -645,7 +632,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Castle Town"
   },
   {

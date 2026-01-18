@@ -22,7 +22,7 @@ namespace TPRandomizer
         /// <summary>
         /// Gets or sets a list of checks contained inside the room.
         /// </summary>
-        public List<string> Checks { get; set; }
+        public List<CheckData> Checks { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the current room has been visited in the current playthrough.
@@ -38,6 +38,35 @@ namespace TPRandomizer
         /// Gets or sets the logical region that the room is contained in.
         /// </summary>
         public string Region { get; set; }
+
+        public List<string> getCheckNames()
+        {
+            List<string> listOfChecks = new();
+            foreach (CheckData roomCheckData in Checks)
+            {
+                listOfChecks.Add(roomCheckData.CheckName);
+            }
+            return listOfChecks;
+        }
+    }
+
+    public class CheckData
+    {
+        public string CheckName { get; set; }
+        public string Requirements { get; set; }
+        public string GlitchedRequirements { get; set; }
+
+        private LogicAST reqsCache;
+
+        public LogicAST CachedRequirements()
+        {
+            if (reqsCache != null)
+            {
+                return reqsCache;
+            }
+
+            return reqsCache = Parser.Parse(Requirements);
+        }
     }
 
     public enum StageIDs : int

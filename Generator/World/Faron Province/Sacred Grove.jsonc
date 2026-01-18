@@ -79,7 +79,6 @@
         "GlitchedRequirements": "CanDefeatSkullKid or (Setting.skipGroveEntrance equals True)"
       }
     ],
-    "Checks": [""],
     "Region": "Sacred Grove"
   },
   {
@@ -117,7 +116,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Sacred Grove"
   },
   {
@@ -135,7 +133,6 @@
         "GlitchedRequirements": "CanStrikePedestal"
       }
     ],
-    "Checks": [""],
     "Region": "Sacred Grove"
   },
   {
@@ -233,7 +230,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Sacred Grove"
   }
 ]

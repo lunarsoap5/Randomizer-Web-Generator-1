@@ -59,37 +59,40 @@ namespace TPRandomizer
                 {
                     graphRoom.Visited = true;
                     //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
-                    for (int i = 0; i < graphRoom.Checks.Count; i++)
+                    if (graphRoom.Checks != null)
                     {
-                        // Create reference to the dictionary entry of the check whose logic we are evaluating
-                        if (
-                            !Randomizer.Checks.CheckDict.TryGetValue(
-                                graphRoom.Checks[i],
-                                out Check currentCheck
+                        for (int i = 0; i < graphRoom.Checks.Count; i++)
+                        {
+                            // Create reference to the dictionary entry of the check whose logic we are evaluating
+                            if (
+                                !Randomizer.Checks.CheckDict.TryGetValue(
+                                    graphRoom.Checks[i].CheckName,
+                                    out Check currentCheck
+                                )
                             )
-                        )
-                        {
-                            if (graphRoom.Checks[i].ToString() == string.Empty)
                             {
-                                // Console.WriteLine("Room has no checks, continuing on....");
-                                break;
-                            }
-                        }
-
-                        if (!currentCheck.hasBeenReached)
-                        {
-                            if (currentCheck.CachedRequirements().Evaluate())
-                            {
-                                if (currentCheck.itemWasPlaced)
+                                if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
                                 {
-                                    playthroughItems.Add(currentCheck.itemId);
-
-                                    /*Console.WriteLine(
-                                        "Added " + currentCheck.itemId + " to item list."
-                                    );*/
+                                    // Console.WriteLine("Room has no checks, continuing on....");
+                                    break;
                                 }
+                            }
 
-                                currentCheck.hasBeenReached = true;
+                            if (!currentCheck.hasBeenReached)
+                            {
+                                if (graphRoom.Checks[i].CachedRequirements().Evaluate())
+                                {
+                                    if (currentCheck.itemWasPlaced)
+                                    {
+                                        playthroughItems.Add(currentCheck.itemId);
+
+                                        /*Console.WriteLine(
+                                            "Added " + currentCheck.itemId + " to item list."
+                                        );*/
+                                    }
+
+                                    currentCheck.hasBeenReached = true;
+                                }
                             }
                         }
                     }
@@ -194,37 +197,40 @@ namespace TPRandomizer
                 {
                     graphRoom.Visited = true;
                     //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
-                    for (int i = 0; i < graphRoom.Checks.Count; i++)
+                    if (graphRoom.Checks != null)
                     {
-                        // Create reference to the dictionary entry of the check whose logic we are evaluating
-                        if (
-                            !Randomizer.Checks.CheckDict.TryGetValue(
-                                graphRoom.Checks[i],
-                                out Check currentCheck
+                        for (int i = 0; i < graphRoom.Checks.Count; i++)
+                        {
+                            // Create reference to the dictionary entry of the check whose logic we are evaluating
+                            if (
+                                !Randomizer.Checks.CheckDict.TryGetValue(
+                                    graphRoom.Checks[i].CheckName,
+                                    out Check currentCheck
+                                )
                             )
-                        )
-                        {
-                            if (graphRoom.Checks[i].ToString() == string.Empty)
                             {
-                                // Console.WriteLine("Room has no checks, continuing on....");
-                                break;
-                            }
-                        }
-
-                        if (!currentCheck.hasBeenReached)
-                        {
-                            if (currentCheck.CachedRequirements().Evaluate())
-                            {
-                                if (currentCheck.itemWasPlaced)
+                                if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
                                 {
-                                    playthroughItems.Add(currentCheck.itemId);
-
-                                    /*Console.WriteLine(
-                                        "Added " + currentCheck.itemId + " to item list."
-                                    );*/
+                                    // Console.WriteLine("Room has no checks, continuing on....");
+                                    break;
                                 }
+                            }
 
-                                currentCheck.hasBeenReached = true;
+                            if (!currentCheck.hasBeenReached)
+                            {
+                                if (graphRoom.Checks[i].CachedRequirements().Evaluate())
+                                {
+                                    if (currentCheck.itemWasPlaced)
+                                    {
+                                        playthroughItems.Add(currentCheck.itemId);
+
+                                        /*Console.WriteLine(
+                                            "Added " + currentCheck.itemId + " to item list."
+                                        );*/
+                                    }
+
+                                    currentCheck.hasBeenReached = true;
+                                }
                             }
                         }
                     }
@@ -402,12 +408,12 @@ namespace TPRandomizer
                         // Create reference to the dictionary entry of the check whose logic we are evaluating
                         if (
                             !Randomizer.Checks.CheckDict.TryGetValue(
-                                graphRoom.Checks[i],
+                                graphRoom.Checks[i].CheckName,
                                 out Check currentCheck
                             )
                         )
                         {
-                            if (graphRoom.Checks[i].ToString() == string.Empty)
+                            if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
                             {
                                 // Console.WriteLine("Room has no checks, continuing on....");
                                 break;
@@ -416,7 +422,7 @@ namespace TPRandomizer
 
                         if (!currentCheck.hasBeenReached)
                         {
-                            if (currentCheck.CachedRequirements().Evaluate())
+                            if (graphRoom.Checks[i].CachedRequirements().Evaluate())
                             {
                                 sphereItems.Add(currentCheck.itemId);
                                 currentCheck.hasBeenReached = true;
@@ -562,64 +568,73 @@ namespace TPRandomizer
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
                     //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
-
-                    for (int i = 0; i < graphRoom.Checks.Count; i++)
+                    if (graphRoom.Checks != null)
                     {
-                        // Create reference to the dictionary entry of the check whose logic we are evaluating
-                        if (
-                            !Randomizer.Checks.CheckDict.TryGetValue(
-                                graphRoom.Checks[i],
-                                out Check currentCheck
-                            )
-                        )
+                        for (int i = 0; i < graphRoom.Checks.Count; i++)
                         {
-                            if (graphRoom.Checks[i].ToString() == string.Empty)
-                            {
-                                // Console.WriteLine("Room has no checks, continuing on....");
-                                break;
-                            }
-                        }
-
-                        if (!currentCheck.hasBeenReached)
-                        {
-                            if (currentCheck.CachedRequirements().Evaluate())
-                            {
-                                playthroughDictionaryAll.Add(
-                                    "    " + currentCheck.checkName + ": " + currentCheck.itemId,
-                                    currentCheck
-                                );
-
-                                sphereItems.Add(currentCheck.itemId);
-                                currentCheck.hasBeenReached = true;
-                                if (
-                                    Randomizer.Items.RandomizedImportantItemsStatic.Contains(
-                                        currentCheck.itemId
-                                    )
-                                    || Randomizer.Items.RegionSmallKeys.Contains(
-                                        currentCheck.itemId
-                                    )
-                                    || Randomizer.Items.DungeonBigKeys.Contains(currentCheck.itemId)
-                                    || Randomizer.Items.VanillaDungeonRewards.Contains(
-                                        currentCheck.itemId
-                                    )
-                                    || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
-                                    || Randomizer.Items.PortalItems.Contains(currentCheck.itemId)
-                                    || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
-                                    || (currentCheck.itemId == Item.Poe_Soul)
+                            // Create reference to the dictionary entry of the check whose logic we are evaluating
+                            if (
+                                !Randomizer.Checks.CheckDict.TryGetValue(
+                                    graphRoom.Checks[i].CheckName,
+                                    out Check currentCheck
                                 )
+                            )
+                            {
+                                if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
                                 {
-                                    playthroughDictionary.Add(
+                                    // Console.WriteLine("Room has no checks, continuing on....");
+                                    break;
+                                }
+                            }
+
+                            if (!currentCheck.hasBeenReached)
+                            {
+                                if (graphRoom.Checks[i].CachedRequirements().Evaluate())
+                                {
+                                    playthroughDictionaryAll.Add(
                                         "    "
                                             + currentCheck.checkName
                                             + ": "
                                             + currentCheck.itemId,
                                         currentCheck
                                     );
-                                    hasCompletedSphere = true;
-                                    currentCheck.isRequired = true;
-                                    /*Console.WriteLine(
-                                        $"Did check '{currentCheck.checkName}' which had item '{currentCheck.itemId}'."
-                                    );*/
+
+                                    sphereItems.Add(currentCheck.itemId);
+                                    currentCheck.hasBeenReached = true;
+                                    if (
+                                        Randomizer.Items.RandomizedImportantItemsStatic.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.RegionSmallKeys.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.DungeonBigKeys.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.VanillaDungeonRewards.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
+                                        || Randomizer.Items.PortalItems.Contains(
+                                            currentCheck.itemId
+                                        )
+                                        || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
+                                        || (currentCheck.itemId == Item.Poe_Soul)
+                                    )
+                                    {
+                                        playthroughDictionary.Add(
+                                            "    "
+                                                + currentCheck.checkName
+                                                + ": "
+                                                + currentCheck.itemId,
+                                            currentCheck
+                                        );
+                                        hasCompletedSphere = true;
+                                        currentCheck.isRequired = true;
+                                        /*Console.WriteLine(
+                                            $"Did check '{currentCheck.checkName}' which had item '{currentCheck.itemId}'."
+                                        );*/
+                                    }
                                 }
                             }
                         }
@@ -767,12 +782,12 @@ namespace TPRandomizer
                             // Create reference to the dictionary entry of the check whose logic we are evaluating
                             if (
                                 !Randomizer.Checks.CheckDict.TryGetValue(
-                                    graphRoom.Checks[i],
+                                    graphRoom.Checks[i].CheckName,
                                     out Check currentCheck
                                 )
                             )
                             {
-                                if (graphRoom.Checks[i].ToString() == string.Empty)
+                                if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
                                 {
                                     // Console.WriteLine("Room has no checks, continuing on....");
                                     break;
@@ -781,7 +796,7 @@ namespace TPRandomizer
 
                             if (!currentCheck.hasBeenReached && currentCheck.itemWasPlaced)
                             {
-                                if (currentCheck.CachedRequirements().Evaluate())
+                                if (graphRoom.Checks[i].CachedRequirements().Evaluate())
                                 {
                                     currentCheck.hasBeenReached = true;
                                     if (
@@ -923,52 +938,58 @@ namespace TPRandomizer
                         //     hasConcludedPlaythrough = true;
                         //     return true;
                         // }
-
-                        for (int i = 0; i < graphRoom.Checks.Count; i++)
+                        if (graphRoom.Checks != null)
                         {
-                            // Create reference to the dictionary entry of the check whose logic we are evaluating
-                            if (
-                                !Randomizer.Checks.CheckDict.TryGetValue(
-                                    graphRoom.Checks[i],
-                                    out Check currentCheck
-                                )
-                            )
+                            for (int i = 0; i < graphRoom.Checks.Count; i++)
                             {
-                                if (graphRoom.Checks[i].ToString() == string.Empty)
-                                {
-                                    // Console.WriteLine("Room has no checks, continuing on....");
-                                    break;
-                                }
-                            }
-
-                            if (!currentCheck.hasBeenReached && currentCheck.itemWasPlaced)
-                            {
-                                if (currentCheck.CachedRequirements().Evaluate())
-                                {
-                                    currentCheck.hasBeenReached = true;
-                                    if (
-                                        Randomizer.Items.RandomizedImportantItemsStatic.Contains(
-                                            currentCheck.itemId
-                                        )
-                                        || Randomizer.Items.RegionSmallKeys.Contains(
-                                            currentCheck.itemId
-                                        )
-                                        || Randomizer.Items.DungeonBigKeys.Contains(
-                                            currentCheck.itemId
-                                        )
-                                        || Randomizer.Items.VanillaDungeonRewards.Contains(
-                                            currentCheck.itemId
-                                        )
-                                        || Randomizer.Items.goldenBugs.Contains(currentCheck.itemId)
-                                        || Randomizer.Items.PortalItems.Contains(
-                                            currentCheck.itemId
-                                        )
-                                        || Randomizer.Items.BossItems.Contains(currentCheck.itemId)
-                                        || (currentCheck.itemId == Item.Poe_Soul)
+                                // Create reference to the dictionary entry of the check whose logic we are evaluating
+                                if (
+                                    !Randomizer.Checks.CheckDict.TryGetValue(
+                                        graphRoom.Checks[i].CheckName,
+                                        out Check currentCheck
                                     )
+                                )
+                                {
+                                    if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
                                     {
-                                        sphereItems.Add(currentCheck.itemId);
-                                        hasCompletedSphere = true;
+                                        // Console.WriteLine("Room has no checks, continuing on....");
+                                        break;
+                                    }
+                                }
+
+                                if (!currentCheck.hasBeenReached && currentCheck.itemWasPlaced)
+                                {
+                                    if (graphRoom.Checks[i].CachedRequirements().Evaluate())
+                                    {
+                                        currentCheck.hasBeenReached = true;
+                                        if (
+                                            Randomizer.Items.RandomizedImportantItemsStatic.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || Randomizer.Items.RegionSmallKeys.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || Randomizer.Items.DungeonBigKeys.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || Randomizer.Items.VanillaDungeonRewards.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || Randomizer.Items.goldenBugs.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || Randomizer.Items.PortalItems.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || Randomizer.Items.BossItems.Contains(
+                                                currentCheck.itemId
+                                            )
+                                            || (currentCheck.itemId == Item.Poe_Soul)
+                                        )
+                                        {
+                                            sphereItems.Add(currentCheck.itemId);
+                                            hasCompletedSphere = true;
+                                        }
                                     }
                                 }
                             }
@@ -1066,36 +1087,38 @@ namespace TPRandomizer
                     foreach (Room graphRoom in currentPlaythroughGraph)
                     {
                         // Console.WriteLine("Currently Exploring: " + graphRoom.name);
-
-                        for (int i = 0; i < graphRoom.Checks.Count; i++)
+                        if (graphRoom.Checks != null)
                         {
-                            // Create reference to the dictionary entry of the check whose logic we are evaluating
-                            if (
-                                !Randomizer.Checks.CheckDict.TryGetValue(
-                                    graphRoom.Checks[i],
-                                    out Check currentCheck
+                            for (int i = 0; i < graphRoom.Checks.Count; i++)
+                            {
+                                // Create reference to the dictionary entry of the check whose logic we are evaluating
+                                if (
+                                    !Randomizer.Checks.CheckDict.TryGetValue(
+                                        graphRoom.Checks[i].CheckName,
+                                        out Check currentCheck
+                                    )
                                 )
-                            )
-                            {
-                                if (graphRoom.Checks[i].ToString() == string.Empty)
                                 {
-                                    // Console.WriteLine("Room has no checks, continuing on....");
-                                    break;
+                                    if (graphRoom.Checks[i].CheckName.ToString() == string.Empty)
+                                    {
+                                        // Console.WriteLine("Room has no checks, continuing on....");
+                                        break;
+                                    }
                                 }
-                            }
 
-                            if (
-                                !currentCheck.hasBeenReached
-                                && currentCheck.itemWasPlaced
-                                && currentCheck.isRequired
-                            )
-                            {
-                                if (currentCheck.CachedRequirements().Evaluate())
+                                if (
+                                    !currentCheck.hasBeenReached
+                                    && currentCheck.itemWasPlaced
+                                    && currentCheck.isRequired
+                                )
                                 {
-                                    currentCheck.hasBeenReached = true;
+                                    if (graphRoom.Checks[i].CachedRequirements().Evaluate())
+                                    {
+                                        currentCheck.hasBeenReached = true;
 
-                                    sphereItems.Add(currentCheck.itemId);
-                                    hasCompletedSphere = true;
+                                        sphereItems.Add(currentCheck.itemId);
+                                        hasCompletedSphere = true;
+                                    }
                                 }
                             }
                         }

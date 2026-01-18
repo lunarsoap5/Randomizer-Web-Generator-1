@@ -42,7 +42,6 @@
                 "GlitchedRequirements": "CanDefeatBokoblinRed"
             }
         ],
-        "Checks": [""],
         "Region": "Hyrule Castle"
     },
     {
@@ -214,7 +213,6 @@
                 "GlitchedRequirements": "true"
             }
         ],
-        "Checks": [""],
         "Region": "Hyrule Castle"
     },
     {
@@ -317,7 +315,6 @@
                 "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key"
             }
         ],
-        "Checks": [""],
         "Region": "Hyrule Castle"
     },
     {

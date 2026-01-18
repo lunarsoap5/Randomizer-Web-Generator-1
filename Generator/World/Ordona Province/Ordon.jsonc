@@ -18,7 +18,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Ordona Province"
   },
   {
@@ -220,7 +219,6 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks": [""],
     "Region": "Ordon Village"
   },
   {
@@ -280,7 +278,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Ordona Province"
   },
   {
@@ -297,7 +294,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Ordona Province"
   },
   {
@@ -338,7 +334,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Ordona Province"
   },
   {
@@ -379,7 +374,6 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks": [""],
     "Region": "Ordona Province"
   },
   {

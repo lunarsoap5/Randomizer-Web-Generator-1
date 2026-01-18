@@ -104,7 +104,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Eldin"
   },
   {
@@ -122,7 +121,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
@@ -180,7 +178,6 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
@@ -318,7 +315,6 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
@@ -453,7 +449,6 @@
         "GlitchedRequirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South"
       }
     ],
-    "Checks": [""],
     "Region": "Hyrule Field - Lanayru Province"
   },
   {
