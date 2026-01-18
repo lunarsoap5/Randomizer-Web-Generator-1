@@ -4,5 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": [ "Overworld", "Faron Woods", "Rupee - Freestanding" ],
+    "itemId": "Purple_Rupee",
     "dataCategory": ["ARC"]
 }

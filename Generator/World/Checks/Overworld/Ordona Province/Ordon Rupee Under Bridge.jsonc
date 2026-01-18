@@ -1,7 +1,0 @@
-{
-    // Rupee is only available during the day
-    "Requirements": "true",
-    "GlitchedRequirements": "true",
-    "checkCategory": [ "Overworld", "Faron Woods", "Rupee - Freestanding" ],
-    "itemId": "Green_Rupee"
-  }

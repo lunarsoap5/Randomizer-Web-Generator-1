@@ -4,5 +4,7 @@
     "fileDirectoryType": [1],
     "replacementType": [0],
     "flag": "10",
+    "checkCategory": ["Overworld", "Shop", "Ordona Province"],
+    "itemId": "Slingshot",
     "dataCategory": ["Shop", "ARC"]
 }

@@ -4,5 +4,7 @@
     "roomIDX": 4,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "checkCategory": ["Overworld", "Chest", "Ordona Province"],
+    "itemId": "Progressive_Sword",
     "dataCategory": ["Chest", "ARC"]
 }

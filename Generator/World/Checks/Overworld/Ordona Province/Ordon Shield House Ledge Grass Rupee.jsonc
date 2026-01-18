@@ -1,7 +1,0 @@
-{
-    // Rupee is only available during the night
-    "Requirements": "Boomerang or Progressive_Clawshot",
-    "GlitchedRequirements": "Boomerang or Progressive_Clawshot or Progressive_Sword",
-    "checkCategory": [ "Overworld", "Faron Woods", "Rupee - Freestanding" ],
-    "itemId": "Purple_Rupee"
-  }

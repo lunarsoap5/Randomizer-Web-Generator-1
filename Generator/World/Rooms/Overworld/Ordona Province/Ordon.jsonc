@@ -30,7 +30,19 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Wooden Sword Chest", "Links Basement Chest"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Wooden Sword Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Links Basement Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
+    ],
     "Region": "Ordona Province"
   },
   {
@@ -73,23 +85,100 @@
       }
     ],
     "Checks": [
-      "Ordon Bo Cliff Rupee",
-      "Ordon Bo Roof Rupee",
-      "Ordon Bo Window Rupee 1",
-      "Ordon Bo Window Rupee 2",
-      "Ordon Hidden Rusl House Rupee",
-      "Ordon Rupee In Grass By Bo",
-      "Ordon Rupee In River 1",
-      "Ordon Rupee In River 2",
-      "Ordon Rupee Under Bridge",
-      "Ordon Rupee Under Tall Tree 1",
-      "Ordon Rupee Under Tall Tree 2",
-      "Ordon Rusl House Roof Rupee 1",
-      "Ordon Rusl House Roof Rupee 2",
-      "Ordon Shield House Ledge Grass Rupee",
-      "Ordon Tree Long Branch Rupee",
-      "Ordon Tree Short Branch Rupee",
-      "Uli Cradle Delivery"
+      {
+        "CheckName": "Ordon Bo Cliff Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Bo Roof Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Bo Window Rupee 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Bo Window Rupee 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Hidden Rusl House Rupee",
+        "Requirements": "Boomerang or Progressive_Clawshot",
+        "GlitchedRequirements": "Boomerang or Progressive_Clawshot"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee In Grass By Bo",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee In River 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee In River 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee Under Bridge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee Under Tall Tree 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee Under Tall Tree 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Rusl House Roof Rupee 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Rusl House Roof Rupee 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the night
+        "CheckName": "Ordon Shield House Ledge Grass Rupee",
+        "Requirements": "Boomerang or Progressive_Clawshot",
+        "GlitchedRequirements": "Boomerang or Progressive_Clawshot or Progressive_Sword"
+      },
+      {
+        "CheckName": "Ordon Tree Long Branch Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Tree Short Branch Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Uli Cradle Delivery",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
     ],
     "Region": "Ordona Province"
   },
@@ -102,7 +191,19 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Ordon Cat Rescue", "Sera Shop Slingshot"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Ordon Cat Rescue",
+        "Requirements": "Room.Ordon_Village and (Progressive_Fishing_Rod, 1) and CanCompleteGoats1",
+        "GlitchedRequirements": "Room.Ordon_Village and (Progressive_Fishing_Rod, 1) and CanCompleteGoats1"
+      },
+      {
+        "CheckName": "Sera Shop Slingshot",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
     "Region": "Ordona Province"
   },
   {
@@ -136,7 +237,14 @@
         "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
-    "Checks": ["Ordon Shield"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Ordon Shield",
+        "Requirements": "(((Setting.faronTwilightCleared equals False) and CanCompletePrologue) or ((Setting.faronTwilightCleared equals True) and Shadow_Crystal)) and ((Setting.bonksDoDamage equals False) or ((Setting.bonksDoDamage equals True) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairies)))",
+        "GlitchedRequirements": "(((Setting.faronTwilightCleared equals False) and CanCompletePrologue) or ((Setting.faronTwilightCleared equals True) and Shadow_Crystal)) and ((Setting.bonksDoDamage equals False) or ((Setting.bonksDoDamage equals True) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairies)))"
+      }
+    ],
     "Region": "Ordon Village"
   },
   {
@@ -148,7 +256,14 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Ordon Sword"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Ordon Sword",
+        "Requirements": "CanCompletePrologue or (Setting.faronTwilightCleared equals True)",
+        "GlitchedRequirements": "CanCompletePrologue or (Setting.faronTwilightCleared equals True)"
+      }
+    ],
     "Region": "Ordon Village"
   },
   {
@@ -199,7 +314,14 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Wrestling With Bo"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Wrestling With Bo",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
     "Region": "Ordona Province"
   },
   {
@@ -233,7 +355,14 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Herding Goats Reward"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Herding Goats Reward",
+        "Requirements": "CanCompletePrologue and CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompletePrologue and CanCompleteGoats1"
+      }
+    ],
     "Region": "Ordona Province"
   },
   {
@@ -262,7 +391,14 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Ordon Ranch Grotto Lantern Chest"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Ordon Ranch Grotto Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
+    ],
     "Region": "Ordona Province"
   },
   {
@@ -280,7 +416,14 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": ["Ordon Spring Golden Wolf"],
+    "Checks": 
+    [
+      {
+        "CheckName": "Ordon Spring Golden Wolf",
+        "Requirements": "Shadow_Crystal and Room.Death_Mountain_Trail and CanCompletePrologue and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and Room.Death_Mountain_Trail and CanCompletePrologue and CanCompleteFaronTwilight"
+      }
+    ],
     "Region": "Ordona Province"
   },
   {

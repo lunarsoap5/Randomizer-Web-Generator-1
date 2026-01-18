@@ -3,5 +3,7 @@
     "stageIDX": [41],
   "fileDirectoryType": [ 1 ],
   "replacementType": [ 0 ],
+  "checkCategory": [ "Overworld", "Npc", "Ordona Province" ],
+  "itemId": "Piece_of_Heart",
   "dataCategory": [ "ARC" ]
 }
