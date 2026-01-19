@@ -4,6 +4,7 @@
     "roomIDX": 5,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "Forest Temple"],
     "itemId": "Piece_of_Heart",
     "dataCategory": ["Chest", "ARC"]

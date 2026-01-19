@@ -4,6 +4,7 @@
     "roomIDX": 5,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "Dungeon Items", "Ordon Pumpkin", "Small Key"],
     "itemId": "Snowpeak_Ruins_Ordon_Pumpkin",
     "dataCategory": ["Chest", "ARC"]

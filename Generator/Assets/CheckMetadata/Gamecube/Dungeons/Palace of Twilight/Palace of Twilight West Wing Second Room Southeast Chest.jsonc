@@ -4,6 +4,7 @@
     "roomIDX": 2,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "chestLowerNibble": "F",
   "checkCategory": [ "Chest", "Dungeon", "Palace of Twilight" ],
   "itemId": "Orange_Rupee",
   "dataCategory": [ "Chest", "ARC" ]

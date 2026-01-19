@@ -4,6 +4,7 @@
     "roomIDX": 14,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Overworld", "Chest", "Faron Woods", "Small Key"],
     "itemId": "North_Faron_Woods_Gate_Key",
     "dataCategory": ["Chest", "ARC"]

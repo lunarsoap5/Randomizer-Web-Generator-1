@@ -4,6 +4,7 @@
     "roomIDX": 2,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "1",
     "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
     "itemId": "Purple_Rupee",
     "dataCategory": ["Chest", "ARC"]

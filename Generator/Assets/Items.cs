@@ -302,6 +302,19 @@ namespace TPRandomizer
 
     public class ItemFunctions
     {
+        public static byte GetChestSizeForItem(Item item)
+        {
+            if (Randomizer.Items.DungeonBigKeys.Contains(item))
+            {
+                return 0x2; // Boss key chest
+            }
+            if (Randomizer.Items.RandomizedImportantItemsStatic.Contains(item))
+            {
+                return 0x1; // Big chest
+            }
+            return 0x0; // Small chest
+        }
+
         public List<Item> RandomizedImportantItems = new();
 
         public List<Item> RandomizedImportantItemsStatic = new(); // A copy of the randomized important items to be read and referenced.

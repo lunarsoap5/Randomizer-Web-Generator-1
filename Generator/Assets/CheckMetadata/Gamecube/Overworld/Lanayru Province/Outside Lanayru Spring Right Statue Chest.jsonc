@@ -1,9 +1,11 @@
 {
-    "hash": ["6662"],
-    "stageIDX": [52],
-    "dzxTag": ["TRES"],
-    "dataCategory": ["DZX"],
-    "checkCategory": ["Overworld", "Chest", "Lake Hylia"],
+    "arcOffsets": ["9688", "AEB8"],
+    "stageIDX": [52, 52],
+    "roomIDX": 0,
+    "fileDirectoryType": [0, 0],
+    "replacementType": [0, 0],
+    "chestLowerNibble": "F",
+    "checkCategory": [ "Overworld", "Lake Hylia", "Chest" ],
     "itemId": "Orange_Rupee",
-    "actrData": [["74", "62", "6F", "78", "42", "30", "00", "00", "FF", "1F", "F1", "80", "C7", "AD", "9B", "BA", "C6", "84", "3F", "38", "47", "40", "9A", "E8", "00", "00", "00", "00", "06", "FF", "FF", "FF"]]
+    "dataCategory": ["ARC", "Chest"]
 }

@@ -4,6 +4,7 @@
   "roomIDX": 7,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "chestLowerNibble": "F",
   "checkCategory": [ "Chest", "Dungeon", "Arbiters Grounds" ],
   "itemId": "Bombs_5",
   "dataCategory": [ "Chest", "ARC" ]

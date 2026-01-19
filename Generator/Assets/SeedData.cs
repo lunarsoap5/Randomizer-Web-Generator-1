@@ -422,6 +422,9 @@ namespace TPRandomizer.Assets
             List<byte> listOfArcReplacements = new();
             ushort count = 0;
             List<ARCReplacement> staticArcReplacements = generateStaticArcReplacements();
+
+            staticArcReplacements.AddRange(GenerateChestSizeReplacements());
+            
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
             {
                 Check currentCheck = checkList.Value;
@@ -690,7 +693,7 @@ namespace TPRandomizer.Assets
                                     )
                             )
                         );
-                        Console.WriteLine(currentCheck.checkName);
+                        // Console.WriteLine(currentCheck.checkName);
                         listOfRELReplacements.AddRange(
                             Converter.GcBytes(
                                 (UInt32)(
@@ -1359,12 +1362,12 @@ namespace TPRandomizer.Assets
 
         private List<byte> GenerateEntranceTable()
         {
-            Console.WriteLine(seedGenResults.entrances);
+            // Console.WriteLine(seedGenResults.entrances);
             List<byte> entranceTable = new();
             string[] entranceBytes = seedGenResults.entrances.Split(",");
             for (int i = 0; i < entranceBytes.Count() - 1; i++)
             {
-                Console.WriteLine("Start: " + entranceBytes[i]);
+                // Console.WriteLine("Start: " + entranceBytes[i]);
                 entranceTable.Add(
                     Converter.GcByte(
                         byte.Parse(entranceBytes[i], System.Globalization.NumberStyles.HexNumber)
@@ -1864,6 +1867,58 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Faron_Woods,
                     6
                 ),
+
+                new ARCReplacement(
+                    "856",
+                    "F7C04594",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Bulblin_Camp,
+                    1
+                ), // Add custom flag to Bulblin Camp front chest
+
+                new ARCReplacement(
+                    "876",
+                    "F7804515",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Bulblin_Camp,
+                    1
+                ), // Add custom flag to Bulblin Camp back chest
+
+                new ARCReplacement(
+                    "9630",
+                    "4A300000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
+                new ARCReplacement(
+                    "9634",
+                     "30132645",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
+
+                new ARCReplacement(
+                    "AE60",
+                    "4A300000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
+                new ARCReplacement(
+                    "AE64",
+                     "30132645",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
 
                 // Freestanding Rupee Archive patches
 
@@ -3130,49 +3185,58 @@ namespace TPRandomizer.Assets
             return messageTableInfo;
         }
 
-        private static List<ARCReplacement> ModifyChestAppearanceARC()
+              private static List<ARCReplacement> GenerateChestSizeReplacements()
         {
-            List<ARCReplacement> listOfArcReplacements = new();
-            // Loop through all checks.
-            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
+            List<ARCReplacement> chestReplacements = new();
+
+            foreach (KeyValuePair<string, Check> checkEntry in Randomizer.Checks.CheckDict)
             {
-                Check currentCheck = checkList.Value;
-                if (currentCheck.dataCategory.Contains("Chest"))
+                Check check = checkEntry.Value;
+
+                if (!check.checkCategory.Contains("Chest") || !check.dataCategory.Contains("ARC"))
                 {
-                    if (currentCheck.dataCategory.Contains("ARC")) // If the chest is an ARC check, so we need to add a new ARC replacement entry.
-                    {
-                        string offset = (
-                            (UInt32)
-                                uint.Parse(
-                                    currentCheck.arcOffsets[0],
-                                    System.Globalization.NumberStyles.HexNumber
-                                ) - 0x18
-                        ).ToString("X");
-                        string value = "";
+                    continue;
+                }
 
-                        if (Randomizer.Items.RandomizedImportantItems.Contains(currentCheck.itemId))
-                        {
-                            value = "42300000"; // Big Blue Chest. Value is padded to a u32
-                        }
-                        else
-                        {
-                            value = "41300000"; // Small Brown Chest. Value is padded to a u32
-                        }
+                if (check.arcOffsets == null || check.arcOffsets.Count == 0 || check.chestLowerNibble == null)
+                {
+                    continue;
+                }
+                Item item = check.itemId;
 
-                        listOfArcReplacements.Add(
-                            new ARCReplacement(
-                                offset,
-                                value,
-                                (byte)FileDirectory.Room,
-                                (byte)ReplacementType.Instruction,
-                                currentCheck.stageIDX[0],
-                                currentCheck.roomIDX
-                            )
-                        );
-                    }
+                byte chestSize = ItemFunctions.GetChestSizeForItem(item);
+
+                for (int i = 0; i < check.arcOffsets.Count; i++)
+                {
+                    uint itemOffset = uint.Parse(
+                        check.arcOffsets[i],
+                        System.Globalization.NumberStyles.HexNumber
+                    );
+                    uint chestTypeOffset = itemOffset - 0x13;
+                    
+                    byte lowerNibble = byte.Parse(
+                                check.chestLowerNibble,
+                                System.Globalization.NumberStyles.HexNumber
+                            );
+
+                    byte chestTypeByte = (byte)((chestSize << 4) | lowerNibble);
+
+                    string replacementValue = "000000" + chestTypeByte.ToString("X2");
+
+                    chestReplacements.Add(
+                        new ARCReplacement(
+                            chestTypeOffset.ToString("X"),
+                            replacementValue,
+                            (byte)FileDirectory.Room,
+                            (byte)ReplacementType.Item,
+                            check.stageIDX[i],
+                            check.roomIDX
+                        )
+                    );
                 }
             }
-            return listOfArcReplacements;
+
+            return chestReplacements;
         }
 
         public static byte[] patchGCIWithSeed(char region, List<byte> seed, SeedGenResults seedGenResults)
@@ -3303,7 +3367,7 @@ namespace TPRandomizer.Assets
 
                     for(int j = 0x2040, k= 0x0; j < 0x2060; j++, k++)
                     {
-                        Console.WriteLine(j + " " + k);
+                        // Console.WriteLine(j + " " + k);
                         gciBytes[j] = stringBytes[k];
                     }
 

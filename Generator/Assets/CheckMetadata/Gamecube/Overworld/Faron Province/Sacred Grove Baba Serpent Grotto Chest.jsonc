@@ -1,9 +1,11 @@
 {
-    "hash": ["F29C"],
+    "arcOffsets": ["1730"],
     "stageIDX": [36],
-    "dzxTag": ["TRES"],
-    "dataCategory": ["DZX"],
+    "roomIDX": 1,
+    "fileDirectoryType": [ 0 ],
+    "replacementType": [ 0 ],
+    "chestLowerNibble": "F", // validate
     "checkCategory": ["Overworld", "Chest", "Sacred Grove"],
     "itemId": "Piece_of_Heart",
-    "actrData": [["74", "62", "6F", "78", "42", "31", "00", "00", "FF", "10", "30", "C1", "C3", "53", "DE", "3F", "C2", "75", "63", "60", "C5", "28", "51", "C7", "00", "0F", "00", "00", "21", "FF", "FF", "FF"]]
+    "dataCategory": [ "Chest", "ARC" ]
 }

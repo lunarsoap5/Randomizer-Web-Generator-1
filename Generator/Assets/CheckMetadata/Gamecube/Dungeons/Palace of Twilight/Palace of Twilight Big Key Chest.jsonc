@@ -4,6 +4,7 @@
     "roomIDX": 11,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "chestLowerNibble": "F",
   "checkCategory": [ "Chest", "Dungeon", "Palace of Twilight", "Big Key" ],
   "itemId": "Palace_of_Twilight_Big_Key",
   "dataCategory": [ "Chest", "ARC" ]

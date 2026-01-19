@@ -4,6 +4,7 @@
     "roomIDX": 3,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
     "itemId": "Piece_of_Heart",
     "dataCategory": ["Chest", "ARC"]

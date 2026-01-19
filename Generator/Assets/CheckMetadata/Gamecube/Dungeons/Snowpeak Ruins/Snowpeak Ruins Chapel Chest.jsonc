@@ -4,6 +4,7 @@
     "roomIDX": 11,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "Big Key"],
     "itemId": "Snowpeak_Ruins_Bedroom_Key",
     "dataCategory": ["Chest", "ARC"]

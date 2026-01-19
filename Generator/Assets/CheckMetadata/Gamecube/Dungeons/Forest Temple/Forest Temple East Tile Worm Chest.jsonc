@@ -4,6 +4,7 @@
     "roomIDX": 11,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "chestLowerNibble": "F",
   "checkCategory": [ "Chest", "Dungeon", "Forest Temple"],
   "itemId": "Red_Rupee",
   "dataCategory": [ "Chest", "ARC" ]

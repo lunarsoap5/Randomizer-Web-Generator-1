@@ -4,6 +4,7 @@
     "roomIDX": 7,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Overworld", "Chest", "Ordona Province"],
     "itemId": "Purple_Rupee_Links_House",
     "dataCategory": ["Chest", "ARC"]

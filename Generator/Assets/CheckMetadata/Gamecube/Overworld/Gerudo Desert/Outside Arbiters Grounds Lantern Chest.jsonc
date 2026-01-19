@@ -4,6 +4,7 @@
     "roomIDX": 3,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "3",
     "checkCategory": ["Overworld", "Chest", "Bulblin Camp"],
     "itemId": "Purple_Rupee",
     "dataCategory": ["Chest", "ARC"]

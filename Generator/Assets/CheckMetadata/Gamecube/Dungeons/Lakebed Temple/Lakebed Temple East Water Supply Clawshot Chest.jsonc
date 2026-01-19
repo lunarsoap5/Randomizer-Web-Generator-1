@@ -4,6 +4,7 @@
     "roomIDX": 10,
   "fileDirectoryType": [ 0 ],
   "replacementType": [ 0 ],
+  "chestLowerNibble": "F",
   "checkCategory": [ "Chest", "Dungeon", "Lakebed Temple"],
   "itemId": "Purple_Rupee",
   "dataCategory": [ "Chest", "ARC" ]

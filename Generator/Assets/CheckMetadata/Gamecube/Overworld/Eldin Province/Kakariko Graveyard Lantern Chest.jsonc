@@ -4,6 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "D",
     "checkCategory": ["Overworld", "Chest", "Kakariko Graveyard"],
     "itemId": "Purple_Rupee",
     "dataCategory": ["Chest", "ARC"]

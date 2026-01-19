@@ -4,6 +4,7 @@
     "roomIDX": 0,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "1",
     "checkCategory": ["Chest", "Dungeon", "Forest Temple", "Dungeon Items", "Compass"],
     "itemId": "Forest_Temple_Compass",
     "dataCategory": ["Chest", "ARC"]

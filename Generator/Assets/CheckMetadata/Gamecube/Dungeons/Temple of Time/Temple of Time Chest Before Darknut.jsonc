@@ -4,6 +4,7 @@
     "roomIDX": 7,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "4",
     "checkCategory": ["Chest", "Dungeon", "Temple of Time"],
     "itemId": "Purple_Rupee",
     "dataCategory": ["Chest", "ARC"]

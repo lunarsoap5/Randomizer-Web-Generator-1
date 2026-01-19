@@ -1760,7 +1760,6 @@ namespace TPRandomizer
                     {
                         if (SSettings.logicRules == LogicRules.Glitchless)
                         {
-                            Console.WriteLine(currentRoom.RoomName);
                             foreach (CheckData roomCheckData in currentRoom.Checks)
                             {
                                 roomCheckData.Requirements = "(" + roomCheckData.Requirements + ")";

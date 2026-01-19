@@ -4,6 +4,7 @@
     "roomIDX": 13,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
     "itemId": "Red_Rupee",
     "dataCategory": ["Chest", "ARC"]

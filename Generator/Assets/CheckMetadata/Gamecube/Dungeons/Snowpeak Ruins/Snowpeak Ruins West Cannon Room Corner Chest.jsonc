@@ -4,6 +4,7 @@
     "roomIDX": 9,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins"],
     "itemId": "Bombs_5",
     "dataCategory": ["Chest", "ARC"]

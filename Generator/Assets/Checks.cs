@@ -49,6 +49,7 @@ namespace TPRandomizer
         public string fileName { get; set; }
 
         public List<string> overrideInstruction { get; set; } // Used by REL checks. The override instruction to be used when replacing the item in the rel.
+        public string chestLowerNibble { get; set; } // Used by Chests to determine functionality
 
         public bool isRequired { get; set; }
     }

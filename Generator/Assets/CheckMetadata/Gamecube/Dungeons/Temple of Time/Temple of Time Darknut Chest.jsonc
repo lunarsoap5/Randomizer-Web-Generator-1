@@ -4,6 +4,7 @@
     "roomIDX": 51,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Chest", "Dungeon", "Temple of Time"],
     "itemId": "Progressive_Dominion_Rod",
     "dataCategory": ["Chest", "ARC"]

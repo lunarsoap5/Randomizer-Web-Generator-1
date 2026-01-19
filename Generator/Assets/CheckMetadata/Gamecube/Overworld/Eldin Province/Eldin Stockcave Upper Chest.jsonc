@@ -4,6 +4,7 @@
     "roomIDX": 10,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "F",
     "checkCategory": ["Overworld", "Chest", "Eldin Stockcave"],
     "itemId": "Red_Rupee",
     "dataCategory": ["Chest", "ARC"]

@@ -4,6 +4,7 @@
     "roomIDX": 3,
     "fileDirectoryType": [0],
     "replacementType": [0],
+    "chestLowerNibble": "2",
     "checkCategory": ["Overworld", "Chest", "Sacred Grove"],
     "itemId": "Bombs_30",
     "dataCategory": ["Chest", "ARC"]
