@@ -3185,7 +3185,7 @@ namespace TPRandomizer.Assets
             return messageTableInfo;
         }
 
-              private static List<ARCReplacement> GenerateChestSizeReplacements()
+        private static List<ARCReplacement> GenerateChestSizeReplacements()
         {
             List<ARCReplacement> chestReplacements = new();
 
