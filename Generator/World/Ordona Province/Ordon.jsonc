@@ -177,6 +177,11 @@
         "CheckName": "Uli Cradle Delivery",
         "Requirements": "true",
         "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
       }
     ],
     "Region": "Ordona Province"

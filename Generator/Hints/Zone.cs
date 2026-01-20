@@ -201,6 +201,7 @@ namespace TPRandomizer.Hints
                         "Ordon Shield House Ledge Grass Rupee",
                         "Ordon Tree Long Branch Rupee",
                         "Ordon Tree Short Branch Rupee",
+                        "Catch A Greengill",
                         "Sera Shop Slingshot",
                         "Uli Cradle Delivery",
                         "Wooden Sword Chest",

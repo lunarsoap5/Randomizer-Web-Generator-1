@@ -140,6 +140,7 @@ namespace TPRandomizer.Assets
             CheckDataRaw.AddRange(ParseSkyCharacters());
             CheckDataRaw.AddRange(ParseShopItems());
             CheckDataRaw.AddRange(ParseEventItems());
+            CheckDataRaw.AddRange(ParseFlagItems());
             CheckDataRaw.AddRange(ParseStartingItems());
             while (CheckDataRaw.Count % 0x10 != 0)
             {
@@ -1217,6 +1218,35 @@ namespace TPRandomizer.Assets
             SeedHeaderRaw.eventCheckInfoNumEntries = count;
             SeedHeaderRaw.eventCheckInfoDataOffset = (ushort)(CheckDataRaw.Count);
             return listOfEventItems;
+        }
+
+        private List<byte> ParseFlagItems()
+        {
+            List<byte> listOfFlagItems = new();
+            ushort count = 0;
+            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
+            {
+                Check currentCheck = checkList.Value;
+                if (currentCheck.dataCategory.Contains("Flag"))
+                {
+                    listOfFlagItems.AddRange(Converter.GcBytes(UInt16.Parse(
+                        currentCheck.flag,
+                        System.Globalization.NumberStyles.HexNumber
+                    )));
+
+                    listOfFlagItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));
+
+                    listOfFlagItems.Add(Converter.GcByte((byte)currentCheck.itemId));
+                    listOfFlagItems.Add(
+                        Converter.GcByte(0xFF)
+                    );
+                    count++;
+                }
+            }
+
+            SeedHeaderRaw.flagCheckInfoNumEntries = count;
+            SeedHeaderRaw.flagCheckInfoDataOffset = (ushort)(CheckDataRaw.Count);
+            return listOfFlagItems;
         }
 
         private List<byte> ParseStartingItems()
@@ -3761,6 +3791,9 @@ namespace TPRandomizer.Assets
             public UInt16 shopCheckInfoDataOffset { get; set; }
             public UInt16 eventCheckInfoNumEntries { get; set; }
             public UInt16 eventCheckInfoDataOffset { get; set; }
+
+            public UInt16 flagCheckInfoNumEntries { get; set; }
+            public UInt16 flagCheckInfoDataOffset { get; set; }
             public UInt16 startingItemInfoNumEntries { get; set; }
             public UInt16 startingItemInfoDataOffset { get; set; }
             public UInt16 shuffledEntranceInfoNumEntries { get; set; }

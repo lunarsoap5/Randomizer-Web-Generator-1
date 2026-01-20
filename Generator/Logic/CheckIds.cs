@@ -651,7 +651,8 @@ namespace TPRandomizer
                 "Snowboarding Snowy Tree Top Rupee 2",
                 "Snowboarding Snowy Tree Top Rupee 3",
                 "Snowboarding Top Left Rupee",
-                "Snowboarding Top Right Rupee"
+                "Snowboarding Top Right Rupee",
+                "Catch A Greengill"
                 // Add new check names right above this line. The name should
                 // match exactly with the json filename in the "Checks"
                 // directory.

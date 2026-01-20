@@ -291,6 +291,10 @@ window.tpr.checkData = {
     category: ['Overworld', 'Hyrule Field - Lanayru Province'],
     itemId: 'Castle_Town_Portal',
   },
+  'Catch A Greengill': {
+    category: ['Overworld', "Ordon Village"],
+    itemId: 'Green_Rupee',
+  },
   'Cats Hide and Seek Minigame': {
     category: ['Overworld', 'Npc', 'Hidden Village', 'DZX'],
     itemId: 'Piece_of_Heart',
