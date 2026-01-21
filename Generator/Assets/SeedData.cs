@@ -3120,6 +3120,24 @@ namespace TPRandomizer.Assets
                 0
             ), // Add flag to CT Red Potion */
 
+            new ARCReplacement(
+                "1FEC",
+                "0000FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Snowpeak,
+                0
+            ), // Make Snowpeak Poe Among Trees spawn 24/7 (clear mNight flag in rot_z)
+
+            new ARCReplacement(
+                "463C",
+                "0434F000",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Castle_Town,
+                0
+            ), // Make Castle Town Shoe Shiner always available
+
                 //.. ModifyChestAppearanceARC(), This is still in development
             ];
 
