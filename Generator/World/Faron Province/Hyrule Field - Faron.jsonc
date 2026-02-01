@@ -4,7 +4,7 @@
     "Exits":
     [
       {
-        "ConnectedArea": "Faron Field Behind Boulder",
+        "ConnectedArea": "Outside Castle Town South",
         "Requirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South",
         "GlitchedRequirements": "Room.Castle_Town_South and HasBottle and Room.Outside_Castle_Town_South"
       },
@@ -60,24 +60,6 @@
         "CheckName": "Faron Field Poe",
         "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
-      }
-    ],
-    "Region": "Hyrule Field - Faron Province"
-  },
-  {
-    "RoomName": "Faron Field Behind Boulder",
-    "Exits":
-    [
-      {
-        "ConnectedArea": "Faron Field",
-        "Requirements": "CanGetHotSpringWater and Room.Outside_Castle_Town_South",
-        "GlitchedRequirements": "CanGetHotSpringWater and HasBottle and Room.Outside_Castle_Town_South"
-      },
-      {
-         // If you enter Outside Castle Town from there while the boulder is still there, you get stuck and are forced to save-warp or portal-warp.
-        "ConnectedArea": "Outside Castle Town South Inside Boulder",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Hyrule Field - Faron Province"

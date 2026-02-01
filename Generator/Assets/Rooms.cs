@@ -176,7 +176,6 @@ namespace TPRandomizer
                 "Sacred Grove Upper",
                 "Sacred Grove Lower",
                 "Faron Field",
-                "Faron Field Behind Boulder",
                 "Kakariko Gorge",
                 "Kakariko Gorge Behind Gate",
                 "Death Mountain Near Kakariko",
@@ -210,7 +209,6 @@ namespace TPRandomizer
                 "Outside Castle Town East",
                 "Castle Town South",
                 "Outside Castle Town South",
-                "Outside Castle Town South Inside Boulder",
                 "Lake Hylia Bridge",
                 "Lake Hylia",
                 "Gerudo Desert",
@@ -239,7 +237,6 @@ namespace TPRandomizer
                 "Sacred Grove Upper",
                 "Sacred Grove Lower",
                 "Faron Field",
-                "Faron Field Behind Boulder",
                 "Kakariko Gorge",
                 //"Kakariko Gorge Cave Entrance",
                 "Kakariko Gorge Behind Gate",
@@ -275,7 +272,6 @@ namespace TPRandomizer
                 "Outside Castle Town East",
                 "Castle Town South",
                 "Outside Castle Town South",
-                "Outside Castle Town South Inside Boulder",
                 "Lake Hylia Bridge",
                 "Lake Hylia Bridge Grotto Ledge",
                 "Lake Hylia",
@@ -328,7 +324,6 @@ namespace TPRandomizer
                 "Sacred Grove Past",
                 "Sacred Grove Past Behind Window",
                 "Faron Field",
-                "Faron Field Behind Boulder",
             };
 
         public static List<string> EldinMapRooms =
@@ -392,7 +387,6 @@ namespace TPRandomizer
                 "Castle Town South",
                 "South Castle Town Doors",
                 "Outside Castle Town South",
-                "Outside Castle Town South Inside Boulder",
                 "Lake Hylia Bridge",
                 "Lake Hylia Bridge Grotto Ledge",
                 "Lake Hylia",
