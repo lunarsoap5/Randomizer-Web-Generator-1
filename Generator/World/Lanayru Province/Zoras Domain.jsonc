@@ -60,6 +60,11 @@
         "CheckName": "Upper Zoras River Ledge Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Zoras Domain"
@@ -120,6 +125,11 @@
         "CheckName": "Fishing Hole Bottle",
         "Requirements": "(Progressive_Fishing_Rod, 1)",
         "GlitchedRequirements": "(Progressive_Fishing_Rod, 1)"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
       }
     ],
     "Region": "Zoras Domain"

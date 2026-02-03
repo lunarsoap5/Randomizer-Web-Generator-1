@@ -264,7 +264,12 @@
         "CheckName": "Lanayru Spring Lower Underwater Boulder Rupee",
         "Requirements": "Iron_Boots and CanUseWaterBombs",
         "GlitchedRequirements": "(Iron_Boots or Magic_Armor) and CanUseWaterBombs"
-      } 
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+      }
     ],
     "Region": "Lake Hylia"
   },
@@ -409,7 +414,12 @@
         "CheckName": "Lake Hylia Water Toadpoli Grotto Chest",
         "Requirements": "CanDefeatWaterToadpoli",
         "GlitchedRequirements": "CanDefeatWaterToadpoli"
-      }
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli"
+      },
     ],
     "Region": "Lake Hylia"
   }

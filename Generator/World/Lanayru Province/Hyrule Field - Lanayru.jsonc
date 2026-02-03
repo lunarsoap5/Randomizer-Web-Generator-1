@@ -85,6 +85,11 @@
         "CheckName": "Lanayru Field Tree Boulder Rupee",
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
@@ -454,7 +459,12 @@
         "CheckName": "Outside South Castle Town Tektite Grotto Chest",
         "Requirements": "CanDefeatTektite",
         "GlitchedRequirements": "CanDefeatTektite"
-      }
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanDefeatTektike",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatTektike"
+      },
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },

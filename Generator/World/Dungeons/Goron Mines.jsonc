@@ -231,6 +231,11 @@
                 "GlitchedRequirements": "Iron_Boots or CanDoLJA"
             },
             {
+                "CheckName": "Catch A Greengill",
+                "Requirements": "Progressive_Fishing_Rod",
+                "GlitchedRequirements": "Progressive_Fishing_Rod"
+            },
+            {
                 "CheckName": "Goron Mines Gor Ebizo Key Shard",
                 "Requirements": "true",
                 "GlitchedRequirements": "true"

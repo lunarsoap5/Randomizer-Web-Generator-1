@@ -30,6 +30,11 @@
         "CheckName": "Lost Woods Waterfall Poe",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and (CanDefeatSkullKid or (Setting.skipGroveEntrance equals True))"
       }
     ],
     "Region": "Sacred Grove"

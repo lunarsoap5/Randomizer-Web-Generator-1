@@ -87,6 +87,11 @@
         "GlitchedRequirements": "HasHeavyMod and (CanSmash or CanDoMapGlitch)"
       },
       {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and CanSmash and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanSmash and CanCompleteEldinTwilight"
+      },
+      {
         "CheckName": "Kakariko Village Bomb Rock Spire Heart Piece",
         "Requirements": "HasBombs and Boomerang and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanDoMapGlitch or (CanLaunchBombs and (Boomerang or (Progressive_Clawshot, 1)))) and CanCompleteEldinTwilight"
@@ -662,6 +667,11 @@
         "CheckName": "Rutelas Blessing",
         "Requirements": "Gate_Keys and CanCompleteEldinTwilight",
         "GlitchedRequirements": "Gate_Keys and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod and Gate_Keys and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and Gate_Keys and CanCompleteEldinTwilight"
       },
       {
         "CheckName": "Kakariko Graveyard Male Ant",

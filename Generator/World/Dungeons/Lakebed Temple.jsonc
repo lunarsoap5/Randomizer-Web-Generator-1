@@ -273,7 +273,12 @@
             "CheckName": "Lakebed Temple West Water Supply Chest",
             "Requirements": "(Progressive_Clawshot, 1) and CanLaunchBombs and Iron_Boots",
             "GlitchedRequirements": "(Progressive_Clawshot, 1) and CanLaunchBombs"
-          } 
+          },
+          {
+            "CheckName": "Catch A Greengill",
+            "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot CanLaunchBombs and Iron_Boots",
+            "GlitchedRequirements": "Progressive_Fishing_Rod and CanLaunchBombs and Progressive_Clawshot"
+          }
         ],
         "Region": "Lakebed Temple"
     }
