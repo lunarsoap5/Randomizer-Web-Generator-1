@@ -236,6 +236,11 @@
                 "GlitchedRequirements": "Progressive_Fishing_Rod"
             },
             {
+                "CheckName": "Catch A Hyrule Bass",
+                "Requirements": "Progressive_Fishing_Rod",
+                "GlitchedRequirements": "Progressive_Fishing_Rod"
+            },
+            {
                 "CheckName": "Goron Mines Gor Ebizo Key Shard",
                 "Requirements": "true",
                 "GlitchedRequirements": "true"

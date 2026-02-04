@@ -110,6 +110,16 @@
         "CheckName": "Catch A Greengill",
         "Requirements": "Progressive_Fishing_Rod",
         "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch An Ordon Catfish",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hylian Loach",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
       }
     ],
     "Region": "Hyrule Field - Faron Province"

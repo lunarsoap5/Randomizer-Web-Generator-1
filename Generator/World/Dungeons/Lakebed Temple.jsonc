@@ -276,7 +276,13 @@
           },
           {
             "CheckName": "Catch A Greengill",
-            "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot CanLaunchBombs and Iron_Boots",
+            "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs and Iron_Boots",
+            "GlitchedRequirements": "Progressive_Fishing_Rod and CanLaunchBombs and Progressive_Clawshot"
+          },
+          {
+            // Technically there is a loach in the water supply and one in the BK room. However the one in the water supply has the simplest logical requirements and will always be met before reaching the BK room, so we use that logic for the check.
+            "CheckName": "Catch A Hylian Loach",
+            "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs and Iron_Boots",
             "GlitchedRequirements": "Progressive_Fishing_Rod and CanLaunchBombs and Progressive_Clawshot"
           }
         ],

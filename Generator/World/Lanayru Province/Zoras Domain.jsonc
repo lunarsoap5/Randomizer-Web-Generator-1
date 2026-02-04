@@ -65,6 +65,11 @@
         "CheckName": "Catch A Greengill",
         "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Catch A Hylian Pike",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Zoras Domain"
@@ -112,15 +117,15 @@
         "ConnectedArea": "Fishing Hole House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-      },
-      {
-        "ConnectedArea": "Fishing Hole Piece of Heart",
-        "Requirements": "(Progressive_Clawshot, 1)",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
       }
     ],
     "Checks":
     [
+      {
+        "CheckName": "Fishing Hole Heart Piece",
+        "Requirements": "Progressive_Clawshot",
+        "GlitchedRequirements": "Progressive_Clawshot"
+      },
       {
         "CheckName": "Fishing Hole Bottle",
         "Requirements": "(Progressive_Fishing_Rod, 1)",
@@ -128,6 +133,26 @@
       },
       {
         "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch An Ordon Catfish",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hylian Pike",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hyrule Bass",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hylian Loach",
         "Requirements": "Progressive_Fishing_Rod",
         "GlitchedRequirements": "Progressive_Fishing_Rod"
       }
@@ -144,7 +169,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "Fishing Hole Piece of Heart",
+        "ConnectedArea": "Fishing Hole Canoe",
         "Requirements": "true",
         "GlitchedRequirements": "true"
       }
@@ -152,7 +177,7 @@
     "Region": "Zoras Domain"
   },
   {
-    "RoomName": "Fishing Hole Piece of Heart",
+    "RoomName": "Fishing Hole Canoe",
     "Exits": [],
     "Checks":
     [
@@ -160,6 +185,14 @@
         "CheckName": "Fishing Hole Heart Piece",
         "Requirements": "true",
         "GlitchedRequirements": "true"
+      },
+      {
+        // Glitchless exptects that you can get the sinking lure since the fish is much easier to catch with it.
+        // Glitched expects you to have access to rollgoal to get the frog lure. 
+        // Also you need access to fishing hole to change the season to summer.
+        "CheckName": "Catch The Legendary Hylian Loach",
+        "Requirements": "Room.Fishing_Hole and Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Room.Fishing_Hole and Room.Fishing_Hole_House"
       }
     ],
     "Region": "Zoras Domain"
@@ -250,7 +283,12 @@
         "CheckName": "Zoras Domain Waterfall Ledge Rupee",
         "Requirements": "CanCompleteLanayruTwilight",
         "GlitchedRequirements": "CanCompleteLanayruTwilight"
-      } 
+      },
+      {
+        "CheckName": "Catch A Reekfish",
+        "Requirements": "(Progressive_Fishing_Rod, 2) and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "(Progressive_Fishing_Rod, 2) and CanCompleteLanayruTwilight"
+      }
     ],
     "Region": "Zoras Domain"
   },

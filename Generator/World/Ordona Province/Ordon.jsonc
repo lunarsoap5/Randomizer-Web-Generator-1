@@ -182,6 +182,11 @@
         "CheckName": "Catch A Greengill",
         "Requirements": "Progressive_Fishing_Rod",
         "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch An Ordon Catfish",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
       }
     ],
     "Region": "Ordona Province"

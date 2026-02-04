@@ -90,6 +90,11 @@
         "CheckName": "Catch A Greengill",
         "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Catch A Hylian Pike",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
@@ -465,6 +470,11 @@
         "Requirements": "Progressive_Fishing_Rod and CanDefeatTektike",
         "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatTektike"
       },
+      {
+        "CheckName": "Catch A Hylian Pike",
+        "Requirements": "Progressive_Fishing_Rod and CanDefeatTektike",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatTektike"
+      }
     ],
     "Region": "Hyrule Field - Lanayru Province"
   },

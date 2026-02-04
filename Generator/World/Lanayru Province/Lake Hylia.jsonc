@@ -269,6 +269,11 @@
         "CheckName": "Catch A Greengill",
         "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
+      },
+      {
+        "CheckName": "Catch A Hylian Loach",
+        "Requirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanCompleteLanayruTwilight"
       }
     ],
     "Region": "Lake Hylia"
@@ -420,6 +425,11 @@
         "Requirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli",
         "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli"
       },
+      {
+        "CheckName": "Catch A Hylian Loach",
+        "Requirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli"
+      }
     ],
     "Region": "Lake Hylia"
   }

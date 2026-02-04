@@ -167,6 +167,11 @@
             "GlitchedRequirements": "Progressive_Fishing_Rod and (Boomerang or (HasBombs and HasSword and Progressive_Clawshot))"
           },
           {
+            "CheckName": "Catch An Ordon Catfish",
+            "Requirements": "Progressive_Fishing_Rod and Boomerang",
+            "GlitchedRequirements": "Progressive_Fishing_Rod and (Boomerang or (HasBombs and HasSword and Progressive_Clawshot))"
+          },
+          {
             "CheckName": "Forest Temple East Tile Worm Chest",
             "Requirements": "CanDefeatTileWorm and CanDefeatSkulltula and CanDefeatWalltula and Boomerang and (Forest_Temple_Small_Key, 4)",
             "GlitchedRequirements": "(HasBombs or CanDoBSMoonBoots or CanDoJSMoonBoots or Boomerang) and (Forest_Temple_Small_Key, 4)"
