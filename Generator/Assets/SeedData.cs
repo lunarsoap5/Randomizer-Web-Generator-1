@@ -49,14 +49,16 @@ namespace TPRandomizer.Assets
         public static byte[] GenerateSeedDataBytes(
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
-            GameRegion regionOverride
+            GameRegion regionOverride,
+            string seedID,
+            string slotName
         )
         {
             SeedData seedData = new SeedData(seedGenResults, fcSettings);
-            return seedData.GenerateSeedDataBytesInternal(regionOverride);
+            return seedData.GenerateSeedDataBytesInternal(regionOverride, seedID, slotName);
         }
 
-        public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride)
+        public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, string seedID, string slotName)
         {
             Assets.CustomMessages.MessageLanguage hintLanguage = Assets
                 .CustomMessages
@@ -195,7 +197,7 @@ namespace TPRandomizer.Assets
             );
 
             // Generate Seed Data
-            currentSeedHeader.AddRange(GenerateSeedHeader());
+            currentSeedHeader.AddRange(GenerateSeedHeader(seedID, slotName));
             currentSeedData.AddRange(currentSeedHeader);
             currentSeedData.AddRange(CheckDataRaw);
             currentSeedData.AddRange(GenerateBgmHeader());
@@ -217,10 +219,10 @@ namespace TPRandomizer.Assets
             BannerDataRaw.AddRange(GenerateDebugInfoChunk(seedGenResults.seedId));
             BannerDataRaw.AddRange(Properties.Resources.seedGciImageData);
             BannerDataRaw.AddRange(
-                Converter.StringBytes($"TPR SeedData v{VersionString}", 0x20, region)
+                Converter.StringBytes($"TPR AP SeedData", 0x20, region)
             );
             BannerDataRaw.AddRange(
-                Converter.StringBytes(seedGenResults.playthroughName, 0x20, region)
+                Converter.StringBytes(seedID, 0x20, region)
             );
             // Generate GCI Files
             currentGCIData.AddRange(BannerDataRaw);
@@ -228,7 +230,7 @@ namespace TPRandomizer.Assets
             var gci = new Gci(
                 region,
                 currentGCIData,
-                seedGenResults.playthroughName,
+                seedID,
                 fcSettings,
                 regionOverride
             );
@@ -236,7 +238,7 @@ namespace TPRandomizer.Assets
             // File.WriteAllBytes(playthroughName, gci.gciFile.ToArray());
         }
 
-        private List<byte> GenerateSeedHeader()
+        private List<byte> GenerateSeedHeader(string seedID, string slotName)
         {
             List<byte> seedHeader = new();
             SharedSettings randomizerSettings = Randomizer.SSettings;
@@ -314,6 +316,15 @@ namespace TPRandomizer.Assets
 
             seedHeader.Add(Converter.GcByte(randomizerSettings.bonksDoDamage ? 1 : 0));
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.startingToD));
+
+            // Just some padding because we want the seed ID and lot to be at 0x70 and 0x80 respectively.
+            while (seedHeader.Count < 0x70)
+            {
+                seedHeader.Add((byte)0x0);
+            }
+
+            seedHeader.AddRange(Converter.StringBytes(seedID, 0x10));
+            seedHeader.AddRange(Converter.StringBytes(slotName, 0x10));
 
             while (seedHeader.Count < (SeedHeaderSize))
             {

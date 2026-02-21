@@ -295,10 +295,11 @@ namespace TPRandomizer
         public static bool GenerateFinalOutput2(
             string fcSettingsString,
             string itemPlacementString,
-            string settingsString
+            string settingsString,
+            string slotName,
+            string seedID
         )
         {
-            string id = "aptest";
             FileCreationSettings fcSettings = FileCreationSettings.FromString(fcSettingsString);
 
             // Generate the dictionary values that are needed and initialize the data for the selected logic type.
@@ -386,7 +387,9 @@ namespace TPRandomizer
                         string langTag = fcSettings.GetLanguageTagString(gameRegion);
                         Res.UpdateCultureInfo(langTag);
 
-                        fileDefs.Add(GenGciFileDef(id, seedGenResults, fcSettings, gameRegion));
+                        fileDefs.Add(
+                            GenGciFileDef(seedID, seedGenResults, fcSettings, gameRegion, slotName)
+                        );
                     }
                 }
             }
@@ -397,10 +400,18 @@ namespace TPRandomizer
                 Res.UpdateCultureInfo(langTag);
 
                 // Create file for one region
-                fileDefs.Add(GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion));
+                fileDefs.Add(
+                    GenGciFileDef(
+                        seedID,
+                        seedGenResults,
+                        fcSettings,
+                        fcSettings.gameRegion,
+                        slotName
+                    )
+                );
             }
 
-            PrintFileDefs(id, seedGenResults, fcSettings, fileDefs);
+            PrintFileDefs(seedID, seedGenResults, fcSettings, fileDefs, slotName);
 
             // Console.WriteLine("Done!");
             // Console.WriteLine("Generating Spoiler Log.");
@@ -434,13 +445,16 @@ namespace TPRandomizer
             string seedId,
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
-            GameRegion gameRegionOverride
+            GameRegion gameRegionOverride,
+            string slotName
         )
         {
             byte[] bytes = SeedData.GenerateSeedDataBytes(
                 seedGenResults,
                 fcSettings,
-                gameRegionOverride
+                gameRegionOverride,
+                seedId,
+                slotName
             );
 
             Dictionary<string, object> dict = new();
@@ -461,8 +475,7 @@ namespace TPRandomizer
                     throw new Exception("Did not specify output region");
             }
 
-            string fileName =
-                "Tpr-" + gameVer + "-" + seedGenResults.playthroughName + "-" + seedId;
+            string fileName = "Tpr-" + gameVer + "-" + slotName + "-" + seedId;
 
             fileName += ".gci";
 
@@ -476,13 +489,14 @@ namespace TPRandomizer
             string seedId,
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
-            List<Tuple<Dictionary<string, object>, byte[]>> fileDefs
+            List<Tuple<Dictionary<string, object>, byte[]>> fileDefs,
+            string slotName
         )
         {
             if (fileDefs.Count > 1)
             {
                 // Write ZIP file instead
-                string zipFilename = $"TPR--{seedGenResults.playthroughName}--{seedId}.zip";
+                string zipFilename = $"TPR--{slotName}--{seedId}.zip";
                 fileDefs = MergeFileDefsToZip(zipFilename, fileDefs);
             }
 
