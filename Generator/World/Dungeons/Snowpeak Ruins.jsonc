@@ -103,13 +103,7 @@
         }
         ],
         "Checks": 
-        [
-          {
-            "CheckName": "Snowpeak Ruins Broken Floor Chest",
-            "Requirements": "Ball_and_Chain",
-            "GlitchedRequirements": "Ball_and_Chain"
-          }
-        ],
+        [],
         "Region": "Snowpeak Ruins"
     },
     {
@@ -132,8 +126,8 @@
       [
         {
           "CheckName": "Snowpeak Ruins Broken Floor Chest",
-          "Requirements": "Ball_and_Chain",
-          "GlitchedRequirements": "Ball_and_Chain"
+          "Requirements": "true",
+          "GlitchedRequirements": "true"
         }
       ],
       "Region": "Snowpeak Ruins"
