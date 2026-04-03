@@ -286,8 +286,8 @@
       },
       {
         "ConnectedArea": "Outside Castle Town East",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "CanCompleteLanayruTwilight"
       },
       {
         "ConnectedArea": "Castle Town South",

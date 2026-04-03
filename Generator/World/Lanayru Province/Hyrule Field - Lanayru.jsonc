@@ -366,8 +366,8 @@
     [
       {
         "CheckName": "East Castle Town Bridge Poe",
-        "Requirements": "Shadow_Crystal and CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "Shadow_Crystal and CanCompleteLanayruTwilight"
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
