@@ -1,8 +1,8 @@
 {
   "moduleID": ["26B"],
   "stageIDX": [65],
-  "relOffsets": ["13A8"],
-  "overrideInstruction": ["38800000"],
+  "relOffsets": ["A50"],
+  "overrideInstruction": ["38000000"],
   "relReplacementType": [0],
   "checkCategory": [ "Overworld", "Ordona Province" ],
   "itemId": "Ordon_Shield",

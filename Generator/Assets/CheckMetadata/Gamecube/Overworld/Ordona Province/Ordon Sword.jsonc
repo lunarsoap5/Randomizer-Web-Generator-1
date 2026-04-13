@@ -1,8 +1,8 @@
 {
   "moduleID": ["284"],
   "stageIDX": [65],
-  "relOffsets": ["6A8"],
-  "overrideInstruction": ["38800000"],
+  "relOffsets": ["378"],
+  "overrideInstruction": ["38000000"],
   "relReplacementType": [0],
   "checkCategory": [ "Overworld", "Ordona Province"],
   "itemId": "Progressive_Sword",
