@@ -500,7 +500,27 @@
   
   document
     .getElementById('fnameTest')
-    .addEventListener("change", handleFileSelection);
+    .addEventListener("change", async (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  try {
+    const zip = await JSZip.loadAsync(file);
+
+    const settingsFile = zip.file("settings.txt");
+
+    // Read the contents of the file as text
+    const content = await settingsFile.async("string");
+
+    // Display the content
+    console.log(content);
+    fileContents = content;
+  } catch (error) {
+    console.error("Error reading ZIP file:", error);
+    document.getElementById("output").textContent =
+      "Failed to read the ZIP file.";
+  }
+});
 
   function randomizeCosmetics() {
     const arrayOfCosmeticSettings = [
