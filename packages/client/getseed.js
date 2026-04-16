@@ -516,10 +516,17 @@
     console.log(content);
     fileContents = content;
   } catch (error) {
-    console.error("Error reading ZIP file:", error);
-    document.getElementById("output").textContent =
-      "Failed to read the ZIP file.";
-  }
+
+    // Read the file
+    const reader = new FileReader();
+    reader.onload = () => {
+      fileContents = reader.result;
+    };
+    reader.onerror = () => {
+      console.log("Error reading the file. Please try again.", "error");
+    };
+    reader.readAsText(file);
+    }
 });
 
   function randomizeCosmetics() {
