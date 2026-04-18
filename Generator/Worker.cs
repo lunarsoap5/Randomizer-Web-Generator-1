@@ -37,12 +37,22 @@ namespace TPRandomizer
                 case "generate_final_output2":
                     // seedId, fileCreationSettingsString, aptp contents
                     string[] fileParams = args[2].Split(',');
+                    int paramLength = fileParams.Length - 1;
+                    string name = "";
+                    for (int i = 3; i < paramLength; i++)
+                    {
+                        if (i > 3)
+                        {
+                            name += ",";
+                        }
+                        name += fileParams[i];
+                    }
                     Randomizer.GenerateFinalOutput2(
                         fileParams[0],
                         fileParams[2],
                         fileParams[1],
-                        fileParams[3],
-                        fileParams[4]
+                        name,
+                        fileParams[paramLength]
                     );
                     break;
                 case "print_check_ids":
