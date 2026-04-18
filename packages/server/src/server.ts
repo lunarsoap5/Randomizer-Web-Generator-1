@@ -195,8 +195,7 @@ app.post('/api/final', function (req: express.Request, res: express.Response) {
 
   if (
     !fileCreationSettings ||
-    typeof fileCreationSettings !== 'string' ||
-    !/^[0-9a-z-_,]+$/i.test(fileCreationSettings)
+    typeof fileCreationSettings !== 'string'
   ) {
     res.status(400).send({ error: 'Invalid fileCreationSettings format.' });
     return;
