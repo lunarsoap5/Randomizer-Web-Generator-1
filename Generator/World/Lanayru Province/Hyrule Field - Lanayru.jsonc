@@ -467,13 +467,13 @@
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and CanDefeatTektike",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatTektike"
+        "Requirements": "Progressive_Fishing_Rod and CanDefeatTektite",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatTektite"
       },
       {
         "CheckName": "Catch A Hylian Pike",
-        "Requirements": "CanCatchBaitedFish and CanDefeatTektike",
-        "GlitchedRequirements": "CanCatchBaitedFish and CanDefeatTektike"
+        "Requirements": "CanCatchBaitedFish and CanDefeatTektite",
+        "GlitchedRequirements": "CanCatchBaitedFish and CanDefeatTektite"
       }
     ],
     "Region": "Hyrule Field - Lanayru Province"
