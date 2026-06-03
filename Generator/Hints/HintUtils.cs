@@ -521,7 +521,7 @@ namespace TPRandomizer.Hints
         public static bool DungeonIsRequired(string dungeonHintZoneName)
         {
             return (
-                    Randomizer.RequiredDungeons
+                    (Randomizer.RequiredDungeons | Randomizer.GoalRequiredDungeons)
                     & HintConstants.dungeonZonesToRequiredMaskMap[dungeonHintZoneName]
                 ) != 0;
         }
@@ -530,9 +530,13 @@ namespace TPRandomizer.Hints
         {
             HashSet<string> result = new();
 
+            byte requiredDungeons = (byte)(
+                Randomizer.RequiredDungeons | Randomizer.GoalRequiredDungeons
+            );
+
             foreach (KeyValuePair<string, byte> pair in HintConstants.dungeonZonesToRequiredMaskMap)
             {
-                if ((Randomizer.RequiredDungeons & pair.Value) != 0)
+                if ((requiredDungeons & pair.Value) != 0)
                 {
                     result.Add(pair.Key);
                 }

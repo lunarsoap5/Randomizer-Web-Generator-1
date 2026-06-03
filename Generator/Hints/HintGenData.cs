@@ -2102,6 +2102,7 @@ namespace TPRandomizer.Hints
                 goalToHintableChecksList[pair.Key] = new() { new(pair.Value) };
 
                 string goalName = pair.Key.goalEnum.ToString();
+                /*
                 foreach (string checkName in pair.Value)
                 {
                     Item contents = HintUtils.getCheckContents(checkName);
@@ -2119,7 +2120,7 @@ namespace TPRandomizer.Hints
                                 $"Can be Path to {goalName}: {checkName} ({contents})"
                             );
                     }
-                }
+                }*/
             }
 
             HashSet<string> requiredDungeonZones = HintUtils.getRequiredDungeonZones();

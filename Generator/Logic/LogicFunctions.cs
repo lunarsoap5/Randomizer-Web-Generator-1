@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using TPRandomizer.SSettings.Enums;
 
@@ -2244,15 +2245,16 @@ namespace TPRandomizer
                 }
                 case CastleRequirements.Dungeons:
                 {
-                    int dungeonCount = 0;
-                    foreach (Item boss in Randomizer.Items.BossItems)
+                    int bossItems = 0;
+                    for (int i = 0; i < Randomizer.Items.ReqBossItems.Count; i++)
                     {
-                        if (CanUse(boss))
+                        if (CanUse(Randomizer.Items.ReqBossItems[i]))
                         {
-                            dungeonCount++;
+                            bossItems |= 0x80 >> i;
                         }
                     }
-                    return dungeonCount >= Randomizer.SSettings.castleRequirementCount;
+                    return (bossItems & Randomizer.HCRequiredDungeons)
+                        == Randomizer.HCRequiredDungeons;
                 }
                 case CastleRequirements.Vanilla:
                 {
@@ -2292,15 +2294,16 @@ namespace TPRandomizer
                 }
                 case CastleBKRequirements.Dungeons:
                 {
-                    int dungeonCount = 0;
-                    foreach (Item boss in Randomizer.Items.BossItems)
+                    int bossItems = 0;
+                    for (int i = 0; i < Randomizer.Items.ReqBossItems.Count; i++)
                     {
-                        if (CanUse(boss))
+                        if (CanUse(Randomizer.Items.ReqBossItems[i]))
                         {
-                            dungeonCount++;
+                            bossItems |= 0x80 >> i;
                         }
                     }
-                    return dungeonCount >= Randomizer.SSettings.castleBKRequirementCount;
+                    return (bossItems & Randomizer.HCBKRequiredDungeons)
+                        == Randomizer.HCBKRequiredDungeons;
                 }
                 case CastleBKRequirements.Poe_Souls:
                 {

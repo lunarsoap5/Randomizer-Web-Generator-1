@@ -40,7 +40,7 @@ namespace TPRandomizer.Hints
         public CustomMsgData Generate()
         {
             CustomMsgData.Builder customMsgDataBuilder =
-                new(genData, (byte)Randomizer.RequiredDungeons);
+                new(genData, (byte)(Randomizer.RequiredDungeons | Randomizer.GoalRequiredDungeons));
 
             SpotToHints specialSpotToHints = new SpotToHints();
             SpotToHints normalSpotToHints = new SpotToHints();

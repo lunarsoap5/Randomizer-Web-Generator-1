@@ -369,6 +369,19 @@ namespace TPRandomizer
                 Item.Zant_Defeated,
                 Item.Ganondorf_Defeated
             };
+        
+        public List<Item> ReqBossItems =
+            new()
+            {
+                Item.Zant_Defeated,
+                Item.Argorok_Defeated,
+                Item.Armogohma_Defeated,
+                Item.Blizzeta_Defeated,
+                Item.Stallord_Defeated,
+                Item.Morpheel_Defeated,
+                Item.Fyrus_Defeated,
+                Item.Diababa_Defeated,
+            };
 
         public List<Item> PortalItems =
             new()

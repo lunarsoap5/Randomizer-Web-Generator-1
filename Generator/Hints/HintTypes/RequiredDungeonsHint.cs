@@ -24,7 +24,7 @@ namespace TPRandomizer.Hints
         public static RequiredDungeonsHint Create(HintGenData genData)
         {
             return new RequiredDungeonsHint(
-                (byte)Randomizer.RequiredDungeons,
+                (byte)(Randomizer.RequiredDungeons | Randomizer.GoalRequiredDungeons),
                 genData.sSettings.hintDungeonEntrances,
                 genData.sSettings.shuffleDungeonEntrances,
                 genData.sSettings.barrenDungeons,

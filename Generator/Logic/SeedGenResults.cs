@@ -29,6 +29,9 @@ namespace TPRandomizer
         public string wiiPlaythroughName { get; set; }
         public Dictionary<int, int> itemPlacements { get; }
         public byte requiredDungeons { get; set; }
+        public byte hcRequiredDungeons { get; set; }
+        public byte hcBkRequiredDungeons { get; set; }
+        public byte goalRequiredDungeons { get; set; }
         public List<List<KeyValuePair<int, Item>>> spheres { get; }
         public string entrances { get; }
         public CustomMsgData customMsgData { get; }
@@ -70,6 +73,9 @@ namespace TPRandomizer
             this.wiiPlaythroughName = (string)output["wiiName"];
             this.itemPlacements = DecodeItemPlacements((string)output["itemPlacement"]);
             this.requiredDungeons = (byte)output["reqDungeons"];
+            this.hcRequiredDungeons = (byte)output["hcReqDungeons"];
+            this.hcBkRequiredDungeons = (byte)output["hcBkReqDungeons"];
+            this.goalRequiredDungeons = (byte)(this.hcRequiredDungeons | this.hcBkRequiredDungeons);
             this.spheres = DecodeSpheres((string)output["spheres"]);
             this.entrances = DecodeEntrances((string)output["entrances"]);
             this.customMsgData = CustomMsgData.Decode(
@@ -484,7 +490,7 @@ namespace TPRandomizer
 
             foreach (RequiredDungeon reqDungeonEnum in Enum.GetValues(typeof(RequiredDungeon)))
             {
-                if (((1 << (byte)reqDungeonEnum) & requiredDungeons) != 0)
+                if (((1 << (byte)reqDungeonEnum) & (requiredDungeons | goalRequiredDungeons)) != 0)
                 {
                     reqDungeonsList.Add(reqDungeonEnum.ToString());
                 }
@@ -739,6 +745,8 @@ namespace TPRandomizer
             public string playthroughName { get; set; }
             public string wiiPlaythroughName { get; set; }
             public byte requiredDungeons { get; set; }
+            public byte hcRequiredDungeons { get; set; }
+            public byte hcBkRequiredDungeons { get; set; }
             private string itemPlacement;
             private string spheres;
             public string entrances;
@@ -804,6 +812,8 @@ namespace TPRandomizer
                 outputObj.Add("wiiName", wiiPlaythroughName);
                 outputObj.Add("itemPlacement", itemPlacement);
                 outputObj.Add("reqDungeons", requiredDungeons);
+                outputObj.Add("hcReqDungeons", hcRequiredDungeons);
+                outputObj.Add("hcBkReqDungeons", hcBkRequiredDungeons);
                 outputObj.Add("spheres", spheres);
                 outputObj.Add("entrances", entrances);
                 outputObj.Add("customMsg", customMsgData);

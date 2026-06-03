@@ -54,6 +54,9 @@ namespace TPRandomizer
         public static List<Item> origSSettingsStartingItems = new();
 
         public static int RequiredDungeons = 0;
+        public static int GoalRequiredDungeons = 0;
+        public static int HCRequiredDungeons = 0;
+        public static int HCBKRequiredDungeons = 0;
         public static int spawnIndex = 0;
 
         public static bool CreateInputJson(
@@ -388,6 +391,8 @@ namespace TPRandomizer
             builder.playthroughName = playthroughNames[0];
             builder.wiiPlaythroughName = playthroughNames[1];
             builder.requiredDungeons = (byte)Randomizer.RequiredDungeons;
+            builder.hcRequiredDungeons = (byte)Randomizer.HCRequiredDungeons;
+            builder.hcBkRequiredDungeons = (byte)Randomizer.HCBKRequiredDungeons;
             builder.SetItemPlacements(checkNumIdToItemId);
             builder.SetSpheres(spheres);
             builder.SetEntrances();
@@ -1134,7 +1139,7 @@ namespace TPRandomizer
             // We determine which dungeons are required after the dungeon rewards are placed but before the other checks
             // are placed because if a certain dungeon's checks need to be excluded, we want to exclude the check before
             // any items are placed in it.
-            CheckUnrequiredDungeons(startingRoom);
+            CheckUnrequiredDungeons(startingRoom, rnd);
 
             // Next we want to place items that are locked to a specific region such as keys, maps, compasses, etc.
             Console.WriteLine("Placing Region-Restricted Checks.");
@@ -1540,9 +1545,12 @@ namespace TPRandomizer
 
             // Finally set the required dungeons to 0 since the value may change during the next attempt.
             Randomizer.RequiredDungeons = 0;
+            Randomizer.GoalRequiredDungeons = 0;
+            Randomizer.HCRequiredDungeons = 0;
+            Randomizer.HCBKRequiredDungeons = 0;
         }
 
-        private static void CheckUnrequiredDungeons(Room startingRoom)
+        private static void CheckUnrequiredDungeons(Room startingRoom, Random rnd)
         {
             // Use shallow copies of the requirementChecks lists since we mutate
             // them here and we may need to run this function multiple times.
@@ -1656,6 +1664,50 @@ namespace TPRandomizer
                 listOfRequiredDungeons[i].requirementChecks = listOfAffectedChecks[i];
             }
 
+            // Next, we want to set our required dungeons if we have a "dungeon" requirement
+
+            int[] pool = Enumerable.Range(0, 8).ToArray();
+
+            for (int i = 7; i > 0; i--)
+            {
+                int j = rnd.Next(i + 1);
+                (pool[i], pool[j]) = (pool[j], pool[i]);
+            }
+
+            if (
+                (
+                    (SSettings.castleRequirements == CastleRequirements.Dungeons)
+                    && (SSettings.shuffleDungeonEntrances != DungeonER.Dungeon_Hyrule)
+                )
+            )
+            {
+                foreach (int i in pool[..Randomizer.SSettings.castleRequirementCount])
+                {
+                    listOfRequiredDungeons[i].isRequired = true;
+                    Randomizer.RequiredDungeons |= 0x80 >> i;
+                    Randomizer.HCRequiredDungeons |= 0x80 >> i;
+                    Console.WriteLine(
+                        listOfRequiredDungeons[i].dungeon + " is required for HC Barrier!"
+                    );
+                }
+            }
+            if (SSettings.castleBKRequirements == CastleBKRequirements.Dungeons)
+            {
+                var shuffled = pool.OrderBy(_ => Random.Shared.Next()).ToList();
+                foreach (int i in shuffled.Take(Randomizer.SSettings.castleBKRequirementCount))
+                {
+                    listOfRequiredDungeons[i].isRequired = true;
+                    Randomizer.RequiredDungeons |= 0x80 >> i;
+                    Randomizer.HCBKRequiredDungeons |= 0x80 >> i;
+                    Console.WriteLine(
+                        listOfRequiredDungeons[i].dungeon + " is required for HC BK!"
+                    );
+                }
+            }
+
+            Randomizer.GoalRequiredDungeons =
+                Randomizer.HCRequiredDungeons | Randomizer.HCBKRequiredDungeons;
+
             Console.WriteLine("Checking Required Dungeons!");
             // Now loop through all dungeons and validate the necessity of every check related to the dungeon.
 
@@ -1663,44 +1715,34 @@ namespace TPRandomizer
             List<Item> requiredItems = new();
             for (int i = 0; i < listOfRequiredDungeons.GetLength(0); i++)
             {
-                // If HCBK is locked by dungeons or if HC is not shuffled and barrier also requires dungeons, then all dungeons are required by default
-                if (
-                    (
-                        (SSettings.castleRequirements == CastleRequirements.Dungeons)
-                        && (SSettings.shuffleDungeonEntrances != DungeonER.Dungeon_Hyrule)
-                    ) || (SSettings.castleBKRequirements == CastleBKRequirements.Dungeons)
-                )
+                foreach (string dungeonCheck in listOfRequiredDungeons[i].requirementChecks)
                 {
-                    listOfRequiredDungeons[i].isRequired = true;
-                }
-                else
-                {
-                    foreach (string dungeonCheck in listOfRequiredDungeons[i].requirementChecks)
+                    Check check = Randomizer.Checks.CheckDict[dungeonCheck];
+                    // We can skip over verifying any checks for which an item
+                    // has not yet been placed.
+                    if (check.itemWasPlaced)
                     {
-                        Check check = Randomizer.Checks.CheckDict[dungeonCheck];
-                        // We can skip over verifying any checks for which an item
-                        // has not yet been placed.
-                        if (check.itemWasPlaced)
+                        Item checkItem = check.itemId;
+
+                        check.itemId = Item.Recovery_Heart;
+                        bool isBeatable = BackendFunctions.ValidatePlaythroughBeatable(
+                            startingRoom,
+                            false
+                        );
+
+                        // If the world is no longer completable we want to put the item back and mark the dungeon as required
+                        if (!isBeatable)
                         {
-                            Item checkItem = check.itemId;
-
-                            check.itemId = Item.Recovery_Heart;
-                            bool isBeatable = BackendFunctions.ValidatePlaythroughBeatable(
-                                startingRoom,
-                                false
-                            );
-
-                            // If the world is no longer completable we want to put the item back and mark the dungeon as required
-                            if (!isBeatable)
-                            {
-                                check.itemId = checkItem;
-                                requiredItems.Add(checkItem);
-                                listOfRequiredDungeons[i].isRequired = true;
-                            }
-                            else
-                            {
-                                checkData.Add(dungeonCheck, checkItem);
-                            }
+                            check.itemId = checkItem;
+                            requiredItems.Add(checkItem);
+                            listOfRequiredDungeons[i].isRequired = true;
+                            /*Console.WriteLine(
+                                $"{listOfRequiredDungeons[i].dungeon} is required because {check.checkName} contains {check.itemId}"
+                            );*/
+                        }
+                        else
+                        {
+                            checkData.Add(dungeonCheck, checkItem);
                         }
                     }
                 }

@@ -209,7 +209,7 @@ namespace TPRandomizer
                 foreach (Room graphRoom in currentPlaythroughGraph)
                 {
                     graphRoom.Visited = true;
-                    //Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
+                    // Console.WriteLine("Currently Exploring: " + graphRoom.RoomName);
                     if (graphRoom.Checks != null)
                     {
                         for (int i = 0; i < graphRoom.Checks.Count; i++)
@@ -251,6 +251,10 @@ namespace TPRandomizer
 
                 Randomizer.Items.heldItems.AddRange(playthroughItems);
                 validationItems.AddRange(playthroughItems);
+                if (playthroughItems.Contains(Item.Ganondorf_Defeated))
+                {
+                    break;
+                }
             } while (playthroughItems.Count > 0);
 
             foreach (Item item in validationItems)

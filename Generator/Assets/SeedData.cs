@@ -327,6 +327,10 @@ namespace TPRandomizer.Assets
             {
                 seedHeader.Add(Converter.GcByte((int)randomizerSettings.castleRequirementCount * 5));
             }
+            else if (randomizerSettings.castleRequirements == CastleRequirements.Dungeons)
+            {
+                seedHeader.Add(Converter.GcByte(seedGenResults.hcRequiredDungeons));
+            }
             else
             {
                 seedHeader.Add(Converter.GcByte((int)randomizerSettings.castleRequirementCount));
@@ -336,6 +340,10 @@ namespace TPRandomizer.Assets
             if (randomizerSettings.castleBKRequirements == CastleBKRequirements.Hearts)
             {
                 seedHeader.Add(Converter.GcByte((int)randomizerSettings.castleBKRequirementCount * 5));
+            }
+            else if(randomizerSettings.castleBKRequirements == CastleBKRequirements.Dungeons)
+            {
+                seedHeader.Add(Converter.GcByte(seedGenResults.hcBkRequiredDungeons));
             }
             else
             {
