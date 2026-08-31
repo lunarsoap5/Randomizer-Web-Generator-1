@@ -339,8 +339,13 @@
       },
       {
         "ConnectedArea": "ZD Snowpeak Entrance",
-        "Requirements": "Ball_and_Chain",
-        "GlitchedRequirements": "Ball_and_Chain"
+        "Requirements": "Ball_and_Chain or CanCompleteLanayruTwilight",
+        "GlitchedRequirements": "Ball_and_Chain or CanCompleteLanayruTwilight"
+      },
+      {
+        "ConnectedArea": "ZD Waterfall Area",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Zoras Domain"
@@ -349,7 +354,7 @@
     "RoomName": "ZD Snowpeak Entrance",
     "Exits": [
       {
-        "ConnectedArea": "ZD Waterfall Area",
+        "ConnectedArea": "ZD Lower Ledge",
         "Requirements": "Ball_and_Chain or CanCompleteLanayruTwilight",
         "GlitchedRequirements": "Ball_and_Chain or CanCompleteLanayruTwilight"
       },
