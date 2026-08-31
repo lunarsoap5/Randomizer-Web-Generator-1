@@ -243,12 +243,6 @@
         "Requirements": "true",
         "GlitchedRequirements": "true"
       },
-      // Prior to Lanaru twilight being cleared both the ledge and the river take you to the same place.
-      {
-        "ConnectedArea": "UZR Ledge",
-        "Requirements": "CanCompleteLanayruTwilight",
-        "GlitchedRequirements": "CanCompleteLanayruTwilight"
-      },
       {
         "ConnectedArea": "ZD Top of Waterfall",
         "Requirements": "CanWarpMeteor or Shadow_Crystal",
