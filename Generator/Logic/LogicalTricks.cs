@@ -123,7 +123,7 @@ namespace TPRandomizer
                 // City in the Sky
                 { "CitS Entrance Crystal Switch With Ball and Chain", "cits_entrance_with_bnc" },
                 { "CitS Fan Skip", "cits_fan_skip" },
-                { "CitS Central Occa Room With No Items", "cits_itemless_central_room" },
+                { "CitS Central Oocca Room With No Items", "cits_itemless_central_room" },
                 { "CitS East Wing First Room With No Items", "cits_itemless_east_first_room" },
                 { "CitS Dinalfos Room With Clawshot", "cits_dinalfos_with_claw" },
                 {
