@@ -311,8 +311,9 @@ namespace TPRandomizer.Hints.HintCreator
 
                 // Important: if an already hinted check (such as self-hinted Charlo) is GOOD, then
                 // we cannot hint the area as barren, even if that check is not an unknown check.
-                // Therefore we need to do this check before worrying about unknown vs not checks.
-                if (!itemAllowsBarrenForArea && genData.CheckWouldPreventBarren(checkName))
+                // Therefore we need to check if the check would prevent barren before worrying
+                // about unknown vs not checks.
+                if (!itemAllowsBarrenForArea && genData.CheckWouldPreventBarren(checkName, areaId))
                 {
                     // Area can still be hinted barren for certain checks which are technically
                     // important/good but which should not actually prevent barren. For example, LBT

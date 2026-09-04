@@ -1384,7 +1384,7 @@ namespace TPRandomizer.Hints
             return true;
         }
 
-        public bool CheckWouldPreventBarren(string checkName)
+        public bool CheckWouldPreventBarren(string checkName, AreaId areaId)
         {
             if (
                 CheckIdClass.GetIsHideFromUiCheckName(checkName)
@@ -1398,6 +1398,9 @@ namespace TPRandomizer.Hints
 
             Item contents = HintUtils.getCheckContents(checkName);
 
+            if (ItemAllowsBarrenForArea(contents, areaId))
+                return false;
+
             if (sSettings.adjustHintsForCompletionists)
             {
                 // Shuffled non-junk items prevent barren. Non-major items (such as heart pieces and
@@ -1407,18 +1410,29 @@ namespace TPRandomizer.Hints
                     return true;
             }
 
-            // Otherwise at a minimum, a check's contents must be a majorItem to block barren, even
-            // if the status of it would be good.
-            if (!majorItems.Contains(contents))
-                return false;
-
-            // For important vs major preventnig barren, the difference is that "skippable" checks
+            // For important vs major preventing barren, the difference is that "skippable" checks
             // for the most part are split into "sometimes required" and "not required". This
             // further calculation is what leads to more checks being in "not required" and thus
             // more potential barren areas.
             if (requiredChecks.Contains(checkName) || condReqChecks.Contains(checkName))
                 return true;
             if (notReqChecks.Contains(checkName))
+                return false;
+
+            // We require that the check's contents are major in additional to being logical. This
+            // is mainly (currently only?) for Poe Souls (usually non-major even if shuffled) which
+            // can remain "skippable" even if conditionallyRequired calculations are done. We do not
+            // want these to block barren since it would lead to many areas which cannot be hinted
+            // barren purely because they happen to have a shuffled skippable Poe Soul despite there
+            // being many other options.
+
+            // Note that we now wait to check against majorItems until after the above required and
+            // sometimesRequired status comparisons so that something like a required OwnDungeon
+            // small key will still block barren for a category (such as Underwater) even though it
+            // is not considered major and even though it may not block barren for certain AreaIds.
+            // Ex: required underwater OwnDungeon GM small key is specified to not be a barren
+            // blocker for GM, but it should still block barren for the Underwater category.
+            if (!majorItems.Contains(contents))
                 return false;
 
             // If logical, then status would be "skippable" at this point. Else returns false.
