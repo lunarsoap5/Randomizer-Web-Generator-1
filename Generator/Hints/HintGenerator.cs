@@ -1246,16 +1246,8 @@ namespace TPRandomizer.Hints
                     {
                         checksToHint.Add(checkName);
 
-                        Item contents = HintUtils.getCheckContents(checkName);
-                        bool itemAllowsBarrenForArea = genData.ItemAllowsBarrenForArea(
-                            contents,
-                            areaId
-                        );
-
-                        if (!itemAllowsBarrenForArea && genData.CheckWouldPreventBarren(checkName))
-                        {
+                        if (genData.CheckWouldPreventBarren(checkName, areaId))
                             barrenBlockerChecks.Add(checkName);
-                        }
                     }
                 }
 
