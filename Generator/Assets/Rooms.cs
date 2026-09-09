@@ -57,6 +57,7 @@ namespace TPRandomizer
         public string CheckName { get; set; }
         public string Requirements { get; set; }
         public string GlitchedRequirements { get; set; }
+        public bool IsIsolated { get; set; }
 
         private LogicAST reqsCache;
 

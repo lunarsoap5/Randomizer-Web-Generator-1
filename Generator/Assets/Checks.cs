@@ -79,6 +79,8 @@ namespace TPRandomizer
                 "FT West Tile Worm Chest Behind Stairs",
                 "FT West Tile Worm Room Vines Chest",
                 "FT Windless Bridge Chest",
+                "Catch A Greengill",
+                "Catch An Ordon Catfish"
             };
         public static List<string> minesRequirementChecks =
             new()
@@ -103,6 +105,8 @@ namespace TPRandomizer
                 "GM Outside Beamos Chest",
                 "GM Outside Clawshot Chest",
                 "GM Outside Underwater Chest",
+                "Catch A Greengill",
+                "Catch A Hyrule Bass"
             };
 
         public static List<string> lakebedRequirementChecks =
@@ -134,6 +138,8 @@ namespace TPRandomizer
                 "LBT West Second Floor Southwest Underwater Chest",
                 "LBT West Water Supply Chest",
                 "LBT West Water Supply Small Chest",
+                "Catch A Greengill",
+                "Catch A Hylian Loach"
             };
 
         public static List<string> arbitersRequirementChecks =
@@ -323,6 +329,17 @@ namespace TPRandomizer
                 "CitS Argorok",
                 "PoT Zant",
                 "HC Ganondorf",
+            };
+
+        // These are checks that appear in multiple places that, due to being in dungeons, can be isolated from some connections
+        public static List<string> IsolatableChecks =
+            new()
+            {
+                "Catch A Greengill",
+                "Catch A Hyrule Bass",
+                "Catch An Ordon Catfish",
+                "Catch A Hylian Loach",
+                "Catch A Hylian Pike"
             };
 
         /// <summary>
