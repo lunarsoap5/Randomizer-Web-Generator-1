@@ -96,7 +96,7 @@
       },
       {
         "CheckName": "Kak Village Bomb Rock Spire Heart Piece",
-        "Requirements": "(((HasBombs or Trick.kak_rock_spire_poh_with_boomerang) and Boomerang) or (Trick.kak_rock_spire_poh_with_epona_claw and Progressive_Clawshot)) and CanCompleteEldinTwilight",
+        "Requirements": "(((HasBombs or Trick.kak_rock_spire_poh_with_boomerang) and (Boomerang or Trick.kak_rock_spire_poh_with_epona_claw and Progressive_Clawshot))) and CanCompleteEldinTwilight",
         "GlitchedRequirements": "(CanDoMapGlitch or (CanLaunchBombs and (Boomerang or (Progressive_Clawshot, 1)))) and CanCompleteEldinTwilight"
       },
       {

@@ -166,7 +166,7 @@
       },
       {
         "ConnectedArea": "CitS North Wing",
-        "Requirements": "(Progressive_Clawshot, 2) and ((CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod) or Trick.cits_north_with_2_claws or (Setting.citsFanShortCut equals True))",
+        "Requirements": "(Progressive_Clawshot, 2) and ((CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod) or (Shadow_Crystal and Trick.cits_fan_skip) or Trick.cits_north_with_2_claws or (Setting.citsFanShortCut equals True))",
         // You can use only Double Claws to reach north wing. Thank Hab for this.
         "GlitchedRequirements": "(Progressive_Clawshot, 2)"
       },

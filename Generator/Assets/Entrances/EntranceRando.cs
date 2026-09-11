@@ -1442,6 +1442,13 @@ namespace TPRandomizer
                     break;
                 }
             }
+
+            // Handle special entrance cases when exterior ER is enabled
+            if (Randomizer.SSettings.shuffleExteriorEntrances)
+            {
+                Randomizer.Rooms.RoomDict["ZD Lower Ledge"].Exits[0].Disconnect();
+                Randomizer.Rooms.RoomDict["UZR Ledge"].Exits[2].Disconnect();
+            }
         }
     }
 }
