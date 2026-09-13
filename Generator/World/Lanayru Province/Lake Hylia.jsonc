@@ -421,13 +421,13 @@
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanDefeatWaterToadpoli"
+        "Requirements": "Progressive_Fishing_Rod and (CanDefeatWaterToadpoli or (Shadow_Crystal and Trick.toadpoli_grotto_with_wolf))",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and (CanDefeatWaterToadpoli or (Shadow_Crystal and Trick.toadpoli_grotto_with_wolf))"
       },
       {
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchBaitedFish and CanDefeatWaterToadpoli",
-        "GlitchedRequirements": "CanCatchBaitedFish and CanDefeatWaterToadpoli"
+        "Requirements": "CanCatchBaitedFish and (CanDefeatWaterToadpoli or (Shadow_Crystal and Trick.toadpoli_grotto_with_wolf))",
+        "GlitchedRequirements": "CanCatchBaitedFish and (CanDefeatWaterToadpoli or (Shadow_Crystal and Trick.toadpoli_grotto_with_wolf))"
       }
     ],
     "Region": "Lake Hylia"
