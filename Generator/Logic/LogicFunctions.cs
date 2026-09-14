@@ -1513,7 +1513,8 @@ namespace TPRandomizer
         {
             return HasBottle()
                 && (
-                    Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
+                    || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
                     || (
                         (
                             Randomizer.Rooms.RoomDict[
@@ -1531,6 +1532,7 @@ namespace TPRandomizer
                         )
                         && (
                             CanUse(Item.Progressive_Clawshot)
+                            || CanUse(Item.Slingshot)
                             || CanUse(Item.Progressive_Bow)
                             || CanUse(Item.Ball_and_Chain)
                         )

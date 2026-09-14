@@ -264,14 +264,14 @@
       },
       {
         "CheckName": "Catch A Greengill",
-        "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs and HasHeavyMod",
-        "GlitchedRequirements": "Progressive_Fishing_Rod and CanLaunchBombs and Progressive_Clawshot"
+        "Requirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBombs",
+        "GlitchedRequirements": "Progressive_Fishing_Rod and Progressive_Clawshot and CanLaunchBomb"
       },
       {
         // Technically there is a loach in the water supply and one in the BK room. However the one in the water supply has the simplest logical requirements and will always be met before reaching the BK room, so we use that logic for the check.
         "CheckName": "Catch A Hylian Loach",
-        "Requirements": "CanCatchBaitedFish and Progressive_Clawshot and CanLaunchBombs and HasHeavyMod",
-        "GlitchedRequirements": "CanCatchBaitedFish and CanLaunchBombs and Progressive_Clawshot"
+        "Requirements": "CanCatchBaitedFish and Progressive_Clawshot and CanLaunchBombs",
+        "GlitchedRequirements": "CanCatchBaitedFish and Progressive_Clawshot and CanLaunchBombs"
       }
     ],
     "Region": "Lakebed Temple"
