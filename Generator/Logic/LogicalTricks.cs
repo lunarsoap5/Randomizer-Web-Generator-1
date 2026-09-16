@@ -116,7 +116,8 @@ namespace TPRandomizer
                 { "AG Big Key With Wolf", "ag_bk_with_wolf" },
                 // Snowpeak Ruins
                 { "SPR Lobby Chandelier Chest Without Wolf", "spr_lobby_chandelier_without_wolf" },
-                { "SPR Northeast Chandelier Chest With Back Slice", "spr_ne_chandelier_with_bs" },
+                { "SPR Northeast Chandelier Chest With Back Slice And Sword", "spr_ne_chandelier_with_bs_and_sword" },
+                { "SPR Northeast Chandelier Chest With Back Slice And Bombs", "spr_ne_chandelier_with_bs_and_bombs" },
                 { "SPR Ladder Freezard Cancel", "spr_ladder_freezard_cancel" },
                 // Temple of Time
                 { "ToT Crystal Switches With Clawshot", "tot_crystal_switches_with_claw" },
@@ -133,7 +134,7 @@ namespace TPRandomizer
                 { "CitS Compass Chest With Double Clawshots", "cits_compass_chest_with_2_claws" },
                 { "CitS North Wing With Double Clawshots", "cits_north_with_2_claws" },
                 // Palace of Twilight
-
+                { "PoT Use Light Sword To Activate Light Platforms", "pot_light_sword_light_platforms" },
                 // Hyrule Castle
                 { "HC Skip Main Hall Barrier", "hc_skip_main_hall_barrier" },
                 { "HC Chandeliers With Single Clawshot", "hc_chandeliers_with_1_claw" },
