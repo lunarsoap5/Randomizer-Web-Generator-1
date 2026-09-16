@@ -326,7 +326,7 @@
       },
       {
         "ConnectedArea": "SPR Northeast Chilfos Room Second Floor",
-        "Requirements": "Ball_and_Chain and ((Progressive_Clawshot, 1) or ((Progressive_Hidden_Skill, 3) and Trick.spr_ne_chandelier_with_bs)) and CanDefeatChilfos",
+        "Requirements": "Ball_and_Chain and ((Progressive_Clawshot, 1) or ((Progressive_Hidden_Skill, 3) and ((Trick.spr_ne_chandelier_with_bs_and_sword and HasSword) or (Trick.spr_ne_chandelier_with_bs_and_bomb and HasBombs)))) and CanDefeatChilfos",
         // LJA in ice block room
         "GlitchedRequirements": "(Ball_and_Chain and (Progressive_Clawshot, 1) and CanDefeatChilfos) or CanDoLJA"
       },
