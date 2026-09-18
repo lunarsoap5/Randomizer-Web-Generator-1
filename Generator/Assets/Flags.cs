@@ -61,6 +61,7 @@ namespace TPRandomizer.Assets
             { 0x2, 0x95 }, // Midna text after warping to North Faron for bridge.
             { 0x2, 0xBF }, // Burned First cobweb in faron cave
             { 0x2, 0xBE }, // Burned second cobweb in faron cave
+            { 0x2, 0x55 }, // Burned cobweb in front of forest temple
             { 0xA, 0x99 }, // Desert Entrance CS.
             { 0xA, 0x20 }, // Set Freestanding key flag.
             { 0x3, 0xA4 }, // Barnes Sells Bombs.
