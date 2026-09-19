@@ -19,8 +19,8 @@
       },
       {
         "ConnectedArea": "PoT Central First Room",
-        "Requirements": "(Progressive_Sword, 4) or (Setting.potShortCut equals True)",
-        "GlitchedRequirements": "(Progressive_Sword, 4)"
+        "Requirements": "(Progressive_Sword, 4) or (Setting.potShortcut equals True)",
+        "GlitchedRequirements": "(Progressive_Sword, 4) or (Setting.potShortcut equals True)"
       }
     ],
     "Checks": [

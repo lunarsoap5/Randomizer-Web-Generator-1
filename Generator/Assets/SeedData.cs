@@ -3576,7 +3576,7 @@ namespace TPRandomizer.Assets
                 listOfStaticReplacements.AddRange(listOfExteriorERReplacements);
             }
 
-            if (Randomizer.SSettings.agShortCut)
+            if (Randomizer.SSettings.agShortcut)
             {
                 listOfStaticReplacements.Add(
                     new ARCReplacement(
@@ -3590,7 +3590,7 @@ namespace TPRandomizer.Assets
                 ); // Sets the mSw switch on the poe gate actor to be 0xFF
             }
 
-            if (Randomizer.SSettings.potShortCut)
+            if (Randomizer.SSettings.potShortcut)
             {
                 listOfStaticReplacements.Add(
                 new ARCReplacement(

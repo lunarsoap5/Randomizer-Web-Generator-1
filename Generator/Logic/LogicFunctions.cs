@@ -1670,7 +1670,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanBreakMonkeyCage()
         {
-            return Randomizer.SSettings.ftShortCut
+            return Randomizer.SSettings.ftShortcut
                 || (
                     HasSword()
                     || CanUse(Item.Iron_Boots)
@@ -1701,7 +1701,7 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanFreeAllMonkeys()
         {
-            return Randomizer.SSettings.ftShortCut
+            return Randomizer.SSettings.ftShortcut
                 || (
                     CanBreakMonkeyCage()
                     && (
