@@ -1137,12 +1137,12 @@ namespace TPRandomizer.Assets
             /* 55 */RandomizerSettings.hcMapAndCompassSettings == MapAndCompassSettings.Start_With,
             /* 56 */!RandomizerSettings.shuffleAnimalConversations,
             /* 57 */RandomizerSettings.spawnGWolves,
-            /* 58 */RandomizerSettings.ftShortCut,
-            /* 59 */RandomizerSettings.lbtShortCut,
-            /* 60 */RandomizerSettings.agShortCut,
-            /* 61 */RandomizerSettings.sprShortCut,
-            /* 62 */RandomizerSettings.citsBridgeShortCut,
-            /* 63 */RandomizerSettings.citsFanShortCut,
+            /* 58 */RandomizerSettings.ftShortcut,
+            /* 59 */RandomizerSettings.lbtShortcut,
+            /* 60 */RandomizerSettings.agShortcut,
+            /* 61 */RandomizerSettings.sprShortcut,
+            /* 62 */RandomizerSettings.citsBridgeShortcut,
+            /* 63 */RandomizerSettings.citsFanShortcut,
         };
     }
 }
