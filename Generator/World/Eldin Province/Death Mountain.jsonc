@@ -160,13 +160,13 @@
       },
       {
         "ConnectedArea": "Death Mountain Sumo Hall Elevator",
-        "Requirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)",
-        "GlitchedRequirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
+        "Requirements": "Iron_Boots or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True)",
+        "GlitchedRequirements": "Iron_Boots or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True)"
       },
       {
         "ConnectedArea": "Death Mountain Sumo Hall GM Tunnel",
-        "Requirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)",
-        "GlitchedRequirements": "Iron_Boots or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)"
+        "Requirements": "Iron_Boots or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True)",
+        "GlitchedRequirements": "Iron_Boots or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True)"
       }
     ],
     "Region": "Death Mountain"
@@ -182,9 +182,9 @@
       {
         // Depending on settings, the Goron can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Goron before we consider this a valid path.
         "ConnectedArea": "Death Mountain Sumo Hall",
-        "Requirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)",
+        "Requirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True)",
         // Spinner/wolf clip also works.
-        "GlitchedRequirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True) or Spinner or Shadow_Crystal"
+        "GlitchedRequirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True) or Spinner or Shadow_Crystal"
       }
     ],
     "Region": "Death Mountain"
@@ -195,9 +195,9 @@
       {
         // Depending on settings, the Gorons can be blocking the way into the room. If this is the case, we need to make sure we can actually move the Gorons before we consider this a valid path.
         "ConnectedArea": "Death Mountain Sumo Hall",
-        "Requirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True)",
+        "Requirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True)",
         // Spinner clip also works
-        "GlitchedRequirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.skipMinesEntrance equals NoWrestling) or (Setting.skipMinesEntrance equals True) or Spinner"
+        "GlitchedRequirements": "(Room.Death_Mountain_Sumo_Hall and Iron_Boots) or (Setting.goronMinesEntrance equals NoWrestling) or (Setting.goronMinesEntrance equals True) or Spinner"
       },
       {
         "ConnectedArea": "GM Entrance",
