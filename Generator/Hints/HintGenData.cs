@@ -16,6 +16,7 @@ namespace TPRandomizer.Hints
         public HintedThings3 hinted { get; }
         public HintVars vars { get; }
 
+        private HintSettings hintSettings;
         public Dictionary<Goal, List<string>> goalToRequiredChecks { get; set; }
         public GoalManager goalManager { get; }
         public HashSet<string> requiredChecks { get; set; }
@@ -97,6 +98,7 @@ namespace TPRandomizer.Hints
 
         public void updateFromHintSettings(HintSettings hintSettings)
         {
+            this.hintSettings = hintSettings;
             prepMajorItems();
             prepLogicalItemAndMultiMax();
             prepDefaultHintworthyItems();
@@ -1561,6 +1563,38 @@ namespace TPRandomizer.Hints
                 weight += 2 * Math.Pow((double)1 / (numChecks - 2), 0.25);
 
             return weight;
+        }
+
+        public bool IsBeyondThisPointHintBlocked(Zone zone)
+        {
+            // If a zone would hint itself as barren, then no need to put a "nothingBeyondThisPoint"
+            // hint on the same sign. The only exception is if the zone is a dungeon with OwnDungeon
+            // BKs since we still want the BK info from the hint.
+            if (hintSettings.barren.monopolizeSpots && hinted.hintedBarrenZones.Contains(zone))
+            {
+                // Check if the zone has OwnDungeon bigKeys.
+                Dictionary<Zone, BigKeySettings> bkSettingByZone =
+                    new()
+                    {
+                        { Zone.Forest_Temple, sSettings.ftBigKeySettings },
+                        { Zone.Goron_Mines, sSettings.gmBigKeySettings },
+                        { Zone.Lakebed_Temple, sSettings.lbtBigKeySettings },
+                        { Zone.Arbiters_Grounds, sSettings.agBigKeySettings },
+                        { Zone.Snowpeak_Ruins, sSettings.sprBigKeySettings },
+                        { Zone.Temple_of_Time, sSettings.totBigKeySettings },
+                        { Zone.City_in_the_Sky, sSettings.citsBigKeySettings },
+                        { Zone.Palace_of_Twilight, sSettings.potBigKeySettings },
+                        { Zone.Hyrule_Castle, sSettings.hcBigKeySettings },
+                    };
+
+                if (bkSettingByZone.TryGetValue(zone, out BigKeySettings bkSetting))
+                {
+                    if (bkSetting == BigKeySettings.Own_Dungeon)
+                        return false; // Hint is not blocked due to OwnDungeon BK.
+                }
+                return true; // Hint is blocked
+            }
+            return false;
         }
     }
 
