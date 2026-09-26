@@ -105,12 +105,14 @@ namespace TPRandomizer
 
         public class Trick : LogicAST
         {
-            string TrickName { get; }
+            TPRandomizer.Trick trick { get; }
 
-            public Trick(string trick) => TrickName = trick;
+            public Trick(string trickName)
+            {
+                trick = LogicTricks.GetTrickFromString(trickName);
+            }
 
-            public override bool Evaluate() =>
-                Randomizer.SSettings.logicalTricks.Values.Contains(TrickName);
+            public override bool Evaluate() => Randomizer.SSettings.logicalTricks.Contains(trick);
         }
 
         public class Conjunction : LogicAST
@@ -146,7 +148,7 @@ namespace TPRandomizer
         static Regex conjunctionRegex = new(@"^and\s+");
         static Regex disjunctionRegex = new(@"^or\s+");
         static Regex trickRegex = new(@"^Trick.(\w+)");
-        static Dictionary<string, LogicAST> parseCache = [];
+        static Dictionary<string, LogicAST> parseCache = new();
 
         /// <summary>
         /// Parses logic expressions into AST objects. This function uses an internal parse cache,

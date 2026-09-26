@@ -1,9 +1,7 @@
 using System;
-using System.Globalization;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting.Internal;
 using Newtonsoft.Json;
 
 namespace TPRandomizer
@@ -49,13 +47,8 @@ namespace TPRandomizer
                     // seedId, fileCreationSettingsString
                     Randomizer.GenerateFinalOutput2(args[1], args[2]);
                     break;
-                case "print_check_ids_for_ui":
-                    Console.WriteLine(
-                        JsonConvert.SerializeObject(CheckIdClass.GetUiNameToIdNumDict())
-                    );
-                    break;
-                case "print_tricks_for_ui":
-                    Console.WriteLine(JsonConvert.SerializeObject(LogicTricks.generateTrickList()));
+                case "print_ui_data":
+                    Console.WriteLine(Helper.GetUiDataJson());
                     break;
                 case "print_seed_gen_results":
                 {
@@ -86,6 +79,26 @@ namespace TPRandomizer
                     break;
                 default:
                     throw new Exception("Unrecognized command.");
+            }
+        }
+
+        private class Helper
+        {
+            private class UiData
+            {
+                public SortedDictionary<string, int> checksList { get; }
+                public List<LogicTricks.UiDisplay> tricksList { get; }
+
+                public UiData()
+                {
+                    checksList = CheckIdClass.GetUiNameToIdNumDict();
+                    tricksList = LogicTricks.GetUiDisplayTricks();
+                }
+            }
+
+            public static string GetUiDataJson()
+            {
+                return JsonConvert.SerializeObject(new UiData());
             }
         }
     }
