@@ -787,7 +787,7 @@ namespace TPRandomizer
             return HasSword()
                 || (
                     CanUse(Item.Shadow_Crystal)
-                    && (CanMidnaCharge() || LogicTricks.isTrickEnabled("shadow_beasts_without_mdh"))
+                    && (CanMidnaCharge() || LogicTricks.isEnabled(Trick.shadow_beasts_without_mdh))
                 );
         }
 
@@ -898,7 +898,7 @@ namespace TPRandomizer
                     && (
                         CanUse(Item.Iron_Boots)
                         || (
-                            (CanDoNicheStuff() || LogicTricks.isTrickEnabled("drained_MA_as_irons"))
+                            (CanDoNicheStuff() || LogicTricks.isEnabled(Trick.drained_MA_as_irons))
                             && CanUse(Item.Magic_Armor)
                         )
                     )
@@ -1304,11 +1304,11 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Progressive_Bow)
-                && (CanUse(Item.Iron_Boots) || LogicTricks.isTrickEnabled("fyrus_without_irons"))
+                && (CanUse(Item.Iron_Boots) || LogicTricks.isEnabled(Trick.fyrus_without_irons))
                 && (
                     HasSword()
                     || (CanDoDifficultCombat() && CanUseBacksliceAsSword())
-                    || LogicTricks.isTrickEnabled("fyrus_without_sword")
+                    || LogicTricks.isEnabled(Trick.fyrus_without_sword)
                 )
             );
         }
@@ -1323,10 +1323,10 @@ namespace TPRandomizer
                     CanUse(Item.Zora_Armor)
                     && (
                         CanUse(Item.Iron_Boots)
-                        || (CanDoNicheStuff() || LogicTricks.isTrickEnabled("drained_MA_as_irons"))
+                        || (CanDoNicheStuff() || LogicTricks.isEnabled(Trick.drained_MA_as_irons))
                             && CanUse(Item.Magic_Armor)
                     )
-                    && (HasSword() || LogicTricks.isTrickEnabled("morpheel_without_sword"))
+                    && (HasSword() || LogicTricks.isEnabled(Trick.morpheel_without_sword))
                     && CanUse(Item.Progressive_Clawshot)
                 )
                 || (
@@ -1378,7 +1378,7 @@ namespace TPRandomizer
                 && (
                     CanUse(Item.Iron_Boots)
                     || (
-                        (CanDoNicheStuff() || LogicTricks.isTrickEnabled("drained_MA_as_irons"))
+                        (CanDoNicheStuff() || LogicTricks.isEnabled(Trick.drained_MA_as_irons))
                         && CanUse(Item.Magic_Armor)
                     )
                 )
@@ -1399,7 +1399,7 @@ namespace TPRandomizer
                     && (
                         CanUse(Item.Iron_Boots)
                         || (
-                            (CanDoNicheStuff() || LogicTricks.isTrickEnabled("drained_MA_as_irons"))
+                            (CanDoNicheStuff() || LogicTricks.isEnabled(Trick.drained_MA_as_irons))
                             && CanUse(Item.Magic_Armor)
                         )
                     )
@@ -1425,7 +1425,7 @@ namespace TPRandomizer
                         (GetItemCount(Item.Progressive_Hidden_Skill) >= 5)
                         && HasBottle()
                         && CanGetTearsOrRareChu()
-                        && LogicTricks.isTrickEnabled("beast_ganon_without_wolf")
+                        && LogicTricks.isEnabled(Trick.beast_ganon_without_wolf)
                     )
                 )
                 && (GetItemCount(Item.Progressive_Sword) >= 3)
@@ -1467,7 +1467,7 @@ namespace TPRandomizer
             return CanUse(Item.Lantern)
                 || (
                     (HasBombs() || CanUse(Item.Ball_and_Chain))
-                    && LogicTricks.isTrickEnabled("can_smash_webs")
+                    && LogicTricks.isEnabled(Trick.can_smash_webs)
                 );
         }
 
@@ -1606,7 +1606,7 @@ namespace TPRandomizer
             return (
                     (
                         CanUse(Item.Boomerang)
-                        && LogicTricks.isTrickEnabled("launch_bombs_with_boomerang")
+                        && LogicTricks.isEnabled(Trick.launch_bombs_with_boomerang)
                     ) || CanUse(Item.Progressive_Bow)
                 ) && HasBombs();
         }
@@ -1652,14 +1652,14 @@ namespace TPRandomizer
                     Randomizer.SSettings.logicRules == LogicRules.Glitched
                     && ((HasSword() && CanDoMoonBoots()) || CanDoBSMoonBoots())
                 )
-                || (LogicTricks.isTrickEnabled("hc_painting_switch_with_bombs") && HasBombs())
+                || (LogicTricks.isEnabled(Trick.hc_painting_switch_with_bombs) && HasBombs())
                 || (
-                    LogicTricks.isTrickEnabled("hc_painting_switch_with_js")
+                    LogicTricks.isEnabled(Trick.hc_painting_switch_with_js)
                     && GetItemCount(Item.Progressive_Hidden_Skill) >= 6
                     && HasSword()
                 )
                 || (
-                    LogicTricks.isTrickEnabled("hc_painting_switch_with_bs")
+                    LogicTricks.isEnabled(Trick.hc_painting_switch_with_bs)
                     && GetItemCount(Item.Progressive_Hidden_Skill) >= 3
                 )
             );
@@ -2419,7 +2419,7 @@ namespace TPRandomizer
         public static bool HasHeavyMod()
         {
             return CanUse(Item.Iron_Boots)
-                || (CanUse(Item.Magic_Armor) && LogicTricks.isTrickEnabled("drained_MA_as_irons"));
+                || (CanUse(Item.Magic_Armor) && LogicTricks.isEnabled(Trick.drained_MA_as_irons));
         }
 
         /// <summary>

@@ -278,17 +278,16 @@ namespace TPRandomizer.Util
             return list;
         }
 
-        public Dictionary<string, string> NextLogicalTricksList()
+        public List<Trick> NextLogicalTricksList()
         {
-            Dictionary<string, string> list = new();
-            List<string> tricks = LogicTricks.listOfTricks.Keys.ToList();
+            List<Trick> list = new();
 
             while (true)
             {
                 int trickIdNum = NextInt(10);
                 if (trickIdNum >= 0 && trickIdNum < 0x3FF)
                 {
-                    list[tricks[trickIdNum]] = LogicTricks.listOfTricks[tricks[trickIdNum]];
+                    list.Add(LogicTricks.GetTrickFromNumber(trickIdNum));
                 }
                 else
                 {

@@ -742,7 +742,7 @@ namespace TPRandomizer
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);
-            result.Add("logicalTricks", sSettings.logicalTricks.Keys);
+            result.Add("logicalTricks", LogicTricks.GetListForSpoiler(sSettings.logicalTricks));
 
             return result;
         }
