@@ -128,7 +128,7 @@ namespace TPRandomizer
         public bool alwaysGreatSpin { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
-        public Dictionary<string, string> logicalTricks { get; set; }
+        public List<Trick> logicalTricks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
 
         public SharedSettings() { }

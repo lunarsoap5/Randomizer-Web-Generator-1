@@ -55,7 +55,9 @@ namespace TPRandomizer
                     );
                     break;
                 case "print_tricks_for_ui":
-                    Console.WriteLine(JsonConvert.SerializeObject(LogicTricks.generateTrickList()));
+                    // Console.WriteLine(JsonConvert.SerializeObject(LogicTricks.generateTrickList()));
+                    // Console.WriteLine(JsonConvert.SerializeObject(LogicTricks.GetUiDisplayItems()));
+                    Console.WriteLine("[]");
                     break;
                 case "print_seed_gen_results":
                 {

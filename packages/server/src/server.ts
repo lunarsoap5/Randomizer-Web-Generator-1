@@ -83,6 +83,12 @@ declare global {
   }
 }
 
+type UiTrick = {
+  id?: number;
+  displayName: string;
+  isDivider?: boolean;
+};
+
 logger.info('Server starting...');
 
 // log config
@@ -304,20 +310,33 @@ app.get('/', (req: express.Request, res: express.Response) => {
         `<input id="systemPresets" type="hidden" value="${PRESETS_SAFE_STR}">`
       );
 
+      // const start = performance.now();
       const excludedChecksList = JSON.parse(
         callGenerator('print_check_ids_for_ui')
       );
+      // const end = performance.now();
+      // const duration = end - start;
+      // console.log(`Execution time: ${duration.toFixed(4)} ms`);
       const arr = Object.keys(excludedChecksList).map((key) => {
         return `<li><label><input type='checkbox' data-checkId='${excludedChecksList[key]}'>${key}</label></li>`;
       });
 
       msg = msg.replace('<!-- CHECK_IDS -->', arr.join('\n'));
 
+      const start = performance.now();
       const logicalTricksList = JSON.parse(
         callGenerator('print_tricks_for_ui')
-      );
-      const tricksArr = Object.keys(logicalTricksList).map((key) => {
-        return `<li><label><input type='checkbox' data-trickId='${logicalTricksList[key]}'>${key}</label></li>`;
+      ) as UiTrick[];
+      const end = performance.now();
+      const duration = end - start;
+      console.log(`Execution time: ${duration.toFixed(4)} ms`);
+
+      const tricksArr = logicalTricksList.map((trickObj) => {
+        if (trickObj.isDivider) {
+          return `<li class="tricksSectionHeader">${trickObj.displayName}</li>`;
+        } else {
+          return `<li><label><input type='checkbox' data-trickId='${trickObj.id}'>${trickObj.displayName}</label></li>`;
+        }
       });
 
       msg = msg.replace('<!-- TRICK_IDS -->', tricksArr.join('\n'));
