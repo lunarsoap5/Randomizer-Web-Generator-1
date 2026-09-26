@@ -223,6 +223,9 @@ namespace TPRandomizer
         [Description("Defeat Dark Beast Ganon Without Wolf")]
         beast_ganon_without_wolf,
 
+        [Description("GM Outside Underwater Chest With Only Iron Boots")]
+        gm_outside_underwater_with_boots,
+
         [Description("SPR Northeast Chandelier Chest With Back Slice And Bombs")]
         spr_ne_chandelier_with_bs_and_bombs,
 
@@ -294,6 +297,7 @@ namespace TPRandomizer
                 UiDisplay.Trick(Trick.ft_north_bomb_boosts),
                 UiDisplay.Trick(Trick.ft_ook_with_midna),
                 UiDisplay.Divider("Goron Mines"),
+                UiDisplay.Trick(Trick."gm_outside_underwater_with_boots" ),
                 UiDisplay.Trick(Trick.fyrus_without_sword),
                 UiDisplay.Trick(Trick.fyrus_without_irons),
                 UiDisplay.Divider("Lakebed Temple"),
@@ -321,6 +325,7 @@ namespace TPRandomizer
                 UiDisplay.Trick(Trick.cits_central_outside_ledge_chest_with_claw),
                 UiDisplay.Trick(Trick.cits_compass_chest_with_2_claws),
                 UiDisplay.Trick(Trick.cits_north_with_2_claws),
+                UiDisplay.Divider("Palace of Twilight"),
                 UiDisplay.Trick(Trick.pot_twili_light_sword),
                 UiDisplay.Divider("Hyrule Castle"),
                 UiDisplay.Trick(Trick.hc_skip_main_hall_barrier),
