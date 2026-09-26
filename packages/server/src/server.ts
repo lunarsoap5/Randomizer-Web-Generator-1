@@ -89,6 +89,11 @@ type UiTrick = {
   isDivider?: boolean;
 };
 
+type UiData = {
+  checksList: Record<string, number>;
+  tricksList: UiTrick[];
+};
+
 logger.info('Server starting...');
 
 // log config
@@ -310,28 +315,15 @@ app.get('/', (req: express.Request, res: express.Response) => {
         `<input id="systemPresets" type="hidden" value="${PRESETS_SAFE_STR}">`
       );
 
-      // const start = performance.now();
-      const excludedChecksList = JSON.parse(
-        callGenerator('print_check_ids_for_ui')
-      );
-      // const end = performance.now();
-      // const duration = end - start;
-      // console.log(`Execution time: ${duration.toFixed(4)} ms`);
-      const arr = Object.keys(excludedChecksList).map((key) => {
-        return `<li><label><input type='checkbox' data-checkId='${excludedChecksList[key]}'>${key}</label></li>`;
+      const uiData = JSON.parse(callGenerator('print_ui_data')) as UiData;
+
+      const checkIdEls = Object.keys(uiData.checksList).map((key) => {
+        return `<li><label><input type='checkbox' data-checkId='${uiData.checksList[key]}'>${key}</label></li>`;
       });
 
-      msg = msg.replace('<!-- CHECK_IDS -->', arr.join('\n'));
+      msg = msg.replace('<!-- CHECK_IDS -->', checkIdEls.join('\n'));
 
-      const start = performance.now();
-      const logicalTricksList = JSON.parse(
-        callGenerator('print_tricks_for_ui')
-      ) as UiTrick[];
-      const end = performance.now();
-      const duration = end - start;
-      console.log(`Execution time: ${duration.toFixed(4)} ms`);
-
-      const tricksArr = logicalTricksList.map((trickObj) => {
+      const tricksArr = uiData.tricksList.map((trickObj) => {
         if (trickObj.isDivider) {
           return `<li class="tricksSectionHeader">${trickObj.displayName}</li>`;
         } else {
@@ -604,9 +596,9 @@ app.get('/', (req: express.Request, res: express.Response) => {
           }
         })
         .join('\n');
-      const plandoChecksEls = Object.keys(excludedChecksList)
+      const plandoChecksEls = Object.keys(uiData.checksList)
         .map((key) => {
-          return `<option value='${excludedChecksList[key]}'>${key}</option>`;
+          return `<option value='${uiData.checksList[key]}'>${key}</option>`;
         })
         .join('\n');
       const plandoStr = `<select id=plandoCheckSelect>${plandoChecksEls}</select>

@@ -742,9 +742,7 @@ namespace TPRandomizer
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);
-            // TODO: need to be able to convert the enum to its display name to match existing behavior here.
-
-            // result.Add("logicalTricks", sSettings.logicalTricks.Keys);
+            result.Add("logicalTricks", LogicTricks.GetListForSpoiler(sSettings.logicalTricks));
 
             return result;
         }
