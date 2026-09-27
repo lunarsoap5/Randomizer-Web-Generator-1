@@ -65,7 +65,7 @@
       {
         "CheckName": "PoT West Wing Second Room Southeast Chest",
         "Requirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and ((Progressive_Clawshot, 2) or (Trick.pot_twili_light_sword and (Progressive_Clawshot, 1)))",
-        "GlitchedRequirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and (Progressive_Clawshot, 2)"
+        "GlitchedRequirements": "((((Palace_of_Twilight_Small_Key, 6) or ((Setting.potSmallKeySettings equals Vanilla) and (Palace_of_Twilight_Small_Key, 3))))) and CanDefeatZantHead and ((Progressive_Clawshot, 2) or (Trick.pot_twili_light_sword and (Progressive_Clawshot, 1)))"
       }
     ],
     "Region": "Palace of Twilight"

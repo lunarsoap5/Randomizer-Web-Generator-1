@@ -297,7 +297,7 @@ namespace TPRandomizer
                 UiDisplay.Trick(Trick.ft_north_bomb_boosts),
                 UiDisplay.Trick(Trick.ft_ook_with_midna),
                 UiDisplay.Divider("Goron Mines"),
-                UiDisplay.Trick(Trick."gm_outside_underwater_with_boots" ),
+                UiDisplay.Trick(Trick.gm_outside_underwater_with_boots),
                 UiDisplay.Trick(Trick.fyrus_without_sword),
                 UiDisplay.Trick(Trick.fyrus_without_irons),
                 UiDisplay.Divider("Lakebed Temple"),
@@ -395,7 +395,7 @@ namespace TPRandomizer
                     DisplayName = EnumUtils.GetDescription(trick),
                     IsDivider = false
                 };
-                { "PoT Use Light Sword To Activate Light Platforms", "pot_light_sword_light_platforms" },
+
             public static UiDisplay Divider(string label) =>
                 new() { DisplayName = label, IsDivider = true };
         }
