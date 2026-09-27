@@ -180,7 +180,7 @@
       },
       {
         "CheckName": "GM Outside Underwater Chest",
-        "Requirements": "(HasSword or CanUseWaterBombs) and HasHeavyMod",
+        "Requirements": "(HasSword or CanUseWaterBombs or Trick.gm_outside_underwater_with_boots) and HasHeavyMod",
         "GlitchedRequirements": "HasHeavyMod"
       },
       {

@@ -169,8 +169,8 @@ namespace TPRandomizer
         [Description("SPR Lobby Chandelier Chest Without Wolf")]
         spr_lobby_chandelier_without_wolf,
 
-        [Description("SPR Northeast Chandelier Chest With Back Slice")]
-        spr_ne_chandelier_with_bs,
+        [Description("SPR Northeast Chandelier Chest With Back Slice And Sword")]
+        spr_ne_chandelier_with_bs_and_sword,
 
         [Description("SPR Ladder Freezard Cancel")]
         spr_ladder_freezard_cancel,
@@ -222,6 +222,16 @@ namespace TPRandomizer
 
         [Description("Defeat Dark Beast Ganon Without Wolf")]
         beast_ganon_without_wolf,
+
+        [Description("GM Outside Underwater Chest With Only Iron Boots")]
+        gm_outside_underwater_with_boots,
+
+        [Description("SPR Northeast Chandelier Chest With Back Slice And Bombs")]
+        spr_ne_chandelier_with_bs_and_bombs,
+
+        [Description("PoT Use Light Sword On Twilis To Activate Light Platforms")]
+        pot_twili_light_sword,
+
         // Add new tricks directly above this line. DO NOT SORT THESE ENUMS. The numerical IDs are
         // auto-generated and they must be consistent. After adding the new enum directly above this
         // comment block, update the `GetUiDisplayTricks` method directly below this so that the new
@@ -287,6 +297,7 @@ namespace TPRandomizer
                 UiDisplay.Trick(Trick.ft_north_bomb_boosts),
                 UiDisplay.Trick(Trick.ft_ook_with_midna),
                 UiDisplay.Divider("Goron Mines"),
+                UiDisplay.Trick(Trick.gm_outside_underwater_with_boots),
                 UiDisplay.Trick(Trick.fyrus_without_sword),
                 UiDisplay.Trick(Trick.fyrus_without_irons),
                 UiDisplay.Divider("Lakebed Temple"),
@@ -300,7 +311,8 @@ namespace TPRandomizer
                 UiDisplay.Trick(Trick.ag_bk_with_wolf),
                 UiDisplay.Divider("Snowpeak Ruins"),
                 UiDisplay.Trick(Trick.spr_lobby_chandelier_without_wolf),
-                UiDisplay.Trick(Trick.spr_ne_chandelier_with_bs),
+                UiDisplay.Trick(Trick.spr_ne_chandelier_with_bs_and_sword),
+                UiDisplay.Trick(Trick.spr_ne_chandelier_with_bs_and_bombs),
                 UiDisplay.Trick(Trick.spr_ladder_freezard_cancel),
                 UiDisplay.Divider("Temple of Time"),
                 UiDisplay.Trick(Trick.tot_crystal_switches_with_claw),
@@ -313,8 +325,8 @@ namespace TPRandomizer
                 UiDisplay.Trick(Trick.cits_central_outside_ledge_chest_with_claw),
                 UiDisplay.Trick(Trick.cits_compass_chest_with_2_claws),
                 UiDisplay.Trick(Trick.cits_north_with_2_claws),
-                // Add "Palace of Twilight" here once needed.
-
+                UiDisplay.Divider("Palace of Twilight"),
+                UiDisplay.Trick(Trick.pot_twili_light_sword),
                 UiDisplay.Divider("Hyrule Castle"),
                 UiDisplay.Trick(Trick.hc_skip_main_hall_barrier),
                 UiDisplay.Trick(Trick.hc_chandeliers_with_1_claw),
