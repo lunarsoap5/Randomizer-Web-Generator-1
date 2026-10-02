@@ -3423,6 +3423,56 @@ namespace TPRandomizer.Assets
                     3
                 ),
 
+                // Remove hider SCOs in Kak Twilight state so doors work in kak without the need to defeat shadow beasts
+                new ARCReplacement(
+                    "9BAC",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Village,
+                    0
+                ),
+                new ARCReplacement(
+                    "9BD0",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Village,
+                    0
+                ),
+                new ARCReplacement(
+                    "9BF4",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Village,
+                    0
+                ),
+                new ARCReplacement(
+                    "9C18",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Village,
+                    0
+                ),
+                new ARCReplacement(
+                    "9C3C",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Village,
+                    0
+                ),
+                new ARCReplacement(
+                    "9C60",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Kakariko_Village,
+                    0
+                ),
+
                 /*
             // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
             new ARCReplacement(
