@@ -55,9 +55,9 @@ namespace TPRandomizer
                         fileParams[paramLength]
                     );
                     break;
-                case "print_check_ids":
+                case "print_check_ids_for_ui":
                     Console.WriteLine(
-                        JsonConvert.SerializeObject(CheckIdClass.GetNameToIdNumDictionary())
+                        JsonConvert.SerializeObject(CheckIdClass.GetUiNameToIdNumDict())
                     );
                     break;
                 // "dangerously_print_full_race_spoiler" should only ever be

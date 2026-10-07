@@ -19,12 +19,23 @@ namespace TPRandomizer.Hints
         Required = 3,
     }
 
+    public enum DetailedCheckStatus
+    {
+        // `Unknown` is mainly for no-logic where we have a hard time saying if
+        // a check is good or not, and we really cannot say if it is required or
+        // not. Used for other things as well.
+        Unknown = 0,
+        NotRequired = 1,
+        Skippable = 2,
+        SometimesRequired = 3,
+        Required = 4,
+    }
+
     public enum CheckStatusDisplay
     {
         Automatic = 0,
         None = 1,
-        Good_Or_Not = 2,
-        Required_Info = 3,
+        Required_Info = 2,
     }
 
     public enum TradeGroup
@@ -190,8 +201,44 @@ namespace TPRandomizer.Hints
         private static readonly Func<HintGenData, Zone, bool> alwaysPassFn = (genData, zone) =>
             true;
         private static readonly Func<HintGenData, Zone, bool> snowpeakFn = (genData, zone) =>
-            !genData.sSettings.skipSnowpeakEntrance
-            && !HintUtils.DungeonIsRequired(ZoneUtils.IdToString(Zone.Snowpeak_Ruins));
+        {
+            if (
+                !genData.sSettings.skipSnowpeakEntrance
+                && genData.sSettings.shufflePoes != PoeSettings.All
+                && genData.sSettings.shufflePoes != PoeSettings.Overworld
+                && !genData.sSettings.shuffleFreestandingRupees
+                && genData.sSettings.barrenDungeons
+                && !genData.sSettings.decoupleEntrances
+            )
+            {
+                if (
+                    !genData.dungeonEntrances.TryGetValue(
+                        Zone.Snowpeak_Ruins,
+                        out List<Zone> beyondSprDoorsDungeons
+                    )
+                )
+                    throw new Exception(
+                        $"Failed to find dungeon(s) behind SPR doors for Snowpeak BeyondThisPoint hint."
+                    );
+
+                // If either SPR door leads to Hyrule Castle or a required
+                // dungeon, then do not create the hint.
+                foreach (Zone dungeonZone in beyondSprDoorsDungeons)
+                {
+                    if (
+                        dungeonZone == Zone.Hyrule_Castle
+                        || HintUtils.DungeonIsRequired(ZoneUtils.IdToString(dungeonZone))
+                    )
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            return false; // Don't create BeyondThisPoint hint
+        };
+
         private static readonly Func<HintGenData, Zone, bool> dungeonFn = (genData, zone) =>
             ZoneUtils.IsDungeonZone(zone);
 
@@ -242,292 +289,417 @@ namespace TPRandomizer.Hints
 
     public class HintConstants
     {
-        public static readonly HashSet<Item> baseLogicalItems = new()
-        {
-            // Ordon and Wooden shield not considered logical since they can
-            // be deleted from your inventory, so finding them randomly does
-            // not mean anything. For no-logic they will be marked as
-            // logical items since they preventBarren, but it does not
-            // matter since the only places we make use of an item being
-            // "logical" is when there is logic.
-            Item.Hylian_Shield, // ?
-            // Item.Magic_Armor, // conditional
-            Item.Zora_Armor,
-            Item.Shadow_Crystal,
-            // Item.Progressive_Wallet, // conditional
-            Item.Progressive_Sword,
-            Item.Boomerang,
-            Item.Spinner,
-            Item.Ball_and_Chain,
-            Item.Progressive_Bow,
-            Item.Progressive_Clawshot,
-            Item.Iron_Boots,
-            Item.Progressive_Dominion_Rod,
-            Item.Lantern,
-            Item.Progressive_Fishing_Rod,
-            // Slingshot is a logical item even if it does not prevent
-            // barren.
-            Item.Slingshot,
-            Item.Filled_Bomb_Bag,
-            // Item.Empty_Bottle, // conditional
-            // Item.Sera_Bottle, // conditional
-            // Item.Jovani_Bottle, // conditional
-            Item.Renados_Letter,
-            Item.Invoice,
-            Item.Wooden_Statue,
-            Item.Ilias_Charm,
-            // Item.Horse_Call, // does not appear to be used anywhere for logic
-            // Item.Forest_Temple_Small_Key, // conditional
-            // Item.Goron_Mines_Small_Key, // conditional
-            // Item.Lakebed_Temple_Small_Key, // conditional
-            // Item.Arbiters_Grounds_Small_Key, // conditional
-            // Item.Snowpeak_Ruins_Small_Key, // conditional
-            // Item.Temple_of_Time_Small_Key, // conditional
-            // Item.City_in_The_Sky_Small_Key, // conditional
-            // Item.Palace_of_Twilight_Small_Key, // conditional
-            // Item.Hyrule_Castle_Small_Key, // conditional
-            // Item.Gerudo_Desert_Bulblin_Camp_Key, // conditional
-            Item.Aurus_Memo,
-            // Item is logical even if it does not prevent barren.
-            Item.Asheis_Sketch,
-            // Item.Forest_Temple_Big_Key, // conditional
-            // Item.Lakebed_Temple_Big_Key, // conditional
-            // Item.Arbiters_Grounds_Big_Key, // conditional
-            // Item.Temple_of_Time_Big_Key, // conditional
-            // Item.City_in_The_Sky_Big_Key, // conditional
-            // Item.Palace_of_Twilight_Big_Key, // conditional
-            // Item.Hyrule_Castle_Big_Key, // conditional
-            // Item.Coro_Bottle, // conditional
-            // Item.Progressive_Mirror_Shard, // conditional
-            // All bugs are logical even if they do not prevent barren.
-            Item.Male_Beetle,
-            Item.Female_Beetle,
-            Item.Male_Butterfly,
-            Item.Female_Butterfly,
-            Item.Male_Stag_Beetle,
-            Item.Female_Stag_Beetle,
-            Item.Male_Grasshopper,
-            Item.Female_Grasshopper,
-            Item.Male_Phasmid,
-            Item.Female_Phasmid,
-            Item.Male_Pill_Bug,
-            Item.Female_Pill_Bug,
-            Item.Male_Mantis,
-            Item.Female_Mantis,
-            Item.Male_Ladybug,
-            Item.Female_Ladybug,
-            Item.Male_Snail,
-            Item.Female_Snail,
-            Item.Male_Dragonfly,
-            Item.Female_Dragonfly,
-            Item.Male_Ant,
-            Item.Female_Ant,
-            Item.Male_Dayfly,
-            Item.Female_Dayfly,
-            // Item.Progressive_Fused_Shadow, // conditional
-            // Poe souls considered logical even if they do not prevent
-            // barren.
-            Item.Poe_Soul,
-            // Hidden skills have logical uses even if it does not prevent
-            // barren (even in Glitchless logic).
-            Item.Progressive_Hidden_Skill,
-            // Item.Progressive_Sky_Book, // conditional
-            // Item.North_Faron_Woods_Gate_Key, // conditional
-            // Item.Gate_Keys, // conditional
-            // Item.Snowpeak_Ruins_Ordon_Pumpkin, // conditional
-            // Item.Snowpeak_Ruins_Ordon_Goat_Cheese, // conditional
-            // Item.Snowpeak_Ruins_Bedroom_Key, // conditional
-            // Item.Goron_Mines_Key_Shard, // conditional
-        };
+        public static readonly HashSet<Item> baseMightBeMajorItems =
+            new()
+            {
+                // ----- Collection Screen -----
+                Item.Progressive_Sword,
+                // Note: wooden/Ordon shields not major item finds since can always be lost to burning.
+                Item.Hylian_Shield,
+                Item.Zora_Armor,
+                Item.Magic_Armor,
+                Item.Heart_Container,
+                Item.Piece_of_Heart,
+                Item.Progressive_Fused_Shadow,
+                Item.Progressive_Mirror_Shard,
+                Item.Progressive_Wallet,
+                Item.Male_Beetle,
+                Item.Female_Beetle,
+                Item.Male_Butterfly,
+                Item.Female_Butterfly,
+                Item.Male_Stag_Beetle,
+                Item.Female_Stag_Beetle,
+                Item.Male_Grasshopper,
+                Item.Female_Grasshopper,
+                Item.Male_Phasmid,
+                Item.Female_Phasmid,
+                Item.Male_Pill_Bug,
+                Item.Female_Pill_Bug,
+                Item.Male_Mantis,
+                Item.Female_Mantis,
+                Item.Male_Ladybug,
+                Item.Female_Ladybug,
+                Item.Male_Snail,
+                Item.Female_Snail,
+                Item.Male_Dragonfly,
+                Item.Female_Dragonfly,
+                Item.Male_Ant,
+                Item.Female_Ant,
+                Item.Male_Dayfly,
+                Item.Female_Dayfly,
+                Item.Progressive_Hidden_Skill,
+                Item.Poe_Soul,
+                Item.Shadow_Crystal,
+                // ----- Item Wheel -----
+                Item.Progressive_Clawshot,
+                Item.Progressive_Dominion_Rod,
+                Item.Ball_and_Chain,
+                Item.Spinner,
+                Item.Progressive_Bow,
+                Item.Iron_Boots,
+                Item.Boomerang,
+                Item.Lantern,
+                Item.Slingshot,
+                Item.Progressive_Fishing_Rod,
+                Item.Hawkeye,
+                Item.Filled_Bomb_Bag,
+                Item.Empty_Bottle,
+                Item.Sera_Bottle,
+                Item.Coro_Bottle,
+                Item.Jovani_Bottle,
+                Item.Renados_Letter,
+                Item.Invoice,
+                Item.Wooden_Statue,
+                Item.Ilias_Charm,
+                Item.Horse_Call,
+                Item.Aurus_Memo,
+                Item.Asheis_Sketch,
+                Item.Progressive_Sky_Book,
+                // ----- Dungeon Items -----
+                Item.Forest_Temple_Small_Key,
+                Item.Goron_Mines_Small_Key,
+                Item.Lakebed_Temple_Small_Key,
+                Item.Arbiters_Grounds_Small_Key,
+                Item.Snowpeak_Ruins_Small_Key,
+                Item.Snowpeak_Ruins_Ordon_Pumpkin,
+                Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+                Item.Temple_of_Time_Small_Key,
+                Item.City_in_The_Sky_Small_Key,
+                Item.Palace_of_Twilight_Small_Key,
+                Item.Hyrule_Castle_Small_Key,
+                Item.Forest_Temple_Big_Key,
+                Item.Goron_Mines_Key_Shard,
+                Item.Lakebed_Temple_Big_Key,
+                Item.Arbiters_Grounds_Big_Key,
+                Item.Snowpeak_Ruins_Bedroom_Key,
+                Item.Temple_of_Time_Big_Key,
+                Item.City_in_The_Sky_Big_Key,
+                Item.Palace_of_Twilight_Big_Key,
+                Item.Hyrule_Castle_Big_Key,
+                // ----- Overworld Items -----
+                Item.Faron_Woods_Coro_Key,
+                Item.North_Faron_Woods_Gate_Key,
+                Item.Gate_Keys,
+                Item.Gerudo_Desert_Bulblin_Camp_Key,
+            };
 
-        public static readonly Dictionary<string, Province> zoneToProvince = new()
-        {
-            { "Agitha's Castle", Province.Lanayru },
-            { "Ordon", Province.Ordona },
-            { "Sacred Grove", Province.Faron },
-            { "Faron Field", Province.Faron },
-            { "Faron Woods", Province.Faron },
-            { "Kakariko Gorge", Province.Eldin },
-            { "Kakariko Village", Province.Eldin },
-            { "Kakariko Graveyard", Province.Eldin },
-            { "Eldin Field", Province.Eldin },
-            { "North Eldin", Province.Eldin },
-            { "Death Mountain", Province.Eldin },
-            { "Hidden Village", Province.Eldin },
-            { "Lanayru Field", Province.Lanayru },
-            { "Beside Castle Town", Province.Lanayru },
-            { "South of Castle Town", Province.Lanayru },
-            { "Castle Town", Province.Lanayru },
-            { "Great Bridge of Hylia", Province.Lanayru },
-            { "Lake Hylia", Province.Lanayru },
-            { "Lake Lantern Cave", Province.Lanayru },
-            { "Lanayru Spring", Province.Lanayru },
-            { "Zora's Domain", Province.Lanayru },
-            { "Upper Zora's River", Province.Lanayru },
-            { "Gerudo Desert", Province.Desert },
-            { "Bulblin Camp", Province.Desert },
-            { "Snowpeak Mountain", Province.Peak },
-            { "Cave of Ordeals", Province.Desert },
-            { "Forest Temple", Province.Dungeon },
-            { "Goron Mines", Province.Dungeon },
-            { "Lakebed Temple", Province.Dungeon },
-            { "Arbiter's Grounds", Province.Dungeon },
-            { "Snowpeak Ruins", Province.Dungeon },
-            { "Temple of Time", Province.Dungeon },
-            { "City in the Sky", Province.Dungeon },
-            { "Palace of Twilight", Province.Dungeon },
-            { "Hyrule Castle", Province.Dungeon },
-        };
+        public static readonly HashSet<Item> junkItems =
+            new()
+            {
+                Item.Recovery_Heart,
+                Item.Green_Rupee,
+                Item.Blue_Rupee,
+                Item.Yellow_Rupee,
+                Item.Red_Rupee,
+                Item.Purple_Rupee,
+                Item.Orange_Rupee,
+                Item.Silver_Rupee,
+                Item.Bombs_5,
+                Item.Bombs_10,
+                Item.Bombs_20,
+                Item.Bombs_30,
+                Item.Arrows_10,
+                Item.Arrows_20,
+                Item.Arrows_30,
+                Item.Seeds_50,
+                Item.Foolish_Item,
+                Item.Water_Bombs_5,
+                Item.Water_Bombs_10,
+                Item.Water_Bombs_15,
+                Item.Water_Bombs_3,
+                Item.Bomblings_5,
+                Item.Bomblings_10,
+            };
 
-        public static readonly Dictionary<string, SpotId> hintZoneToHintSpotLocation = new()
-        {
-            { "Ordon", SpotId.Ordon_Sign },
-            { "Sacred Grove", SpotId.Sacred_Grove_Sign },
-            { "Faron Field", SpotId.Faron_Field_Sign },
-            { "Faron Woods", SpotId.Faron_Woods_Sign },
-            { "Kakariko Gorge", SpotId.Kakariko_Gorge_Sign },
-            { "Kakariko Village", SpotId.Kakariko_Village_Sign },
-            { "Kakariko Graveyard", SpotId.Kakariko_Graveyard_Sign },
-            { "Eldin Field", SpotId.Eldin_Field_Sign },
-            { "North Eldin", SpotId.North_Eldin_Sign },
-            { "Death Mountain", SpotId.Death_Mountain_Sign },
-            { "Hidden Village", SpotId.Hidden_Village_Sign },
-            { "Lanayru Field", SpotId.Lanayru_Field_Sign },
-            { "Beside Castle Town", SpotId.Beside_Castle_Town_Sign },
-            { "South of Castle Town", SpotId.South_of_Castle_Town_Sign },
-            { "Castle Town", SpotId.Castle_Town_Sign },
-            { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
-            { "Lake Hylia", SpotId.Lake_Hylia_Sign },
-            { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
-            { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
-            { "Zora's Domain", SpotId.Zoras_Domain_Sign },
-            { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
-            { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
-            { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
-            { "Snowpeak Mountain", SpotId.Snowpeak_Mountain_Sign },
-            { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
-        };
+        public static readonly HashSet<Item> baseLogicalItems =
+            new()
+            {
+                // Ordon and Wooden shield not considered logical since they can
+                // be deleted from your inventory, so finding them randomly does
+                // not mean anything. For no-logic they will be marked as
+                // logical items since they preventBarren, but it does not
+                // matter since the only places we make use of an item being
+                // "logical" is when there is logic.
+                Item.Hylian_Shield, // ?
+                // Item.Magic_Armor, // conditional
+                Item.Zora_Armor,
+                Item.Shadow_Crystal,
+                // Item.Progressive_Wallet, // conditional
+                Item.Progressive_Sword,
+                Item.Boomerang,
+                Item.Spinner,
+                Item.Ball_and_Chain,
+                Item.Progressive_Bow,
+                Item.Progressive_Clawshot,
+                Item.Iron_Boots,
+                Item.Progressive_Dominion_Rod,
+                Item.Lantern,
+                Item.Progressive_Fishing_Rod,
+                // Slingshot is a logical item even if it does not prevent
+                // barren.
+                Item.Slingshot,
+                Item.Filled_Bomb_Bag,
+                // Item.Empty_Bottle, // conditional
+                // Item.Sera_Bottle, // conditional
+                // Item.Jovani_Bottle, // conditional
+                Item.Renados_Letter,
+                Item.Invoice,
+                Item.Wooden_Statue,
+                Item.Ilias_Charm,
+                // Item.Horse_Call, // does not appear to be used anywhere for logic
+                // Item.Forest_Temple_Small_Key, // conditional
+                // Item.Goron_Mines_Small_Key, // conditional
+                // Item.Lakebed_Temple_Small_Key, // conditional
+                // Item.Arbiters_Grounds_Small_Key, // conditional
+                // Item.Snowpeak_Ruins_Small_Key, // conditional
+                // Item.Temple_of_Time_Small_Key, // conditional
+                // Item.City_in_The_Sky_Small_Key, // conditional
+                // Item.Palace_of_Twilight_Small_Key, // conditional
+                // Item.Hyrule_Castle_Small_Key, // conditional
+                // Item.Gerudo_Desert_Bulblin_Camp_Key, // conditional
+                Item.Aurus_Memo,
+                // Item is logical even if it does not prevent barren.
+                Item.Asheis_Sketch,
+                // Item.Forest_Temple_Big_Key, // conditional
+                // Item.Lakebed_Temple_Big_Key, // conditional
+                // Item.Arbiters_Grounds_Big_Key, // conditional
+                // Item.Temple_of_Time_Big_Key, // conditional
+                // Item.City_in_The_Sky_Big_Key, // conditional
+                // Item.Palace_of_Twilight_Big_Key, // conditional
+                // Item.Hyrule_Castle_Big_Key, // conditional
+                // Item.Coro_Bottle, // conditional
+                // Item.Progressive_Mirror_Shard, // conditional
+                // All bugs are logical even if they do not prevent barren.
+                Item.Male_Beetle,
+                Item.Female_Beetle,
+                Item.Male_Butterfly,
+                Item.Female_Butterfly,
+                Item.Male_Stag_Beetle,
+                Item.Female_Stag_Beetle,
+                Item.Male_Grasshopper,
+                Item.Female_Grasshopper,
+                Item.Male_Phasmid,
+                Item.Female_Phasmid,
+                Item.Male_Pill_Bug,
+                Item.Female_Pill_Bug,
+                Item.Male_Mantis,
+                Item.Female_Mantis,
+                Item.Male_Ladybug,
+                Item.Female_Ladybug,
+                Item.Male_Snail,
+                Item.Female_Snail,
+                Item.Male_Dragonfly,
+                Item.Female_Dragonfly,
+                Item.Male_Ant,
+                Item.Female_Ant,
+                Item.Male_Dayfly,
+                Item.Female_Dayfly,
+                // Item.Progressive_Fused_Shadow, // conditional
+                // Poe souls considered logical even if they do not prevent
+                // barren.
+                Item.Poe_Soul,
+                // Hidden skills have logical uses even if it does not prevent
+                // barren (even in Glitchless logic).
+                Item.Progressive_Hidden_Skill,
+                // Item.Progressive_Sky_Book, // conditional
+                // Item.North_Faron_Woods_Gate_Key, // conditional
+                // Item.Gate_Keys, // conditional
+                // Item.Snowpeak_Ruins_Ordon_Pumpkin, // conditional
+                // Item.Snowpeak_Ruins_Ordon_Goat_Cheese, // conditional
+                // Item.Snowpeak_Ruins_Bedroom_Key, // conditional
+                // Item.Goron_Mines_Key_Shard, // conditional
+            };
 
-        public static readonly Dictionary<string, SpotId> dungeonZoneToSpotLocation = new()
-        {
-            { "Forest Temple", SpotId.Forest_Temple_Sign },
-            { "Goron Mines", SpotId.Goron_Mines_Sign },
-            { "Lakebed Temple", SpotId.Lakebed_Temple_Sign },
-            { "Arbiter's Grounds", SpotId.Arbiters_Grounds_Sign },
-            { "Snowpeak Ruins", SpotId.Snowpeak_Ruins_Sign },
-            { "Temple of Time", SpotId.Temple_of_Time_Sign },
-            { "City in the Sky", SpotId.City_in_the_Sky_Sign },
-            { "Palace of Twilight", SpotId.Palace_of_Twilight_Sign },
-            { "Hyrule Castle", SpotId.Hyrule_Castle_Sign },
-        };
+        public static readonly Dictionary<string, Province> zoneToProvince =
+            new()
+            {
+                { "Agitha's Castle", Province.Lanayru },
+                { "Ordon", Province.Ordona },
+                { "Sacred Grove", Province.Faron },
+                { "Faron Field", Province.Faron },
+                { "Faron Woods", Province.Faron },
+                { "Kakariko Gorge", Province.Eldin },
+                { "Kakariko Village", Province.Eldin },
+                { "Kakariko Graveyard", Province.Eldin },
+                { "Eldin Field", Province.Eldin },
+                { "North Eldin", Province.Eldin },
+                { "Death Mountain", Province.Eldin },
+                { "Hidden Village", Province.Eldin },
+                { "Lanayru Field", Province.Lanayru },
+                { "Beside Castle Town", Province.Lanayru },
+                { "South of Castle Town", Province.Lanayru },
+                { "Castle Town", Province.Lanayru },
+                { "Great Bridge of Hylia", Province.Lanayru },
+                { "Lake Hylia", Province.Lanayru },
+                { "Lake Lantern Cave", Province.Lanayru },
+                { "Lanayru Spring", Province.Lanayru },
+                { "Zora's Domain", Province.Lanayru },
+                { "Upper Zora's River", Province.Lanayru },
+                { "Gerudo Desert", Province.Desert },
+                { "Bulblin Camp", Province.Desert },
+                { "Snowpeak Mountain", Province.Peak },
+                { "Cave of Ordeals", Province.Desert },
+                { "Forest Temple", Province.Dungeon },
+                { "Goron Mines", Province.Dungeon },
+                { "Lakebed Temple", Province.Dungeon },
+                { "Arbiter's Grounds", Province.Dungeon },
+                { "Snowpeak Ruins", Province.Dungeon },
+                { "Temple of Time", Province.Dungeon },
+                { "City in the Sky", Province.Dungeon },
+                { "Palace of Twilight", Province.Dungeon },
+                { "Hyrule Castle", Province.Dungeon },
+            };
 
-        public static readonly Dictionary<string, byte> dungeonZonesToRequiredMaskMap = new()
-        {
-            { "Forest Temple", 0x01 },
-            { "Goron Mines", 0x02 },
-            { "Lakebed Temple", 0x04 },
-            { "Arbiter's Grounds", 0x08 },
-            { "Snowpeak Ruins", 0x10 },
-            { "Temple of Time", 0x20 },
-            { "City in the Sky", 0x40 },
-            { "Palace of Twilight", 0x80 },
-        };
+        public static readonly Dictionary<string, SpotId> hintZoneToHintSpotLocation =
+            new()
+            {
+                { "Ordon", SpotId.Ordon_Sign },
+                { "Sacred Grove", SpotId.Sacred_Grove_Sign },
+                { "Faron Field", SpotId.Faron_Field_Sign },
+                { "Faron Woods", SpotId.Faron_Woods_Sign },
+                { "Kakariko Gorge", SpotId.Kakariko_Gorge_Sign },
+                { "Kakariko Village", SpotId.Kakariko_Village_Sign },
+                { "Kakariko Graveyard", SpotId.Kakariko_Graveyard_Sign },
+                { "Eldin Field", SpotId.Eldin_Field_Sign },
+                { "North Eldin", SpotId.North_Eldin_Sign },
+                { "Death Mountain", SpotId.Death_Mountain_Sign },
+                { "Hidden Village", SpotId.Hidden_Village_Sign },
+                { "Lanayru Field", SpotId.Lanayru_Field_Sign },
+                { "Beside Castle Town", SpotId.Beside_Castle_Town_Sign },
+                { "South of Castle Town", SpotId.South_of_Castle_Town_Sign },
+                { "Castle Town", SpotId.Castle_Town_Sign },
+                { "Great Bridge of Hylia", SpotId.Great_Bridge_of_Hylia_Sign },
+                { "Lake Hylia", SpotId.Lake_Hylia_Sign },
+                { "Lake Lantern Cave", SpotId.Lake_Lantern_Cave_Sign },
+                { "Lanayru Spring", SpotId.Lanayru_Spring_Sign },
+                { "Zora's Domain", SpotId.Zoras_Domain_Sign },
+                { "Upper Zora's River", SpotId.Upper_Zoras_River_Sign },
+                { "Gerudo Desert", SpotId.Gerudo_Desert_Sign },
+                { "Bulblin Camp", SpotId.Bulblin_Camp_Sign },
+                { "Snowpeak Mountain", SpotId.Snowpeak_Mountain_Sign },
+                { "Cave of Ordeals", SpotId.Cave_of_Ordeals_Sign },
+            };
 
-        public static readonly Dictionary<string, string> jsonCategoryToDungeonZoneName = new()
-        {
-            { "Forest Temple", "Forest Temple" },
-            { "Goron Mines", "Goron Mines" },
-            { "Lakebed Temple", "Lakebed Temple" },
-            { "Arbiters Grounds", "Arbiter's Grounds" },
-            { "Snowpeak Ruins", "Snowpeak Ruins" },
-            { "Temple of Time", "Temple of Time" },
-            { "City in the Sky", "City in The Sky" },
-            { "Palace of Twilight", "Palace of Twilight" },
-            // Note: Hidden Village maps to Temple of Time
-            { "Hidden Village", "Temple of Time" },
-        };
+        public static readonly Dictionary<string, SpotId> dungeonZoneToSpotLocation =
+            new()
+            {
+                { "Forest Temple", SpotId.Forest_Temple_Sign },
+                { "Goron Mines", SpotId.Goron_Mines_Sign },
+                { "Lakebed Temple", SpotId.Lakebed_Temple_Sign },
+                { "Arbiter's Grounds", SpotId.Arbiters_Grounds_Sign },
+                { "Snowpeak Ruins", SpotId.Snowpeak_Ruins_Sign },
+                { "Temple of Time", SpotId.Temple_of_Time_Sign },
+                { "City in the Sky", SpotId.City_in_the_Sky_Sign },
+                { "Palace of Twilight", SpotId.Palace_of_Twilight_Sign },
+                { "Hyrule Castle", SpotId.Hyrule_Castle_Sign },
+            };
+
+        public static readonly Dictionary<string, byte> dungeonZonesToRequiredMaskMap =
+            new()
+            {
+                { "Forest Temple", 0x01 },
+                { "Goron Mines", 0x02 },
+                { "Lakebed Temple", 0x04 },
+                { "Arbiter's Grounds", 0x08 },
+                { "Snowpeak Ruins", 0x10 },
+                { "Temple of Time", 0x20 },
+                { "City in the Sky", 0x40 },
+                { "Palace of Twilight", 0x80 },
+            };
+
+        public static readonly Dictionary<string, string> jsonCategoryToDungeonZoneName =
+            new()
+            {
+                { "Forest Temple", "Forest Temple" },
+                { "Goron Mines", "Goron Mines" },
+                { "Lakebed Temple", "Lakebed Temple" },
+                { "Arbiters Grounds", "Arbiter's Grounds" },
+                { "Snowpeak Ruins", "Snowpeak Ruins" },
+                { "Temple of Time", "Temple of Time" },
+                { "City in the Sky", "City in The Sky" },
+                { "Palace of Twilight", "Palace of Twilight" },
+                // Note: Hidden Village maps to Temple of Time
+                { "Hidden Village", "Temple of Time" },
+            };
 
         // Note: this list might need to be determined using settings. MDH
         // stuff, etc. Might be good enough though.
-        public static readonly Dictionary<string, string> postDungeonChecksToDungeonZone = new()
-        {
-            { "Talo Sharpshooting", "Goron Mines" },
-            { "Kakariko Village Malo Mart Hawkeye", "Goron Mines" },
-            { "Death Mountain Trail Poe", "Goron Mines" },
-            { "Snowboard Racing Prize", "Snowpeak Ruins" },
-            { "Doctors Office Balcony Chest", "Temple of Time" },
-            { "Renados Letter", "Temple of Time" },
-            { "Telma Invoice", "Temple of Time" },
-            { "Wooden Statue", "Temple of Time" },
-            { "Ilia Memory Reward", "Temple of Time" },
-        };
+        public static readonly Dictionary<string, string> postDungeonChecksToDungeonZone =
+            new()
+            {
+                { "Talo Sharpshooting", "Goron Mines" },
+                { "Kakariko Village Malo Mart Hawkeye", "Goron Mines" },
+                { "Death Mountain Trail Poe", "Goron Mines" },
+                { "Snowboard Racing Prize", "Snowpeak Ruins" },
+                { "Doctors Office Balcony Chest", "Temple of Time" },
+                { "Renados Letter", "Temple of Time" },
+                { "Telma Invoice", "Temple of Time" },
+                { "Wooden Statue", "Temple of Time" },
+                { "Ilia Memory Reward", "Temple of Time" },
+            };
 
-        public static readonly HashSet<string> preventBarrenHintIfAllCheckStatusesAre = new()
-        {
-            "Excluded",
-            "Excluded-Unrequired",
-            "Vanilla",
-        };
+        public static readonly HashSet<string> excludedOrVanillaCheckStatuses =
+            new() { "Excluded", "Excluded-Unrequired", "Vanilla" };
 
-        public static readonly HashSet<string> excludedCheckStatuses = new()
-        {
-            "Excluded",
-            "Excluded-Unrequired",
-        };
+        public static readonly HashSet<string> excludedCheckStatuses =
+            new() { "Excluded", "Excluded-Unrequired", };
 
-        public static readonly HashSet<string> dungeonZones = new()
-        {
-            "Forest Temple",
-            "Goron Mines",
-            "Lakebed Temple",
-            "Arbiter's Grounds",
-            "Snowpeak Ruins",
-            "Temple of Time",
-            "City in the Sky",
-            "Palace of Twilight",
-            "Hyrule Castle",
-        };
+        public static readonly HashSet<string> dungeonZones =
+            new()
+            {
+                "Forest Temple",
+                "Goron Mines",
+                "Lakebed Temple",
+                "Arbiter's Grounds",
+                "Snowpeak Ruins",
+                "Temple of Time",
+                "City in the Sky",
+                "Palace of Twilight",
+                "Hyrule Castle",
+            };
 
-        public static readonly Dictionary<Item, string> bigKeyToDungeonZone = new()
-        {
-            { Item.Forest_Temple_Big_Key, "Forest Temple" },
-            { Item.Goron_Mines_Key_Shard, "Goron Mines" },
-            { Item.Lakebed_Temple_Big_Key, "Lakebed Temple" },
-            { Item.Arbiters_Grounds_Big_Key, "Arbiter's Grounds" },
-            { Item.Snowpeak_Ruins_Bedroom_Key, "Snowpeak Ruins" },
-            { Item.Temple_of_Time_Big_Key, "Temple of Time" },
-            { Item.City_in_The_Sky_Big_Key, "City in the Sky" },
-            { Item.Palace_of_Twilight_Big_Key, "Palace of Twilight" },
-            { Item.Hyrule_Castle_Big_Key, "Hyrule Castle" },
-        };
+        public static readonly Dictionary<Item, string> bigKeyToDungeonZone =
+            new()
+            {
+                { Item.Forest_Temple_Big_Key, "Forest Temple" },
+                { Item.Goron_Mines_Key_Shard, "Goron Mines" },
+                { Item.Lakebed_Temple_Big_Key, "Lakebed Temple" },
+                { Item.Arbiters_Grounds_Big_Key, "Arbiter's Grounds" },
+                { Item.Snowpeak_Ruins_Bedroom_Key, "Snowpeak Ruins" },
+                { Item.Temple_of_Time_Big_Key, "Temple of Time" },
+                { Item.City_in_The_Sky_Big_Key, "City in the Sky" },
+                { Item.Palace_of_Twilight_Big_Key, "Palace of Twilight" },
+                { Item.Hyrule_Castle_Big_Key, "Hyrule Castle" },
+            };
 
-        public static readonly Dictionary<Item, string> bugsToRewardChecksMap = new()
-        {
-            { Item.Female_Ant, "Agitha Female Ant Reward" },
-            { Item.Female_Beetle, "Agitha Female Beetle Reward" },
-            { Item.Female_Butterfly, "Agitha Female Butterfly Reward" },
-            { Item.Female_Dayfly, "Agitha Female Dayfly Reward" },
-            { Item.Female_Dragonfly, "Agitha Female Dragonfly Reward" },
-            { Item.Female_Grasshopper, "Agitha Female Grasshopper Reward" },
-            { Item.Female_Ladybug, "Agitha Female Ladybug Reward" },
-            { Item.Female_Mantis, "Agitha Female Mantis Reward" },
-            { Item.Female_Phasmid, "Agitha Female Phasmid Reward" },
-            { Item.Female_Pill_Bug, "Agitha Female Pill Bug Reward" },
-            { Item.Female_Snail, "Agitha Female Snail Reward" },
-            { Item.Female_Stag_Beetle, "Agitha Female Stag Beetle Reward" },
-            { Item.Male_Ant, "Agitha Male Ant Reward" },
-            { Item.Male_Beetle, "Agitha Male Beetle Reward" },
-            { Item.Male_Butterfly, "Agitha Male Butterfly Reward" },
-            { Item.Male_Dayfly, "Agitha Male Dayfly Reward" },
-            { Item.Male_Dragonfly, "Agitha Male Dragonfly Reward" },
-            { Item.Male_Grasshopper, "Agitha Male Grasshopper Reward" },
-            { Item.Male_Ladybug, "Agitha Male Ladybug Reward" },
-            { Item.Male_Mantis, "Agitha Male Mantis Reward" },
-            { Item.Male_Phasmid, "Agitha Male Phasmid Reward" },
-            { Item.Male_Pill_Bug, "Agitha Male Pill Bug Reward" },
-            { Item.Male_Snail, "Agitha Male Snail Reward" },
-            { Item.Male_Stag_Beetle, "Agitha Male Stag Beetle Reward" },
-        };
+        public static readonly Dictionary<Item, string> bugsToRewardChecksMap =
+            new()
+            {
+                { Item.Female_Ant, "Agitha Female Ant Reward" },
+                { Item.Female_Beetle, "Agitha Female Beetle Reward" },
+                { Item.Female_Butterfly, "Agitha Female Butterfly Reward" },
+                { Item.Female_Dayfly, "Agitha Female Dayfly Reward" },
+                { Item.Female_Dragonfly, "Agitha Female Dragonfly Reward" },
+                { Item.Female_Grasshopper, "Agitha Female Grasshopper Reward" },
+                { Item.Female_Ladybug, "Agitha Female Ladybug Reward" },
+                { Item.Female_Mantis, "Agitha Female Mantis Reward" },
+                { Item.Female_Phasmid, "Agitha Female Phasmid Reward" },
+                { Item.Female_Pill_Bug, "Agitha Female Pill Bug Reward" },
+                { Item.Female_Snail, "Agitha Female Snail Reward" },
+                { Item.Female_Stag_Beetle, "Agitha Female Stag Beetle Reward" },
+                { Item.Male_Ant, "Agitha Male Ant Reward" },
+                { Item.Male_Beetle, "Agitha Male Beetle Reward" },
+                { Item.Male_Butterfly, "Agitha Male Butterfly Reward" },
+                { Item.Male_Dayfly, "Agitha Male Dayfly Reward" },
+                { Item.Male_Dragonfly, "Agitha Male Dragonfly Reward" },
+                { Item.Male_Grasshopper, "Agitha Male Grasshopper Reward" },
+                { Item.Male_Ladybug, "Agitha Male Ladybug Reward" },
+                { Item.Male_Mantis, "Agitha Male Mantis Reward" },
+                { Item.Male_Phasmid, "Agitha Male Phasmid Reward" },
+                { Item.Male_Pill_Bug, "Agitha Male Pill Bug Reward" },
+                { Item.Male_Snail, "Agitha Male Snail Reward" },
+                { Item.Male_Stag_Beetle, "Agitha Male Stag Beetle Reward" }
+            };
 
         // Items which are guaranteed to only unlock a single check and serve no
         // other purpose. Currently this is the bugs and Ashei's Sketch.

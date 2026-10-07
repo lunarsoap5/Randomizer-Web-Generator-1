@@ -9,7 +9,7 @@
     "bigKeyHints": true
   },
   "barren": {
-    "ownZoneBehavior": "monopolize"
+    "monopolizeSpots": true
   },
   "always": {
     "copies": 2,
