@@ -10,7 +10,6 @@ namespace TPRandomizer.Hints
     {
         public Random rnd { get; private set; }
         public SharedSettings sSettings { get; private set; }
-        public PlaythroughSpheres playthroughSpheres { get; private set; }
         public Room startingRoom { get; private set; }
         public bool isRaceSeed { get; private set; }
         public HintedThings3 hinted { get; }
@@ -48,7 +47,6 @@ namespace TPRandomizer.Hints
         {
             this.rnd = rnd;
             this.sSettings = sSettings;
-            this.playthroughSpheres = playthroughSpheres;
             this.startingRoom = startingRoom;
             this.isRaceSeed = isRaceSeed;
             hinted = new HintedThings3();
@@ -1499,8 +1497,6 @@ namespace TPRandomizer.Hints
             // to produce more interesting hints on average.
 
             int numChecks = 0;
-            int numSphere0Checks = 0;
-            bool hasSphereLater = false;
 
             HashSet<string> checkNames = areaId.ResolveToChecks(this);
             foreach (string checkName in checkNames)
@@ -1520,19 +1516,14 @@ namespace TPRandomizer.Hints
                     hasSphereLater = true;
             }
 
-            double percentSphere0 = (double)numSphere0Checks / numChecks;
-
             if (numChecks < 1)
                 return 0;
             else if (numChecks >= 12)
                 return 1;
-            else if (numChecks <= 2 && percentSphere0 <= 0)
+            else if (numChecks <= 2)
                 return 1.5;
 
-            double weight = 2 + Math.Pow(1 - percentSphere0, 2);
-
-            if (numSphere0Checks > 0 && hasSphereLater)
-                weight += 2 * Math.Pow((double)1 / (numChecks - 2), 0.25);
+            double weight = 2 + Math.Pow(1 - 1.5, 2);
 
             return weight;
         }

@@ -28,7 +28,7 @@ namespace TPRandomizer.Hints.Settings
                 "Lanayru Ice Block Puzzle Cave Chest",
                 "Goron Springwater Rush",
                 "Plumm Fruit Balloon Minigame",
-                "Palace of Twilight Collect Both Sols"
+                "Palace of Twilight Collect Both Sols",
             };
 
             Dictionary<string, Func<HintGenData, bool>> conditionalAlways =
@@ -153,7 +153,7 @@ namespace TPRandomizer.Hints.Settings
             Dictionary<string, Func<HintGenData, bool>> conditionalSometimes =
                 new()
                 {
-                    { "Ordon Cat Rescue", genNotSphere0Lambda("Ordon Cat Rescue") },
+
                     // Fishing Hole Bottle is hinted by checking the sign next to it now
                     // { "Fishing Hole Bottle", genNotSphere0Lambda("Fishing Hole Bottle") },
                 };
@@ -162,11 +162,6 @@ namespace TPRandomizer.Hints.Settings
                 defaultSometimesChecks.Add(pair.Key);
                 checkToConditions.Add(pair.Key, pair.Value);
             }
-        }
-
-        private static Func<HintGenData, bool> genNotSphere0Lambda(string checkName)
-        {
-            return (genData) => !genData.isCheckSphere0(checkName);
         }
 
         public static T fromJObject<T>(JObject obj)
@@ -433,7 +428,7 @@ namespace TPRandomizer.Hints.Settings
         public enum CheckListType
         {
             AlwaysChecks,
-            SometimesChecks
+            SometimesChecks,
         }
 
         private static HashSet<string> loadChecksList(JToken token, HintGenData genData)
@@ -1491,7 +1486,7 @@ namespace TPRandomizer.Hints.Settings
 
         private static Dictionary<string, HashSet<string>> loadAddChecks(JObject root)
         {
-            HashSet<string> validKeys = new() { "always", "sometimes", };
+            HashSet<string> validKeys = new() { "always", "sometimes" };
 
             return loadKeyToTypeList<string>(
                 root,
@@ -1509,7 +1504,7 @@ namespace TPRandomizer.Hints.Settings
 
         private static Dictionary<string, HashSet<string>> loadRemoveChecks(JObject root)
         {
-            HashSet<string> validKeys = new() { "always", "sometimes", };
+            HashSet<string> validKeys = new() { "always", "sometimes" };
 
             return loadKeyToTypeList<string>(
                 root,
@@ -1546,7 +1541,7 @@ namespace TPRandomizer.Hints.Settings
 
         private static Dictionary<string, HashSet<Item>> loadRemoveItems(JObject root)
         {
-            HashSet<string> validKeys = new() { "majorItems", "sometimes", };
+            HashSet<string> validKeys = new() { "majorItems", "sometimes" };
 
             return loadKeyToTypeList<Item>(
                 root,

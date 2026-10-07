@@ -5,8 +5,8 @@ namespace TPRandomizer.Hints
     using System.Linq;
     using System.Text.RegularExpressions;
     using Microsoft.CodeAnalysis.CSharp.Syntax;
-    using TPRandomizer.Util;
     using TPRandomizer.SSettings.Enums;
+    using TPRandomizer.Util;
 
     public enum CheckStatus
     {
@@ -62,94 +62,93 @@ namespace TPRandomizer.Hints
         public static readonly byte NumBitsToEncode = 4;
 
         private static Dictionary<TradeGroup, string> enumToStr;
-        private static readonly Dictionary<TradeGroup, HashSet<Item>> tradeGroupToItems =
-            new()
+        private static readonly Dictionary<TradeGroup, HashSet<Item>> tradeGroupToItems = new()
+        {
             {
+                TradeGroup.Male_Bugs,
+                new()
                 {
-                    TradeGroup.Male_Bugs,
-                    new()
-                    {
-                        Item.Male_Ant,
-                        Item.Male_Mantis,
-                        Item.Male_Butterfly,
-                        Item.Male_Phasmid,
-                        Item.Male_Dayfly,
-                        Item.Male_Stag_Beetle,
-                        Item.Male_Ladybug,
-                        Item.Male_Grasshopper,
-                        Item.Male_Beetle,
-                        Item.Male_Pill_Bug,
-                        Item.Male_Snail,
-                        Item.Male_Dragonfly,
-                    }
-                },
+                    Item.Male_Ant,
+                    Item.Male_Mantis,
+                    Item.Male_Butterfly,
+                    Item.Male_Phasmid,
+                    Item.Male_Dayfly,
+                    Item.Male_Stag_Beetle,
+                    Item.Male_Ladybug,
+                    Item.Male_Grasshopper,
+                    Item.Male_Beetle,
+                    Item.Male_Pill_Bug,
+                    Item.Male_Snail,
+                    Item.Male_Dragonfly,
+                }
+            },
+            {
+                TradeGroup.Female_Bugs,
+                new()
                 {
-                    TradeGroup.Female_Bugs,
-                    new()
-                    {
-                        Item.Female_Ant,
-                        Item.Female_Mantis,
-                        Item.Female_Butterfly,
-                        Item.Female_Phasmid,
-                        Item.Female_Dayfly,
-                        Item.Female_Stag_Beetle,
-                        Item.Female_Ladybug,
-                        Item.Female_Grasshopper,
-                        Item.Female_Beetle,
-                        Item.Female_Pill_Bug,
-                        Item.Female_Snail,
-                        Item.Female_Dragonfly,
-                    }
-                },
-                {
-                    TradeGroup.Ants,
-                    new() { Item.Male_Ant, Item.Female_Ant, }
-                },
-                {
-                    TradeGroup.Mantises,
-                    new() { Item.Male_Mantis, Item.Female_Mantis, }
-                },
-                {
-                    TradeGroup.Butterflies,
-                    new() { Item.Male_Butterfly, Item.Female_Butterfly, }
-                },
-                {
-                    TradeGroup.Phasmids,
-                    new() { Item.Male_Phasmid, Item.Female_Phasmid, }
-                },
-                {
-                    TradeGroup.Dayflies,
-                    new() { Item.Male_Dayfly, Item.Female_Dayfly, }
-                },
-                {
-                    TradeGroup.Stag_Beetles,
-                    new() { Item.Male_Stag_Beetle, Item.Female_Stag_Beetle, }
-                },
-                {
-                    TradeGroup.Ladybugs,
-                    new() { Item.Male_Ladybug, Item.Female_Ladybug, }
-                },
-                {
-                    TradeGroup.Grasshoppers,
-                    new() { Item.Male_Grasshopper, Item.Female_Grasshopper, }
-                },
-                {
-                    TradeGroup.Beetles,
-                    new() { Item.Male_Beetle, Item.Female_Beetle, }
-                },
-                {
-                    TradeGroup.Pill_Bugs,
-                    new() { Item.Male_Pill_Bug, Item.Female_Pill_Bug, }
-                },
-                {
-                    TradeGroup.Snails,
-                    new() { Item.Male_Snail, Item.Female_Snail, }
-                },
-                {
-                    TradeGroup.Dragonflies,
-                    new() { Item.Male_Dragonfly, Item.Female_Dragonfly, }
-                },
-            };
+                    Item.Female_Ant,
+                    Item.Female_Mantis,
+                    Item.Female_Butterfly,
+                    Item.Female_Phasmid,
+                    Item.Female_Dayfly,
+                    Item.Female_Stag_Beetle,
+                    Item.Female_Ladybug,
+                    Item.Female_Grasshopper,
+                    Item.Female_Beetle,
+                    Item.Female_Pill_Bug,
+                    Item.Female_Snail,
+                    Item.Female_Dragonfly,
+                }
+            },
+            {
+                TradeGroup.Ants,
+                new() { Item.Male_Ant, Item.Female_Ant }
+            },
+            {
+                TradeGroup.Mantises,
+                new() { Item.Male_Mantis, Item.Female_Mantis }
+            },
+            {
+                TradeGroup.Butterflies,
+                new() { Item.Male_Butterfly, Item.Female_Butterfly }
+            },
+            {
+                TradeGroup.Phasmids,
+                new() { Item.Male_Phasmid, Item.Female_Phasmid }
+            },
+            {
+                TradeGroup.Dayflies,
+                new() { Item.Male_Dayfly, Item.Female_Dayfly }
+            },
+            {
+                TradeGroup.Stag_Beetles,
+                new() { Item.Male_Stag_Beetle, Item.Female_Stag_Beetle }
+            },
+            {
+                TradeGroup.Ladybugs,
+                new() { Item.Male_Ladybug, Item.Female_Ladybug }
+            },
+            {
+                TradeGroup.Grasshoppers,
+                new() { Item.Male_Grasshopper, Item.Female_Grasshopper }
+            },
+            {
+                TradeGroup.Beetles,
+                new() { Item.Male_Beetle, Item.Female_Beetle }
+            },
+            {
+                TradeGroup.Pill_Bugs,
+                new() { Item.Male_Pill_Bug, Item.Female_Pill_Bug }
+            },
+            {
+                TradeGroup.Snails,
+                new() { Item.Male_Snail, Item.Female_Snail }
+            },
+            {
+                TradeGroup.Dragonflies,
+                new() { Item.Male_Dragonfly, Item.Female_Dragonfly }
+            },
+        };
 
         static TradeGroupUtils()
         {
@@ -241,11 +240,7 @@ namespace TPRandomizer.Hints
         };
 
         private static readonly Func<HintGenData, Zone, bool> dungeonFn = (genData, zone) =>
-            ZoneUtils.IsDungeonZone(zone)
-            && (
-                !genData.sSettings.barrenDungeons
-                || HintUtils.DungeonIsRequired(ZoneUtils.IdToString(zone))
-            );
+            ZoneUtils.IsDungeonZone(zone);
 
         public Zone zone { get; private set; }
         public SpotId spotId { get; private set; }
@@ -709,18 +704,17 @@ namespace TPRandomizer.Hints
         // Items which are guaranteed to only unlock a single check and serve no
         // other purpose. Currently this is the bugs and Ashei's Sketch.
         public static readonly Dictionary<Item, string> singleCheckItems;
-        public static readonly Dictionary<Province, string> provinceToString =
-            new()
-            {
-                { Province.Invalid, "Invalid" },
-                { Province.Ordona, "Ordona" },
-                { Province.Faron, "Faron" },
-                { Province.Eldin, "Eldin" },
-                { Province.Lanayru, "Lanayru" },
-                { Province.Desert, "Desert" },
-                { Province.Peak, "Peak" },
-                { Province.Dungeon, "Dungeon" },
-            };
+        public static readonly Dictionary<Province, string> provinceToString = new()
+        {
+            { Province.Invalid, "Invalid" },
+            { Province.Ordona, "Ordona" },
+            { Province.Faron, "Faron" },
+            { Province.Eldin, "Eldin" },
+            { Province.Lanayru, "Lanayru" },
+            { Province.Desert, "Desert" },
+            { Province.Peak, "Peak" },
+            { Province.Dungeon, "Dungeon" },
+        };
 
         // Gets inited using `provinceToString`.
         public static readonly Dictionary<string, Province> stringToProvince;
@@ -728,79 +722,78 @@ namespace TPRandomizer.Hints
         // This Set is intentionally overly protective by including a large
         // number of items, some of which could probably technically be left
         // out. But it doesn't hurt.
-        public static readonly HashSet<Item> invalidSpolItems =
-            new()
-            {
-                // Exclude items which are not helpful
-                Item.Poe_Soul,
-                Item.Progressive_Hidden_Skill,
-                Item.Wooden_Shield,
-                Item.Ordon_Shield,
-                Item.Hylian_Shield,
-                // Exclude FusedShadows and MirrorShards
-                Item.Progressive_Mirror_Shard,
-                Item.Mirror_Piece_3,
-                Item.Mirror_Piece_4,
-                Item.Progressive_Fused_Shadow,
-                Item.Fused_Shadow_2,
-                Item.Fused_Shadow_3,
-                // Exclude dungeon items. (You could maybe have keys in when
-                // Keysanity is on for example, but I think people would prefer
-                // to have SpoL hints about things like the Boomerang, etc., so
-                // the implementation is the same regardless of the settings for
-                // now)
-                Item.Big_Key,
-                Item.Small_Key,
-                Item.Compass,
-                Item.Dungeon_Map,
-                Item.Forest_Temple_Big_Key,
-                Item.Forest_Temple_Small_Key,
-                Item.Forest_Temple_Compass,
-                Item.Forest_Temple_Dungeon_Map,
-                Item.Goron_Mines_Big_Key,
-                Item.Goron_Mines_Small_Key,
-                Item.Goron_Mines_Compass,
-                Item.Goron_Mines_Dungeon_Map,
-                Item.Goron_Mines_Key_Shard,
-                Item.Goron_Mines_Key_Shard_Second,
-                Item.Goron_Mines_Key_Shard_3,
-                Item.Lakebed_Temple_Big_Key,
-                Item.Lakebed_Temple_Small_Key,
-                Item.Lakebed_Temple_Compass,
-                Item.Lakebed_Temple_Dungeon_Map,
-                Item.Arbiters_Grounds_Big_Key,
-                Item.Arbiters_Grounds_Small_Key,
-                Item.Arbiters_Grounds_Compass,
-                Item.Arbiters_Grounds_Dungeon_Map,
-                Item.Poe_Scent,
-                Item.Snowpeak_Ruins_Bedroom_Key,
-                // I think SPR compass actually unlocks a check, so should be valid
-                // to add to the list. The other maps and compasses are just to be
-                // safe. Could potentially base around a whitelist instead of a
-                // blacklist.
-                Item.Snowpeak_Ruins_Compass,
-                Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
-                Item.Snowpeak_Ruins_Ordon_Pumpkin,
-                Item.Snowpeak_Ruins_Small_Key,
-                Item.Snowpeak_Ruins_Dungeon_Map,
-                Item.Reekfish_Scent,
-                Item.Temple_of_Time_Big_Key,
-                Item.Temple_of_Time_Small_Key,
-                Item.Temple_of_Time_Compass,
-                Item.Temple_of_Time_Dungeon_Map,
-                Item.City_in_The_Sky_Big_Key,
-                Item.City_in_The_Sky_Small_Key,
-                Item.City_in_The_Sky_Compass,
-                Item.City_in_The_Sky_Dungeon_Map,
-                Item.Palace_of_Twilight_Big_Key,
-                Item.Palace_of_Twilight_Small_Key,
-                Item.Palace_of_Twilight_Compass,
-                Item.Palace_of_Twilight_Dungeon_Map,
-                Item.Hyrule_Castle_Big_Key,
-                Item.Hyrule_Castle_Small_Key,
-                Item.Hyrule_Castle_Compass,
-                Item.Hyrule_Castle_Dungeon_Map,
-            };
+        public static readonly HashSet<Item> invalidSpolItems = new()
+        {
+            // Exclude items which are not helpful
+            Item.Poe_Soul,
+            Item.Progressive_Hidden_Skill,
+            Item.Wooden_Shield,
+            Item.Ordon_Shield,
+            Item.Hylian_Shield,
+            // Exclude FusedShadows and MirrorShards
+            Item.Progressive_Mirror_Shard,
+            Item.Mirror_Piece_3,
+            Item.Mirror_Piece_4,
+            Item.Progressive_Fused_Shadow,
+            Item.Fused_Shadow_2,
+            Item.Fused_Shadow_3,
+            // Exclude dungeon items. (You could maybe have keys in when
+            // Keysanity is on for example, but I think people would prefer
+            // to have SpoL hints about things like the Boomerang, etc., so
+            // the implementation is the same regardless of the settings for
+            // now)
+            Item.Big_Key,
+            Item.Small_Key,
+            Item.Compass,
+            Item.Dungeon_Map,
+            Item.Forest_Temple_Big_Key,
+            Item.Forest_Temple_Small_Key,
+            Item.Forest_Temple_Compass,
+            Item.Forest_Temple_Dungeon_Map,
+            Item.Goron_Mines_Big_Key,
+            Item.Goron_Mines_Small_Key,
+            Item.Goron_Mines_Compass,
+            Item.Goron_Mines_Dungeon_Map,
+            Item.Goron_Mines_Key_Shard,
+            Item.Goron_Mines_Key_Shard_Second,
+            Item.Goron_Mines_Key_Shard_3,
+            Item.Lakebed_Temple_Big_Key,
+            Item.Lakebed_Temple_Small_Key,
+            Item.Lakebed_Temple_Compass,
+            Item.Lakebed_Temple_Dungeon_Map,
+            Item.Arbiters_Grounds_Big_Key,
+            Item.Arbiters_Grounds_Small_Key,
+            Item.Arbiters_Grounds_Compass,
+            Item.Arbiters_Grounds_Dungeon_Map,
+            Item.Poe_Scent,
+            Item.Snowpeak_Ruins_Bedroom_Key,
+            // I think SPR compass actually unlocks a check, so should be valid
+            // to add to the list. The other maps and compasses are just to be
+            // safe. Could potentially base around a whitelist instead of a
+            // blacklist.
+            Item.Snowpeak_Ruins_Compass,
+            Item.Snowpeak_Ruins_Ordon_Goat_Cheese,
+            Item.Snowpeak_Ruins_Ordon_Pumpkin,
+            Item.Snowpeak_Ruins_Small_Key,
+            Item.Snowpeak_Ruins_Dungeon_Map,
+            Item.Reekfish_Scent,
+            Item.Temple_of_Time_Big_Key,
+            Item.Temple_of_Time_Small_Key,
+            Item.Temple_of_Time_Compass,
+            Item.Temple_of_Time_Dungeon_Map,
+            Item.City_in_The_Sky_Big_Key,
+            Item.City_in_The_Sky_Small_Key,
+            Item.City_in_The_Sky_Compass,
+            Item.City_in_The_Sky_Dungeon_Map,
+            Item.Palace_of_Twilight_Big_Key,
+            Item.Palace_of_Twilight_Small_Key,
+            Item.Palace_of_Twilight_Compass,
+            Item.Palace_of_Twilight_Dungeon_Map,
+            Item.Hyrule_Castle_Big_Key,
+            Item.Hyrule_Castle_Small_Key,
+            Item.Hyrule_Castle_Compass,
+            Item.Hyrule_Castle_Dungeon_Map,
+        };
 
         static HintConstants()
         {

@@ -12,21 +12,20 @@ namespace TPRandomizer.Hints.HintCreator
     {
         public override HintCreatorType type { get; } = HintCreatorType.Barren;
 
-        private static readonly HashSet<HintCategory> defaultHintCategories =
-            new()
-            {
-                HintCategory.Grotto,
-                // Maybe cannot expect anyone other than racers to know what
-                // exactly post-dungeon refers to?
-                // HintCategoryEnum.Post_dungeon,
-                HintCategory.Mist,
-                HintCategory.Owl_Statue,
-                HintCategory.Llc_Lantern_Chests,
-                HintCategory.Underwater,
-                HintCategory.Southern_Desert,
-                HintCategory.Northern_Desert,
-                HintCategory.Golden_Wolf,
-            };
+        private static readonly HashSet<HintCategory> defaultHintCategories = new()
+        {
+            HintCategory.Grotto,
+            // Maybe cannot expect anyone other than racers to know what
+            // exactly post-dungeon refers to?
+            // HintCategoryEnum.Post_dungeon,
+            HintCategory.Mist,
+            HintCategory.Owl_Statue,
+            HintCategory.Llc_Lantern_Chests,
+            HintCategory.Underwater,
+            HintCategory.Southern_Desert,
+            HintCategory.Northern_Desert,
+            HintCategory.Golden_Wolf,
+        };
 
         private static readonly Dictionary<Zone, string> dungeonZoneToRegionName =
             new()
@@ -65,7 +64,7 @@ namespace TPRandomizer.Hints.HintCreator
 
         private BarrenHintCreator() { }
 
-        new public static BarrenHintCreator fromJObject(JObject obj)
+        public static new BarrenHintCreator fromJObject(JObject obj)
         {
             BarrenHintCreator inst = new BarrenHintCreator();
 

@@ -279,34 +279,33 @@ namespace TPRandomizer
                 // include any number of Agitha checks (not just 0 or 24)
                 // without having to memorize which bugs are valid or invalid.
 
-                HashSet<string> agithaChecks =
-                    new()
-                    {
-                        "Agitha Female Ant Reward",
-                        "Agitha Female Beetle Reward",
-                        "Agitha Female Butterfly Reward",
-                        "Agitha Female Dayfly Reward",
-                        "Agitha Female Dragonfly Reward",
-                        "Agitha Female Grasshopper Reward",
-                        "Agitha Female Ladybug Reward",
-                        "Agitha Female Mantis Reward",
-                        "Agitha Female Phasmid Reward",
-                        "Agitha Female Pill Bug Reward",
-                        "Agitha Female Snail Reward",
-                        "Agitha Female Stag Beetle Reward",
-                        "Agitha Male Ant Reward",
-                        "Agitha Male Beetle Reward",
-                        "Agitha Male Butterfly Reward",
-                        "Agitha Male Dayfly Reward",
-                        "Agitha Male Dragonfly Reward",
-                        "Agitha Male Grasshopper Reward",
-                        "Agitha Male Ladybug Reward",
-                        "Agitha Male Mantis Reward",
-                        "Agitha Male Phasmid Reward",
-                        "Agitha Male Pill Bug Reward",
-                        "Agitha Male Snail Reward",
-                        "Agitha Male Stag Beetle Reward",
-                    };
+                HashSet<string> agithaChecks = new()
+                {
+                    "Agitha Female Ant Reward",
+                    "Agitha Female Beetle Reward",
+                    "Agitha Female Butterfly Reward",
+                    "Agitha Female Dayfly Reward",
+                    "Agitha Female Dragonfly Reward",
+                    "Agitha Female Grasshopper Reward",
+                    "Agitha Female Ladybug Reward",
+                    "Agitha Female Mantis Reward",
+                    "Agitha Female Phasmid Reward",
+                    "Agitha Female Pill Bug Reward",
+                    "Agitha Female Snail Reward",
+                    "Agitha Female Stag Beetle Reward",
+                    "Agitha Male Ant Reward",
+                    "Agitha Male Beetle Reward",
+                    "Agitha Male Butterfly Reward",
+                    "Agitha Male Dayfly Reward",
+                    "Agitha Male Dragonfly Reward",
+                    "Agitha Male Grasshopper Reward",
+                    "Agitha Male Ladybug Reward",
+                    "Agitha Male Mantis Reward",
+                    "Agitha Male Phasmid Reward",
+                    "Agitha Male Pill Bug Reward",
+                    "Agitha Male Snail Reward",
+                    "Agitha Male Stag Beetle Reward",
+                };
 
                 foreach (string excludedCheckName in sSettings.excludedChecks)
                 {
@@ -909,21 +908,20 @@ namespace TPRandomizer
 
             if (startWithBigKeys)
             {
-                List<Item> bigKeys =
-                    new()
-                    {
-                        Item.Forest_Temple_Big_Key,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Goron_Mines_Key_Shard,
-                        Item.Lakebed_Temple_Big_Key,
-                        Item.Arbiters_Grounds_Big_Key,
-                        Item.Temple_of_Time_Big_Key,
-                        Item.Snowpeak_Ruins_Bedroom_Key,
-                        Item.City_in_The_Sky_Big_Key,
-                        Item.Palace_of_Twilight_Big_Key,
-                        Item.Hyrule_Castle_Big_Key,
-                    };
+                List<Item> bigKeys = new()
+                {
+                    Item.Forest_Temple_Big_Key,
+                    Item.Goron_Mines_Key_Shard,
+                    Item.Goron_Mines_Key_Shard,
+                    Item.Goron_Mines_Key_Shard,
+                    Item.Lakebed_Temple_Big_Key,
+                    Item.Arbiters_Grounds_Big_Key,
+                    Item.Temple_of_Time_Big_Key,
+                    Item.Snowpeak_Ruins_Bedroom_Key,
+                    Item.City_in_The_Sky_Big_Key,
+                    Item.Palace_of_Twilight_Big_Key,
+                    Item.Hyrule_Castle_Big_Key,
+                };
 
                 foreach (Item bk in bigKeys)
                 {

@@ -2,8 +2,8 @@ namespace TPRandomizer.Hints
 {
     using System;
     using System.Collections.Generic;
-    using TPRandomizer.Util;
     using SSettings.Enums;
+    using TPRandomizer.Util;
 
     public enum GoalEnum
     {

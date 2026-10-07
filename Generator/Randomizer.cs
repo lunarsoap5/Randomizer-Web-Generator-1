@@ -488,8 +488,6 @@ namespace TPRandomizer
                 part2Settings.Add("skipCityEntrance", SSettings.skipCityEntrance);
             if (SSettings.instantText)
                 part2Settings.Add("instantText", SSettings.instantText);
-            if (SSettings.itemScarcity != ItemScarcity.Vanilla)
-                part2Settings.Add("itemScarcity", SSettings.itemScarcity);
             if (SSettings.openMap)
                 part2Settings.Add("openMap", SSettings.openMap);
             if (SSettings.increaseSpinnerSpeed)
@@ -508,27 +506,21 @@ namespace TPRandomizer
             return part2Settings;
         }
 
-        public static bool GenerateFinalOutput2(string id, string fcSettingsString)
+        public static bool GenerateFinalOutput2(
+            string fcSettingsString,
+            string itemPlacementString,
+            string settingsString,
+            string slotName,
+            string seedID
+        )
         {
-            string inputJsonPath = Global.CombineOutputPath("seeds", id, "input.json");
-
-            if (!File.Exists(inputJsonPath))
-            {
-                throw new Exception(
-                    "input.json not found for (path: " + inputJsonPath + ") id: " + id
-                );
-            }
-
-            string fileContents = File.ReadAllText(inputJsonPath);
-            JObject json = JsonConvert.DeserializeObject<JObject>(fileContents);
-
             FileCreationSettings fcSettings = FileCreationSettings.FromString(fcSettingsString);
 
             // Generate the dictionary values that are needed and initialize the data for the selected logic type.
             DeserializeCheckData(SSettings, fcSettings);
             DeserializeRooms(SSettings);
 
-            SeedGenResults seedGenResults = new SeedGenResults(id, json);
+            SeedGenResults seedGenResults = new SeedGenResults(settingsString, itemPlacementString);
 
             SSettings = SharedSettings.FromString(seedGenResults.settingsString);
             origSSettingsStartingItems = new(SSettings.startingItems);
@@ -540,7 +532,38 @@ namespace TPRandomizer
                 if (Randomizer.Checks.CheckDict.ContainsKey(checkName))
                 {
                     Randomizer.Checks.CheckDict[checkName].itemId = (Item)kvp.Value;
+                    Console.WriteLine(
+                        Randomizer.Checks.CheckDict[checkName].checkName
+                            + " : "
+                            + (int)Randomizer.Checks.CheckDict[checkName].itemId
+                    );
                 }
+            }
+
+            Console.WriteLine("Validating item placements.");
+            int i = 0;
+            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
+            {
+                //Console.WriteLine(checkList.Key + " : " + (int)checkList.Value.itemId + " " + i);
+                i++;
+            }
+
+            Console.WriteLine("Generating Hint Data.");
+            Random rnd = new(8675309);
+
+            try
+            {
+                HintGenerator gen = new HintGenerator(
+                    rnd,
+                    SSettings,
+                    Randomizer.Rooms.RoomDict["Root"]
+                );
+                seedGenResults.customMsgData = gen.Generate();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
             }
 
             Console.WriteLine("\nGenerating Seed Data.");
@@ -627,7 +650,7 @@ namespace TPRandomizer
                 );
             }
 
-            PrintFileDefs(id, seedGenResults, fcSettings, fileDefs);
+            PrintFileDefs(seedID, seedGenResults, fcSettings, fileDefs, slotName);
 
             // Console.WriteLine("Done!");
             // Console.WriteLine("Generating Spoiler Log.");
@@ -661,7 +684,8 @@ namespace TPRandomizer
             string seedId,
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
-            GameRegion gameRegionOverride
+            GameRegion gameRegionOverride,
+            string slotName
         )
         {
             byte[] seedBytes = SeedData.GenerateSeedDataBytes(
@@ -790,6 +814,8 @@ namespace TPRandomizer
                 fcSettings,
                 gameRegionOverride,
                 isGci
+                seedId,
+                slotName
             );
 
             Dictionary<string, object> dict = new();
@@ -832,13 +858,14 @@ namespace TPRandomizer
             string seedId,
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
-            List<Tuple<Dictionary<string, object>, byte[]>> fileDefs
+            List<Tuple<Dictionary<string, object>, byte[]>> fileDefs,
+            string slotName
         )
         {
             if (fileDefs.Count > 1)
             {
                 // Write ZIP file instead
-                string zipFilename = $"TPR--{seedGenResults.playthroughName}--{seedId}.zip";
+                string zipFilename = $"TPR--{slotName}--{seedId}.zip";
                 fileDefs = MergeFileDefsToZip(zipFilename, fileDefs);
             }
 
@@ -1047,364 +1074,6 @@ namespace TPRandomizer
             }
 
             return playthroughGraph;
-        }
-
-        /// <summary>
-        /// Places the generated item pool's items into the world graph that has been created.
-        /// </summary>
-        /// <param name="startingRoom"> The room node that the generation algorithm will begin with. </param>
-        private static void PlaceItemsInWorld(Room startingRoom, Random rnd)
-        {
-            // Dungeon rewards have a very limited item pool, so we want to place them first to prevent the generator from putting
-            // an unnecessary item in one of the checks.
-            if (SSettings.shuffleRewards)
-            {
-                PlaceItemsRestricted(
-                    startingRoom,
-                    Items.ShuffledDungeonRewards,
-                    Randomizer.Items.heldItems,
-                    string.Empty,
-                    rnd
-                );
-            }
-            else
-            {
-                placeDungeonRewards(Items.ShuffledDungeonRewards, rnd);
-            }
-
-            /*
-            // This is the old dungeon item placing code
-            // starting room, list of checks to be randomized, items to be randomized, item pool, restriction
-            Console.WriteLine("Placing Dungeon Rewards.");
-            PlaceItemsRestricted(
-                startingRoom,
-                Items.ShuffledDungeonRewards,
-                Randomizer.Items.heldItems,
-                "Dungeon Rewards",
-                rnd
-            );
-            */
-
-            // We determine which dungeons are required after the dungeon rewards are placed but before the other checks
-            // are placed because if a certain dungeon's checks need to be excluded, we want to exclude the check before
-            // any items are placed in it.
-            CheckUnrequiredDungeons(startingRoom);
-
-            // Next we want to place items that are locked to a specific region such as keys, maps, compasses, etc.
-            Console.WriteLine("Placing Region-Restricted Checks.");
-            PlaceItemsRestricted(
-                startingRoom,
-                Items.RandomizedDungeonRegionItems,
-                Randomizer.Items.heldItems,
-                "Region",
-                rnd
-            );
-
-            // Excluded checks are next and will just be filled with "junk" items (i.e. ammo refills, etc.). This is to
-            // prevent important items from being placed in checks that the player or randomizer has requested to be not
-            // considered in logic.
-            Console.WriteLine("Placing Excluded Checks.");
-            PlaceExcludedChecks(rnd);
-
-            // Once all of the items that have some restriction on their placement are placed, we then place all of the items that can
-            // be logically important (swords, clawshot, bow, etc.)
-            Console.WriteLine("Placing Important Items.");
-            PlaceItemsRestricted(
-                startingRoom,
-                Items.RandomizedImportantItems,
-                Randomizer.Items.heldItems,
-                string.Empty,
-                rnd
-            );
-
-            // Next we will place the "always" items. Basically the constants in every seed, so Heart Pieces, Heart Containers, etc.
-            // These items do not affect logic at all so there is very little constraint to this method.
-            Console.WriteLine("Placing Non Impact Items.");
-            PlaceNonImpactItems(Randomizer.Items.alwaysItems, rnd);
-
-            // Any extra checks that have not been filled at this point are filled with "junk" items such as ammunition, foolish items, etc.
-            Console.WriteLine("Placing Junk Items.");
-            PlaceJunkItems(Items.JunkItems, rnd);
-
-            // Only validate if we are not no-logic
-            if (SSettings.logicRules != LogicRules.No_Logic)
-            {
-                if (!BackendFunctions.ValidatePlaythrough(startingRoom))
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Fills locations with their original items.
-        /// </summary>
-        /// <param name="vanillaChecks"> A list of checks that will have their original item placed in them. </param>
-        private static void PlaceVanillaChecks()
-        {
-            foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
-            {
-                Check currentCheck = checkList.Value;
-                if (currentCheck.checkStatus == "Vanilla")
-                {
-                    Randomizer.Items.heldItems.Remove(currentCheck.itemId);
-                    PlaceItemInCheck(currentCheck.itemId, currentCheck);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Places junk items in checks that have been labeled as excluded.
-        /// </summary>
-        private static void PlaceExcludedChecks(Random rnd)
-        {
-            foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
-            {
-                Check currentCheck = checkList.Value;
-                if (!currentCheck.itemWasPlaced && (currentCheck.checkStatus.Contains("Excluded")))
-                {
-                    PlaceItemInCheck(
-                        Items.JunkItems[rnd.Next(Items.JunkItems.Count)],
-                        currentCheck
-                    );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Places manually placed items where the user specifies
-        /// </summary>
-        private static void PlacePlandoChecks()
-        {
-            foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
-            {
-                Check currentCheck = checkList.Value;
-                if (currentCheck.checkStatus.Contains("Plando"))
-                {
-                    PlaceItemInCheck(currentCheck.itemId, currentCheck);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Places all items in an Item Group into the world graph based on a listed restriction.
-        /// </summary>
-        /// <param name="startingRoom"> The room node that the randomizer begins its graph building from. </param>
-        /// <param name="itemGroup"> The group of items that are to be randomized in with the current restriction. </param>
-        /// <param name="itemPool"> The current item pool. </param>
-        /// <param name="restriction"> The restriction the randomizer must follow when checking where to place items. </param>
-        private static void PlaceItemsRestricted(
-            Room startingRoom,
-            List<Item> itemGroup,
-            List<Item> itemPool,
-            string restriction,
-            Random rnd
-        )
-        {
-            // Essentially we want to do the following: make a copy of our item pool for safe keeping so we can modify
-            // the current item pool as the playthrough happens. We ONLY modify our copied item pool if we place an item.
-            // Once all of the items in ItemGroup have been placed, we dump our item pool and restore it with the copy we have.
-            if (itemGroup.Count > 0)
-            {
-                List<string> availableChecks = new();
-                Item itemToPlace;
-                Check checkToReciveItem;
-                List<Item> itemsToBeRandomized = new();
-                List<Item> playthroughItems = new();
-                List<Item> currentItemPool = new();
-                currentItemPool.AddRange(itemPool);
-
-                // The itemGroup list is intended to be readonly so we want to make a copy of it and modify the copy.
-                itemsToBeRandomized.AddRange(itemGroup);
-
-                while (itemsToBeRandomized.Count > 0)
-                {
-                    // NEEDS WORK: currently we have to dump the item pool and then refill it with the copy because if not,
-                    // the item pool will compound and be way too big affecting both memory and logic.
-                    itemPool.Clear();
-                    itemPool.AddRange(currentItemPool);
-                    itemToPlace = itemsToBeRandomized[rnd.Next(itemsToBeRandomized.Count)];
-
-                    // Console.WriteLine("Item to place: " + itemToPlace);
-                    itemPool.Remove(itemToPlace);
-                    itemsToBeRandomized.Remove(itemToPlace);
-                    foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
-                    {
-                        Check currentCheck = checkList.Value;
-                        currentCheck.hasBeenReached = false;
-                        Checks.CheckDict[currentCheck.checkName] = currentCheck;
-                    }
-
-                    // Walk through the current graph and get a list of rooms that we can currently access
-                    // If we collect any items during the playthrough, we add them to the player's inventory
-                    // and try walking through the graph again until we have collected every item that we can.
-                    do
-                    {
-                        playthroughItems.Clear();
-                        List<Room> currentPlaythroughGraph = GeneratePlaythroughGraph(startingRoom);
-                        foreach (Room graphRoom in currentPlaythroughGraph)
-                        {
-                            graphRoom.Visited = true;
-                            for (int i = 0; i < graphRoom.Checks.Count; i++)
-                            {
-                                // Create reference to the dictionary entry of the check whose logic we are evaluating
-                                if (
-                                    !Checks.CheckDict.TryGetValue(
-                                        graphRoom.Checks[i],
-                                        out Check currentCheck
-                                    )
-                                )
-                                {
-                                    if (graphRoom.Checks[i].ToString() == string.Empty)
-                                    {
-                                        // Console.WriteLine("Room has no checks, continuing on....");
-                                        break;
-                                    }
-                                }
-                                if (!currentCheck.hasBeenReached)
-                                {
-                                    if (
-                                        SSettings.logicRules == LogicRules.No_Logic
-                                        || currentCheck.CachedRequirements().Evaluate()
-                                    )
-                                    {
-                                        if (currentCheck.itemWasPlaced)
-                                        {
-                                            playthroughItems.Add(currentCheck.itemId);
-
-                                            /*Console.WriteLine(
-                                                "Added " + currentCheck.itemId + " to item list."
-                                            );*/
-                                        }
-                                        else
-                                        {
-                                            if (
-                                                (restriction == "Region")
-                                                && (currentCheck.checkStatus != "Plando")
-                                            )
-                                            {
-                                                if (
-                                                    RoomFunctions.IsRegionCheck(
-                                                        itemToPlace,
-                                                        currentCheck,
-                                                        graphRoom
-                                                    )
-                                                )
-                                                {
-                                                    // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                    availableChecks.Add(currentCheck.checkName);
-                                                }
-                                            }
-                                            else if (currentCheck.checkStatus == "Ready")
-                                            {
-                                                if (restriction == "Dungeon Rewards")
-                                                {
-                                                    if (
-                                                        currentCheck.checkCategory.Contains(
-                                                            "Dungeon Reward"
-                                                        )
-                                                    )
-                                                    {
-                                                        // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                        availableChecks.Add(currentCheck.checkName);
-                                                    }
-                                                }
-                                                else if (Randomizer.SSettings.noSmallKeysOnBosses)
-                                                {
-                                                    if (
-                                                        !ItemFunctions.IsSmallKeyOnBossCheck(
-                                                            itemToPlace,
-                                                            currentCheck
-                                                        )
-                                                    )
-                                                    {
-                                                        // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                        availableChecks.Add(currentCheck.checkName);
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    // Console.WriteLine("Added " + currentCheck.checkName + " to check list.");
-                                                    availableChecks.Add(currentCheck.checkName);
-                                                }
-                                            }
-                                        }
-
-                                        currentCheck.hasBeenReached = true;
-                                    }
-                                }
-                            }
-                        }
-
-                        itemPool.AddRange(playthroughItems);
-                    } while (playthroughItems.Count > 0);
-                    checkToReciveItem = Checks.CheckDict[
-                        availableChecks[rnd.Next(availableChecks.Count)].ToString()
-                    ];
-                    currentItemPool.Remove(itemToPlace);
-                    PlaceItemInCheck(itemToPlace, checkToReciveItem);
-                    availableChecks.Clear();
-                }
-
-                itemPool.Clear();
-                itemPool.AddRange(currentItemPool);
-            }
-        }
-
-        /// <summary>
-        /// Places all items in a list into the world with no restrictions.
-        /// </summary>
-        /// <param name="itemsToBeRandomized"> The group of items that are to be randomized. </param>
-        private static void PlaceNonImpactItems(List<Item> itemGroup, Random rnd)
-        {
-            List<string> availableChecks = new();
-            Item itemToPlace;
-            Check checkToReciveItem;
-
-            // The itemGroup list is intended to be readonly so we want to make a copy of it and modify the copy.
-            List<Item> itemsToBeRandomized = new();
-            itemsToBeRandomized.AddRange(itemGroup);
-
-            while (itemsToBeRandomized.Count > 0)
-            {
-                itemToPlace = itemsToBeRandomized[rnd.Next(itemsToBeRandomized.Count - 1)];
-
-                // Console.WriteLine("Item to place: " + itemToPlace);
-                itemsToBeRandomized.Remove(itemToPlace);
-                foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
-                {
-                    checkToReciveItem = checkList.Value;
-                    if (!checkToReciveItem.itemWasPlaced)
-                    {
-                        availableChecks.Add(checkToReciveItem.checkName);
-                    }
-                }
-
-                checkToReciveItem = Checks.CheckDict[
-                    availableChecks[rnd.Next(availableChecks.Count - 1)].ToString()
-                ];
-                PlaceItemInCheck(itemToPlace, checkToReciveItem);
-                availableChecks.Clear();
-            }
-        }
-
-        /// <summary>
-        /// Places all items in a list into the world with no restrictions. Does not empty the list of items, however.
-        /// </summary>
-        /// <param name="itemsToBeRandomized"> The group of items that are to be randomized. </param>
-        private static void PlaceJunkItems(List<Item> itemsToBeRandomized, Random rnd)
-        {
-            foreach (KeyValuePair<string, Check> checkList in Checks.CheckDict.ToList())
-            {
-                Check currentCheck = checkList.Value;
-                if (!currentCheck.itemWasPlaced)
-                {
-                    PlaceItemInCheck(
-                        itemsToBeRandomized[rnd.Next(itemsToBeRandomized.Count - 1)],
-                        currentCheck
-                    );
-                }
-            }
         }
 
         /// <summary>

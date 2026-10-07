@@ -58,6 +58,15 @@ namespace TPRandomizer.Assets
         }
 
         public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, bool isGci)
+            string seedID,
+            string slotName
+        )
+        {
+            SeedData seedData = new SeedData(seedGenResults, fcSettings);
+            return seedData.GenerateSeedDataBytesInternal(regionOverride, seedID, slotName);
+        }
+
+        public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, string seedID, string slotName)
         {
             Assets.CustomMessages.MessageLanguage hintLanguage = Assets
                 .CustomMessages
@@ -91,6 +100,10 @@ namespace TPRandomizer.Assets
             List<byte> currentMessageData = new();
             List<byte> currentMessageEntryInfo = new();
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
+            TPRandomizer.Assets.CustomMessages customMessage = new();
+
+            List<CustomMessages.MessageEntry> seedMessages =
+                seedGenResults.customMsgData.GenMessageEntries();
 
             seedDictionary.Add((byte)hintLanguage, new());
 
@@ -219,7 +232,7 @@ namespace TPRandomizer.Assets
             );
 
             // Generate Seed Data
-            currentSeedHeader.AddRange(GenerateSeedHeader());
+            currentSeedHeader.AddRange(GenerateSeedHeader(seedID, slotName));
             currentSeedData.AddRange(currentSeedHeader);
             currentSeedData.AddRange(GCIDataRaw);
             currentSeedData.AddRange(currentMessageHeader);
@@ -237,7 +250,7 @@ namespace TPRandomizer.Assets
             // File.WriteAllBytes(playthroughName, gci.gciFile.ToArray());
         }
 
-        private List<byte> GenerateSeedHeader()
+        private List<byte> GenerateSeedHeader(string seedID, string slotName)
         {
             List<byte> seedHeader = new();
             SharedSettings randomizerSettings = Randomizer.SSettings;
@@ -1378,7 +1391,7 @@ namespace TPRandomizer.Assets
         {
             Console.WriteLine(seedGenResults.entrances);
             List<byte> entranceTable = new();
-            string[] entranceBytes = seedGenResults.entrances.Split(",");
+            /*string[] entranceBytes = seedGenResults.entrances.Split(",");
             for (int i = 0; i < entranceBytes.Count() - 1; i++)
             {
                 Console.WriteLine("Start: " + entranceBytes[i]);
@@ -1430,7 +1443,7 @@ namespace TPRandomizer.Assets
                     )
                 );
                 SeedHeaderRaw.shuffledEntranceInfoNumEntries++;
-            }
+            }*/
             return entranceTable;
         }
 

@@ -21,6 +21,7 @@
   let picrossOpened = false;
   let hasSelectedRegionError = false;
   let defaultIncludeSpoilerLog = false;
+  let fileContents = "";
 
   function createBasicEvent() {
     let listeners = [];
@@ -188,52 +189,16 @@
   window.addEventListener('DOMContentLoaded', onDomContentLoaded);
 
   function onDomContentLoaded() {
-    const inputJsonDataEl = document.getElementById('inputJsonData');
-    if (inputJsonDataEl) {
-      handleGenerationCompletedPage(inputJsonDataEl);
-    } else {
-      let shouldCheckProgress = false;
-
-      const requesterHashEl = document.getElementById('requesterHash');
-      if (requesterHashEl) {
-        try {
-          const requesterHash = localStorage.getItem('requesterHash');
-          if (requesterHash === requesterHashEl.value) {
-            shouldCheckProgress = true;
-          }
-        } catch (e) {
-          shouldCheckProgress = true;
-        }
-      }
-
-      if (shouldCheckProgress) {
-        handleCheckProgressPage();
-      } else {
-        const seedErrorMsgEl = document.getElementById('seedErrorMsg');
-        if (seedErrorMsgEl) {
-          // Error msg was inserted into page
-          $('#progressTitle').text(seedErrorMsgEl.value || 'Error');
-        } else {
-          // Handle invalid seed page
-          $('#progressTitle').text('Invalid seed ID.');
-        }
-      }
-    }
-
-    window.initTooltipsInTree(document);
+    handleGenerationCompletedPage();
   }
 
-  function handleGenerationCompletedPage(inputJsonDataEl) {
+  function handleGenerationCompletedPage() {
     $('#sectionProgress').hide();
     $('#sectionFileCreation').show();
 
     restoreDefaultFcSettings();
 
-    pageData = JSON.parse(inputJsonDataEl.value);
-
-    const decodedSettings = window.tpr.shared.decodeSettingsString(
-      pageData.input.settings
-    );
+    
 
     initTabButtons([
       {
@@ -247,17 +212,12 @@
 
       // ['mainTab', 'cosmeticsTab', 'audioTab'].forEach((id) => {
     ]);
-    fillInInfo();
 
-    window.tpr.shared.populateUiFromPSettings(decodedSettings.p);
 
-    initSettingsModal();
-    initShareModal();
 
     $('#create').on('click', handleCreateClick);
 
-    handleSpoilerData();
-
+    initDownloadOptions(false);
     initCustomColorPickers();
 
     function handleToggleTranslationsWarning() {
@@ -403,15 +363,6 @@
       },
     ]);
 
-    fillInSettingsTable(spoilerData);
-
-    if (!spoilerData.isRaceSeed) {
-      $('#spoilerSectionTitle').text('Settings & Spoilers');
-      $('#tabBtnPlaythroughSpoilers').show();
-
-      initPlaythroughSpoilers(spoilerData);
-      createSpoilerLogDownload(spoilerData, rawSpoilerData);
-    }
 
     initDownloadOptions(spoilerData.isRaceSeed);
   }
@@ -448,15 +399,6 @@
         languageSelectedEvent.notify();
       },
     });
-
-    if (!isRaceSeed) {
-      renderBasicCheckbox({
-        parent: document.getElementById('downloadOptionsSpoilerCheckboxParent'),
-        checkboxId: 'includeSpoilerCheckbox',
-        text: 'Include spoiler log',
-        defaultChecked: defaultIncludeSpoilerLog,
-      });
-    }
   }
 
   // Return value is an array of 16 colors like [ "69567a", "6d5980", ...]. If
@@ -566,6 +508,37 @@
   document
     .getElementById('randomizeCosmeticsButton')
     .addEventListener('click', randomizeCosmetics);
+  
+  document
+    .getElementById('fnameTest')
+    .addEventListener("change", async (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  try {
+    const zip = await JSZip.loadAsync(file);
+
+    const settingsFile = zip.file("settings.txt");
+
+    // Read the contents of the file as text
+    const content = await settingsFile.async("string");
+
+    // Display the content
+    console.log(content);
+    fileContents = content;
+  } catch (error) {
+
+    // Read the file
+    const reader = new FileReader();
+    reader.onload = () => {
+      fileContents = reader.result;
+    };
+    reader.onerror = () => {
+      console.log("Error reading the file. Please try again.", "error");
+    };
+    reader.readAsText(file);
+    }
+});
 
   function randomizeCosmetics() {
     const arrayOfCosmeticSettings = [
@@ -1191,54 +1164,6 @@
       .replace(/'/g, '&#039;');
   }
 
-  function fillInInfo() {
-    const date = new Date(pageData.meta.ts);
-
-    let locales = navigator.languages;
-    if (locales == null) {
-      locales = navigator.language;
-    }
-
-    $('#timestamp').text(
-      date.toLocaleDateString(locales, {
-        // date.toLocaleDateString('en-US', {
-        weekday: 'short',
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        timeZoneName: 'short',
-      })
-    );
-    $('#seed').text(pageData.input.seed);
-    $('#settingsString').text(pageData.input.settings);
-
-    const arr = [
-      { label: 'Created', value: pageData.meta.ts },
-      { label: 'Seed', value: pageData.input.seed },
-      {
-        label: 'Settings String',
-        value: pageData.input.settings,
-      },
-    ];
-
-    byId('info').innerHTML = arr
-      .map((obj) => {
-        return '<strong>' + obj.label + '</strong> ' + escapeHtml(obj.value);
-      })
-      .join(' -- ');
-
-    byId('filename').textContent = pageData.output.name;
-    const wiiFilenameEl = byId('wiiFilename');
-    if (pageData.output.wiiName) {
-      wiiFilenameEl.textContent = `Wii: ${pageData.output.wiiName}`;
-    } else {
-      wiiFilenameEl.style.display = 'none';
-    }
-  }
-
   // Parse SSetting to object.
   // Parse PSettings to object.
 
@@ -1485,58 +1410,6 @@
     return null;
   }
 
-  function initShareModal() {
-    const $bg = $('#modal2Bg');
-    const $modal = $('#generatingModal');
-    const $successEl = $('#linkCopiedMsg');
-    const $errorEl = $('#linkCopiedError');
-
-    function showModal() {
-      $successEl.hide();
-      $errorEl.hide();
-      $bg.show();
-      $modal.addClass('isOpen').show();
-    }
-
-    function hideModal() {
-      $bg.hide();
-      $modal.hide().removeClass('isOpen');
-    }
-
-    document
-      .getElementById('shareDoneBtn')
-      .addEventListener('click', hideModal);
-
-    document.getElementById('copyLinkBtn').addEventListener('click', () => {
-      $successEl.hide();
-      $errorEl.hide();
-
-      navigator.clipboard.writeText(window.location.href).then(
-        () => {
-          $successEl.show();
-        },
-        (err) => {
-          $errorEl.show();
-        }
-      );
-    });
-
-    $('#shareUrl').text(window.location.href);
-
-    document.getElementById('shareBtn').addEventListener('click', showModal);
-
-    let canHide = true;
-
-    $('.boqDrivesharedialogDialogsShareContainer')
-      .on('mousedown', function (e) {
-        canHide = e.target === this;
-      })
-      .on('mouseup', function (e) {
-        if (canHide && e.target === this) {
-          hideModal();
-        }
-      });
-  }
 
   function startCheckProgressRoutine() {
     const match = window.location.pathname.match(/[^\/]+$/);

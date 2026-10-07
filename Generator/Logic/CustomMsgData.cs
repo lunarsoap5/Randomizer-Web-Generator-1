@@ -258,6 +258,7 @@ namespace TPRandomizer
                         Item.Progressive_Dominion_Rod,
                         Item.Filled_Bomb_Bag,
                         Item.Progressive_Sky_Book,
+                        Item.Archipelago_Item
                     };
 
                 List<Item> itemsToPickFrom = new();

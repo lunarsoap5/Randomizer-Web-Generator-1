@@ -1,13 +1,10 @@
 namespace TPRandomizer.Hints
 {
     using System;
-    using System.Collections.ObjectModel;
     using System.Collections.Generic;
     using System.Linq;
     using Newtonsoft.Json.Linq;
     using SSettings.Enums;
-    using TPRandomizer.Util;
-    using TPRandomizer.Hints.Settings;
     using TPRandomizer.Hints.HintCreator;
 
     public delegate bool BarrenPenalizer(AreaId areaId, HashSet<Zone> childZones);
@@ -1676,8 +1673,8 @@ namespace TPRandomizer.Hints
         private void UpdateHintedForAlwaysHints(List<string> checksToHint)
         {
             HashSet<string> checksToHintSet = ListUtils.isEmpty(checksToHint)
-              ? new()
-              : new(checksToHint);
+                ? new()
+                : new(checksToHint);
 
             foreach (string checkName in hintSettings.always.checks)
             {

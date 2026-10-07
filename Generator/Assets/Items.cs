@@ -165,6 +165,7 @@ namespace TPRandomizer
         Gerudo_Desert_Bulblin_Camp_Key = 0x8E, /*custom*/
 
         Lake_Hylia_Portal = 0x8F,
+        Archipelago_Item = 0x8F,
         Aurus_Memo = 0x90,
         Asheis_Sketch = 0x91,
         Forest_Temple_Big_Key = 0x92, /*custom*/
