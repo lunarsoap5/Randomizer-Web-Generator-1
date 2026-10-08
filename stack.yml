@@ -1,9 +1,9 @@
 services:
-  tpr-generator:
-    image: tpr-generator:${IMAGE_VERSION}
+  tpr-generator-ap:
+    image: tpr-generator-ap:${IMAGE_VERSION}
     ports:
-      - '${HOST_PORT:-3000}:3500'
-      - '40444:40444'
+      - '${HOST_PORT:-3002}:3500'
+      - '40446:40446'
     volumes:
       - tpr-generator-data:${TPRGEN_VOLUME_ROOT}
     configs:

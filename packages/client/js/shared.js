@@ -25,6 +25,9 @@
     randomWithinPalette: 0b100,
   };
 
+  let fileContents = '';
+  let selectedLanguage = null;
+
   const Region = {
     All: 0,
     USA: 1,
@@ -1341,7 +1344,7 @@
     return result;
   }
 
-  function genFcSettingsString(patchOnly, version) {
+  function genFcSettingsString(patchOnly, version, fileCreationStr) {
     function getVal(id) {
       const $el = $('#' + id);
       if ($el.length < 1) {
@@ -1526,7 +1529,30 @@
       }
     });
 
-    return encodeBitStringTo6BitsString(bitString);
+    let fcString = encodeBitStringTo6BitsString(bitString);
+
+    fcString += ',' + window.tpr.shared.fileContents;
+    return fcString;
+  }
+
+  function handleFileSelection(event) {
+    const file = event.target.files[0];
+
+    // Validate file existence and type
+    if (!file) {
+      console.log('No file selected. Please choose a file.', 'error');
+      return;
+    }
+
+    // Read the file
+    const reader = new FileReader();
+    reader.onload = () => {
+      fileContents = reader.result;
+    };
+    reader.onerror = () => {
+      console.log('Error reading the file. Please try again.', 'error');
+    };
+    reader.readAsText(file);
   }
 
   function callCreateGci(fileCreationSettings, cb) {
@@ -1566,6 +1592,7 @@
     Region,
     EurLanguageTag,
     selectedRegion: null,
+    fileContents,
     genSSettingsFromUi,
     genPSettingsFromUi,
     decodeSettingsString,

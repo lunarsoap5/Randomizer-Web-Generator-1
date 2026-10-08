@@ -56,215 +56,6 @@ namespace TPRandomizer
         public static int RequiredDungeons = 0;
         public static int spawnIndex = 0;
 
-        public static bool CreateInputJson(
-            string idParam,
-            string settingsString,
-            string raceSeedParam,
-            string seed
-        )
-        {
-            if (
-                idParam == null
-                || (idParam != "idnull" && !(new Regex("^id[0-9A-Za-z-_]{11}$").IsMatch(idParam)))
-            )
-            {
-                throw new Exception("Invalid id param.");
-            }
-
-            string id = "";
-            string outputPath = "";
-
-            if (idParam == "idnull")
-            {
-                bool idConfirmedUnique = false;
-                while (!idConfirmedUnique)
-                {
-                    id = Util.Hash.GenId();
-                    outputPath = Global.CombineOutputPath("seeds", id, "input.json");
-
-                    if (!File.Exists(outputPath))
-                        idConfirmedUnique = true;
-                }
-            }
-            else
-            {
-                id = idParam.Substring(2);
-                outputPath = Global.CombineOutputPath("seeds", id, "input.json");
-                if (File.Exists(outputPath))
-                {
-                    throw new Exception("input.json already exists for the id '" + id + "'.");
-                }
-            }
-
-            // Generate seedHash from seed
-            if (seed == null || seed.Length < 1)
-            {
-                // 132 bits of data as 22 characters. Wanted at least 128 bits,
-                // and the 6bit encoding only needs 22 chars instead of the 32
-                // hex characters you would normally use for 128 bits.
-                // Concatenate 2 together because we don't want it to be easily
-                // confused with the seed's id in the URL.
-                seed = Util.Hash.GenId() + Util.Hash.GenId();
-            }
-
-            bool isRaceSeed = raceSeedParam.ToLowerInvariant() == "true";
-
-            int seedHash = Util.Hash.HashSeed(seed, isRaceSeed);
-            Random rnd = new Random(seedHash);
-
-            bool generationStatus = false;
-            int remainingGenerationAttempts = 10;
-
-            Console.WriteLine("SeedData Version: " + SeedData.VersionString);
-
-            // Read in the settings string and set the settings values accordingly
-            // BackendFunctions.InterpretSettingsString(settingsString);
-            SSettings = SharedSettings.FromString(settingsString);
-            origSSettingsStartingItems = new(SSettings.startingItems);
-            PropertyInfo[] randoSettingProperties = SSettings.GetType().GetProperties();
-
-            // Generate the dictionary values that are needed and initialize the data for the selected logic type.
-            DeserializeChecks(SSettings);
-            DeserializeRooms(SSettings);
-
-            foreach (PropertyInfo settingProperty in randoSettingProperties)
-            {
-                Console.WriteLine(
-                    settingProperty.Name + ": " + settingProperty.GetValue(SSettings, null)
-                );
-            }
-
-            foreach (string checkName in SSettings.excludedChecks)
-            {
-                Randomizer.Checks.CheckDict[checkName].checkStatus = "Excluded";
-            }
-
-            // Generate the item pool based on user settings/input.
-            Randomizer.Items.GenerateItemPool();
-            CheckFunctions.GenerateCheckList();
-
-            while (remainingGenerationAttempts > 0)
-            {
-                remainingGenerationAttempts--;
-                Randomizer.Items.heldItems.AddRange(Randomizer.Items.BaseItemPool);
-
-                // Place plando checks first
-                Console.WriteLine("Placing Plando Checks.");
-                PlacePlandoChecks();
-
-                Console.WriteLine("Placing Vanilla Checks.");
-                PlaceVanillaChecks();
-
-                // We want to add starting items to the player after plando/vanilla items are placed because we don't want to assume a 1:1 balace on certain items.
-                foreach (Item startingItem in Randomizer.SSettings.startingItems)
-                {
-                    Randomizer.Items.heldItems.Add(startingItem);
-                }
-
-                // Once we have placed all vanilla checks, we want to give the player all of the items they should be searching for and then generate the world based on the room class values and their neighbour values.
-                try
-                {
-                    Randomizer.EntranceRandomizer.RandomizeEntrances(rnd);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    StartOver();
-                    continue;
-                }
-                try
-                {
-                    // Place the items in the world based on the starting room.
-                    PlaceItemsInWorld(Randomizer.Rooms.RoomDict["Root"], rnd);
-                    generationStatus = true;
-                    break;
-                }
-                // If for some reason the assumed fill fails, we want to dump everything and start over.
-                catch (ArgumentOutOfRangeException a)
-                {
-                    a = null;
-                    Console.WriteLine(
-                        "/~~~~~~~~~~~~~~~~~~~~~ Generation Failure. No checks remaining, starting over..~~~~~~~~~~~~~~~~~~~~~~~~~~~~/"
-                            + a
-                    );
-                    StartOver();
-                    continue;
-                }
-            }
-
-            if (generationStatus)
-            {
-                // Randomizer.Items.GenerateItemPool();
-
-                // List<List<KeyValuePair<int, Item>>> spheres = GenerateSpoilerLog(
-                //     Randomizer.Rooms.RoomDict["Root"]
-                // );
-
-                // if (spheres == null)
-                // {
-                //     throw new Exception("Error! Playthrough not valid.");
-                // }
-
-                PlaythroughSpheres playthroughSpheres = GenerateSpoilerLog(
-                    Randomizer.Rooms.RoomDict["Root"]
-                );
-
-                if (
-                    playthroughSpheres.spheres == null
-                    && SSettings.logicRules != LogicRules.No_Logic
-                )
-                {
-                    throw new Exception("Error! Playthrough not valid.");
-                }
-
-                CustomMsgData customMsgData;
-                try
-                {
-                    HintGenerator gen = new HintGenerator(
-                        rnd,
-                        SSettings,
-                        playthroughSpheres,
-                        Randomizer.Rooms.RoomDict["Root"],
-                        isRaceSeed
-                    );
-
-                    customMsgData = gen.Generate();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
-
-                string jsonContent = GenerateInputJsonContent(
-                    settingsString,
-                    seed,
-                    seedHash,
-                    isRaceSeed,
-                    playthroughSpheres.spheres,
-                    customMsgData
-                );
-
-                try
-                {
-                    // Write json file to id dir.
-                    Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
-                    File.WriteAllText(outputPath, jsonContent);
-
-                    Console.WriteLine("SUCCESS:" + id);
-                }
-                catch (Exception e)
-                {
-                    e = null;
-                    Console.WriteLine("Problem writing input.json file for id: " + id + e);
-                    System.Environment.Exit(1);
-                }
-            }
-
-            CleanUp();
-            return generationStatus;
-        }
-
         public static PlaythroughSpheres GenerateSpoilerLog(Room startingRoom)
         {
             Randomizer.Items.GenerateItemPool();
@@ -520,7 +311,11 @@ namespace TPRandomizer
             DeserializeCheckData(SSettings, fcSettings);
             DeserializeRooms(SSettings);
 
-            SeedGenResults seedGenResults = new SeedGenResults(settingsString, itemPlacementString);
+            SeedGenResults seedGenResults = new SeedGenResults(
+                settingsString,
+                itemPlacementString,
+                seedID
+            );
 
             SSettings = SharedSettings.FromString(seedGenResults.settingsString);
             origSSettingsStartingItems = new(SSettings.startingItems);
@@ -529,13 +324,23 @@ namespace TPRandomizer
             {
                 // key is checkId, value is itemId
                 string checkName = CheckIdClass.GetCheckName(kvp.Key);
-                if (Randomizer.Checks.CheckDict.ContainsKey(checkName))
+
+                if (kvp.Value < 0xFF)
                 {
-                    Randomizer.Checks.CheckDict[checkName].itemId = (Item)kvp.Value;
+                    if (Randomizer.Checks.CheckDict.ContainsKey(checkName))
+                    {
+                        Randomizer.Checks.CheckDict[checkName].itemId = (Item)kvp.Value;
+                        Console.WriteLine(
+                            Randomizer.Checks.CheckDict[checkName].checkName
+                                + " : "
+                                + Randomizer.Checks.CheckDict[checkName].itemId
+                        );
+                    }
+                }
+                else
+                {
                     Console.WriteLine(
-                        Randomizer.Checks.CheckDict[checkName].checkName
-                            + " : "
-                            + (int)Randomizer.Checks.CheckDict[checkName].itemId
+                        $"Check with ID of {kvp.Key} is not valid and is trying to place {kvp.Value}"
                     );
                 }
             }
@@ -556,7 +361,8 @@ namespace TPRandomizer
                 HintGenerator gen = new HintGenerator(
                     rnd,
                     SSettings,
-                    Randomizer.Rooms.RoomDict["Root"]
+                    Randomizer.Rooms.RoomDict["Root"],
+                    false
                 );
                 seedGenResults.customMsgData = gen.Generate();
             }
@@ -594,7 +400,14 @@ namespace TPRandomizer
                             Res.UpdateCultureInfo(langTag);
 
                             fileDefs.Add(
-                                GenGciFileDef(id, seedGenResults, fcSettings, gameRegion, true)
+                                GenGciFileDef(
+                                    seedID,
+                                    seedGenResults,
+                                    fcSettings,
+                                    gameRegion,
+                                    slotName,
+                                    true
+                                )
                             );
                         }
                     }
@@ -607,38 +420,15 @@ namespace TPRandomizer
 
                     // Create file for one region
                     fileDefs.Add(
-                        GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, true)
+                        GenGciFileDef(
+                            seedID,
+                            seedGenResults,
+                            fcSettings,
+                            fcSettings.gameRegion,
+                            slotName,
+                            true
+                        )
                     );
-                }
-
-                // Generate seed .bin file
-                /*fileDefs.Add(
-                    GenGciFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion, false)
-                );*/
-
-                if (!seedGenResults.isRaceSeed && fcSettings.includeSpoilerLog)
-                {
-                    // Set back to default language ('en') before creating spoiler
-                    // log when gameRegion is 'All'.
-                    if (fcSettings.gameRegion == GameRegion.All)
-                    {
-                        // Update language to be used with resource system.
-                        string langTag = fcSettings.GetLanguageTagString();
-                        Res.UpdateCultureInfo(langTag);
-                    }
-
-                    // Add fileDef for spoilerLog
-                    string spoilerLogText = GetSeedGenResultsJson(id);
-                    byte[] spoilerBytes = Encoding.UTF8.GetBytes(spoilerLogText);
-
-                    Dictionary<string, object> dict = new();
-                    dict.Add(
-                        "name",
-                        $"Tpr--{seedGenResults.playthroughName}--SpoilerLog-{id}.json"
-                    );
-                    dict.Add("length", spoilerBytes.Length);
-
-                    fileDefs.Add(new(dict, spoilerBytes));
                 }
             }
 
@@ -646,7 +436,13 @@ namespace TPRandomizer
             if (fcSettings.patchFileOnly)
             {
                 fileDefs.Add(
-                    GenPatchFileDef(id, seedGenResults, fcSettings, fcSettings.gameRegion)
+                    GenPatchFileDef(
+                        seedID,
+                        seedGenResults,
+                        fcSettings,
+                        fcSettings.gameRegion,
+                        slotName
+                    )
                 );
             }
 
@@ -692,7 +488,9 @@ namespace TPRandomizer
                 seedGenResults,
                 fcSettings,
                 gameRegionOverride,
-                false
+                false,
+                seedId,
+                slotName
             );
 
             string region = "us";
@@ -792,8 +590,7 @@ namespace TPRandomizer
                 patchBytes.AddRange(memoryStream.ToArray());
             }
 
-            var filename =
-                "Tpr-" + region + "-" + seedGenResults.playthroughName + "-" + seedId + ".patch";
+            var filename = "TprAP-" + region + "-" + seedGenResults.playthroughName + ".patch";
 
             Dictionary<string, object> dict =
                 new() { { "name", filename }, { "length", patchBytes.Count }, };
@@ -806,6 +603,7 @@ namespace TPRandomizer
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
             GameRegion gameRegionOverride,
+            string slotName,
             bool isGci
         )
         {
@@ -813,7 +611,7 @@ namespace TPRandomizer
                 seedGenResults,
                 fcSettings,
                 gameRegionOverride,
-                isGci
+                isGci,
                 seedId,
                 slotName
             );
@@ -840,8 +638,7 @@ namespace TPRandomizer
 
             if (isGci)
             {
-                fileName =
-                    "Tpr-" + gameVer + "-" + seedGenResults.playthroughName + "-" + seedId + ".gci";
+                fileName = "TprAP-" + gameVer + "-" + seedGenResults.playthroughName + ".gci";
             }
             else
             {
@@ -865,7 +662,7 @@ namespace TPRandomizer
             if (fileDefs.Count > 1)
             {
                 // Write ZIP file instead
-                string zipFilename = $"TPR--{slotName}--{seedId}.zip";
+                string zipFilename = $"TPRAP--{slotName}--{seedId}.zip";
                 fileDefs = MergeFileDefsToZip(zipFilename, fileDefs);
             }
 
@@ -1571,33 +1368,6 @@ namespace TPRandomizer
                 this.requirementChecks = requirementChecks;
             }
         };
-
-        public static string GetSeedGenResultsJson(
-            string seedId,
-            bool dangerouslyPrintFullRaceSpoiler = false
-        )
-        {
-            string inputPath = Global.CombineOutputPath("seeds", seedId, "input.json");
-            if (!File.Exists(inputPath))
-            {
-                throw new Exception("input.json not found for id '" + seedId + "'.");
-            }
-
-            string fileContents = File.ReadAllText(inputPath);
-            JObject json = JsonConvert.DeserializeObject<JObject>(fileContents);
-
-            if (Checks.CheckDict.Count < 1)
-            {
-                DeserializeChecks(SSettings);
-            }
-
-            SeedGenResults seedGenResults = new SeedGenResults(seedId, json);
-
-            return seedGenResults.ToSpoilerString(
-                GetSortedCheckNameToItemNameDict(seedGenResults),
-                dangerouslyPrintFullRaceSpoiler
-            );
-        }
 
         private static SortedDictionary<string, string> GetSortedCheckNameToItemNameDict(
             SeedGenResults seedGenResults

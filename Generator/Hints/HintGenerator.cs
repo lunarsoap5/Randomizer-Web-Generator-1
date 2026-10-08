@@ -1,10 +1,13 @@
 namespace TPRandomizer.Hints
 {
     using System;
+    using System.Collections.ObjectModel;
     using System.Collections.Generic;
     using System.Linq;
     using Newtonsoft.Json.Linq;
     using SSettings.Enums;
+    using TPRandomizer.Util;
+    using TPRandomizer.Hints.Settings;
     using TPRandomizer.Hints.HintCreator;
 
     public delegate bool BarrenPenalizer(AreaId areaId, HashSet<Zone> childZones);
@@ -20,18 +23,11 @@ namespace TPRandomizer.Hints
         public HintGenerator(
             Random rnd,
             SharedSettings sSettings,
-            PlaythroughSpheres playthroughSpheres,
             Room startingRoom,
             bool isRaceSeed
         )
         {
-            this.genData = new HintGenData(
-                rnd,
-                sSettings,
-                playthroughSpheres,
-                startingRoom,
-                isRaceSeed
-            );
+            this.genData = new HintGenData(rnd, sSettings, startingRoom, isRaceSeed);
         }
 
         public CustomMsgData Generate()
@@ -1415,8 +1411,8 @@ namespace TPRandomizer.Hints
                                         false,
                                         true,
                                         areaId.type == AreaId.AreaType.Province
-                                          ? TradeChainHint.AreaType.Province
-                                          : TradeChainHint.AreaType.Zone,
+                                            ? TradeChainHint.AreaType.Province
+                                            : TradeChainHint.AreaType.Zone,
                                         DetailedCheckStatus.Unknown,
                                         CheckStatusDisplay.None
                                     );

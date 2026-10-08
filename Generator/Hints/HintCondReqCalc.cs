@@ -39,19 +39,6 @@ namespace TPRandomizer.Hints
             startingItemsSet = new(genData.sSettings.startingItems);
 
             itemToSphere0Checks = new();
-            if (!ListUtils.isEmpty(genData.playthroughSpheres.sphere0Checks))
-            {
-                foreach (string checkName in genData.playthroughSpheres.sphere0Checks)
-                {
-                    Item item = HintUtils.getCheckContents(checkName);
-                    if (!itemToSphere0Checks.TryGetValue(item, out List<string> checksList))
-                    {
-                        checksList = new();
-                        itemToSphere0Checks[item] = checksList;
-                    }
-                    checksList.Add(checkName);
-                }
-            }
         }
 
         private void debugLog(string msg)
@@ -215,12 +202,6 @@ namespace TPRandomizer.Hints
 
         private void calcBaseForbiddenChecks()
         {
-            if (
-                genData.majorItems.Contains(Item.Poe_Soul)
-                || ListUtils.isEmpty(genData.playthroughSpheres.spheresVerbose)
-            )
-                return;
-
             int numFlexibleThatCouldMatter = genData.checkMaybeRelevantFlexiblePoeSoulsToFind();
             if (numFlexibleThatCouldMatter < 1)
                 return;
@@ -243,36 +224,6 @@ namespace TPRandomizer.Hints
             bool hasUnreqBarrenDungeons = unreqBarrenDungeonNames.Count > 0;
             HashSet<string> relevantFlexibleCheckNames = new();
             bool brokeMeetingThreshold = false;
-
-            for (int i = 0; i < genData.playthroughSpheres.spheresVerbose.Count; i++)
-            {
-                List<KeyValuePair<int, Item>> spherePairs = genData
-                    .playthroughSpheres
-                    .spheresVerbose[i];
-                foreach (KeyValuePair<int, Item> checkAndItem in spherePairs)
-                {
-                    string checkName = CheckIdClass.GetCheckName(checkAndItem.Key);
-                    Item contents = HintUtils.getCheckContents(checkName);
-                    if (contents == Item.Poe_Soul && !genData.requiredChecks.Contains(checkName))
-                    {
-                        // Check that poe soul is not in an unreq barren dungeon.
-                        if (hasUnreqBarrenDungeons)
-                        {
-                            string zoneName = genData.GetZoneNameForCheck(checkName);
-                            if (!unreqBarrenDungeonNames.Contains(zoneName))
-                                relevantFlexibleCheckNames.Add(checkName);
-                        }
-                        else
-                            relevantFlexibleCheckNames.Add(checkName);
-                    }
-                }
-
-                if (relevantFlexibleCheckNames.Count >= numFlexibleThatCouldMatter)
-                {
-                    brokeMeetingThreshold = true;
-                    break;
-                }
-            }
 
             if (!brokeMeetingThreshold)
                 return;
@@ -469,31 +420,6 @@ namespace TPRandomizer.Hints
 
             markClearlyDeadChecksGivingTradeItems();
             calcBaseForbiddenChecks();
-
-            // Add non-Required checks from the playthrough spheres which are guaranteed to be
-            // conditionallyRequired (playthrough failed when removing them conditionally).
-            foreach (
-                List<KeyValuePair<int, Item>> spherePairs in genData.playthroughSpheres.spheres
-            )
-            {
-                foreach (KeyValuePair<int, Item> checkAndItem in spherePairs)
-                {
-                    string checkName = CheckIdClass.GetCheckName(checkAndItem.Key);
-                    Item contents = HintUtils.getCheckContents(checkName);
-
-                    // Note: skip over non-major Poe Souls to match general behavior.
-                    if (
-                        !genData.requiredChecks.Contains(checkName)
-                        && (contents != Item.Poe_Soul || isPoeSoulMajor)
-                    )
-                    {
-                        condRequiredChecks.Add(checkName);
-                        Console.WriteLine(
-                            $"Sometimes Required (spheres): {checkName} ({checkAndItem.Value})"
-                        );
-                    }
-                }
-            }
 
             // Build `locsSet`
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict)

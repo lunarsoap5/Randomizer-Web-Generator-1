@@ -16,12 +16,28 @@
     progressCallFailure: 'progressCallFailure',
   };
 
+  const Region = {
+    All: 0,
+    USA: 1,
+    EUR: 2,
+    JAP: 3,
+  };
+  const regionBitLength = 2;
+
+  const EurLanguageTag = {
+    English: 0,
+    Deutsch: 2,
+    Español: 4,
+    Français: 1,
+    Italiano: 3,
+  };
+  const eurLangTagBitLength = 3;
+
   let pageData;
   let creationCallInProgress;
   let picrossOpened = false;
   let hasSelectedRegionError = false;
   let defaultIncludeSpoilerLog = false;
-  let fileContents = "";
 
   function createBasicEvent() {
     let listeners = [];
@@ -198,8 +214,6 @@
 
     restoreDefaultFcSettings();
 
-    
-
     initTabButtons([
       {
         buttonId: 'cosmeticsTabBtn',
@@ -212,8 +226,6 @@
 
       // ['mainTab', 'cosmeticsTab', 'audioTab'].forEach((id) => {
     ]);
-
-
 
     $('#create').on('click', handleCreateClick);
 
@@ -363,7 +375,6 @@
       },
     ]);
 
-
     initDownloadOptions(spoilerData.isRaceSeed);
   }
 
@@ -508,37 +519,37 @@
   document
     .getElementById('randomizeCosmeticsButton')
     .addEventListener('click', randomizeCosmetics);
-  
+
   document
     .getElementById('fnameTest')
-    .addEventListener("change", async (event) => {
-  const file = event.target.files[0];
-  if (!file) return;
+    .addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
 
-  try {
-    const zip = await JSZip.loadAsync(file);
+      try {
+        const zip = await JSZip.loadAsync(file);
 
-    const settingsFile = zip.file("settings.txt");
+        const settingsFile = zip.file('settings.txt');
 
-    // Read the contents of the file as text
-    const content = await settingsFile.async("string");
+        // Read the contents of the file as text
+        const content = await settingsFile.async('string');
 
-    // Display the content
-    console.log(content);
-    fileContents = content;
-  } catch (error) {
-
-    // Read the file
-    const reader = new FileReader();
-    reader.onload = () => {
-      fileContents = reader.result;
-    };
-    reader.onerror = () => {
-      console.log("Error reading the file. Please try again.", "error");
-    };
-    reader.readAsText(file);
-    }
-});
+        // Display the content
+        console.log(content);
+        fileContents = content;
+        window.tpr.shared.fileContents = content;
+      } catch (error) {
+        // Read the file
+        const reader = new FileReader();
+        reader.onload = () => {
+          fileContents = reader.result;
+        };
+        reader.onerror = () => {
+          console.log('Error reading the file. Please try again.', 'error');
+        };
+        reader.readAsText(file);
+      }
+    });
 
   function randomizeCosmetics() {
     const arrayOfCosmeticSettings = [
@@ -602,6 +613,26 @@
         randomizeCosmeticSetting(elId, get16ColorsPalette(null, true)[0]);
       }
     }
+  }
+
+  function handleFileSelection(event) {
+    const file = event.target.files[0];
+
+    // Validate file existence and type
+    if (!file) {
+      console.log('No file selected. Please choose a file.', 'error');
+      return;
+    }
+
+    // Read the file
+    const reader = new FileReader();
+    reader.onload = () => {
+      fileContents = reader.result;
+    };
+    reader.onerror = () => {
+      console.log('Error reading the file. Please try again.', 'error');
+    };
+    reader.readAsText(file);
   }
 
   function initPlaythroughSpoilers(spoilerData) {
@@ -1227,7 +1258,7 @@
       return;
     }
 
-    const fileCreationSettings = window.tpr.shared.genFcSettingsString();
+    let fileCreationSettings = window.tpr.shared.genFcSettingsString();
     console.log(fileCreationSettings);
 
     // Save preferences to localStorage
@@ -1409,7 +1440,6 @@
 
     return null;
   }
-
 
   function startCheckProgressRoutine() {
     const match = window.location.pathname.match(/[^\/]+$/);

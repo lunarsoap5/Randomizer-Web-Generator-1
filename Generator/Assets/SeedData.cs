@@ -50,23 +50,16 @@ namespace TPRandomizer.Assets
             SeedGenResults seedGenResults,
             FileCreationSettings fcSettings,
             GameRegion regionOverride,
-            bool isGci
-        )
-        {
-            SeedData seedData = new SeedData(seedGenResults, fcSettings);
-            return seedData.GenerateSeedDataBytesInternal(regionOverride, isGci);
-        }
-
-        public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, bool isGci)
+            bool isGci,
             string seedID,
             string slotName
         )
         {
             SeedData seedData = new SeedData(seedGenResults, fcSettings);
-            return seedData.GenerateSeedDataBytesInternal(regionOverride, seedID, slotName);
+            return seedData.GenerateSeedDataBytesInternal(regionOverride, isGci, seedID, slotName);
         }
 
-        public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, string seedID, string slotName)
+        public byte[] GenerateSeedDataBytesInternal(GameRegion regionOverride, bool isGci, string seedID, string slotName)
         {
             Assets.CustomMessages.MessageLanguage hintLanguage = Assets
                 .CustomMessages
@@ -101,9 +94,6 @@ namespace TPRandomizer.Assets
             List<byte> currentMessageEntryInfo = new();
             Dictionary<byte, List<CustomMessages.MessageEntry>> seedDictionary = new();
             TPRandomizer.Assets.CustomMessages customMessage = new();
-
-            List<CustomMessages.MessageEntry> seedMessages =
-                seedGenResults.customMsgData.GenMessageEntries();
 
             seedDictionary.Add((byte)hintLanguage, new());
 
@@ -386,6 +376,7 @@ namespace TPRandomizer.Assets
                 fcSettings.invertCameraAxis,
                 fcSettings.lightSwordAlwaysGlows
             };
+            Console.WriteLine(fcSettings.lanternGlowColor.getResult().basicDataEntry);
             bool[] flagsBitfieldArray =
             {
                 randomizerSettings.transformAnywhere,
@@ -3566,7 +3557,7 @@ namespace TPRandomizer.Assets
                     gciBytes[0x2A] = totalSeconds[2];
                     gciBytes[0x2B] = totalSeconds[3];
 
-                    byte[] stringBytes = Converter.StringBytes($"TPR SeedData v{VersionString}", 0x20, region);
+                    byte[] stringBytes = Converter.StringBytes($"TPR-AP SeedData v{VersionString}", 0x20, region);
 
                     for(int j = 0x2040, k= 0x0; j < 0x2060; j++, k++)
                     {

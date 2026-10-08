@@ -86,10 +86,6 @@ namespace TPRandomizer
 
         public bool shuffleRewards { get; set; }
 
-        public bool noSmallKeysOnBosses { get; set; }
-
-        public HintDistribution hintDistribution { get; set; }
-
         public List<string> excludedChecks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
 
@@ -97,34 +93,19 @@ namespace TPRandomizer
 
         private SharedSettings(UInt32 version, string bits)
         {
+            Console.WriteLine(bits);
             BitsProcessor processor = new BitsProcessor(bits);
 
             logicRules = LogicRules.Glitchless; // logicRules = (LogicRules)processor.NextInt(2);
             castleRequirements = (CastleRequirements)processor.NextInt(3);
             palaceRequirements = (PalaceRequirements)processor.NextInt(2);
             faronWoodsLogic = (FaronWoodsLogic)processor.NextInt(1);
-            shuffleGoldenBugs = true; //processor.NextBool();
-            shuffleSkyCharacters = true; //processor.NextBool();
-            shuffleNpcItems = true; //processor.NextBool();
-            shufflePoes = PoeSettings.All; //(PoeSettings)processor.NextInt(2);
-            shuffleShopItems = true; //processor.NextBool();
-            shuffleHiddenSkills = true; //processor.NextBool();
-            smallKeySettings = (SmallKeySettings)processor.NextInt(3);
-            bigKeySettings = (BigKeySettings)processor.NextInt(3);
-            mapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
-            skipPrologue = processor.NextBool();
-            faronTwilightCleared = processor.NextBool();
-            eldinTwilightCleared = processor.NextBool();
-            lanayruTwilightCleared = processor.NextBool();
-            skipMdh = processor.NextBool();
             skipMinorCutscenes = processor.NextBool();
             fastIronBoots = processor.NextBool();
             quickTransform = processor.NextBool();
             transformAnywhere = processor.NextBool();
             walletSize = (WalletSize)processor.NextInt(2);
             modifyShopModels = processor.NextBool();
-            trapFrequency = TrapFrequency.None; //(TrapFrequency)processor.NextInt(3);
-            barrenDungeons = false; //processor.NextBool();
             goronMinesEntrance = (GoronMinesEntrance)processor.NextInt(2);
             skipLakebedEntrance = processor.NextBool();
             skipArbitersEntrance = processor.NextBool();
@@ -136,34 +117,54 @@ namespace TPRandomizer
             openMap = processor.NextBool();
             increaseSpinnerSpeed = processor.NextBool();
             openDot = processor.NextBool();
-            itemScarcity = ItemScarcity.Vanilla; //(ItemScarcity)processor.NextInt(2);
             damageMagnification = (DamageMagnification)processor.NextInt(3);
             bonksDoDamage = processor.NextBool();
-            shuffleRewards = false; //processor.NextBool();
             skipMajorCutscenes = processor.NextBool();
-            noSmallKeysOnBosses = false; //processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);
-            hintDistribution = (HintDistribution)processor.NextInt(5);
-            randomizeStartingPoint = processor.NextBool();
-            shuffleHiddenRupees = processor.NextBool();
             gmShortcut = processor.NextBool();
             hcShortcut = processor.NextBool();
             iliaQuest = (IliaQuest)processor.NextInt(3);
-            mirrorChamberEntrance = (MirrorChamberEntrance)processor.NextInt(2);
-            shuffleDungeonEntrances = (DungeonER)processor.NextInt(2);
-            unpairEntrances = processor.NextBool();
-            decoupleEntrances = processor.NextBool();
-            shuffleFreestandingRupees = processor.NextBool();
             castleRequirementCount = processor.NextInt(6);
             castleBKRequirements = (CastleBKRequirements)processor.NextInt(3);
             castleBKRequirementCount = processor.NextInt(6);
             autoFillWallet = processor.NextBool();
             skipBridgeDonation = processor.NextBool();
-            maloShopDonation = processor.NextInt(11);
-            hintImportance = (HintImportance)processor.NextInt(2);
-            noPlandoHints = processor.NextBool();
-            adjustHintsForCompletionists = processor.NextBool();
-            hintDungeonEntrances = processor.NextBool();
+
+            smallKeySettings = SmallKeySettings.Vanilla;
+            bigKeySettings = BigKeySettings.Vanilla;
+            mapAndCompassSettings = MapAndCompassSettings.Vanilla;
+            skipPrologue = true;
+            faronTwilightCleared = true;
+            eldinTwilightCleared = true;
+            lanayruTwilightCleared = true;
+            skipMdh = true;
+            randomizeStartingPoint = false;
+            shuffleHiddenRupees = true;
+            mirrorChamberEntrance = MirrorChamberEntrance.Open;
+            shuffleDungeonEntrances = DungeonER.Off;
+            unpairEntrances = false;
+            decoupleEntrances = false;
+            shuffleFreestandingRupees = true;
+            maloShopDonation = 2000;
+
+            shuffleGoldenBugs = true; //processor.NextBool();
+            shuffleSkyCharacters = true; //processor.NextBool();
+            shuffleNpcItems = true; //processor.NextBool();
+            shufflePoes = PoeSettings.All; //(PoeSettings)processor.NextInt(2);
+            shuffleShopItems = true; //processor.NextBool();
+            shuffleHiddenSkills = true; //processor.NextBool();
+
+            trapFrequency = TrapFrequency.None; //(TrapFrequency)processor.NextInt(3);
+            barrenDungeons = false; //processor.NextBool();
+            itemScarcity = ItemScarcity.Vanilla; //(ItemScarcity)processor.NextInt(2);
+            shuffleRewards = false; //processor.NextBool();
+            noSmallKeysOnBosses = false; //processor.NextBool();
+            hintDistribution = HintDistribution.Very_Strong;
+
+            hintImportance = HintImportance.Default;
+            noPlandoHints = false;
+            adjustHintsForCompletionists = false;
+            hintDungeonEntrances = false;
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

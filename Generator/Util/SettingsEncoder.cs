@@ -174,6 +174,9 @@ namespace TPRandomizer.Util
         {
             if (done || bits.Length < currentIndex + numBits)
             {
+                Console.WriteLine(
+                    $"{bits.Length} is less than {currentIndex + numBits} with value {bits.Substring(currentIndex, numBits)}."
+                );
                 throw new Exception("Not enough bits remaining");
             }
 
@@ -253,7 +256,6 @@ namespace TPRandomizer.Util
                     break;
                 }
             }
-
             return list;
         }
 

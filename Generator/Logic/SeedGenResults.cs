@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TPRandomizer.Assets;
+using TPRandomizer.SSettings.Enums;
 using TPRandomizer.Util;
 
 namespace TPRandomizer
@@ -38,8 +39,7 @@ namespace TPRandomizer
 
         public static byte checkIDBitLength = 10;
 
-        public SeedGenResults(string seedId, JObject inputJsonContents)
-        public SeedGenResults(string settingsString, string itemPlacementString)
+        public SeedGenResults(string settingsString, string itemPlacementString, string seedID)
         {
             if (Randomizer.Checks.CheckDict.Count < 1)
                 throw new Exception(
@@ -57,10 +57,11 @@ namespace TPRandomizer
                 "0SAWagc7Q5313j0S0"
             );
 
-            this.playthroughName = "APTest_APT";
+            this.playthroughName = seedID;
             this.wiiPlaythroughName = "AT_APT_uEo";
             this.itemPlacements = DecodeItemPlacements(itemPlacementString);
             this.requiredDungeons = 0;
+            this.settingsString = settingsString;
         }
 
         public static string EncodeEntrances(SharedSettings sSettings)
@@ -316,6 +317,7 @@ namespace TPRandomizer
 
         private Dictionary<int, int> DecodeItemPlacements(string sixCharString)
         {
+            Console.WriteLine(sixCharString);
             BitsProcessor processor = new BitsProcessor(
                 SettingsEncoder.DecodeToBitString(sixCharString)
             );
@@ -678,7 +680,7 @@ namespace TPRandomizer
             result.Add("increaseSpinnerSpeed", sSettings.increaseSpinnerSpeed);
             result.Add("openDot", sSettings.openDot);
             result.Add("startingToD", sSettings.startingToD.ToString());
-            result.Add("hintDistribution", sSettings.hintDistribution.ToString());
+            result.Add("hintDistribution", HintDistribution.Very_Strong);
             result.Add("randomizeStartingPoint", sSettings.randomizeStartingPoint);
             result.Add("shuffleHiddenRupees", sSettings.shuffleHiddenRupees);
             result.Add("gmShortcut", sSettings.gmShortcut);

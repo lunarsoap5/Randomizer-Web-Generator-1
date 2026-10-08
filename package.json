@@ -3,7 +3,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "name": "docker-web-app-demo",
+  "name": "docker-web-app-demo-ap",
   "version": "0.1.0",
   "scripts": {
     "deploy": "node packages/build-scripts/deploy.js",

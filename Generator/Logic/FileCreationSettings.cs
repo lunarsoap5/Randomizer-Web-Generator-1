@@ -109,6 +109,8 @@ namespace TPRandomizer
             yBtnColor = processor.NextClr0Entry(RecolorId.None);
             zBtnColor = processor.NextClr0Entry(RecolorId.None);
 
+            Console.WriteLine(gameRegion);
+
             bool isCustomMidnaHairBaseColor = processor.NextBool();
             if (isCustomMidnaHairBaseColor)
             {
@@ -122,6 +124,7 @@ namespace TPRandomizer
             else
             {
                 int midnaHairBaseColor = processor.NextInt(4);
+                Console.WriteLine(midnaHairBaseColor);
 
                 int[] baseAndGlowArr = ColorArrays.MidnaHairBaseAndGlowColors[midnaHairBaseColor];
                 midnaHairBaseLightWorldInactive = baseAndGlowArr[0];
@@ -155,6 +158,7 @@ namespace TPRandomizer
 
         public static FileCreationSettings FromString(string fcSettingsString)
         {
+            Console.WriteLine(fcSettingsString);
             string bits = SettingsEncoder.DecodeToBitString(fcSettingsString);
             return new FileCreationSettings(bits);
         }

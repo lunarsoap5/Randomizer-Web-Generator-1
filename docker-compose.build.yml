@@ -1,5 +1,5 @@
 services:
-  tpr-generator:
+  tpr-generator-ap:
     build:
       context: .
       args:
