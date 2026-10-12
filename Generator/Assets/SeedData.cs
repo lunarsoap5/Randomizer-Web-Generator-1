@@ -345,6 +345,18 @@ namespace TPRandomizer.Assets
             }
 
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.walletSize));
+            
+
+            // Just some padding because we want the seed ID and lot to be at 0x9C and 0xAC respectively.
+            while (seedHeader.Count < 0x9C)
+            {
+                seedHeader.Add((byte)0x0);
+            }
+
+            Console.WriteLine(seedHeader.Count);
+
+            seedHeader.AddRange(Converter.StringBytes(seedID, 0x10));
+            seedHeader.AddRange(Converter.StringBytes(slotName, 0x10));
 
             while (seedHeader.Count < SeedHeaderSize)
             {
