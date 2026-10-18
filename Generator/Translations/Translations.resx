@@ -1017,7 +1017,7 @@
     <value>Bulblin camp key</value>
     <comment></comment>
   </data>
-  <data name="item.8f-archipelago_item@ac(t,an,b,s)" xml:space="preserve">
+  <data name="item.dc-archipelago_item@ac(t,an,b,s)" xml:space="preserve">
     <value>Archipelago Item</value>
     <comment></comment>
   </data>
