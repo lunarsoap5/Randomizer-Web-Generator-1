@@ -1394,6 +1394,55 @@ namespace TPRandomizer.Assets
         {
             Console.WriteLine(seedGenResults.entrances);
             List<byte> entranceTable = new();
+            EntranceInfo vanillaSpawn = Randomizer.EntranceRandomizer.vanillaSpawn;
+            entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.Stage.ToString("X"), System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+            entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.Room.ToString("X"), System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+               
+                entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.Spawn, System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+                
+                entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.State, System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+                
+                entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.Stage.ToString("X"), System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+            entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.Room.ToString("X"), System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+               
+                entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.Spawn, System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+                
+                entranceTable.Add(
+                    Converter.GcByte(
+                        byte.Parse(vanillaSpawn.State, System.Globalization.NumberStyles.HexNumber)
+                    )
+                );
+
+                SeedHeaderRaw.shuffledEntranceInfoNumEntries++;
+
             /*string[] entranceBytes = seedGenResults.entrances.Split(",");
             for (int i = 0; i < entranceBytes.Count() - 1; i++)
             {
