@@ -1856,8 +1856,7 @@ namespace TPRandomizer.Assets
                 return null;
 
             int spaceIndex = roomName.IndexOf(' ');
-            // If no space is found, return the whole string; otherwise, cut before the space
-            string firstChunk = spaceIndex == -1 ? roomName : roomName.Substring(0, spaceIndex);
+            string firstChunk = spaceIndex >= 0 ? roomName.Substring(0, spaceIndex) : roomName;
 
             switch (firstChunk)
             {
