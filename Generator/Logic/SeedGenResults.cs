@@ -216,6 +216,108 @@ namespace TPRandomizer
                 }
             }
 
+            if (sSettings.shuffleBossEntrances)
+            {
+                // Make sure dying to a shuffled boss and selecting continue spawns you in front of
+                // the correct boss door when Boss Room ER is enabled.
+                Dictionary<StageIDs, string> dungeonToBossDeathContinueSpawn =
+                    new()
+                    {
+                        { StageIDs.Forest_Temple, "6,C,1,FF," },
+                        { StageIDs.Goron_Mines, "3,C,1,FF," },
+                        { StageIDs.Lakebed_Temple, "0,3,1,FF," },
+                        { StageIDs.Arbiters_Grounds, "18,9,1,FF," },
+                        { StageIDs.Snowpeak_Ruins, "1B,4,4,FF," },
+                        { StageIDs.Temple_of_Time, "9,8,2,FF," },
+                        { StageIDs.City_in_the_Sky, "C,F,4,FF," },
+                        { StageIDs.Palace_of_Twilight, "F,9,0,FF," },
+                    };
+                Dictionary<string, StageIDs> bossRoomToVanillaDungeon =
+                    new()
+                    {
+                        { "FT Boss Room", StageIDs.Forest_Temple },
+                        { "GM Boss Room", StageIDs.Goron_Mines },
+                        { "LBT Boss Room", StageIDs.Lakebed_Temple },
+                        { "AG Boss Room", StageIDs.Arbiters_Grounds },
+                        { "SPR Boss Room", StageIDs.Snowpeak_Ruins },
+                        { "ToT Boss Room", StageIDs.Temple_of_Time },
+                        { "CitS Boss Room", StageIDs.City_in_the_Sky },
+                        { "PoT Boss Room", StageIDs.Palace_of_Twilight },
+                    };
+                List<(StageIDs, string, string)> shuffleableBossEntrances =
+                    new()
+                    {
+                        (StageIDs.Forest_Temple, "FT North Wing", "FT Boss Room"),
+                        (StageIDs.Goron_Mines, "GM North Wing", "GM Boss Room"),
+                        (StageIDs.Lakebed_Temple, "LBT Central Room", "LBT Boss Room"),
+                        (StageIDs.Arbiters_Grounds, "AG After Poe Gate", "AG Boss Room"),
+                        (StageIDs.Snowpeak_Ruins, "SPR Chapel", "SPR Boss Room"),
+                        (StageIDs.Temple_of_Time, "ToT Crumbling Corridor", "ToT Boss Room"),
+                        (StageIDs.City_in_the_Sky, "CitS North Wing", "CitS Boss Room"),
+                        (StageIDs.Palace_of_Twilight, "PoT North Tower", "PoT Boss Room"),
+                    };
+
+                foreach ((StageIDs, string, string) tuple in shuffleableBossEntrances)
+                {
+                    StageIDs newDungeonLeadingToBossRoom = tuple.Item1;
+                    string origConnectedArea = tuple.Item3;
+                    Entrance exitToMatch = null;
+
+                    Room preBossRoom = Randomizer.Rooms.RoomDict[tuple.Item2];
+                    foreach (Entrance exit in preBossRoom.Exits)
+                    {
+                        if (exit.OriginalConnectedArea == origConnectedArea)
+                        {
+                            exitToMatch = exit;
+                            break;
+                        }
+                    }
+                    if (exitToMatch == null)
+                        throw new Exception(
+                            $"Failed to find dungeonToBoss origConnectedArea '{origConnectedArea}'."
+                        );
+
+                    string targetBossRoom = exitToMatch
+                        .GetReplacedEntrance()
+                        .GetOriginalConnectedArea();
+
+                    if (
+                        !bossRoomToVanillaDungeon.TryGetValue(
+                            targetBossRoom,
+                            out StageIDs vanillaDungeonOfBoss
+                        )
+                    )
+                        throw new Exception(
+                            $"Failed to find vanilla dungeon of boss room '{targetBossRoom}'."
+                        );
+
+                    if (newDungeonLeadingToBossRoom != vanillaDungeonOfBoss)
+                    {
+                        if (
+                            !dungeonToBossDeathContinueSpawn.TryGetValue(
+                                vanillaDungeonOfBoss,
+                                out string oldSpawn
+                            )
+                        )
+                            throw new Exception(
+                                $"Failed to find bossDeathContinueSpawn for StageIDs '{vanillaDungeonOfBoss}'."
+                            );
+                        if (
+                            !dungeonToBossDeathContinueSpawn.TryGetValue(
+                                newDungeonLeadingToBossRoom,
+                                out string newSpawn
+                            )
+                        )
+                            throw new Exception(
+                                $"Failed to find bossDeathContinueSpawn for StageIDs '{newDungeonLeadingToBossRoom}'."
+                            );
+
+                        encodedString += oldSpawn;
+                        encodedString += newSpawn;
+                    }
+                }
+            }
+
             foreach (KeyValuePair<string, Room> roomEntry in Randomizer.Rooms.RoomDict)
             {
                 //Console.WriteLine("checking room: " + roomEntry.Value.RoomName);

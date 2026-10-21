@@ -1628,41 +1628,180 @@ namespace TPRandomizer.Assets
                 (new(StageIDs.Upper_Zoras_River, 0, -4, -1), new(StageIDs.Upper_Zoras_River, 0, 0x63, -1)),
                 (new(StageIDs.Zoras_Domain, 0, -4, -1), new(StageIDs.Zoras_Domain, 0, 0, -1)),
 
-                // --- Dungeons --- Note: should update (mini)bosses to dynamically reference the
-                // dungeon which leads to them. If they are not connected to a dungeon, then should
-                // use null for the ReturnPlace instead. Also if two unrelated places would lead
-                // into the Darkhammer room, then must also set it to null.
+                // --- Dungeons --- This only includes the static ones. Boss rooms for FT through
+                // PoT are handled below so they support dynamic dungeons based on boss rooms ER.
+                // Minibosses are also handled below in case we ever add miniboss shuffle, though
+                // currently they are always vanilla. Should already work for mixed pools as well.
                 (new(StageIDs.Forest_Temple, -1, -1, -1), ftRetPl),
-                (new(StageIDs.Ook, -1, -1, -1), ftRetPl),
-                (new(StageIDs.Diababa, -1, -1, -1), ftRetPl),
                 (new(StageIDs.Goron_Mines, -1, -1, -1), gmRetPl),
-                (new(StageIDs.Dangoro, -1, -1, -1), gmRetPl),
-                (new(StageIDs.Fyrus, -1, -1, -1), gmRetPl),
                 (new(StageIDs.Lakebed_Temple, -1, -1, -1), lbtRetPl),
-                (new(StageIDs.Deku_Toad, -1, -1, -1), lbtRetPl),
-                (new(StageIDs.Morpheel, -1, -1, -1), lbtRetPl),
                 (new(StageIDs.Arbiters_Grounds, -1, -1, -1), agRetPl),
-                (new(StageIDs.Death_Sword, -1, -1, -1), agRetPl),
-                (new(StageIDs.Stallord, -1, -1, -1), agRetPl),
                 (new(StageIDs.Snowpeak_Ruins, -1, -1, -1), sprRetPl),
-                (new(StageIDs.Darkhammer, -1, -1, -1), sprRetPl),
-                (new(StageIDs.Blizzeta, -1, -1, -1), sprRetPl),
                 (new(StageIDs.Temple_of_Time, -1, -1, -1), totRetPl),
-                (new(StageIDs.Darknut, -1, -1, -1), totRetPl),
-                (new(StageIDs.Armogohma, -1, -1, -1), totRetPl),
                 (new(StageIDs.City_in_the_Sky, -1, -1, -1), citsRetPl),
-                (new(StageIDs.Aeralfos, -1, -1, -1), citsRetPl),
-                (new(StageIDs.Argorok, -1, -1, -1), citsRetPl),
                 (new(StageIDs.Palace_of_Twilight, -1, -1, -1), potRetPl),
-                (new(StageIDs.Phantom_Zant_1, -1, -1, -1), potRetPl),
-                (new(StageIDs.Phantom_Zant_2, -1, -1, -1), potRetPl),
-                (new(StageIDs.Zant_Main_Room, -1, -1, -1), potRetPl),
-                (new(StageIDs.Zant_Fight, -1, -1, -1), potRetPl),
                 (new(StageIDs.Hyrule_Castle, -1, -1, -1), hcRetPl),
                 (new(StageIDs.Ganondorf_Castle, -1, -1, -1), hcRetPl),
                 (new(StageIDs.Ganondorf_Field, -1, -1, -1), hcRetPl),
             };
 
+            // Dynamically handle the connected dungeon (if able) for (mini)bosses. Minibosses
+            // currently are never randomized, but this code should be 90+% of the way to handling
+            // them (including Darkhammer) if we ever add that as a feature. Should in theory
+            // already work for mixed pools and more crazy stuff as well.
+            EntranceRando.DeserializeSpawnTable();
+
+            Dictionary<string, StageIDs> vanillaSpawnToSourceDungeonStage = new();
+
+            List<EntranceInfo> entranceInfos = new();
+            foreach (SpawnTableEntry entry in Randomizer.EntranceRandomizer.SpawnTable)
+            {
+                if (entry.Type == "Boss Room Exit")
+                    continue;
+
+                if (entry.SourceRoomSpawn != null)
+                    entranceInfos.Add(entry.SourceRoomSpawn);
+
+                if (entry.TargetRoomSpawn != null)
+                    entranceInfos.Add(entry.TargetRoomSpawn);
+            }
+
+            foreach (EntranceInfo entranceInfo in entranceInfos)
+            {
+                StageIDs? maybeStageId = getDungeonStageIdFromRoomName(entranceInfo.SourceRoom);
+                if (maybeStageId != null)
+                {
+                    StageIDs stageId = (StageIDs)maybeStageId;
+                    if (stageId != StageIDs.Hyrule_Castle)
+                    {
+                        // Key is 2 chars each of stg,room,point for a six-char string.
+                        string key = entranceInfo.Stage.ToString("X2") + entranceInfo.Room.ToString("X2") + padToTwoPlaces(entranceInfo.Spawn);
+                        vanillaSpawnToSourceDungeonStage[key] = stageId;
+                    }
+                }
+            }
+
+            Dictionary<StageIDs, ReturnPlace> dungeonToVanillaRetPlace = new()
+            {
+                { StageIDs.Forest_Temple, ftRetPl },
+                { StageIDs.Goron_Mines, gmRetPl },
+                { StageIDs.Lakebed_Temple, lbtRetPl },
+                { StageIDs.Arbiters_Grounds, agRetPl },
+                { StageIDs.Snowpeak_Ruins, sprRetPl },
+                { StageIDs.Temple_of_Time, totRetPl },
+                { StageIDs.City_in_the_Sky, citsRetPl },
+                { StageIDs.Palace_of_Twilight, potRetPl },
+            };
+            Dictionary<StageIDs, ReturnPlace> miniOrBossToVanillaRetPlace = new()
+            {
+                { StageIDs.Ook, ftRetPl },
+                { StageIDs.Diababa, ftRetPl },
+                { StageIDs.Dangoro, gmRetPl },
+                { StageIDs.Fyrus, gmRetPl },
+                { StageIDs.Deku_Toad, lbtRetPl },
+                { StageIDs.Morpheel, lbtRetPl },
+                { StageIDs.Death_Sword, agRetPl },
+                { StageIDs.Stallord, agRetPl },
+                { StageIDs.Darkhammer, sprRetPl },
+                { StageIDs.Blizzeta, sprRetPl },
+                { StageIDs.Darknut, totRetPl },
+                { StageIDs.Armogohma, totRetPl },
+                { StageIDs.Aeralfos, citsRetPl },
+                { StageIDs.Argorok, citsRetPl },
+                { StageIDs.Phantom_Zant_1, potRetPl },
+                { StageIDs.Phantom_Zant_2, potRetPl },
+                { StageIDs.Zant_Main_Room, potRetPl },
+                // Note: we include Zant_Main_Room since that is what is randomized. Later in the
+                // code when we add the mapping for this stage, we add one for Zant_Fight at the
+                // same time.
+            };
+
+            Dictionary<StageIDs, HashSet<StageIDs>> miniOrBossToRandomizedSources = new(miniOrBossToVanillaRetPlace.Count);
+
+            // Iterate over the randomized entrances as stored in the seedGenResults.
+            string[] chunks = seedGenResults.entrances.Split(',');
+            for (int i = 0; i + 7 < chunks.Length; i += 8)
+            {
+                StageIDs newTargetStg = (StageIDs)Converter.GcByte(
+                    byte.Parse(chunks[i + 4], System.Globalization.NumberStyles.HexNumber)
+                );
+
+                // If new target stage is a (mini)boss, then we check if we are coming from a
+                // dungeon based on the vanilla spawn we are replacing.
+                if (miniOrBossToVanillaRetPlace.ContainsKey(newTargetStg))
+                {
+                    // Check if vanilla target indicates we are coming from a dungeon. Key is 2
+                    // chars each of stg,room,point for a six-char string.
+                    string key = padToTwoPlaces(chunks[i]) + padToTwoPlaces(chunks[i + 1]) + padToTwoPlaces(chunks[i + 2]);
+
+                    // Skip over remaps of "Mirror Chamber Lower -> AG Boss Room". For Closed, the
+                    // exit is irrelevant. For Open, entering Stallord from the back (point 3) is
+                    // always remapped entering from the front (point 0). You can always die in the
+                    // Stallord boss room to gain access to the dungeon before the Stallord boss
+                    // door then S+Q or returnToDungeonEntrance, so there is no reason to disallow
+                    // this from the boss room. For Barrier, it is assumed to send you to a boss
+                    // room which you first must access from the front, so there is no need to treat
+                    // this as an equally valid entrance such that it is unclear which leading area
+                    // is the true parent of the boss room.
+                    if (key == "193203")
+                        continue;
+
+                    if (vanillaSpawnToSourceDungeonStage.TryGetValue(key, out StageIDs sourceDungeonStageId))
+                    {
+                        if (!miniOrBossToRandomizedSources.TryGetValue(newTargetStg, out HashSet<StageIDs> sourceStageIds))
+                        {
+                            sourceStageIds = new();
+                            miniOrBossToRandomizedSources[newTargetStg] = sourceStageIds;
+                        }
+                        // Check value is not null (null meaning already has a non-dungeon leading there).
+                        if (sourceStageIds != null)
+                            sourceStageIds.Add(sourceDungeonStageId);
+                    }
+                    else
+                    {
+                        // If non-dungeon room leads to a (mini)boss room, then cannot "return
+                        // to dungeon entrance" from there.
+                        miniOrBossToRandomizedSources[newTargetStg] = null;
+                    }
+                }
+            }
+
+            // Add returnPlaces for (mini)bosses.
+            foreach (KeyValuePair<StageIDs, ReturnPlace> pair in miniOrBossToVanillaRetPlace)
+            {
+                StageIDs miniOrBossStg = pair.Key;
+
+                ReturnPlace returnPlace;
+                if (miniOrBossToRandomizedSources.TryGetValue(miniOrBossStg, out HashSet<StageIDs> randomizedSources))
+                {
+                    if (randomizedSources != null && randomizedSources.Count == 1)
+                    {
+                        // If only one dungeon source leading to the (mini)boss, use the ReturnPlace
+                        // for that dungeon.
+                        StageIDs dungeonStageId = randomizedSources.First();
+                        if (!dungeonToVanillaRetPlace.TryGetValue(dungeonStageId, out ReturnPlace newRetPlace))
+                            throw new Exception($"Failed to map dungeonStageId {dungeonStageId} to vanilla return place.");
+                        returnPlace = newRetPlace;
+                    }
+                    else
+                    {
+                        // Cannot "return to dungeon entrance".
+                        returnPlace = null;
+                    }
+                }
+                else
+                {
+                    // Use the vanilla ReturnPlace for the (mini)boss room.
+                    returnPlace = pair.Value;
+                }
+
+                list.Add((new(miniOrBossStg, -1, -1, -1), returnPlace));
+                // If adding mapping for Zant_Main_Room, then add the same one for Zant_Fight.
+                if (miniOrBossStg == StageIDs.Zant_Main_Room)
+                    list.Add((new(StageIDs.Zant_Fight, -1, -1, -1), returnPlace));
+            }
+
+            // Build binary table now that all returnPlace mappings are set up.
             foreach ((ReturnPlaceComparison, ReturnPlace) pair in list)
             {
                 ReturnPlaceComparison comp = pair.Item1;
@@ -1709,6 +1848,49 @@ namespace TPRandomizer.Assets
             finalResult.AddRange(data);
 
             return finalResult;
+        }
+
+        private StageIDs? getDungeonStageIdFromRoomName(string roomName)
+        {
+            if (roomName == null)
+                return null;
+
+            int spaceIndex = roomName.IndexOf(' ');
+            string firstChunk = spaceIndex >= 0 ? roomName.Substring(0, spaceIndex) : roomName;
+
+            switch (firstChunk)
+            {
+                case "FT":
+                    return StageIDs.Forest_Temple;
+                case "GM":
+                    return StageIDs.Goron_Mines;
+                case "LBT":
+                    return StageIDs.Lakebed_Temple;
+                case "AG":
+                    return StageIDs.Arbiters_Grounds;
+                case "SPR":
+                    return StageIDs.Snowpeak_Ruins;
+                case "ToT":
+                    return StageIDs.Temple_of_Time;
+                case "CitS":
+                    return StageIDs.City_in_the_Sky;
+                case "PoT":
+                    return StageIDs.Palace_of_Twilight;
+                case "HC":
+                    return StageIDs.Hyrule_Castle;
+            }
+            return null;
+        }
+
+        private string padToTwoPlaces(string input)
+        {
+            if (StringUtils.isEmpty(input))
+                return "00";
+            if (input.Length >= 2)
+                return input;
+            int numZerosToAdd = 2 - input.Length;
+            string leadingZeros = new('0', numZerosToAdd);
+            return leadingZeros + input;
         }
 
         private List<ARCReplacement> generateStaticArcReplacements()
