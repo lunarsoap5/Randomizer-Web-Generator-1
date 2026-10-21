@@ -405,8 +405,8 @@ namespace TPRandomizer
                         Entrance shuffledExit = exit;
                         // We don't want to start the player in Hyrule Castle and we don't want to start them in a boss room.
                         if (
-                            currentRoom.RoomName != "Hyrule Castle Entrance"
-                            && !shuffledExit.GetCurrentName().Contains("Hyrule Castle Entrance")
+                            currentRoom.RoomName != "HC Entrance"
+                            && !shuffledExit.GetCurrentName().Contains("HC Entrance")
                             && (shuffledExit.State != null)
                             && (
                                 (shuffledExit.GetEntranceType() != EntranceType.Boss)
