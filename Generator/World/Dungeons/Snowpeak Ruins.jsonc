@@ -60,13 +60,9 @@
     "Region": "Snowpeak Ruins"
   },
   {
+    // This is the area past the wall of ice. (i.e the Second Floor)
     "RoomName": "SPR Caged Freezard Room",
     "Exits": [
-      {
-        "ConnectedArea": "SPR Yeto and Yeta",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
-      },
       {
         "ConnectedArea": "SPR Second Floor Mini Freezard Room",
         "Requirements": "Ball_and_Chain and (Snowpeak_Ruins_Small_Key, 3)",
@@ -75,23 +71,17 @@
       },
       {
         "ConnectedArea": "SPR Wooden Beam Room",
-        "Requirements": "Ball_and_Chain",
-        "GlitchedRequirements": "Ball_and_Chain"
-      },
-      {
-        "ConnectedArea": "SPR West Courtyard",
-        "Requirements": "(Snowpeak_Ruins_Small_Key, 2)",
-        // If coming from the Lobby, 2F floor clip is in logic, which explains the lack of the B&C requirement.
-        "GlitchedRequirements": "true"
-      },
-      {
-        "ConnectedArea": "SPR Chapel",
-        "Requirements": "Trick.spr_ladder_freezard_cancel or (Setting.sprShortcut equals True)",
-        // If coming from the Lobby, 2F floor clip is in logic, which explains the lack of the B&C requirement. Then you can Freezard Ladder Cancel
+        "Requirements": "true",
         "GlitchedRequirements": "true"
       },
       {
         "ConnectedArea": "SPR Caged Freezard Room Lower",
+        // Breaking the ice
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        "ConnectedArea": "SPR Caged Freezard Room Lower Ledge",
         // Breaking the floor
         "Requirements": "CanSmash",
         "GlitchedRequirements": "CanSmash"
@@ -103,6 +93,42 @@
   {
     // This is the plaform with the chest below the caged freezard room
     "RoomName": "SPR Caged Freezard Room Lower",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Caged Freezard Room",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "(Snowpeak_Ruins_Small_Key, 2) or (Trick.spr_ladder_freezard_cancel or (Setting.sprShortcut equals True))",
+        // Player can Freezard Ladder Cancel to reach west courtyard.
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Chapel",
+        "Requirements": "Trick.spr_ladder_freezard_cancel or (Setting.sprShortcut equals True)",
+        // If coming from the Lobby, 2F floor clip is in logic, which explains the lack of the B&C requirement. Then you can Freezard Ladder Cancel
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Broken Floor Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    // This is the plaform with the chest below the caged freezard room
+    "RoomName": "SPR Caged Freezard Room Lower Ledge",
     "Exits": [
       {
         "ConnectedArea": "SPR Caged Freezard Room",
@@ -224,7 +250,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "SPR Caged Freezard Room Lower",
+        "ConnectedArea": "SPR Caged Freezard Room Lower Ledge",
         "Requirements": "false",
         "GlitchedRequirements": "CanDoLJA"
       }
@@ -332,7 +358,7 @@
       },
       {
         "ConnectedArea": "SPR Caged Freezard Room",
-        "Requirements": "(Snowpeak_Ruins_Small_Key, 4)",
+        "Requirements": "(Snowpeak_Ruins_Small_Key, 4) and Ball_and_Chain",
         "GlitchedRequirements": "(Snowpeak_Ruins_Small_Key, 4) or (Ball_and_Chain and (Progressive_Clawshot, 1))"
       }
     ],
@@ -445,7 +471,7 @@
       {
         "CheckName": "SPR Wooden Beam Chandelier Chest",
         "Requirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and Ball_and_Chain",
-        "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and (Ball_and_Chain or CanDoLJA)"
+        "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and (Ball_and_Chain or (CanDoLJA and Progressive_Clawshot))"
       }
     ],
     "Region": "Snowpeak Ruins"
@@ -459,7 +485,7 @@
         "GlitchedRequirements": "true"
       },
       {
-        "ConnectedArea": "SPR Caged Freezard Room",
+        "ConnectedArea": "SPR Caged Freezard Room Lower",
         "Requirements": "Snowpeak_Ruins_Ordon_Goat_Cheese",
         "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Goat_Cheese"
       },
