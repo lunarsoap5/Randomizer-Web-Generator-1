@@ -117,13 +117,7 @@
         "GlitchedRequirements": "true"
       }
     ],
-    "Checks": [
-      {
-        "CheckName": "SPR Broken Floor Chest",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
-      }
-    ],
+    "Checks": [],
     "Region": "Snowpeak Ruins"
   },
   {
