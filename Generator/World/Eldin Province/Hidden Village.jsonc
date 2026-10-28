@@ -31,11 +31,6 @@
         "GlitchedRequirements": "CanDoHiddenVillageGlitched and Shadow_Crystal"
       },
       {
-        "CheckName": "Skybook From Impaz",
-        "Requirements": "Progressive_Bow and Progressive_Dominion_Rod",
-        "GlitchedRequirements": "CanDoHiddenVillageGlitched and Progressive_Dominion_Rod"
-      },
-      {
         "CheckName": "Talk To HV Cucco",
         "Requirements": "(Progressive_Bow, 1) and Shadow_Crystal and Ilias_Charm and Room.Kak_Renados_Sanctuary",
         "GlitchedRequirements": "CanDoHiddenVillageGlitched and Shadow_Crystal and Ilias_Charm and Room.Kak_Renados_Sanctuary"
