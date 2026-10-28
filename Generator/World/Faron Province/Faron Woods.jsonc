@@ -285,14 +285,14 @@
         "ConnectedArea": "Mist Area Near North Faron Woods",
         "Requirements": "Lantern",
         "GlitchedRequirements": "Lantern or (Room.South_Faron_Woods and CanDoMapGlitch)" // Epona OoB in South Faron can get Epona in the mist.
+      },
+      {
+        "ConnectedArea": "Mist Area Stump Chest Platform",
+        "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
+        "GlitchedRequirements": "((Lantern and CanCompleteFaronTwilight) or Shadow_Crystal) and CanCompletePrologue"
       }
     ],
     "Checks": [
-      {
-        "CheckName": "Faron Mist Stump Chest",
-        "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
-        "GlitchedRequirements": "((Lantern and CanCompleteFaronTwilight) or Shadow_Crystal) and CanCompletePrologue"
-      },
       {
         "CheckName": "Faron Mist North Chest",
         "Requirements": "Lantern and CanCompletePrologue and (CanCompleteFaronTwilight or Shadow_Crystal)",
@@ -357,6 +357,11 @@
         "ConnectedArea": "Mist Area Near North Faron Woods",
         "Requirements": "Shadow_Crystal",
         "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Mist Area Stump Chest Platform",
+        "Requirements": "CanCompletePrologue and Trick.mist_stump_chest_as_wolf",
+        "GlitchedRequirements": "CanCompletePrologue"
       }
     ],
     "Checks": [
@@ -364,11 +369,24 @@
         "CheckName": "Faron Mist Poe",
         "Requirements": "Shadow_Crystal and CanCompletePrologue and CanCompleteFaronTwilight",
         "GlitchedRequirements": "Shadow_Crystal and CanCompleteFaronTwilight"
-      },
+      }
+    ],
+    "Region": "Faron Woods"
+  },
+  {
+    "RoomName": "Mist Area Stump Chest Platform",
+    "Exits": [
+      {
+        "ConnectedArea": "Mist Area Inside Mist",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern or CanDoMapGlitch"
+      }
+    ],
+    "Checks": [
       {
         "CheckName": "Faron Mist Stump Chest",
-        "Requirements": "CanCompletePrologue and Trick.mist_stump_chest_as_wolf",
-        "GlitchedRequirements": "CanCompletePrologue"
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
       }
     ],
     "Region": "Faron Woods"
