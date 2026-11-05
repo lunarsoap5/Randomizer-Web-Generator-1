@@ -314,6 +314,7 @@ namespace TPRandomizer
                 "Mist Area Under Owl Statue Chest",
                 "Mist Area Near Owl Statue Chest",
                 "Mist Area Center Stump",
+                "Mist Area Stump Chest Platform",
                 "Mist Area Outside Faron Mist Cave",
                 "Mist Area Near North Faron Woods",
                 "Mist Area Faron Mist Cave",
