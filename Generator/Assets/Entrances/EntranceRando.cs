@@ -1434,11 +1434,16 @@ namespace TPRandomizer
                 }
                 case SSettings.Enums.MirrorChamberEntrance.Open:
                 {
-                    // Mirror Chamber Lower and AG Boss door always lead to the same place.
-                    Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetAsShuffled();
-                    Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetReplacedEntrance(
-                        Randomizer.Rooms.RoomDict["AG After Poe Gate"].Exits[1]
-                    );
+                    if (Randomizer.SSettings.shuffleBossEntrances)
+                    {
+                        // Mirror Chamber Lower and AG Boss door always lead to the same place.
+                        Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetAsShuffled();
+                        Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[
+                            0
+                        ].SetReplacedEntrance(
+                            Randomizer.Rooms.RoomDict["AG After Poe Gate"].Exits[1]
+                        );
+                    }
                     break;
                 }
             }

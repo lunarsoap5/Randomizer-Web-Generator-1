@@ -645,9 +645,8 @@ namespace TPRandomizer
                         + entranceBytes[i + 2]
                         + ","
                         + entranceBytes[i + 3]
-                        + ","
-                        + entranceBytes[i + 4]
                 );*/
+                bool match = false;
                 foreach (EntranceInfo entry in entranceInfo)
                 {
                     if (entry.Stage.ToString("X") == entranceBytes[i])
@@ -679,9 +678,14 @@ namespace TPRandomizer
                                                                 + " -> "
                                                                 + entry2.TargetRoom
                                                         );*/
+                                                        match = true;
                                                     }
                                                 }
                                             }
+                                        }
+                                        if (match)
+                                        {
+                                            break;
                                         }
                                     }
                                 }
@@ -689,7 +693,6 @@ namespace TPRandomizer
                         }
                     }
                 }
-
                 i = i + 7;
             }
 
